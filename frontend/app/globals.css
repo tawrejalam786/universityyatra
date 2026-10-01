@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/*
+  Brand tokens sampled from the University Yatra logo.
+  Swap in the exact hex codes from your brand guide if you have them.
+  Gives you classes like bg-brand-navy, text-brand-teal, border-brand-teal-dark…
+*/
+@theme {
+  --color-brand-navy: #003870;
+  --color-brand-navy-dark: #00274f;
+  --color-brand-teal: #2ebeb5;
+  --color-brand-teal-dark: #24a59d;
+
+  /* Soft card backgrounds for the services section */
+  --color-tint-sky: #eaf1ff;
+  --color-tint-sky-deep: #d9e6fd;
+  --color-tint-sand: #fff3e3;
+  --color-tint-lilac: #f0ecfd;
+
+  /* Teal dark enough for small text on white (5:1) */
+  --color-brand-teal-ink: #0e7c76;
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-caveat), cursive;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Swiper pagination dots (TopUniversities) ---------- */
+.uni-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+.uni-pagination .swiper-pagination-bullet {
+  position: relative;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  background: #8a97ab;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+/* larger invisible tap area for phones */
+.uni-pagination .swiper-pagination-bullet::after {
+  content: "";
+  position: absolute;
+  inset: -0.75rem -0.3rem;
+}
+.uni-pagination .swiper-pagination-bullet-active {
+  width: 2.75rem;
+  background: var(--color-brand-teal);
+}
+@media (prefers-reduced-motion: reduce) {
+  .uni-pagination .swiper-pagination-bullet {
+    transition: none;
+  }
+}
