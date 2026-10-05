@@ -1,3 +1,5 @@
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/UniversityFooter";
 import Hero from "@/components/Home/Hero";
 import NextChapter from "@/components/Home/NextChapter";
 import TopUniversities from "@/components/Home/TopUniversities";
@@ -9,13 +11,11 @@ import ExploreByDestination from "@/components/Home/ExploreByDestination";
 import GuidanceSection from "@/components/Home/GuidanceSection";
 import StudentStories from "@/components/Home/StudentStories";
 import PlanNextChapter from "@/components/Home/PlanNextChapter";
-import Navbar from "@/components/Navbar";
-import UniversityFooter from "@/components/UniversityFooter";
 
 export default function Home() {
   return (
        <>
-          <Navbar active="Home" />
+           <Navbar active="Home" />
             <main>  
               <Hero />
               <NextChapter
@@ -38,7 +38,7 @@ export default function Home() {
               <StudentStories />
               <PlanNextChapter image="/images/callback-student.webp" />
             </main>
-        <UniversityFooter />
+            <Footer />
        </>
   );
 }

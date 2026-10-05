@@ -1,11 +1,15 @@
 import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
-import StudyIndiaHeroModern from '@/components/StudyInIndia/StudyIndiaHeroModern';
-import BenefitsCardsModern from '@/components/StudyInIndia/BenefitsCardsModern';
-import UniversitiesCarouselModern from '@/components/StudyInIndia/UniversitiesCarouselModern';
-import ProfessionsGridModern from '@/components/StudyInIndia/ProfessionsGridModern';
-import PricingCardsModern from '@/components/StudyInIndia/PricingCardsModern';
-import CTAModern from '@/components/StudyInIndia/CTAModern';
+import StudyIndiaHero from '@/components/StudyInIndia/StudyInIndiaHero';
+import OnlineDegreeSection from "@/components/StudyInIndia/OnlineDegreeSection";
+import WhatItGetsYou from "@/components/StudyInIndia/WhatItGetsYou";
+import CoursesSlider from "@/components/StudyInIndia/CoursesSlider";
+import HowUniversityYatraHelps from "@/components/StudyInIndia/HowUniversityYatraHelps";
+import UniversityCarousel from "@/components/StudyInIndia/UniversityCarousel";
+import DegreeComparison from "@/components/StudyInIndia/DegreeComparison";
+import CostOfStudyingIndia from "@/components/StudyInIndia/CostOfStudyingIndia";
+import GlobalEducationCTA from "@/components/StudyInIndia/GlobalEducationCTA";
+
 
 export const metadata = {
   title: 'Study in India | Top Universities & Admission Guide - University Yatra',
@@ -23,12 +27,15 @@ export default function StudyInIndiaPage() {
     <>
       <Navbar active="Destinations" />
       <main>
-        <StudyIndiaHeroModern />
-        <BenefitsCardsModern />
-        <UniversitiesCarouselModern />
-        <ProfessionsGridModern />
-        <PricingCardsModern />
-        <CTAModern />
+        <StudyIndiaHero />
+        <OnlineDegreeSection />
+        <WhatItGetsYou />
+        <CoursesSlider />
+        <HowUniversityYatraHelps />
+        <UniversityCarousel />
+        <DegreeComparison />
+        <CostOfStudyingIndia />
+        <GlobalEducationCTA />
       </main>
       <UniversityFooter />
     </>

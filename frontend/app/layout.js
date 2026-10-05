@@ -1,5 +1,6 @@
 import { Plus_Jakarta_Sans, Caveat } from "next/font/google";
 import "./globals.css";
+import AnimationProvider from "@/components/providers/AnimationProvider";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -23,7 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${caveat.variable}`}>
-      <body className="bg-white text-slate-900">{children}</body>
+      <body className="bg-white text-slate-900">
+        <AnimationProvider>
+          {children}
+        </AnimationProvider>
+      </body>
     </html>
   );
 }
