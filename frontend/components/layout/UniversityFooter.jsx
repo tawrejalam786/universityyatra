@@ -124,6 +124,7 @@ const GROUPS = [
       ["About Us", "/about-us/"],
       ["FAQs", "/faqs/"],
       ["Contact Us", "/contact-us/"],
+      ["Blog", "/blog" ],
     ],
   },
   {

@@ -52,7 +52,9 @@ const NAV_ITEMS = [
     href: "#",
     children: [{ label: "Education Loan Assistance", href: "/education-loan" }],
   },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
+  // { label: "Blog", href: "/blog" },
+  // { label: "Contact", href: "/contact" },
 ];
 export default function Navbar({ active = "Home" }) {
   const [open, setOpen] = useState(false);
