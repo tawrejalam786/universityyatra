@@ -52,7 +52,7 @@ const NAV_ITEMS = [
     href: "#",
     children: [{ label: "Education Loan Assistance", href: "/education-loan" }],
   },
-  { label: "About Us", href: "/about-us" },
+  { label: "About", href: "/about-us" },
   // { label: "Blog", href: "/blog" },
   // { label: "Contact", href: "/contact" },
 ];
@@ -94,7 +94,7 @@ export default function Navbar({ active = "Home" }) {
                 <Link
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative flex items-center gap-1 rounded-full px-3 py-2 text-[15px] transition-colors hover:text-brand-teal-dark focus-visible:outline-2 focus-visible:outline-brand-teal ${isActive ? "font-semibold text-brand-navy" : "font-medium text-slate-700"}`}
+                  className={`relative flex items-center gap-1 rounded-full px-3 py-2 text-[14px] transition-colors hover:text-brand-teal-dark focus-visible:outline-2 focus-visible:outline-brand-teal ${isActive ? "font-semibold text-brand-navy" : "font-bold text-slate-700"}`}
                 >
                   {" "}
                   {item.label}{" "}

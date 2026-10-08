@@ -11,64 +11,74 @@ import "swiper/css/effect-coverflow";
 
 const universities = [
   {
-    name: "University of Ottawa",
-    grade: "Ontario",
-    image: "/images/universities/canada/university-of-ottawas.webp",
+    name: "Chandigarh University",
+    grade: "A+",
+    image: "/images/universities/chandigarh-university.webp",
   },
   {
-    name: "Toronto Metropolitan University",
-    grade: "Toronto",
-    image: "/images/universities/canada/toronto-metropolitan-university.webp",
+    name: "Amrita Vishwa Vidyapeetham",
+    grade: "A++",
+    image: "/images/universities/amrita-university.webp",
   },
   {
-    name: "University of Saskatchewan",
-    grade: "Quebec",
-    image: "/images/universities/canada/university-of-saskatchewan.webp",
+    name: "Vivekananda Global University",
+    grade: "A+",
+    image: "/images/universities/vgu.webp",
   },
   {
-    name: "Laurentian University",
-    grade: "Alberta",
-    image: "/images/universities/canada/laurentian-university.webp",
+    name: "Shoolini University",
+    grade: "A+",
+    image: "/images/universities/shoolini-university.webp",
   },
   {
-    name: "Trent University",
-    grade: "Ontario",
-    image: "/images/universities/canada/trent-university.webp",
+    name: "Amity University",
+    grade: "A+",
+    image: "/images/universities/amity-university.webp",
   },
   {
-    name: "University of Windsor",
-    grade: "Ontario",
-    image: "/images/universities/canada/university-of-windsor.webp",
+    name: "Manipal University Jaipur",
+    grade: "A+",
+    image: "/images/universities/manipal-university-jaipur.webp",
   },
   {
-    name: "York University",
-    grade: "Ontario",
-    image: "/images/universities/canada/york-university.webp",
+    name: "University of Petroleum and Energy Studies (UPES)",
+    grade: "A",
+    image: "/images/universities/upes.webp",
   },
   {
-    name: "Wilfrid Laurier University",
-    grade: "Ontario",
-    image: "/images/universities/canada/wilfrid-laurier-university.webp",
+    name: "Dr. D. Y. Patil University, Navi Mumbai",
+    grade: "A++",
+    image: "/images/universities/dy-patil-university.webp",
   },
   {
-    name: "Carleton University",
-    grade: "British Columbia",
-    image: "/images/universities/canada/carleton-university.webp",
+    name: "Galgotias University",
+    grade: "A+",
+    image: "/images/universities/galgotias-university.webp",
   },
   {
-    name: "Mohawk College",
-    grade: "Ontario",
-    image: "/images/universities/canada/mohawk-college.webp",
+    name: "GLA University",
+    grade: "A+",
+    image: "/images/universities/gla-university.webp",
   },
   {
-    name: "British Columbia Institute of Technology",
-    grade: "Ontario",
-    image: "/images/universities/canada/british-columbia-institute-of-technology.webp",
+    name: "Lovely Professional University",
+    grade: "A++",
+    image: "/images/universities/lpu.webp",
   },
   {
-    name: "Thompson Rivers University",
-    grade: "Ontario",
-    image: "/images/universities/canada/thompson-rivers-university.webp",
+    name: "Parul University",
+    grade: "A++",
+    image: "/images/universities/parul-university.webp",
+  },
+  {
+    name: "Sharda University",
+    grade: "A+",
+    image: "/images/universities/sharda-university.webp",
+  },
+  {
+    name: "Uttaranchal University",
+    grade: "A+",
+    image: "/images/universities/uttaranchal-university.webp",
   },
 ];
 
@@ -175,7 +185,7 @@ export default function UniversityCarousel() {
 function UniversityCard({ university, active }) {
   return (
     <article className={`group relative h-full overflow-hidden rounded-[26px] border bg-white transition-all duration-500 ${active ? "z-20 scale-100 border-[#18B8B5]/40 opacity-100 shadow-[0_24px_60px_rgba(6,59,114,0.16)]" : "z-10 scale-[0.93] border-[#DCE6ED] opacity-[0.82] shadow-[0_10px_30px_rgba(6,59,114,0.08)]"}`}>
-      {/* <div className="absolute left-0 right-0 top-0 z-20 h-[5px] bg-[#18B8B5]" /> */}
+      <div className="absolute left-0 right-0 top-0 z-20 h-[5px] bg-[#18B8B5]" />
 
       <div className="relative h-[285px] w-full overflow-hidden sm:h-[300px] md:h-[320px] lg:h-[335px]">
         <Image src={university.image} alt={university.name} fill sizes="(max-width: 639px) 88vw, (max-width: 1023px) 48vw, 31vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]" />
@@ -188,11 +198,11 @@ function UniversityCard({ university, active }) {
           </span>
 
           <div className="leading-none">
-            {/* <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#7A8998]">
+            <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#7A8998]">
               NAAC
-            </p> */}
+            </p>
 
-            <p className=" text-[13px] font-bold text-[#063B72]">
+            <p className="mt-1 text-[13px] font-bold text-[#063B72]">
               {university.grade}
             </p>
           </div>
@@ -213,7 +223,7 @@ function UniversityCard({ university, active }) {
             </p>
 
             <p className="mt-1.5 text-[14px] font-bold text-[#063B72] sm:text-[15px]">
-              {university.grade} Accredited
+              NAAC {university.grade} Accredited
             </p>
           </div>
 

@@ -201,7 +201,7 @@ export default function StudyIndiaHero() {
               sm:text-[13px]
             "
           >
-            Study In Canada
+           About Us
           </motion.div>
 
           {/* Heading */}

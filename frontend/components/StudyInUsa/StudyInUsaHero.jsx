@@ -1,21 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Building2,
-  Layers3,
-  BadgeCheck,
-  ShieldCheck,
-  Globe2,
+import { ArrowRight,
+  BadgeDollarSign,
+  Languages,
   BriefcaseBusiness,
-  Plane,
-  UsersRound,
-  Trophy, } from "lucide-react";
+} from "lucide-react";
 
-  const stats = [
-  { label: "Globally Oriented Education" },
-  { label: "Career-Focused Programs" },
-  { label: "International Opportunities" },
-  ];
+const stats = [
+  {
+    label: "Globally Ranked Universities",
+    icon: BadgeDollarSign,
+  },
+  {
+    label: "Flexible Academic Pathways",
+    icon: Languages,
+  },
+  {
+    label: "Career & Research Exposure",
+    icon: BriefcaseBusiness,
+  },
+];
 
 export default function StudyIndiaHero() {
   return (
@@ -60,13 +65,38 @@ export default function StudyIndiaHero() {
       ====================================================== */}
 
       {/* Main navy overlay */}
-      {/* <div aria-hidden="true" className="absolute inset-0 -z-20 bg-[#031b3f]/75" /> */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute inset-0 -z-20
+          bg-[#031b3f]/75
+        "
+      />
 
       {/* Top dark layer */}
-      <div aria-hidden="true" className="absolute inset-0 -z-20 bg-gradient-to-b from-[#02132e]/80 via-[#052452]/30 to-[#02132e]/90"/>
+      <div
+        aria-hidden="true"
+        className="
+          absolute inset-0 -z-20
+          bg-gradient-to-b
+          from-[#02132e]/80
+          via-[#052452]/30
+          to-[#02132e]/90
+        "
+      />
 
       {/* Center glow */}
-      <div aria-hidden="true" className="absolute left-1/2 top-[48%] -z-10 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/[0.08] blur-[110px]"/>
+      <div
+        aria-hidden="true"
+        className="
+          absolute left-1/2 top-[48%] -z-10
+          h-[400px] w-[700px]
+          -translate-x-1/2 -translate-y-1/2
+          rounded-full
+          bg-emerald-400/[0.08]
+          blur-[110px]
+        "
+      />
 
       {/* Saffron subtle glow */}
       <div
@@ -128,7 +158,7 @@ export default function StudyIndiaHero() {
             text-center
           "
         >
-          {/* Study In Canada label */}
+          {/* Study In USA label */}
           <motion.div
             initial={{
               opacity: 0,
@@ -159,7 +189,7 @@ export default function StudyIndiaHero() {
               sm:text-[13px]
             "
           >
-            Study In Canada
+            Study In USA
           </motion.div>
 
           {/* Heading */}
@@ -178,7 +208,7 @@ export default function StudyIndiaHero() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="
-              text-[28px]
+              text-[43px]
               font-bold
               leading-[1.02]
               tracking-[-0.045em]
@@ -186,11 +216,11 @@ export default function StudyIndiaHero() {
 
               sm:text-[54px]
               md:text-[68px]
-              lg:text-[40px]
-              xl:text-[50px]
+              lg:text-[80px]
+              xl:text-[88px]
             "
           >
-           Build Your Future Through 
+         Build Your Future
             <span
               className="
                 mt-1 block
@@ -198,7 +228,7 @@ export default function StudyIndiaHero() {
                 md:mt-2
               "
             >
-              Canadian Education.
+              Through American Education.
             </span>
           </motion.h1>
 
@@ -228,29 +258,14 @@ export default function StudyIndiaHero() {
 
               sm:text-[16px]
               md:mt-7
-              md:text-[16px]
+              md:text-[18px]
               md:leading-[1.7]
 
               lg:text-[19px]
             "
           >
-            Explore undergraduate, postgraduate, and career-focused programs at Canadian institutions, with guidance to help you choose the right course, institution, and pathway for your goals.
+            Explore undergraduate, postgraduate, and specialized programs across U.S. universities, with guidance to help you choose the right course, institution, and academic pathway for your goals.
           </motion.p>
-
-          {/* STATS BELOW DESCRIPTION */}
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.23, duration: 0.6 }} className="mx-auto mt-4 flex max-w-[1050px] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center sm:mt-5">
-              {stats.map((item, index) => (
-                <span key={item.label} className="inline-flex items-center gap-1.5">
-                  <span className="text-[10px] font-semibold uppercase leading-[1.6] tracking-[0.015em] text-[#5EEAD4] sm:text-[11px] md:text-[12px] lg:font-extrabold lg:text-[11px]">
-                    {item.label}
-                  </span>
-
-                  {index !== stats.length - 1 && (
-                    <span aria-hidden="true" className="text-[10px] font-bold text-white/75">•</span>
-                  )}
-                </span>
-              ))}
-            </motion.div>
 
           {/* CTA */}
           <motion.div
@@ -292,7 +307,7 @@ export default function StudyIndiaHero() {
                 duration-300
 
                 hover:-translate-y-1
-                hover:bg-[#929494]
+                hover:bg-[#0ab985]
                 hover:shadow-[0_15px_45px_rgba(16,185,129,0.38)]
 
                 sm:px-9 sm:py-4
@@ -301,7 +316,7 @@ export default function StudyIndiaHero() {
                 md:text-[16px]
               "
             >
-              Book Free Counselling
+             Book a Free Consultation
 
               <ArrowRight
                 size={18}
@@ -317,6 +332,158 @@ export default function StudyIndiaHero() {
         </div>
       </div>
 
+{/* =====================================================
+    BOTTOM STATS STRIP
+====================================================== */}
+
+<div
+  className="
+    relative z-20
+    border-t border-white/10
+    bg-[#021631]/85
+    backdrop-blur-xl
+  "
+>
+  {/* top line */}
+  <div
+    aria-hidden="true"
+    className="
+      absolute left-1/2 top-0
+      h-px w-[70%]
+      -translate-x-1/2
+      bg-[#2DD4BF]/40
+    "
+  />
+
+  {/* ================= MOBILE MARQUEE ================= */}
+  <div className="overflow-hidden md:hidden">
+    <div className="stats-marquee flex w-max">
+      {[...stats, ...stats].map((item, index) => {
+        const Icon = item.icon;
+
+        return (
+          <div
+            key={`${item.label}-${index}`}
+            className="
+              relative
+              flex min-w-max
+              items-center
+              gap-3
+              px-6 py-[18px]
+            "
+          >
+            <div
+              className="
+                flex h-9 w-9
+                items-center justify-center
+                rounded-full
+                border border-[#2DD4BF]/20
+                bg-[#2DD4BF]/10
+                text-[#2DD4BF]
+              "
+            >
+              <Icon size={18} strokeWidth={1.8} />
+            </div>
+
+            <span
+              className="
+                whitespace-nowrap
+                text-[13px]
+                font-semibold
+                text-white/90
+              "
+            >
+              {item.label}
+            </span>
+
+            <span
+              aria-hidden="true"
+              className="
+                ml-3
+                h-5 w-px
+                bg-white/15
+              "
+            />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  {/* ================= DESKTOP STATIC ================= */}
+  <div
+    className="
+      mx-auto
+      hidden max-w-[1500px]
+      md:flex
+      md:justify-center
+      md:px-8
+    "
+  >
+    {stats.map((item, index) => {
+      const Icon = item.icon;
+
+      return (
+        <div
+          key={item.label}
+          className="
+            relative
+            flex flex-1
+            items-center justify-center
+            px-5 py-[22px]
+            lg:px-8
+          "
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="
+                flex h-9 w-9
+                items-center justify-center
+                rounded-full
+                border border-[#2DD4BF]/20
+                bg-[#2DD4BF]/10
+                text-[#2DD4BF]
+
+                lg:h-10 lg:w-10
+              "
+            >
+              <Icon
+                size={18}
+                strokeWidth={1.8}
+                className="lg:h-5 lg:w-5"
+              />
+            </div>
+
+            <span
+              className="
+                whitespace-nowrap
+                text-[13px]
+                font-semibold
+                tracking-[0.01em]
+                text-white/90
+
+                lg:text-[15px]
+              "
+            >
+              {item.label}
+            </span>
+          </div>
+
+          {index !== stats.length - 1 && (
+            <span
+              aria-hidden="true"
+              className="
+                absolute right-0
+                h-6 w-px
+                bg-white/15
+              "
+            />
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
     </section>
   );
 }

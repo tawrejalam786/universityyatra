@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Building2,
+import {
+  ArrowRight,
+  Building2,
   Layers3,
   BadgeCheck,
   ShieldCheck,
-  Trophy, } from "lucide-react";
+  Trophy,
+} from "lucide-react";
 
 const stats = [
   {
@@ -61,10 +64,7 @@ export default function StudyIndiaHero() {
             object-center
           "
         >
-          <source
-            src="/videos/study-in-india.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/study-in-india.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -73,13 +73,13 @@ export default function StudyIndiaHero() {
       ====================================================== */}
 
       {/* Main navy overlay */}
-      <div
+      {/* <div
         aria-hidden="true"
         className="
           absolute inset-0 -z-20
           bg-[#031b3f]/75
         "
-      />
+      /> */}
 
       {/* Top dark layer */}
       <div
@@ -122,8 +122,7 @@ export default function StudyIndiaHero() {
       <div
         aria-hidden="true"
         className="
-          absolute -right-32 bottom-16 -z-10
-          h-[340px] w-[340px]
+          absolute -right-32 bottom-16 -z-10 h-[340px] w-[340px]
           rounded-full
           bg-emerald-400/[0.11]
           blur-[120px]
@@ -131,7 +130,7 @@ export default function StudyIndiaHero() {
       />
 
       {/* Noise / dot feeling */}
-      <div
+      {/* <div
         aria-hidden="true"
         className="
           absolute inset-0 -z-10
@@ -139,7 +138,7 @@ export default function StudyIndiaHero() {
           [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)]
           [background-size:34px_34px]
         "
-      />
+      /> */}
 
       {/* =====================================================
           HERO CONTENT
@@ -225,7 +224,7 @@ export default function StudyIndiaHero() {
               sm:text-[54px]
               md:text-[68px]
               lg:text-[80px]
-              xl:text-[88px]
+              xl:text-[50px]
             "
           >
             A Degree That
@@ -277,6 +276,21 @@ export default function StudyIndiaHero() {
             your long-term career goals.
           </motion.p>
 
+          {/* STATS BELOW DESCRIPTION */}
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.23, duration: 0.6 }} className="mx-auto mt-4 flex max-w-[1050px] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center sm:mt-5">
+            {stats.map((item, index) => (
+              <span key={item.label} className="inline-flex items-center gap-1.5">
+                <span className="text-[10px] font-semibold uppercase leading-[1.6] tracking-[0.015em] text-[#5EEAD4] sm:text-[11px] md:text-[12px] lg:font-extrabold lg:text-[11px]">
+                  {item.label}
+                </span>
+
+                {index !== stats.length - 1 && (
+                  <span aria-hidden="true" className="text-[10px] font-bold text-white/75">•</span>
+                )}
+              </span>
+            ))}
+          </motion.div>
+
           {/* CTA */}
           <motion.div
             initial={{
@@ -327,7 +341,6 @@ export default function StudyIndiaHero() {
               "
             >
               Book Free Counselling
-
               <ArrowRight
                 size={18}
                 strokeWidth={2}
@@ -342,158 +355,6 @@ export default function StudyIndiaHero() {
         </div>
       </div>
 
-{/* =====================================================
-    BOTTOM STATS STRIP
-====================================================== */}
-
-<div
-  className="
-    relative z-20
-    border-t border-white/10
-    bg-[#021631]/85
-    backdrop-blur-xl
-  "
->
-  {/* top line */}
-  <div
-    aria-hidden="true"
-    className="
-      absolute left-1/2 top-0
-      h-px w-[70%]
-      -translate-x-1/2
-      bg-[#2DD4BF]/40
-    "
-  />
-
-  {/* ================= MOBILE MARQUEE ================= */}
-  <div className="overflow-hidden md:hidden">
-    <div className="stats-marquee flex w-max">
-      {[...stats, ...stats].map((item, index) => {
-        const Icon = item.icon;
-
-        return (
-          <div
-            key={`${item.label}-${index}`}
-            className="
-              relative
-              flex min-w-max
-              items-center
-              gap-3
-              px-6 py-[18px]
-            "
-          >
-            <div
-              className="
-                flex h-9 w-9
-                items-center justify-center
-                rounded-full
-                border border-[#2DD4BF]/20
-                bg-[#2DD4BF]/10
-                text-[#2DD4BF]
-              "
-            >
-              <Icon size={18} strokeWidth={1.8} />
-            </div>
-
-            <span
-              className="
-                whitespace-nowrap
-                text-[13px]
-                font-semibold
-                text-white/90
-              "
-            >
-              {item.label}
-            </span>
-
-            <span
-              aria-hidden="true"
-              className="
-                ml-3
-                h-5 w-px
-                bg-white/15
-              "
-            />
-          </div>
-        );
-      })}
-    </div>
-  </div>
-
-  {/* ================= DESKTOP STATIC ================= */}
-  <div
-    className="
-      mx-auto
-      hidden max-w-[1500px]
-      md:flex
-      md:justify-center
-      md:px-8
-    "
-  >
-    {stats.map((item, index) => {
-      const Icon = item.icon;
-
-      return (
-        <div
-          key={item.label}
-          className="
-            relative
-            flex flex-1
-            items-center justify-center
-            px-5 py-[22px]
-            lg:px-8
-          "
-        >
-          <div className="flex items-center gap-3">
-            <div
-              className="
-                flex h-9 w-9
-                items-center justify-center
-                rounded-full
-                border border-[#2DD4BF]/20
-                bg-[#2DD4BF]/10
-                text-[#2DD4BF]
-
-                lg:h-10 lg:w-10
-              "
-            >
-              <Icon
-                size={18}
-                strokeWidth={1.8}
-                className="lg:h-5 lg:w-5"
-              />
-            </div>
-
-            <span
-              className="
-                whitespace-nowrap
-                text-[13px]
-                font-semibold
-                tracking-[0.01em]
-                text-white/90
-
-                lg:text-[15px]
-              "
-            >
-              {item.label}
-            </span>
-          </div>
-
-          {index !== stats.length - 1 && (
-            <span
-              aria-hidden="true"
-              className="
-                absolute right-0
-                h-6 w-px
-                bg-white/15
-              "
-            />
-          )}
-        </div>
-      );
-    })}
-  </div>
-</div>
     </section>
   );
 }
