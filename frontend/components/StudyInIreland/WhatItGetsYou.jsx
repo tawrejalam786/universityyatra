@@ -5,67 +5,83 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
   BriefcaseBusiness,
-  BadgeDollarSign,
-  Languages,
-  Clock3,
-  Earth,
   GraduationCap,
+  BookOpen,
+  Globe2,
+  Layers3,
   Plus,
   Minus,
-  ArrowRight,
   ArrowLeft,
+  ArrowRight,
+  Microscope,
 } from "lucide-react";
+
+/* =========================================
+   UK CONTENT - EXACTLY AS PROVIDED
+========================================= */
+
 
 const benefits = [
   {
     number: "01",
-    title: "Strong Career Opportunities",
-    description: "Explore study pathways connected to growing industries and career opportunities across European markets.",
+    title: "Strong Industry Connections",
+    description:
+      "Many programs incorporate projects, placements, or practical learning linked to professional environments.",
     icon: BriefcaseBusiness,
     accent: "#063B72",
     soft: "#EAF1F8",
   },
   {
     number: "02",
-    title: "Affordable Tuition Fees",
-    description: "Several European destinations offer comparatively accessible tuition options for international students.",
-    icon: BadgeDollarSign,
+    title: "English-Taught Education",
+    description:
+      "Study in an English-speaking environment across a wide selection of undergraduate and postgraduate programs.",
+    icon: BookOpen,
     accent: "#18B8B5",
     soft: "#E8F8F7",
   },
   {
     number: "03",
-    title: "English-Taught Programs",
-    description: "Choose from a growing range of programs delivered fully or partially in English.",
-    icon: Languages,
+    title: "Technology & Innovation Exposure",
+    description:
+      "Ireland’s strong technology ecosystem creates opportunities to study in an environment closely connected to innovation-driven industries.",
+    icon: Microscope,
     accent: "#0E7490",
     soft: "#EAF7FA",
   },
   {
     number: "04",
-    title: "Shorter Course Duration",
-    description: "Selected European programs offer shorter study durations, allowing students to complete their degrees sooner.",
-    icon: Clock3,
+    title: "Career-Focused Programs",
+    description:
+      "Explore specialized courses designed around specific disciplines and evolving professional requirements.",
+    icon: GraduationCap,
     accent: "#7C3AED",
     soft: "#F3EEFF",
   },
   {
     number: "05",
-    title: "Cultural & International Exposure",
-    description: "Study alongside students from different countries while experiencing diverse cultures, languages, and academic environments.",
-    icon: Earth,
+    title: "Wide Range of Specializations",
+    description:
+      "Choose from fields including technology, business, finance, engineering, healthcare, data, and more.",
+    icon: Layers3,
     accent: "#047857",
     soft: "#EAF8F2",
   },
   {
     number: "06",
-    title: "Globally Recognized Degrees",
-    description: "Earn degrees from established European institutions with international academic and professional relevance.",
-    icon: GraduationCap,
+    title: "Post-Study Work Options",
+    description:
+      "Eligible graduates can explore available post-study work routes and professional opportunities, subject to applicable requirements.",
+    icon: Globe2,
     accent: "#B45309",
     soft: "#FFF7E8",
   },
 ];
+
+
+/* =========================================
+   MAIN COMPONENT
+========================================= */
 
 export default function WhatItGetsYou() {
   const [activeStep, setActiveStep] = useState(0);
@@ -81,7 +97,10 @@ export default function WhatItGetsYou() {
     activeRef.current = activeStep;
   }, [activeStep]);
 
-  // CANADA STYLE AUTOMATIC SCROLL ACCORDION
+  /* =========================================
+     SCROLL-BASED ACTIVE ACCORDION
+  ========================================= */
+
   useEffect(() => {
     let frame = null;
 
@@ -95,7 +114,9 @@ export default function WhatItGetsYou() {
 
       const bounds = section.getBoundingClientRect();
 
-      if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
+      if (bounds.bottom < 0 || bounds.top > window.innerHeight) {
+        return;
+      }
 
       const targetY = window.innerHeight * 0.48;
 
@@ -123,6 +144,7 @@ export default function WhatItGetsYou() {
 
     const onScroll = () => {
       if (frame !== null) return;
+
       frame = window.requestAnimationFrame(updateActiveStep);
     };
 
@@ -141,13 +163,20 @@ export default function WhatItGetsYou() {
     };
   }, [manualStep]);
 
+  /* =========================================
+     MANUAL CARD SELECTION
+  ========================================= */
+
   const handleCardClick = (index) => {
     activeRef.current = index;
     setActiveStep(index);
     setManualStep(index);
   };
 
-  // RESUME AUTOMATIC MODE WHEN SCROLLING
+  /* =========================================
+     RETURN TO SCROLL MODE
+  ========================================= */
+
   useEffect(() => {
     if (manualStep === null) return;
 
@@ -168,25 +197,37 @@ export default function WhatItGetsYou() {
     <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
       <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
 
-        {/* HEADING */}
+        {/* =====================================
+            HEADING
+        ===================================== */}
+
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
+
           <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
-            Inside the <span className="text-[#18B8B5]">European Study</span> Experience
+            Inside the <span className="text-[#18B8B5]">Irish Study</span> Experience
           </h2>
+
         </motion.div>
 
-        {/* CANADA STYLE TIMELINE */}
+        {/* =====================================
+            CANADA STYLE TIMELINE
+        ===================================== */}
+
         <div className="relative mx-auto w-full max-w-[1100px]">
 
-          {/* CONTINUOUS MULTICOLOR CENTER BAR */}
+          {/* MULTICOLOR CENTER BAR */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-y-5 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]">
             {benefits.map((item) => (
               <div key={item.number} className="min-h-0 flex-1" style={{ backgroundColor: item.accent }} />
             ))}
           </div>
 
-          {/* ALTERNATING ACCORDION ROWS */}
+          {/* =====================================
+              TIMELINE ITEMS
+          ===================================== */}
+
           <div className="relative z-20">
+
             {benefits.map((item, index) => {
               const isLeft = index % 2 === 1;
               const isActive = activeStep === index;
@@ -194,32 +235,52 @@ export default function WhatItGetsYou() {
               return (
                 <div key={item.number} className="relative grid min-h-[135px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-5 sm:min-h-[155px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] md:min-h-[175px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)]">
 
-                  {/* LEFT */}
+                  {/* LEFT COLUMN */}
                   <div className="flex min-w-0 items-center justify-end">
+
                     {isLeft ? (
-                      <TimelineAccordionCard item={item} index={index} active={isActive} onClick={() => handleCardClick(index)} reduceMotion={reduceMotion} side="left" />
+                      <TimelineAccordionCard
+                        item={item}
+                        index={index}
+                        active={isActive}
+                        onClick={() => handleCardClick(index)}
+                        reduceMotion={reduceMotion}
+                        side="left"
+                      />
                     ) : (
                       <StepLabel item={item} active={isActive} side="left" />
                     )}
+
                   </div>
 
-                  {/* CENTER NUMBER */}
+                  {/* CENTER STEP NUMBER */}
                   <div ref={(element) => { nodeRefs.current[index] = element; }} className="relative z-20 flex items-center justify-center">
+
                     <motion.span initial={false} animate={{ scale: isActive ? 1.12 : 1, opacity: isActive ? 1 : 0.9 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[14px] font-extrabold text-white sm:h-[60px] sm:w-[60px] sm:text-[19px] md:h-[76px] md:w-[76px] md:text-[24px]">
                       {item.number}
                     </motion.span>
+
                   </div>
 
-                  {/* RIGHT */}
+                  {/* RIGHT COLUMN */}
                   <div className="flex min-w-0 items-center justify-start">
+
                     {!isLeft ? (
-                      <TimelineAccordionCard item={item} index={index} active={isActive} onClick={() => handleCardClick(index)} reduceMotion={reduceMotion} side="right" />
+                      <TimelineAccordionCard
+                        item={item}
+                        index={index}
+                        active={isActive}
+                        onClick={() => handleCardClick(index)}
+                        reduceMotion={reduceMotion}
+                        side="right"
+                      />
                     ) : (
                       <StepLabel item={item} active={isActive} side="right" />
                     )}
+
                   </div>
 
-                  {/* CONNECTOR */}
+                  {/* CONNECTOR LINE */}
                   <span aria-hidden="true" className={`pointer-events-none absolute top-1/2 z-0 h-[2px] w-[10px] -translate-y-1/2 bg-[#CBD5E1] sm:w-[17px] md:w-[25px] ${isLeft ? "left-[calc(50%-37px)] -translate-x-full sm:left-[calc(50%-45px)] md:left-[calc(50%-61px)]" : "right-[calc(50%-37px)] translate-x-full sm:right-[calc(50%-45px)] md:right-[calc(50%-61px)]"}`} />
 
                   {/* ACTIVE GLOW */}
@@ -230,6 +291,7 @@ export default function WhatItGetsYou() {
                 </div>
               );
             })}
+
           </div>
 
         </div>
@@ -238,37 +300,55 @@ export default function WhatItGetsYou() {
   );
 }
 
-/* STEP NUMBER LABEL */
+/* =========================================
+   SIDE STEP LABEL
+========================================= */
 
 function StepLabel({ item, active, side }) {
   const isLeft = side === "left";
 
   return (
     <div className={`flex min-w-0 items-center gap-1 sm:gap-2 ${isLeft ? "justify-end" : "justify-start"}`}>
-      {!isLeft && <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />}
+
+      {!isLeft && (
+        <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
+      )}
 
       <motion.span initial={false} animate={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent, borderColor: active ? item.accent : `${item.accent}40` }} transition={{ duration: 0.3 }} className="inline-flex h-[30px] min-w-[37px] items-center justify-center rounded-full border px-2 text-[11px] font-bold shadow-sm sm:h-[36px] sm:min-w-[55px] sm:text-[13px] md:min-w-[62px] md:text-[15px]">
         {item.number}
       </motion.span>
 
-      {isLeft && <ArrowRight className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />}
+      {isLeft && (
+        <ArrowRight className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
+      )}
+
     </div>
   );
 }
 
-/* ACCORDION CARD */
+/* =========================================
+   ACCORDION CARD
+========================================= */
 
-function TimelineAccordionCard({ item, index, active, onClick, reduceMotion, side }) {
+function TimelineAccordionCard({
+  item,
+  index,
+  active,
+  onClick,
+  reduceMotion,
+  side,
+}) {
   const isLeft = side === "left";
-  const contentId = `europe-benefit-${index}`;
-  const Icon = item.icon;
+  const contentId = `uk-benefit-${index}`;
 
   return (
     <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
 
-      {/* HEADER */}
+      {/* CARD HEADER */}
       <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-1.5 px-2.5 py-3 text-left sm:gap-3 sm:px-4 sm:py-4 md:px-5 md:py-5">
+
         <div className="flex min-w-0 flex-1 items-start gap-1.5 sm:gap-2.5">
+
           <span className="shrink-0 text-[11px] font-extrabold sm:text-[14px] md:text-[18px]" style={{ color: item.accent }}>
             {item.number}
           </span>
@@ -276,28 +356,40 @@ function TimelineAccordionCard({ item, index, active, onClick, reduceMotion, sid
           <h3 className="min-w-0 text-[10px] font-bold leading-[1.35] text-[#063B72] sm:text-[13px] md:text-[17px] lg:text-[18px]">
             {item.title}
           </h3>
+
         </div>
 
+        {/* PLUS / MINUS */}
         <span className="flex h-[23px] w-[23px] shrink-0 items-center justify-center rounded-full sm:h-[29px] sm:w-[29px] md:h-[34px] md:w-[34px]" style={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent }}>
-          {active ? <Minus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} /> : <Plus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />}
+          {active ? (
+            <Minus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
+          ) : (
+            <Plus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
+          )}
         </span>
+
       </button>
 
-      {/* DESCRIPTION */}
+      {/* =====================================
+          ACCORDION DESCRIPTION
+      ===================================== */}
+
       <AnimatePresence initial={false}>
         {active && (
           <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">
+
             <div className="border-t border-[#EDF1F5] px-2.5 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4 md:px-5">
-              <div className="flex items-start gap-2">
-                <Icon size={16} className="mt-0.5 hidden shrink-0 sm:block" style={{ color: item.accent }} />
-                <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:text-[14px] md:leading-[1.7]">
-                  {item.description}
-                </p>
-              </div>
+
+              <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:text-[14px] md:leading-[1.7]">
+                {item.description}
+              </p>
+
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
+
     </motion.div>
   );
 }

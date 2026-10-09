@@ -185,7 +185,7 @@ export default function UniversityCarousel() {
 function UniversityCard({ university, active }) {
   return (
     <article className={`group relative h-full overflow-hidden rounded-[26px] border bg-white transition-all duration-500 ${active ? "z-20 scale-100 border-[#18B8B5]/40 opacity-100 shadow-[0_24px_60px_rgba(6,59,114,0.16)]" : "z-10 scale-[0.93] border-[#DCE6ED] opacity-[0.82] shadow-[0_10px_30px_rgba(6,59,114,0.08)]"}`}>
-      <div className="absolute left-0 right-0 top-0 z-20 h-[5px] bg-[#18B8B5]" />
+     
 
       <div className="relative h-[285px] w-full overflow-hidden sm:h-[300px] md:h-[320px] lg:h-[335px]">
         <Image src={university.image} alt={university.name} fill sizes="(max-width: 639px) 88vw, (max-width: 1023px) 48vw, 31vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]" />

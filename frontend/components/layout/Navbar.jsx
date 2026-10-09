@@ -11,17 +11,18 @@ const NAV_ITEMS = [
     href: "#",
     children: [
       { label: "Study in Canada", href: "/study-in-canada" },
-      { label: "Study in the UK & Ireland", href: "/study-in-uk-ireland" },
-      { label: "Study in Europe", href: "/study-in-europe" },
       { label: "Study in the USA", href: "/study-in-usa" },
-      {
-        label: "Study in Australia & New Zealand",
-        href: "/study-in-australia-new-zealand",
-      },
-      {
-        label: "Study in the UAE,Singapore, Russia & Cyprus",
-        href: "/study-in-singapore-russia-cyprus",
-      },
+      { label: "Study in Europe", href: "/study-in-europe" },
+      { label: "Study in UK", href: "/study-in-uk" },
+      { label: "Study in Ireland", href: "/study-in-ireland"},
+      { label: "Study in UAE", href: "/study-in-uae"},
+      { label: "Study in Russia", href: "/study-in-russia"},
+      { label: "Study in Australia", href: "/study-in-australia"},
+      { label: "Study in New Zealand", href: "/study-in-new-zealand"},
+      { label: "Study in New Singapore", href: "/study-in-new-singapore"},
+      { label: "Study in New Japan", href: "/study-in-new-japan"},
+
+      
       { label: "Mbbs Abroad", href: "/mbbs-abroad" },
       { label: "PhD Programs Abroad", href: "/phd-programs-abroad" },
     ],

@@ -5,20 +5,24 @@ import { ArrowRight,
   BadgeDollarSign,
   Languages,
   BriefcaseBusiness,
+  ArrowUpRight,
 } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   {
-    label: "Affordable Study Options",
-  },
-  {
     label: "English-Taught Programs",
+    icon: BadgeDollarSign,
   },
   {
-    label: "International Career Exposure",
+    label: "Industry-Focused Education",
+    icon: Languages,
+  },
+  {
+    label: "Technology & Innovation",
+    icon: BriefcaseBusiness,
   },
 ];
-
 
 export default function StudyIndiaHero() {
   return (
@@ -61,15 +65,6 @@ export default function StudyIndiaHero() {
       {/* =====================================================
           VIDEO OVERLAYS
       ====================================================== */}
-
-      {/* Main navy overlay */}
-      {/* <div
-        aria-hidden="true"
-        className="
-          absolute inset-0 -z-20
-          bg-[#031b3f]/75
-        "
-      /> */}
 
       {/* Top dark layer */}
       <div
@@ -156,39 +151,42 @@ export default function StudyIndiaHero() {
             text-center
           "
         >
-          {/* Study In Europe label */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 14,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.55,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              mb-5
-              inline-flex items-center
-              rounded-full
-              border border-white/15
-              bg-white/[0.08]
-              px-5 py-2
-              text-[12px]
-              font-semibold
-              uppercase
-              tracking-[0.18em]
-              text-white
-              backdrop-blur-md
+          {/* Study In UK label */}
+         
 
-              sm:text-[13px]
-            "
-          >
-            Study In Europe
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mb-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-white/20 bg-[#0B2538]/75 py-1.5 pl-1.5 pr-4 shadow-[0_8px_25px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-xl sm:gap-3 sm:pr-5"
+        >
+          {/* SUBTLE GLASS HIGHLIGHT */}
+          <span aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
+          {/* UK FLAG */}
+          <span className="relative flex h-[34px] w-[34px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-white/85 bg-white shadow-[0_3px_10px_rgba(0,0,0,0.25)]">
+            <Image
+              src="/images/countrylogo/ireland.webp"
+              alt="Ireland flag"
+              width={34}
+              height={34}
+              className="h-full w-full object-cover"
+            />
+          </span>
+
+          {/* LABEL */}
+          <span className="flex flex-col items-start gap-[2px]">
+            {/* <span className="text-[8px] font-bold uppercase leading-none tracking-[0.18em] text-[#8CE5DE] sm:text-[9px]">
+              Your Destination
+            </span> */}
+
+            <span className="whitespace-nowrap text-[13px] font-extrabold uppercase leading-tight tracking-[0.08em] text-white sm:text-[14px]">
+              Study In Ireland
+            </span>
+          </span>
+        </motion.div>
+
+
 
           {/* Heading */}
           <motion.h1
@@ -212,13 +210,13 @@ export default function StudyIndiaHero() {
               tracking-[-0.045em]
               text-white
 
-             sm:text-[54px]
+              sm:text-[54px]
               md:text-[68px]
               lg:text-[40px]
               xl:text-[50px]
             "
           >
-          Build Your Future
+         Build Your Future in  
             <span
               className="
                 mt-1 block
@@ -226,7 +224,7 @@ export default function StudyIndiaHero() {
                 md:mt-2
               "
             >
-              Across Europe.
+              Ireland’s Industry-Connected Education System
             </span>
           </motion.h1>
 
@@ -262,7 +260,7 @@ export default function StudyIndiaHero() {
               lg:text-[19px]
             "
           >
-            Explore undergraduate, postgraduate, and career-focused programs across European universities, with guidance to help you choose the right country, institution, and course for your academic and career goals.
+            Explore undergraduate, postgraduate, and career-focused programs across Irish institutions, with guidance to help you choose a course and pathway suited to your academic and professional plans.
           </motion.p>
 
           {/* STATS BELOW DESCRIPTION */}

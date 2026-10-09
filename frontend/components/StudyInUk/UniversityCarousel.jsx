@@ -9,78 +9,80 @@ import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
+
 const universities = [
   {
-    name: "Chandigarh University",
-    grade: "A+",
-    image: "/images/universities/chandigarh-university.webp",
+    name: "Durham University",
+    grade: "England",
+    image: "/images/universities/durham-university.webp",
   },
   {
-    name: "Amrita Vishwa Vidyapeetham",
-    grade: "A++",
-    image: "/images/universities/amrita-university.webp",
+    name: "University of Edinburgh",
+    grade: "Scotland",
+    image: "/images/universities/university-of-edinburgh.webp",
   },
   {
-    name: "Vivekananda Global University",
-    grade: "A+",
-    image: "/images/universities/vgu.webp",
+    name: "University of Birmingham",
+    grade: "England",
+    image: "/images/universities/university-of-birmingham.webp",
   },
   {
-    name: "Shoolini University",
-    grade: "A+",
-    image: "/images/universities/shoolini-university.webp",
+    name: "King’s College London",
+    grade: "England",
+    image: "/images/universities/kings-college-london.webp",
   },
   {
-    name: "Amity University",
-    grade: "A+",
-    image: "/images/universities/amity-university.webp",
+    name: "University of Southampton",
+    grade: "England",
+    image: "/images/universities/university-of-southampton.webp",
   },
   {
-    name: "Manipal University Jaipur",
-    grade: "A+",
-    image: "/images/universities/manipal-university-jaipur.webp",
+    name: "University of Glasgow",
+    grade: "Scotland",
+    image: "/images/universities/university-of-glasgow.webp",
   },
   {
-    name: "University of Petroleum and Energy Studies (UPES)",
-    grade: "A",
-    image: "/images/universities/upes.webp",
+    name: "University of Exeter",
+    grade: "England",
+    image: "/images/universities/university-of-exeter.webp",
   },
   {
-    name: "Dr. D. Y. Patil University, Navi Mumbai",
-    grade: "A++",
-    image: "/images/universities/dy-patil-university.webp",
+    name: "University of Nottingham",
+    grade: "England",
+    image: "/images/universities/university-of-nottingham.webp",
   },
   {
-    name: "Galgotias University",
-    grade: "A+",
-    image: "/images/universities/galgotias-university.webp",
+    name: "Cardiff University",
+    grade: "Wales",
+    image: "/images/universities/cardiff-university.webp",
   },
   {
-    name: "GLA University",
-    grade: "A+",
-    image: "/images/universities/gla-university.webp",
+    name: "Loughborough University",
+    grade: "England",
+    image: "/images/universities/loughborough-university.webp",
   },
   {
-    name: "Lovely Professional University",
-    grade: "A++",
-    image: "/images/universities/lpu.webp",
+    name: "Queen's University Belfast",
+    grade: "Northern Ireland",
+    image: "/images/universities/queens-university-belfast.webp",
   },
   {
-    name: "Parul University",
-    grade: "A++",
-    image: "/images/universities/parul-university.webp",
+    name: "University of Strathclyde",
+    grade: "Scotland",
+    image: "/images/universities/university-of-strathclyde.webp",
   },
   {
-    name: "Sharda University",
-    grade: "A+",
-    image: "/images/universities/sharda-university.webp",
+    name: "University of Aberdeen",
+    grade: "Scotland",
+    image: "/images/universities/university-of-aberdeen.webp",
   },
   {
-    name: "Uttaranchal University",
-    grade: "A+",
-    image: "/images/universities/uttaranchal-university.webp",
+    name: "University of Reading",
+    grade: "England",
+    image: "/images/universities/university-of-reading.webp",
   },
 ];
+
 
 export default function UniversityCarousel() {
   const swiperRef = useRef(null);
@@ -197,10 +199,6 @@ function UniversityCard({ university, active }) {
           </span>
 
           <div className="leading-none">
-            <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#7A8998]">
-              NAAC
-            </p>
-
             <p className="mt-1 text-[13px] font-bold text-[#063B72]">
               {university.grade}
             </p>
@@ -217,12 +215,9 @@ function UniversityCard({ university, active }) {
       <div className="px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-[#8A98A7]">
-              Accreditation
-            </p>
 
             <p className="mt-1.5 text-[14px] font-bold text-[#063B72] sm:text-[15px]">
-              NAAC {university.grade} Accredited
+              {university.grade}
             </p>
           </div>
 

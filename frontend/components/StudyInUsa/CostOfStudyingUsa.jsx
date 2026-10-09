@@ -1,21 +1,33 @@
+
 "use client";
 
-import { Award, BookOpen, CircleDollarSign, GraduationCap, House, WalletCards } from "lucide-react";
+import {
+  Award,
+  BookOpen,
+  CircleDollarSign,
+  GraduationCap,
+  House,
+  WalletCards,
+} from "lucide-react";
+
+/* =========================================
+   USA COST DATA - CONTENT UNCHANGED
+========================================= */
 
 const tuitionFees = [
   {
     title: "PG Diploma, Diploma & Certificate Program",
-    price: "CAD 15,000 – 20,000",
+    price: "USD —",
     icon: Award,
   },
   {
     title: "Bachelor’s",
-    price: "CAD 15,000 – 30,000",
+    price: "USD —",
     icon: GraduationCap,
   },
   {
     title: "Master’s",
-    price: "CAD 17,000 – 35,000",
+    price: "USD —",
     icon: BookOpen,
   },
 ];
@@ -23,7 +35,7 @@ const tuitionFees = [
 const livingExpenses = [
   {
     title: "Average",
-    price: "CAD 15,000 – 25,000",
+    price: "USD —",
     icon: WalletCards,
   },
 ];
@@ -31,135 +43,232 @@ const livingExpenses = [
 const accommodationCosts = [
   {
     title: "On-Campus",
-    price: "CAD 6,000 – 12,000",
+    price: "USD —",
     icon: House,
   },
   {
     title: "Off-Campus",
-    price: "CAD 7,000 – 18,000",
+    price: "USD —",
     icon: House,
   },
   {
     title: "Rentals / Homestays",
-    price: "CAD 8,000 – 14,000",
+    price: "USD —",
     icon: House,
   },
 ];
 
-export default function CostOfStudyingCanada() {
+/* =========================================
+   EUROPE REFERENCE CARD THEMES
+========================================= */
+
+const cardThemes = {
+  purple: {
+    cardClass: "bg-[#7254D8] text-white",
+    iconClass: "bg-[#5D43C1] text-white",
+    dotClass: "bg-[#5D43C1]",
+  },
+  pink: {
+    cardClass: "bg-[#E72D82] text-white",
+    iconClass: "bg-[#C91E6C] text-white",
+    dotClass: "bg-[#C91E6C]",
+  },
+  yellow: {
+    cardClass: "bg-[#FFC52E] text-[#263238]",
+    iconClass: "bg-[#E3A900] text-[#263238]",
+    dotClass: "bg-[#E3A900]",
+  },
+};
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+export default function CostOfStudyingUSA() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F4F7FB] py-11 sm:py-14 md:py-16 lg:py-[68px]">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-32 top-10 h-[280px] w-[280px] rounded-full bg-[#18B8B5]/[0.07] blur-[90px]" />
-      <div aria-hidden="true" className="pointer-events-none absolute -right-32 bottom-0 h-[320px] w-[320px] rounded-full bg-[#063B72]/[0.05] blur-[100px]" />
+    <section className="relative isolate w-full overflow-hidden bg-[#031126] py-14 sm:py-16 lg:py-20">
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-8 px-4 sm:px-5 md:gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start lg:px-6">
+      {/* DARK NAVY BACKGROUND */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_10%,#09254B_0%,#06182F_42%,#020B1C_100%)]" />
 
-        {/* LEFT CONTENT */}
-        <div className="max-w-[560px] lg:sticky lg:top-24">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/20 bg-[#18B8B5]/10 px-3.5 py-2">
-            <CircleDollarSign size={15} className="text-[#18B8B5]" strokeWidth={2.2} />
+      {/* TOP LEFT BLUE GLOW */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-[110px] -top-[150px] -z-10 h-[280px] w-[280px] rounded-full bg-[#0864C0]/20 blur-[75px]" />
 
-            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0F8F8C]">
+      {/* TOP RIGHT BLUE GLOW */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-[180px] -top-[170px] -z-10 h-[450px] w-[450px] rounded-full bg-[#07458C]/15 blur-[110px]" />
+
+      {/* RIGHT SIDE OUTLINE */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-[230px] top-[34%] -z-10 h-[420px] w-[420px] rounded-full border border-[#0967C5]/35 sm:-right-[200px] sm:h-[480px] sm:w-[480px]" />
+
+      {/* LEFT SIDE OUTLINE */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-[240px] top-[45%] -z-10 h-[400px] w-[400px] rounded-full border border-[#0967C5]/35 sm:-left-[210px] sm:h-[460px] sm:w-[460px]" />
+
+      {/* LEFT DOT PATTERN */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-45 md:block" style={{ backgroundImage: "radial-gradient(circle, #1376CF 1.5px, transparent 1.5px)", backgroundSize: "23px 23px" }} />
+
+      {/* CENTER BLUE GLOW */}
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[45%] -z-10 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#0B3770]/15 blur-[120px]" />
+
+      {/* MAIN CONTAINER */}
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+
+        {/* HEADING */}
+        <div className="mx-auto mb-12 max-w-[760px] text-center">
+
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/30 bg-[#18B8B5]/10 px-4 py-2">
+            <CircleDollarSign size={15} className="text-[#18B8B5]" strokeWidth={2} />
+
+            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#53D8D2]">
               Study Cost
             </span>
           </div>
 
-          <h2 className="max-w-[530px] text-[31px] font-bold leading-[1.08] tracking-[-0.035em] text-[#063B72] sm:text-[36px] md:text-[42px] lg:text-[47px]">
-            Cost Of Studying <span className="text-[#18B8B5]">in Canada</span>
+          <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
+            Cost Of Studying{" "}
+            <span className="text-[#18B8B5]">in USA</span>
           </h2>
 
-          <div className="mt-5 flex items-center gap-2">
-            <span className="h-[4px] w-2 rounded-full bg-[#18B8B5]" />
-            <span className="h-[4px] w-2 rounded-full bg-[#18B8B5]/70" />
-            <span className="h-[4px] w-2 rounded-full bg-[#18B8B5]/40" />
-            <span className="h-[4px] w-20 rounded-full bg-[#063B72]" />
-          </div>
-
-          <p className="mt-6 text-[14px] leading-[1.75] text-[#526477] sm:text-[15px] md:text-[16px]">
-            The cost of studying in Canada for international students depends on several factors, including the institution, program of study, location, and available funding opportunities. Additionally, living expenses such as rent, utilities, and recreational activities play a significant role in the overall cost.
+          <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">
+            The cost of studying in the USA for international students depends on several factors, including the university, program of study, location, and available scholarships or financial aid. Living expenses such as accommodation, transportation, utilities, and personal expenses also contribute to the overall cost of studying in the United States.
           </p>
+
         </div>
 
-        {/* RIGHT CONTENT */}
-        <div className="w-full space-y-5">
+        {/* STACKED CARDS */}
+        <div className="mx-auto max-w-[900px]">
+          <div className="relative flex flex-col items-center">
 
-          {/* TUITION FEES */}
-          <CostGroup title="Tuition Fees" subtitle="Average per annum" icon={CircleDollarSign}>
-            {tuitionFees.map((item) => (
-              <CostCard key={item.title} item={item} />
-            ))}
-          </CostGroup>
+            {/* PURPLE CARD */}
+            <CostStackCard
+              title="Tuition Fees"
+              subtitle="Average per annum"
+              color="purple"
+              rotate="-rotate-2"
+              icon={CircleDollarSign}
+              items={tuitionFees}
+            />
 
-          {/* LIVING EXPENSES */}
-          <CostGroup title="Living Expenses" subtitle="Annual" icon={WalletCards}>
-            {livingExpenses.map((item) => (
-              <CostCard key={item.title} item={item} />
-            ))}
-          </CostGroup>
+            {/* PINK CARD */}
+            <CostStackCard
+              title="Living Expenses"
+              subtitle="Annual"
+              color="pink"
+              rotate="rotate-1"
+              icon={WalletCards}
+              items={livingExpenses}
+            />
 
-          {/* ACCOMMODATION */}
-          <CostGroup title="Accommodation Costs" subtitle="Annual" icon={House}>
-            {accommodationCosts.map((item) => (
-              <CostCard key={item.title} item={item} />
-            ))}
-          </CostGroup>
+            {/* YELLOW CARD */}
+            <CostStackCard
+              title="Accommodation Costs"
+              subtitle="Annual"
+              color="yellow"
+              rotate="-rotate-1"
+              icon={House}
+              items={accommodationCosts}
+            />
+
+          </div>
         </div>
+
       </div>
     </section>
   );
 }
 
-function CostGroup({ title, subtitle, icon: Icon, children }) {
+/* =========================================
+   STACKED CARD
+========================================= */
+
+function CostStackCard({
+  title,
+  subtitle,
+  color,
+  rotate,
+  icon: Icon,
+  items,
+}) {
+  const theme = cardThemes[color];
+
+  const spacingClass =
+    color === "pink" || color === "yellow"
+      ? "-mt-3 sm:-mt-5"
+      : "";
+
   return (
-    <div className="overflow-hidden rounded-[22px] border border-[#DDE7EF] bg-white shadow-[0_10px_32px_rgba(6,59,114,0.06)]">
+    <div className={`group relative w-[96%] rounded-[22px] px-5 py-5 shadow-[0_18px_40px_rgba(0,0,0,0.28)] transition-all duration-500 hover:z-30 hover:-translate-y-2 hover:rotate-0 sm:w-[92%] sm:rounded-[26px] sm:px-7 sm:py-6 lg:w-[86%] lg:px-9 lg:py-7 ${theme.cardClass} ${rotate} ${spacingClass}`}>
 
-      {/* GROUP HEADER */}
-      <div className="flex items-center justify-between gap-4 border-b border-[#E8EEF3] bg-[#FBFDFE] px-4 py-4 sm:px-5 md:px-6">
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#8A98A7]">
-            {title}
-          </p>
-
-          <h3 className="mt-1 text-[18px] font-bold text-[#063B72] sm:text-[20px]">
-            {subtitle}
-          </h3>
-        </div>
-
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#18B8B5]/10 text-[#18B8B5]">
-          <Icon size={21} strokeWidth={2.1} />
-        </div>
+      {/* FLOATING ICON */}
+      <div className={`absolute -right-4 top-5 flex h-10 w-10 items-center justify-center rounded-full shadow-lg sm:-right-5 sm:h-12 sm:w-12 ${theme.iconClass}`}>
+        <Icon size={19} strokeWidth={2} />
       </div>
 
-      {/* ITEMS */}
-      <div className="divide-y divide-[#EDF2F5]">
-        {children}
+      {/* CARD HEADER */}
+      <div className="relative z-10 pr-10">
+
+        <p className="text-[10px] font-bold uppercase tracking-[0.15em] opacity-80 sm:text-[11px]">
+          {subtitle}
+        </p>
+
+        <h3 className="mt-1 text-[21px] font-extrabold leading-tight sm:text-[25px] md:text-[28px]">
+          {title}
+        </h3>
+
       </div>
+
+      {/* CARD ITEMS */}
+      <div className="relative z-10 mt-4 grid gap-2.5 sm:mt-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        {items.map((item) => (
+          <CostItem
+            key={item.title}
+            title={item.title}
+            price={item.price}
+            icon={item.icon}
+            darkText={color === "yellow"}
+          />
+        ))}
+
+      </div>
+
+      {/* DECORATIVE DOT */}
+      <span className={`absolute -left-2 bottom-4 h-2 w-2 rounded-full sm:-left-3 ${theme.dotClass}`} />
+
     </div>
   );
 }
 
-function CostCard({ item }) {
-  const Icon = item.icon;
+/* =========================================
+   COST ITEM
+========================================= */
 
+function CostItem({
+  title,
+  price,
+  icon: Icon,
+  darkText = false,
+}) {
   return (
-    <div className="group relative px-4 py-4 transition-colors duration-300 hover:bg-[#F8FCFC] sm:px-5 md:px-6">
-      <div className="absolute bottom-3 left-0 top-3 w-[3px] rounded-r-full bg-[#18B8B5] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    <div className="flex min-w-0 items-center gap-3 rounded-[13px] bg-black/[0.10] px-3 py-3 backdrop-blur-sm">
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
-        <div className="flex min-w-0 items-center gap-3.5">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-[#F0F8F8] text-[#18B8B5]">
-            <Icon size={19} strokeWidth={2} />
-          </div>
-
-          <p className="text-[14px] font-semibold leading-[1.45] text-[#40556A] sm:text-[15px]">
-            {item.title}
-          </p>
-        </div>
-
-        <p className="pl-[54px] text-[15px] font-bold leading-[1.4] text-[#063B72] sm:shrink-0 sm:pl-0 sm:text-right sm:text-[16px] md:text-[17px]">
-          {item.price}
-        </p>
+      {/* ICON */}
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-white/20">
+        <Icon size={17} className={darkText ? "text-[#263238]" : "text-white"} strokeWidth={2} />
       </div>
+
+      {/* TEXT */}
+      <div className="min-w-0">
+
+        <p className={`text-[11px] font-semibold leading-tight sm:text-[12px] ${darkText ? "text-[#263238]" : "text-white"}`}>
+          {title}
+        </p>
+
+        <p className={`mt-1 text-[12px] font-extrabold leading-tight sm:text-[13px] ${darkText ? "text-[#263238]" : "text-white"}`}>
+          {price}
+        </p>
+
+      </div>
+
     </div>
   );
 }

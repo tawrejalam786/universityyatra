@@ -8,6 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraH
 import UniversityCarousel from "@/components/StudyInUsa/UniversityCarousel";
 import DegreeComparison from "@/components/StudyInUsa/DegreeComparison";
 import CostOfStudyingUsa from "@/components/StudyInUsa/CostOfStudyingUsa";
+import Testimonials from "@/components/StudyInUsa/Testimonials";
 import GlobalEducationCTA from "@/components/StudyInUsa/GlobalEducationCTA";
 
 
@@ -35,6 +36,7 @@ export default function StudyInUsaPage() {
         <UniversityCarousel />
         {/* <DegreeComparison /> */}
         <CostOfStudyingUsa />
+        <Testimonials />
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />

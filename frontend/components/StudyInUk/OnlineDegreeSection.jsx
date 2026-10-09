@@ -5,24 +5,54 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-const chooseYourStudyPathway = [
+/* =========================================
+   DESKTOP CONTENT
+========================================= */
+
+const chooseYourStudyPathwayDesktop = [
   "Undergraduate, postgraduate & professional programs",
   "University & course selection based on your profile",
-  "Programs aligned with your academic & career goals",
+  "Specialized programs aligned with your career goals",
   "Guidance on eligibility & admission requirements",
 ];
 
-const planJourneyToUSA = [
-  "Application & documentation support",
+const planJourneyToUKDesktop = [
+  "University application & documentation support",
   "SOP & LOR guidance",
-  "Visa & study permit guidance",
+  "Student visa guidance",
   "Pre-departure support",
 ];
+
+/* =========================================
+   MOBILE CONTENT
+========================================= */
+
+const chooseYourStudyPathwayMobile = [
+  "Undergraduate & postgraduate programs",
+  "University & course shortlisting",
+  "Career-focused specializations",
+  "Eligibility & admission guidance",
+];
+
+const planJourneyToUKMobile = [
+  "Application & documentation support",
+  "SOP & LOR guidance",
+  "Student visa guidance",
+  "Pre-departure support",
+];
+
+/* =========================================
+   ANIMATION
+========================================= */
 
 const reveal = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
 };
+
+/* =========================================
+   CHECK ITEM
+========================================= */
 
 function CheckItem({ children, color = "#063B72" }) {
   return (
@@ -30,10 +60,15 @@ function CheckItem({ children, color = "#063B72" }) {
       <span className="mt-[1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white" style={{ backgroundColor: color }}>
         <Check size={12} strokeWidth={2.7} />
       </span>
+
       <span>{children}</span>
     </li>
   );
 }
+
+/* =========================================
+   STUDENT VISUAL - ORIGINAL DESIGN
+========================================= */
 
 function StudentVisual({ src, alt, color, position = "object-center" }) {
   return (
@@ -60,18 +95,23 @@ function StudentVisual({ src, alt, color, position = "object-center" }) {
   );
 }
 
+/* =========================================
+   MAIN UK SECTION
+========================================= */
+
 export default function OnlineDegreeSection() {
   return (
     <section className="w-full overflow-hidden bg-white py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5 lg:px-6">
 
         {/* =====================================
-            HEADING - CANADA DESIGN
+            SECTION HEADING
         ===================================== */}
+
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mx-auto mb-8 max-w-[760px] text-center md:mb-10 lg:mb-12">
 
           <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
-            Study in USA
+            WHAT DOES STUDYING IN THE UK MEAN?
           </span>
 
           <h2 className="text-[29px] font-bold leading-[1.12] tracking-[-0.035em] text-[#063B72] sm:text-[34px] md:text-[40px] lg:text-[44px]">
@@ -83,11 +123,12 @@ export default function OnlineDegreeSection() {
         {/* =====================================
             ROW 01 - IMAGE LEFT, CONTENT RIGHT
         ===================================== */}
+
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
           {/* STUDENT IMAGE */}
           <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/online-degree-student.webp" alt="Student studying and exploring academic opportunities in the USA" color="#2563EB" position="object-center" />
+            <StudentVisual src="/images/study-india/online-degree-student.webp" alt="Student exploring academic opportunities in the UK" color="#2563EB" position="object-center" />
           </motion.div>
 
           {/* CONTENT */}
@@ -98,27 +139,26 @@ export default function OnlineDegreeSection() {
             </span>
 
             <h3 className="max-w-[520px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Your Next Academic Chapter: <span className="text-[#2563EB]">USA</span>
+              Your Next Academic Chapter: <span className="text-[#2563EB]">UK</span>
             </h3>
 
             {/* DESKTOP DESCRIPTION */}
             <div className="mt-3 hidden max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:block lg:text-[15px]">
               <p>
-                The United States is known for its research-driven education, wide range of universities, flexible academic structures, and strong connection with industry. With programs across almost every field, students can explore an academic path that fits their interests, profile, and long-term career plans.
+                The UK offers a focused approach to higher education, with a wide range of universities, specialized programs, and internationally oriented learning environments. With many postgraduate programs designed around shorter study durations, students can choose pathways that fit both their academic interests and long-term plans.
               </p>
             </div>
 
             {/* MOBILE DESCRIPTION */}
             <div className="mt-3 max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:hidden">
               <p>
-                The USA offers a wide choice of universities and programs, flexible academic structures, research opportunities, and strong industry exposure. We help you find a study pathway that fits your profile and future plans.
+                Explore focused degree options, specialized courses, and internationally oriented universities across the UK, with guidance to help you find the right fit.
               </p>
             </div>
 
             <div className="mt-4 h-[3px] w-16 rounded-full bg-[#2563EB]" />
 
           </motion.div>
-
         </div>
 
         {/* DIVIDER */}
@@ -127,6 +167,7 @@ export default function OnlineDegreeSection() {
         {/* =====================================
             ROW 02 - CONTENT LEFT, IMAGE RIGHT
         ===================================== */}
+
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
           {/* CONTENT */}
@@ -140,8 +181,18 @@ export default function OnlineDegreeSection() {
               Choose Your <span className="text-[#18B8B5]">Study Pathway</span>
             </h3>
 
-            <ul className="mt-4 max-w-[520px] space-y-2">
-              {chooseYourStudyPathway.map((item) => (
+            {/* DESKTOP LIST */}
+            <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
+              {chooseYourStudyPathwayDesktop.map((item) => (
+                <CheckItem key={item} color="#18B8B5">
+                  {item}
+                </CheckItem>
+              ))}
+            </ul>
+
+            {/* MOBILE LIST */}
+            <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
+              {chooseYourStudyPathwayMobile.map((item) => (
                 <CheckItem key={item} color="#18B8B5">
                   {item}
                 </CheckItem>
@@ -154,7 +205,7 @@ export default function OnlineDegreeSection() {
 
           {/* STUDENT IMAGE */}
           <motion.div initial={{ opacity: 0, x: 35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }} className="order-1 md:order-2">
-            <StudentVisual src="/images/study-india/program-fit-student.webp" alt="Student exploring university and study pathway options in the USA" color="#28599f" position="object-center" />
+            <StudentVisual src="/images/study-india/program-fit-student.webp" alt="Student exploring university and study pathway options in the UK" color="#28599f" position="object-center" />
           </motion.div>
 
         </div>
@@ -165,11 +216,12 @@ export default function OnlineDegreeSection() {
         {/* =====================================
             ROW 03 - IMAGE LEFT, CONTENT RIGHT
         ===================================== */}
+
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
           {/* STUDENT IMAGE */}
           <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/guidance-student.webp" alt="Student receiving guidance for studying in the USA" color="#7C3AED" position="object-top" />
+            <StudentVisual src="/images/study-india/guidance-student.webp" alt="Student receiving guidance for studying in the UK" color="#7C3AED" position="object-top" />
           </motion.div>
 
           {/* CONTENT */}
@@ -180,11 +232,21 @@ export default function OnlineDegreeSection() {
             </span>
 
             <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Plan Your Journey <span className="text-[#7C3AED]">to the USA</span>
+              Plan Your Journey <span className="text-[#7C3AED]">to the UK</span>
             </h3>
 
-            <ul className="mt-4 max-w-[520px] space-y-2">
-              {planJourneyToUSA.map((item) => (
+            {/* DESKTOP LIST */}
+            <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
+              {planJourneyToUKDesktop.map((item) => (
+                <CheckItem key={item} color="#7C3AED">
+                  {item}
+                </CheckItem>
+              ))}
+            </ul>
+
+            {/* MOBILE LIST */}
+            <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
+              {planJourneyToUKMobile.map((item) => (
                 <CheckItem key={item} color="#7C3AED">
                   {item}
                 </CheckItem>

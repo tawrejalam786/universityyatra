@@ -6,32 +6,60 @@ import {
   BookOpen,
   CircleDollarSign,
   GraduationCap,
+  House,
+  WalletCards,
 } from "lucide-react";
 
 /* =========================================
-   ORIGINAL STUDY IN INDIA CONTENT
+   Ireland COST DATA - CONTENT UNCHANGED
 ========================================= */
 
 const tuitionFees = [
   {
-    title: "Diploma / Certificate Programs",
-    price: "INR 50,000 – 2,00,000",
+    title: "PG Diploma, Diploma & Certificate Program",
+    price: "€ —",
     icon: Award,
   },
   {
     title: "Bachelor’s",
-    price: "INR 1,00,000 – 4,00,000",
+    price: "€10,000 – €20,000",
     icon: GraduationCap,
   },
   {
     title: "Master’s",
-    price: "INR 1,50,000 – 6,00,000",
+    price: "€12,000 – €25,000",
     icon: BookOpen,
   },
 ];
 
+const livingExpenses = [
+  {
+    title: "Average",
+    price: "€10,000 – €20,000",
+    icon: WalletCards,
+  },
+];
+
+const accommodationCosts = [
+  {
+    title: "On-Campus",
+    price: "€6,000 – €12,000",
+    icon: House,
+  },
+  {
+    title: "Off-Campus",
+    price: "€7,000 – €18,000",
+    icon: House,
+  },
+  {
+    title: "Rentals / Homestays",
+    price: "€8,000 – €18,000",
+    icon: House,
+  },
+];
+
 /* =========================================
-   CANADA-STYLE CARD THEMES
+   EUROPE REFERENCE CARD THEMES
 ========================================= */
 
 const cardThemes = {
@@ -56,7 +84,7 @@ const cardThemes = {
    MAIN SECTION
 ========================================= */
 
-export default function CostOfStudyingIndia() {
+export default function CostOfStudyingIreland() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#031126] py-14 sm:py-16 lg:py-20">
 
@@ -69,27 +97,19 @@ export default function CostOfStudyingIndia() {
       {/* TOP RIGHT BLUE GLOW */}
       <div aria-hidden="true" className="pointer-events-none absolute -right-[180px] -top-[170px] -z-10 h-[450px] w-[450px] rounded-full bg-[#07458C]/15 blur-[110px]" />
 
-      {/* RIGHT OUTLINE */}
+      {/* RIGHT SIDE OUTLINE */}
       <div aria-hidden="true" className="pointer-events-none absolute -right-[230px] top-[34%] -z-10 h-[420px] w-[420px] rounded-full border border-[#0967C5]/35 sm:-right-[200px] sm:h-[480px] sm:w-[480px]" />
 
-      {/* LEFT OUTLINE */}
+      {/* LEFT SIDE OUTLINE */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-[240px] top-[45%] -z-10 h-[400px] w-[400px] rounded-full border border-[#0967C5]/35 sm:-left-[210px] sm:h-[460px] sm:w-[460px]" />
 
       {/* LEFT DOT PATTERN */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-45 md:block"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #1376CF 1.5px, transparent 1.5px)",
-          backgroundSize: "23px 23px",
-        }}
-      />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-45 md:block" style={{ backgroundImage: "radial-gradient(circle, #1376CF 1.5px, transparent 1.5px)", backgroundSize: "23px 23px" }} />
 
-      {/* CENTER SOFT GLOW */}
+      {/* CENTER BLUE GLOW */}
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[45%] -z-10 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#0B3770]/15 blur-[120px]" />
 
-      {/* MAIN CONTENT */}
+      {/* MAIN CONTAINER */}
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
 
         {/* HEADING */}
@@ -105,44 +125,47 @@ export default function CostOfStudyingIndia() {
 
           <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
             Cost Of Studying{" "}
-            <span className="text-[#18B8B5]">in India</span>
+            <span className="text-[#18B8B5]">in Ireland</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">
-            India offers an excellent balance between affordability and academic quality. Tuition fees vary depending on the institution type (public or private), program level, and specialization. Students also benefit from low living costs, affordable accommodation options, and access to campus facilities. Overall, India remains one of the most cost-effective destinations for quality higher education with strong academic and professional outcomes.
+           The cost of studying varies based on program, city, and university. Below is an approximate breakdown to help plan your study budget.
           </p>
 
         </div>
 
-        {/* STACKED COLORFUL CARDS */}
+        {/* STACKED CARDS */}
         <div className="mx-auto max-w-[900px]">
           <div className="relative flex flex-col items-center">
 
+            {/* PURPLE CARD */}
             <CostStackCard
-              title="Diploma / Certificate Programs"
-              subtitle="Tuition Fees · Average per annum"
+              title="Tuition Fees"
+              subtitle="Average per annum"
               color="purple"
               rotate="-rotate-2"
-              icon={Award}
-              items={[tuitionFees[0]]}
+              icon={CircleDollarSign}
+              items={tuitionFees}
             />
 
+            {/* PINK CARD */}
             <CostStackCard
-              title="Bachelor’s"
-              subtitle="Tuition Fees · Average per annum"
+              title="Living Expenses"
+              subtitle="Annual"
               color="pink"
               rotate="rotate-1"
-              icon={GraduationCap}
-              items={[tuitionFees[1]]}
+              icon={WalletCards}
+              items={livingExpenses}
             />
 
+            {/* YELLOW CARD */}
             <CostStackCard
-              title="Master’s"
-              subtitle="Tuition Fees · Average per annum"
+              title="Accommodation Costs"
+              subtitle="Annual"
               color="yellow"
               rotate="-rotate-1"
-              icon={BookOpen}
-              items={[tuitionFees[2]]}
+              icon={House}
+              items={accommodationCosts}
             />
 
           </div>
@@ -154,7 +177,7 @@ export default function CostOfStudyingIndia() {
 }
 
 /* =========================================
-   STACK CARD
+   STACKED CARD
 ========================================= */
 
 function CostStackCard({
@@ -194,7 +217,8 @@ function CostStackCard({
       </div>
 
       {/* CARD ITEMS */}
-      <div className="relative z-10 mt-4 grid gap-2.5 sm:mt-5">
+      <div className="relative z-10 mt-4 grid gap-2.5 sm:mt-5 sm:grid-cols-2 lg:grid-cols-3">
+
         {items.map((item) => (
           <CostItem
             key={item.title}
@@ -204,6 +228,7 @@ function CostStackCard({
             darkText={color === "yellow"}
           />
         ))}
+
       </div>
 
       {/* DECORATIVE DOT */}

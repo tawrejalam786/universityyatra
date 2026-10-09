@@ -9,78 +9,82 @@ import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
+
+
 const universities = [
   {
-    name: "Chandigarh University",
-    grade: "A+",
-    image: "/images/universities/chandigarh-university.webp",
+    name: "Trinity College Dublin",
+    grade: "Dublin",
+    image: "/images/universities/trinity-college-dublin.webp",
   },
   {
-    name: "Amrita Vishwa Vidyapeetham",
-    grade: "A++",
-    image: "/images/universities/amrita-university.webp",
+    name: "University College Dublin",
+    grade: "Dublin",
+    image: "/images/universities/university-college-dublin.webp",
   },
   {
-    name: "Vivekananda Global University",
-    grade: "A+",
-    image: "/images/universities/vgu.webp",
+    name: "University College Cork",
+    grade: "Cork",
+    image: "/images/universities/university-college-cork.webp",
   },
   {
-    name: "Shoolini University",
-    grade: "A+",
-    image: "/images/universities/shoolini-university.webp",
+    name: "University of Galway",
+    grade: "Galway",
+    image: "/images/universities/university-of-galway.webp",
   },
   {
-    name: "Amity University",
-    grade: "A+",
-    image: "/images/universities/amity-university.webp",
+    name: "University of Limerick",
+    grade: "Limerick",
+    image: "/images/universities/university-of-limerick.webp",
   },
   {
-    name: "Manipal University Jaipur",
-    grade: "A+",
-    image: "/images/universities/manipal-university-jaipur.webp",
+    name: "Dublin City University",
+    grade: "Dublin",
+    image: "/images/universities/dublin-city-university.webp",
   },
   {
-    name: "University of Petroleum and Energy Studies (UPES)",
-    grade: "A",
-    image: "/images/universities/upes.webp",
+    name: "Maynooth University",
+    grade: "Maynooth",
+    image: "/images/universities/maynooth-university.webp",
   },
   {
-    name: "Dr. D. Y. Patil University, Navi Mumbai",
-    grade: "A++",
-    image: "/images/universities/dy-patil-university.webp",
+    name: "Technological University Dublin",
+    grade: "Dublin",
+    image: "/images/universities/technological-university-dublin.webp",
   },
   {
-    name: "Galgotias University",
-    grade: "A+",
-    image: "/images/universities/galgotias-university.webp",
+    name: "Munster Technological University",
+    grade: "Cork & Kerry",
+    image: "/images/universities/munster-technological-university.webp",
   },
   {
-    name: "GLA University",
-    grade: "A+",
-    image: "/images/universities/gla-university.webp",
+    name: "Atlantic Technological University",
+    grade: "West & Northwest Ireland",
+    image: "/images/universities/atlantic-technological-university.webp",
   },
   {
-    name: "Lovely Professional University",
-    grade: "A++",
-    image: "/images/universities/lpu.webp",
+    name: "South East Technological University",
+    grade: "Waterford & Carlow",
+    image: "/images/universities/south-east-technological-university.webp",
   },
   {
-    name: "Parul University",
-    grade: "A++",
-    image: "/images/universities/parul-university.webp",
+    name: "Technological University of the Shannon",
+    grade: "Midlands & Midwest",
+    image: "/images/universities/technological-university-of-the-shannon.webp",
   },
   {
-    name: "Sharda University",
-    grade: "A+",
-    image: "/images/universities/sharda-university.webp",
+    name: "Royal College of Surgeons in Ireland",
+    grade: "Dublin",
+    image: "/images/universities/royal-college-of-surgeons-ireland.webp",
   },
   {
-    name: "Uttaranchal University",
-    grade: "A+",
-    image: "/images/universities/uttaranchal-university.webp",
+    name: "National College of Ireland",
+    grade: "Dublin",
+    image: "/images/universities/national-college-of-ireland.webp",
   },
 ];
+
+
 
 export default function UniversityCarousel() {
   const swiperRef = useRef(null);
@@ -197,10 +201,6 @@ function UniversityCard({ university, active }) {
           </span>
 
           <div className="leading-none">
-            <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#7A8998]">
-              NAAC
-            </p>
-
             <p className="mt-1 text-[13px] font-bold text-[#063B72]">
               {university.grade}
             </p>
@@ -217,12 +217,9 @@ function UniversityCard({ university, active }) {
       <div className="px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-[#8A98A7]">
-              Accreditation
-            </p>
 
             <p className="mt-1.5 text-[14px] font-bold text-[#063B72] sm:text-[15px]">
-              NAAC {university.grade} Accredited
+              {university.grade}
             </p>
           </div>
 

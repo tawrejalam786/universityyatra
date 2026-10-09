@@ -8,6 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInEurope/HowUniversityYat
 import UniversityCarousel from "@/components/StudyInEurope/UniversityCarousel";
 import DegreeComparison from "@/components/StudyInEurope/DegreeComparison";
 import CostOfStudyingEurope from "@/components/StudyInEurope/CostOfStudyingEurope";
+import Testimonials from "@/components/StudyInEurope/Testimonials";
 import GlobalEducationCTA from "@/components/StudyInEurope/GlobalEducationCTA";
 
 
@@ -35,6 +36,7 @@ export default function StudyInEuropePage() {
         <UniversityCarousel />
         {/* <DegreeComparison /> */}
         <CostOfStudyingEurope />
+        <Testimonials />
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />
