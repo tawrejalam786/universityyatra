@@ -11,15 +11,15 @@ import Image from "next/image";
 
 const stats = [
   {
-    label: "English-Taught Programs",
+    label: "Medical Education Options",
     icon: BadgeDollarSign,
   },
   {
-    label: "Industry-Focused Education",
+    label: "Technical & Science Programs",
     icon: Languages,
   },
   {
-    label: "Technology & Innovation",
+    label: "Specialized Degree Pathways",
     icon: BriefcaseBusiness,
   },
 ];
@@ -151,7 +151,7 @@ export default function StudyIndiaHero() {
             text-center
           "
         >
-          {/* Study In UK label */}
+          {/* Study In Russia label */}
          
 
         <motion.div
@@ -166,8 +166,8 @@ export default function StudyIndiaHero() {
           {/* UK FLAG */}
           <span className="relative flex h-[34px] w-[34px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-white/85 bg-white shadow-[0_3px_10px_rgba(0,0,0,0.25)]">
             <Image
-              src="/images/countrylogo/ireland.webp"
-              alt="Ireland flag"
+              src="/images/countrylogo/russia.webp"
+              alt="Russia flag"
               width={34}
               height={34}
               className="h-full w-full object-cover"
@@ -181,7 +181,7 @@ export default function StudyIndiaHero() {
             </span> */}
 
             <span className="whitespace-nowrap text-[13px] font-extrabold uppercase leading-tight tracking-[0.08em] text-white sm:text-[14px]">
-              Study In Ireland
+              Study In Russia
             </span>
           </span>
         </motion.div>
@@ -216,7 +216,8 @@ export default function StudyIndiaHero() {
               xl:text-[50px]
             "
           >
-         Build Your Future in  
+       Explore Medical & Technical 
+
             <span
               className="
                 mt-1 block
@@ -224,7 +225,7 @@ export default function StudyIndiaHero() {
                 md:mt-2
               "
             >
-              Ireland’s Industry-Connected Education System
+             Education in Russia
             </span>
           </motion.h1>
 
@@ -260,7 +261,7 @@ export default function StudyIndiaHero() {
               lg:text-[19px]
             "
           >
-            Explore undergraduate, postgraduate, and career-focused programs across Irish institutions, with guidance to help you choose a course and pathway suited to your academic and professional plans.
+            Explore undergraduate, postgraduate, and specialized programs across Russian universities, with guidance to help you choose the right institution, course, and academic pathway for your goals.
           </motion.p>
 
           {/* STATS BELOW DESCRIPTION */}
@@ -327,7 +328,7 @@ export default function StudyIndiaHero() {
                 md:text-[16px]
               "
             >
-             Book a Free Consultation
+            Book a Free Consultation
 
               <ArrowRight
                 size={18}

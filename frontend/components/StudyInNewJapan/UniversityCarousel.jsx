@@ -11,78 +11,46 @@ import "swiper/css/effect-coverflow";
 
 
 
+
 const universities = [
   {
-    name: "Trinity College Dublin",
-    grade: "Dublin",
-    image: "/images/universities/trinity-college-dublin.webp",
+    name: "The University of Tokyo",
+    grade: "Japan",
+    image: "/images/universities/university-of-tokyo.webp",
   },
   {
-    name: "University College Dublin",
-    grade: "Dublin",
-    image: "/images/universities/university-college-dublin.webp",
+    name: "Kyoto University",
+    grade: "Japan",
+    image: "/images/universities/kyoto-university.webp",
   },
   {
-    name: "University College Cork",
-    grade: "Cork",
-    image: "/images/universities/university-college-cork.webp",
+    name: "Osaka University",
+    grade: "Japan",
+    image: "/images/universities/osaka-university.webp",
   },
   {
-    name: "University of Galway",
-    grade: "Galway",
-    image: "/images/universities/university-of-galway.webp",
+    name: "Tohoku University",
+    grade: "Japan",
+    image: "/images/universities/tohoku-university.webp",
   },
   {
-    name: "University of Limerick",
-    grade: "Limerick",
-    image: "/images/universities/university-of-limerick.webp",
+    name: "Institute of Science Tokyo",
+    grade: "Japan",
+    image: "/images/universities/institute-of-science-tokyo.webp",
   },
   {
-    name: "Dublin City University",
-    grade: "Dublin",
-    image: "/images/universities/dublin-city-university.webp",
+    name: "Waseda University",
+    grade: "Japan",
+    image: "/images/universities/waseda-university.webp",
   },
   {
-    name: "Maynooth University",
-    grade: "Maynooth",
-    image: "/images/universities/maynooth-university.webp",
-  },
-  {
-    name: "Technological University Dublin",
-    grade: "Dublin",
-    image: "/images/universities/technological-university-dublin.webp",
-  },
-  {
-    name: "Munster Technological University",
-    grade: "Cork & Kerry",
-    image: "/images/universities/munster-technological-university.webp",
-  },
-  {
-    name: "Atlantic Technological University",
-    grade: "West & Northwest Ireland",
-    image: "/images/universities/atlantic-technological-university.webp",
-  },
-  {
-    name: "South East Technological University",
-    grade: "Waterford & Carlow",
-    image: "/images/universities/south-east-technological-university.webp",
-  },
-  {
-    name: "Technological University of the Shannon",
-    grade: "Midlands & Midwest",
-    image: "/images/universities/technological-university-of-the-shannon.webp",
-  },
-  {
-    name: "Royal College of Surgeons in Ireland",
-    grade: "Dublin",
-    image: "/images/universities/royal-college-of-surgeons-ireland.webp",
-  },
-  {
-    name: "National College of Ireland",
-    grade: "Dublin",
-    image: "/images/universities/national-college-of-ireland.webp",
+    name: "Keio University",
+    grade: "Japan",
+    image: "/images/universities/keio-university.webp",
   },
 ];
+
+
 
 
 

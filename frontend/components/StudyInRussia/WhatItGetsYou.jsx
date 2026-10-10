@@ -4,80 +4,78 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
-  BriefcaseBusiness,
-  GraduationCap,
-  BookOpen,
-  Globe2,
+  Stethoscope,
+  Wrench,
   Layers3,
+  Languages,
+  GraduationCap,
+  ClipboardList,
   Plus,
   Minus,
   ArrowLeft,
   ArrowRight,
-  Microscope,
 } from "lucide-react";
 
 /* =========================================
-   UK CONTENT - EXACTLY AS PROVIDED
+   RUSSIA CONTENT
 ========================================= */
-
 
 const benefits = [
   {
     number: "01",
-    title: "Strong Industry Connections",
+    title: "Established Medical Universities",
     description:
-      "Many programs incorporate projects, placements, or practical learning linked to professional environments.",
-    icon: BriefcaseBusiness,
+      "Explore medical education options at Russian universities, with careful attention to recognition, eligibility, and licensing requirements.",
+    icon: Stethoscope,
     accent: "#063B72",
     soft: "#EAF1F8",
   },
   {
     number: "02",
-    title: "English-Taught Education",
+    title: "Engineering & Technical Programs",
     description:
-      "Study in an English-speaking environment across a wide selection of undergraduate and postgraduate programs.",
-    icon: BookOpen,
+      "Consider programs across engineering, applied sciences, and technical disciplines offered by Russian institutions.",
+    icon: Wrench,
     accent: "#18B8B5",
     soft: "#E8F8F7",
   },
   {
     number: "03",
-    title: "Technology & Innovation Exposure",
+    title: "Wide Range of Specializations",
     description:
-      "Ireland’s strong technology ecosystem creates opportunities to study in an environment closely connected to innovation-driven industries.",
-    icon: Microscope,
+      "Explore academic pathways in medicine, science, technology, engineering, economics, and other fields.",
+    icon: Layers3,
     accent: "#0E7490",
     soft: "#EAF7FA",
   },
   {
     number: "04",
-    title: "Career-Focused Programs",
+    title: "English-Taught Program Options",
     description:
-      "Explore specialized courses designed around specific disciplines and evolving professional requirements.",
-    icon: GraduationCap,
+      "Some universities offer programs in English, while others require Russian-language study. Check the language requirements of each course.",
+    icon: Languages,
     accent: "#7C3AED",
     soft: "#F3EEFF",
   },
   {
     number: "05",
-    title: "Wide Range of Specializations",
+    title: "Multiple Academic Pathways",
     description:
-      "Choose from fields including technology, business, finance, engineering, healthcare, data, and more.",
-    icon: Layers3,
+      "Compare undergraduate, postgraduate, and specialized programs based on your qualifications and academic interests.",
+    icon: GraduationCap,
     accent: "#047857",
     soft: "#EAF8F2",
   },
   {
     number: "06",
-    title: "Post-Study Work Options",
+    title: "University-Specific Admission Routes",
     description:
-      "Eligible graduates can explore available post-study work routes and professional opportunities, subject to applicable requirements.",
-    icon: Globe2,
+      "Understand each institution's admission criteria, entrance requirements, documentation, and application process before applying.",
+    icon: ClipboardList,
     accent: "#B45309",
     soft: "#FFF7E8",
   },
 ];
-
 
 /* =========================================
    MAIN COMPONENT
@@ -144,7 +142,6 @@ export default function WhatItGetsYou() {
 
     const onScroll = () => {
       if (frame !== null) return;
-
       frame = window.requestAnimationFrame(updateActiveStep);
     };
 
@@ -197,22 +194,16 @@ export default function WhatItGetsYou() {
     <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
       <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
 
-        {/* =====================================
-            HEADING
-        ===================================== */}
-
+        {/* SECTION HEADING */}
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
 
           <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
-            Inside the <span className="text-[#18B8B5]">Irish Study</span> Experience
+            Inside the <span className="text-[#18B8B5]">Russian Study</span> Experience
           </h2>
 
         </motion.div>
 
-        {/* =====================================
-            CANADA STYLE TIMELINE
-        ===================================== */}
-
+        {/* TIMELINE */}
         <div className="relative mx-auto w-full max-w-[1100px]">
 
           {/* MULTICOLOR CENTER BAR */}
@@ -222,12 +213,8 @@ export default function WhatItGetsYou() {
             ))}
           </div>
 
-          {/* =====================================
-              TIMELINE ITEMS
-          ===================================== */}
-
+          {/* TIMELINE ITEMS */}
           <div className="relative z-20">
-
             {benefits.map((item, index) => {
               const isLeft = index % 2 === 1;
               const isActive = activeStep === index;
@@ -237,7 +224,6 @@ export default function WhatItGetsYou() {
 
                   {/* LEFT COLUMN */}
                   <div className="flex min-w-0 items-center justify-end">
-
                     {isLeft ? (
                       <TimelineAccordionCard
                         item={item}
@@ -250,21 +236,17 @@ export default function WhatItGetsYou() {
                     ) : (
                       <StepLabel item={item} active={isActive} side="left" />
                     )}
-
                   </div>
 
                   {/* CENTER STEP NUMBER */}
                   <div ref={(element) => { nodeRefs.current[index] = element; }} className="relative z-20 flex items-center justify-center">
-
                     <motion.span initial={false} animate={{ scale: isActive ? 1.12 : 1, opacity: isActive ? 1 : 0.9 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[14px] font-extrabold text-white sm:h-[60px] sm:w-[60px] sm:text-[19px] md:h-[76px] md:w-[76px] md:text-[24px]">
                       {item.number}
                     </motion.span>
-
                   </div>
 
                   {/* RIGHT COLUMN */}
                   <div className="flex min-w-0 items-center justify-start">
-
                     {!isLeft ? (
                       <TimelineAccordionCard
                         item={item}
@@ -277,7 +259,6 @@ export default function WhatItGetsYou() {
                     ) : (
                       <StepLabel item={item} active={isActive} side="right" />
                     )}
-
                   </div>
 
                   {/* CONNECTOR LINE */}
@@ -291,7 +272,6 @@ export default function WhatItGetsYou() {
                 </div>
               );
             })}
-
           </div>
 
         </div>
@@ -339,7 +319,7 @@ function TimelineAccordionCard({
   side,
 }) {
   const isLeft = side === "left";
-  const contentId = `uk-benefit-${index}`;
+  const contentId = `russia-benefit-${index}`;
 
   return (
     <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
@@ -348,7 +328,6 @@ function TimelineAccordionCard({
       <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-1.5 px-2.5 py-3 text-left sm:gap-3 sm:px-4 sm:py-4 md:px-5 md:py-5">
 
         <div className="flex min-w-0 flex-1 items-start gap-1.5 sm:gap-2.5">
-
           <span className="shrink-0 text-[11px] font-extrabold sm:text-[14px] md:text-[18px]" style={{ color: item.accent }}>
             {item.number}
           </span>
@@ -356,7 +335,6 @@ function TimelineAccordionCard({
           <h3 className="min-w-0 text-[10px] font-bold leading-[1.35] text-[#063B72] sm:text-[13px] md:text-[17px] lg:text-[18px]">
             {item.title}
           </h3>
-
         </div>
 
         {/* PLUS / MINUS */}
@@ -370,20 +348,15 @@ function TimelineAccordionCard({
 
       </button>
 
-      {/* =====================================
-          ACCORDION DESCRIPTION
-      ===================================== */}
-
+      {/* ACCORDION DESCRIPTION */}
       <AnimatePresence initial={false}>
         {active && (
           <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">
 
             <div className="border-t border-[#EDF1F5] px-2.5 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4 md:px-5">
-
               <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:text-[14px] md:leading-[1.7]">
                 {item.description}
               </p>
-
             </div>
 
           </motion.div>

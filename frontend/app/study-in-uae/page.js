@@ -1,14 +1,14 @@
 import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
-import StudyInIrelandHero from '@/components/StudyInIreland/StudyInIrelandHero';
-import OnlineDegreeSection from "@/components/StudyInIreland/OnlineDegreeSection";
-import WhatItGetsYou from "@/components/StudyInIreland/WhatItGetsYou";
-import CoursesSlider from "@/components/StudyInIreland/CoursesSlider";
-import HowUniversityYatraHelps from "@/components/StudyInIreland/HowUniversityYatraHelps";
-import UniversityCarousel from "@/components/StudyInIreland/UniversityCarousel";
-import CostOfStudyingIreland from "@/components/StudyInIreland/CostOfStudyingIreland";
-import Testimonials from "@/components/StudyInIreland/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInIreland/GlobalEducationCTA";
+import StudyInUaeHero from '@/components/StudyInUae/StudyInUaeHero';
+import OnlineDegreeSection from "@/components/StudyInUae/OnlineDegreeSection";
+import WhatItGetsYou from "@/components/StudyInUae/WhatItGetsYou";
+import CoursesSlider from "@/components/StudyInUae/CoursesSlider";
+import HowUniversityYatraHelps from "@/components/StudyInUae/HowUniversityYatraHelps";
+import UniversityCarousel from "@/components/StudyInUae/UniversityCarousel";
+import CostOfStudyingUae from "@/components/StudyInUae/CostOfStudyingUae";
+import Testimonials from "@/components/StudyInUae/Testimonials";
+import GlobalEducationCTA from "@/components/StudyInUae/GlobalEducationCTA";
 
 
 export const metadata = {
@@ -26,19 +26,19 @@ export const metadata = {
 };
 
 
-export default function StudyInIrelandPage() {
+export default function StudyInUaePage() {
   return (
     <>
       <Navbar active="Destinations" />
       <main>
-        <StudyInIrelandHero />
+        <StudyInUaeHero />
         <OnlineDegreeSection />
         <WhatItGetsYou />
         <CoursesSlider />
         <HowUniversityYatraHelps />
         <UniversityCarousel />
         {/* <DegreeComparison /> */}
-        <CostOfStudyingIreland />
+        <CostOfStudyingUae />
         <Testimonials />
         <GlobalEducationCTA />
       </main>

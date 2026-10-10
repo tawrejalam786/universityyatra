@@ -6,39 +6,39 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 /* =========================================
-   DESKTOP CONTENT - IRELAND
+   DESKTOP CONTENT - SINGAPORE
 ========================================= */
 
 const chooseYourStudyPathwayDesktop = [
-  "Undergraduate, postgraduate & professional programs",
-  "University & course selection based on your profile",
-  "Industry-relevant programs aligned with career goals",
-  "Guidance on eligibility & admission requirements",
+  "Undergraduate & Postgraduate Programs",
+  "University & Course Shortlisting",
+  "Career-Focused Specializations",
+  "Eligibility & Admission Guidance",
 ];
 
-const planJourneyToIrelandDesktop = [
-  "University application & documentation support",
-  "SOP & LOR guidance",
-  "Student visa guidance",
-  "Pre-departure support",
+const planJourneyToSingaporeDesktop = [
+  "University Applications",
+  "SOP & LOR Guidance",
+  "Student Visa Guidance",
+  "Pre-Departure Preparation",
 ];
 
 /* =========================================
-   MOBILE CONTENT - IRELAND
+   MOBILE CONTENT - SINGAPORE
 ========================================= */
 
 const chooseYourStudyPathwayMobile = [
-  "Undergraduate, postgraduate & professional programs",
-  "University & course selection based on your profile",
-  "Industry-relevant programs aligned with career goals",
-  "Guidance on eligibility & admission requirements",
+  "Undergraduate & Postgraduate Programs",
+  "University & Course Shortlisting",
+  "Career-Focused Specializations",
+  "Eligibility & Admission Guidance",
 ];
 
-const planJourneyToIrelandMobile = [
-  "University application & documentation support",
-  "SOP & LOR guidance",
-  "Student visa guidance",
-  "Pre-departure support",
+const planJourneyToSingaporeMobile = [
+  "University Applications",
+  "SOP & LOR Guidance",
+  "Student Visa Guidance",
+  "Pre-Departure Preparation",
 ];
 
 /* =========================================
@@ -95,7 +95,7 @@ function StudentVisual({ src, alt, color, position = "object-center" }) {
 }
 
 /* =========================================
-   MAIN IRELAND SECTION
+   MAIN SINGAPORE SECTION
 ========================================= */
 
 export default function OnlineDegreeSection() {
@@ -103,14 +103,11 @@ export default function OnlineDegreeSection() {
     <section className="w-full overflow-hidden bg-white py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5 lg:px-6">
 
-        {/* =====================================
-            SECTION HEADING
-        ===================================== */}
-
+        {/* SECTION HEADING */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mx-auto mb-8 max-w-[760px] text-center md:mb-10 lg:mb-12">
 
           <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
-            WHAT STUDYING IN IRELAND MEANS
+            WHAT STUDYING IN SINGAPORE MEANS
           </span>
 
           <h2 className="text-[29px] font-bold leading-[1.12] tracking-[-0.035em] text-[#063B72] sm:text-[34px] md:text-[40px] lg:text-[44px]">
@@ -119,18 +116,13 @@ export default function OnlineDegreeSection() {
 
         </motion.div>
 
-        {/* =====================================
-            ROW 01 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-
+        {/* ROW 01 - IMAGE LEFT, CONTENT RIGHT */}
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
-          {/* STUDENT IMAGE */}
           <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/online-degree-student.webp" alt="Student exploring academic opportunities in Ireland" color="#2563EB" position="object-center" />
+            <StudentVisual src="/images/study-india/online-degree-student.webp" alt="Student exploring academic opportunities in Singapore" color="#2563EB" position="object-center" />
           </motion.div>
 
-          {/* CONTENT */}
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative">
 
             <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#2563EB]">
@@ -138,39 +130,35 @@ export default function OnlineDegreeSection() {
             </span>
 
             <h3 className="max-w-[520px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Your Next Academic Chapter: <span className="text-[#2563EB]">Ireland</span>
+              Your Next Academic Chapter:{" "}
+              <span className="text-[#2563EB]">Singapore</span>
             </h3>
 
             {/* DESKTOP DESCRIPTION */}
             <div className="mt-3 hidden max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:block lg:text-[15px]">
               <p>
-                Ireland offers an English-speaking academic environment with strong connections to technology, business, healthcare, engineering, and other professional sectors. Students can explore specialized programs that connect their education with evolving career opportunities.
+                Singapore offers an internationally connected education environment with strengths in business, technology, engineering, and research. Its position as a regional business hub gives students opportunities to explore specialized programs while considering university requirements, teaching formats, and future career plans.
               </p>
             </div>
 
             {/* MOBILE DESCRIPTION */}
             <div className="mt-3 max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:hidden">
               <p>
-                Ireland offers an English-speaking study environment with strong links to technology, business, healthcare, and engineering. Explore specialized programs that connect your studies with evolving career opportunities.
+                Explore Singapore&apos;s universities and specialized programs in business, technology, and engineering. Find study options that align with your academic background and future goals.
               </p>
             </div>
 
             <div className="mt-4 h-[3px] w-16 rounded-full bg-[#2563EB]" />
 
           </motion.div>
-
         </div>
 
         {/* DIVIDER */}
         <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
 
-        {/* =====================================
-            ROW 02 - CONTENT LEFT, IMAGE RIGHT
-        ===================================== */}
-
+        {/* ROW 02 - CONTENT LEFT, IMAGE RIGHT */}
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
-          {/* CONTENT */}
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative order-2 md:order-1">
 
             <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#18B8B5]">
@@ -178,7 +166,8 @@ export default function OnlineDegreeSection() {
             </span>
 
             <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Choose Your <span className="text-[#18B8B5]">Study Pathway</span>
+              Choose Your{" "}
+              <span className="text-[#18B8B5]">Study Pathway</span>
             </h3>
 
             {/* DESKTOP LIST */}
@@ -203,9 +192,8 @@ export default function OnlineDegreeSection() {
 
           </motion.div>
 
-          {/* STUDENT IMAGE */}
           <motion.div initial={{ opacity: 0, x: 35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }} className="order-1 md:order-2">
-            <StudentVisual src="/images/study-india/program-fit-student.webp" alt="Student exploring university and study pathway options in Ireland" color="#28599f" position="object-center" />
+            <StudentVisual src="/images/study-india/program-fit-student.webp" alt="Student exploring university and study pathway options in Singapore" color="#28599f" position="object-center" />
           </motion.div>
 
         </div>
@@ -213,18 +201,13 @@ export default function OnlineDegreeSection() {
         {/* DIVIDER */}
         <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
 
-        {/* =====================================
-            ROW 03 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-
+        {/* ROW 03 - IMAGE LEFT, CONTENT RIGHT */}
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
-          {/* STUDENT IMAGE */}
           <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/guidance-student.webp" alt="Student receiving guidance for studying in Ireland" color="#7C3AED" position="object-top" />
+            <StudentVisual src="/images/study-india/guidance-student.webp" alt="Student receiving guidance for studying in Singapore" color="#7C3AED" position="object-top" />
           </motion.div>
 
-          {/* CONTENT */}
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative">
 
             <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#7C3AED]">
@@ -232,12 +215,13 @@ export default function OnlineDegreeSection() {
             </span>
 
             <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Plan Your Journey <span className="text-[#7C3AED]">to Ireland</span>
+              Plan Your Journey{" "}
+              <span className="text-[#7C3AED]">to Singapore</span>
             </h3>
 
             {/* DESKTOP LIST */}
             <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
-              {planJourneyToIrelandDesktop.map((item) => (
+              {planJourneyToSingaporeDesktop.map((item) => (
                 <CheckItem key={item} color="#7C3AED">
                   {item}
                 </CheckItem>
@@ -246,7 +230,7 @@ export default function OnlineDegreeSection() {
 
             {/* MOBILE LIST */}
             <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
-              {planJourneyToIrelandMobile.map((item) => (
+              {planJourneyToSingaporeMobile.map((item) => (
                 <CheckItem key={item} color="#7C3AED">
                   {item}
                 </CheckItem>
@@ -256,7 +240,6 @@ export default function OnlineDegreeSection() {
             <div className="mt-4 h-[3px] w-16 rounded-full bg-[#7C3AED]" />
 
           </motion.div>
-
         </div>
 
       </div>

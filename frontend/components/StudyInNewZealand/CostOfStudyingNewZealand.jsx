@@ -11,23 +11,24 @@ import {
 } from "lucide-react";
 
 /* =========================================
-   Ireland COST DATA - CONTENT UNCHANGED
+   AUSTRALIA COST DATA
+   Source: University Yatra website
 ========================================= */
 
 const tuitionFees = [
   {
-    title: "PG Diploma, Diploma & Certificate Program",
-    price: "€ —",
+    title: "Diploma",
+    price: "NZD  20,000 – 45,000",
     icon: Award,
   },
   {
     title: "Bachelor’s",
-    price: "€10,000 – €20,000",
+    price: "NZD  30,000 – 55,000",
     icon: GraduationCap,
   },
   {
-    title: "Master’s",
-    price: "€12,000 – €25,000",
+    title: "Master’s / PhD",
+    price: "NZD  50,000 – 75,000",
     icon: BookOpen,
   },
 ];
@@ -35,7 +36,7 @@ const tuitionFees = [
 const livingExpenses = [
   {
     title: "Average",
-    price: "€10,000 – €20,000",
+    price: "NZD  20,000 – 25,000",
     icon: WalletCards,
   },
 ];
@@ -43,23 +44,23 @@ const livingExpenses = [
 const accommodationCosts = [
   {
     title: "On-Campus",
-    price: "€6,000 – €12,000",
+    price: "NZD  10,000 – 18,000",
     icon: House,
   },
   {
     title: "Off-Campus",
-    price: "€7,000 – €18,000",
+    price: "NZD  12,000 – 22,000",
     icon: House,
   },
   {
     title: "Rentals / Homestays",
-    price: "€8,000 – €18,000",
+    price: "NZD  12,000 – 20,000",
     icon: House,
   },
 ];
 
 /* =========================================
-   EUROPE REFERENCE CARD THEMES
+   ORIGINAL CARD THEMES
 ========================================= */
 
 const cardThemes = {
@@ -81,10 +82,10 @@ const cardThemes = {
 };
 
 /* =========================================
-   MAIN SECTION
+   MAIN AUSTRALIA SECTION
 ========================================= */
 
-export default function CostOfStudyingIreland() {
+export default function CostOfStudyingAustralia() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#031126] py-14 sm:py-16 lg:py-20">
 
@@ -112,7 +113,7 @@ export default function CostOfStudyingIreland() {
       {/* MAIN CONTAINER */}
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
 
-        {/* HEADING */}
+        {/* SECTION HEADING */}
         <div className="mx-auto mb-12 max-w-[760px] text-center">
 
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/30 bg-[#18B8B5]/10 px-4 py-2">
@@ -125,11 +126,13 @@ export default function CostOfStudyingIreland() {
 
           <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
             Cost Of Studying{" "}
-            <span className="text-[#18B8B5]">in Ireland</span>
+            <span className="text-[#18B8B5]">
+              in Australia
+            </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">
-           The cost of studying varies based on program, city, and university. Below is an approximate breakdown to help plan your study budget.
+            The cost of studying in Australia varies depending on the university, course, location, and lifestyle. Explore the approximate tuition fees, living expenses, and accommodation costs to plan your study budget.
           </p>
 
         </div>
@@ -138,7 +141,7 @@ export default function CostOfStudyingIreland() {
         <div className="mx-auto max-w-[900px]">
           <div className="relative flex flex-col items-center">
 
-            {/* PURPLE CARD */}
+            {/* PURPLE CARD - TUITION FEES */}
             <CostStackCard
               title="Tuition Fees"
               subtitle="Average per annum"
@@ -148,7 +151,7 @@ export default function CostOfStudyingIreland() {
               items={tuitionFees}
             />
 
-            {/* PINK CARD */}
+            {/* PINK CARD - LIVING EXPENSES */}
             <CostStackCard
               title="Living Expenses"
               subtitle="Annual"
@@ -158,7 +161,7 @@ export default function CostOfStudyingIreland() {
               items={livingExpenses}
             />
 
-            {/* YELLOW CARD */}
+            {/* YELLOW CARD - ACCOMMODATION */}
             <CostStackCard
               title="Accommodation Costs"
               subtitle="Annual"
@@ -170,6 +173,11 @@ export default function CostOfStudyingIreland() {
 
           </div>
         </div>
+
+        {/* COST DISCLAIMER */}
+        <p className="mx-auto mt-10 max-w-[800px] text-center text-[11px] leading-[1.7] text-[#A9BAC8] sm:text-[12px]">
+          Note: All amounts are approximate annual estimates in Australian Dollars (NZD ). Actual costs may vary by university, program, city, and accommodation type. Living expenses may already include accommodation.
+        </p>
 
       </div>
     </section>
@@ -218,7 +226,6 @@ function CostStackCard({
 
       {/* CARD ITEMS */}
       <div className="relative z-10 mt-4 grid gap-2.5 sm:mt-5 sm:grid-cols-2 lg:grid-cols-3">
-
         {items.map((item) => (
           <CostItem
             key={item.title}
@@ -228,7 +235,6 @@ function CostStackCard({
             darkText={color === "yellow"}
           />
         ))}
-
       </div>
 
       {/* DECORATIVE DOT */}
