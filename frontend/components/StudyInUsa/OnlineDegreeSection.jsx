@@ -1,200 +1,260 @@
 
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { useRef } from "react";
+import Link from "next/link";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, GraduationCap, Wallet, House, Award, BriefcaseBusiness, BookOpen } from "lucide-react";
 
-const chooseYourStudyPathway = [
-  "Undergraduate, postgraduate & professional programs",
-  "University & course selection based on your profile",
-  "Programs aligned with your academic & career goals",
-  "Guidance on eligibility & admission requirements",
+const cards = [
+  {
+    id: "01",
+    eyebrow: "WHAT STUDYING IN THE USA MEANS",
+    title: "Your Next Academic Chapter: USA",
+    mobileTitle: "Study in USA",
+    description:
+      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees. From choosing a major to pursuing an MS or MBA, your options depend on your academic background and goals.",
+    points: [
+      "Bachelor's: Typically 4 years",
+      "Master's: Commonly 1–2 years",
+      "Main intakes: Fall and Spring",
+    ],
+    color: "#2563EB",
+    textColor: "#FFFFFF",
+    mutedColor: "rgba(255,255,255,0.85)",
+    chipColor: "rgba(255,255,255,0.15)",
+    href: "/study-abroad/usa/academic-pathways",
+    icon: GraduationCap,
+  },
+  {
+    id: "02",
+    eyebrow: "EXPLORE YOUR OPTIONS",
+    title: "Study in USA",
+    mobileTitle: "Study in USA",
+    description:
+      "The US education system offers students multiple ways to build their academic pathway. Undergraduate students can often study subjects outside their major, while postgraduate programs allow for deeper specialisation in a chosen field. For Indian students, understanding these differences helps when deciding which degree, university, and course structure best fits their goals.",
+    points: [],
+    color: "#E7C77D",
+    textColor: "#17233C",
+    mutedColor: "#344158",
+    chipColor: "rgba(255,255,255,0.42)",
+    href: "/study-abroad/usa/study-options",
+    icon: BookOpen,
+  },
+  {
+    id: "03",
+    eyebrow: "PLAN YOUR EDUCATION BUDGET",
+    title: "Cost of Studying in USA",
+    mobileTitle: "Cost of Studying in USA",
+    description:
+      "Tuition depends on your university, degree, and field of study. Use these annual ranges to start planning your budget before comparing specific programs.",
+    points: [
+      "Bachelor's tuition: Approximately US$19,000–40,000 per year (₹18–38 lakh).",
+      "Master's tuition: Approximately US$16,000–31,000 per year (₹15.2–29.5 lakh).",
+      "Additional expenses: Budget separately for accommodation, food, health insurance, university fees, books, and visa-related charges.",
+    ],
+    color: "#EAA49C",
+    textColor: "#17233C",
+    mutedColor: "#344158",
+    chipColor: "rgba(255,255,255,0.4)",
+    href: "/study-abroad/usa/cost-of-studying",
+    icon: Wallet,
+  },
+  {
+    id: "04",
+    eyebrow: "LIVING & CAMPUS LIFE",
+    title: "Cost of Living in USA",
+    mobileTitle: "Cost of Living & Culture in USA",
+    description:
+      "Living costs depend on where you study and how you choose to live. A useful starting budget is US$1,000–2,500 per month, excluding tuition.",
+    points: [
+      "Housing: Often your biggest expense",
+      "Daily essentials: Food, transport, utilities, and personal spending",
+      "Campus life: Student clubs, cultural events, and diverse communities",
+    ],
+    note:
+      "Your budget will look different in New York City than in a smaller college town.",
+    color: "#79C9B5",
+    textColor: "#17233C",
+    mutedColor: "#344158",
+    chipColor: "rgba(255,255,255,0.35)",
+    href: "/study-abroad/usa/cost-of-living",
+    icon: House,
+  },
+  {
+    id: "05",
+    eyebrow: "FUND YOUR EDUCATION",
+    title: "Scholarships in USA for Indian Students",
+    mobileTitle: "Scholarships in USA for Indian Students",
+    description:
+      "Indian students may qualify for merit-based scholarships, need-based financial aid, university awards, or graduate research funding. Opportunities depend on your degree, academic profile, financial circumstances, and eligibility.",
+    points: [
+      "Merit-based: Rewards academic achievement.",
+      "Need-based: Assesses financial circumstances.",
+      "External funding: Includes eligible Fulbright-Nehru and Inlaks opportunities.",
+    ],
+    note: "Check eligibility, coverage, and deadlines before applying.",
+    color: "#B6A2E8",
+    textColor: "#17233C",
+    mutedColor: "#344158",
+    chipColor: "rgba(255,255,255,0.35)",
+    href: "/study-abroad/usa/scholarships",
+    icon: Award,
+  },
+  {
+    id: "06",
+    eyebrow: "AFTER GRADUATION",
+    title: "Post-Study Work Visa USA",
+    mobileTitle: "Post-Study Work Visa USA",
+    description:
+      "Planning to work in the USA after graduation? Eligible F-1 students can apply for Optional Practical Training (OPT) to gain work experience related to their degree.",
+    points: [
+      "12 months of OPT: Available to eligible graduates who meet the requirements.",
+      "Up to 36 months: Qualifying STEM graduates may apply for a 24-month extension.",
+      "After OPT: Some graduates pursue employer-sponsored H-1B status, subject to eligibility and selection requirements.",
+    ],
+    note:
+      "STEM extensions require a qualifying degree and an eligible employment arrangement. Work authorisation and long-term employment are not guaranteed.",
+    color: "#EDA878",
+    textColor: "#17233C",
+    mutedColor: "#344158",
+    chipColor: "rgba(255,255,255,0.35)",
+    href: "/study-abroad/usa/post-study-work",
+    icon: BriefcaseBusiness,
+  },
 ];
 
-const planJourneyToUSA = [
-  "Application & documentation support",
-  "SOP & LOR guidance",
-  "Visa & study permit guidance",
-  "Pre-departure support",
-];
+const TOTAL = cards.length;
 
-const reveal = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0 },
-};
+function StackingCard({ card, index, progress, reduceMotion }) {
+  const Icon = card.icon;
 
-function CheckItem({ children, color = "#063B72" }) {
-  return (
-    <li className="flex items-start gap-3 text-[13px] leading-[1.5] text-[#405268] sm:text-[14px]">
-      <span className="mt-[1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white" style={{ backgroundColor: color }}>
-        <Check size={12} strokeWidth={2.7} />
-      </span>
-      <span>{children}</span>
-    </li>
+  // Each card enters from below, then remains in its stack position.
+  const start = index / TOTAL;
+  const end = (index + 1) / TOTAL;
+
+  const translateY = useTransform(
+    progress,
+    [start, end],
+    index === 0 ? ["0%", "0%"] : ["115%", "0%"],
+    { clamp: true }
   );
-}
 
-function StudentVisual({ src, alt, color, position = "object-center" }) {
-  return (
-    <div className="relative mx-auto w-full max-w-[430px]">
-      <div className="relative aspect-[1.12/1] w-full">
-
-        {/* ORGANIC BACKGROUND */}
-        <div className="absolute left-[4%] top-[5%] h-[88%] w-[88%] rotate-[-5deg] rounded-[38%_62%_58%_42%/45%_38%_62%_55%]" style={{ backgroundColor: color }} />
-
-        {/* DECORATIVE CIRCLE */}
-        <div className="absolute bottom-[2%] right-[2%] h-[34%] w-[34%] rounded-full border-[18px] opacity-20" style={{ borderColor: color }} />
-
-        {/* DOTS */}
-        <div className="absolute left-[1%] top-[13%] h-3 w-3 rounded-full opacity-60" style={{ backgroundColor: color }} />
-        <div className="absolute right-[7%] top-[7%] h-5 w-5 rounded-full opacity-30" style={{ backgroundColor: color }} />
-
-        {/* STUDENT IMAGE */}
-        <div className="absolute inset-[6%] overflow-hidden rounded-[36%_64%_58%_42%/44%_38%_62%_56%]">
-          <Image src={src} alt={alt} fill sizes="(max-width: 767px) 92vw, 430px" className={`object-cover ${position}`} />
-        </div>
-
-      </div>
-    </div>
+  const scale = useTransform(
+    progress,
+    [0, 1],
+    [1, 1 - (TOTAL - 1 - index) * 0.012]
   );
-}
 
-export default function OnlineDegreeSection() {
+  const topOffset = index * 13;
+
   return (
-    <section className="w-full overflow-hidden bg-white py-8 sm:py-10 md:py-12 lg:py-14">
-      <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5 lg:px-6">
-
-        {/* =====================================
-            HEADING - CANADA DESIGN
-        ===================================== */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mx-auto mb-8 max-w-[760px] text-center md:mb-10 lg:mb-12">
-
-          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
-            Study in USA
+    <motion.article
+      style={{
+        backgroundColor: card.color,
+        color: card.textColor,
+        y: reduceMotion ? 0 : translateY,
+        scale: reduceMotion ? 1 : scale,
+        zIndex: index + 1,
+        top: `${topOffset}px`,
+      }}
+      className="absolute inset-x-0 mx-auto flex h-[min(76svh,650px)] w-full max-w-[1160px] flex-col overflow-hidden rounded-[22px] border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:rounded-[30px] lg:rounded-[34px]"
+    >
+      {/* CARD TOP BAR */}
+      <div className="flex shrink-0 items-center justify-between border-b border-black/10 px-5 py-3 sm:px-8 sm:py-4 lg:px-11">
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="text-[12px] font-extrabold tracking-[0.12em] sm:text-[14px]">
+            {card.id}
           </span>
-
-          <h2 className="text-[29px] font-bold leading-[1.12] tracking-[-0.035em] text-[#063B72] sm:text-[34px] md:text-[40px] lg:text-[44px]">
-            Designed for <span className="text-[#18B8B5]">Your Future</span>
-          </h2>
-
-        </motion.div>
-
-        {/* =====================================
-            ROW 01 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
-
-          {/* STUDENT IMAGE */}
-          <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/online-degree-student.webp" alt="Student studying and exploring academic opportunities in the USA" color="#2563EB" position="object-center" />
-          </motion.div>
-
-          {/* CONTENT */}
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative">
-
-            <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#2563EB]">
-              01
-            </span>
-
-            <h3 className="max-w-[520px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Your Next Academic Chapter: <span className="text-[#2563EB]">USA</span>
-            </h3>
-
-            {/* DESKTOP DESCRIPTION */}
-            <div className="mt-3 hidden max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:block lg:text-[15px]">
-              <p>
-                The United States is known for its research-driven education, wide range of universities, flexible academic structures, and strong connection with industry. With programs across almost every field, students can explore an academic path that fits their interests, profile, and long-term career plans.
-              </p>
-            </div>
-
-            {/* MOBILE DESCRIPTION */}
-            <div className="mt-3 max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:hidden">
-              <p>
-                The USA offers a wide choice of universities and programs, flexible academic structures, research opportunities, and strong industry exposure. We help you find a study pathway that fits your profile and future plans.
-              </p>
-            </div>
-
-            <div className="mt-4 h-[3px] w-16 rounded-full bg-[#2563EB]" />
-
-          </motion.div>
-
+          <span className="truncate text-[9px] font-bold uppercase tracking-[0.12em] opacity-80 sm:text-[11px]">
+            {card.eyebrow}
+          </span>
         </div>
 
-        {/* DIVIDER */}
-        <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
+        <Icon size={21} strokeWidth={1.8} className="shrink-0" />
+      </div>
 
-        {/* =====================================
-            ROW 02 - CONTENT LEFT, IMAGE RIGHT
-        ===================================== */}
-        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
-
-          {/* CONTENT */}
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="order-2 relative md:order-1">
-
-            <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#18B8B5]">
-              02
-            </span>
-
-            <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Choose Your <span className="text-[#18B8B5]">Study Pathway</span>
+      {/* CARD BODY */}
+      <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-5 sm:px-8 sm:py-7 lg:px-11 lg:py-9">
+        <div className="flex min-h-full flex-col justify-between gap-5">
+          <div className="max-w-[850px]">
+            {/* DESKTOP TITLE */}
+            <h3 className="hidden text-[32px] font-extrabold leading-[1.12] tracking-[-0.035em] md:block lg:text-[46px]">
+              {card.title}
             </h3>
 
-            <ul className="mt-4 max-w-[520px] space-y-2">
-              {chooseYourStudyPathway.map((item) => (
-                <CheckItem key={item} color="#18B8B5">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
+            {/* MOBILE TITLE */}
+            <h3 className="text-[26px] font-extrabold leading-[1.12] tracking-[-0.035em] sm:text-[31px] md:hidden">
+              {card.mobileTitle}
+            </h3>
 
-            <div className="mt-4 h-[3px] w-16 rounded-full bg-[#18B8B5]" />
+            <p style={{ color: card.mutedColor }} className="mt-4 max-w-[800px] text-[13px] leading-[1.7] sm:text-[15px] lg:text-[17px]">
+              {card.description}
+            </p>
 
-          </motion.div>
+            {card.points.length > 0 && (
+              <ul className="mt-5 grid gap-2.5">
+                {card.points.map((point) => (
+                  <li key={point} style={{ backgroundColor: card.chipColor }} className="flex items-start gap-3 rounded-xl px-3.5 py-2.5 text-[12px] font-medium leading-[1.5] sm:px-4 sm:text-[14px]">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-current" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
-          {/* STUDENT IMAGE */}
-          <motion.div initial={{ opacity: 0, x: 35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }} className="order-1 md:order-2">
-            <StudentVisual src="/images/study-india/program-fit-student.webp" alt="Student exploring university and study pathway options in the USA" color="#28599f" position="object-center" />
-          </motion.div>
+            {card.note && (
+              <p style={{ color: card.mutedColor }} className="mt-4 text-[11px] leading-[1.65] sm:text-[13px]">
+                {card.note}
+              </p>
+            )}
+          </div>
 
+          {/* READ MORE LINK */}
+          <div className="shrink-0 pb-1">
+            <Link href={card.href} className="group inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-3 text-[13px] font-bold text-[#063B72] shadow-[0_8px_25px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.18)] sm:px-6 sm:text-[14px]">
+              Read More
+              <ArrowUpRight size={17} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+export default function USAStackingCards() {
+  const sectionRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  return (
+    <section ref={sectionRef} className="relative w-full bg-[#08090D]" style={{ height: `${(TOTAL + 1) * 100}svh` }}>
+      <div className="sticky top-0 flex h-svh w-full flex-col items-center justify-center overflow-hidden px-3 py-8 sm:px-6 lg:px-10">
+
+        {/* BACKGROUND DECORATION */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.055),transparent_55%)]" />
+
+        {/* CARD STACK */}
+        <div className="relative h-[min(80svh,720px)] w-full max-w-[1160px]">
+          {cards.map((card, index) => (
+            <StackingCard
+              key={card.id}
+              card={card}
+              index={index}
+              progress={scrollYProgress}
+              reduceMotion={reduceMotion}
+            />
+          ))}
         </div>
 
-        {/* DIVIDER */}
-        <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
-
-        {/* =====================================
-            ROW 03 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
-
-          {/* STUDENT IMAGE */}
-          <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/guidance-student.webp" alt="Student receiving guidance for studying in the USA" color="#7C3AED" position="object-top" />
-          </motion.div>
-
-          {/* CONTENT */}
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative">
-
-            <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#7C3AED]">
-              03
-            </span>
-
-            <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Plan Your Journey <span className="text-[#7C3AED]">to the USA</span>
-            </h3>
-
-            <ul className="mt-4 max-w-[520px] space-y-2">
-              {planJourneyToUSA.map((item) => (
-                <CheckItem key={item} color="#7C3AED">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            <div className="mt-4 h-[3px] w-16 rounded-full bg-[#7C3AED]" />
-
-          </motion.div>
-
+        {/* SCROLL HINT */}
+        <div className="pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50 sm:bottom-4 sm:text-[11px]">
+          Scroll to Explore
         </div>
 
       </div>

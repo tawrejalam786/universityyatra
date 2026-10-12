@@ -6,39 +6,21 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 /* =========================================
-   DESKTOP CONTENT - IRELAND
+   UPDATED IRELAND CONTENT
 ========================================= */
 
-const chooseYourStudyPathwayDesktop = [
-  "Undergraduate, postgraduate & professional programs",
-  "University & course selection based on your profile",
-  "Industry-relevant programs aligned with career goals",
-  "Guidance on eligibility & admission requirements",
+const chooseYourStudyPathway = [
+  "Explore undergraduate, postgraduate, and professional programs in Ireland",
+  "Find universities and courses suited to your academic profile",
+  "Compare industry-relevant programs aligned with your career goals",
+  "Understand eligibility criteria and university admission requirements",
 ];
 
-const planJourneyToIrelandDesktop = [
-  "University application & documentation support",
-  "SOP & LOR guidance",
-  "Student visa guidance",
-  "Pre-departure support",
-];
-
-/* =========================================
-   MOBILE CONTENT - IRELAND
-========================================= */
-
-const chooseYourStudyPathwayMobile = [
-  "Undergraduate, postgraduate & professional programs",
-  "University & course selection based on your profile",
-  "Industry-relevant programs aligned with career goals",
-  "Guidance on eligibility & admission requirements",
-];
-
-const planJourneyToIrelandMobile = [
-  "University application & documentation support",
-  "SOP & LOR guidance",
-  "Student visa guidance",
-  "Pre-departure support",
+const planJourneyToIreland = [
+  "Get support with university applications and required documentation",
+  "Receive guidance on your Statement of Purpose (SOP) and Letters of Recommendation (LORs)",
+  "Understand Irish study visa requirements and application procedures",
+  "Prepare for your move with pre-departure guidance",
 ];
 
 /* =========================================
@@ -103,10 +85,7 @@ export default function OnlineDegreeSection() {
     <section className="w-full overflow-hidden bg-white py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5 lg:px-6">
 
-        {/* =====================================
-            SECTION HEADING
-        ===================================== */}
-
+        {/* SECTION HEADING */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mx-auto mb-8 max-w-[760px] text-center md:mb-10 lg:mb-12">
 
           <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
@@ -119,10 +98,7 @@ export default function OnlineDegreeSection() {
 
         </motion.div>
 
-        {/* =====================================
-            ROW 01 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-
+        {/* ROW 01 - IMAGE LEFT, CONTENT RIGHT */}
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
           {/* STUDENT IMAGE */}
@@ -144,30 +120,26 @@ export default function OnlineDegreeSection() {
             {/* DESKTOP DESCRIPTION */}
             <div className="mt-3 hidden max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:block lg:text-[15px]">
               <p>
-                Ireland offers an English-speaking academic environment with strong connections to technology, business, healthcare, engineering, and other professional sectors. Students can explore specialized programs that connect their education with evolving career opportunities.
+                Ireland offers an English-speaking academic environment with strong links to technology, business, finance, healthcare, and engineering. Students planning to study in Ireland can explore specialised degrees, research opportunities, and programs connected to evolving industry needs.
               </p>
             </div>
 
             {/* MOBILE DESCRIPTION */}
             <div className="mt-3 max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:hidden">
               <p>
-                Ireland offers an English-speaking study environment with strong links to technology, business, healthcare, and engineering. Explore specialized programs that connect your studies with evolving career opportunities.
+                Study in Ireland through English-taught programs across technology, business, healthcare, and engineering. Explore specialised courses and postgraduate degrees that align with your academic background and future plans.
               </p>
             </div>
 
             <div className="mt-4 h-[3px] w-16 rounded-full bg-[#2563EB]" />
 
           </motion.div>
-
         </div>
 
         {/* DIVIDER */}
         <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
 
-        {/* =====================================
-            ROW 02 - CONTENT LEFT, IMAGE RIGHT
-        ===================================== */}
-
+        {/* ROW 02 - CONTENT LEFT, IMAGE RIGHT */}
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
           {/* CONTENT */}
@@ -181,18 +153,8 @@ export default function OnlineDegreeSection() {
               Choose Your <span className="text-[#18B8B5]">Study Pathway</span>
             </h3>
 
-            {/* DESKTOP LIST */}
-            <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
-              {chooseYourStudyPathwayDesktop.map((item) => (
-                <CheckItem key={item} color="#18B8B5">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            {/* MOBILE LIST */}
-            <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
-              {chooseYourStudyPathwayMobile.map((item) => (
+            <ul className="mt-4 max-w-[520px] space-y-2">
+              {chooseYourStudyPathway.map((item) => (
                 <CheckItem key={item} color="#18B8B5">
                   {item}
                 </CheckItem>
@@ -213,10 +175,7 @@ export default function OnlineDegreeSection() {
         {/* DIVIDER */}
         <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
 
-        {/* =====================================
-            ROW 03 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-
+        {/* ROW 03 - IMAGE LEFT, CONTENT RIGHT */}
         <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
 
           {/* STUDENT IMAGE */}
@@ -235,18 +194,8 @@ export default function OnlineDegreeSection() {
               Plan Your Journey <span className="text-[#7C3AED]">to Ireland</span>
             </h3>
 
-            {/* DESKTOP LIST */}
-            <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
-              {planJourneyToIrelandDesktop.map((item) => (
-                <CheckItem key={item} color="#7C3AED">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            {/* MOBILE LIST */}
-            <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
-              {planJourneyToIrelandMobile.map((item) => (
+            <ul className="mt-4 max-w-[520px] space-y-2">
+              {planJourneyToIreland.map((item) => (
                 <CheckItem key={item} color="#7C3AED">
                   {item}
                 </CheckItem>
@@ -256,7 +205,6 @@ export default function OnlineDegreeSection() {
             <div className="mt-4 h-[3px] w-16 rounded-full bg-[#7C3AED]" />
 
           </motion.div>
-
         </div>
 
       </div>

@@ -17,16 +17,15 @@ import {
 } from "lucide-react";
 
 /* =========================================
-   UK CONTENT - EXACTLY AS PROVIDED
+   UPDATED IRELAND CONTENT
 ========================================= */
-
 
 const benefits = [
   {
     number: "01",
     title: "Strong Industry Connections",
     description:
-      "Many programs incorporate projects, placements, or practical learning linked to professional environments.",
+      "Explore programs linked to Ireland's technology, pharmaceutical, financial services, and medtech sectors, with internships or industry projects where available.",
     icon: BriefcaseBusiness,
     accent: "#063B72",
     soft: "#EAF1F8",
@@ -35,7 +34,7 @@ const benefits = [
     number: "02",
     title: "English-Taught Education",
     description:
-      "Study in an English-speaking environment across a wide selection of undergraduate and postgraduate programs.",
+      "Earn a degree in an English-speaking country within the European Union, with programs available across undergraduate and postgraduate disciplines.",
     icon: BookOpen,
     accent: "#18B8B5",
     soft: "#E8F8F7",
@@ -44,7 +43,7 @@ const benefits = [
     number: "03",
     title: "Technology & Innovation Exposure",
     description:
-      "Ireland’s strong technology ecosystem creates opportunities to study in an environment closely connected to innovation-driven industries.",
+      "Explore computer science, software development, data analytics, and research-led programs in Ireland's established technology ecosystem.",
     icon: Microscope,
     accent: "#0E7490",
     soft: "#EAF7FA",
@@ -53,7 +52,7 @@ const benefits = [
     number: "04",
     title: "Career-Focused Programs",
     description:
-      "Explore specialized courses designed around specific disciplines and evolving professional requirements.",
+      "Choose specialised degrees in business analytics, finance, pharmaceutical sciences, engineering, and other fields aligned with specific career interests.",
     icon: GraduationCap,
     accent: "#7C3AED",
     soft: "#F3EEFF",
@@ -62,7 +61,7 @@ const benefits = [
     number: "05",
     title: "Wide Range of Specializations",
     description:
-      "Choose from fields including technology, business, finance, engineering, healthcare, data, and more.",
+      "Compare MSc in Ireland, MS courses, MBA programs, and degrees in computing, business, life sciences, engineering, and healthcare.",
     icon: Layers3,
     accent: "#047857",
     soft: "#EAF8F2",
@@ -71,13 +70,12 @@ const benefits = [
     number: "06",
     title: "Post-Study Work Options",
     description:
-      "Eligible graduates can explore available post-study work routes and professional opportunities, subject to applicable requirements.",
+      "Eligible graduates can stay in Ireland for up to 12 months after a Level 8 degree or up to 24 months after a Level 9 or higher qualification to seek employment, subject to immigration requirements.",
     icon: Globe2,
     accent: "#B45309",
     soft: "#FFF7E8",
   },
 ];
-
 
 /* =========================================
    MAIN COMPONENT
@@ -144,7 +142,6 @@ export default function WhatItGetsYou() {
 
     const onScroll = () => {
       if (frame !== null) return;
-
       frame = window.requestAnimationFrame(updateActiveStep);
     };
 
@@ -197,11 +194,12 @@ export default function WhatItGetsYou() {
     <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
       <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
 
-        {/* =====================================
-            HEADING
-        ===================================== */}
-
+        {/* SECTION HEADING */}
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
+
+          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
+            WHY STUDY IN IRELAND?
+          </span>
 
           <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
             Inside the <span className="text-[#18B8B5]">Irish Study</span> Experience
@@ -209,10 +207,7 @@ export default function WhatItGetsYou() {
 
         </motion.div>
 
-        {/* =====================================
-            CANADA STYLE TIMELINE
-        ===================================== */}
-
+        {/* TIMELINE */}
         <div className="relative mx-auto w-full max-w-[1100px]">
 
           {/* MULTICOLOR CENTER BAR */}
@@ -222,12 +217,8 @@ export default function WhatItGetsYou() {
             ))}
           </div>
 
-          {/* =====================================
-              TIMELINE ITEMS
-          ===================================== */}
-
+          {/* TIMELINE ITEMS */}
           <div className="relative z-20">
-
             {benefits.map((item, index) => {
               const isLeft = index % 2 === 1;
               const isActive = activeStep === index;
@@ -237,7 +228,6 @@ export default function WhatItGetsYou() {
 
                   {/* LEFT COLUMN */}
                   <div className="flex min-w-0 items-center justify-end">
-
                     {isLeft ? (
                       <TimelineAccordionCard
                         item={item}
@@ -250,21 +240,17 @@ export default function WhatItGetsYou() {
                     ) : (
                       <StepLabel item={item} active={isActive} side="left" />
                     )}
-
                   </div>
 
                   {/* CENTER STEP NUMBER */}
                   <div ref={(element) => { nodeRefs.current[index] = element; }} className="relative z-20 flex items-center justify-center">
-
                     <motion.span initial={false} animate={{ scale: isActive ? 1.12 : 1, opacity: isActive ? 1 : 0.9 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[14px] font-extrabold text-white sm:h-[60px] sm:w-[60px] sm:text-[19px] md:h-[76px] md:w-[76px] md:text-[24px]">
                       {item.number}
                     </motion.span>
-
                   </div>
 
                   {/* RIGHT COLUMN */}
                   <div className="flex min-w-0 items-center justify-start">
-
                     {!isLeft ? (
                       <TimelineAccordionCard
                         item={item}
@@ -277,7 +263,6 @@ export default function WhatItGetsYou() {
                     ) : (
                       <StepLabel item={item} active={isActive} side="right" />
                     )}
-
                   </div>
 
                   {/* CONNECTOR LINE */}
@@ -291,7 +276,6 @@ export default function WhatItGetsYou() {
                 </div>
               );
             })}
-
           </div>
 
         </div>
@@ -339,7 +323,7 @@ function TimelineAccordionCard({
   side,
 }) {
   const isLeft = side === "left";
-  const contentId = `uk-benefit-${index}`;
+  const contentId = `ireland-benefit-${index}`;
 
   return (
     <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
@@ -370,10 +354,7 @@ function TimelineAccordionCard({
 
       </button>
 
-      {/* =====================================
-          ACCORDION DESCRIPTION
-      ===================================== */}
-
+      {/* ACCORDION DESCRIPTION */}
       <AnimatePresence initial={false}>
         {active && (
           <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">

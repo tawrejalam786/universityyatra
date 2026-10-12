@@ -285,7 +285,7 @@ export default function StudentStories({
           >
             &ldquo;Your future campus is waiting for you to take the first step.&rdquo;
           </p>
-          <Link
+          {/* <Link
             href={storiesHref}
             className="group mt-6 inline-flex min-h-12 items-center gap-2 rounded-full px-5 text-base font-bold text-brand-navy underline decoration-brand-teal decoration-2 underline-offset-8 hover:text-brand-navy-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal"
           >
@@ -294,7 +294,7 @@ export default function StudentStories({
               aria-hidden="true"
               className="size-5 transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
             />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

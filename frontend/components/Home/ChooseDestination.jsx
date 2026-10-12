@@ -33,7 +33,7 @@ import "swiper/css";
  */
 const COUNTRIES = [
   {
-    slug: "canada",
+    slug: "study-in-canada",
     name: "Canada",
     flag: "/images/flags/ca.svg",
     image: "/images/countries/toronto.webp", // "/images/countries/canada.jpg"
@@ -47,7 +47,7 @@ const COUNTRIES = [
     ],
   },
   {
-    slug: "uae",
+    slug: "study-in-uae",
     name: "UAE",
     flag: "/images/flags/ae.svg",
     image: "/images/countries/UAE_Dubai_Banner.webp", // "/images/countries/UAE_Dubai_Banner.webp"
@@ -60,7 +60,7 @@ const COUNTRIES = [
     ],
   },
   {
-    slug: "united-kingdom",
+    slug: "study-in-uk",
     name: "United Kingdom",
     flag: "/images/flags/gb.svg",
     image: "/images/countries/united_kingdom.png", // "/images/countries/united_kingdom.jpg"
@@ -73,7 +73,7 @@ const COUNTRIES = [
     ],
   },
   {
-    slug: "usa",
+    slug: "study-in-usa",
     name: "USA",
     flag: "/images/flags/us.svg",
     image: "/images/countries/usa.png", // "/images/countries/usa.png"
@@ -157,7 +157,7 @@ function FeaturedCard({ c, sizes }) {
 
           {/* after:* makes the whole card tappable */}
           <Link
-            href={`/study-abroad/${c.slug}`}
+            href={`/${c.slug}`}
             className="group mt-5 inline-flex h-11 items-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-brand-navy transition-colors after:absolute after:inset-0 after:z-10 hover:bg-tint-sky focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal sm:h-12 sm:text-base"
           >
             Explore Programs
@@ -176,7 +176,7 @@ function FeaturedCard({ c, sizes }) {
 function CompactCard({ c }) {
   return (
     <Link
-      href={`/study-abroad/${c.slug}`}
+      href={`/${c.slug}`}
       className="group relative isolate block h-full overflow-hidden rounded-3xl border border-white/15 bg-brand-navy shadow-[0_18px_40px_-18px_rgba(0,0,0,0.6)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal"
     >
       <Photo src={c.image} sizes="(min-width: 1024px) 32vw, 90vw" />
@@ -337,7 +337,7 @@ export default function ChooseDestination({ countries = COUNTRIES }) {
 
         <div className="mt-6 sm:mt-8">
           <Link
-            href="/study-abroad"
+            href=""
             className="group inline-flex items-center gap-2 rounded-md text-base font-semibold text-brand-teal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal"
           >
             Explore all destinations

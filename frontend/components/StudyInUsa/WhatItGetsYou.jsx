@@ -17,14 +17,16 @@ import {
 } from "lucide-react";
 
 /* =========================================
-   USA CONTENT - EXACTLY AS PROVIDED
+   USA CONTENT - DESKTOP & MOBILE
 ========================================= */
 
 const benefits = [
   {
     number: "01",
     title: "Post-Study Work Opportunities",
-    description:
+    desktopDescription:
+      "Explore eligible post-study work options in the USA, including Optional Practical Training (OPT) and the STEM OPT extension for qualifying students and programs. Understand the relevant eligibility requirements and application process before planning your next steps.",
+    mobileDescription:
       "Explore eligible OPT and STEM OPT pathways for gaining professional experience after graduation.",
     icon: BriefcaseBusiness,
     accent: "#063B72",
@@ -33,8 +35,10 @@ const benefits = [
   {
     number: "02",
     title: "Globally Ranked Universities",
-    description:
-      "Choose from a wide range of highly ranked U.S. universities across diverse academic disciplines.",
+    desktopDescription:
+      "Explore universities in the USA across a wide range of academic disciplines, from business and engineering to computer science and healthcare. Compare institutions using relevant factors such as program quality, tuition fees, location, entry requirements, and academic fit.",
+    mobileDescription:
+      "Discover US universities across business, engineering, technology, healthcare, and more.",
     icon: GraduationCap,
     accent: "#18B8B5",
     soft: "#E8F8F7",
@@ -42,8 +46,10 @@ const benefits = [
   {
     number: "03",
     title: "Flexible Education System",
-    description:
-      "Explore majors, minors, electives, and academic pathways based on your university and program.",
+    desktopDescription:
+      "Discover the flexibility of the American education system through majors, minors, electives, and interdisciplinary study options, depending on the university and degree program. Build an academic pathway that reflects your interests and career objectives.",
+    mobileDescription:
+      "Explore majors, minors, and electives to customise your academic pathway.",
     icon: BookOpen,
     accent: "#0E7490",
     soft: "#EAF7FA",
@@ -51,8 +57,10 @@ const benefits = [
   {
     number: "04",
     title: "Global Career Advantage",
-    description:
-      "Gain international academic and professional exposure relevant to globally connected careers.",
+    desktopDescription:
+      "Gain international academic exposure and develop skills relevant to careers in an interconnected global economy. Your opportunities will depend on your chosen field, academic experience, work authorization, and individual career goals.",
+    mobileDescription:
+      "Gain international academic exposure and skills relevant to global career opportunities.",
     icon: Globe2,
     accent: "#7C3AED",
     soft: "#F3EEFF",
@@ -60,8 +68,10 @@ const benefits = [
   {
     number: "05",
     title: "Strong Industry & Research Exposure",
-    description:
-      "Engage with research, innovation, projects, and industry-linked learning beyond the classroom.",
+    desktopDescription:
+      "Explore research opportunities, practical projects, innovation-driven learning, and industry engagement offered by U.S. universities. Depending on your institution and program, these experiences can help you connect academic knowledge with real-world applications.",
+    mobileDescription:
+      "Explore research, practical projects, and industry-linked learning opportunities.",
     icon: Microscope,
     accent: "#047857",
     soft: "#EAF8F2",
@@ -69,8 +79,10 @@ const benefits = [
   {
     number: "06",
     title: "Wide Range of Courses",
-    description:
-      "Choose from diverse programs and specializations across business, technology, healthcare, engineering, and more.",
+    desktopDescription:
+      "Choose from a diverse range of courses in the USA, including business administration, computer science, engineering, healthcare, finance, data science, and other specialized fields. Compare undergraduate and postgraduate programs to find options aligned with your qualifications and future plans.",
+    mobileDescription:
+      "Choose from diverse undergraduate and postgraduate programs in business, technology, engineering, healthcare, and other fields.",
     icon: Layers3,
     accent: "#B45309",
     soft: "#FFF7E8",
@@ -95,7 +107,9 @@ export default function WhatItGetsYou() {
     activeRef.current = activeStep;
   }, [activeStep]);
 
-  /* SCROLL-BASED ACTIVE ACCORDION */
+  /* =========================================
+     SCROLL-BASED ACTIVE ACCORDION
+  ========================================= */
 
   useEffect(() => {
     let frame = null;
@@ -140,7 +154,6 @@ export default function WhatItGetsYou() {
 
     const onScroll = () => {
       if (frame !== null) return;
-
       frame = window.requestAnimationFrame(updateActiveStep);
     };
 
@@ -159,7 +172,9 @@ export default function WhatItGetsYou() {
     };
   }, [manualStep]);
 
-  /* MANUAL CARD SELECTION */
+  /* =========================================
+     MANUAL CARD SELECTION
+  ========================================= */
 
   const handleCardClick = (index) => {
     activeRef.current = index;
@@ -167,7 +182,9 @@ export default function WhatItGetsYou() {
     setManualStep(index);
   };
 
-  /* RETURN TO SCROLL MODE */
+  /* =========================================
+     RETURN TO SCROLL MODE
+  ========================================= */
 
   useEffect(() => {
     if (manualStep === null) return;
@@ -189,14 +206,20 @@ export default function WhatItGetsYou() {
     <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
       <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
 
-        {/* HEADING */}
+        {/* SECTION HEADING */}
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
+
+          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
+            WHY STUDY IN USA ?
+          </span>
+
           <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
             Inside the <span className="text-[#18B8B5]">American Study</span> Experience
           </h2>
+
         </motion.div>
 
-        {/* CANADA STYLE TIMELINE */}
+        {/* TIMELINE */}
         <div className="relative mx-auto w-full max-w-[1100px]">
 
           {/* MULTICOLOR CENTER BAR */}
@@ -350,8 +373,14 @@ function TimelineAccordionCard({
 
             <div className="border-t border-[#EDF1F5] px-2.5 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4 md:px-5">
 
-              <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:text-[14px] md:leading-[1.7]">
-                {item.description}
+              {/* DESKTOP DESCRIPTION */}
+              <p className="hidden text-[14px] leading-[1.7] text-[#526477] md:block">
+                {item.desktopDescription}
+              </p>
+
+              {/* MOBILE DESCRIPTION */}
+              <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:hidden">
+                {item.mobileDescription}
               </p>
 
             </div>

@@ -6,6 +6,7 @@ import { ArrowRight,
   Languages,
   BriefcaseBusiness,
 } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   {
@@ -149,39 +150,40 @@ export default function StudyIndiaHero() {
             text-center
           "
         >
-          {/* Study In USA label */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 14,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.55,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              mb-5
-              inline-flex items-center
-              rounded-full
-              border border-white/15
-              bg-white/[0.08]
-              px-5 py-2
-              text-[12px]
-              font-semibold
-              uppercase
-              tracking-[0.18em]
-              text-white
-              backdrop-blur-md
+       {/* Study In Uae label */}
+                
+       
+        <motion.div
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mb-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-white/20 bg-[#0B2538]/75 py-1.5 pl-1.5 pr-4 shadow-[0_8px_25px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-xl sm:gap-3 sm:pr-5"
+        >
+          {/* SUBTLE GLASS HIGHLIGHT */}
+          <span aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-              sm:text-[13px]
-            "
-          >
-            Study In USA
-          </motion.div>
+          {/* UK FLAG */}
+          <span className="relative flex h-[34px] w-[34px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-white/85 bg-white shadow-[0_3px_10px_rgba(0,0,0,0.25)]">
+            <Image
+              src="/images/countrylogo/usa.png"
+              alt="Uae flag"
+              width={34}
+              height={34}
+              className="h-full w-full object-cover"
+            />
+          </span>
+
+          {/* LABEL */}
+          <span className="flex flex-col items-start gap-[2px]">
+            {/* <span className="text-[8px] font-bold uppercase leading-none tracking-[0.18em] text-[#8CE5DE] sm:text-[9px]">
+              Your Destination
+            </span> */}
+
+            <span className="whitespace-nowrap text-[13px] font-extrabold uppercase leading-tight tracking-[0.08em] text-white sm:text-[14px]">
+              Study In USA
+            </span>
+          </span>
+        </motion.div>
 
           {/* Heading */}
           <motion.h1
@@ -211,7 +213,7 @@ export default function StudyIndiaHero() {
               xl:text-[50px]
             "
           >
-         Build Your Future
+         Learn in a Culture of 
             <span
               className="
                 mt-1 block
@@ -219,7 +221,7 @@ export default function StudyIndiaHero() {
                 md:mt-2
               "
             >
-              Through American Education.
+             Research and Discovery.
             </span>
           </motion.h1>
 
