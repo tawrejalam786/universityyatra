@@ -102,7 +102,7 @@ export default function UniversityCarousel() {
         <div className="mb-8 flex items-end justify-between gap-5 md:mb-10 lg:mb-12">
           <div className="max-w-[760px]">
             <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[#18A9A6] sm:text-[13px]">
-              Universities
+             Explore Universities
             </p>
 
             <h2 className="text-[30px] font-bold leading-[1.08] tracking-[-0.035em] text-[#063B72] sm:text-[35px] md:text-[41px] lg:text-[46px]">

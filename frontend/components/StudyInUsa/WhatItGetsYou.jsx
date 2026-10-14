@@ -20,14 +20,15 @@ import {
    USA CONTENT - DESKTOP & MOBILE
 ========================================= */
 
+
 const benefits = [
   {
     number: "01",
     title: "Post-Study Work Opportunities",
     desktopDescription:
-      "Explore eligible post-study work options in the USA, including Optional Practical Training (OPT) and the STEM OPT extension for qualifying students and programs. Understand the relevant eligibility requirements and application process before planning your next steps.",
+      "The USA offers eligible international graduates up to 12 months of Optional Practical Training (OPT), with a possible 24-month STEM extension for qualifying degrees and students.",
     mobileDescription:
-      "Explore eligible OPT and STEM OPT pathways for gaining professional experience after graduation.",
+      "Eligible graduates can work in their field through OPT, with an additional 24-month extension possible for qualifying STEM degrees.",
     icon: BriefcaseBusiness,
     accent: "#063B72",
     soft: "#EAF1F8",
@@ -36,9 +37,9 @@ const benefits = [
     number: "02",
     title: "Globally Ranked Universities",
     desktopDescription:
-      "Explore universities in the USA across a wide range of academic disciplines, from business and engineering to computer science and healthcare. Compare institutions using relevant factors such as program quality, tuition fees, location, entry requirements, and academic fit.",
+      "The USA is home to universities recognised for academic excellence, specialised programs, and research. Students can compare institutions based on course offerings, faculty, facilities, location, and career goals.",
     mobileDescription:
-      "Discover US universities across business, engineering, technology, healthcare, and more.",
+      "Study at US universities recognised worldwide for their academic programs, research contributions, and achievements across diverse fields.",
     icon: GraduationCap,
     accent: "#18B8B5",
     soft: "#E8F8F7",
@@ -47,9 +48,9 @@ const benefits = [
     number: "03",
     title: "Flexible Education System",
     desktopDescription:
-      "Discover the flexibility of the American education system through majors, minors, electives, and interdisciplinary study options, depending on the university and degree program. Build an academic pathway that reflects your interests and career objectives.",
+      "Many US undergraduate programs allow students to combine a major with minors, electives, and courses from other disciplines. This gives students greater flexibility to shape their academic pathway.",
     mobileDescription:
-      "Explore majors, minors, and electives to customise your academic pathway.",
+      "Combine majors, minors, and electives at many universities to shape a degree around your interests.",
     icon: BookOpen,
     accent: "#0E7490",
     soft: "#EAF7FA",
@@ -58,9 +59,9 @@ const benefits = [
     number: "04",
     title: "Global Career Advantage",
     desktopDescription:
-      "Gain international academic exposure and develop skills relevant to careers in an interconnected global economy. Your opportunities will depend on your chosen field, academic experience, work authorization, and individual career goals.",
+      "Studying in the USA brings students into an internationally diverse academic environment. Classroom collaboration, presentations, internships where eligible, and practical projects can help develop skills valued across industries.",
     mobileDescription:
-      "Gain international academic exposure and skills relevant to global career opportunities.",
+      "Build practical skills through presentations, group projects, and classroom discussions in a diverse academic environment.",
     icon: Globe2,
     accent: "#7C3AED",
     soft: "#F3EEFF",
@@ -69,9 +70,9 @@ const benefits = [
     number: "05",
     title: "Strong Industry & Research Exposure",
     desktopDescription:
-      "Explore research opportunities, practical projects, innovation-driven learning, and industry engagement offered by U.S. universities. Depending on your institution and program, these experiences can help you connect academic knowledge with real-world applications.",
+      "US universities offer opportunities to participate in faculty-led research, laboratory work, innovation projects, and industry collaborations. Availability depends on the university, department, and program.",
     mobileDescription:
-      "Explore research, practical projects, and industry-linked learning opportunities.",
+      "Work on research projects, use specialised laboratories, or engage with industry through opportunities offered by your university.",
     icon: Microscope,
     accent: "#047857",
     soft: "#EAF8F2",
@@ -80,14 +81,15 @@ const benefits = [
     number: "06",
     title: "Wide Range of Courses",
     desktopDescription:
-      "Choose from a diverse range of courses in the USA, including business administration, computer science, engineering, healthcare, finance, data science, and other specialized fields. Compare undergraduate and postgraduate programs to find options aligned with your qualifications and future plans.",
+      "From Computer Science, Engineering, and Business Administration to Public Health, Economics, and Film Studies, US universities offer undergraduate and graduate programs across a broad range of disciplines.",
     mobileDescription:
-      "Choose from diverse undergraduate and postgraduate programs in business, technology, engineering, healthcare, and other fields.",
+      "From Computer Science and Business Administration to Public Health and Film Studies, US universities offer diverse degree options.",
     icon: Layers3,
     accent: "#B45309",
     soft: "#FFF7E8",
   },
 ];
+
 
 /* =========================================
    MAIN COMPONENT
@@ -203,7 +205,7 @@ export default function WhatItGetsYou() {
   }, [manualStep]);
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
+    <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-8">
       <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
 
         {/* SECTION HEADING */}

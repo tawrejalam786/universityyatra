@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -12,91 +12,234 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 /* =========================================
-   COURSE DATA
+   CATEGORY FILTERS
+========================================= */
+
+const tabs = [
+  { id: "all", label: "All Courses" },
+  { id: "masters", label: "Master's Degree" },
+  { id: "bachelors", label: "Bachelor's Degree" },
+  { id: "stem", label: "STEM*" },
+];
+
+/* =========================================
+   USA DEGREE PROGRAMS
 ========================================= */
 
 const courseCards = [
+  // MASTER'S DEGREE PROGRAMS
   {
-    course: "BBA",
-    image: "/images/courses/bba.png",
+    id: 1,
+    course: "Computer Science (MS)",
+    category: "masters",
+    stem: true,
+    image: "/images/courses/computer-science-ms.webp",
     color: "#2563EB",
-    stem: false,
     description:
-      "Build a strong foundation in business and management with specializations in Data Analytics, Business Analytics, and International Business.",
+      "Build advanced skills in software systems, artificial intelligence, algorithms, and computing research.",
   },
   {
-    course: "BCA",
-    image: "/images/courses/bca.png",
+    id: 2,
+    course: "Business Analytics (MS)",
+    category: "masters",
+    stem: true,
+    image: "/images/courses/business-analytics-ms.webp",
     color: "#0DAA9A",
+    description:
+      "Use statistics, data visualisation, and predictive modelling to support business decisions.",
+  },
+  {
+    id: 3,
+    course: "Cybersecurity (MS)",
+    category: "masters",
     stem: true,
-    description:
-      "Explore computer applications and emerging technologies, including AI and Machine Learning, AI and Data Science, and Cloud Computing and Cyber Security.",
-  },
-  {
-    course: "MBA",
-    image: "/images/courses/mba.png",
-    color: "#F59E0B",
-    stem: false,
-    description:
-      "Develop advanced management and leadership skills with specializations in Airport and Airline Management, Business Analytics, and Data Science with AI.",
-  },
-  {
-    course: "MCA",
-    image: "/images/courses/mca.png",
+    image: "/images/courses/cybersecurity-ms.webp",
     color: "#7C3AED",
-    stem: true,
     description:
-      "Advance your computing knowledge through AI and Computing, Cloud Computing and Cyber Security, and Data Science specializations.",
+      "Learn to protect digital systems, assess security risks, and respond to cyber threats.",
   },
   {
-    course: "B.Com",
-    image: "/images/courses/bcom.png",
+    id: 4,
+    course: "Data Science (MS)",
+    category: "masters",
+    stem: true,
+    image: "/images/courses/data-science-ms.webp",
+    color: "#0891B2",
+    description:
+      "Apply programming, statistical analysis, and machine learning to complex datasets.",
+  },
+  {
+    id: 5,
+    course: "Business Administration (MBA)",
+    category: "masters",
+    stem: false,
+    image: "/images/courses/mba.webp",
+    color: "#F59E0B",
+    description:
+      "Develop skills in leadership, finance, marketing, operations, and business strategy.",
+  },
+  {
+    id: 6,
+    course: "Finance (MS)",
+    category: "masters",
+    stem: false,
+    image: "/images/courses/finance-ms.webp",
     color: "#EC1682",
-    stem: false,
     description:
-      "Strengthen your understanding of commerce, accounting, and financial systems with Banking and FinTech, Business Analytics, and Finance and Accounting.",
+      "Study financial modelling, investment analysis, corporate finance, and risk management.",
   },
   {
-    course: "M.Com",
-    image: "/images/courses/mcom.png",
-    color: "#4F46E5",
-    stem: false,
-    description:
-      "Build advanced expertise in commerce and financial management with Accounting and Finance, Financial Management, and Fintech.",
-  },
-  {
-    course: "M.Sc.",
-    image: "/images/courses/msc.png",
-    color: "#16A34A",
+    id: 7,
+    course: "Engineering (MS/MEng)",
+    category: "masters",
     stem: true,
+    image: "/images/courses/engineering-ms.webp",
+    color: "#EA580C",
     description:
-      "Explore advanced scientific and analytical studies with specializations in Applied Mathematics, Data Science, and Mathematics.",
+      "Specialise in areas such as electrical, mechanical, civil, or computer engineering through advanced coursework and projects.",
   },
   {
-    course: "MA",
-    image: "/images/courses/ma.png",
-    color: "#EF4444",
+    id: 8,
+    course: "Economics (MA/MS)",
+    category: "masters",
     stem: false,
+    image: "/images/courses/economics-masters.webp",
+    color: "#4F46E5",
     description:
-      "Develop subject expertise and critical thinking through postgraduate study in Economics, English, and History.",
+      "Study economic theory, markets, policy, and quantitative methods for analysing economic trends.",
   },
   {
-    course: "BA",
-    image: "/images/courses/ba.png",
-    color: "#06B6D4",
+    id: 9,
+    course: "Public Health (MPH)",
+    category: "masters",
     stem: false,
+    image: "/images/courses/public-health.webp",
+    color: "#16A34A",
     description:
-      "Explore humanities and social sciences through Political Science, English, and Economics while developing analytical and communication skills.",
+      "Focus on epidemiology, health policy, disease prevention, and improving population health.",
+  },
+  {
+    id: 10,
+    course: "Architecture (MArch)",
+    category: "masters",
+    stem: false,
+    image: "/images/courses/architecture.webp",
+    color: "#B45309",
+    description:
+      "Develop skills in architectural design, building systems, and sustainable planning for the built environment.",
+  },
+  {
+    id: 11,
+    course: "Film and Media Production (MFA/MA)",
+    category: "masters",
+    stem: false,
+    image: "/images/courses/film-media-production.webp",
+    color: "#9333EA",
+    description:
+      "Study filmmaking, screenwriting, cinematography, and media production through practical and creative work.",
+  },
+  {
+    id: 12,
+    course: "Biological Sciences (MS)",
+    category: "masters",
+    stem: true,
+    image: "/images/courses/biological-sciences-ms.webp",
+    color: "#059669",
+    description:
+      "Study genetics, molecular biology, microbiology, and research methods for careers in life sciences.",
+  },
+
+  // BACHELOR'S DEGREE PROGRAMS
+  {
+    id: 13,
+    course: "Computer Science (BS)",
+    category: "bachelors",
+    stem: true,
+    image: "/images/courses/computer-science-bs.webp",
+    color: "#2563EB",
+    description:
+      "Learn programming, algorithms, software development, and the foundations of computing.",
+  },
+  {
+    id: 14,
+    course: "Engineering (BS/BSE)",
+    category: "bachelors",
+    stem: true,
+    image: "/images/courses/engineering-bs.webp",
+    color: "#0D9488",
+    description:
+      "Build technical knowledge in engineering fields such as mechanical, electrical, civil, and computer engineering.",
+  },
+  {
+    id: 15,
+    course: "Business Administration (BBA/BSBA)",
+    category: "bachelors",
+    stem: false,
+    image: "/images/courses/business-administration-bs.webp",
+    color: "#F59E0B",
+    description:
+      "Learn business fundamentals across management, marketing, accounting, finance, and operations.",
+  },
+  {
+    id: 16,
+    course: "Finance (BS/BBA)",
+    category: "bachelors",
+    stem: false,
+    image: "/images/courses/finance-bs.webp",
+    color: "#EC1682",
+    description:
+      "Understand investments, financial markets, corporate finance, and financial planning.",
+  },
+  {
+    id: 17,
+    course: "Economics (BA/BS)",
+    category: "bachelors",
+    stem: false,
+    image: "/images/courses/economics-bs.webp",
+    color: "#7C3AED",
+    description:
+      "Learn how markets, public policy, and economic decisions shape businesses and societies.",
+  },
+  {
+    id: 18,
+    course: "Biological Sciences (BS)",
+    category: "bachelors",
+    stem: true,
+    image: "/images/courses/biological-sciences-bs.webp",
+    color: "#16A34A",
+    description:
+      "Study living organisms, genetics, ecology, and cellular processes through coursework and laboratory work.",
+  },
+  {
+    id: 19,
+    course: "Film and Media Studies (BA/BFA)",
+    category: "bachelors",
+    stem: false,
+    image: "/images/courses/film-media-studies.webp",
+    color: "#DB2777",
+    description:
+      "Learn about filmmaking, screen culture, storytelling, and media production.",
   },
 ];
 
 /* =========================================
-   MAIN COURSE SLIDER
+   MAIN COMPONENT
 ========================================= */
 
 export default function CoursesSlider() {
   const swiperRef = useRef(null);
   const reduceMotion = useReducedMotion();
+  const [activeTab, setActiveTab] = useState("all");
+
+  const filteredCourses = courseCards.filter((item) => {
+    if (activeTab === "all") return true;
+    if (activeTab === "stem") return item.stem;
+    return item.category === activeTab;
+  });
+
+  const changeTab = (tabId) => {
+    setActiveTab(tabId);
+  };
 
   const handlePrev = () => {
     swiperRef.current?.slidePrev();
@@ -109,19 +252,22 @@ export default function CoursesSlider() {
   return (
     <section className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
 
-      {/* BACKGROUND GLOWS */}
+      {/* BACKGROUND DECORATION */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[280px] w-[280px] rounded-full bg-[#18B8B5]/[0.05] blur-[90px]" />
-
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#063B72]/[0.04] blur-[100px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-5 lg:px-6">
 
         {/* SECTION HEADER */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="mb-7 flex items-end justify-between gap-4 md:mb-9">
+        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mb-6 flex items-end justify-between gap-4">
 
           <div>
-            <h2 className="text-[30px] font-bold leading-none tracking-[-0.035em] text-[#063B72] sm:text-[35px] md:text-[40px]">
-              Courses
+            <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[12px]">
+              STUDY IN THE UNITED STATES
+            </span>
+
+            <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[34px] md:text-[40px]">
+              Explore Courses <span className="text-[#18B8B5]">in the USA</span>
             </h2>
 
             <div className="mt-3 flex items-center gap-1.5">
@@ -135,34 +281,72 @@ export default function CoursesSlider() {
           {/* SLIDER ARROWS */}
           <div className="flex shrink-0 items-center gap-2">
 
-            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_6px_18px_rgba(6,59,114,0.08)] transition-colors duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-11 sm:w-11">
+            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_6px_18px_rgba(6,59,114,0.08)] transition-all duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-11 sm:w-11">
               <ChevronLeft size={19} strokeWidth={2.1} />
             </button>
 
-            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_6px_18px_rgba(6,59,114,0.08)] transition-colors duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-11 sm:w-11">
+            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_6px_18px_rgba(6,59,114,0.08)] transition-all duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-11 sm:w-11">
               <ChevronRight size={19} strokeWidth={2.1} />
             </button>
 
           </div>
         </motion.div>
 
-        {/* COURSE CAROUSEL */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="relative w-full overflow-hidden">
+        {/* CATEGORY PILLS */}
+        <div className="mb-5 flex w-full flex-nowrap items-center gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-7 sm:gap-2.5">
+          {tabs.map((tab) => {
+            const selected = activeTab === tab.id;
 
-          <Swiper modules={[Pagination]} onSwiper={(swiper) => { swiperRef.current = swiper; }} slidesPerView={1} spaceBetween={16} speed={600} grabCursor={true} watchOverflow={true} pagination={{ clickable: true, el: ".course-pagination" }} breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 18 }, 1024: { slidesPerView: 3, spaceBetween: 20 } }} className="!overflow-hidden !bg-white !px-4 !pb-8 !pt-4">
+            const count =
+              tab.id === "all"
+                ? courseCards.length
+                : tab.id === "stem"
+                ? courseCards.filter((item) => item.stem).length
+                : courseCards.filter((item) => item.category === tab.id).length;
 
-            {courseCards.map((item, index) => (
-              <SwiperSlide key={item.course} className="!h-auto">
-                <CourseCard item={item} index={index} />
+            return (
+              <button key={tab.id} type="button" onClick={() => changeTab(tab.id)} aria-pressed={selected} className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2.5 text-[12px] font-semibold transition-all duration-300 sm:px-5 sm:py-3 sm:text-[14px] ${selected ? "border-[#07976F] bg-[#07976F] text-white shadow-[0_4px_12px_rgba(7,151,111,0.2)]" : "border-[#E0E7EF] bg-white text-[#344158] hover:border-[#18B8B5] hover:text-[#087F7B]"}`}>
+                {tab.label}
+                <span className={`inline-flex min-w-[22px] items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${selected ? "bg-white/20 text-white" : "bg-[#F1F5F9] text-[#64748B]"}`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* SELECTED CATEGORY HEADING */}
+        <div className="mb-2">
+          <h3 className="text-[16px] font-bold text-[#063B72] sm:text-[19px]">
+            {activeTab === "masters"
+              ? "Master's Degree Programs for Indian Students"
+              : activeTab === "bachelors"
+              ? "Bachelor's Degree Programs for Indian Students"
+              : activeTab === "stem"
+              ? "Explore STEM* Programs"
+              : "Master's & Bachelor's Degree Programs for Indian Students"}
+          </h3>
+        </div>
+
+        {/* COURSE SLIDER */}
+        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.6 }} className="relative w-full overflow-hidden">
+
+          <Swiper key={activeTab} modules={[Pagination]} onSwiper={(swiper) => { swiperRef.current = swiper; }} slidesPerView={1} spaceBetween={16} speed={600} grabCursor={true} watchOverflow={true} pagination={{ clickable: true }} breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 18 }, 1024: { slidesPerView: 3, spaceBetween: 20 } }} className="!overflow-hidden !bg-transparent !px-4 !pb-12 !pt-4 [&_.swiper-pagination-bullet]:!bg-[#18B8B5] [&_.swiper-pagination-bullet-active]:!opacity-100">
+
+            {filteredCourses.map((item) => (
+              <SwiperSlide key={item.id} className="!h-auto">
+                <CourseCard item={item} />
               </SwiperSlide>
             ))}
 
           </Swiper>
 
-          {/* PAGINATION */}
-          <div className="course-pagination mt-7 flex min-h-[12px] items-center justify-center gap-2 [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!h-2 [&_.swiper-pagination-bullet]:!w-2 [&_.swiper-pagination-bullet]:!rounded-full [&_.swiper-pagination-bullet]:!bg-[#CBD8E3] [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!transition-all [&_.swiper-pagination-bullet-active]:!w-8 [&_.swiper-pagination-bullet-active]:!bg-[#18B8B5]" />
-
         </motion.div>
+
+        {/* STEM DISCLAIMER */}
+        <p className="mt-2 text-[11px] leading-[1.6] text-[#64748B] sm:text-[12px]">
+          *STEM designation and eligibility depend on the university, specific program, and applicable US immigration requirements.
+        </p>
 
       </div>
     </section>
@@ -174,19 +358,18 @@ export default function CoursesSlider() {
    IMAGE → HEADING → PARAGRAPH → BUTTON
 ========================================= */
 
-function CourseCard({ item, index }) {
+function CourseCard({ item }) {
   return (
-    <article className="group relative flex h-full min-h-[400px] flex-col overflow-hidden rounded-[22px] border border-[#DCE5EC] bg-white shadow-[0_14px_38px_rgba(6,59,114,0.11)] transition-shadow duration-300 hover:shadow-[0_20px_48px_rgba(6,59,114,0.16)]" style={{ "--card-color": item.color }}>
+    <article className="group relative flex h-full min-h-[395px] flex-col overflow-hidden rounded-[22px] border border-[#DCE5EC] bg-white shadow-[0_12px_32px_rgba(6,59,114,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(6,59,114,0.15)]" style={{ "--card-color": item.color }}>
 
-      {/* UNIQUE COLOR TOP BORDER */}
+      {/* COLOR TOP STRIP */}
       <div className="absolute inset-x-0 top-0 z-20 h-[5px] bg-[var(--card-color)]" />
 
       {/* COURSE IMAGE */}
       <div className="relative mx-4 mt-4 h-[170px] shrink-0 overflow-hidden rounded-[16px] sm:h-[180px]">
 
-        <Image src={item.image} alt={`${item.course} degree`} fill sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) 50vw, 33vw" className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.055]" />
+        <Image src={item.image} alt={item.course} fill sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) 50vw, 33vw" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.055]" />
 
-        {/* SUBTLE IMAGE OVERLAY */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#031A30]/10 via-transparent to-transparent" />
 
         {/* STEM BADGE */}
@@ -201,35 +384,29 @@ function CourseCard({ item, index }) {
 
       </div>
 
-      {/* CONTENT */}
+      {/* CARD CONTENT */}
       <div className="relative flex flex-1 flex-col px-5 pb-5 pt-5">
 
         {/* COURSE HEADING */}
-        <h3 className="text-[27px] font-bold leading-none tracking-[-0.03em] text-[#063B72] sm:text-[29px]">
+        <h3 className="min-h-[52px] text-[20px] font-bold leading-[1.25] tracking-[-0.025em] text-[#063B72] sm:text-[22px]">
           {item.course}
         </h3>
 
         {/* ACCENT LINE */}
         <div className="mt-3 h-[2px] w-10 rounded-full bg-[#18B8B5]" />
 
-        {/* COURSE DESCRIPTION */}
+        {/* PARAGRAPH */}
         <p className="relative z-10 mt-4 flex-1 text-[13px] leading-[1.7] text-[#40556A] sm:text-[14px]">
           {item.description}
         </p>
 
-        {/* BACKGROUND NUMBER */}
-        <span aria-hidden="true" className="pointer-events-none absolute bottom-[-13px] right-1 select-none text-[68px] font-bold leading-none text-[#F0F4F7]">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-
         {/* EXPLORE COURSE BUTTON */}
-        <button type="button" className="relative z-10 mt-5 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] bg-[#F4F7FA] px-4 py-2.5 text-left text-[13px] font-bold text-[#063B72] transition-[background-color,color] duration-300 ease-out group-hover:bg-[var(--card-color)] group-hover:text-white">
+        <button type="button" className="relative z-10 mt-5 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] bg-[#F4F7FA] px-4 py-2.5 text-left text-[13px] font-bold text-[#063B72] transition-all duration-300 group-hover:bg-[var(--card-color)] group-hover:text-white">
           <span>Explore Course</span>
           <ArrowRight size={17} strokeWidth={2} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
         </button>
 
       </div>
-
     </article>
   );
 }
