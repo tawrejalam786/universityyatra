@@ -135,7 +135,7 @@ const TOTAL = cards.length;
   Example:
   96px = navbar occupies 96px of viewport.
 */
-const DESKTOP_HEADER_HEIGHT = 0;
+const DESKTOP_HEADER_HEIGHT = 96;
 
 function CardVisual({ card, index }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -326,7 +326,7 @@ export default function USAStackingCards() {
       }}
     >
 
-    <div className="sticky top-0 flex h-svh w-full flex-col items-center justify-center overflow-hidden px-3 py-8 sm:px-6 lg:items-stretch lg:justify-start lg:p-0">
+      <div className="sticky top-0 flex h-svh w-full flex-col items-center justify-center overflow-hidden px-3 py-8 sm:px-6 lg:items-stretch lg:justify-start lg:px-0 lg:pb-0 lg:pt-[var(--desktop-header-height)]">
 
         <div className="relative h-[min(80svh,720px)] w-full max-w-[1160px] lg:h-[calc(100svh-var(--desktop-header-height))] lg:max-w-none">
 
