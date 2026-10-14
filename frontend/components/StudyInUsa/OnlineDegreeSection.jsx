@@ -27,7 +27,7 @@ const cards = [
     title: "Your Next Academic Chapter: USA",
     mobileTitle: "Study in USA",
     description:
-      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees. From choosing a major to pursuing an MS or MBA, your options depend on your academic background and goals.",
+      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees.",
     points: [
       "Bachelor's: Typically 4 years",
       "Master's: Commonly 1–2 years",
@@ -44,7 +44,7 @@ const cards = [
     title: "Study in USA",
     mobileTitle: "Study in USA",
     description:
-      "The US education system offers students multiple ways to build their academic pathway. Undergraduate students can often study subjects outside their major, while postgraduate programs allow for deeper specialisation in a chosen field. For Indian students, understanding these differences helps when deciding which degree, university, and course structure best fits their goals.",
+      "The US education system offers students multiple ways to build their academic pathway.",
     points: [],
     color: "#DE4D7B",
     href: "/study-abroad/usa/study-options",
@@ -57,7 +57,7 @@ const cards = [
     title: "Cost of Studying in USA",
     mobileTitle: "Cost of Studying in USA",
     description:
-      "Tuition depends on your university, degree, and field of study. Use these annual ranges to start planning your budget before comparing specific programs.",
+      "Tuition depends on your university, degree, and field of study.",
     points: [
       "Bachelor's tuition: Approximately US$19,000–40,000 per year (₹18–38 lakh).",
       "Master's tuition: Approximately US$16,000–31,000 per year (₹15.2–29.5 lakh).",
@@ -74,7 +74,7 @@ const cards = [
     title: "Cost of Living in USA",
     mobileTitle: "Cost of Living & Culture in USA",
     description:
-      "Living costs depend on where you study and how you choose to live. A useful starting budget is US$1,000–2,500 per month, excluding tuition.",
+      "Living costs depend on where you study and how you choose to live.",
     points: [
       "Housing: Often your biggest expense",
       "Daily essentials: Food, transport, utilities, and personal spending",
@@ -93,11 +93,10 @@ const cards = [
     title: "Scholarships in USA for Indian Students",
     mobileTitle: "Scholarships in USA for Indian Students",
     description:
-      "Indian students may qualify for merit-based scholarships, need-based financial aid, university awards, or graduate research funding.",
+      "Indian students may qualify for merit-based scholarships, ",
     points: [
       "Merit-based: Rewards academic achievement.",
       "Need-based: Assesses financial circumstances.",
-      "External funding: Includes eligible Fulbright-Nehru and Inlaks opportunities.",
     ],
     note: "Check eligibility, coverage, and deadlines before applying.",
     color: "#8D65CE",
@@ -115,7 +114,6 @@ const cards = [
     points: [
       "12 months of OPT: Available to eligible graduates who meet the requirements.",
       "Up to 36 months: Qualifying STEM graduates may apply for a 24-month extension.",
-      "After OPT: Some graduates pursue employer-sponsored H-1B status, subject to eligibility and selection requirements.",
     ],
     note:
       "STEM extensions require a qualifying degree and an eligible employment arrangement. Work authorisation and long-term employment are not guaranteed.",
