@@ -7,6 +7,7 @@ import CommittedToExcellence from "@/components/Home/CommittedToExcellence";
 import ChooseDestination from "@/components/Home/ChooseDestination";
 import Programs from "@/components/Home/Programs";
 import JourneySteps from "@/components/Home/JourneySteps";
+import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraHelps";
 import ExploreByDestination from "@/components/Home/ExploreByDestination";
 import GuidanceSection from "@/components/Home/GuidanceSection";
 import StudentStories from "@/components/Home/StudentStories";
@@ -30,6 +31,7 @@ export default function Home() {
               <ChooseDestination />
               <Programs />
               <JourneySteps image="/images/journey-student.webp" />
+              <HowUniversityYatraHelps />
               <ExploreByDestination />
               <GuidanceSection
                 primaryHref="/contact"

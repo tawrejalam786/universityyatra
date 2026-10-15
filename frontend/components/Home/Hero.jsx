@@ -1,17 +1,17 @@
-import Image from "next/image";
+
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import {
+  ArrowUpRight,
   BadgeCheck,
-  GraduationCap,
   Landmark,
-  MapPin,
   MessagesSquare,
-  Search,
 } from "lucide-react";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-
 
 const TRUST_POINTS = [
   { icon: Landmark, label: "Top Universities" },
@@ -19,177 +19,310 @@ const TRUST_POINTS = [
   { icon: BadgeCheck, label: "End-to-End Support" },
 ];
 
-/**
- * Drop your own images into /public/images:
- *  - hero-campus.jpg   → wide campus photo (used as the blurred backdrop)
- *  - hero-student.png  → transparent-background cut-out of the student
- */
-export default function Hero({
-  backgroundImage = "/images/hero-campus.jpg",
-  studentImage = "/images/hero-student.png",
-}) {
+/* =========================================
+   FLOATING WORDS
+========================================= */
+
+const FLOATING_WORDS = [
+  {
+    label: "LOAN",
+    color: "#D7F77D",
+    textColor: "#063B72",
+    position: "left-[5%] top-[12%] -rotate-12 lg:left-[16%] lg:top-[12%]",
+    delay: 0,
+  },
+  {
+    label: "SCHOLARSHIP",
+    color: "#FFD4E6",
+    textColor: "#063B72",
+    position: "right-[4%] top-[7%] rotate-8 lg:right-[19%] lg:top-[5%]",
+    delay: 0.3,
+  },
+  {
+    label: "JOB MARKET",
+    color: "#B5E9F2",
+    textColor: "#063B72",
+    position: "right-[1%] top-[46%] -rotate-6 lg:right-[9%] lg:top-[46%]",
+    delay: 0.6,
+  },
+  {
+    label: "COUNTRY SELECTION",
+    color: "#0C9253",
+    textColor: "#FFFFFF",
+    position: "left-[1%] top-[51%] rotate-6 lg:left-[8%] lg:top-[50%]",
+    delay: 0.9,
+  },
+];
+
+/* =========================================
+   FLOATING WORD COMPONENT
+========================================= */
+
+function FloatingWord({ item, reduceMotion }) {
   return (
-    <section className="relative isolate overflow-hidden bg-brand-navy-dark text-white">
-      {/* Backdrop photo + brand-navy wash (stronger on the text side) */}
-      <Image
-        src={backgroundImage}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover object-center"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-linear-to-r from-brand-navy-dark via-brand-navy/90 to-brand-navy/35"
-      />
+    <motion.span
+      initial={
+        reduceMotion
+          ? false
+          : { opacity: 0, scale: 0.85, y: 12 }
+      }
+      animate={
+        reduceMotion
+          ? {}
+          : {
+              opacity: 1,
+              scale: 1,
+              y: [0, -5, 0],
+            }
+      }
+      transition={
+        reduceMotion
+          ? {}
+          : {
+              opacity: {
+                duration: 0.5,
+                delay: item.delay,
+              },
+              scale: {
+                duration: 0.5,
+                delay: item.delay,
+              },
+              y: {
+                duration: 4,
+                delay: item.delay,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }
+      }
+      style={{
+        backgroundColor: item.color,
+        color: item.textColor || "#063B72",
+      }}
+      className={`pointer-events-none absolute z-20 hidden whitespace-nowrap rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.04em] shadow-[0_8px_25px_rgba(6,59,114,0.08)] sm:inline-flex lg:px-5 lg:py-2.5 lg:text-[12px] ${item.position}`}
+    >
+      {item.label}
+    </motion.span>
+  );
+}
 
-     
+/* =========================================
+   HERO COMPONENT
+========================================= */
 
-      {/* Student cut-out + handwritten note (desktop only) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 inset-y-0 mx-auto hidden max-w-7xl lg:block"
-      >
-        <div className="absolute bottom-0 right-4 h-[92%] w-[42%]">
-          <Image
-            src={studentImage}
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1024px) 42vw, 0px"
-            className="object-contain object-bottom"
-          />
-        </div>
+export default function Hero({
+  videoSrc = "/videos/university-yatra-hero.mp4",
+  posterImage = "",
+  whatsappNumber = "917838195948",
+}) {
+  const reduceMotion = useReducedMotion();
+  const [videoError, setVideoError] = useState(false);
 
-        <div className="absolute right-6 top-[30%] w-44 text-center xl:right-10">
-          <p className="-rotate-12 font-script text-3xl leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,20,45,0.6)]">
-            Your Global Education Partner
-          </p>
-          <svg
-            viewBox="0 0 60 60"
-            fill="none"
-            className="ml-auto mr-6 mt-1 h-14 w-14 text-white drop-shadow-[0_2px_6px_rgba(0,20,45,0.6)]"
+  return (
+    <section className="relative isolate min-h-[690px] w-full overflow-hidden bg-[#EAF4FA] text-[#063B72] sm:min-h-[720px] lg:min-h-[780px]">
+
+      {/* =====================================
+          BACKGROUND VIDEO
+      ===================================== */}
+
+      <div className="pointer-events-none absolute inset-0 -z-20">
+        {!videoError && videoSrc && !reduceMotion && (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster={posterImage || undefined}
+            onError={() => setVideoError(true)}
+            className="h-full w-full object-cover object-center"
           >
-            <path
-              d="M46 4c6 14-2 30-24 38"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-            <path
-              d="m30 34-8 8 11 4"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        )}
       </div>
 
-      {/* Copy + search */}
-      <div className="relative mx-auto flex min-h-[680px] max-w-7xl items-center px-6 pb-16 pt-36 lg:min-h-[700px]">
-        <div className="w-full max-w-[44rem]">
-          <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
-            Your Dreams
-            <span aria-hidden="true" className="size-1.5 rounded-full bg-brand-teal" />
-            Our Guidance
-          </p>
+      {/* LIGHT OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white/95 via-white/80 to-white/5" />
 
-          <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-            Studying Abroad Made Simple & {" "}
-            <span className="text-brand-teal">Stress-Free</span>
-          </h1>
+      {/* =====================================
+          HERO CONTENT
+      ===================================== */}
 
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
-            Explore top universities, discover the best courses, and get expert
-            advice — all in one place. Your global education journey starts here.
-          </p>
+      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col items-center px-4 pb-20 pt-32 text-center sm:px-6 sm:pt-36 lg:px-8 lg:pt-40">
 
-          {/* Search bar — works without JS (plain GET form) */}
-          {/* <form
-            action="/universities"
-            method="get"
-            role="search"
-            className="mt-9 flex flex-col gap-2 rounded-3xl bg-white p-2 text-brand-navy shadow-[0_22px_55px_rgba(0,15,35,0.4)] md:flex-row md:items-center md:rounded-full"
+        {/* FLOATING WORDS + TITLE */}
+        <div className="relative flex w-full max-w-[1280px] flex-col items-center justify-center">
+
+          {/* DESKTOP FLOATING WORDS */}
+          {FLOATING_WORDS.map((item) => (
+            <FloatingWord
+              key={item.label}
+              item={item}
+              reduceMotion={reduceMotion}
+            />
+          ))}
+
+          {/* SMALL INTRO */}
+          <motion.p
+            initial={
+              reduceMotion
+                ? false
+                : { opacity: 0, y: 12 }
+            }
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#18A6A3] sm:text-[12px]"
           >
-            <label className="flex min-w-0 flex-1 items-center gap-3 rounded-full px-3 py-2 focus-within:ring-2 focus-within:ring-brand-teal">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-navy/10">
-                <GraduationCap aria-hidden="true" className="size-5" />
+            Your Dreams • Our Guidance
+          </motion.p>
+
+          {/* MAIN TITLE */}
+          <motion.h1
+            initial={
+              reduceMotion
+                ? false
+                : { opacity: 0, y: 22 }
+            }
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 0.1,
+            }}
+            className="relative z-10 mx-auto max-w-[1050px] text-balance text-[clamp(40px,7vw,92px)] font-extrabold leading-[1.04] tracking-[-0.055em] text-[#063B72]"
+          >
+            Taking Your
+            <span className="block">
+              Education{" "}
+              <span className="text-[#18B8B5]">
+                Global
               </span>
-              <span className="flex min-w-0 flex-1 flex-col">
-                <span className="text-sm font-semibold">What do you want to study?</span>
-                <input
-                  type="text"
-                  name="q"
-                  placeholder="e.g. MBA, Engineering, Data Science"
-                  className="w-full bg-transparent text-xs text-slate-600 placeholder:text-slate-500 focus:outline-none"
-                />
+            </span>
+          </motion.h1>
+
+          {/* =====================================
+              MOBILE FLOATING WORDS
+          ===================================== */}
+
+          <div className="relative z-10 mt-5 flex max-w-[390px] flex-wrap justify-center gap-2 sm:hidden">
+            {FLOATING_WORDS.map((item) => (
+              <span
+                key={item.label}
+                style={{
+                  backgroundColor: item.color,
+                  color: item.textColor || "#063B72",
+                }}
+                className="rounded-full px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.04em]"
+              >
+                {item.label}
               </span>
-            </label>
-
-            <span aria-hidden="true" className="hidden h-10 w-px bg-slate-200 md:block" />
-
-            <label className="flex min-w-0 flex-1 items-center gap-3 rounded-full px-3 py-2 focus-within:ring-2 focus-within:ring-brand-teal md:w-48 md:flex-none">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-navy/10">
-                <MapPin aria-hidden="true" className="size-5" />
-              </span>
-              <span className="flex min-w-0 flex-1 flex-col">
-                <span className="whitespace-nowrap text-sm font-semibold">Preferred Country</span>
-                <select
-                  name="country"
-                  defaultValue=""
-                  className="w-full bg-transparent text-xs text-slate-600 focus:outline-none"
-                >
-                  <option value="">Select country</option>
-                  {COUNTRIES.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              </span>
-            </label>
-
-            <button
-              type="submit"
-              className="flex h-14 shrink-0 items-center justify-center gap-2 rounded-full bg-brand-teal px-8 text-base font-bold text-brand-navy-dark transition-colors hover:bg-brand-teal-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
-            >
-              <Search aria-hidden="true" className="size-5" />
-              Search
-            </button>
-          </form> */}
-
-          <div className="mt-3 grid grid-cols-1 lg:grid-cols-2">
-            <Link
-              href="/counselling"
-              className="flex w-xs mb-3 h-12 items-center justify-center rounded-full bg-brand-teal font-bold text-brand-navy-dark"
-            >
-              Book a Free Consultation
-            </Link>
-
-            <Link
-              href="/counselling"
-              className="flex h-12 items-center w-xs justify-center rounded-full bg-green-500 font-bold text-brand-navy-dark"
-            >
-             <FontAwesomeIcon className="w-7 mr-2 text-white" icon={faWhatsapp} /> Chat on Whatsapp
-            </Link>
+            ))}
           </div>
 
-          {/* Trust points */}
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/90">
-            {TRUST_POINTS.map(({ icon: Icon, label }) => (
-              <li
-                key={label}
-                className="flex items-center gap-2 sm:border-r sm:border-white/25 sm:pr-6 sm:last:border-r-0 sm:last:pr-0"
-              >
-                <Icon aria-hidden="true" className="size-5 text-brand-teal" />
-                {label}
-              </li>
-            ))}
-          </ul>
         </div>
+
+        {/* =====================================
+            DESCRIPTION
+        ===================================== */}
+
+        <motion.p
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 12 }
+          }
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          className="relative z-10 mx-auto mt-5 max-w-[650px] text-[13px] leading-[1.7] text-[#425A70] sm:text-[15px]"
+        >
+          Explore top universities, discover the right courses, and get
+          expert guidance for every step of your study abroad journey.
+        </motion.p>
+
+        {/* =====================================
+            CTA BUTTONS
+        ===================================== */}
+
+        <motion.div
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 12 }
+          }
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.3,
+          }}
+          className="relative z-10 mt-6 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row"
+        >
+
+          {/* CONSULTATION BUTTON */}
+          <Link
+            href="/counselling"
+            className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#063B72] px-6 text-[12px] font-bold text-white shadow-[0_10px_30px_rgba(6,59,114,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#075094] sm:w-auto"
+          >
+            Book a Free Consultation
+
+            <ArrowUpRight
+              size={16}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Link>
+
+          {/* WHATSAPP BUTTON */}
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+              "Hello University Yatra, I would like guidance for studying abroad."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-[#063B72]/15 bg-white/80 px-6 text-[12px] font-bold text-[#063B72] shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:w-auto"
+          >
+            <FontAwesomeIcon
+              icon={faWhatsapp}
+              className="text-[18px] text-[#16A34A]"
+            />
+
+            Chat on WhatsApp
+          </a>
+
+        </motion.div>
+
+        {/* =====================================
+            TRUST POINTS
+        ===================================== */}
+
+        <motion.ul
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 12 }
+          }
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.4,
+          }}
+          className="relative z-10 mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[10px] font-medium text-[#425A70] sm:gap-x-7 sm:text-[12px]"
+        >
+          {TRUST_POINTS.map(({ icon: Icon, label }) => (
+            <li
+              key={label}
+              className="flex items-center gap-2"
+            >
+              <Icon
+                size={15}
+                className="text-[#18B8B5]"
+              />
+              {label}
+            </li>
+          ))}
+        </motion.ul>
+
       </div>
     </section>
   );
