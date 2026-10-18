@@ -6,7 +6,6 @@ import { ArrowRight,
   Languages,
   BriefcaseBusiness,
 } from "lucide-react";
-import Image from "next/image";
 
 const stats = [
   {
@@ -23,17 +22,14 @@ const stats = [
   },
 ];
 
-export default function StudyIndiaHero() {
+export default function StudyInUsaHero() {
   return (
     <section
       className="
         relative isolate
-        flex min-h-[650px] w-full
-        flex-col overflow-hidden
-        bg-[#041a3a]
-
-        md:min-h-[720px]
-        lg:min-h-[760px]
+        flex min-h-screen min-h-[100dvh] w-full
+        flex-col justify-center overflow-hidden
+        bg-[#F8FAFC]
       "
     >
       {/* =====================================================
@@ -45,83 +41,84 @@ export default function StudyIndiaHero() {
           muted
           loop
           playsInline
-          preload="metadata"
+          poster="/images/study-in-usa-hero-poster.jpg"
+          preload="auto"
           aria-hidden="true"
           className="
             h-full w-full
-            scale-[1.03]
             object-cover
             object-center
+            opacity-100
           "
         >
           <source
-            src="/videos/study-in-india.mp4"
+            src="/videos/study-in-usa-hero.mp4"
             type="video/mp4"
           />
         </video>
       </div>
 
       {/* =====================================================
-          VIDEO OVERLAYS
+          VIDEO OVERLAYS (Light Mode - Balanced Transparency)
       ====================================================== */}
 
-      {/* Top dark layer */}
+      {/* Balanced light overlay allowing rich building colors, river, and STUDY IN USA text to stand out vividly */}
       <div
         aria-hidden="true"
         className="
           absolute inset-0 -z-20
           bg-gradient-to-b
-          from-[#02132e]/80
-          via-[#052452]/30
-          to-[#02132e]/90
+          from-white/60
+          via-white/25
+          to-white/80
         "
       />
 
-      {/* Center glow */}
+      {/* Center soft ambient glow for text contrast */}
       <div
         aria-hidden="true"
         className="
           absolute left-1/2 top-[48%] -z-10
-          h-[400px] w-[700px]
+          h-[450px] w-[800px]
           -translate-x-1/2 -translate-y-1/2
           rounded-full
-          bg-emerald-400/[0.08]
-          blur-[110px]
+          bg-white/40
+          blur-[90px]
         "
       />
 
-      {/* Saffron subtle glow */}
+      {/* Subtle blue accent glow */}
       <div
         aria-hidden="true"
         className="
           absolute -left-32 top-16 -z-10
           h-[320px] w-[320px]
           rounded-full
-          bg-orange-500/[0.09]
+          bg-[#5D93F8]/[0.08]
           blur-[120px]
         "
       />
 
-      {/* India green glow */}
+      {/* Subtle light blue glow */}
       <div
         aria-hidden="true"
         className="
           absolute -right-32 bottom-16 -z-10
           h-[340px] w-[340px]
           rounded-full
-          bg-emerald-400/[0.11]
+          bg-[#1765F5]/[0.05]
           blur-[120px]
         "
       />
 
-      {/* Noise / dot feeling */}
+      {/* Subtle dot pattern */}
       <div
         aria-hidden="true"
         className="
           absolute inset-0 -z-10
-          opacity-[0.08]
-          [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)]
-          [background-size:34px_34px]
+          opacity-[0.035]
+          [background-image:radial-gradient(circle_at_center,#0C337B_1.2px,transparent_1.2px)]
+          [background-size:32px_32px]
         "
       />
 
@@ -136,10 +133,10 @@ export default function StudyIndiaHero() {
           max-w-[1450px]
           flex-1 items-center justify-center
           px-5
-          pb-14 pt-20
+          pb-12 pt-28
 
-          sm:px-8
-          md:px-10 md:pb-20 md:pt-24
+          sm:px-8 sm:pt-32
+          md:px-10 md:pb-16
           lg:px-16
         "
       >
@@ -150,40 +147,6 @@ export default function StudyIndiaHero() {
             text-center
           "
         >
-       {/* Study In Uae label */}
-                
-       
-        <motion.div
-          initial={{ opacity: 0, y: 12, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mb-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-white/20 bg-[#0B2538]/75 py-1.5 pl-1.5 pr-4 shadow-[0_8px_25px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-xl sm:gap-3 sm:pr-5"
-        >
-          {/* SUBTLE GLASS HIGHLIGHT */}
-          <span aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-
-          {/* UK FLAG */}
-          <span className="relative flex h-[34px] w-[34px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-white/85 bg-white shadow-[0_3px_10px_rgba(0,0,0,0.25)]">
-            <Image
-              src="/images/countrylogo/usa.png"
-              alt="Uae flag"
-              width={34}
-              height={34}
-              className="h-full w-full object-cover"
-            />
-          </span>
-
-          {/* LABEL */}
-          <span className="flex flex-col items-start gap-[2px]">
-            {/* <span className="text-[8px] font-bold uppercase leading-none tracking-[0.18em] text-[#8CE5DE] sm:text-[9px]">
-              Your Destination
-            </span> */}
-
-            <span className="whitespace-nowrap text-[13px] font-extrabold uppercase leading-tight tracking-[0.08em] text-white sm:text-[14px]">
-              Study In USA
-            </span>
-          </span>
-        </motion.div>
 
           {/* Heading */}
           <motion.h1
@@ -202,26 +165,28 @@ export default function StudyIndiaHero() {
             }}
             className="
               text-[43px]
-              font-bold
-              leading-[1.02]
+              font-extrabold
+              leading-[1.04]
               tracking-[-0.045em]
-              text-white
+              text-[#0C337B]
+              drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]
 
               sm:text-[54px]
               md:text-[68px]
-              lg:text-[40px]
-              xl:text-[50px]
+              lg:text-[42px]
+              xl:text-[52px]
             "
           >
-         Learn in a Culture of 
+            Learn in a Culture of{" "}
             <span
               className="
                 mt-1 block
-               text-[#2DD4BF]
+                text-[#1765F5]
+                drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]
                 md:mt-2
               "
             >
-             Research and Discovery.
+              Research and Discovery.
             </span>
           </motion.h1>
 
@@ -245,9 +210,10 @@ export default function StudyIndiaHero() {
               mt-6
               max-w-[790px]
               text-[15px]
-              font-normal
+              font-semibold
               leading-[1.75]
-              text-white/80
+              text-[#1D3557]
+              drop-shadow-[0_1px_10px_rgba(255,255,255,0.95)]
 
               sm:text-[16px]
               md:mt-7
@@ -261,19 +227,24 @@ export default function StudyIndiaHero() {
           </motion.p>
 
           {/* STATS BELOW DESCRIPTION */}
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.23, duration: 0.6 }} className="mx-auto mt-4 flex max-w-[1050px] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center sm:mt-5">
-              {stats.map((item, index) => (
-                <span key={item.label} className="inline-flex items-center gap-1.5">
-                  <span className="text-[10px] font-semibold uppercase leading-[1.6] tracking-[0.015em] text-[#5EEAD4] sm:text-[11px] md:text-[12px] lg:font-extrabold lg:text-[11px]">
-                    {item.label}
-                  </span>
-
-                  {index !== stats.length - 1 && (
-                    <span aria-hidden="true" className="text-[10px] font-bold text-white/75">•</span>
-                  )}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.23, duration: 0.6 }}
+            className="mx-auto mt-5 flex max-w-[1050px] flex-wrap items-center justify-center gap-2 text-center sm:mt-6"
+          >
+            {stats.map((item) => (
+              <span
+                key={item.label}
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#D9E4ED] bg-white/85 px-3 py-1 shadow-sm backdrop-blur-md"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1765F5]" />
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0C337B] sm:text-[11px]">
+                  {item.label}
                 </span>
-              ))}
-            </motion.div>
+              </span>
+            ))}
+          </motion.div>
 
           {/* CTA */}
           <motion.div
@@ -304,31 +275,29 @@ export default function StudyIndiaHero() {
                 inline-flex items-center justify-center
                 gap-3
                 rounded-full
-                border border-emerald-300/30
-                bg-[#2DD4BF]
-                px-7 py-[15px]
-                text-[14px]
-                font-semibold
-                text-brand-navy-dark
-                shadow-[0_10px_40px_rgba(16,185,129,0.28)]
+                border border-[#1765F5]
+                bg-[#1765F5]
+                px-8 py-4
+                text-[15px]
+                font-bold
+                text-white
+                shadow-[0_10px_30px_rgba(23,101,245,0.28)]
                 transition-all
                 duration-300
 
                 hover:-translate-y-1
-                hover:bg-[#0ab985]
-                hover:shadow-[0_15px_45px_rgba(16,185,129,0.38)]
+                hover:bg-[#1047AC]
+                hover:shadow-[0_15px_40px_rgba(23,101,245,0.38)]
 
                 sm:px-9 sm:py-4
-                sm:text-[15px]
-
-                md:text-[16px]
+                sm:text-[16px]
               "
             >
-             Book a Free Consultation
+              Book a Free Consultation
 
               <ArrowRight
                 size={18}
-                strokeWidth={2}
+                strokeWidth={2.2}
                 className="
                   transition-transform
                   duration-300
@@ -339,6 +308,12 @@ export default function StudyIndiaHero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Bottom feather blend into next white section */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-b from-transparent via-white/80 to-white"
+      />
 
     </section>
   );

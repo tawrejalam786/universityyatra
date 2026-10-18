@@ -95,7 +95,7 @@ export default function Navbar({ active = "Home" }) {
                 <Link
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative flex items-center gap-1 rounded-full px-3 py-2 text-[14px] transition-colors hover:text-brand-teal-dark focus-visible:outline-2 focus-visible:outline-brand-teal ${isActive ? "font-semibold text-brand-navy" : "font-bold text-slate-700"}`}
+                  className={`relative flex items-center gap-1 rounded-full px-3 py-2 text-[14px] transition-colors hover:text-[#1765F5] focus-visible:outline-2 focus-visible:outline-[#1765F5] ${isActive ? "font-semibold text-brand-navy" : "font-bold text-slate-700"}`}
                 >
                   {" "}
                   {item.label}{" "}
@@ -106,7 +106,7 @@ export default function Navbar({ active = "Home" }) {
                     />
                   )}{" "}
                   {isActive && (
-                    <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-brand-teal" />
+                    <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-[#1765F5]" />
                   )}{" "}
                 </Link>{" "}
                 {/* Dropdown */}{" "}
@@ -139,7 +139,7 @@ export default function Navbar({ active = "Home" }) {
           {" "}
           <Link
             href="/counselling"
-            className="hidden h-11 items-center rounded-full bg-brand-teal px-6 text-sm font-bold text-brand-navy-dark transition-colors hover:bg-brand-teal-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:inline-flex"
+            className="hidden h-11 items-center rounded-full bg-[#1765F5] px-6 text-sm font-bold text-white transition-all duration-300 hover:bg-[#1047AC] shadow-[0_4px_16px_rgba(23,101,245,0.25)] hover:shadow-[0_6px_20px_rgba(23,101,245,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1765F5] sm:inline-flex"
           >
             {" "}
             Get Free Counselling{" "}
@@ -219,7 +219,7 @@ export default function Navbar({ active = "Home" }) {
             <Link
               href="/counselling"
               onClick={() => setOpen(false)}
-              className="flex h-12 items-center justify-center rounded-full bg-brand-teal font-bold text-brand-navy-dark sm:hidden"
+              className="flex h-12 items-center justify-center rounded-full bg-[#1765F5] font-bold text-white shadow-[0_4px_16px_rgba(23,101,245,0.25)] sm:hidden"
             >
               {" "}
               Get Free Counselling{" "}
