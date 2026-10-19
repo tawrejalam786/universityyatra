@@ -21,6 +21,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import GlassFolder from "@/components/ui/glass-folder-cards";
+import InteractiveBookGuides from "@/components/StudyInUsa/InteractiveBookGuides";
 
 /* =====================================================================
    COMPREHENSIVE CONTENT DATA FOR THE 5 FOLDERS & DIALOG DETAILS
@@ -721,7 +722,7 @@ export default function OnlineDegreeSection() {
   }, [activeDialogKey, currentIndex]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
+    <section className="relative w-full bg-white py-8 sm:py-12 md:py-14">
       {/* Background ambient radial glow */}
       <div
         aria-hidden="true"
@@ -732,7 +733,7 @@ export default function OnlineDegreeSection() {
         className="pointer-events-none absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-[#5D93F8]/[0.03] blur-[150px]"
       />
 
-      <div className="relative z-20 mx-auto w-full max-w-[1360px] px-3.5 sm:px-5 lg:px-6">
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-3.5 sm:px-5 lg:px-6">
         {/* Section Header */}
         <div className="mx-auto mb-4 max-w-2xl text-center sm:mb-5">
           <motion.span
@@ -766,48 +767,14 @@ export default function OnlineDegreeSection() {
           </motion.p>
         </div>
 
-        {/* 5 Glass Folder Cards Row — Perfectly aligned in a straight horizontal line */}
-        <div className="flex w-full items-start justify-start xl:justify-center gap-3 sm:gap-4 overflow-x-auto no-scrollbar px-2 sm:px-3 py-2">
-          {FOLDER_CATEGORIES.map((cat, idx) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="flex shrink-0 flex-col items-center w-[230px]"
-            >
-              {/* Folder Component (consistent 230px width and fixed baseline) */}
-              <div className="flex w-[230px] items-center justify-center">
-                <GlassFolder
-                  label={cat.label}
-                  meta={cat.meta}
-                  tone={cat.tone}
-                  art={cat.art}
-                  seed={cat.seed}
-                  action="none"
-                  width={230}
-                  appearDelay={idx * 70}
-                  files={cat.files}
-                  onFileSelect={(file) => {
-                    if (file.key) {
-                      setActiveDialogKey(file.key);
-                    }
-                  }}
-                />
-              </div>
-
-              {/* Pillar Category Number & Summary under folder - fixed uniform height */}
-              <div className="mt-2.5 flex w-[230px] min-h-[60px] flex-col items-center text-center">
-                <span className="font-mono text-[11px] font-bold text-[#1765F5]">
-                  {cat.id} / 05
-                </span>
-                <p className="mt-0.5 text-[12px] leading-relaxed text-[#526B8C]">
-                  {cat.summary}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        {/* 5 Interactive 3D Hardcover Book Guides with Slide-out Intro Page on Hover */}
+        <div className="w-full pt-6 pb-2">
+          <InteractiveBookGuides
+            onSelectGuide={(book) => {
+              // Direct navigation to dedicated guide page
+              window.location.href = `/study-in-usa/${book.slug}`;
+            }}
+          />
         </div>
       </div>
 

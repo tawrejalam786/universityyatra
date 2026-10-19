@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState, useRef } from "react";
 import HalftoneWordmarkFooter from "@/components/ui/halftone-wordmark-footer";
-import TiltedGridHero from "@/components/ui/tilted-grid-hero";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const COUNTRIES_TIMEZONES = [
   {
@@ -81,16 +81,7 @@ const COUNTRIES_TIMEZONES = [
 ];
 
 function formatCountryTime(now, item) {
-  if (!now) {
-    return {
-      digits: "--:--",
-      period: "--",
-      date: "Local time",
-      zone: item.code,
-      offset: "UTC",
-      isDay: true,
-    };
-  }
+  if (!now) return "--:-- --";
   const options = { timeZone: item.zone };
   const parts = new Intl.DateTimeFormat("en-US", {
     ...options,
@@ -103,88 +94,7 @@ function formatCountryTime(now, item) {
   const minute = parts.find((p) => p.type === "minute")?.value || "00";
   const period = parts.find((p) => p.type === "dayPeriod")?.value || "AM";
 
-  const hour24 = parseInt(
-    new Intl.DateTimeFormat("en-US", {
-      ...options,
-      hour: "numeric",
-      hour12: false,
-    }).format(now),
-    10
-  );
-  const isDay = hour24 >= 6 && hour24 < 18;
-
-  const zoneName =
-    new Intl.DateTimeFormat("en-US", {
-      ...options,
-      timeZoneName: "short",
-    })
-      .formatToParts(now)
-      .find((p) => p.type === "timeZoneName")?.value || item.code;
-
-  const rawOffset =
-    new Intl.DateTimeFormat("en-US", {
-      ...options,
-      timeZoneName: "shortOffset",
-    })
-      .formatToParts(now)
-      .find((p) => p.type === "timeZoneName")?.value || "";
-
-  const match = rawOffset.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/);
-  const offset = match
-    ? `UTC${match[1]}${match[2].padStart(2, "0")}:${match[3] || "00"}`
-    : "UTC";
-
-  const dateStr = new Intl.DateTimeFormat("en-GB", {
-    ...options,
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-  }).format(now);
-
-  return {
-    digits: `${hour}:${minute}`,
-    period,
-    date: dateStr,
-    zone: zoneName,
-    offset,
-    isDay,
-  };
-}
-
-// Inline flags render consistently across devices
-function CountryFlag({ country }) {
-  const star = (cx, cy, radius, points = 7) => {
-    const coords = [];
-    for (let i = 0; i < points * 2; i++) {
-      const angle = (i * Math.PI) / points - Math.PI / 2;
-      const r = i % 2 ? radius * 0.42 : radius;
-      coords.push(`${cx + Math.cos(angle) * r},${cy + Math.sin(angle) * r}`);
-    }
-    return coords.join(" ");
-  };
-
-  const australiaStars = {
-    large: star(7.5, 15, 3, 7),
-    small1: star(22.5, 3, 1.6, 7),
-    small2: star(18.5, 9, 1.6, 7),
-    small3: star(26.5, 8, 1.6, 7),
-    small4: star(22.5, 16.5, 1.6, 7),
-    tiny: star(24.5, 12, 0.8, 5),
-  };
-
-  return (
-    <svg viewBox="0 0 30 20" className="h-3.5 w-5 shrink-0 overflow-hidden rounded-sm shadow-sm" aria-hidden="true" suppressHydrationWarning>
-      <rect width="30" height="20" fill="white" />
-      {country === "Canada" && <><path fill="#D80621" d="M0 0h7v20H0zM23 0h7v20h-7z" /><path fill="#D80621" d="m15 2 1.4 3.5 1.6-.8-.7 4.5 2.8-2 .2 2.1 2 .5-4.5 4 .7 1.6-3-.5.2 3.1h-1.4l.2-3.1-3 .5.7-1.6-4.5-4 2-.5.2-2.1 2.8 2-.7-4.5 1.6.8Z" /></>}
-      {country === "India" && <><rect width="30" height="6.667" fill="#FF9933" /><rect y="13.333" width="30" height="6.667" fill="#138808" /><circle cx="15" cy="10" r="2.8" fill="none" stroke="#000080" strokeWidth=".35" />{Array.from({ length: 24 }, (_, i) => <path key={i} d="M15 10v-2.8" transform={`rotate(${i * 15} 15 10)`} stroke="#000080" strokeWidth=".18" />)}</>}
-      {country === "Germany" && <><rect width="30" height="6.667" fill="#000" /><rect y="6.667" width="30" height="6.666" fill="#DD0000" /><rect y="13.333" width="30" height="6.667" fill="#FFCE00" /></>}
-      {country === "Japan" && <circle cx="15" cy="10" r="6" fill="#BC002D" />}
-      {country === "UAE" && <><rect width="30" height="6.667" fill="#00732F" /><rect y="13.333" width="30" height="6.667" fill="#000" /><rect width="7.5" height="20" fill="#FF0000" /></>}
-      {country === "Australia" && <><rect width="30" height="20" fill="#012169" /><svg x="0" y="0" width="15" height="10" viewBox="0 0 30 20" overflow="hidden"><path stroke="white" strokeWidth="5" d="m0 0 30 20M30 0 0 20" /><path stroke="#C8102E" strokeWidth="1.6" d="m0 0 30 20M30 0 0 20" /><path stroke="white" strokeWidth="7" d="M15 0v20M0 10h30" /><path stroke="#C8102E" strokeWidth="4" d="M15 0v20M0 10h30" /></svg><polygon points={australiaStars.large} fill="white" suppressHydrationWarning /><polygon points={australiaStars.small1} fill="white" suppressHydrationWarning /><polygon points={australiaStars.small2} fill="white" suppressHydrationWarning /><polygon points={australiaStars.small3} fill="white" suppressHydrationWarning /><polygon points={australiaStars.small4} fill="white" suppressHydrationWarning /><polygon points={australiaStars.tiny} fill="white" suppressHydrationWarning /></>}
-      {country === "UK" && <><rect width="30" height="20" fill="#012169" /><path stroke="white" strokeWidth="5" d="m0 0 30 20M30 0 0 20" /><path stroke="#C8102E" strokeWidth="1.6" d="m0 0 30 20M30 0 0 20" /><path stroke="white" strokeWidth="7" d="M15 0v20M0 10h30" /><path stroke="#C8102E" strokeWidth="4" d="M15 0v20M0 10h30" /></>}
-      {country === "USA" && <>{Array.from({ length: 7 }, (_, i) => <rect key={i} y={(i * 40) / 13} width="30" height={20 / 13} fill="#B22234" />)}<rect width="13" height={140 / 13} fill="#3C3B6E" />{Array.from({ length: 9 }, (_, row) => Array.from({ length: row % 2 ? 5 : 6 }, (_, col) => <path key={`${row}-${col}`} transform={`translate(${(row % 2 ? 2.15 : 1.1) + col * 2.15},${1.05 + row * 1.08})`} d="M0-.5.15-.16H.5L.22.08.32.45 0 .23-.32.45-.22.08-.5-.16H-.15Z" fill="white" />))}</>}
-    </svg>
-  );
+  return `${hour}:${minute} ${period}`;
 }
 
 export function UniversityClocks({
@@ -193,6 +103,9 @@ export function UniversityClocks({
 }) {
   const [now, setNow] = useState(null);
   const id = useId();
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   useEffect(() => {
     const update = () => setNow(new Date());
@@ -205,13 +118,41 @@ export function UniversityClocks({
     };
   }, []);
 
+  const checkScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, []);
+
+  const scroll = (direction) => {
+    if (!scrollRef.current) return;
+    const scrollAmount = scrollRef.current.clientWidth * 0.75;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       aria-labelledby={`${id}-title`}
-      className="relative isolate min-h-[420px] sm:min-h-[460px] lg:min-h-[500px] overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F3FAF9] to-[#EBF3FC]"
+      className="relative isolate min-h-[460px] overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F3FAF9] to-[#EBF3FC] py-12 sm:py-16"
       suppressHydrationWarning
     >
-      {/* 1. Stretched monuments skyline background (Taj Mahal, Eiffel Tower, Statue of Liberty, CN Tower, Big Ben) */}
+      {/* 1. Stretched monuments skyline background */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 select-none overflow-hidden"
@@ -224,108 +165,92 @@ export function UniversityClocks({
           className="object-cover object-bottom opacity-85"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/95 via-[#F8FAFC]/30 to-[#EBF3FC]/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/95 via-[#F8FAFC]/40 to-[#EBF3FC]/70" />
       </div>
 
-      {/* 2. 3D Curved Cylinder Stream with Country Timezone Cards */}
-      <TiltedGridHero
-        items={countries}
-        speed={4}
-        tileHeight={23}
-        aspectRatio={16 / 9}
-        gap={5}
-        axis={56}
-        curve={80}
-        fade={12}
-        interactive={true}
-        className="h-[420px] sm:h-[460px] w-full"
-        renderCard={(item) => {
-          const timeParts = formatCountryTime(now, item);
-          return (
-            <div className="relative h-full w-full overflow-hidden select-none">
-              {/* Pure landmark photograph */}
-              <img
-                src={item.image}
-                alt={`${item.landmark}, ${item.country}`}
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
-
-              {/* Atmospheric depth vignette overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/60" />
-
-              {/* 3D Depth watermark in background */}
-              <div className="pointer-events-none absolute -right-1.5 top-5 select-none text-[52px] font-black leading-none tracking-tighter text-white/[0.08]">
-                {item.code}
-              </div>
-
-              {/* Card foreground contents */}
-              <div className="relative z-10 flex h-full flex-col justify-between p-3">
-                {/* Top: Flag + Country Name + Day/Night */}
-                <div className="flex items-center justify-between gap-1">
-                  <div className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/60 px-2 py-0.5 backdrop-blur-md">
-                    <CountryFlag country={item.country} />
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white">
-                      {item.country}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="flex items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-500/20 px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Live
-                    </span>
-                    <span className="rounded-full border border-white/15 bg-white/15 px-1.5 py-0.5 text-[8.5px] font-semibold text-white/90 backdrop-blur-sm">
-                      {timeParts.isDay ? "☀️" : "🌙"}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Center: Live Time HUD */}
-                <div className="my-auto rounded-lg border border-white/20 bg-black/55 px-2.5 py-1.5 shadow-inner backdrop-blur-md">
-                  <div className="flex items-baseline justify-between">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-[24px] sm:text-[28px] font-black tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-                        {timeParts.digits}
-                      </span>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#5D93F8]">
-                        {timeParts.period}
-                      </span>
-                    </div>
-                    <div className="text-right">
-                      <span className="font-mono text-[9.5px] font-bold text-[#A2C1FB]">
-                        {timeParts.offset}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-white/15 pt-1 text-[8.5px] text-white/80">
-                    <span className="truncate max-w-[120px]">{item.city} • {item.landmark}</span>
-                    <span className="font-medium text-[#A2C1FB] shrink-0">{timeParts.date}</span>
-                  </div>
-                </div>
-
-                {/* Bottom line: Timezone code */}
-                <div className="flex items-center justify-between text-[9px] text-white/70">
-                  <span className="font-medium">{item.zone}</span>
-                  <span className="rounded bg-white/15 px-1.5 py-0.2 font-mono font-bold text-white/90">{item.code}</span>
-                </div>
-              </div>
-            </div>
-          );
-        }}
-      >
-        <div className="relative z-10 flex h-full flex-col items-center justify-between py-4 sm:py-5 text-center pointer-events-none">
-          <div className="px-3.5 sm:px-5">
+      <div className="relative mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        {/* Section Heading & Simple Carousel Controls */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
             <h2
               id={`${id}-title`}
-              className="m-0 text-[22px] font-extrabold leading-tight tracking-[-0.03em] text-[#0C337B] sm:text-[28px] md:text-[32px] drop-shadow-sm"
+              className="text-[24px] sm:text-[30px] md:text-[34px] font-extrabold leading-tight tracking-[-0.03em] text-[#0C337B]"
             >
               Across borders. Across time zones.
             </h2>
-            <p className="mb-0 mt-1.5 text-sm font-medium text-[#0C337B]/80 sm:text-base">
+            <p className="mt-1.5 text-sm sm:text-base font-medium text-[#526B8C]">
               Live local times across the world's premier education hubs.
             </p>
           </div>
+
+          {/* Simple Carousel Left / Right Navigation Controls */}
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            <button
+              type="button"
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              aria-label="Previous time zones"
+              className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all ${
+                canScrollLeft
+                  ? "border-[#1765F5]/30 bg-white text-[#1765F5] shadow-sm hover:bg-[#1765F5] hover:text-white"
+                  : "border-slate-200 bg-white/50 text-slate-300 cursor-not-allowed"
+              }`}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              aria-label="Next time zones"
+              className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all ${
+                canScrollRight
+                  ? "border-[#1765F5]/30 bg-white text-[#1765F5] shadow-sm hover:bg-[#1765F5] hover:text-white"
+                  : "border-slate-200 bg-white/50 text-slate-300 cursor-not-allowed"
+              }`}
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
-      </TiltedGridHero>
+
+        {/* 2. Simple Non-Automated Carousel Track with Exact Card Effect from Prompt */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth pb-4 no-scrollbar snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {countries.map((item, idx) => {
+            const timeString = formatCountryTime(now, item);
+
+            return (
+              <div
+                key={item.country || idx}
+                className="group flex flex-col items-center justify-center gap-5 shrink-0 w-[260px] sm:w-[280px] md:w-[295px] snap-start select-none"
+              >
+                {/* Landmark Image with Monographic Grayscale Hover Effect from Prompt */}
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-[0_8px_24px_rgba(12,51,123,0.08)] border border-white/60">
+                  <img
+                    src={item.image}
+                    alt={item.country}
+                    className="w-full h-full object-cover group-hover:grayscale transition-all duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Card Text: Only Country Name & Live Time */}
+                <div className="w-full flex flex-col gap-1.5 items-center justify-center text-center">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#0C337B] tracking-tight">
+                    {item.country}
+                  </h3>
+                  <p className="text-sm sm:text-base font-semibold text-[#1765F5] font-mono">
+                    {timeString}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }
