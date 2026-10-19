@@ -195,7 +195,7 @@ function LinkList({ links, hrefFor }) {
  * Defaults point to the current website. Use siteUrl="" for local Next.js routes.
  */
 export default function UniversityFooter({
-  siteUrl = "https://universityyatra.com",
+  siteUrl = "http://localhost:3000/",
   logoSrc = "/images/footer/university-yatra-logo.png",
   skylineSrc = "/images/footer/global-skyline.png",
   phone = "+91 92868 44550",

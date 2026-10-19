@@ -208,9 +208,9 @@ function JourneyStep({ item, index, reduceMotion, compact = false }) {
         </div>
 
         {/* Step number */}
-        <span className="absolute right-[2px] top-[-5px] z-20 flex h-[27px] w-[27px] items-center justify-center rounded-full border-[3px] border-[#F0F9FD] text-[11px] font-extrabold text-white shadow-[0_4px_12px_rgba(6,59,114,0.16)]" style={{ backgroundColor: item.accent }}>
-          {Number(item.number)}
-        </span>
+       <span className="absolute right-[2px] top-[2px] z-20 flex h-[27px] w-[27px] items-center justify-center rounded-full border-[3px] border-[#F0F9FD] text-[11px] font-extrabold text-white shadow-[0_4px_12px_rgba(6,59,114,0.16)]" style={{ backgroundColor: item.accent }}>
+        {Number(item.number)}
+      </span>
 
       </div>
 
@@ -283,7 +283,7 @@ export default function HowUniversityYatraHelps() {
             {/* Dashed connector */}
             <div aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-[57px] border-t-2 border-dashed border-[#54C8D5]" />
 
-            <div className="flex snap-x snap-mandatory gap-0 overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+           <div className="flex snap-x snap-mandatory gap-0 overflow-x-auto pb-5 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 
               {helpItems.map((item, index) => (
                 <div key={item.number} className="relative w-[185px] shrink-0 snap-start px-2 sm:w-[205px]">
