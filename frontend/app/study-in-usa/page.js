@@ -2,16 +2,11 @@ import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
 import StudyInUsaHero from '@/components/StudyInUsa/StudyInUsaHero';
 import OnlineDegreeSection from "@/components/StudyInUsa/OnlineDegreeSection";
-import WhatItGetsYou from "@/components/StudyInUsa/WhatItGetsYou";
 import CoursesSlider from "@/components/StudyInUsa/CoursesSlider";
-import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraHelps";
 import UniversityCarousel from "@/components/StudyInUsa/UniversityCarousel";
-import DegreeComparison from "@/components/StudyInUsa/DegreeComparison";
-import CostOfStudyingUsa from "@/components/StudyInUsa/CostOfStudyingUsa";
-import Testimonials from "@/components/StudyInUsa/Testimonials";
-import USAFAQ from "@/components/StudyInUsa//USAFAQ";
-import GlobalEducationCTA from "@/components/StudyInUsa/GlobalEducationCTA";
-
+import WhatItGetsYou from "@/components/StudyInUsa/WhatItGetsYou";
+import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraHelps";
+import USAFAQ from "@/components/StudyInUsa/USAFAQ";
 
 export const metadata = {
   title: "Study in USA | Top Universities & Admission Guide - University Yatra",
@@ -35,11 +30,7 @@ export default function StudyInUsaPage() {
         <UniversityCarousel />
         <WhatItGetsYou />
         <HowUniversityYatraHelps />
-        {/* <DegreeComparison /> */}
-        <CostOfStudyingUsa />
-        <Testimonials />
         <USAFAQ />
-        <GlobalEducationCTA />
       </main>
       <UniversityFooter />
     </>

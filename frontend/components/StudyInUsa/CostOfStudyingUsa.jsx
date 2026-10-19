@@ -86,28 +86,20 @@ const cardThemes = {
 
 export default function CostOfStudyingUSA() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-[#031126] py-14 sm:py-16 lg:py-20">
+    <section className="relative isolate w-full overflow-hidden bg-white py-14 sm:py-16 lg:py-20">
 
-      {/* DARK NAVY BACKGROUND */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_10%,#09254B_0%,#06182F_42%,#020B1C_100%)]" />
-
-      {/* TOP LEFT BLUE GLOW */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-[110px] -top-[150px] -z-10 h-[280px] w-[280px] rounded-full bg-[#0864C0]/20 blur-[75px]" />
-
-      {/* TOP RIGHT BLUE GLOW */}
-      <div aria-hidden="true" className="pointer-events-none absolute -right-[180px] -top-[170px] -z-10 h-[450px] w-[450px] rounded-full bg-[#07458C]/15 blur-[110px]" />
+      {/* AMBIENT BACKGROUND GLOWS */}
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[10%] -z-10 h-[380px] w-[650px] -translate-x-1/2 rounded-full bg-[#1765F5]/[0.035] blur-[100px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-[180px] top-[20%] -z-10 h-[450px] w-[450px] rounded-full bg-[#5D93F8]/[0.03] blur-[110px]" />
 
       {/* RIGHT SIDE OUTLINE */}
-      <div aria-hidden="true" className="pointer-events-none absolute -right-[230px] top-[34%] -z-10 h-[420px] w-[420px] rounded-full border border-[#0967C5]/35 sm:-right-[200px] sm:h-[480px] sm:w-[480px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-[230px] top-[34%] -z-10 h-[420px] w-[420px] rounded-full border border-[#A2C1FB]/30 sm:-right-[200px] sm:h-[480px] sm:w-[480px]" />
 
       {/* LEFT SIDE OUTLINE */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-[240px] top-[45%] -z-10 h-[400px] w-[400px] rounded-full border border-[#0967C5]/35 sm:-left-[210px] sm:h-[460px] sm:w-[460px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-[240px] top-[45%] -z-10 h-[400px] w-[400px] rounded-full border border-[#A2C1FB]/30 sm:-left-[210px] sm:h-[460px] sm:w-[460px]" />
 
       {/* LEFT DOT PATTERN */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-45 md:block" style={{ backgroundImage: "radial-gradient(circle, #1376CF 1.5px, transparent 1.5px)", backgroundSize: "23px 23px" }} />
-
-      {/* CENTER BLUE GLOW */}
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[45%] -z-10 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#0B3770]/15 blur-[120px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-25 md:block" style={{ backgroundImage: "radial-gradient(circle, #A2C1FB 1.5px, transparent 1.5px)", backgroundSize: "23px 23px" }} />
 
       {/* MAIN CONTAINER */}
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
@@ -115,20 +107,12 @@ export default function CostOfStudyingUSA() {
         {/* HEADING */}
         <div className="mx-auto mb-12 max-w-[760px] text-center">
 
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/30 bg-[#18B8B5]/10 px-4 py-2">
-            <CircleDollarSign size={15} className="text-[#18B8B5]" strokeWidth={2} />
-
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#53D8D2]">
-              Study Cost
-            </span>
-          </div>
-
-          <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
+          <h2 className="text-[32px] font-extrabold leading-[1.1] tracking-[-0.035em] text-[#0C337B] sm:text-[40px] md:text-[48px]">
             Cost Of Studying{" "}
-            <span className="text-[#18B8B5]">in USA</span>
+            <span className="text-[#1765F5]">in USA</span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">
+          <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#526B8C] sm:text-[15px] md:text-[16px]">
             The cost of studying in the USA for international students depends on several factors, including the university, program of study, location, and available scholarships or financial aid. Living expenses such as accommodation, transportation, utilities, and personal expenses also contribute to the overall cost of studying in the United States.
           </p>
 

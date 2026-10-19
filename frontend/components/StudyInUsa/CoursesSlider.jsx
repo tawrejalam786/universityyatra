@@ -44,7 +44,7 @@ const courseCards = [
     category: "masters",
     stem: true,
     image: "/images/courses/business-analytics-ms.webp",
-    color: "#0DAA9A",
+    color: "#1765F5",
     description:
       "Use statistics, data visualisation, and predictive modelling to support business decisions.",
   },
@@ -64,7 +64,7 @@ const courseCards = [
     category: "masters",
     stem: true,
     image: "/images/courses/data-science-ms.webp",
-    color: "#0891B2",
+    color: "#5D93F8",
     description:
       "Apply programming, statistical analysis, and machine learning to complex datasets.",
   },
@@ -166,7 +166,7 @@ const courseCards = [
     category: "bachelors",
     stem: true,
     image: "/images/courses/engineering-bs.webp",
-    color: "#0D9488",
+    color: "#1047AC",
     description:
       "Build technical knowledge in engineering fields such as mechanical, electrical, civil, and computer engineering.",
   },
@@ -253,8 +253,8 @@ export default function CoursesSlider() {
     <section className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
 
       {/* BACKGROUND DECORATION */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[280px] w-[280px] rounded-full bg-[#18B8B5]/[0.05] blur-[90px]" />
-      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#063B72]/[0.04] blur-[100px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[280px] w-[280px] rounded-full bg-[#1765F5]/[0.06] blur-[90px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#0C337B]/[0.05] blur-[100px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-5 lg:px-6">
 
@@ -262,30 +262,30 @@ export default function CoursesSlider() {
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mb-6 flex items-end justify-between gap-4">
 
           <div>
-            <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[12px]">
+            <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
               STUDY IN THE UNITED STATES
             </span>
 
-            <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[34px] md:text-[40px]">
-              Explore Courses <span className="text-[#18B8B5]">in the USA</span>
+            <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[34px] md:text-[40px]">
+              Explore Courses <span className="text-[#1765F5]">in the USA</span>
             </h2>
 
             <div className="mt-3 flex items-center gap-1.5">
-              <span className="h-[4px] w-[4px] rounded-full bg-[#18B8B5]" />
-              <span className="h-[4px] w-[4px] rounded-full bg-[#18B8B5]/65" />
-              <span className="h-[4px] w-[4px] rounded-full bg-[#18B8B5]/35" />
-              <span className="h-[4px] w-14 rounded-full bg-[#18B8B5]" />
+              <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]" />
+              <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/65" />
+              <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/35" />
+              <span className="h-[4px] w-14 rounded-full bg-[#1765F5]" />
             </div>
           </div>
 
           {/* SLIDER ARROWS */}
           <div className="flex shrink-0 items-center gap-2">
 
-            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_6px_18px_rgba(6,59,114,0.08)] transition-all duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-11 sm:w-11">
+            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_6px_18px_rgba(12,51,123,0.08)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
               <ChevronLeft size={19} strokeWidth={2.1} />
             </button>
 
-            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_6px_18px_rgba(6,59,114,0.08)] transition-all duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-11 sm:w-11">
+            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_6px_18px_rgba(12,51,123,0.08)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
               <ChevronRight size={19} strokeWidth={2.1} />
             </button>
 
@@ -305,7 +305,7 @@ export default function CoursesSlider() {
                 : courseCards.filter((item) => item.category === tab.id).length;
 
             return (
-              <button key={tab.id} type="button" onClick={() => changeTab(tab.id)} aria-pressed={selected} className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2.5 text-[12px] font-semibold transition-all duration-300 sm:px-5 sm:py-3 sm:text-[14px] ${selected ? "border-[#07976F] bg-[#07976F] text-white shadow-[0_4px_12px_rgba(7,151,111,0.2)]" : "border-[#E0E7EF] bg-white text-[#344158] hover:border-[#18B8B5] hover:text-[#087F7B]"}`}>
+              <button key={tab.id} type="button" onClick={() => changeTab(tab.id)} aria-pressed={selected} className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2.5 text-[12px] font-semibold transition-all duration-300 sm:px-5 sm:py-3 sm:text-[14px] ${selected ? "border-[#1765F5] bg-[#1765F5] text-white shadow-[0_4px_12px_rgba(23,101,245,0.25)]" : "border-[#E0E7EF] bg-white text-[#344158] hover:border-[#1765F5] hover:text-[#1765F5]"}`}>
                 {tab.label}
                 <span className={`inline-flex min-w-[22px] items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${selected ? "bg-white/20 text-white" : "bg-[#F1F5F9] text-[#64748B]"}`}>
                   {count}
@@ -317,7 +317,7 @@ export default function CoursesSlider() {
 
         {/* SELECTED CATEGORY HEADING */}
         <div className="mb-2">
-          <h3 className="text-[16px] font-bold text-[#063B72] sm:text-[19px]">
+          <h3 className="text-[16px] font-bold text-[#0C337B] sm:text-[19px]">
             {activeTab === "masters"
               ? "Master's Degree Programs for Indian Students"
               : activeTab === "bachelors"
@@ -331,7 +331,7 @@ export default function CoursesSlider() {
         {/* COURSE SLIDER */}
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.6 }} className="relative w-full overflow-hidden">
 
-          <Swiper key={activeTab} modules={[Pagination]} onSwiper={(swiper) => { swiperRef.current = swiper; }} slidesPerView={1} spaceBetween={16} speed={600} grabCursor={true} watchOverflow={true} pagination={{ clickable: true }} breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 18 }, 1024: { slidesPerView: 3, spaceBetween: 20 } }} className="!overflow-hidden !bg-transparent !px-4 !pb-12 !pt-4 [&_.swiper-pagination-bullet]:!bg-[#18B8B5] [&_.swiper-pagination-bullet-active]:!opacity-100">
+          <Swiper key={activeTab} modules={[Pagination]} onSwiper={(swiper) => { swiperRef.current = swiper; }} slidesPerView={1} spaceBetween={16} speed={600} grabCursor={true} watchOverflow={true} pagination={{ clickable: true }} breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 18 }, 1024: { slidesPerView: 3, spaceBetween: 20 } }} className="!overflow-hidden !bg-transparent !px-4 !pb-12 !pt-4 [&_.swiper-pagination-bullet]:!bg-[#1765F5] [&_.swiper-pagination-bullet-active]:!opacity-100">
 
             {filteredCourses.map((item) => (
               <SwiperSlide key={item.id} className="!h-auto">
@@ -375,8 +375,8 @@ function CourseCard({ item }) {
         {/* STEM BADGE */}
         {item.stem && (
           <div className="absolute right-3 top-3 z-30">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#B8E7E3] bg-[#E8F8F7] px-3 py-1.5 text-[11px] font-extrabold tracking-[0.06em] text-[#087F7B] shadow-[0_4px_12px_rgba(6,59,114,0.12)] sm:text-[12px]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#18B8B5]" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#A2C1FB] bg-[#E8F0FE] px-3 py-1.5 text-[11px] font-extrabold tracking-[0.06em] text-[#1047AC] shadow-[0_4px_12px_rgba(12,51,123,0.12)] sm:text-[12px]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1765F5]" />
               STEM*
             </span>
           </div>
@@ -388,12 +388,12 @@ function CourseCard({ item }) {
       <div className="relative flex flex-1 flex-col px-5 pb-5 pt-5">
 
         {/* COURSE HEADING */}
-        <h3 className="min-h-[52px] text-[20px] font-bold leading-[1.25] tracking-[-0.025em] text-[#063B72] sm:text-[22px]">
+        <h3 className="min-h-[52px] text-[20px] font-bold leading-[1.25] tracking-[-0.025em] text-[#0C337B] sm:text-[22px]">
           {item.course}
         </h3>
 
         {/* ACCENT LINE */}
-        <div className="mt-3 h-[2px] w-10 rounded-full bg-[#18B8B5]" />
+        <div className="mt-3 h-[2px] w-10 rounded-full bg-[#1765F5]" />
 
         {/* PARAGRAPH */}
         <p className="relative z-10 mt-4 flex-1 text-[13px] leading-[1.7] text-[#40556A] sm:text-[14px]">
@@ -401,7 +401,7 @@ function CourseCard({ item }) {
         </p>
 
         {/* EXPLORE COURSE BUTTON */}
-        <button type="button" className="relative z-10 mt-5 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] bg-[#F4F7FA] px-4 py-2.5 text-left text-[13px] font-bold text-[#063B72] transition-all duration-300 group-hover:bg-[var(--card-color)] group-hover:text-white">
+        <button type="button" className="relative z-10 mt-5 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] bg-[#F4F7FA] px-4 py-2.5 text-left text-[13px] font-bold text-[#0C337B] transition-all duration-300 group-hover:bg-[var(--card-color)] group-hover:text-white">
           <span>Explore Course</span>
           <ArrowRight size={17} strokeWidth={2} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
         </button>

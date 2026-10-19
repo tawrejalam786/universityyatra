@@ -84,9 +84,9 @@ const testimonials = [
 ];
 
 const colors = {
-  blue: "#0797D1",
+  blue: "#1765F5",
   green: "#12B985",
-  teal: "#13A69A",
+  teal: "#5D93F8",
   purple: "#7254D8",
   orange: "#F59E0B",
 };
@@ -112,25 +112,25 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F8FAFC] py-12 sm:py-14 lg:py-16">
+    <section className="relative w-full overflow-hidden bg-white py-12 sm:py-14 lg:py-16">
       <div className="mx-auto w-full max-w-[1250px] px-4 sm:px-6 lg:px-8">
 
         {/* HEADER */}
         <div className="mb-8 flex items-center justify-between gap-4 sm:mb-9">
           <h2 className="max-w-[850px] text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#102C4A] sm:text-[34px] md:text-[38px]">
             What Students Like About{" "}
-            <span className="text-[#008080]">
+            <span className="text-[#1765F5]">
               University Yatra™
             </span>
           </h2>
 
           {/* DESKTOP ARROWS */}
           <div className="hidden shrink-0 items-center gap-2 sm:flex">
-            <button type="button" onClick={handlePrev} aria-label="Previous testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#617486] shadow-sm transition-all duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white">
+            <button type="button" onClick={handlePrev} aria-label="Previous testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#617486] shadow-sm transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white">
               <ChevronLeft size={18} />
             </button>
 
-            <button type="button" onClick={handleNext} aria-label="Next testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#617486] shadow-sm transition-all duration-300 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white">
+            <button type="button" onClick={handleNext} aria-label="Next testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#617486] shadow-sm transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white">
               <ChevronRight size={18} />
             </button>
           </div>
@@ -187,17 +187,17 @@ export default function Testimonials() {
 
         {/* MOBILE ARROWS */}
         <div className="mt-3 flex items-center justify-center gap-3 sm:hidden">
-          <button type="button" onClick={handlePrev} aria-label="Previous testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#52687A] shadow-sm transition hover:bg-[#18B8B5] hover:text-white">
+          <button type="button" onClick={handlePrev} aria-label="Previous testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#52687A] shadow-sm transition hover:bg-[#1765F5] hover:text-white">
             <ChevronLeft size={18} />
           </button>
 
-          <button type="button" onClick={handleNext} aria-label="Next testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#52687A] shadow-sm transition hover:bg-[#18B8B5] hover:text-white">
+          <button type="button" onClick={handleNext} aria-label="Next testimonial" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DCE5EC] bg-white text-[#52687A] shadow-sm transition hover:bg-[#1765F5] hover:text-white">
             <ChevronRight size={18} />
           </button>
         </div>
 
         {/* PAGINATION */}
-        <div className="testimonial-pagination !relative mt-5 flex min-h-[10px] items-center justify-center gap-2 [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!h-[8px] [&_.swiper-pagination-bullet]:!w-[8px] [&_.swiper-pagination-bullet]:!rounded-full [&_.swiper-pagination-bullet]:!bg-[#C9D6E1] [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!transition-all [&_.swiper-pagination-bullet-active]:!w-[28px] [&_.swiper-pagination-bullet-active]:!bg-[#18B8B5]" />
+        <div className="testimonial-pagination !relative mt-5 flex min-h-[10px] items-center justify-center gap-2 [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!h-[8px] [&_.swiper-pagination-bullet]:!w-[8px] [&_.swiper-pagination-bullet]:!rounded-full [&_.swiper-pagination-bullet]:!bg-[#C9D6E1] [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!transition-all [&_.swiper-pagination-bullet-active]:!w-[28px] [&_.swiper-pagination-bullet-active]:!bg-[#1765F5]" />
 
       </div>
     </section>

@@ -30,8 +30,8 @@ const benefits = [
     mobileDescription:
       "Eligible graduates can work in their field through OPT, with an additional 24-month extension possible for qualifying STEM degrees.",
     icon: BriefcaseBusiness,
-    accent: "#063B72",
-    soft: "#EAF1F8",
+    accent: "#0C337B",
+    soft: "#E8F0FE",
   },
   {
     number: "02",
@@ -41,8 +41,8 @@ const benefits = [
     mobileDescription:
       "Study at US universities recognised worldwide for their academic programs, research contributions, and achievements across diverse fields.",
     icon: GraduationCap,
-    accent: "#18B8B5",
-    soft: "#E8F8F7",
+    accent: "#1765F5",
+    soft: "#E8F0FE",
   },
   {
     number: "03",
@@ -52,8 +52,8 @@ const benefits = [
     mobileDescription:
       "Combine majors, minors, and electives at many universities to shape a degree around your interests.",
     icon: BookOpen,
-    accent: "#0E7490",
-    soft: "#EAF7FA",
+    accent: "#5D93F8",
+    soft: "#E8F0FE",
   },
   {
     number: "04",
@@ -211,12 +211,12 @@ export default function WhatItGetsYou() {
         {/* SECTION HEADING */}
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
 
-          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
+          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[13px]">
             WHY STUDY IN USA ?
           </span>
 
-          <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
-            Inside the <span className="text-[#18B8B5]">American Study</span> Experience
+          <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[33px] md:text-[38px] lg:text-[42px]">
+            Inside the <span className="text-[#1765F5]">American Study</span> Experience
           </h2>
 
         </motion.div>
@@ -351,7 +351,7 @@ function TimelineAccordionCard({
             {item.number}
           </span>
 
-          <h3 className="min-w-0 text-[10px] font-bold leading-[1.35] text-[#063B72] sm:text-[13px] md:text-[17px] lg:text-[18px]">
+          <h3 className="min-w-0 text-[10px] font-bold leading-[1.35] text-[#0C337B] sm:text-[13px] md:text-[17px] lg:text-[18px]">
             {item.title}
           </h3>
 

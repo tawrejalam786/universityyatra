@@ -11,16 +11,16 @@ const helpItems = [
     title: "Personalised Counselling",
     description: "One-on-one guidance to understand your academic goals and preferences.",
     image: "/images/study-canada/customer-support.png",
-    accent: "#168DF5",
-    soft: "#E4F4FF",
+    accent: "#1765F5",
+    soft: "#E8F0FE",
   },
   {
     number: "02",
     title: "Profile & Eligibility Assessment",
     description: "We assess your profile and shortlist universities suited to your qualifications.",
     image: "/images/study-canada/verification-check.png",
-    accent: "#00B9B4",
-    soft: "#E0FAF7",
+    accent: "#5D93F8",
+    soft: "#E8F0FE",
   },
   {
     number: "03",
@@ -51,8 +51,8 @@ const helpItems = [
     title: "Visa Application Guidance",
     description: "Understand the visa application process, documentation and preparation.",
     image: "/images/study-canada/visa-guidance.png",
-    accent: "#36A7F4",
-    soft: "#E8F5FF",
+    accent: "#1047AC",
+    soft: "#E8F0FE",
   },
   {
     number: "07",
@@ -67,8 +67,8 @@ const helpItems = [
     title: "Landing",
     description: "Assistance after you arrive on campus, so you can settle in smoothly.",
     image: "/images/study-canada/landing.png",
-    accent: "#00B9B4",
-    soft: "#E0FAF7",
+    accent: "#1765F5",
+    soft: "#E8F0FE",
   },
 ];
 
@@ -215,7 +215,7 @@ function JourneyStep({ item, index, reduceMotion, compact = false }) {
       </div>
 
       {/* Title */}
-      <h3 className={`mt-4 font-extrabold leading-[1.35] tracking-[-0.02em] text-[#063B72] ${compact ? "text-[10px] lg:text-[11px] xl:text-[12px]" : "text-[13px] sm:text-[14px]"}`}>
+      <h3 className={`mt-4 font-extrabold leading-[1.35] tracking-[-0.02em] text-[#0C337B] ${compact ? "text-[10px] lg:text-[11px] xl:text-[12px]" : "text-[13px] sm:text-[14px]"}`}>
         {item.title}
       </h3>
 
@@ -260,16 +260,16 @@ export default function HowUniversityYatraHelps() {
             className="relative z-10 mx-auto mb-12 max-w-[850px] text-center sm:mb-14 md:mb-16 lg:mb-20"
           >
 
-            <span className="mb-3 block text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#00AFAE] sm:text-[11px]">
+            <span className="mb-3 block text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#1765F5] sm:text-[11px]">
               YOUR JOURNEY, OUR SUPPORT
             </span>
 
-            <h2 className="text-[27px] font-extrabold leading-[1.13] tracking-[-0.045em] text-[#063B72] sm:text-[34px] md:text-[40px] lg:text-[44px]">
-              How <span className="text-[#18B8B5]">University Yatra™</span> Helps You
+            <h2 className="text-[27px] font-extrabold leading-[1.13] tracking-[-0.045em] text-[#0C337B] sm:text-[34px] md:text-[40px] lg:text-[44px]">
+              How <span className="text-[#1765F5]">University Yatra™</span> Helps You
             </h2>
 
             {/* Small underline accent */}
-            <div aria-hidden="true" className="mx-auto mt-3 h-[4px] w-24 -rotate-2 rounded-full bg-[#FF7896]" />
+            <div aria-hidden="true" className="mx-auto mt-3 h-[4px] w-24 -rotate-2 rounded-full bg-[#1765F5]" />
 
             <p className="mx-auto mt-5 max-w-[640px] text-[12px] leading-[1.65] text-[#526B8C] sm:text-[13px] md:text-[14px]">
               From your first question to your study abroad journey, we guide you every step.
@@ -281,7 +281,7 @@ export default function HowUniversityYatraHelps() {
           <div className="relative z-10 md:hidden">
 
             {/* Dashed connector */}
-            <div aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-[57px] border-t-2 border-dashed border-[#54C8D5]" />
+            <div aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-[57px] border-t-2 border-dashed border-[#A2C1FB]" />
 
            <div className="flex snap-x snap-mandatory gap-0 overflow-x-auto pb-5 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 
@@ -291,7 +291,7 @@ export default function HowUniversityYatraHelps() {
                   <JourneyStep item={item} index={index} reduceMotion={reduceMotion} />
 
                   {index !== helpItems.length - 1 && (
-                    <div aria-hidden="true" className="pointer-events-none absolute right-[-10px] top-[48px] z-20 flex h-[21px] w-[21px] items-center justify-center rounded-full border-2 border-[#F0F9FD] bg-[#00B9B4] text-white">
+                    <div aria-hidden="true" className="pointer-events-none absolute right-[-10px] top-[48px] z-20 flex h-[21px] w-[21px] items-center justify-center rounded-full border-2 border-[#F0F9FD] bg-[#1765F5] text-white">
                       <ArrowRight size={12} strokeWidth={3} />
                     </div>
                   )}
@@ -311,7 +311,7 @@ export default function HowUniversityYatraHelps() {
           <div className="relative z-10 hidden md:block">
 
             {/* Dashed timeline */}
-            <div aria-hidden="true" className="pointer-events-none absolute left-[6%] right-[6%] top-[43px] z-0 border-t-2 border-dashed border-[#54C8D5] lg:top-[47px] xl:top-[52px]" />
+            <div aria-hidden="true" className="pointer-events-none absolute left-[6%] right-[6%] top-[43px] z-0 border-t-2 border-dashed border-[#A2C1FB] lg:top-[47px] xl:top-[52px]" />
 
             <div className="relative z-10 grid grid-cols-8 gap-1 lg:gap-2 xl:gap-3">
 
@@ -321,7 +321,7 @@ export default function HowUniversityYatraHelps() {
                   <JourneyStep item={item} index={index} reduceMotion={reduceMotion} compact />
 
                   {index !== helpItems.length - 1 && (
-                    <div aria-hidden="true" className="pointer-events-none absolute right-[-10px] top-[34px] z-20 flex h-[20px] w-[20px] items-center justify-center rounded-full border-[3px] border-[#F0F9FD] bg-[#00B9B4] text-white lg:right-[-12px] lg:top-[38px] xl:top-[43px]">
+                    <div aria-hidden="true" className="pointer-events-none absolute right-[-10px] top-[34px] z-20 flex h-[20px] w-[20px] items-center justify-center rounded-full border-[3px] border-[#F0F9FD] bg-[#1765F5] text-white lg:right-[-12px] lg:top-[38px] xl:top-[43px]">
                       <ArrowRight size={11} strokeWidth={3} />
                     </div>
                   )}
