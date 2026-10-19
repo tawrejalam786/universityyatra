@@ -27,7 +27,7 @@ export default function StudyInUsaHero() {
     <section
       className="
         relative isolate
-        flex min-h-screen min-h-[100dvh] w-full
+        flex min-h-[82vh] sm:min-h-[86vh] w-full
         flex-col justify-center overflow-hidden
         bg-[#F8FAFC]
       "
@@ -130,14 +130,13 @@ export default function StudyInUsaHero() {
         className="
           relative z-10
           mx-auto flex w-full
-          max-w-[1450px]
+          max-w-[1320px]
           flex-1 items-center justify-center
-          px-5
-          pb-12 pt-28
+          px-4
+          pb-8 pt-20
 
-          sm:px-8 sm:pt-32
-          md:px-10 md:pb-16
-          lg:px-16
+          sm:px-6 sm:pt-24 sm:pb-10
+          md:pb-12
         "
       >
         <div
@@ -164,17 +163,16 @@ export default function StudyInUsaHero() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="
-              text-[43px]
+              text-[36px]
               font-extrabold
-              leading-[1.04]
+              leading-[1.06]
               tracking-[-0.045em]
               text-[#0C337B]
               drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]
 
-              sm:text-[54px]
-              md:text-[68px]
-              lg:text-[42px]
-              xl:text-[52px]
+              sm:text-[48px]
+              md:text-[56px]
+              lg:text-[58px]
             "
           >
             Learn in a Culture of{" "}
@@ -183,7 +181,6 @@ export default function StudyInUsaHero() {
                 mt-1 block
                 text-[#1765F5]
                 drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]
-                md:mt-2
               "
             >
               Research and Discovery.
@@ -207,20 +204,17 @@ export default function StudyInUsaHero() {
             }}
             className="
               mx-auto
-              mt-6
-              max-w-[790px]
-              text-[15px]
+              mt-3.5
+              max-w-[760px]
+              text-[14px]
               font-semibold
-              leading-[1.75]
+              leading-[1.65]
               text-[#1D3557]
               drop-shadow-[0_1px_10px_rgba(255,255,255,0.95)]
 
               sm:text-[16px]
-              md:mt-7
-              md:text-[18px]
-              md:leading-[1.7]
-
-              lg:text-[19px]
+              md:mt-4
+              md:text-[17px]
             "
           >
             Explore undergraduate, postgraduate, and specialized programs across U.S. universities, with guidance to help you choose the right course, institution, and academic pathway for your goals.
@@ -231,7 +225,7 @@ export default function StudyInUsaHero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.23, duration: 0.6 }}
-            className="mx-auto mt-5 flex max-w-[1050px] flex-wrap items-center justify-center gap-2 text-center sm:mt-6"
+            className="mx-auto mt-4 flex max-w-[1050px] flex-wrap items-center justify-center gap-2 text-center"
           >
             {stats.map((item) => (
               <span
@@ -246,7 +240,7 @@ export default function StudyInUsaHero() {
             ))}
           </motion.div>
 
-          {/* CTA */}
+          {/* CTAs */}
           <motion.div
             initial={{
               opacity: 0,
@@ -262,41 +256,42 @@ export default function StudyInUsaHero() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="
-              mt-8
-              flex justify-center
-
-              md:mt-9
+              mt-5 sm:mt-6
+              flex flex-wrap items-center justify-center gap-3 sm:gap-4
             "
           >
             <button
               type="button"
+              onClick={() => {
+                const el = document.getElementById("faq-section") || document.querySelector("footer");
+                el?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="
                 group
                 inline-flex items-center justify-center
-                gap-3
+                gap-2.5
                 rounded-full
                 border border-[#1765F5]
                 bg-[#1765F5]
-                px-8 py-4
-                text-[15px]
+                px-6 py-3
+                text-[13px]
                 font-bold
                 text-white
                 shadow-[0_10px_30px_rgba(23,101,245,0.28)]
                 transition-all
                 duration-300
 
-                hover:-translate-y-1
+                hover:-translate-y-0.5
                 hover:bg-[#1047AC]
                 hover:shadow-[0_15px_40px_rgba(23,101,245,0.38)]
 
-                sm:px-9 sm:py-4
-                sm:text-[16px]
+                sm:px-7 sm:py-3.5
+                sm:text-[14px]
               "
             >
-              Book a Free Consultation
-
+              <span>Book a Free Consultation</span>
               <ArrowRight
-                size={18}
+                size={16}
                 strokeWidth={2.2}
                 className="
                   transition-transform
@@ -305,6 +300,41 @@ export default function StudyInUsaHero() {
                 "
               />
             </button>
+
+            <a
+              href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20my%20study%20options%20in%20USA."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                group
+                inline-flex items-center justify-center
+                gap-2.5
+                rounded-full
+                border border-[#25D366]
+                bg-[#25D366]/10
+                px-6 py-3
+                text-[13px]
+                font-bold
+                text-[#0C337B]
+                shadow-[0_4px_16px_rgba(37,211,102,0.15)]
+                backdrop-blur-md
+                transition-all
+                duration-300
+
+                hover:-translate-y-0.5
+                hover:bg-[#25D366]
+                hover:text-white
+                hover:shadow-[0_10px_28px_rgba(37,211,102,0.35)]
+
+                sm:px-7 sm:py-3.5
+                sm:text-[14px]
+              "
+            >
+              <svg className="h-4 w-4 fill-current transition-colors" viewBox="0 0 24 24">
+                <path d="M21 11.6a9 9 0 0 1-13.3 7.9L3 21l1.5-4.5A9 9 0 1 1 21 11.6Z" />
+              </svg>
+              <span>Chat On Whatsapp</span>
+            </a>
           </motion.div>
         </div>
       </div>

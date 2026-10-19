@@ -250,50 +250,50 @@ export default function CoursesSlider() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
+    <section className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
 
       {/* BACKGROUND DECORATION */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[280px] w-[280px] rounded-full bg-[#1765F5]/[0.06] blur-[90px]" />
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#0C337B]/[0.05] blur-[100px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-5 lg:px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-3.5 sm:px-5 lg:px-6">
 
         {/* SECTION HEADER */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mb-6 flex items-end justify-between gap-4">
+        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-4 flex items-end justify-between gap-4">
 
           <div>
-            <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
+            <span className="mb-1 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
               STUDY IN THE UNITED STATES
             </span>
 
-            <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[34px] md:text-[40px]">
+            <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] md:text-[36px]">
               Explore Courses <span className="text-[#1765F5]">in the USA</span>
             </h2>
 
-            <div className="mt-3 flex items-center gap-1.5">
+            <div className="mt-2 flex items-center gap-1.5">
               <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]" />
               <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/65" />
               <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/35" />
-              <span className="h-[4px] w-14 rounded-full bg-[#1765F5]" />
+              <span className="h-[4px] w-12 rounded-full bg-[#1765F5]" />
             </div>
           </div>
 
           {/* SLIDER ARROWS */}
           <div className="flex shrink-0 items-center gap-2">
 
-            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_6px_18px_rgba(12,51,123,0.08)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
-              <ChevronLeft size={19} strokeWidth={2.1} />
+            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-10 sm:w-10">
+              <ChevronLeft size={18} strokeWidth={2.1} />
             </button>
 
-            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_6px_18px_rgba(12,51,123,0.08)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
-              <ChevronRight size={19} strokeWidth={2.1} />
+            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-10 sm:w-10">
+              <ChevronRight size={18} strokeWidth={2.1} />
             </button>
 
           </div>
         </motion.div>
 
         {/* CATEGORY PILLS */}
-        <div className="mb-5 flex w-full flex-nowrap items-center gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-7 sm:gap-2.5">
+        <div className="mb-3.5 flex w-full flex-nowrap items-center gap-2 overflow-x-auto pb-1.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-4 sm:gap-2.5">
           {tabs.map((tab) => {
             const selected = activeTab === tab.id;
 

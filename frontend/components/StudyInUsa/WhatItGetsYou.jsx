@@ -24,56 +24,56 @@ import {
 const benefits = [
   {
     number: "01",
-    title: "Post-Study Work Opportunities",
-    desktopDescription:
-      "The USA offers eligible international graduates up to 12 months of Optional Practical Training (OPT), with a possible 24-month STEM extension for qualifying degrees and students.",
-    mobileDescription:
-      "Eligible graduates can work in their field through OPT, with an additional 24-month extension possible for qualifying STEM degrees.",
-    icon: BriefcaseBusiness,
-    accent: "#0C337B",
-    soft: "#E8F0FE",
-  },
-  {
-    number: "02",
     title: "Globally Ranked Universities",
     desktopDescription:
       "The USA is home to universities recognised for academic excellence, specialised programs, and research. Students can compare institutions based on course offerings, faculty, facilities, location, and career goals.",
     mobileDescription:
       "Study at US universities recognised worldwide for their academic programs, research contributions, and achievements across diverse fields.",
     icon: GraduationCap,
-    accent: "#1765F5",
+    accent: "#0C337B",
     soft: "#E8F0FE",
   },
   {
-    number: "03",
+    number: "02",
     title: "Flexible Education System",
     desktopDescription:
       "Many US undergraduate programs allow students to combine a major with minors, electives, and courses from other disciplines. This gives students greater flexibility to shape their academic pathway.",
     mobileDescription:
       "Combine majors, minors, and electives at many universities to shape a degree around your interests.",
     icon: BookOpen,
-    accent: "#5D93F8",
+    accent: "#1765F5",
     soft: "#E8F0FE",
   },
   {
-    number: "04",
+    number: "03",
     title: "Global Career Advantage",
     desktopDescription:
       "Studying in the USA brings students into an internationally diverse academic environment. Classroom collaboration, presentations, internships where eligible, and practical projects can help develop skills valued across industries.",
     mobileDescription:
       "Build practical skills through presentations, group projects, and classroom discussions in a diverse academic environment.",
     icon: Globe2,
-    accent: "#7C3AED",
-    soft: "#F3EEFF",
+    accent: "#5D93F8",
+    soft: "#E8F0FE",
   },
   {
-    number: "05",
+    number: "04",
     title: "Strong Industry & Research Exposure",
     desktopDescription:
       "US universities offer opportunities to participate in faculty-led research, laboratory work, innovation projects, and industry collaborations. Availability depends on the university, department, and program.",
     mobileDescription:
       "Work on research projects, use specialised laboratories, or engage with industry through opportunities offered by your university.",
     icon: Microscope,
+    accent: "#7C3AED",
+    soft: "#F3EEFF",
+  },
+  {
+    number: "05",
+    title: "Post-Study Work Opportunities",
+    desktopDescription:
+      "The USA offers eligible international graduates up to 12 months of Optional Practical Training (OPT), with a possible 24-month STEM extension for qualifying degrees and students.",
+    mobileDescription:
+      "Eligible graduates can work in their field through OPT, with an additional 24-month extension possible for qualifying STEM degrees.",
+    icon: BriefcaseBusiness,
     accent: "#047857",
     soft: "#EAF8F2",
   },
@@ -205,17 +205,17 @@ export default function WhatItGetsYou() {
   }, [manualStep]);
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-8">
-      <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
+    <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
+      <div className="mx-auto w-full max-w-[1180px] px-3.5 sm:px-5 lg:px-6">
 
         {/* SECTION HEADING */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
+        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-4 text-center sm:mb-6">
 
-          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[13px]">
+          <span className="mb-1.5 inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
             WHY STUDY IN USA ?
           </span>
 
-          <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[33px] md:text-[38px] lg:text-[42px]">
+          <h2 className="text-[24px] font-bold leading-[1.18] tracking-[-0.03em] text-[#0C337B] sm:text-[30px] md:text-[34px] lg:text-[38px]">
             Inside the <span className="text-[#1765F5]">American Study</span> Experience
           </h2>
 
@@ -225,7 +225,7 @@ export default function WhatItGetsYou() {
         <div className="relative mx-auto w-full max-w-[1100px]">
 
           {/* MULTICOLOR CENTER BAR */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-y-5 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-y-3 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]">
             {benefits.map((item) => (
               <div key={item.number} className="min-h-0 flex-1" style={{ backgroundColor: item.accent }} />
             ))}
@@ -238,7 +238,7 @@ export default function WhatItGetsYou() {
               const isActive = activeStep === index;
 
               return (
-                <div key={item.number} className="relative grid min-h-[135px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-5 sm:min-h-[155px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] md:min-h-[175px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)]">
+                <div key={item.number} className="relative grid min-h-[90px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-2 sm:min-h-[110px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] sm:py-2.5 md:min-h-[125px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] md:py-3">
 
                   {/* LEFT COLUMN */}
                   <div className="flex min-w-0 items-center justify-end">
@@ -343,26 +343,26 @@ function TimelineAccordionCard({
     <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
 
       {/* CARD HEADER */}
-      <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-1.5 px-2.5 py-3 text-left sm:gap-3 sm:px-4 sm:py-4 md:px-5 md:py-5">
+      <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-1.5 px-2.5 py-2 text-left sm:gap-2.5 sm:px-3.5 sm:py-2.5 md:px-4 md:py-3">
 
-        <div className="flex min-w-0 flex-1 items-start gap-1.5 sm:gap-2.5">
+        <div className="flex min-w-0 flex-1 items-start gap-1.5 sm:gap-2">
 
-          <span className="shrink-0 text-[11px] font-extrabold sm:text-[14px] md:text-[18px]" style={{ color: item.accent }}>
+          <span className="shrink-0 text-[11px] font-extrabold sm:text-[13px] md:text-[16px]" style={{ color: item.accent }}>
             {item.number}
           </span>
 
-          <h3 className="min-w-0 text-[10px] font-bold leading-[1.35] text-[#0C337B] sm:text-[13px] md:text-[17px] lg:text-[18px]">
+          <h3 className="min-w-0 text-[10px] font-bold leading-[1.3] text-[#0C337B] sm:text-[13px] md:text-[15px] lg:text-[16px]">
             {item.title}
           </h3>
 
         </div>
 
         {/* PLUS / MINUS */}
-        <span className="flex h-[23px] w-[23px] shrink-0 items-center justify-center rounded-full sm:h-[29px] sm:w-[29px] md:h-[34px] md:w-[34px]" style={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent }}>
+        <span className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full sm:h-[26px] sm:w-[26px] md:h-[30px] md:w-[30px]" style={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent }}>
           {active ? (
-            <Minus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
+            <Minus className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
           ) : (
-            <Plus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
+            <Plus className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
           )}
         </span>
 
@@ -373,10 +373,10 @@ function TimelineAccordionCard({
         {active && (
           <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">
 
-            <div className="border-t border-[#EDF1F5] px-2.5 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4 md:px-5">
+            <div className="border-t border-[#EDF1F5] px-2.5 pb-2.5 pt-2 sm:px-3.5 sm:pb-3.5 sm:pt-2.5 md:px-4">
 
               {/* DESKTOP DESCRIPTION */}
-              <p className="hidden text-[14px] leading-[1.7] text-[#526477] md:block">
+              <p className="hidden text-[13px] leading-[1.6] text-[#526477] md:block">
                 {item.desktopDescription}
               </p>
 

@@ -215,12 +215,12 @@ function JourneyStep({ item, index, reduceMotion, compact = false }) {
       </div>
 
       {/* Title */}
-      <h3 className={`mt-4 font-extrabold leading-[1.35] tracking-[-0.02em] text-[#0C337B] ${compact ? "text-[10px] lg:text-[11px] xl:text-[12px]" : "text-[13px] sm:text-[14px]"}`}>
+      <h3 className={`mt-2.5 sm:mt-3 font-extrabold leading-[1.3] tracking-[-0.02em] text-[#0C337B] ${compact ? "text-[10px] lg:text-[11px] xl:text-[12px]" : "text-[13px] sm:text-[14px]"}`}>
         {item.title}
       </h3>
 
       {/* Description */}
-      <p className={`mt-2 leading-[1.5] text-[#526B8C] ${compact ? "text-[9px] lg:text-[10px] xl:text-[11px]" : "text-[11px] sm:text-[12px]"}`}>
+      <p className={`mt-1 leading-[1.45] text-[#526B8C] ${compact ? "text-[9px] lg:text-[10px] xl:text-[11px]" : "text-[11px] sm:text-[12px]"}`}>
         {item.description}
       </p>
 
@@ -236,12 +236,12 @@ export default function HowUniversityYatraHelps() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-8 sm:py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
 
-      <div className="mx-auto w-full max-w-[1600px] px-3 sm:px-5 lg:px-7">
+      <div className="mx-auto w-full max-w-[1360px] px-3.5 sm:px-5 lg:px-6">
 
         {/* FULL WIDTH ROUNDED SECTION */}
-        <div className="relative isolate overflow-hidden rounded-[28px] bg-[#F0F9FD] px-3 pb-9 pt-10 shadow-[0_10px_35px_rgba(6,59,114,0.04)] sm:rounded-[38px] sm:px-6 md:px-7 md:pb-12 md:pt-12 lg:px-9 lg:pt-14">
+        <div className="relative isolate overflow-hidden rounded-[24px] bg-[#F0F9FD] px-3.5 py-6 sm:rounded-[32px] sm:px-6 sm:py-8 md:px-8 md:py-9 shadow-[0_10px_35px_rgba(6,59,114,0.04)]">
 
           {/* BACKGROUND DECORATIONS */}
           <WorldGlobe />
@@ -257,21 +257,21 @@ export default function HowUniversityYatraHelps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55 }}
-            className="relative z-10 mx-auto mb-12 max-w-[850px] text-center sm:mb-14 md:mb-16 lg:mb-20"
+            className="relative z-10 mx-auto mb-6 max-w-[850px] text-center sm:mb-7 md:mb-8"
           >
 
-            <span className="mb-3 block text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#1765F5] sm:text-[11px]">
+            <span className="mb-2 block text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#1765F5] sm:text-[11px]">
               YOUR JOURNEY, OUR SUPPORT
             </span>
 
-            <h2 className="text-[27px] font-extrabold leading-[1.13] tracking-[-0.045em] text-[#0C337B] sm:text-[34px] md:text-[40px] lg:text-[44px]">
+            <h2 className="text-[25px] font-extrabold leading-[1.13] tracking-[-0.045em] text-[#0C337B] sm:text-[32px] md:text-[36px] lg:text-[40px]">
               How <span className="text-[#1765F5]">University Yatra™</span> Helps You
             </h2>
 
             {/* Small underline accent */}
-            <div aria-hidden="true" className="mx-auto mt-3 h-[4px] w-24 -rotate-2 rounded-full bg-[#1765F5]" />
+            <div aria-hidden="true" className="mx-auto mt-2 h-[3.5px] w-20 -rotate-2 rounded-full bg-[#1765F5]" />
 
-            <p className="mx-auto mt-5 max-w-[640px] text-[12px] leading-[1.65] text-[#526B8C] sm:text-[13px] md:text-[14px]">
+            <p className="mx-auto mt-2.5 max-w-[640px] text-[12px] leading-[1.6] text-[#526B8C] sm:text-[13px] md:text-[14px]">
               From your first question to your study abroad journey, we guide you every step.
             </p>
 

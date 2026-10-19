@@ -208,7 +208,7 @@ export function UniversityClocks({
   return (
     <section
       aria-labelledby={`${id}-title`}
-      className="relative isolate min-h-[580px] sm:min-h-[640px] lg:min-h-[680px] overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F3FAF9] to-[#EBF3FC]"
+      className="relative isolate min-h-[420px] sm:min-h-[460px] lg:min-h-[500px] overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F3FAF9] to-[#EBF3FC]"
       suppressHydrationWarning
     >
       {/* 1. Stretched monuments skyline background (Taj Mahal, Eiffel Tower, Statue of Liberty, CN Tower, Big Ben) */}
@@ -231,14 +231,14 @@ export function UniversityClocks({
       <TiltedGridHero
         items={countries}
         speed={4}
-        tileHeight={26}
+        tileHeight={23}
         aspectRatio={16 / 9}
-        gap={6}
+        gap={5}
         axis={56}
         curve={80}
         fade={12}
         interactive={true}
-        className="h-[560px] sm:h-[600px] w-full"
+        className="h-[420px] sm:h-[460px] w-full"
         renderCard={(item) => {
           const timeParts = formatCountryTime(now, item);
           return (
@@ -312,11 +312,11 @@ export function UniversityClocks({
           );
         }}
       >
-        <div className="relative z-10 flex h-full flex-col items-center justify-between py-7 sm:py-9 text-center pointer-events-none">
-          <div className="px-5">
+        <div className="relative z-10 flex h-full flex-col items-center justify-between py-4 sm:py-5 text-center pointer-events-none">
+          <div className="px-3.5 sm:px-5">
             <h2
               id={`${id}-title`}
-              className="m-0 text-[26px] font-extrabold leading-tight tracking-[-0.03em] text-[#0C337B] sm:text-[34px] md:text-[38px] drop-shadow-sm"
+              className="m-0 text-[22px] font-extrabold leading-tight tracking-[-0.03em] text-[#0C337B] sm:text-[28px] md:text-[32px] drop-shadow-sm"
             >
               Across borders. Across time zones.
             </h2>
