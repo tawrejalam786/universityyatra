@@ -346,6 +346,73 @@ const GUIDE_DETAILS_DATABASE = {
       },
     ],
   },
+
+  "jobs-in-usa": {
+    id: "06",
+    vol: "VOL. VI",
+    title: "Jobs & Careers in the USA",
+    shortTitle: "Jobs in USA",
+    badge: "Careers, Internships & ROI",
+    tagline: "High-Paying Industry Roles, CPT Internships, On-Campus Employment & US Job Market Navigation",
+    heroImage: "/images/hero/study-in-usa-hero-latest.jpg",
+    accentColor: "#C2410C",
+    pillColors: [
+      { label: "CPT INTERNSHIPS", bg: "#D7F77D", text: "#063B72" },
+      { label: "ON-CAMPUS JOBS", bg: "#B5E9F2", text: "#063B72" },
+      { label: "HIGH-PAYING ROLES", bg: "#FFD4E6", text: "#063B72" },
+      { label: "CAREER FAIRS", bg: "#0C9253", text: "#FFFFFF" },
+    ],
+    overview:
+      "The United States is home to the world's most dynamic job market for international graduates. With booming tech hubs, global financial centers, and cutting-edge healthcare industries, US university students can gain invaluable corporate experience through CPT internships, career fairs, and high-ROI full-time placements.",
+    metrics: [
+      { label: "Average Starting Salary", value: "$75,000 – $125,000 / yr" },
+      { label: "On-Campus Work Limit", value: "20 Hrs/Wk During Term" },
+      { label: "CPT Internship Window", value: "Summer & Final Terms" },
+      { label: "Placement Rate", value: "92%+ Within 6 Months" },
+    ],
+    chapters: [
+      {
+        icon: Briefcase,
+        title: "1. On-Campus Student Employment",
+        desc: "Offset living expenses from day one with university-based employment.",
+        points: [
+          "Eligible From First Semester: F-1 students can immediately apply for campus jobs including library desks, tech labs, dining facilities, and student centers.",
+          "Legal Hourly Allowance: Up to 20 hours/week during classes, and up to 40 hours/week during university holidays and summer breaks.",
+          "Social Security Number (SSN): Working on-campus qualifies you to obtain an official US SSN, establishing your US credit profile.",
+        ],
+      },
+      {
+        icon: Award,
+        title: "2. Curricular Practical Training (CPT) Internships",
+        desc: "Paid corporate internships during your academic program.",
+        points: [
+          "Off-Campus Industry Experience: Available after completing two full academic semesters. Work for leading US corporations, startups, or research institutes.",
+          "Competitive Summer Salaries: Master's STEM students earn $30 to $65/hour during summer internships at Fortune 500 tech and finance firms.",
+          "Direct Full-Time Conversion: Over 70% of high-performing summer interns receive pre-placement return job offers before graduating.",
+        ],
+      },
+      {
+        icon: Globe2,
+        title: "3. Top Hiring Sectors & Career Fairs",
+        desc: "Maximizing university recruitment networks and alumni connections.",
+        points: [
+          "Campus Career Fairs: US universities host massive semi-annual career expos attracting hundreds of multinational corporate recruiters.",
+          "Handshake & LinkedIn: Direct access to university job boards, alumni mentors, and specialized on-campus interviews.",
+          "High-Demand Fields: Software engineering, cloud architecture, AI/ML, financial analysis, supply chain management, and data science.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When can an international student start doing paid internships in the USA?",
+        a: "Under F-1 regulations, students become eligible for CPT (Curricular Practical Training) internships after completing one full academic year (typically 9 months or 2 semesters) of full-time study in the United States.",
+      },
+      {
+        q: "What is the average starting salary for Indian graduates in the US?",
+        a: "Graduates from STEM master's programs in fields like Computer Science, Data Science, and Engineering typically command starting packages between $85,000 and $130,000 per year, depending on university ranking and geographic location.",
+      },
+    ],
+  },
 };
 
 export default async function GuideDetailPage({ params }) {

@@ -735,13 +735,13 @@ export default function OnlineDegreeSection() {
 
       <div className="relative z-20 mx-auto w-full max-w-[1440px] px-3.5 sm:px-5 lg:px-6">
         {/* Section Header */}
-        <div className="mx-auto mb-4 max-w-2xl text-center sm:mb-5">
+        <div className="mx-auto mb-2.5 max-w-2xl text-center sm:mb-3">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="mb-1.5 inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#1765F5] sm:text-[12px]"
+            className="mb-1 inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#1765F5] sm:text-[12px]"
           >
             WHAT STUDYING IN THE USA MEANS
           </motion.span>
@@ -751,7 +751,7 @@ export default function OnlineDegreeSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[26px] font-extrabold leading-[1.12] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] md:text-[36px]"
+            className="text-[24px] font-extrabold leading-[1.12] tracking-[-0.035em] text-[#0C337B] sm:text-[28px] md:text-[32px]"
           >
             Your Next Academic Chapter: <span className="text-[#1765F5]">USA</span>
           </motion.h2>
@@ -761,14 +761,14 @@ export default function OnlineDegreeSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mx-auto mt-2 max-w-2xl text-[13px] leading-relaxed text-[#526B8C] sm:text-[14px]"
+            className="mx-auto mt-1 max-w-2xl text-[12.5px] leading-relaxed text-[#526B8C] sm:text-[13px]"
           >
-            Explore our interactive guide below — US education systems, tuition costs, living expenses, scholarships for Indian students, and post-study OPT work visas.
+            Explore our comprehensive guides below — US education systems, tuition costs, living expenses, scholarships for Indian students, post-study OPT visas, and career & job opportunities.
           </motion.p>
         </div>
 
-        {/* 5 Interactive 3D Hardcover Book Guides with Slide-out Intro Page on Hover */}
-        <div className="w-full pt-6 pb-2">
+        {/* 6 Modern 3D Guides in Compact 3x2 Grid (Single Viewport Fit) */}
+        <div className="w-full pt-1 pb-1">
           <InteractiveBookGuides
             onSelectGuide={(book) => {
               // Direct navigation to dedicated guide page

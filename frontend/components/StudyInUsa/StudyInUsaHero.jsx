@@ -56,16 +56,15 @@ export default function StudyInUsaHero() {
           transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="
             mx-auto inline-block
-            whitespace-nowrap
-            text-[13px] sm:text-[17px] md:text-[21px] lg:text-[24px]
+            whitespace-normal sm:whitespace-nowrap
+            text-lg sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[36px]
             font-extrabold
             tracking-[-0.03em]
             text-[#0C337B]
-            drop-shadow-[0_2px_14px_rgba(255,255,255,0.95)]
           "
         >
           Learn in a Culture of{" "}
-          <span className="text-[#1765F5] drop-shadow-[0_2px_14px_rgba(255,255,255,0.95)]">
+          <span className="text-[#1765F5]">
             Research and Discovery.
           </span>
         </motion.h1>

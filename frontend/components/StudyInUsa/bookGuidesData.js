@@ -111,4 +111,26 @@ export const BOOK_GUIDES = [
     keyTakeaway: "Up to 36 months OPT work authorization",
     badge: "Work Authorization",
   },
+  {
+    id: "06",
+    vol: "VOL. VI",
+    title: "Jobs in USA",
+    subtitle: "CPT Internships & Career Growth",
+    slug: "jobs-in-usa",
+    icon: Briefcase,
+    theme: {
+      coverBg: "from-[#9A3412] via-[#C2410C] to-[#7C2D12]",
+      spineBg: "bg-[#431407]",
+      accentBorder: "border-[#FED7AA]",
+      foilText: "text-[#FFEDD5]",
+      subFoilText: "text-[#FDBA74]",
+      pageTab: "bg-[#C2410C]",
+      ribbon: "#FDBA74",
+      glow: "rgba(194,65,12,0.35)",
+    },
+    intro:
+      "Explore on-campus employment, lucrative CPT corporate summer internships, career fairs, and high-ROI career placement tracks across American tech, business, and healthcare industries.",
+    keyTakeaway: "CPT internships & $85k–$130k salary potential",
+    badge: "Careers & Jobs",
+  },
 ];

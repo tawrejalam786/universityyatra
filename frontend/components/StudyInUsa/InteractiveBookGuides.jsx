@@ -1,329 +1,225 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  GraduationCap,
-  DollarSign,
-  Globe2,
-  Award,
-  Briefcase,
-  ArrowRight,
-  BookMarked,
-  Landmark,
-  BadgeCheck,
-} from "lucide-react";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-export const BOOKSHELF_DATA = [
+/* =====================================================================
+   6 STUDY ABROAD CARDS (EXACT BRAND COLORS FROM PALETTE CHART)
+   - Academic Pathways: Blue (#1047AC -> #0C337B)
+   - Cost of Studying: Green (#0F7234 -> #0B5225)
+   - Living & Culture: Amber/Yellow (#AC6F08 -> #7B4F06)
+   - Scholarships & Aid: Purple (#662D82 -> #49205D)
+   - Post-Study Visa: Teal (#0B534D -> #083B37)
+   - Jobs in USA: Deep Tech Blue (#1765F5 -> #0C337B)
+===================================================================== */
+export const GUIDES_3D_DATA = [
   {
     id: "academic-pathways",
     slug: "academic-pathways",
-    title: "ACADEMIC PATHWAYS",
-    spineTitle: "ACADEMIC PATHWAYS",
-    theme: {
-      bg: "from-[#112746] via-[#1A3863] to-[#0E1F38]",
-      solidBg: "#163156",
-      foil: "#E6C98A",
-      foilDim: "#C5A358",
-      ribbon: "#C5A358",
-    },
-    topIcon: GraduationCap,
-    bottomIcon: Landmark,
-    overviewTitle: "ACADEMIC PATHWAYS OVERVIEW",
-    intro:
-      "Explore flexible 4-year US Bachelor's degrees, specialized 1–2 year STEM Master's (MS & MBA), funded PhD research fellowships, and the Fall/Spring intake admission cycles.",
+    tag: "ACADEMICS",
+    title: "Academic Pathways",
+    description:
+      "Flexible 4-year US Bachelor's degrees, specialized 1–2 year STEM Master's (MS & MBA), doctoral fellowships, and intake cycles.",
+    image: "/images/study-usa/3d/academic.png",
+    bgGradient: "from-[#1047AC] to-[#0C337B]",
+    tagColor: "text-[#A2C1FB]",
+    accentSquiggle: "text-[#5D93F8]/50",
+    glassBg: "bg-[#0C337B]/80 border-[#A2C1FB]/20",
+    hoverButtonBg: "group-hover:bg-[#1765F5]",
   },
   {
     id: "cost-of-studying",
     slug: "cost-of-studying",
-    title: "COST OF STUDYING",
-    spineTitle: "COST OF STUDYING",
-    theme: {
-      bg: "from-[#103D30] via-[#195644] to-[#0C2D23]",
-      solidBg: "#154B3B",
-      foil: "#EAD498",
-      foilDim: "#CDB067",
-      ribbon: "#CDB067",
-    },
-    topIcon: DollarSign,
-    bottomIcon: Landmark,
-    overviewTitle: "COST OF STUDYING OVERVIEW",
-    intro:
-      "Understand annual tuition fee ranges across public vs private US universities, mandatory campus health/lab fees, living expenses, and comprehensive student budgeting strategies.",
+    tag: "FINANCE & BUDGET",
+    title: "Cost of Studying",
+    description:
+      "Comprehensive tuition fee breakdown across public vs private US universities, mandatory campus fees, and budgeting strategies.",
+    image: "/images/study-usa/3d/cost.png",
+    bgGradient: "from-[#0F7234] to-[#0B5225]",
+    tagColor: "text-[#A2DAB7]",
+    accentSquiggle: "text-[#5CBF80]/50",
+    glassBg: "bg-[#0B5225]/80 border-[#A2DAB7]/20",
+    hoverButtonBg: "group-hover:bg-[#16A34A]",
   },
   {
     id: "living-and-culture",
     slug: "living-and-culture",
-    title: "LIVING & CULTURE",
-    spineTitle: "LIVING & CULTURE",
-    theme: {
-      bg: "from-[#8B3E21] via-[#AA502D] to-[#6E2F17]",
-      solidBg: "#9C4726",
-      foil: "#F3DC9B",
-      foilDim: "#D5BA6B",
-      ribbon: "#D5BA6B",
-    },
-    topIcon: Globe2,
-    bottomIcon: Landmark,
-    overviewTitle: "LIVING & CULTURE OVERVIEW",
-    intro:
-      "Embrace diversity, explore traditions, and thrive in your new environment. Discover cultural nuances, accommodation tips, local life, and practical guidance for your study abroad journey.",
+    tag: "STUDENT LIFE",
+    title: "Living & Culture",
+    description:
+      "Student housing, dorms vs off-campus apartments, dining plans, local culture, public transit, and 24/7 campus safety guidance.",
+    image: "/images/study-usa/3d/living.png",
+    bgGradient: "from-[#AC6F08] to-[#7B4F06]",
+    tagColor: "text-[#FBD89D]",
+    accentSquiggle: "text-[#F8BB54]/50",
+    glassBg: "bg-[#7B4F06]/80 border-[#FBD89D]/20",
+    hoverButtonBg: "group-hover:bg-[#F59E0B]",
   },
   {
     id: "scholarships-and-aid",
     slug: "scholarships-and-aid",
-    title: "SCHOLARSHIPS & AID",
-    spineTitle: "SCHOLARSHIPS & AID",
-    theme: {
-      bg: "from-[#571420] via-[#751E2E] to-[#400E17]",
-      solidBg: "#661826",
-      foil: "#F5DDA2",
-      foilDim: "#D6B86C",
-      ribbon: "#D6B86C",
-    },
-    topIcon: Award,
-    bottomIcon: GraduationCap,
-    overviewTitle: "SCHOLARSHIPS & AID OVERVIEW",
-    intro:
-      "Unlock merit-based grants, institutional need-based financial aid, prestigious external fellowships like Fulbright, and Graduate Assistantships (TA/RA) with tuition waivers.",
+    tag: "SCHOLARSHIPS & AID",
+    title: "Scholarships & Aid",
+    description:
+      "Unlock merit-based grants, institutional need-based financial aid, fellowships, and Graduate Assistantships (TA/RA).",
+    image: "/images/study-usa/3d/scholarships.png",
+    bgGradient: "from-[#662D82] to-[#49205D]",
+    tagColor: "text-[#D3B3E3]",
+    accentSquiggle: "text-[#B279CF]/50",
+    glassBg: "bg-[#49205D]/80 border-[#D3B3E3]/20",
+    hoverButtonBg: "group-hover:bg-[#9140BA]",
   },
   {
     id: "post-study-visa",
     slug: "post-study-visa",
-    title: "POST-STUDY VISA",
-    spineTitle: "POST-STUDY VISA",
-    theme: {
-      bg: "from-[#131E2D] via-[#1E2E44] to-[#0D1520]",
-      solidBg: "#19273A",
-      foil: "#D9E3ED",
-      foilDim: "#A5B8CC",
-      ribbon: "#A5B8CC",
-    },
-    topIcon: Briefcase,
-    bottomIcon: BadgeCheck,
-    overviewTitle: "POST-STUDY VISA OVERVIEW",
-    intro:
-      "Navigate legal employment pathways in the US — from the standard 12-month F-1 OPT to the 24-month STEM OPT extension (up to 3 years total) and corporate H-1B sponsorship.",
+    tag: "VISA & WORK PERMITS",
+    title: "Post-Study Visa",
+    description:
+      "Navigate legal employment in the US — from the 12-month F-1 OPT to the 24-month STEM OPT extension and corporate H-1B paths.",
+    image: "/images/study-usa/3d/visa.png",
+    bgGradient: "from-[#0B534D] to-[#083B37]",
+    tagColor: "text-[#9FC8C5]",
+    accentSquiggle: "text-[#579F9A]/50",
+    glassBg: "bg-[#083B37]/80 border-[#9FC8C5]/20",
+    hoverButtonBg: "group-hover:bg-[#0F766E]",
+  },
+  {
+    id: "jobs-in-usa",
+    slug: "jobs-in-usa",
+    tag: "CAREERS & PLACEMENT",
+    title: "Jobs in USA",
+    description:
+      "Explore high-demand tech & business job markets, paid CPT corporate summer internships, career fairs, and graduate salary packages.",
+    image: "/images/study-usa/3d/jobs.png",
+    bgGradient: "from-[#1765F5] to-[#0C337B]",
+    tagColor: "text-[#E8F0FE]",
+    accentSquiggle: "text-[#5D93F8]/50",
+    glassBg: "bg-[#0C337B]/85 border-[#5D93F8]/25",
+    hoverButtonBg: "group-hover:bg-[#1047AC]",
   },
 ];
 
 export default function InteractiveBookGuides({ onSelectGuide }) {
-  // Default active book is 'living-and-culture' exactly as in the user's reference image!
-  const [activeBookId, setActiveBookId] = useState("living-and-culture");
-
-  const handleRedirect = (book) => {
+  const handleRedirect = (item) => {
     if (onSelectGuide) {
-      onSelectGuide(book);
+      onSelectGuide(item);
     } else {
-      window.location.href = `/study-in-usa/${book.slug}`;
+      window.location.href = `/study-in-usa/${item.slug}`;
     }
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-[1360px] px-3 sm:px-6">
-      {/* =====================================================================
-          THE BOOKSHELF CONTAINER
-          (Books stand side-by-side; hovered book turns front with top draped card)
-      ====================================================================== */}
-      <div className="relative flex flex-col items-center">
-        
-        {/* Books Row */}
-        <div className="relative flex w-full items-end justify-center gap-2 sm:gap-3 md:gap-4 overflow-x-auto no-scrollbar pt-6 pb-0">
-          {BOOKSHELF_DATA.map((book) => {
-            const isActive = activeBookId === book.id;
-            const TopIcon = book.topIcon;
-            const BottomIcon = book.bottomIcon;
+    <div className="relative mx-auto w-full max-w-[1360px] px-2 sm:px-4 py-2">
+      {/* 3x2 Grid: Compact & Balanced to fit in 1 desktop viewport */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5 justify-items-center">
+        {GUIDES_3D_DATA.map((item, idx) => {
+          return (
+            <motion.article
+              key={item.id}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              onClick={() => handleRedirect(item)}
+              className={`
+                group relative
+                w-full max-w-[390px]
+                h-[295px] sm:h-[305px] md:h-[310px]
+                rounded-[22px]
+                overflow-hidden
+                flex flex-col justify-between
+                bg-gradient-to-b ${item.bgGradient}
+                p-3 sm:p-3.5
+                shadow-[0_12px_28px_-8px_rgba(0,0,0,0.32)]
+                hover:shadow-[0_20px_40px_-8px_rgba(0,0,0,0.42)]
+                hover:-translate-y-1.5
+                transition-all duration-300 ease-out
+                cursor-pointer select-none
+                border border-white/10
+              `}
+            >
+              {/* TOP HEADER: Category Tag + Arrow Icon */}
+              <div className="relative z-20 flex items-center justify-between px-1.5 pt-0.5">
+                <span
+                  className={`text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-[0.16em] ${item.tagColor}`}
+                >
+                  {item.tag}
+                </span>
 
-            return (
-              <div
-                key={book.id}
-                onMouseEnter={() => setActiveBookId(book.id)}
-                className="relative flex items-end cursor-pointer transition-all duration-300"
-              >
-                {isActive ? (
-                  /* =====================================================
-                      ACTIVE FRONT-FACING BOOK (WITH DRAPED INTRO CARD)
-                  ====================================================== */
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0.9, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    className="
-                      relative
-                      h-[380px] sm:h-[410px] md:h-[430px]
-                      w-[240px] sm:w-[270px] md:w-[290px]
-                      rounded-r-2xl rounded-l-sm
-                      border-t border-r border-b border-white/20
-                      shadow-[0_25px_60px_rgba(0,0,0,0.32)]
-                      flex flex-col justify-between
-                      overflow-visible
-                      select-none
-                    "
-                    style={{ backgroundColor: book.theme.solidBg }}
-                  >
-                    {/* Left spine crease */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-black/40 via-black/15 to-transparent border-r border-white/10"
-                    />
-
-                    {/* ===================================================
-                        THE DRAPED INTRODUCTORY CARD
-                        (Curves out from inside top edge down over front cover)
-                    =================================================== */}
-                    <motion.div
-                      initial={{ y: -15, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.35, ease: "easeOut" }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleRedirect(book);
-                      }}
-                      className="
-                        absolute -top-7 sm:-top-8 left-1/2 -translate-x-1/2
-                        w-[90%] sm:w-[88%]
-                        h-[310px] sm:h-[330px] md:h-[345px]
-                        rounded-t-3xl rounded-b-md
-                        bg-[#FCF9F2]
-                        border border-[#E7DECA]
-                        shadow-[0_16px_40px_rgba(0,0,0,0.28)]
-                        p-4 sm:p-5
-                        flex flex-col justify-between
-                        z-30
-                        cursor-pointer
-                        transition-transform hover:-translate-y-1
-                      "
-                    >
-                      {/* Top Curving Arch Fold Silhouette */}
-                      <div
-                        aria-hidden="true"
-                        className="pointer-events-none absolute -top-3 inset-x-0 h-4 bg-gradient-to-b from-[#EFE5D2] to-[#FCF9F2] rounded-t-3xl border-t border-[#DFD3BB]"
-                      />
-
-                      {/* Gold Silk Bookmark Ribbon Pinned on Top */}
-                      <div
-                        aria-hidden="true"
-                        className="absolute -top-3.5 right-6 h-9 w-4 rounded-b-sm shadow-md"
-                        style={{ backgroundColor: book.theme.ribbon }}
-                      />
-
-                      {/* Header Row: INTRODUCTION */}
-                      <div>
-                        <div className="text-center border-b border-[#E8DFC8] pb-2">
-                          <span className="font-serif text-[11px] font-bold uppercase tracking-[0.25em] text-[#1E252D]">
-                            INTRODUCTION
-                          </span>
-                        </div>
-
-                        {/* Title Overview */}
-                        <h4 className="mt-4 font-serif text-[15px] sm:text-[17px] font-extrabold uppercase leading-snug tracking-tight text-[#162E52]">
-                          {book.overviewTitle}
-                        </h4>
-
-                        {/* Description */}
-                        <p className="mt-2.5 text-[11.5px] sm:text-[12px] leading-relaxed text-[#4A5568] line-clamp-5">
-                          {book.intro}
-                        </p>
-                      </div>
-
-                      {/* Bottom Link: Read Full Guide → */}
-                      <div className="pt-3 border-t border-[#E8DFC8]/80 flex items-center justify-between">
-                        <span className="text-[12px] sm:text-[13px] font-bold text-[#162E52] hover:text-[#1765F5] transition-colors">
-                          Read Full Guide →
-                        </span>
-                      </div>
-                    </motion.div>
-
-                    {/* Bottom Embossed Title on Book Cover (Revealed under card) */}
-                    <div className="relative z-10 mt-auto pb-4 sm:pb-5 px-5 text-center">
-                      <h3
-                        className="font-serif font-black text-[15px] sm:text-[17px] md:text-[18px] tracking-wider uppercase drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]"
-                        style={{ color: book.theme.foil }}
-                      >
-                        {book.title}
-                      </h3>
-                    </div>
-                  </motion.div>
-                ) : (
-                  /* =====================================================
-                      INACTIVE STANDING BOOK SPINE (MATCHING IMAGE 1)
-                  ====================================================== */
-                  <motion.div
-                    layout
-                    whileHover={{ y: -6 }}
-                    transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                    className="
-                      relative
-                      h-[380px] sm:h-[410px] md:h-[430px]
-                      w-[62px] sm:w-[70px] md:w-[78px] lg:w-[86px]
-                      rounded-sm
-                      shadow-[0_15px_35px_rgba(0,0,0,0.22)]
-                      flex flex-col justify-between items-center
-                      py-5 px-1.5
-                      overflow-hidden
-                      select-none
-                    "
-                    style={{ backgroundColor: book.theme.solidBg }}
-                  >
-                    {/* Spine 3D Cylindrical Highlight & Shadow Overlay */}
-                    <div
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/35 via-white/12 to-black/35"
-                    />
-
-                    {/* Top Rib & Top Icon */}
-                    <div className="relative z-10 flex flex-col items-center gap-2">
-                      <div
-                        className="h-0.5 w-6 opacity-60"
-                        style={{ backgroundColor: book.theme.foilDim }}
-                      />
-                      <TopIcon size={18} strokeWidth={2} style={{ color: book.theme.foil }} />
-                    </div>
-
-                    {/* Center Vertical Typography Title */}
-                    <div className="relative z-10 my-auto flex items-center justify-center">
-                      <span
-                        className="
-                          font-serif font-black
-                          text-[13px] sm:text-[14px] md:text-[15px]
-                          tracking-[0.16em]
-                          uppercase
-                          whitespace-nowrap
-                          drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]
-                          [writing-mode:vertical-rl]
-                          rotate-180
-                        "
-                        style={{ color: book.theme.foil }}
-                      >
-                        {book.spineTitle}
-                      </span>
-                    </div>
-
-                    {/* Bottom Rib & Bottom Icon */}
-                    <div className="relative z-10 flex flex-col items-center gap-2">
-                      <BottomIcon size={16} strokeWidth={2} style={{ color: book.theme.foil }} />
-                      <div
-                        className="h-0.5 w-6 opacity-60"
-                        style={{ backgroundColor: book.theme.foilDim }}
-                      />
-                    </div>
-                  </motion.div>
-                )}
+                <span
+                  className={`flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-all duration-300 ${item.hoverButtonBg} group-hover:rotate-45`}
+                >
+                  <ArrowUpRight size={14} strokeWidth={2.4} />
+                </span>
               </div>
-            );
-          })}
-        </div>
 
-        {/* =====================================================================
-            WOODEN SHELF PLINTH (MATCHING IMAGE 1)
-        ====================================================================== */}
-        <div className="relative w-full max-w-[1200px]">
-          {/* Top shelf bevel highlight */}
-          <div className="h-1 w-full bg-gradient-to-r from-[#F0E2CD] via-[#FAF1E3] to-[#F0E2CD] rounded-t-sm" />
-          {/* Main wooden shelf beam with authentic warm wood grain shading */}
-          <div className="h-5 sm:h-6 w-full bg-gradient-to-b from-[#DEC39E] via-[#C9A97E] to-[#A88557] rounded-b-md shadow-[0_18px_36px_rgba(12,51,123,0.15)] border-t border-white/70" />
-        </div>
+              {/* CENTER 3D CLAY ILLUSTRATION (Seamlessly blended, zero square box edges) */}
+              <div
+                className="
+                  relative z-10 mx-auto my-auto
+                  h-[110px] sm:h-[120px] md:h-[125px]
+                  w-full max-w-[200px]
+                  overflow-hidden
+                  [mask-image:radial-gradient(circle_at_center,black_60%,transparent_100%)]
+                  [-webkit-mask-image:radial-gradient(circle_at_center,black_60%,transparent_100%)]
+                "
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-108"
+                />
+              </div>
+
+              {/* BOTTOM FLOATING FROSTED GLASS CARD */}
+              <div
+                className={`
+                  relative z-20
+                  w-full
+                  rounded-[16px]
+                  backdrop-blur-md
+                  p-3 sm:p-3.5
+                  shadow-[0_8px_20px_rgba(0,0,0,0.35)]
+                  transition-all duration-300
+                  ${item.glassBg}
+                `}
+              >
+                {/* Title */}
+                <h3 className="text-[16px] sm:text-[17px] font-extrabold text-white tracking-tight leading-tight">
+                  {item.title}
+                </h3>
+
+                {/* Decorative Wavy Squiggle Line Divider */}
+                <div
+                  aria-hidden="true"
+                  className={`my-1.5 h-[4px] w-full ${item.accentSquiggle}`}
+                >
+                  <svg
+                    viewBox="0 0 240 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-full w-full stroke-current"
+                  >
+                    <path
+                      d="M0 4 Q 15 0, 30 4 T 60 4 T 90 4 T 120 4 T 150 4 T 180 4 T 210 4 T 240 4"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+
+                {/* Description */}
+                <p className="text-[11px] sm:text-[11.5px] leading-relaxed text-white/80 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </motion.article>
+          );
+        })}
       </div>
     </div>
   );
