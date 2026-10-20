@@ -50,7 +50,7 @@ const PROGRAMS = [
   {
     slug: "medical-health",
     category: "medical-health",
-    name: "Medical & Health",
+    name: "Healthcare",
     description:
       "Explore medicine, nursing, public health, healthcare management and allied health fields.",
     icon: HeartPulse,

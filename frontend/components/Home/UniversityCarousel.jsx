@@ -18,6 +18,10 @@ import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
+/* ==========================================
+   COUNTRIES DATA
+========================================== */
+
 const countries = [
   {
     name: "USA",
@@ -126,37 +130,52 @@ const countries = [
 ];
 
 /* ==========================================
-   FULL IMAGE COUNTRY CARD
+   ORIGINAL COUNTRY CARD DESIGN
 ========================================== */
 
 function CountryCard({ country, active, index }) {
   return (
-    <article className={`group relative h-[390px] w-full min-w-0 overflow-hidden rounded-[22px] bg-[#0C337B] transition-[transform,opacity,box-shadow] duration-500 sm:h-[420px] sm:rounded-[25px] lg:h-[445px] ${active ? "scale-100 opacity-100 shadow-[0_20px_45px_rgba(12,51,123,0.2)]" : "scale-[0.95] opacity-80 shadow-[0_8px_24px_rgba(12,51,123,0.1)]"}`}>
+   <article
+  className={`group relative isolate h-[390px] w-full min-w-0 overflow-hidden rounded-[22px] bg-[#0C337B] transition-[opacity,box-shadow] duration-700 sm:h-[420px] sm:rounded-[25px] lg:h-[445px] ${active ? "opacity-100 shadow-[0_25px_60px_rgba(12,51,123,0.25)]" : "opacity-85 shadow-[0_8px_24px_rgba(12,51,123,0.1)]"}`}
+  style={{
+    backfaceVisibility: "hidden",
+    WebkitBackfaceVisibility: "hidden",
+    WebkitMaskImage: "-webkit-radial-gradient(white, black)",
+  }}
+>
 
       {/* FULL BACKGROUND IMAGE */}
-      <Image
-        src={country.image}
-        alt={`${country.fullName} - ${country.featuredCity}`}
-        fill
-        priority={index === 0}
-        sizes="(max-width: 479px) 85vw, (max-width: 767px) 60vw, (max-width: 1023px) 45vw, 30vw"
-        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-      />
+      <div className="absolute -inset-[1px] overflow-hidden rounded-[inherit] bg-[#0C337B]">
+        <Image
+          src={country.image}
+          alt={`${country.fullName} - ${country.featuredCity}`}
+          fill
+          priority={index === 0}
+          sizes="(max-width: 479px) 85vw, (max-width: 767px) 60vw, (max-width: 1023px) 45vw, 30vw"
+          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          style={{
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            transform: "translateZ(0) scale(1.01)",
+          }}
+        />
+      </div>
 
-      {/* GRADIENT OVERLAY */}
+      {/* ORIGINAL GRADIENT */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061B3B]/95 via-[#061B3B]/45 to-[#061B3B]/10" />
 
-      {/* TOP LABEL */}
-      <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/90 px-3 py-2 text-[#0C337B] shadow-sm backdrop-blur-md">
+      {/* TOP BADGE */}
+      <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/90 px-3 py-2 text-[#0C337B] shadow-sm ">
         <Globe2 size={14} className="text-[#1765F5]" />
         <span className="text-[10px] font-bold uppercase tracking-[0.08em]">
           Study Abroad
         </span>
       </div>
 
-      {/* CONTENT OVER IMAGE */}
+      {/* CARD CONTENT */}
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col px-5 pb-5 sm:px-6 sm:pb-6">
 
+        {/* FEATURED CITY */}
         <div className="mb-2 inline-flex items-center gap-1.5 self-start text-white/85">
           <MapPin size={14} />
           <span className="text-[11px] font-semibold">
@@ -164,10 +183,12 @@ function CountryCard({ country, active, index }) {
           </span>
         </div>
 
+        {/* COUNTRY NAME */}
         <h3 className="text-[29px] font-extrabold leading-[1.1] tracking-[-0.04em] text-white sm:text-[32px] lg:text-[35px]">
           {country.name}
         </h3>
 
+        {/* FULL COUNTRY NAME */}
         <p className="mt-1 text-[11px] font-medium text-white/80 sm:text-[12px]">
           {country.fullName}
         </p>
@@ -175,12 +196,14 @@ function CountryCard({ country, active, index }) {
         {/* POPULAR DESTINATIONS */}
         <div className="mt-4">
           <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/75">
-            {country.name === "Singapore" ? "Popular Education Areas" : "Popular Study Destinations"}
+            {country.name === "Singapore"
+              ? "Popular Education Areas"
+              : "Popular Study Destinations"}
           </p>
 
           <div className="flex flex-wrap gap-1.5">
             {country.cities.map((city) => (
-              <span key={city} className="rounded-full border border-white/25 bg-white/15 px-2.5 py-1.5 text-[10px] font-medium leading-[1.2] text-white backdrop-blur-sm">
+              <span key={city} className="rounded-full border border-white/25 bg-white/15 px-2.5 py-1.5 text-[10px] font-medium leading-[1.2] text-white">
                 {city}
               </span>
             ))}
@@ -189,7 +212,6 @@ function CountryCard({ country, active, index }) {
 
         {/* EXPLORE LINK */}
         <Link href={country.href} aria-label={`Explore studying in ${country.fullName}`} className="mt-5 flex items-center justify-between gap-3 border-t border-white/25 pt-4 text-white">
-
           <span className="text-[12px] font-bold">
             Explore {country.name}
           </span>
@@ -197,16 +219,14 @@ function CountryCard({ country, active, index }) {
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#1765F5] transition-all duration-300 group-hover:rotate-45 group-hover:bg-[#1765F5] group-hover:text-white">
             <ArrowUpRight size={19} strokeWidth={2} />
           </span>
-
         </Link>
       </div>
-
     </article>
   );
 }
 
 /* ==========================================
-   COUNTRIES CAROUSEL
+   FULL WIDTH 3D COVERFLOW CAROUSEL
 ========================================== */
 
 export default function CountriesCarousel() {
@@ -215,9 +235,8 @@ export default function CountriesCarousel() {
   return (
     <section aria-labelledby="countries-carousel-title" className="relative w-full overflow-hidden bg-[#F8FAFF] py-10 sm:py-12 lg:py-14">
 
-      <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-5 lg:px-8">
-
-        {/* HEADER */}
+      {/* HEADER */}
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-5 lg:px-8">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-8">
 
           <div className="max-w-[800px]">
@@ -237,7 +256,7 @@ export default function CountriesCarousel() {
             </p>
           </div>
 
-          {/* ARROWS */}
+          {/* NAVIGATION ARROWS */}
           <div className="flex shrink-0 items-center gap-2 self-end sm:self-auto">
             <button type="button" onClick={() => swiperRef.current?.slidePrev()} aria-label="Previous country" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E5FA] bg-white text-[#0C337B] transition-all duration-300 hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
               <ChevronLeft size={20} />
@@ -248,49 +267,75 @@ export default function CountriesCarousel() {
             </button>
           </div>
         </div>
-
-        {/* SWIPER */}
-        <div className="relative w-full overflow-hidden py-3">
-          <Swiper
-            modules={[EffectCoverflow]}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            effect="coverflow"
-            centeredSlides={true}
-            loop={true}
-            grabCursor={true}
-            speed={650}
-            slidesPerView={1.15}
-            spaceBetween={12}
-            watchSlidesProgress={true}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 90,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            breakpoints={{
-              480: { slidesPerView: 1.45, spaceBetween: 14 },
-              640: { slidesPerView: 2.15, spaceBetween: 16 },
-              768: { slidesPerView: 2.55, spaceBetween: 18 },
-              1024: { slidesPerView: 3.15, spaceBetween: 20 },
-              1280: { slidesPerView: 3.55, spaceBetween: 22 },
-            }}
-            className="!overflow-visible !pb-7 !pt-3"
-          >
-            {countries.map((country, index) => (
-              <SwiperSlide key={country.name} className="!h-auto">
-                {({ isActive }) => (
-                  <CountryCard country={country} active={isActive} index={index} />
-                )}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
       </div>
+
+      {/* FULL WIDTH 3D SWIPER */}
+      <div className="relative w-full overflow-hidden py-4">
+        <Swiper
+          modules={[EffectCoverflow]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          effect="coverflow"
+          centeredSlides={true}
+          loop={true}
+          grabCursor={true}
+          speed={700}
+          slidesPerView={1.35}
+          slidesPerGroup={1}
+          spaceBetween={0}
+          watchSlidesProgress={true}
+          roundLengths={true}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 180,
+            modifier: 1,
+            scale: 0.88,
+            slideShadows: false,
+          }}
+          breakpoints={{
+            480: {
+              slidesPerView: 1.6,
+              spaceBetween: 0,
+            },
+            640: {
+              slidesPerView: 2.2,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2.8,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 3.5,
+              spaceBetween: 0,
+            },
+            1280: {
+              slidesPerView: 4.2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 4.5,
+              spaceBetween: 10,
+            },
+          }}
+          className="w-full !overflow-visible !py-8"
+        >
+          {countries.map((country, index) => (
+            <SwiperSlide key={country.name} className="!h-auto">
+              {({ isActive }) => (
+                <CountryCard
+                  country={country}
+                  active={isActive}
+                  index={index}
+                />
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
     </section>
   );
 }

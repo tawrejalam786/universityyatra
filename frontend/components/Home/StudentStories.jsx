@@ -78,25 +78,36 @@ function SmallPinkMarks({ className = "" }) {
 
 /* ==========================================
    CURVED ARROWS
+   LEFT   = AMBER
+   RIGHT  = GREEN
+   BOTTOM = RED
 ========================================== */
 
 function CurvedArrow({ direction = "left", className = "" }) {
+  const arrowColors = {
+    left: "#B45309",
+    right: "#15803D",
+    bottom: "#B91C1C",
+  };
+
+  const color = arrowColors[direction] || "#1765F5";
+
   return (
     <svg aria-hidden="true" viewBox="0 0 160 110" fill="none" className={className}>
       {direction === "left" ? (
         <>
-          <path d="M150 65 C120 102 79 96 82 65 C84 38 117 45 107 71 C93 105 28 86 22 20" stroke="#5D93F8" strokeWidth="4" strokeLinecap="round" />
-          <path d="M9 36 L22 20 L38 33" stroke="#5D93F8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M150 65 C120 102 79 96 82 65 C84 38 117 45 107 71 C93 105 28 86 22 20" stroke={color} strokeWidth="4" strokeLinecap="round" />
+          <path d="M9 36 L22 20 L38 33" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </>
       ) : direction === "right" ? (
         <>
-          <path d="M10 65 C40 102 81 96 78 65 C76 38 43 45 53 71 C67 105 132 86 138 20" stroke="#5D93F8" strokeWidth="4" strokeLinecap="round" />
-          <path d="M122 33 L138 20 L151 36" stroke="#5D93F8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M10 65 C40 102 81 96 78 65 C76 38 43 45 53 71 C67 105 132 86 138 20" stroke={color} strokeWidth="4" strokeLinecap="round" />
+          <path d="M122 33 L138 20 L151 36" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </>
       ) : (
         <>
-          <path d="M37 5 C20 35 40 70 72 69 C104 68 98 34 77 40 C52 48 79 93 142 88" stroke="#5D93F8" strokeWidth="4" strokeLinecap="round" />
-          <path d="M126 72 L142 88 L124 103" stroke="#5D93F8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M37 5 C20 35 40 70 72 69 C104 68 98 34 77 40 C52 48 79 93 142 88" stroke={color} strokeWidth="4" strokeLinecap="round" />
+          <path d="M126 72 L142 88 L124 103" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </>
       )}
     </svg>
@@ -112,13 +123,11 @@ function StoryCard({ story, className = "" }) {
 
   return (
     <article className={`relative flex min-w-0 flex-col rounded-[18px] border border-[#DCE7FC] bg-[#E8F0FE] px-4 py-4 sm:px-5 sm:py-4 ${className}`}>
-
       <div className="mb-2 flex items-start justify-between gap-3">
         <div className="relative">
           <span className="block text-[30px] font-extrabold leading-none tracking-[-0.06em] text-[#0C337B] lg:text-[34px]">
             {story.number}.
           </span>
-
           <SmallPinkMarks className="absolute -right-5 -top-2 h-6 w-6" />
         </div>
 
@@ -155,11 +164,10 @@ function StudentPortrait({ student }) {
 
   return (
     <div className="relative mx-auto w-full max-w-[260px]">
-
       <div className="relative mx-auto h-[245px] w-[220px] sm:h-[275px] sm:w-[245px] lg:h-[255px] lg:w-[230px]">
 
         {/* ORGANIC BLUE SHAPE */}
-        <div className="absolute inset-x-4 bottom-5 top-3 rotate-[-5deg] rounded-[47%_53%_41%_59%/52%_39%_61%_48%] bg-[#1047AC]" />
+        <div className="absolute inset-x-4 bottom-5 top-3 rotate-[-5deg] rounded-[47%_53%_41%_59%/52%_39%_61%_48%] bg-[#6D28D9]" />
 
         {/* STUDENT IMAGE */}
         <div className="absolute inset-x-4 bottom-5 top-3 overflow-hidden rounded-[47%_53%_41%_59%/52%_39%_61%_48%]">
@@ -181,11 +189,6 @@ function StudentPortrait({ student }) {
           )}
         </div>
 
-        {/* GRADUATION ICON */}
-        {/* <span className="absolute left-0 top-[20%] z-10 grid h-11 w-11 place-items-center rounded-full bg-white text-[#1765F5] shadow-[0_6px_18px_rgba(12,51,123,0.1)]">
-          <GraduationCap size={23} strokeWidth={1.6} />
-        </span> */}
-
         {/* PLANE ICON */}
         <span className="absolute right-0 top-[47%] z-10 grid h-11 w-11 rotate-12 place-items-center rounded-[13px] bg-[#E8F0FE] text-[#1765F5]">
           <Plane size={23} strokeWidth={1.6} />
@@ -193,7 +196,6 @@ function StudentPortrait({ student }) {
 
         {/* DECORATIVE MARKS */}
         <PinkMarks className="absolute -right-1 top-0 h-[50px] w-[50px] rotate-[-12deg]" />
-
       </div>
 
       {/* STUDENT NAME */}
@@ -207,7 +209,6 @@ function StudentPortrait({ student }) {
         <SmallPinkMarks className="absolute -left-7 -top-10 h-7 w-7 rotate-[-20deg]" />
         <SmallPinkMarks className="absolute -right-7 -top-7 h-7 w-7 rotate-[130deg]" />
       </div>
-
     </div>
   );
 }
@@ -224,13 +225,11 @@ function TestimonialSlide({ student }) {
 
       {/* DESKTOP LAYOUT */}
       <div className="hidden lg:block">
-
         <div className="relative mx-auto grid w-full max-w-[940px] grid-cols-[minmax(0,1fr)_minmax(220px,260px)_minmax(0,1fr)] items-center gap-3 xl:gap-5">
 
           {/* LEFT STORY */}
           <div className="relative z-10 min-w-0">
             <StoryCard story={admission} />
-
             <CurvedArrow direction="left" className="pointer-events-none absolute -right-[42px] top-[45%] z-20 h-[60px] w-[75px]" />
           </div>
 
@@ -242,24 +241,19 @@ function TestimonialSlide({ student }) {
           {/* RIGHT STORY */}
           <div className="relative z-10 min-w-0">
             <StoryCard story={departure} />
-
             <CurvedArrow direction="right" className="pointer-events-none absolute -left-[42px] top-[45%] z-20 h-[60px] w-[75px]" />
           </div>
-
         </div>
 
         {/* BOTTOM LOAN STORY */}
         <div className="relative mx-auto mt-3 max-w-[400px]">
           <CurvedArrow direction="bottom" className="pointer-events-none absolute -top-[52px] left-[42%] z-20 h-[60px] w-[85px]" />
-
           <StoryCard story={loan} />
         </div>
-
       </div>
 
       {/* MOBILE / TABLET LAYOUT */}
       <div className="lg:hidden">
-
         <StudentPortrait student={student} />
 
         <div className="mx-auto mt-5 grid max-w-[720px] gap-3 sm:grid-cols-2">
@@ -270,7 +264,6 @@ function TestimonialSlide({ student }) {
             <StoryCard story={departure} />
           </div>
         </div>
-
       </div>
     </div>
   );
@@ -291,13 +284,13 @@ export default function StudentTestimonials({
   if (!testimonials.length) return null;
 
   return (
-    <section aria-labelledby="student-testimonials-title" className="relative w-full overflow-hidden bg-white py-8 sm:py-10 lg:py-11">
+    <section aria-labelledby="student-testimonials-title" className="relative w-full overflow-hidden bg-[#E8F2F8] py-8 sm:py-10 lg:py-11">
 
-      <div className="mx-auto w-full max-w-[1060px] px-4 sm:px-6 lg:px-8">
+      {/* ORIGINAL 1120px CONTAINER FOR HEADING ALIGNMENT */}
+      <div className="mx-auto w-full max-w-[1300px] px-4 sm:px-6 lg:px-8">
 
         {/* SECTION HEADING */}
-        <header className="mb-6 max-w-[700px] lg:mb-4">
-
+        <header className="mb-6 lg:mb-4">
           <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#E8F0FE] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#1765F5]">
             <MessageSquare size={14} />
             Student Story
@@ -311,7 +304,6 @@ export default function StudentTestimonials({
           </h2>
 
           <div aria-hidden="true" className="ml-20 mt-2 h-[4px] w-20 -rotate-3 rounded-full bg-[#5D93F8] sm:ml-36" />
-
         </header>
 
         {/* TESTIMONIAL SWIPER */}
@@ -336,7 +328,6 @@ export default function StudentTestimonials({
         {/* NAVIGATION - ONLY FOR MULTIPLE STUDENTS */}
         {hasMultiple && (
           <div className="mt-5 flex items-center justify-center gap-4">
-
             <button type="button" onClick={() => swiper?.slidePrev()} disabled={activeIndex === 0} aria-label="Previous student" className="grid h-10 w-10 place-items-center rounded-full border border-[#A2C1FB] bg-white text-[#0C337B] transition-colors hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-30">
               <ArrowLeft size={18} />
             </button>
@@ -350,10 +341,8 @@ export default function StudentTestimonials({
             <button type="button" onClick={() => swiper?.slideNext()} disabled={activeIndex === testimonials.length - 1} aria-label="Next student" className="grid h-10 w-10 place-items-center rounded-full border border-[#A2C1FB] bg-white text-[#0C337B] transition-colors hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-30">
               <ArrowRight size={18} />
             </button>
-
           </div>
         )}
-
       </div>
     </section>
   );

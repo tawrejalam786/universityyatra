@@ -8,7 +8,7 @@ import TopUniversities from "@/components/Home/TopUniversities";
 import CommittedToExcellence from "@/components/Home/CommittedToExcellence";
 import ChooseDestination from "@/components/Home/ChooseDestination";
 import Programs from "@/components/Home/Programs";
-import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraHelps";
+import HowUniversityYatraHelps from "@/components/Home/HowUniversityYatraHelps";
 import ExploreByDestination from "@/components/Home/ExploreByDestination";
 import GuidanceSection from "@/components/Home/GuidanceSection";
 import StudentStories from "@/components/Home/StudentStories";
@@ -44,7 +44,7 @@ export default function Home() {
                 showLogin={false}
               /> */}
               <StudentStories />
-              <PlanNextChapter image="/images/callback-student.webp" />
+              <PlanNextChapter image="/images/callback-studentss.png" />
             </main>
             <Footer />
        </>

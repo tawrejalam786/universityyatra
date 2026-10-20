@@ -13,7 +13,7 @@ const services = [
       "You know where you want to go. Or maybe you just know you want to go somewhere.",
     image: "/images/home/university-selectoon.png",
     href: "/study-abroad",
-    background: "#1765F5",
+    background: "#2459C5",
     textColor: "#FFFFFF",
     descriptionColor: "#E8F0FE",
     imageAlt: "Globe, airplane and education icons",
@@ -28,7 +28,7 @@ const services = [
       "Studying abroad is exciting. Figuring out the finances? Not so much.",
     image: "/images/home/scholarship-loan.png",
     href: "/scholarships",
-    background: "#A2C1FB",
+    background: "#A7BDE8",
     textColor: "#0C337B",
     descriptionColor: "#1047AC",
     imageAlt: "Scholarship certificate, graduation cap and coins",
@@ -43,7 +43,7 @@ const services = [
       "Your dream university is shortlisted. Now comes the paperwork.",
     image: "/images/home/admission-visa.png",
     href: "/admissions",
-    background: "#5D93F8",
+    background: "#6E94D8",
     textColor: "#FFFFFF",
     descriptionColor: "#FFFFFF",
     imageAlt: "Passport, visa and admission documents",
@@ -58,7 +58,7 @@ const services = [
       "Your degree is the beginning. What comes after it?",
     image: "/images/home/post-study-work.png",
     href: "/post-study-work",
-    background: "#0C337B",
+    background: "#244779",
     textColor: "#FFFFFF",
     descriptionColor: "#E8F0FE",
     imageAlt: "Briefcase, career growth chart and profile card",
@@ -86,9 +86,9 @@ function ServiceCard({ item, index }) {
       {/* Top row */}
       <div className="relative z-20 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] sm:text-[11px]">
+          {/* <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] sm:text-[11px]">
             {item.id} / 04
-          </p>
+          </p> */}
 
           <p className="mt-1.5 text-[9px] font-bold uppercase tracking-[0.1em] opacity-85 sm:mt-2 sm:text-[10px]">
             {item.label}
@@ -178,7 +178,7 @@ export default function NextChapter() {
   return (
     <section
       aria-labelledby="next-chapter-title"
-      className="w-full overflow-hidden bg-white py-9 sm:py-12 lg:py-14"
+      className="w-full overflow-hidden bg-[#E3F0FC] py-9 sm:py-12 lg:py-14"
     >
       <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
 
