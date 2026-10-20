@@ -21,6 +21,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import GlassFolder from "@/components/ui/glass-folder-cards";
+import InteractiveBookGuides from "@/components/StudyInUsa/InteractiveBookGuides";
 
 /* =====================================================================
    COMPREHENSIVE CONTENT DATA FOR THE 5 FOLDERS & DIALOG DETAILS
@@ -721,7 +722,7 @@ export default function OnlineDegreeSection() {
   }, [activeDialogKey, currentIndex]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-4 pb-12 sm:pt-6 sm:pb-16 md:pb-20">
+    <section className="relative w-full bg-white py-8 sm:py-12 md:py-14">
       {/* Background ambient radial glow */}
       <div
         aria-hidden="true"
@@ -732,17 +733,27 @@ export default function OnlineDegreeSection() {
         className="pointer-events-none absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-[#5D93F8]/[0.03] blur-[150px]"
       />
 
-      <div className="relative z-20 mx-auto w-full max-w-[1550px] px-4 pt-4 sm:px-6 sm:pt-6 lg:px-8">
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-3.5 sm:px-5 lg:px-6">
         {/* Section Header */}
-        <div className="mx-auto mb-6 max-w-3xl text-center md:mb-8">
+        <div className="mx-auto mb-2.5 max-w-2xl text-center sm:mb-3">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="mb-1 inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#1765F5] sm:text-[12px]"
+          >
+            WHAT STUDYING IN THE USA MEANS
+          </motion.span>
+
           <motion.h2
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[26px] font-extrabold leading-[1.12] tracking-[-0.035em] text-[#0C337B] sm:text-[34px] md:text-[40px]"
+            className="text-[24px] font-extrabold leading-[1.12] tracking-[-0.035em] text-[#0C337B] sm:text-[28px] md:text-[32px]"
           >
-            Designed for <span className="text-[#1765F5]">Your Future</span>
+            Your Next Academic Chapter: <span className="text-[#1765F5]">USA</span>
           </motion.h2>
 
           <motion.p
@@ -750,54 +761,20 @@ export default function OnlineDegreeSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mx-auto mt-2.5 max-w-2xl text-[13px] leading-relaxed text-[#526B8C] sm:text-[15px]"
+            className="mx-auto mt-1 max-w-2xl text-[12.5px] leading-relaxed text-[#526B8C] sm:text-[13px]"
           >
-            Explore our interactive folder archives below. Hover to lean a folder, click to fan out its files, and tap any document to inspect complete admissions, costs, scholarships, and visa guidelines.
+            Explore our comprehensive guides below — US education systems, tuition costs, living expenses, scholarships for Indian students, post-study OPT visas, and career & job opportunities.
           </motion.p>
         </div>
 
-        {/* 5 Glass Folder Cards Row — Perfectly aligned in a straight horizontal line */}
-        <div className="flex w-full items-start justify-start xl:justify-center gap-3 sm:gap-4 lg:gap-5 overflow-x-auto no-scrollbar px-6 sm:px-8 py-4">
-          {FOLDER_CATEGORIES.map((cat, idx) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="flex shrink-0 flex-col items-center w-[230px]"
-            >
-              {/* Folder Component (consistent 230px width and fixed baseline) */}
-              <div className="flex w-[230px] items-center justify-center">
-                <GlassFolder
-                  label={cat.label}
-                  meta={cat.meta}
-                  tone={cat.tone}
-                  art={cat.art}
-                  seed={cat.seed}
-                  action="none"
-                  width={230}
-                  appearDelay={idx * 70}
-                  files={cat.files}
-                  onFileSelect={(file) => {
-                    if (file.key) {
-                      setActiveDialogKey(file.key);
-                    }
-                  }}
-                />
-              </div>
-
-              {/* Pillar Category Number & Summary under folder - fixed uniform height */}
-              <div className="mt-3 flex w-[230px] min-h-[80px] flex-col items-center text-center">
-                <span className="font-mono text-[11px] font-bold text-[#1765F5]">
-                  {cat.id} / 05
-                </span>
-                <p className="mt-1 text-[12px] leading-relaxed text-[#526B8C]">
-                  {cat.summary}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        {/* 6 Modern 3D Guides in Compact 3x2 Grid (Single Viewport Fit) */}
+        <div className="w-full pt-1 pb-1">
+          <InteractiveBookGuides
+            onSelectGuide={(book) => {
+              // Direct navigation to dedicated guide page
+              window.location.href = `/study-in-usa/${book.slug}`;
+            }}
+          />
         </div>
       </div>
 
