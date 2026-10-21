@@ -76,12 +76,12 @@ export default function Navbar({ active = "Home" }) {
         >
           {" "}
           <Image
-            src="/images/logo/university-yatra-logo.png"
+            src="/images/logo/university-yatra-logo,.png"
             alt="University Yatra – Making Global Education Easy"
             width={1600}
             height={384}
             priority
-            className="h-11 w-auto sm:h-[52px]"
+            className="h-11 w-auto sm:h-[42px]"
           />{" "}
         </Link>{" "}
         {/* Desktop links */}{" "}

@@ -171,6 +171,25 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
                         className="h-12 w-full bg-transparent pr-4 text-base text-brand-navy-dark placeholder:text-slate-400 focus:outline-none"
                       />
                     </div>
+                    {/* We Don't Spam Badge */}
+                    <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#E6F9F0] px-3 py-1.5">
+                      <svg
+                        className="h-4 w-4 text-[#25D366]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        />
+                      </svg>
+                      <span className="text-[11px] font-semibold text-[#0D8558]">
+                        We don't spam
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -251,30 +270,6 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
             <p className="absolute bottom-5 left-6 max-w-[16rem] text-xl font-extrabold leading-tight text-white sm:bottom-7 sm:left-8 sm:max-w-xs sm:text-2xl">
               Big plans start with a small conversation.
             </p>
-
-            {/* Mortarboard, floating top-right */}
-          
-
-            {/* Globe, floating bottom-left, overlapping the banner */}
-            <div
-              aria-hidden="true"
-              className="absolute bottom-16 left-4 drop-shadow-[0_10px_18px_rgba(0,40,90,0.3)] sm:bottom-20 sm:left-8"
-            >
-              <svg viewBox="0 0 90 100" className="h-16 w-14 sm:h-24 sm:w-20">
-                <rect x="40" y="78" width="10" height="14" rx="2" fill="#c9a24a" />
-                <ellipse cx="45" cy="92" rx="20" ry="4" fill="#c9a24a" />
-                <circle cx="45" cy="45" r="38" fill="#f5efe4" />
-                <path
-                  d="M18 30c8 6 14 4 20 10s2 10 10 12 12-4 18 2 4 12-2 16"
-                  fill="none"
-                  stroke="var(--color-brand-teal)"
-                  strokeWidth="9"
-                  strokeLinecap="round"
-                  opacity="0.9"
-                />
-                <circle cx="45" cy="45" r="38" fill="none" stroke="#c9a24a" strokeWidth="2" />
-              </svg>
-            </div>
 
             {/* Book stack, above the banner on the right */}
             <div

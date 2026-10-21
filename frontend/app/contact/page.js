@@ -1,6 +1,10 @@
 import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
 import ContactHero from '@/components/Contact/ContactHero';
+import ContactForm from '@/components/Contact/ContactForm';
+import ContactInfo from '@/components/Contact/ContactInfo';
+import ContactMap from '@/components/Contact/ContactMap';
+import ContactFAQ from '@/components/Contact/ContactFAQ';
 
 export const metadata = {
   title: "Contact Us | University Yatra",
@@ -19,6 +23,10 @@ export default function ContactPage() {
       <Navbar active="Contact" />
       <main>
         <ContactHero />
+        <ContactForm />
+        <ContactInfo />
+        <ContactMap />
+        <ContactFAQ />
       </main>
       <UniversityFooter />
     </>

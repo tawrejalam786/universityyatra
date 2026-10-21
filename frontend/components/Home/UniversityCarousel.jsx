@@ -27,6 +27,7 @@ const countries = [
     name: "USA",
     fullName: "United States of America",
     image: "/images/countries/new-york.jpg",
+    flag: "us",
     featuredCity: "New York",
     cities: ["New York", "Boston", "Los Angeles", "San Francisco"],
     href: "/study-abroad/usa",
@@ -35,6 +36,7 @@ const countries = [
     name: "Canada",
     fullName: "Canada",
     image: "/images/countries/toronto.jpg",
+    flag: "ca",
     featuredCity: "Toronto",
     cities: ["Toronto", "Vancouver", "Montreal", "Ottawa"],
     href: "/study-abroad/canada",
@@ -43,6 +45,7 @@ const countries = [
     name: "Europe",
     fullName: "Study in Europe",
     image: "/images/countries/europe.webp",
+    flag: "eu",
     featuredCity: "Amsterdam",
     cities: ["Amsterdam", "Barcelona", "Milan", "Prague"],
     href: "/study-abroad/europe",
@@ -51,6 +54,7 @@ const countries = [
     name: "UK",
     fullName: "United Kingdom",
     image: "/images/countries/uk.webp",
+    flag: "gb",
     featuredCity: "London",
     cities: ["London", "Manchester", "Edinburgh", "Birmingham"],
     href: "/study-abroad/uk",
@@ -59,6 +63,7 @@ const countries = [
     name: "Ireland",
     fullName: "Ireland",
     image: "/images/countries/ireland.webp",
+    flag: "ie",
     featuredCity: "Dublin",
     cities: ["Dublin", "Cork", "Galway", "Limerick"],
     href: "/study-abroad/ireland",
@@ -67,6 +72,7 @@ const countries = [
     name: "UAE",
     fullName: "United Arab Emirates",
     image: "/images/countries/uae.webp",
+    flag: "ae",
     featuredCity: "Dubai",
     cities: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
     href: "/study-abroad/uae",
@@ -75,6 +81,7 @@ const countries = [
     name: "Germany",
     fullName: "Germany",
     image: "/images/countries/germany.webp",
+    flag: "de",
     featuredCity: "Berlin",
     cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
     href: "/study-abroad/germany",
@@ -83,6 +90,7 @@ const countries = [
     name: "France",
     fullName: "France",
     image: "/images/countries/france.webp",
+    flag: "fr",
     featuredCity: "Paris",
     cities: ["Paris", "Lyon", "Toulouse", "Bordeaux"],
     href: "/study-abroad/france",
@@ -91,6 +99,7 @@ const countries = [
     name: "Russia",
     fullName: "Russia",
     image: "/images/countries/russia.webp",
+    flag: "ru",
     featuredCity: "Moscow",
     cities: ["Moscow", "Saint Petersburg", "Kazan", "Novosibirsk"],
     href: "/study-abroad/russia",
@@ -99,6 +108,7 @@ const countries = [
     name: "Australia",
     fullName: "Australia",
     image: "/images/countries/australia.webp",
+    flag: "au",
     featuredCity: "Sydney",
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth"],
     href: "/study-abroad/australia",
@@ -107,6 +117,7 @@ const countries = [
     name: "New Zealand",
     fullName: "New Zealand",
     image: "/images/countries/new-zealand.webp",
+    flag: "nz",
     featuredCity: "Auckland",
     cities: ["Auckland", "Wellington", "Christchurch", "Dunedin"],
     href: "/study-abroad/new-zealand",
@@ -115,6 +126,7 @@ const countries = [
     name: "Singapore",
     fullName: "Singapore",
     image: "/images/countries/singapore.webp",
+    flag: "sg",
     featuredCity: "Singapore",
     cities: ["Clementi", "Queenstown", "Jurong", "Bras Basah"],
     href: "/study-abroad/singapore",
@@ -123,6 +135,7 @@ const countries = [
     name: "Japan",
     fullName: "Japan",
     image: "/images/countries/tokyo.jpg",
+    flag: "jp",
     featuredCity: "Tokyo",
     cities: ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
     href: "/study-abroad/japan",
@@ -164,12 +177,15 @@ function CountryCard({ country, active, index }) {
       {/* ORIGINAL GRADIENT */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061B3B]/95 via-[#061B3B]/45 to-[#061B3B]/10" />
 
-      {/* TOP BADGE */}
-      <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/90 px-3 py-2 text-[#0C337B] shadow-sm ">
-        <Globe2 size={14} className="text-[#1765F5]" />
-        <span className="text-[10px] font-bold uppercase tracking-[0.08em]">
-          Study Abroad
-        </span>
+      {/* TOP BADGE - COUNTRY FLAG */}
+      <div className="absolute left-4 top-4 z-10 inline-flex h-9 w-[60px] items-center justify-center overflow-hidden rounded-lg border border-white/25 bg-white/90 shadow-sm">
+        <Image
+          src={`https://flagcdn.com/h20/${country.flag}.png`}
+          alt={`${country.name} flag`}
+          width={60}
+          height={36}
+          className="h-full w-full object-cover"
+        />
       </div>
 
       {/* CARD CONTENT */}
@@ -235,39 +251,51 @@ export default function CountriesCarousel() {
   return (
     <section aria-labelledby="countries-carousel-title" className="relative w-full overflow-hidden bg-[#F8FAFF] py-10 sm:py-12 lg:py-14">
 
-      {/* HEADER */}
-      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-5 lg:px-8">
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-8">
+     
+{/* HEADER */}
+<div className="mx-auto w-full max-w-[1280px] px-4 sm:px-5 lg:px-8">
+  <div className="relative mb-6 flex flex-col items-center gap-5 lg:mb-8">
 
-          <div className="max-w-[800px]">
-            <p className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
-              EXPLORE STUDY ABROAD DESTINATIONS
-            </p>
+    {/* CENTERED TITLE & DESCRIPTION */}
+    <div className="mx-auto w-full max-w-[850px] text-center">
+      <div className="mx-auto w-full max-w-[800px]">
 
-            <h2 id="countries-carousel-title" className="text-[28px] font-extrabold leading-[1.1] tracking-[-0.035em] text-[#1765F5] sm:text-[35px] lg:text-[44px]">
-              The World Is{" "}
-              <span className="text-[#0C337B]">
-                Your Campus.
-              </span>
-            </h2>
+        {/* TOP LABEL */}
+        <p className="mb-2 text-center text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
+          Explore study opportunities across 40+ countries and leading universities worldwide.
+        </p>
 
-            <p className="mt-3 max-w-[750px] text-[12px] leading-[1.65] text-[#526B8C] sm:text-[13px] lg:text-[14px]">
-              Explore study opportunities across 40+ countries and leading universities worldwide. From choosing the right destination to finding programmes that match your goals, discover a world of possibilities for your academic and professional future.
-            </p>
-          </div>
+        {/* MAIN HEADING */}
+        <h2 id="countries-carousel-title" className="text-center text-[28px] font-extrabold leading-[1.1] tracking-[-0.035em] text-[#1765F5] sm:text-[35px] lg:text-[44px]">
+          Our Global{" "}
+          <span className="text-[#0C337B]">
+            University Network.
+          </span>
+        </h2>
 
-          {/* NAVIGATION ARROWS */}
-          <div className="flex shrink-0 items-center gap-2 self-end sm:self-auto">
-            <button type="button" onClick={() => swiperRef.current?.slidePrev()} aria-label="Previous country" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E5FA] bg-white text-[#0C337B] transition-all duration-300 hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
-              <ChevronLeft size={20} />
-            </button>
+        {/* DESCRIPTION */}
+        <p className="mx-auto mt-3 max-w-[750px] text-center text-[12px] leading-[1.65] text-[#526B8C] sm:text-[13px] lg:text-[14px]">
+          Explore study abroad destinations. From choosing the right destination to finding programmes that match your goals, discover a world of possibilities for your academic and professional future.
+        </p>
 
-            <button type="button" onClick={() => swiperRef.current?.slideNext()} aria-label="Next country" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E5FA] bg-white text-[#0C337B] transition-all duration-300 hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
       </div>
+    </div>
+
+    {/* NAVIGATION ARROWS */}
+    <div className="flex items-center justify-center gap-2 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2">
+      <button type="button" onClick={() => swiperRef.current?.slidePrev()} aria-label="Previous country" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E5FA] bg-white text-[#0C337B] shadow-sm transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
+        <ChevronLeft size={20} />
+      </button>
+
+      <button type="button" onClick={() => swiperRef.current?.slideNext()} aria-label="Next country" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D9E5FA] bg-white text-[#0C337B] shadow-sm transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-11 sm:w-11">
+        <ChevronRight size={20} />
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
 
       {/* FULL WIDTH 3D SWIPER */}
       <div className="relative w-full overflow-hidden py-4">
