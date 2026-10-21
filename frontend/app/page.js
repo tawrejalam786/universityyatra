@@ -2,16 +2,18 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/UniversityFooter";
 import Hero from "@/components/Home/Hero";
 import NextChapter from "@/components/Home/NextChapter";
+import JourneyBento from "@/components/Home/JourneyBento";
+import UniversityCarousel from "@/components/Home/UniversityCarousel";
 import TopUniversities from "@/components/Home/TopUniversities";
 import CommittedToExcellence from "@/components/Home/CommittedToExcellence";
 import ChooseDestination from "@/components/Home/ChooseDestination";
 import Programs from "@/components/Home/Programs";
-import JourneySteps from "@/components/Home/JourneySteps";
-import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraHelps";
+import HowUniversityYatraHelps from "@/components/Home/HowUniversityYatraHelps";
 import ExploreByDestination from "@/components/Home/ExploreByDestination";
 import GuidanceSection from "@/components/Home/GuidanceSection";
 import StudentStories from "@/components/Home/StudentStories";
 import PlanNextChapter from "@/components/Home/PlanNextChapter";
+import CoursesSection from "@/components/Home/CoursesSection";
 
 export default function Home() {
   return (
@@ -19,26 +21,30 @@ export default function Home() {
            <Navbar active="Home" />
             <main>  
               <Hero />
-              <NextChapter
+              {/* <NextChapter
                 images={{
                   university: "/images/3d/university.png",
                   funding: "/images/3d/funding.png",
                   sop: "/images/3d/sop.png",
                 }}
-              />
-              <TopUniversities />
-              <CommittedToExcellence />
-              <ChooseDestination />
-              <Programs />
-              <JourneySteps image="/images/journey-student.webp" />
+              /> */}
+              
+              <JourneyBento />
+              <UniversityCarousel />
+              <CoursesSection />
+
+              {/* <TopUniversities /> */}
+              {/* <CommittedToExcellence /> */}
+              {/* <ChooseDestination /> */}
+              {/* <Programs /> */}
               <HowUniversityYatraHelps />
-              <ExploreByDestination />
-              <GuidanceSection
+              {/* <ExploreByDestination /> */}
+              {/* <GuidanceSection
                 primaryHref="/contact"
                 showLogin={false}
-              />
+              /> */}
               <StudentStories />
-              <PlanNextChapter image="/images/callback-student.webp" />
+              <PlanNextChapter image="/images/callback-studentss.png" />
             </main>
             <Footer />
        </>

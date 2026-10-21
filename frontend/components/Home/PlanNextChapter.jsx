@@ -58,17 +58,17 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
   return (
     <section
       aria-labelledby="callback-title"
-      className="bg-white py-12 sm:py-16 lg:py-20"
+      className="bg-[#DCECFB] py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <header className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-teal-ink sm:text-sm">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy sm:text-sm">
             Personal guidance. Real conversations.
           </p>
           <h2
             id="callback-title"
-            className="mt-3 text-balance text-[1.9rem] font-extrabold leading-[1.12] tracking-tight text-brand-navy-dark sm:text-5xl"
+            className="mt-3 text-balance text-[1.9rem] font-extrabold leading-[1.12] tracking-tight text-[#1765F5] sm:text-5xl"
           >
             Let&apos;s plan your next chapter.
           </h2>
@@ -193,7 +193,7 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand-navy text-base font-semibold text-white transition-colors hover:bg-brand-navy-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal disabled:opacity-70 sm:w-auto sm:px-9"
+                    className="group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-[#1765F5] text-base font-semibold text-white transition-colors hover:bg-brand-navy-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal disabled:opacity-70 sm:w-auto sm:px-9"
                   >
                     {status === "submitting" ? (
                       <>
@@ -253,17 +253,7 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
             </p>
 
             {/* Mortarboard, floating top-right */}
-            <div
-              aria-hidden="true"
-              className="absolute right-5 top-5 -rotate-[18deg] drop-shadow-[0_10px_18px_rgba(0,40,90,0.35)] sm:right-8 sm:top-8"
-            >
-              <svg viewBox="0 0 100 80" className="h-14 w-16 sm:h-20 sm:w-24">
-                <path d="M50 6 4 28l46 22 46-22Z" fill="#f5efe4" />
-                <path d="M22 37v20c0 7 12 13 28 13s28-6 28-13V37L50 50Z" fill="#f5efe4" />
-                <path d="M86 30v22" stroke="var(--color-brand-teal)" strokeWidth="3" strokeLinecap="round" />
-                <circle cx="86" cy="55" r="4" fill="var(--color-brand-teal)" />
-              </svg>
-            </div>
+          
 
             {/* Globe, floating bottom-left, overlapping the banner */}
             <div

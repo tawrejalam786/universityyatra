@@ -424,6 +424,7 @@ export function UniversityClocks({
 
 export default function UniversityFooter({
   siteUrl = "https://universityyatra.com",
+  logoSrc = "/images/footer/university-yatra-logo.png",
   skylineSrc = "/images/footer/global-skyline.png",
   phone = "+91 92868 44550",
   email = "info@universityyatra.com",
