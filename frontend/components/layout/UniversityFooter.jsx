@@ -2,14 +2,9 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import HalftoneWordmarkFooter from "@/components/ui/halftone-wordmark-footer";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Globe2,
-  CalendarDays,
-} from "lucide-react";
+import { Globe2 } from "lucide-react";
 
 /* ==========================================
    COUNTRY DATA
@@ -224,7 +219,7 @@ function CountryClockCard({ item, now }) {
 }
 
 /* ==========================================
-   RESPONSIVE SWIPE CAROUSEL
+   RESPONSIVE GRID LAYOUT
 ========================================== */
 
 export function UniversityClocks({

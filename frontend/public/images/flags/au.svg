@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256">
+  <rect width="512" height="256" fill="#00008B"/>
+  <g id="union-jack">
+    <clipPath id="uk-clip"><rect width="256" height="128"/></clipPath>
+    <g clip-path="url(#uk-clip)">
+      <path d="M0 0l256 128M256 0L0 128" stroke="#FFFFFF" stroke-width="26"/>
+      <path d="M0 0l256 128M256 0L0 128" stroke="#CC0000" stroke-width="16"/>
+      <path d="M128 0v128M0 64h256" stroke="#FFFFFF" stroke-width="42"/>
+      <path d="M128 0v128M0 64h256" stroke="#CC0000" stroke-width="26"/>
+    </g>
+  </g>
+  <!-- Commonwealth Star -->
+  <polygon points="128,155 133,172 150,172 136,182 142,200 128,189 114,200 120,182 106,172 123,172" fill="#FFFFFF"/>
+  <!-- Southern Cross Stars -->
+  <polygon points="384,35 387,45 397,45 389,52 392,62 384,56 376,62 379,52 371,45 381,45" fill="#FFFFFF"/>
+  <polygon points="440,90 443,100 453,100 445,107 448,117 440,111 432,117 435,107 427,100 437,100" fill="#FFFFFF"/>
+  <polygon points="384,180 387,190 397,190 389,197 392,207 384,201 376,207 379,197 371,190 381,190" fill="#FFFFFF"/>
+  <polygon points="330,110 333,120 343,120 335,127 338,137 330,131 322,137 325,127 317,120 327,120" fill="#FFFFFF"/>
+  <polygon points="410,135 412,142 419,142 414,147 416,154 410,150 404,154 406,147 401,142 408,142" fill="#FFFFFF"/>
+</svg>

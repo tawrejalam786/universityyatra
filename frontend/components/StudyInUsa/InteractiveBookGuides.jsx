@@ -3,219 +3,302 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import {
+  GraduationCap,
+  Landmark,
+  BookOpen,
+  FileText,
+  DollarSign,
+  Home,
+  Calculator,
+  Building2,
+  ShieldCheck,
+  Award,
+  Sparkles,
+  Users,
+  Briefcase,
+  TrendingUp,
+  Clock,
+  ArrowRight,
+  Plane,
+  Calendar,
+  Globe2,
+} from "lucide-react";
 
 /* =====================================================================
-   6 STUDY ABROAD CARDS (EXACT BRAND COLORS FROM PALETTE CHART)
-   - Academic Pathways: Blue (#1047AC -> #0C337B)
-   - Cost of Studying: Green (#0F7234 -> #0B5225)
-   - Living & Culture: Amber/Yellow (#AC6F08 -> #7B4F06)
-   - Scholarships & Aid: Purple (#662D82 -> #49205D)
-   - Post-Study Visa: Teal (#0B534D -> #083B37)
-   - Jobs in USA: Deep Tech Blue (#1765F5 -> #0C337B)
+   6 CARDS (EXACT MATCH TO THE USER'S PROVIDED CARD DESIGN & CLIENT CONTENT)
+   Light Claymorphic Theme + Brand Color Chart Palettes
 ===================================================================== */
-export const GUIDES_3D_DATA = [
+export const GUIDES_DATA = [
   {
     id: "academic-pathways",
     slug: "academic-pathways",
-    tag: "ACADEMICS",
-    title: "Academic Pathways",
+    tag: "STUDY IN USA",
+    tagIcon: GraduationCap,
+    title: "Study in USA",
     description:
-      "Flexible 4-year US Bachelor's degrees, specialized 1–2 year STEM Master's (MS & MBA), doctoral fellowships, and intake cycles.",
-    image: "/images/study-usa/3d/academic.png",
-    bgGradient: "from-[#1047AC] to-[#0C337B]",
-    tagColor: "text-[#A2C1FB]",
-    accentSquiggle: "text-[#5D93F8]/50",
-    glassBg: "bg-[#0C337B]/80 border-[#A2C1FB]/20",
-    hoverButtonBg: "group-hover:bg-[#1765F5]",
+      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees. From choosing a major to pursuing an MS or MBA, your options depend on your academic background and goals.",
+    image: "/images/study-usa/3d/light_academic.png",
+    cardBg: "from-[#F0F5FA] to-[#E8F0FE]",
+    borderColor: "border-white",
+    primaryColor: "#1765F5",
+    hoverColor: "#1047AC",
+    tagBg: "#E8F0FE",
+    tagColor: "#1765F5",
+    tagBorder: "#A2C1FB",
+    bulletIconBg: "#E8F0FE",
+    bullets: [
+      { label: "Bachelor's: Typically 4 years", icon: GraduationCap },
+      { label: "Master's: Commonly 1–2 years", icon: BookOpen },
+      { label: "Main intakes: Fall and Spring", icon: Calendar },
+    ],
   },
   {
     id: "cost-of-studying",
     slug: "cost-of-studying",
-    tag: "FINANCE & BUDGET",
-    title: "Cost of Studying",
+    tag: "TUITION & EXPENSES",
+    tagIcon: DollarSign,
+    title: "Cost of Studying in USA",
     description:
-      "Comprehensive tuition fee breakdown across public vs private US universities, mandatory campus fees, and budgeting strategies.",
-    image: "/images/study-usa/3d/cost.png",
-    bgGradient: "from-[#0F7234] to-[#0B5225]",
-    tagColor: "text-[#A2DAB7]",
-    accentSquiggle: "text-[#5CBF80]/50",
-    glassBg: "bg-[#0B5225]/80 border-[#A2DAB7]/20",
-    hoverButtonBg: "group-hover:bg-[#16A34A]",
+      "Tuition depends on your university, degree, and field of study. Use these annual ranges to start planning your budget before comparing specific programs.",
+    image: "/images/study-usa/3d/light_cost.png",
+    cardBg: "from-[#F2FAF5] to-[#E8F6ED]",
+    borderColor: "border-white",
+    primaryColor: "#16A34A",
+    hoverColor: "#0F7234",
+    tagBg: "#E8F6ED",
+    tagColor: "#16A34A",
+    tagBorder: "#A2DAB7",
+    bulletIconBg: "#E8F6ED",
+    bullets: [
+      { label: "Bachelor's: US$19,000–40,000 / yr (₹18–38 L)", icon: DollarSign },
+      { label: "Master's: US$16,000–31,000 / yr (₹15.2–29.5 L)", icon: Calculator },
+      { label: "Additional: Housing, food, fees & visa", icon: Home },
+    ],
   },
   {
     id: "living-and-culture",
     slug: "living-and-culture",
-    tag: "STUDENT LIFE",
-    title: "Living & Culture",
+    tag: "COST OF LIVING & CULTURE",
+    tagIcon: Home,
+    title: "Cost of Living in USA",
     description:
-      "Student housing, dorms vs off-campus apartments, dining plans, local culture, public transit, and 24/7 campus safety guidance.",
-    image: "/images/study-usa/3d/living.png",
-    bgGradient: "from-[#AC6F08] to-[#7B4F06]",
-    tagColor: "text-[#FBD89D]",
-    accentSquiggle: "text-[#F8BB54]/50",
-    glassBg: "bg-[#7B4F06]/80 border-[#FBD89D]/20",
-    hoverButtonBg: "group-hover:bg-[#F59E0B]",
+      "Living costs depend on where you study and how you choose to live. A useful starting budget is US$1,000–2,500 per month, excluding tuition.",
+    image: "/images/study-usa/3d/light_living.png",
+    cardBg: "from-[#FCF8F0] to-[#FEF5E7]",
+    borderColor: "border-white",
+    primaryColor: "#F59E0B",
+    hoverColor: "#AC6F08",
+    tagBg: "#FEF5E7",
+    tagColor: "#AC6F08",
+    tagBorder: "#FBD89D",
+    bulletIconBg: "#FEF5E7",
+    bullets: [
+      { label: "Housing: Often your biggest expense", icon: Building2 },
+      { label: "Daily essentials: Food, transit & utilities", icon: Users },
+      { label: "Campus life: Diverse clubs & community", icon: ShieldCheck },
+    ],
   },
   {
     id: "scholarships-and-aid",
     slug: "scholarships-and-aid",
     tag: "SCHOLARSHIPS & AID",
-    title: "Scholarships & Aid",
+    tagIcon: Award,
+    title: "Scholarships for Indian Students",
     description:
-      "Unlock merit-based grants, institutional need-based financial aid, fellowships, and Graduate Assistantships (TA/RA).",
-    image: "/images/study-usa/3d/scholarships.png",
-    bgGradient: "from-[#662D82] to-[#49205D]",
-    tagColor: "text-[#D3B3E3]",
-    accentSquiggle: "text-[#B279CF]/50",
-    glassBg: "bg-[#49205D]/80 border-[#D3B3E3]/20",
-    hoverButtonBg: "group-hover:bg-[#9140BA]",
+      "Indian students may qualify for merit-based scholarships, need-based financial aid, university awards, or graduate research funding. Opportunities depend on your profile.",
+    image: "/images/study-usa/3d/light_scholarships.png",
+    cardBg: "from-[#FAF4FC] to-[#F4ECF8]",
+    borderColor: "border-white",
+    primaryColor: "#9140BA",
+    hoverColor: "#662D82",
+    tagBg: "#F4ECF8",
+    tagColor: "#9140BA",
+    tagBorder: "#D3B3E3",
+    bulletIconBg: "#F4ECF8",
+    bullets: [
+      { label: "Merit-based: Rewards academic achievement", icon: Award },
+      { label: "Need-based: Assesses financial circumstances", icon: Sparkles },
+      { label: "External: Fulbright-Nehru & Inlaks funding", icon: Globe2 },
+    ],
   },
   {
     id: "post-study-visa",
     slug: "post-study-visa",
-    tag: "VISA & WORK PERMITS",
-    title: "Post-Study Visa",
+    tag: "POST-STUDY WORK VISA",
+    tagIcon: Plane,
+    title: "Post-Study Work Visa USA",
     description:
-      "Navigate legal employment in the US — from the 12-month F-1 OPT to the 24-month STEM OPT extension and corporate H-1B paths.",
-    image: "/images/study-usa/3d/visa.png",
-    bgGradient: "from-[#0B534D] to-[#083B37]",
-    tagColor: "text-[#9FC8C5]",
-    accentSquiggle: "text-[#579F9A]/50",
-    glassBg: "bg-[#083B37]/80 border-[#9FC8C5]/20",
-    hoverButtonBg: "group-hover:bg-[#0F766E]",
+      "Planning to work in the USA after graduation? Eligible F-1 students can apply for Optional Practical Training (OPT) to gain work experience related to their degree.",
+    image: "/images/study-usa/3d/light_visa.png",
+    cardBg: "from-[#F0F7F7] to-[#E7F1F1]",
+    borderColor: "border-white",
+    primaryColor: "#0F766E",
+    hoverColor: "#0B534D",
+    tagBg: "#E7F1F1",
+    tagColor: "#0F766E",
+    tagBorder: "#9FC8C5",
+    bulletIconBg: "#E7F1F1",
+    bullets: [
+      { label: "12 months of OPT: Eligible graduates", icon: Clock },
+      { label: "Up to 36 months: Qualifying STEM extension", icon: Sparkles },
+      { label: "After OPT: Employer-sponsored H-1B status", icon: Briefcase },
+    ],
   },
   {
     id: "jobs-in-usa",
     slug: "jobs-in-usa",
-    tag: "CAREERS & PLACEMENT",
-    title: "Jobs in USA",
+    tag: "CAREERS & ROI",
+    tagIcon: Briefcase,
+    title: "Jobs & Careers in USA",
     description:
-      "Explore high-demand tech & business job markets, paid CPT corporate summer internships, career fairs, and graduate salary packages.",
-    image: "/images/study-usa/3d/jobs.png",
-    bgGradient: "from-[#1765F5] to-[#0C337B]",
-    tagColor: "text-[#E8F0FE]",
-    accentSquiggle: "text-[#5D93F8]/50",
-    glassBg: "bg-[#0C337B]/85 border-[#5D93F8]/25",
-    hoverButtonBg: "group-hover:bg-[#1047AC]",
+      "Explore the world's most dynamic job market for international graduates through CPT corporate internships, career fairs, and high-ROI full-time placements.",
+    image: "/images/study-usa/3d/light_jobs.png",
+    cardBg: "from-[#EFF5FD] to-[#E8F0FE]",
+    borderColor: "border-white",
+    primaryColor: "#1047AC",
+    hoverColor: "#0C337B",
+    tagBg: "#E8F0FE",
+    tagColor: "#1047AC",
+    tagBorder: "#A2C1FB",
+    bulletIconBg: "#E8F0FE",
+    bullets: [
+      { label: "Paid CPT Summer Internships", icon: Briefcase },
+      { label: "On-Campus: Up to 20 hrs/week student work", icon: Building2 },
+      { label: "High ROI Career Placements", icon: TrendingUp },
+    ],
   },
 ];
 
 export default function InteractiveBookGuides({ onSelectGuide }) {
-  const handleRedirect = (item) => {
+  const handleRedirect = (card) => {
     if (onSelectGuide) {
-      onSelectGuide(item);
+      onSelectGuide(card);
     } else {
-      window.location.href = `/study-in-usa/${item.slug}`;
+      window.location.href = `/study-in-usa/${card.slug}`;
     }
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-[1360px] px-2 sm:px-4 py-2">
-      {/* 3x2 Grid: Compact & Balanced to fit in 1 desktop viewport */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5 justify-items-center">
-        {GUIDES_3D_DATA.map((item, idx) => {
+    <div className="relative mx-auto w-full max-w-[1400px] px-3 sm:px-5 lg:px-6 py-4">
+      {/* 2-Column Responsive Grid (Matching exact wide card aspect ratio of Image 2) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-8 justify-items-center">
+        {GUIDES_DATA.map((card, idx) => {
+          const TagIcon = card.tagIcon;
+
           return (
             <motion.article
-              key={item.id}
-              initial={{ opacity: 0, y: 16 }}
+              key={card.id}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              onClick={() => handleRedirect(item)}
+              transition={{ duration: 0.45, delay: idx * 0.06 }}
+              onClick={() => handleRedirect(card)}
               className={`
                 group relative
-                w-full max-w-[390px]
-                h-[295px] sm:h-[305px] md:h-[310px]
-                rounded-[22px]
-                overflow-hidden
-                flex flex-col justify-between
-                bg-gradient-to-b ${item.bgGradient}
-                p-3 sm:p-3.5
-                shadow-[0_12px_28px_-8px_rgba(0,0,0,0.32)]
-                hover:shadow-[0_20px_40px_-8px_rgba(0,0,0,0.42)]
+                w-full
+                rounded-[32px] sm:rounded-[36px]
+                border-2 ${card.borderColor}
+                bg-gradient-to-br ${card.cardBg}
+                p-5 sm:p-7 md:p-8
+                shadow-[0_16px_36px_rgba(12,51,123,0.06),0_2px_8px_rgba(12,51,123,0.04)]
+                hover:shadow-[0_24px_52px_rgba(12,51,123,0.12)]
                 hover:-translate-y-1.5
                 transition-all duration-300 ease-out
                 cursor-pointer select-none
-                border border-white/10
+                overflow-hidden
+                flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6
               `}
             >
-              {/* TOP HEADER: Category Tag + Arrow Icon */}
-              <div className="relative z-20 flex items-center justify-between px-1.5 pt-0.5">
-                <span
-                  className={`text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-[0.16em] ${item.tagColor}`}
-                >
-                  {item.tag}
-                </span>
-
-                <span
-                  className={`flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-all duration-300 ${item.hoverButtonBg} group-hover:rotate-45`}
-                >
-                  <ArrowUpRight size={14} strokeWidth={2.4} />
-                </span>
+              {/* Playful Floating Accents (Matching Image 2) */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute right-6 top-6 h-8 w-8 text-[#F59E0B]/80 opacity-70 group-hover:rotate-12 transition-transform duration-300"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full">
+                  <path d="M12 0L14 9L23 11L15 14L16 23L11 16L2 17L8 12L4 3L12 7Z" opacity="0.3" />
+                </svg>
               </div>
 
-              {/* CENTER 3D CLAY ILLUSTRATION (Seamlessly blended, zero square box edges) */}
-              <div
-                className="
-                  relative z-10 mx-auto my-auto
-                  h-[110px] sm:h-[120px] md:h-[125px]
-                  w-full max-w-[200px]
-                  overflow-hidden
-                  [mask-image:radial-gradient(circle_at_center,black_60%,transparent_100%)]
-                  [-webkit-mask-image:radial-gradient(circle_at_center,black_60%,transparent_100%)]
-                "
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-108"
-                />
-              </div>
-
-              {/* BOTTOM FLOATING FROSTED GLASS CARD */}
-              <div
-                className={`
-                  relative z-20
-                  w-full
-                  rounded-[16px]
-                  backdrop-blur-md
-                  p-3 sm:p-3.5
-                  shadow-[0_8px_20px_rgba(0,0,0,0.35)]
-                  transition-all duration-300
-                  ${item.glassBg}
-                `}
-              >
-                {/* Title */}
-                <h3 className="text-[16px] sm:text-[17px] font-extrabold text-white tracking-tight leading-tight">
-                  {item.title}
-                </h3>
-
-                {/* Decorative Wavy Squiggle Line Divider */}
-                <div
-                  aria-hidden="true"
-                  className={`my-1.5 h-[4px] w-full ${item.accentSquiggle}`}
-                >
-                  <svg
-                    viewBox="0 0 240 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-full w-full stroke-current"
+              {/* LEFT COLUMN: Content & Bullet Points */}
+              <div className="relative z-10 flex flex-col justify-between w-full sm:w-[58%] text-left">
+                {/* Category Pill Tag */}
+                <div className="flex items-center">
+                  <span
+                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider border shadow-xs"
+                    style={{
+                      backgroundColor: card.tagBg,
+                      color: card.tagColor,
+                      borderColor: card.tagBorder,
+                    }}
                   >
-                    <path
-                      d="M0 4 Q 15 0, 30 4 T 60 4 T 90 4 T 120 4 T 150 4 T 180 4 T 210 4 T 240 4"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                    <TagIcon size={14} strokeWidth={2.4} />
+                    {card.tag}
+                  </span>
                 </div>
 
-                {/* Description */}
-                <p className="text-[11px] sm:text-[11.5px] leading-relaxed text-white/80 line-clamp-2">
-                  {item.description}
+                {/* Main Heading */}
+                <h3 className="mt-3.5 text-[24px] sm:text-[27px] md:text-[30px] font-extrabold text-[#0C337B] tracking-[-0.03em] leading-[1.12]">
+                  {card.title}
+                </h3>
+
+                {/* Subtitle / Excerpt */}
+                <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-[#526B8C]">
+                  {card.description}
                 </p>
+
+                {/* 3 Bullet Points with Soft Square Icon Tiles */}
+                <div className="mt-4 flex flex-col gap-2">
+                  {card.bullets.map((bullet, bIdx) => {
+                    const BulletIcon = bullet.icon;
+                    return (
+                      <div key={bIdx} className="flex items-center gap-2.5">
+                        <span
+                          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg shadow-xs border border-white"
+                          style={{
+                            backgroundColor: card.bulletIconBg,
+                            color: card.primaryColor,
+                          }}
+                        >
+                          <BulletIcon size={14} strokeWidth={2.4} />
+                        </span>
+                        <span className="text-[12.5px] sm:text-[13px] font-bold text-[#1E293B]">
+                          {bullet.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* CTA Button */}
+                <div className="mt-5">
+                  <div
+                    className="
+                      inline-flex items-center gap-2.5
+                      rounded-full px-6 py-2.5 sm:py-3
+                      text-[13px] sm:text-[13.5px] font-extrabold text-white
+                      shadow-[0_8px_20px_rgba(23,101,245,0.25)]
+                      transition-all duration-300
+                      group-hover:gap-3.5 group-hover:shadow-[0_12px_28px_rgba(23,101,245,0.35)]
+                      w-fit
+                    "
+                    style={{ backgroundColor: card.primaryColor }}
+                  >
+                    <span>Read Full Guide</span>
+                    <ArrowRight size={15} strokeWidth={2.6} />
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: Large 3D Clay Illustration */}
+              <div className="relative z-10 w-full sm:w-[42%] flex items-center justify-center h-[200px] sm:h-[240px] md:h-[260px]">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                  className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-108"
+                />
               </div>
             </motion.article>
           );
