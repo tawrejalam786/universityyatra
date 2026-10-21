@@ -21,6 +21,10 @@ import {
   Compass,
   Sparkles,
   HelpCircle,
+  BookOpen,
+  FileText,
+  Calculator,
+  Clock,
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import UniversityFooter from "@/components/layout/UniversityFooter";
@@ -28,163 +32,73 @@ import GlobalEducationCTA from "@/components/StudyInUsa/GlobalEducationCTA";
 import { BOOK_GUIDES } from "@/components/StudyInUsa/bookGuidesData";
 
 /* =====================================================================
-   COMPREHENSIVE RICH DATA FOR EACH OF THE 5 GUIDES
+   COMPREHENSIVE RICH DATA FOR EACH OF THE GUIDES (FULL CLIENT CONTENT)
 ===================================================================== */
 const GUIDE_DETAILS_DATABASE = {
-  "living-and-culture": {
-    id: "03",
-    vol: "VOL. III",
-    title: "Living & Culture in the USA",
-    shortTitle: "Living & Culture",
-    badge: "Student Life & Campus Guide",
-    tagline: "Navigating American Campus Life, Housing, Living Costs & Cultural Integration",
-    heroImage: "/images/study-usa/living-and-culture-hero.jpg",
-    accentColor: "#165548",
-    pillColors: [
-      { label: "DORMS & HOUSING", bg: "#D7F77D", text: "#063B72" },
-      { label: "MONTHLY BUDGET", bg: "#FFD4E6", text: "#063B72" },
-      { label: "SAFETY & TRANSIT", bg: "#B5E9F2", text: "#063B72" },
-      { label: "CAMPUS CULTURE", bg: "#0C9253", text: "#FFFFFF" },
-    ],
-    overview:
-      "Studying in the United States is more than just lectures and degrees — it is a life-changing cultural immersion. From vibrant quad lawns and university dorms to diverse dining halls and student clubs, understanding how American college towns and cities operate helps you plan an unforgettable and stress-free academic journey.",
-    metrics: [
-      { label: "Monthly Living Expenses", value: "$1,000 – $2,200 / mo" },
-      { label: "On-Campus Dorms", value: "$9,000 – $15,000 / yr" },
-      { label: "Food & Groceries", value: "$300 – $600 / mo" },
-      { label: "Campus Safety", value: "24/7 Police & Escorts" },
-    ],
-    chapters: [
-      {
-        icon: HomeIcon,
-        title: "1. Student Housing: On-Campus Dorms vs. Off-Campus Rentals",
-        desc: "Where you live shapes your daily student routine, budget, and social network.",
-        points: [
-          "On-Campus Residence Halls (Dorms): Many US universities mandate first-year undergraduates to live in dorms. They come fully furnished with utilities (Wi-Fi, water, heating) and include mandatory meal plans, fostering instant social connections.",
-          "Off-Campus Apartments: Preferred by 85%+ of graduate (MS/MBA) students. Sharing a 2BHK or 3BHK apartment with fellow Indian students drops your monthly rent to $400–$800 per person in college towns.",
-          "Leasing & Security Deposits: Typical 12-month leases require 1 month rent as deposit. Look for student-friendly complexes near university shuttle bus routes.",
-        ],
-      },
-      {
-        icon: Utensils,
-        title: "2. Food, Dining Plans & Indian Grocery Stores",
-        desc: "Managing nutrition and dietary preferences while living independently.",
-        points: [
-          "Campus Dining Plans: Access to all-you-can-eat campus cafeterias with vegetarian, halal, and vegan options. Convenient for busy undergraduate schedules.",
-          "Self-Cooking & Indian Groceries: Most Indian students cook together in shared apartments. Indian grocery stores (like Patel Brothers) are present in virtually all major university towns with spices, lentils, rotis, and snacks.",
-          "Average Monthly Food Budget: Cooking at home costs around $250–$350/month. Dining out or university meal plans average $500–$700/month.",
-        ],
-      },
-      {
-        icon: Bus,
-        title: "3. Transportation & Commuting Options",
-        desc: "Navigating your university campus and the surrounding city.",
-        points: [
-          "Free Campus Shuttles: US universities operate complimentary shuttle bus networks connecting dorms, academic buildings, libraries, and major off-campus student apartment complexes.",
-          "Public Transit Discounts: In metropolitan areas like Boston, Chicago, New York, and San Francisco, student ID cards grant 50% discount passes on subways and city buses.",
-          "Bicycles & Walking: Most American college campuses are pedestrian-first bicycle sanctuaries with dedicated bike lanes and bike-share racks.",
-        ],
-      },
-      {
-        icon: Users,
-        title: "4. American Classroom & Social Culture",
-        desc: "Thriving in a dynamic, highly collaborative educational environment.",
-        points: [
-          "Class Participation: US professors encourage open discussions, debating ideas, and asking questions. Active participation often counts for 10% to 20% of your course grade.",
-          "Office Hours: Professors and Teaching Assistants (TAs) hold weekly 1-on-1 office hours for academic mentorship, doubts, and career advice.",
-          "Indian Student Associations (ISA): Over 95% of US universities have active ISA chapters that organize Diwali celebrations, Holi festivals, cricket tournaments, and airport pickup drives for incoming freshers.",
-        ],
-      },
-      {
-        icon: ShieldCheck,
-        title: "5. Campus Health, Insurance & Safety",
-        desc: "Comprehensive safety protocols and emergency healthcare support.",
-        points: [
-          "Campus Police & Blue Light Telephones: US campuses feature emergency call boxes spaced every 100 meters. Emergency response times average under 2 minutes.",
-          "SafeRide & Late-Night Escorts: If you're studying late at the library, university security services provide free escorts or vans to your doorstep.",
-          "Mandatory Student Health Insurance: Covers physician visits, prescriptions, emergency hospitalizations, and mental wellness counselling through on-campus student health centers.",
-        ],
-      },
-    ],
-    faqs: [
-      {
-        q: "Can international students live off-campus in their first semester?",
-        a: "Graduate students (MS, MBA, PhD) can live off-campus from day one. Many undergraduate universities require first-year freshmen to live in dorms, though waivers are available under specific family or medical circumstances.",
-      },
-      {
-        q: "How much pocket money do I need each month?",
-        a: "In college towns (like West Lafayette, Urbana-Champaign, or College Station), $800 to $1,200 per month is comfortable for rent, groceries, and personal expenses. In major metros (New York, San Francisco, Boston), budget $1,500 to $2,200.",
-      },
-      {
-        q: "Is it easy to find vegetarian and Indian food?",
-        a: "Yes! Campus dining halls always label vegetarian, vegan, and gluten-free items. Additionally, Indian grocery stores and restaurants are located within proximity of almost all US college campuses.",
-      },
-    ],
-  },
-
   "academic-pathways": {
     id: "01",
     vol: "VOL. I",
-    title: "Academic Pathways in the USA",
+    title: "Study in USA: Academic Pathways",
     shortTitle: "Academic Pathways",
     badge: "Degrees, Programs & Intakes",
-    tagline: "4-Year Bachelor's, 1-2 Year STEM Master's, Doctoral Fellowships & US Intake Calendars",
+    tagline: "Undergraduate Pathways, Specialized Master's Degrees & US Intake Calendars",
     heroImage: "/images/hero/usa-3d-depth-hero.jpg",
     accentColor: "#0A1E3F",
     pillColors: [
       { label: "4-YEAR BACHELOR'S", bg: "#D7F77D", text: "#063B72" },
-      { label: "STEM MASTER'S", bg: "#B5E9F2", text: "#063B72" },
-      { label: "FUNDED PHDs", bg: "#FFD4E6", text: "#063B72" },
+      { label: "1-2 YEAR MASTER'S", bg: "#B5E9F2", text: "#063B72" },
+      { label: "RESEARCH PHDs", bg: "#FFD4E6", text: "#063B72" },
       { label: "FALL & SPRING INTAKES", bg: "#0C9253", text: "#FFFFFF" },
     ],
     overview:
-      "The American higher education system is universally recognized for its academic rigor, interdisciplinary curriculum, and hands-on research. Whether pursuing a flexible 4-year undergraduate degree or a specialized 1-2 year STEM Master's (MS/MBA), US universities empower students to tailor their education toward high-impact global careers.",
+      "The US education system offers students multiple ways to build their academic pathway. Undergraduate students can often study subjects outside their major, while postgraduate programs allow for deeper specialisation in a chosen field. For Indian students, understanding these differences helps when deciding which degree, university, and course structure best fits their goals.",
     metrics: [
-      { label: "Undergraduate", value: "4-Year Flexible Bachelor's" },
-      { label: "Master's Degrees", value: "1–2 Year MS & MBA" },
-      { label: "Credit Requirement", value: "120–130 Credits" },
-      { label: "Intake Windows", value: "Fall (Aug) & Spring (Jan)" },
+      { label: "Bachelor's Degree", value: "Typically 4 Years" },
+      { label: "Master's Degree", value: "Commonly 1–2 Years" },
+      { label: "Main Intakes", value: "Fall (Aug) & Spring (Jan)" },
+      { label: "Academic Flexibility", value: "Majors, Minors & Electives" },
     ],
     chapters: [
       {
         icon: GraduationCap,
-        title: "1. The 4-Year US Bachelor's Degree Structure",
-        desc: "Unmatched academic flexibility with major, minor, and elective combinations.",
+        title: "How does the US education system work?",
+        desc: "The right pathway depends on your current qualification, intended field of study, and future plans.",
         points: [
-          "Undecided Majors: You do not need to lock your major on day one. Students spend the first 2 years completing general education courses across sciences, humanities, and arts before formally declaring a major.",
-          "Major + Minor System: You can major in Computer Science while minoring in Economics, Music, or Business, giving you a competitive edge in multidisciplinary industries.",
-          "Continuous GPA Assessment: Grades are based on weekly homework, quizzes, presentations, midterms, and finals — not just one end-of-year exam.",
+          "Postgraduate Programs: Master's degrees commonly take one to two years, depending on the subject and university. Options include MS programs in technical fields, MBA programs in business, and specialised degrees across healthcare, economics, and the humanities.",
+          "Undergraduate Programs: Bachelor's degrees typically take four years. Many universities allow students to choose a major, take electives, and sometimes pursue a minor or additional area of study.",
+          "Doctoral Programs: PhD programs focus on advanced research and independent academic work. They can take several years to complete, depending on the discipline, research requirements, and institution.",
         ],
       },
       {
-        icon: Briefcase,
-        title: "2. Postgraduate Programs: MS & MBA",
-        desc: "Specialized professional and research degrees designed for career acceleration.",
+        icon: BookOpen,
+        title: "What is studying in the USA actually like?",
+        desc: "Learning extends far beyond traditional lectures and final examinations.",
         points: [
-          "STEM-Designated Degrees: Programs in Data Science, AI, Financial Engineering, and Biotechnology qualify for the lucrative 3-year OPT work extension in the US.",
-          "Curricular Practical Training (CPT): Allows master's students to work in paid off-campus industry internships during summer semesters directly related to their major.",
-          "Graduate Assistantships (GA/TA/RA): Master's students can secure paid teaching or research positions on campus that waive tuition and provide monthly stipends.",
+          "Hands-On Learning & Assessment: Students may complete research projects, participate in seminars, give presentations, and work on group assignments. Assessment can include coursework, quizzes, midterms, class participation, and final examinations, depending on the program.",
+          "Looking Beyond Rankings: When comparing universities, look beyond rankings. Course structure, faculty expertise, research opportunities, assessment methods, and program requirements can all influence your academic experience.",
         ],
       },
       {
         icon: Calendar,
-        title: "3. Intake Cycles: Fall vs. Spring vs. Summer",
-        desc: "Selecting the optimal semester for admission and scholarship success.",
+        title: "When can you start studying in the USA?",
+        desc: "US universities commonly offer Fall and Spring admissions, while selected programs also accept students in Summer.",
         points: [
-          "Fall Intake (August/September): The primary intake with 100% course options, maximum scholarship allocations, and campus hiring.",
-          "Spring Intake (January): Ideal for students needing more time for GRE/IELTS prep or visa appointments.",
-          "Summer Intake (May/June): Limited offerings, primarily for intensive pathway and research coursework.",
+          "Fall Intake (August–September): The main intake, generally with the widest range of available programs.",
+          "Spring Intake (January): An alternative for students who need additional time to prepare applications or meet admission requirements.",
+          "Summer Intake (May–June): Available for selected courses and institutions.",
+          "Deadlines & Availability: Intake availability and deadlines differ by university and program. Check the specific course page before planning your application.",
+          "Strategic Planning for Indian Students: For Indian students planning to study in the USA, start by identifying the right degree level, checking entry requirements, and comparing programs that match your academic background and career goals.",
         ],
       },
     ],
     faqs: [
       {
-        q: "What is a STEM-designated degree in the USA?",
-        a: "A STEM degree covers Science, Technology, Engineering, or Math. Graduates from STEM programs are eligible for a 24-month OPT extension, allowing up to 36 months (3 years) of legal full-time work in the USA on an F-1 visa.",
+        q: "Which US intake offers the most scholarships and courses?",
+        a: "The Fall intake (August–September) is the primary academic intake in the United States, offering the widest selection of programs, maximum scholarship allocations, and campus recruitment opportunities.",
       },
       {
-        q: "Can I change my major after getting admitted?",
-        a: "Yes! One of the biggest advantages of US universities is the flexibility to switch majors within your college during your first 2 years without restarting your degree.",
+        q: "Can I study subjects outside my declared major in the US?",
+        a: "Yes. Many US undergraduate programs allow students to combine a major with minors, electives, and courses from other disciplines, giving students greater flexibility to shape their academic pathway.",
       },
     ],
   },
@@ -199,45 +113,135 @@ const GUIDE_DETAILS_DATABASE = {
     heroImage: "/images/study-usa/modal-depth-bg.jpg",
     accentColor: "#4A101D",
     pillColors: [
-      { label: "TUITION FEES", bg: "#D7F77D", text: "#063B72" },
-      { label: "PUBLIC VS PRIVATE", bg: "#B5E9F2", text: "#063B72" },
-      { label: "ON-CAMPUS JOBS", bg: "#FFD4E6", text: "#063B72" },
-      { label: "EDUCATION LOANS", bg: "#0C9253", text: "#FFFFFF" },
+      { label: "MASTER'S TUITION", bg: "#D7F77D", text: "#063B72" },
+      { label: "BACHELOR'S TUITION", bg: "#B5E9F2", text: "#063B72" },
+      { label: "MANDATORY FEES", bg: "#FFD4E6", text: "#063B72" },
+      { label: "TOTAL DEGREE BUDGET", bg: "#0C9253", text: "#FFFFFF" },
     ],
     overview:
-      "A clear financial roadmap is essential for studying in America. Tuition fees vary substantially between state-funded public institutions and prestigious private universities. Learn how to accurately project total costs, leverage scholarships, and plan education loans.",
+      "Planning your education budget is an important part of choosing a university in the USA. Tuition is usually one of your biggest expenses, but the amount depends on your degree, university, field of study, and course duration. A master's program in Computer Science, for example, may have a very different fee structure from an MBA or a bachelor's degree.",
     metrics: [
-      { label: "Public University Tuition", value: "$18,000 – $35,000 / yr" },
-      { label: "Private University Tuition", value: "$35,000 – $60,000 / yr" },
-      { label: "Mandatory Fees", value: "$1,500 – $3,500 / yr" },
-      { label: "On-Campus Earnings", value: "$12 – $20 / hr (20 hrs/wk)" },
+      { label: "Master's Tuition (Indicative)", value: "US$22,000–$45,000 / yr" },
+      { label: "Public Bachelor's (Out-of-state)", value: "US$31,880 / yr (~₹30.3 L)" },
+      { label: "Private Nonprofit Bachelor's", value: "US$45,000 / yr (~₹42.75 L)" },
+      { label: "Living Expenses Estimate", value: "US$1,000–$2,500 / mo" },
     ],
     chapters: [
       {
         icon: DollarSign,
-        title: "1. Public vs. Private Universities Tuition Comparison",
-        desc: "Understanding the financial differences between institution types.",
+        title: "How Much Does It Cost to Study in the USA?",
+        desc: "Tuition benchmarks across master's and bachelor's degree programs.",
         points: [
-          "Public State Universities: Supported by state governments (e.g. UC Berkeley, Purdue, Arizona State, SUNY). Out-of-state tuition ranges from $18,000 to $38,000/year.",
-          "Private Universities: Endowed institutions (e.g. Harvard, MIT, NYU, Stanford). Tuition ranges from $40,000 to $65,000/year, but they offer substantial need-based and merit grants.",
-          "Community Colleges (2+2 Pathway): Cost $8,000–$12,000/year for the first 2 years, transferring directly into top universities for years 3 and 4.",
+          "Master's Degree Tuition Fees: For initial planning, international students can use US$22,000–45,000 per year (approximately ₹20.9–42.75 lakh) as an indicative tuition range for many master's programs. This is a planning estimate, not a verified national average. MBA programs, specialised degrees, and universities with higher tuition may cost more, while some institutions offer lower-cost options or funding.",
+          "Bachelor's Degree Tuition Fees (College Board 2025): For bachelor's programs, the College Board's Trends in College Pricing 2025 reports the following average annual tuition and fees for 2025–26: Public four-year universities, out-of-state: US$31,880 (approximately ₹30.3 lakh); Private nonprofit four-year universities: US$45,000 (approximately ₹42.75 lakh).",
+          "Institutional Rates: These figures are useful reference points for Indian students, but they are undergraduate averages rather than guaranteed international-student fees. Public universities may have different published rates for international students, and individual programs can charge more or less.",
+          "Currency Conversion Note: Rupee conversions are illustrative, using ₹95 per US dollar. Actual costs will change with the prevailing exchange rate.",
         ],
       },
       {
-        icon: Briefcase,
-        title: "2. On-Campus Employment & Offsetting Expenses",
-        desc: "Legally working as an international F-1 student in the USA.",
+        icon: FileText,
+        title: "What Other Expenses Should You Budget For?",
+        desc: "Tuition is only one part of the total cost of studying in the USA. Before applying, account for these additional expenses:",
         points: [
-          "20 Hours / Week Limit: F-1 visa students can work legally up to 20 hours/week during active semesters and 40 hours/week during semester breaks.",
-          "Common Roles: Campus library assistant, tech lab proctor, dining hall staff, student recreation monitor, and departmental tutoring.",
-          "Pay Rates: $12 to $20/hour depending on state minimum wage, covering 70% to 100% of your monthly food and pocket expenses.",
+          "University Fees: Mandatory student, technology, laboratory, or course-specific fees may be charged separately from tuition.",
+          "Health Insurance: Many universities require international students to maintain approved health coverage. Premiums and waiver rules vary by institution.",
+          "Books and Supplies: Textbooks, software, equipment, and laboratory materials depend on your course.",
+          "Application and Initial Payments: Application fees, tuition deposits, and other enrolment charges can increase your upfront spending.",
+          "Student Visa and SEVIS Fees: Budget separately for the applicable F-1 visa application and I-901 SEVIS fees. Confirm the latest amounts through official US government sources before paying.",
+        ],
+      },
+      {
+        icon: Calculator,
+        title: "How Much Should You Budget Before Applying?",
+        desc: "Calculating the total cost of completing your degree vs. only first-year tuition.",
+        points: [
+          "Check Official Cost-of-Attendance: Start by checking the university's official cost-of-attendance page for your specific course. Compare tuition, mandatory fees, program duration, and any scholarships or assistantships you may qualify for.",
+          "Program Duration: A two-year master's degree, for instance, requires a different total budget from a one-year program, even if the annual tuition is similar.",
+          "Living & Everyday Essentials: You should also account for accommodation, food, transport, utilities, and personal expenses. These costs are covered in our separate Cost of Living & Culture guide.",
+          "Compare Total Degree Cost: The most useful comparison is the total estimated cost of completing your degree, not just the first year's tuition. This helps you shortlist universities that fit your budget before committing to applications.",
         ],
       },
     ],
     faqs: [
       {
-        q: "What is the total annual cost of attendance (COA)?",
-        a: "Annual COA includes tuition ($20k–$45k), housing & food ($10k–$15k), health insurance & books ($3k–$5k), totaling between $35,000 and $65,000 per year before scholarships.",
+        q: "What is the typical annual tuition fee range for master's programs?",
+        a: "Indicative annual tuition for master's programs ranges from US$22,000 to US$45,000 per year (approximately ₹20.9–42.75 lakh), depending on the university, specialization, and course structure.",
+      },
+      {
+        q: "Do public universities offer lower rates for international students?",
+        a: "Public state universities offer published out-of-state tuition rates for international students, which typically average US$31,880 annually, though individual universities and programs may vary.",
+      },
+    ],
+  },
+
+  "living-and-culture": {
+    id: "03",
+    vol: "VOL. III",
+    title: "Cost of Living & Culture in USA",
+    shortTitle: "Living & Culture",
+    badge: "Student Life & Monthly Expenses",
+    tagline: "Monthly Expenses, Accommodation, Transit & Finding Your Place in America",
+    heroImage: "/images/study-usa/living-and-culture-hero.jpg",
+    accentColor: "#165548",
+    pillColors: [
+      { label: "MONTHLY BUDGET", bg: "#D7F77D", text: "#063B72" },
+      { label: "ACCOMMODATION", bg: "#FFD4E6", text: "#063B72" },
+      { label: "FOOD & GROCERIES", bg: "#B5E9F2", text: "#063B72" },
+      { label: "CAMPUS CULTURE", bg: "#0C9253", text: "#FFFFFF" },
+    ],
+    overview:
+      "Moving to the United States means learning to manage a different set of everyday expenses. Rent, groceries, transport, utilities, and personal spending all add up, and your monthly budget can look very different depending on where you live.",
+    metrics: [
+      { label: "Monthly Living Cost", value: "US$1,000 – $2,500 / mo" },
+      { label: "Rupee Equivalent", value: "₹95,000 – ₹2.38 Lakh / mo" },
+      { label: "Major Expense", value: "Housing & Accommodation" },
+      { label: "Campus Life", value: "Clubs, Culture & Community" },
+    ],
+    chapters: [
+      {
+        icon: DollarSign,
+        title: "How Much Does It Cost to Live in the USA as a Student?",
+        desc: "Baseline planning estimate for international students.",
+        points: [
+          "Planning Estimate: As an initial planning estimate, budget approximately US$1,000–2,500 per month (₹95,000–2.38 lakh) for living expenses, excluding tuition.",
+          "Location Factors: Your actual costs will depend on your university location, accommodation, transport, and lifestyle. Large metropolitan areas can be considerably more expensive than smaller university towns.",
+        ],
+      },
+      {
+        icon: HomeIcon,
+        title: "What Will Your Monthly Expenses Include?",
+        desc: "Detailed breakdown of routine essentials.",
+        points: [
+          "Accommodation: On-campus residence halls, shared apartments, and private rentals come with different costs. Remember to account for deposits, utilities, and any additional housing charges.",
+          "Food and Groceries: Cooking at home and shopping for groceries can help you manage your budget. Eating out regularly, ordering delivery, and buying convenience foods will increase your spending.",
+          "Transport: Your costs depend on the city and how close you live to campus. Some students rely on public transport, university shuttles, cycling, or walking, while others may need a car.",
+          "Utilities and Internet: Depending on your housing arrangement, electricity, heating, water, and internet may be included in rent or billed separately.",
+          "Personal Expenses: Mobile plans, laundry, clothing, healthcare-related costs, and social activities are easy to overlook when preparing a budget.",
+          "Location-Specific Budgeting: Before choosing your university, check its official estimated living expenses and compare accommodation options nearby. Build your budget around your actual destination rather than relying on a nationwide average.",
+        ],
+      },
+      {
+        icon: Users,
+        title: "The Culture: Finding Your Place in America",
+        desc: "Adapting to American campus rhythms, social dynamics, and independent student life.",
+        points: [
+          "Learning the Social Rhythm: Your first few weeks in the United States may feel like learning a new rhythm. People might be more direct in conversations, plans are often made around individual schedules, and everyday interactions can feel different from what you're used to in India. These differences aren't necessarily better or worse; they're part of getting familiar with a new place.",
+          "Campus Life & Community: Campus life has its own little world. A university can bring together students from different states, countries, and backgrounds. You might find yourself in a debate club one evening, at a cultural festival the next, or sharing a meal with classmates whose experiences are completely different from yours. Student organisations, sports, interest groups, and campus events can make it easier to meet people beyond your course.",
+          "Food & Dietary Adjustments: Food becomes part of the adjustment, too. American campuses and cities offer everything from familiar Indian groceries and restaurants to regional cuisines from around the world. Cooking for yourself may become a regular part of student life, especially when you're balancing a busy schedule with a monthly budget.",
+          "Geography & Routine: In some cities, you can walk or take a train to class, meet friends, and explore neighbourhoods without much planning. In others, distances are greater and a car may be more practical. Weather can also shape your routine, from snowy winters in the Northeast and Midwest to warmer conditions in parts of the South and Southwest.",
+          "Embracing the Experience: The experience won't be identical everywhere. Life in a large city can feel fast-paced and independent, while a smaller college town may revolve more closely around the university. Give yourself time to adjust, ask questions when something feels unfamiliar, and stay open to routines that differ from home.",
+          "Preserving Your Identity: The goal isn't to leave your own culture behind. It's to build a life that lets you carry familiar traditions with you while discovering new ways of living.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How much should an Indian student budget per month for living expenses in the USA?",
+        a: "As an initial planning estimate, budget approximately US$1,000–2,500 per month (₹95,000–2.38 lakh) for living expenses, excluding tuition. Costs vary significantly between major metropolitan cities and college towns.",
+      },
+      {
+        q: "Is it easy to cook Indian meals and find groceries on US campuses?",
+        a: "Yes. Most university towns feature Indian grocery stores with spices, lentils, and fresh essentials, and shared student housing offers full kitchens, making home cooking common and economical.",
       },
     ],
   },
@@ -245,52 +249,83 @@ const GUIDE_DETAILS_DATABASE = {
   "scholarships-and-aid": {
     id: "04",
     vol: "VOL. IV",
-    title: "Scholarships & Financial Aid in the USA",
+    title: "Scholarships in USA for Indian Students",
     shortTitle: "Scholarships & Aid",
-    badge: "Funding, Grants & Fellowships",
-    tagline: "Merit Awards, Need-Based Aid, Graduate Assistantships & Application Strategy",
+    badge: "Funding, Grants & Financial Aid",
+    tagline: "Merit Awards, Need-Based Aid, Fellowships & Complete Step-by-Step Application Guide",
     heroImage: "/images/study-usa/study-in-usa-hero.jpg",
     accentColor: "#1A2645",
     pillColors: [
       { label: "MERIT SCHOLARSHIPS", bg: "#D7F77D", text: "#063B72" },
-      { label: "NEED-BLIND AID", bg: "#B5E9F2", text: "#063B72" },
-      { label: "TA / RA STIPENDS", bg: "#FFD4E6", text: "#063B72" },
-      { label: "FULBRIGHT & GRANTS", bg: "#0C9253", text: "#FFFFFF" },
+      { label: "NEED-BASED AID", bg: "#B5E9F2", text: "#063B72" },
+      { label: "FULBRIGHT & INLAKS", bg: "#FFD4E6", text: "#063B72" },
+      { label: "TA / RA ASSISTANTSHIPS", bg: "#0C9253", text: "#FFFFFF" },
     ],
     overview:
-      "Higher education in the USA offers the world's most generous financial aid and scholarship ecosystems. From automatic merit scholarships upon admission to full tuition waivers through Graduate Teaching and Research Assistantships, funding opportunities are abundant for dedicated international students.",
+      "Studying in the United States can be a significant financial commitment, but the amount you pay may not always be the same as the university's published fee. Depending on your academic profile, financial circumstances, chosen institution, and program, you may qualify for scholarships or other forms of financial assistance. The important thing is to understand what kind of funding you're looking for. Some awards recognise academic achievement, some are designed for students who demonstrate financial need, and others support research, leadership, or specific professional goals. Each comes with its own eligibility criteria and application process.",
     metrics: [
-      { label: "Merit Awards", value: "$5,000 – Full Tuition" },
-      { label: "Need-Blind Universities", value: "Harvard, MIT, Princeton, Yale" },
-      { label: "Assistantships (TA/RA)", value: "100% Tuition + Monthly Stipend" },
-      { label: "Priority Deadline", value: "Nov 1 – Dec 15" },
+      { label: "Merit Scholarships", value: "Academic & Profile Based" },
+      { label: "Need-Based Aid", value: "Assesses Family Circumstances" },
+      { label: "External Funding", value: "Fulbright-Nehru & Inlaks" },
+      { label: "Graduate Support", value: "TA / RA Stipends & Waivers" },
     ],
     chapters: [
       {
         icon: Award,
-        title: "1. Institutional Merit-Based Scholarships",
-        desc: "Awarded automatically or via separate scholarship applications based on profile strength.",
+        title: "Types of Scholarships in USA",
+        desc: "Understanding the five primary funding routes available to international applicants.",
         points: [
-          "Automatic Consideration: Many universities review your application for merit awards without requiring a separate form.",
-          "GPA & Test Scores: Strong academic performance, competitive GRE/SAT scores, and exceptional extracurriculars maximize your scholarship tier.",
-          "Renewable Awards: Most merit scholarships renew each academic year provided you maintain a minimum 3.0 or 3.5 cumulative GPA.",
+          "1. Merit-Based Scholarships: These awards recognise academic achievement and, depending on the university, may also consider leadership, extracurricular involvement, talent, or other accomplishments. Some universities automatically consider eligible applicants during admission, while others require a separate scholarship application. Merit scholarships may cover part of your tuition or provide a larger award. The amount and renewal conditions vary by institution, so check whether the award is one-time or renewable for subsequent years.",
+          "2. Need-Based Financial Aid: Need-based aid is intended for students whose families may not be able to meet the full cost of education. Universities assess financial circumstances using their required forms and supporting documents. Some institutions extend substantial need-based aid to international students. For example, Harvard states that it meets the demonstrated financial need of admitted undergraduates, while Yale offers need-based aid to eligible international undergraduate applicants. These are institution-specific policies, not a standard benefit available at every US university.",
+          "3. University and Department Scholarships: Universities may offer scholarships through individual schools, departments, academic programs, or donor-funded initiatives. Some are available to incoming international students; others are restricted by degree level, subject, academic performance, or other criteria. When comparing universities, check the scholarship page for your exact program rather than assuming that an award advertised by the university applies to every course.",
+          "4. Graduate Assistantships and Research Funding: Students pursuing graduate study, particularly research-oriented master's and doctoral programs, may find funding through teaching assistantships, research assistantships, or departmental funding packages. Depending on the position and institution, support may include a stipend, a tuition waiver, or both. Availability is not guaranteed, and some positions have specific academic, departmental, or work requirements. PhD applicants should also investigate whether their department offers funding as part of admission.",
+          "5. Government-Funded and External Scholarships: Some funding opportunities operate independently of university admission. They may support particular fields, academic levels, research projects, or professional backgrounds. For Indian applicants, options worth researching include the Fulbright-Nehru fellowship programs and the Inlaks Scholarship. Their eligibility requirements differ considerably, so check the specific award before investing time in an application.",
         ],
       },
       {
-        icon: GraduationCap,
-        title: "2. Graduate Assistantships (TA / RA / GA)",
-        desc: "The gold standard for funding postgraduate (Master's and PhD) study.",
+        icon: Sparkles,
+        title: "Scholarships Worth Exploring",
+        desc: "High-impact funding programs for Indian students.",
         points: [
-          "Teaching Assistantships (TA): Assist professors with grading, leading lab sections, and tutoring undergraduates in exchange for full/partial tuition waiver and monthly stipend.",
-          "Research Assistantships (RA): Conduct faculty-guided laboratory research funded by federal grants (NSF, NIH, DoD).",
-          "Graduate Assistantships (GA): Work in university administrative departments, student services, or academic advisement.",
+          "Fulbright-Nehru Master's Fellowships: These fellowships support eligible Indian professionals pursuing selected master's programs in the United States. The published eligibility criteria include a recognised bachelor's-level qualification, at least three years of relevant full-time paid professional experience, and evidence of leadership and community engagement. Eligible fields and other requirements are specified by the programme. The fellowship can provide support towards tuition and fees, living and related costs, travel, and health coverage. It is therefore particularly relevant to eligible applicants with professional experience, rather than a general scholarship for every recent graduate.",
+          "Inlaks Scholarship: The Inlaks Scholarship supports eligible Indian students pursuing selected postgraduate programmes at approved institutions. Its published award may cover tuition, living expenses, one-way travel, visa costs, and a health allowance, up to the programme's stated funding limit. Applicants must meet the Foundation's eligibility requirements and have the required admission offer. Academic thresholds, age criteria, eligible institutions, subject exclusions, and application rules should be checked against the relevant year's official guidelines.",
+          "Knight-Hennessy Scholars at Stanford University: For students applying to eligible graduate programmes at Stanford, Knight-Hennessy Scholars is a separate, highly competitive funding opportunity. Scholars can receive support towards tuition and associated fees, living and academic expenses, and annual travel for up to three years, subject to programme rules. Applicants must complete the relevant graduate admission process as well as the separate Knight-Hennessy application. Strong academics alone do not guarantee selection; the programme also focuses on leadership and the potential to make a positive impact.",
+          "Need-Based Aid at Harvard and Yale: Harvard and Yale are examples of US universities with substantial need-based financial aid policies for international undergraduates. Both state that they meet the demonstrated financial need of admitted students under their respective policies. This does not mean that admission or full funding is easy to obtain. These are highly selective universities, and aid is determined through their own assessment processes. Their policies should not be assumed to apply to every university or to graduate programmes.",
+        ],
+      },
+      {
+        icon: CheckCircle2,
+        title: "How to Get a Scholarship to Study in USA",
+        desc: "A practical 7-step strategy for securing funding.",
+        points: [
+          "Step 1: Shortlist universities with suitable funding options: Start by identifying universities that offer your intended course and then check their official financial aid pages. Confirm whether international students are eligible for merit awards, need-based aid, departmental scholarships, or assistantships.",
+          "Step 2: Identify which funding route fits your profile: Your next step depends on the type of support you need. Academic achievements may be important for merit scholarships, family financial information may be required for need-based aid, and research experience or professional achievements may matter for specialised fellowships.",
+          "Step 3: Review eligibility before applying: Check the required academic qualifications, eligible nationalities, degree levels, subjects, work experience, age criteria, and any other conditions. A scholarship's name alone does not tell you whether you qualify.",
+          "Step 4: Prepare a strong application: Keep your academic transcripts, CV or résumé, statement of purpose, and letters of recommendation ready where required. For research-based funding, you may also need a research proposal or evidence of previous research. Tailor each application to the award's stated selection criteria.",
+          "Step 5: Complete financial aid documentation carefully: For need-based assistance, universities may request information about family income, assets, expenses, and other financial circumstances through their designated forms. Submit the correct documents in the requested format and ensure that the information is accurate and consistent.",
+          "Step 6: Apply before the relevant deadlines: Scholarship deadlines may be earlier than, the same as, or separate from university admission deadlines. Some awards require no additional application, while others have an independent process. Check the deadline for each university and funding programme rather than relying on a general calendar.",
+          "Step 7: Compare the award with your remaining costs: A scholarship may cover tuition alone or include additional expenses. Once you receive an offer, check the award amount, duration, renewal conditions, and any costs that remain your responsibility. This helps you understand the actual financial commitment before accepting admission.",
+        ],
+      },
+      {
+        icon: FileText,
+        title: "Required Documents & Application Timing",
+        desc: "Document checklist and timeline recommendations.",
+        points: [
+          "Common Documents Required: Academic transcripts and degree certificates; CV or résumé; Statement of purpose or scholarship essays; Letters of recommendation; Standardised test scores, if required by the university or programme; Family income, tax, or asset documents for need-based aid; Research proposal or portfolio, where applicable; and University admission offer, if required by the scholarship. Not every award asks for every document. Follow the official checklist for each application.",
+          "When Should You Apply?: There is no single scholarship deadline for the entire United States. Some universities consider funding applications alongside admission, while external fellowships have their own annual cycles. Start researching well before your intended intake so you have time to prepare documents, request recommendations, and meet separate funding deadlines.",
+          "Prudent Planning Rule: A scholarship can reduce your financial burden, but it should never be assumed until it has been formally awarded. Build your university shortlist around both academic fit and realistic funding options, and calculate the remaining cost before making your final decision.",
         ],
       },
     ],
     faqs: [
       {
-        q: "Can Indian students get 100% scholarships in the USA?",
-        a: "Yes! At the undergraduate level, top need-blind private universities (Harvard, MIT, Princeton, Yale, Amherst) meet 100% of demonstrated financial need. At the graduate level, PhD programs are almost universally fully funded with full tuition waivers and stipends.",
+        q: "Can Indian students qualify for merit-based scholarships in the USA?",
+        a: "Yes. Many US universities automatically evaluate international applicants for merit scholarships based on academic grades, test scores, leadership, and extracurricular achievements.",
+      },
+      {
+        q: "What external scholarships are available for Indian postgraduates in the US?",
+        a: "Prominent external funding programs include the Fulbright-Nehru Master's Fellowships and the Inlaks Scholarship, both offering substantial support towards tuition, living costs, and travel for qualifying scholars.",
       },
     ],
   },
@@ -298,51 +333,89 @@ const GUIDE_DETAILS_DATABASE = {
   "post-study-visa": {
     id: "05",
     vol: "VOL. V",
-    title: "Post-Study Work Visa (OPT) in the USA",
+    title: "Post-Study Work Visa USA",
     shortTitle: "Post-Study Visa",
-    badge: "OPT, STEM Extension & Careers",
-    tagline: "F-1 OPT Work Permit, 24-Month STEM Extension, H-1B Visa & Career Pathways",
+    badge: "OPT, STEM Extensions & Careers",
+    tagline: "12-Month Optional Practical Training (OPT), 24-Month STEM Extension & Career Planning",
     heroImage: "/images/hero/usa-monuments-depth.jpg",
     accentColor: "#1E2530",
     pillColors: [
       { label: "12-MONTH OPT", bg: "#D7F77D", text: "#063B72" },
-      { label: "24-MONTH STEM EXTENSION", bg: "#B5E9F2", text: "#063B72" },
-      { label: "EAD WORK PERMIT", bg: "#FFD4E6", text: "#063B72" },
-      { label: "H-1B SPONSORSHIP", bg: "#0C9253", text: "#FFFFFF" },
+      { label: "UP TO 36 MOS STEM", bg: "#B5E9F2", text: "#063B72" },
+      { label: "FORM I-765 EAD", bg: "#FFD4E6", text: "#063B72" },
+      { label: "EMPLOYER H-1B", bg: "#0C9253", text: "#FFFFFF" },
     ],
     overview:
-      "The American student visa (F-1) provides unmatched post-graduation career opportunities in the world's largest economy. Through Optional Practical Training (OPT) and the 24-month STEM extension, international graduates can work full-time in top US companies for up to 3 years without requiring immediate employer visa sponsorship.",
+      "Rather than a separate graduate visa, the United States primarily uses Optional Practical Training (OPT) to let eligible F-1 international students gain practical work experience related to their field of study. OPT is a temporary employment authorisation, not a separate visa category or a guarantee of long-term employment.",
     metrics: [
-      { label: "Initial OPT Duration", value: "12 Months Full-Time Work" },
-      { label: "STEM OPT Extension", value: "+24 Months (36 Mos Total)" },
-      { label: "Filing Window", value: "90 Days Before Graduation" },
-      { label: "Transition Path", value: "H-1B Specialty Work Visa" },
+      { label: "Standard OPT Duration", value: "12 Months Full-Time" },
+      { label: "STEM Extension", value: "+24 Months (36 Mos Total)" },
+      { label: "Application Window", value: "90 Days Pre-Graduation" },
+      { label: "Long-Term Transition", value: "Employer-Sponsored H-1B" },
     ],
     chapters: [
       {
-        icon: Briefcase,
-        title: "1. Understanding F-1 Optional Practical Training (OPT)",
-        desc: "Legal full-time work authorization directly tied to your field of study.",
+        icon: Clock,
+        title: "How Long Can You Work in the USA After Graduation?",
+        desc: "Overview of standard OPT and the STEM extension.",
         points: [
-          "No Employer Sponsorship Required: You apply for an Employment Authorization Document (EAD) directly through USCIS with your university's Designated School Official (DSO).",
-          "All Degree Levels: Available after completing any bachelor's, master's, or doctoral degree in the United States.",
-          "Salary Equity: International students on OPT receive the exact same competitive market salaries as US citizens in corporate tech, finance, and engineering roles.",
+          "12 Months Under OPT: Eligible F-1 students can apply for up to 12 months of post-completion OPT after completing an academic program. The employment must be directly related to the student's major field of study. You cannot begin working simply because you have graduated or submitted your application. USCIS must approve your employment authorisation, and you can start only on the authorised date shown on your Employment Authorization Document (EAD). OPT eligibility and the permitted period depend on your circumstances and previous practical training. For example, full-time OPT used before graduation can reduce the amount available afterwards.",
+          "Up to 36 Months for Eligible STEM Graduates: Graduates whose degrees qualify under the US Department of Homeland Security's STEM Designated Degree Program List may be eligible to apply for a further 24-month STEM OPT extension. When approved, this can provide up to 36 months of post-completion work authorisation in total.",
+          "STEM Extension Conditions: The extension has additional conditions. These generally include: A qualifying degree that meets the applicable STEM eligibility requirements (a course sounding technical or scientific does not automatically qualify); An eligible employer participating in E-Verify; A formal Form I-983 training plan outlining practical training, learning objectives, supervision, and evaluation; and Continued compliance with applicable reporting and employment requirements throughout the extension. A STEM OPT extension is not automatic.",
         ],
       },
       {
-        icon: Globe2,
-        title: "2. The 24-Month STEM OPT Extension (3 Years Total)",
-        desc: "A massive competitive advantage for graduates in technology, engineering, and sciences.",
+        icon: ShieldCheck,
+        title: "Who Is Eligible for OPT in the USA?",
+        desc: "Core immigration and academic requirements for post-completion OPT.",
         points: [
-          "Up to 36 Months: Qualifying STEM majors can extend their initial 12-month OPT by an additional 24 months, enabling 3 continuous years of high-earning US career experience.",
-          "Multiple H-1B Lottery Chances: A 3-year OPT window gives your employer three consecutive years to sponsor you for the annual H-1B visa lottery.",
+          "Maintain valid F-1 status: You must comply with all conditions of your student status.",
+          "Complete required academic study: Generally, students must have completed at least one full academic year of qualifying study in the United States.",
+          "Obtain DSO recommendation: Your Designated School Official (DSO) must recommend OPT and update your record in the Student and Exchange Visitor Information System (SEVIS).",
+          "Apply to USCIS: You must submit Form I-765, Application for Employment Authorization, with the required supporting documents and applicable fee.",
+          "Work in a directly related field: Employment during OPT must relate directly to your major field of study.",
+          "Confirmation: Meeting the general conditions does not guarantee approval. Students should confirm their eligibility and application requirements with their university's international student office.",
+        ],
+      },
+      {
+        icon: Calendar,
+        title: "When Should You Apply for OPT?",
+        desc: "Application timing rules and deadlines.",
+        points: [
+          "Standard Post-Completion OPT Application Window: Apply up to 90 days before your program end date, and apply no later than 60 days after your program end date.",
+          "30-Day Rule for SEVIS: Ensure USCIS receives your application within 30 days of the DSO entering the OPT recommendation in SEVIS. You must wait for approval and the authorised start date before beginning employment.",
+          "STEM OPT Extension Deadlines: Eligible students generally need to apply before their existing OPT authorisation expires and within the required period after their DSO's recommendation. Check the latest USCIS instructions before submitting either application, as missing a deadline can affect eligibility.",
+        ],
+      },
+      {
+        icon: Briefcase,
+        title: "What Happens After OPT?",
+        desc: "Transitioning to employer sponsorship or continuing education.",
+        points: [
+          "Employer-Sponsored H-1B Status: Some graduates seek H-1B status, which allows eligible US employers to employ foreign workers in qualifying specialty occupations. This requires a separate employer-led process, and many cap-subject petitions are subject to a selection process. Finding a job does not guarantee H-1B sponsorship or selection. Your employer must be willing and eligible to proceed, and the petition must satisfy the applicable requirements.",
+          "Other Possible Next Steps: Depending on your circumstances, you may qualify for another immigration category, continue studying under the appropriate student status, or need to leave the United States when your authorised stay ends. Each option has separate eligibility requirements and procedures.",
+          "Plan Ahead: Plan ahead rather than assuming that an employer or another visa will be available before your OPT period finishes.",
+        ],
+      },
+      {
+        icon: Award,
+        title: "How Should OPT Affect Your Course Choice?",
+        desc: "Aligning career ambitions with immigration and degree guidelines.",
+        points: [
+          "Verify STEM Eligibility: Before accepting an offer, check whether the exact degree qualifies for the STEM OPT extension, what opportunities the university offers for internships and practical learning, and how graduates in your field typically pursue employment. The degree title alone is not enough to establish STEM eligibility.",
+          "Realistic Outlook: Also remember that OPT does not guarantee a job, employer sponsorship, or permanent residency. Your career outcome will depend on your qualifications, employment opportunities, immigration eligibility, and the rules in force at the time.",
+          "Academic-First Approach: The best approach is to choose a program that fits your academic and career goals first, then understand the work authorisation options available to eligible graduates.",
         ],
       },
     ],
     faqs: [
       {
-        q: "What jobs qualify for OPT?",
-        a: "Any full-time or part-time employment directly related to your major field of study. You can work for tech giants, startups, research institutes, or university laboratories.",
+        q: "How long can international students work in the USA after graduation?",
+        a: "Eligible F-1 graduates can apply for up to 12 months of Optional Practical Training (OPT). Qualifying STEM degree holders can apply for an additional 24-month extension, enabling up to 36 months of full-time work authorization.",
+      },
+      {
+        q: "Does getting a job on OPT guarantee H-1B sponsorship?",
+        a: "No. OPT is temporary employment authorization. H-1B status requires an employer-sponsored petition subject to the annual USCIS lottery process and regulatory criteria.",
       },
     ],
   },
@@ -414,6 +487,10 @@ const GUIDE_DETAILS_DATABASE = {
     ],
   },
 };
+
+// Ensure aliases map correctly to the comprehensive guide content
+GUIDE_DETAILS_DATABASE["visa-and-work-rights"] = GUIDE_DETAILS_DATABASE["post-study-visa"];
+GUIDE_DETAILS_DATABASE["scholarships"] = GUIDE_DETAILS_DATABASE["scholarships-and-aid"];
 
 export default async function GuideDetailPage({ params }) {
   const resolvedParams = await params;
@@ -578,14 +655,28 @@ export default async function GuideDetailPage({ params }) {
                     </div>
 
                     <ul className="mt-5 space-y-3.5 border-t border-slate-100 pt-5">
-                      {chap.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-3">
-                          <CheckCircle2 size={16} className="mt-1 shrink-0 text-[#1765F5]" />
-                          <span className="text-[14px] leading-relaxed text-[#425A70] sm:text-[15px]">
-                            {pt}
-                          </span>
-                        </li>
-                      ))}
+                      {chap.points.map((pt, pIdx) => {
+                        const colonIdx = pt.indexOf(":");
+                        const hasPrefix = colonIdx > 0 && colonIdx < 50;
+                        const prefix = hasPrefix ? pt.substring(0, colonIdx) : null;
+                        const content = hasPrefix ? pt.substring(colonIdx + 1) : pt;
+
+                        return (
+                          <li key={pIdx} className="flex items-start gap-3">
+                            <CheckCircle2 size={16} className="mt-1 shrink-0 text-[#1765F5]" />
+                            <span className="text-[14px] leading-relaxed text-[#425A70] sm:text-[15px]">
+                              {hasPrefix ? (
+                                <>
+                                  <strong className="font-bold text-[#0C337B]">{prefix}:</strong>
+                                  {content}
+                                </>
+                              ) : (
+                                pt
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 );

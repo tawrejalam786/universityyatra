@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
   BriefcaseBusiness,
@@ -25,6 +26,7 @@ const benefits = [
   {
     number: "01",
     title: "Globally Ranked Universities",
+    icon3d: "/images/study-usa/benefits/benefit_01.png",
     desktopDescription:
       "The USA is home to universities recognised for academic excellence, specialised programs, and research. Students can compare institutions based on course offerings, faculty, facilities, location, and career goals.",
     mobileDescription:
@@ -36,6 +38,7 @@ const benefits = [
   {
     number: "02",
     title: "Flexible Education System",
+    icon3d: "/images/study-usa/benefits/benefit_02.png",
     desktopDescription:
       "Many US undergraduate programs allow students to combine a major with minors, electives, and courses from other disciplines. This gives students greater flexibility to shape their academic pathway.",
     mobileDescription:
@@ -47,6 +50,7 @@ const benefits = [
   {
     number: "03",
     title: "Global Career Advantage",
+    icon3d: "/images/study-usa/benefits/benefit_03.png",
     desktopDescription:
       "Studying in the USA brings students into an internationally diverse academic environment. Classroom collaboration, presentations, internships where eligible, and practical projects can help develop skills valued across industries.",
     mobileDescription:
@@ -58,6 +62,7 @@ const benefits = [
   {
     number: "04",
     title: "Strong Industry & Research Exposure",
+    icon3d: "/images/study-usa/benefits/benefit_04.png",
     desktopDescription:
       "US universities offer opportunities to participate in faculty-led research, laboratory work, innovation projects, and industry collaborations. Availability depends on the university, department, and program.",
     mobileDescription:
@@ -69,6 +74,7 @@ const benefits = [
   {
     number: "05",
     title: "Post-Study Work Opportunities",
+    icon3d: "/images/study-usa/benefits/benefit_05.png",
     desktopDescription:
       "The USA offers eligible international graduates up to 12 months of Optional Practical Training (OPT), with a possible 24-month STEM extension for qualifying degrees and students.",
     mobileDescription:
@@ -80,6 +86,7 @@ const benefits = [
   {
     number: "06",
     title: "Wide Range of Courses",
+    icon3d: "/images/study-usa/benefits/benefit_06.png",
     desktopDescription:
       "From Computer Science, Engineering, and Business Administration to Public Health, Economics, and Film Studies, US universities offer undergraduate and graduate programs across a broad range of disciplines.",
     mobileDescription:
@@ -258,7 +265,7 @@ export default function WhatItGetsYou() {
 
                   {/* CENTER STEP NUMBER */}
                   <div ref={(element) => { nodeRefs.current[index] = element; }} className="relative z-20 flex items-center justify-center">
-                    <motion.span initial={false} animate={{ scale: isActive ? 1.12 : 1, opacity: isActive ? 1 : 0.9 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[14px] font-extrabold text-white sm:h-[60px] sm:w-[60px] sm:text-[19px] md:h-[76px] md:w-[76px] md:text-[24px]">
+                    <motion.span initial={false} animate={{ scale: isActive ? 1.15 : 1, opacity: isActive ? 1 : 0.92 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[15px] font-black tracking-tight text-white drop-shadow-sm sm:h-[60px] sm:w-[60px] sm:text-[20px] md:h-[76px] md:w-[76px] md:text-[26px]">
                       {item.number}
                     </motion.span>
                   </div>
@@ -279,9 +286,6 @@ export default function WhatItGetsYou() {
                     )}
                   </div>
 
-                  {/* CONNECTOR LINE */}
-                  <span aria-hidden="true" className={`pointer-events-none absolute top-1/2 z-0 h-[2px] w-[10px] -translate-y-1/2 bg-[#CBD5E1] sm:w-[17px] md:w-[25px] ${isLeft ? "left-[calc(50%-37px)] -translate-x-full sm:left-[calc(50%-45px)] md:left-[calc(50%-61px)]" : "right-[calc(50%-37px)] translate-x-full sm:right-[calc(50%-45px)] md:right-[calc(50%-61px)]"}`} />
-
                   {/* ACTIVE GLOW */}
                   {isActive && (
                     <motion.span initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[32px] sm:h-[100px] sm:w-[100px]" style={{ backgroundColor: `${item.accent}12` }} />
@@ -299,21 +303,36 @@ export default function WhatItGetsYou() {
 }
 
 /* =========================================
-   SIDE STEP LABEL
+   SIDE STEP LABEL (WITH 3D ICON BADGE)
 ========================================= */
 
 function StepLabel({ item, active, side }) {
   const isLeft = side === "left";
 
   return (
-    <div className={`flex min-w-0 items-center gap-1 sm:gap-2 ${isLeft ? "justify-end" : "justify-start"}`}>
+    <div className={`flex min-w-0 items-center gap-1.5 sm:gap-2.5 ${isLeft ? "justify-end" : "justify-start"}`}>
 
       {!isLeft && (
         <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
       )}
 
-      <motion.span initial={false} animate={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent, borderColor: active ? item.accent : `${item.accent}40` }} transition={{ duration: 0.3 }} className="inline-flex h-[30px] min-w-[37px] items-center justify-center rounded-full border px-2 text-[11px] font-bold shadow-sm sm:h-[36px] sm:min-w-[55px] sm:text-[13px] md:min-w-[62px] md:text-[15px]">
-        {item.number}
+      <motion.span
+        initial={false}
+        animate={{
+          backgroundColor: active ? item.soft : "#FFFFFF",
+          borderColor: active ? item.accent : `${item.accent}35`,
+          boxShadow: active ? `0 4px 14px ${item.accent}25` : "0 2px 8px rgba(6,59,114,0.06)",
+        }}
+        transition={{ duration: 0.3 }}
+        className="inline-flex h-[36px] w-[54px] items-center justify-center rounded-full border p-1 overflow-hidden sm:h-[44px] sm:w-[66px] md:h-[48px] md:w-[74px]"
+      >
+        <Image
+          src={item.icon3d}
+          alt={item.title}
+          width={36}
+          height={36}
+          className="object-contain drop-shadow-xs transition-transform duration-300 hover:scale-110"
+        />
       </motion.span>
 
       {isLeft && (
@@ -325,7 +344,7 @@ function StepLabel({ item, active, side }) {
 }
 
 /* =========================================
-   ACCORDION CARD
+   ACCORDION CARD (CLEAN TITLE & EXPANDER)
 ========================================= */
 
 function TimelineAccordionCard({
@@ -343,18 +362,12 @@ function TimelineAccordionCard({
     <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
 
       {/* CARD HEADER */}
-      <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-1.5 px-2.5 py-2 text-left sm:gap-2.5 sm:px-3.5 sm:py-2.5 md:px-4 md:py-3">
+      <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-2.5 px-4 py-2.5 text-left sm:gap-3.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5">
 
-        <div className="flex min-w-0 flex-1 items-start gap-1.5 sm:gap-2">
-
-          <span className="shrink-0 text-[11px] font-extrabold sm:text-[13px] md:text-[16px]" style={{ color: item.accent }}>
-            {item.number}
-          </span>
-
-          <h3 className="min-w-0 text-[10px] font-bold leading-[1.3] text-[#0C337B] sm:text-[13px] md:text-[15px] lg:text-[16px]">
+        <div className="flex min-w-0 flex-1 items-center">
+          <h3 className="min-w-0 text-[11px] font-bold leading-[1.35] text-[#0C337B] sm:text-[13px] md:text-[15px] lg:text-[16px]">
             {item.title}
           </h3>
-
         </div>
 
         {/* PLUS / MINUS */}
@@ -373,7 +386,7 @@ function TimelineAccordionCard({
         {active && (
           <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">
 
-            <div className="border-t border-[#EDF1F5] px-2.5 pb-2.5 pt-2 sm:px-3.5 sm:pb-3.5 sm:pt-2.5 md:px-4">
+            <div className="border-t border-[#EDF1F5] px-4 pb-3 pt-2.5 sm:px-5 sm:pb-3.5 sm:pt-3 md:px-6 md:pb-4">
 
               {/* DESKTOP DESCRIPTION */}
               <p className="hidden text-[13px] leading-[1.6] text-[#526477] md:block">
