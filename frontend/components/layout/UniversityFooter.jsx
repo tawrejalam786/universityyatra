@@ -345,8 +345,8 @@ export default function UniversityFooter({
       title: "Connect",
       links: [
         { label: email, href: `mailto:${email}` },
-        { label: phone, href: `tel:${phone.replace(/[^+\d]/g, "")}` },
-        { label: "WhatsApp Chat", href: whatsappHref },
+        // { label: phone, href: `tel:${phone.replace(/[^+\d]/g, "")}` },
+        // { label: "WhatsApp Chat", href: whatsappHref },
         {
           label: "Instagram",
           href: socialLinks?.instagram || "https://www.instagram.com/universityyatra/",

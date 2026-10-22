@@ -2,15 +2,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
-  BriefcaseBusiness,
+  Globe2,
   GraduationCap,
   BookOpen,
-  Globe2,
-  Microscope,
-  Layers3,
+  Award,
+  BriefcaseBusiness,
+  UserRoundCheck,
   Plus,
   Minus,
   ArrowLeft,
@@ -21,82 +20,74 @@ import {
    USA CONTENT - DESKTOP & MOBILE
 ========================================= */
 
-
 const benefits = [
   {
     number: "01",
     title: "Globally Ranked Universities",
-    icon3d: "/images/study-usa/benefits/benefit_01.png",
+    icon: Globe2,
     desktopDescription:
       "The USA is home to universities recognised for academic excellence, specialised programs, and research. Students can compare institutions based on course offerings, faculty, facilities, location, and career goals.",
     mobileDescription:
       "Study at US universities recognised worldwide for their academic programs, research contributions, and achievements across diverse fields.",
-    icon: GraduationCap,
     accent: "#0C337B",
     soft: "#E8F0FE",
   },
   {
     number: "02",
     title: "Flexible Education System",
-    icon3d: "/images/study-usa/benefits/benefit_02.png",
+    icon: GraduationCap,
     desktopDescription:
       "Many US undergraduate programs allow students to combine a major with minors, electives, and courses from other disciplines. This gives students greater flexibility to shape their academic pathway.",
     mobileDescription:
       "Combine majors, minors, and electives at many universities to shape a degree around your interests.",
-    icon: BookOpen,
     accent: "#1765F5",
     soft: "#E8F0FE",
   },
   {
     number: "03",
     title: "Global Career Advantage",
-    icon3d: "/images/study-usa/benefits/benefit_03.png",
+    icon: BookOpen,
     desktopDescription:
       "Studying in the USA brings students into an internationally diverse academic environment. Classroom collaboration, presentations, internships where eligible, and practical projects can help develop skills valued across industries.",
     mobileDescription:
       "Build practical skills through presentations, group projects, and classroom discussions in a diverse academic environment.",
-    icon: Globe2,
     accent: "#5D93F8",
     soft: "#E8F0FE",
   },
   {
     number: "04",
     title: "Strong Industry & Research Exposure",
-    icon3d: "/images/study-usa/benefits/benefit_04.png",
+    icon: Award,
     desktopDescription:
       "US universities offer opportunities to participate in faculty-led research, laboratory work, innovation projects, and industry collaborations. Availability depends on the university, department, and program.",
     mobileDescription:
       "Work on research projects, use specialised laboratories, or engage with industry through opportunities offered by your university.",
-    icon: Microscope,
     accent: "#7C3AED",
     soft: "#F3EEFF",
   },
   {
     number: "05",
     title: "Post-Study Work Opportunities",
-    icon3d: "/images/study-usa/benefits/benefit_05.png",
+    icon: BriefcaseBusiness,
     desktopDescription:
       "The USA offers eligible international graduates up to 12 months of Optional Practical Training (OPT), with a possible 24-month STEM extension for qualifying degrees and students.",
     mobileDescription:
       "Eligible graduates can work in their field through OPT, with an additional 24-month extension possible for qualifying STEM degrees.",
-    icon: BriefcaseBusiness,
     accent: "#047857",
     soft: "#EAF8F2",
   },
   {
     number: "06",
     title: "Wide Range of Courses",
-    icon3d: "/images/study-usa/benefits/benefit_06.png",
+    icon: UserRoundCheck,
     desktopDescription:
       "From Computer Science, Engineering, and Business Administration to Public Health, Economics, and Film Studies, US universities offer undergraduate and graduate programs across a broad range of disciplines.",
     mobileDescription:
       "From Computer Science and Business Administration to Public Health and Film Studies, US universities offer diverse degree options.",
-    icon: Layers3,
     accent: "#B45309",
     soft: "#FFF7E8",
   },
 ];
-
 
 /* =========================================
    MAIN COMPONENT
@@ -219,11 +210,15 @@ export default function WhatItGetsYou() {
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-4 text-center sm:mb-6">
 
           <span className="mb-1.5 inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
-            WHY STUDY IN USA ?
+            WHY STUDY IN USA?
           </span>
 
           <h2 className="text-[24px] font-bold leading-[1.18] tracking-[-0.03em] text-[#0C337B] sm:text-[30px] md:text-[34px] lg:text-[38px]">
-            Inside the <span className="text-[#1765F5]">American Study</span> Experience
+            Inside the{" "}
+            <span className="text-[#1765F5]">
+              American Study
+            </span>{" "}
+            Experience
           </h2>
 
         </motion.div>
@@ -303,11 +298,12 @@ export default function WhatItGetsYou() {
 }
 
 /* =========================================
-   SIDE STEP LABEL (WITH 3D ICON BADGE)
+   SIDE STEP LABEL - LUCIDE ICON BADGE
 ========================================= */
 
 function StepLabel({ item, active, side }) {
   const isLeft = side === "left";
+  const Icon = item.icon;
 
   return (
     <div className={`flex min-w-0 items-center gap-1.5 sm:gap-2.5 ${isLeft ? "justify-end" : "justify-start"}`}>
@@ -316,22 +312,24 @@ function StepLabel({ item, active, side }) {
         <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
       )}
 
+      {/* ICON BADGE */}
       <motion.span
         initial={false}
         animate={{
           backgroundColor: active ? item.soft : "#FFFFFF",
           borderColor: active ? item.accent : `${item.accent}35`,
-          boxShadow: active ? `0 4px 14px ${item.accent}25` : "0 2px 8px rgba(6,59,114,0.06)",
+          boxShadow: active
+            ? `0 4px 14px ${item.accent}25`
+            : "0 2px 8px rgba(6,59,114,0.06)",
         }}
         transition={{ duration: 0.3 }}
-        className="inline-flex h-[36px] w-[54px] items-center justify-center rounded-full border p-1 overflow-hidden sm:h-[44px] sm:w-[66px] md:h-[48px] md:w-[74px]"
+        className="inline-flex h-[36px] w-[54px] items-center justify-center overflow-hidden rounded-full border sm:h-[44px] sm:w-[66px] md:h-[48px] md:w-[74px]"
       >
-        <Image
-          src={item.icon3d}
-          alt={item.title}
-          width={36}
-          height={36}
-          className="object-contain drop-shadow-xs transition-transform duration-300 hover:scale-110"
+        <Icon
+          aria-hidden="true"
+          strokeWidth={2.3}
+          style={{ color: item.accent }}
+          className="h-[18px] w-[18px] transition-transform duration-300 hover:scale-110 sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px]"
         />
       </motion.span>
 
@@ -344,7 +342,7 @@ function StepLabel({ item, active, side }) {
 }
 
 /* =========================================
-   ACCORDION CARD (CLEAN TITLE & EXPANDER)
+   ACCORDION CARD
 ========================================= */
 
 function TimelineAccordionCard({
@@ -359,11 +357,26 @@ function TimelineAccordionCard({
   const contentId = `usa-benefit-${index}`;
 
   return (
-    <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
+    <motion.div
+      initial={false}
+      animate={{
+        borderColor: active ? item.accent : "#E2E8F0",
+        boxShadow: active
+          ? "0 8px 25px rgba(6,59,114,0.11)"
+          : "0 4px 16px rgba(6,59,114,0.035)",
+      }}
+      transition={{ duration: 0.3 }}
+      className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}
+    >
 
       {/* CARD HEADER */}
-      <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-2.5 px-4 py-2.5 text-left sm:gap-3.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5">
-
+      <button
+        type="button"
+        onClick={onClick}
+        aria-expanded={active}
+        aria-controls={contentId}
+        className="flex w-full min-w-0 items-center justify-between gap-2.5 px-4 py-2.5 text-left sm:gap-3.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5"
+      >
         <div className="flex min-w-0 flex-1 items-center">
           <h3 className="min-w-0 text-[11px] font-bold leading-[1.35] text-[#0C337B] sm:text-[13px] md:text-[15px] lg:text-[16px]">
             {item.title}
@@ -371,21 +384,41 @@ function TimelineAccordionCard({
         </div>
 
         {/* PLUS / MINUS */}
-        <span className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full sm:h-[26px] sm:w-[26px] md:h-[30px] md:w-[30px]" style={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent }}>
+        <span
+          className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full sm:h-[26px] sm:w-[26px] md:h-[30px] md:w-[30px]"
+          style={{
+            backgroundColor: active ? item.accent : item.soft,
+            color: active ? "#FFFFFF" : item.accent,
+          }}
+        >
           {active ? (
             <Minus className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
           ) : (
             <Plus className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
           )}
         </span>
-
       </button>
 
       {/* ACCORDION DESCRIPTION */}
       <AnimatePresence initial={false}>
         {active && (
-          <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">
-
+          <motion.div
+            key="description"
+            id={contentId}
+            initial={reduceMotion ? false : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            transition={{
+              height: {
+                duration: reduceMotion ? 0 : 0.35,
+                ease: [0.22, 1, 0.36, 1],
+              },
+              opacity: {
+                duration: reduceMotion ? 0 : 0.2,
+              },
+            }}
+            className="overflow-hidden"
+          >
             <div className="border-t border-[#EDF1F5] px-4 pb-3 pt-2.5 sm:px-5 sm:pb-3.5 sm:pt-3 md:px-6 md:pb-4">
 
               {/* DESKTOP DESCRIPTION */}
@@ -399,7 +432,6 @@ function TimelineAccordionCard({
               </p>
 
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>

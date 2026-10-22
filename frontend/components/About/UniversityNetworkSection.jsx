@@ -211,15 +211,28 @@ function CountryCard({ country, active, index }) {
         </div>
 
         {/* EXPLORE LINK */}
-        <Link href={country.href} aria-label={`Explore studying in ${country.fullName}`} className="mt-5 flex items-center justify-between gap-3 border-t border-white/25 pt-4 text-white">
-          <span className="text-[12px] font-bold">
-            Explore {country.name}
-          </span>
+       
+{/* TRANSPARENT GLASS EXPLORE BUTTON */}
+<Link
+  href={country.href}
+  aria-label={`Explore studying in ${country.fullName}`}
+  className="group/btn relative mt-5 flex min-h-[48px] w-full items-center justify-between gap-3 overflow-hidden rounded-[12px] border border-white/40 bg-white/10 py-1.5 pl-4 pr-1.5 text-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/20 hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+>
+  {/* TEXT */}
+  <span className="relative z-10 text-[12px] font-bold tracking-[0.01em] sm:text-[13px]">
+    Explore {country.name}
+  </span>
 
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#1765F5] transition-all duration-300 group-hover:rotate-45 group-hover:bg-[#1765F5] group-hover:text-white">
-            <ArrowUpRight size={19} strokeWidth={2} />
-          </span>
-        </Link>
+  {/* ARROW */}
+  <span className="relative z-10 flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-[9px] border border-white/30 bg-white/15 text-white transition-all duration-300 group-hover/btn:border-white group-hover/btn:bg-white group-hover/btn:text-[#1765F5]">
+    <ArrowUpRight
+      size={18}
+      strokeWidth={2.2}
+      className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+    />
+  </span>
+</Link>
+
       </div>
     </article>
   );

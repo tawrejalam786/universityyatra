@@ -29,28 +29,28 @@ const FLOATING_WORDS = [
     label: "LOAN",
     color: "#D7F77D",
     textColor: "#063B72",
-    position: "left-[8%] top-[4%] -rotate-12 md:left-[12%] md:top-[8%] lg:left-[23%] lg:top-[0%]",
+    position: "left-[8%] top-[4%] -rotate-12 md:left-[12%] md:top-[8%] lg:left-[30%] lg:top-[0%]",
     delay: 0,
   },
   {
     label: "SCHOLARSHIP",
     color: "#FFD4E6",
     textColor: "#063B72",
-    position: "right-[5%] top-[2%] rotate-8 md:right-[8%] md:top-[5%] lg:right-[20%] lg:top-[4%]",
+    position: "right-[5%] top-[2%] rotate-8 md:right-[8%] md:top-[5%] lg:right-[25%] lg:top-[4%]",
     delay: 0.3,
   },
   {
     label: "JOB MARKET",
     color: "#B5E9F2",
     textColor: "#063B72",
-    position: "right-[0%] bottom-[5%] -rotate-6 md:right-[1%] md:bottom-[5%] lg:right-[8%] lg:bottom-[8%]",
+    position: "right-[0%] bottom-[5%] -rotate-6 md:right-[1%] md:bottom-[5%] lg:right-[19%] lg:bottom-[8%]",
     delay: 0.6,
   },
   {
     label: "COUNTRY SELECTION",
     color: "#0C9253",
     textColor: "#FFFFFF",
-    position: "left-[0%] bottom-[8%] rotate-6 md:left-[1%] md:bottom-[8%] lg:left-[5%] lg:bottom-[12%]",
+    position: "left-[0%] bottom-[8%] rotate-6 md:left-[1%] md:bottom-[8%] lg:left-[15%] lg:bottom-[12%]",
     delay: 0.9,
   },
 ];
@@ -93,7 +93,7 @@ export default function Hero({
   const [videoError, setVideoError] = useState(false);
 
   return (
-    <section className="relative isolate min-h-[690px] w-full overflow-hidden bg-[#EAF4FA] text-[#063B72] sm:min-h-[720px] lg:min-h-[780px]">
+    <section className="relative w-full overflow-hidden rounded-b-24 bg-black-zero md:h-[75svh] md:min-h-560px xs:h-560px xs:-mt-[50px] md:-mt-86px">
 
       {/* BACKGROUND VIDEO */}
       <div className="pointer-events-none absolute inset-0 -z-20">
@@ -118,7 +118,7 @@ export default function Hero({
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="relative z-10 mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2459C5] sm:text-[12px]"
+            className="relative z-10 mb-4 text-[8px] font-bold uppercase tracking-[0.2em] text-[#2459C5] sm:text-[12px]"
           >
             Your Dreams • Our Guidance
           </motion.p>
@@ -136,7 +136,7 @@ export default function Hero({
               initial={reduceMotion ? false : { opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.1 }}
-              className="relative z-10 mx-auto text-balance text-[clamp(40px,7vw,92px)] font-extrabold leading-[1.04] tracking-[-0.055em] text-[#2459C5]"
+              className="relative z-10 mx-auto text-balance text-[clamp(40px,7vw,58px)] font-extrabold leading-[1.04] tracking-[-0.055em] text-[#2459C5]"
             >
               Taking Your
               <span className="block">

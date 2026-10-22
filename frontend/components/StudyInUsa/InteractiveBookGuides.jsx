@@ -1,34 +1,34 @@
+
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   GraduationCap,
-  Landmark,
   BookOpen,
-  FileText,
+  Calendar,
   DollarSign,
-  Home,
   Calculator,
+  Home,
   Building2,
+  Users,
   ShieldCheck,
   Award,
   Sparkles,
-  Users,
+  Globe2,
+  Plane,
+  Clock,
   Briefcase,
   TrendingUp,
-  Clock,
-  ArrowRight,
-  Plane,
-  Calendar,
-  Globe2,
+  ArrowUpRight,
 } from "lucide-react";
 
-/* =====================================================================
-   6 CARDS (EXACT MATCH TO THE USER'S PROVIDED CARD DESIGN & CLIENT CONTENT)
-   Light Claymorphic Theme + Brand Color Chart Palettes
-===================================================================== */
+/* ==========================================
+   ORIGINAL 6 GUIDES
+   CONCISE DESCRIPTIONS
+========================================== */
+
 export const GUIDES_DATA = [
   {
     id: "academic-pathways",
@@ -37,16 +37,8 @@ export const GUIDES_DATA = [
     tagIcon: GraduationCap,
     title: "Study in USA",
     description:
-      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees. From choosing a major to pursuing an MS or MBA, your options depend on your academic background and goals.",
-    image: "/images/study-usa/3d/light_academic.png",
-    cardBg: "from-[#F0F5FA] to-[#E8F0FE]",
-    borderColor: "border-white",
-    primaryColor: "#1765F5",
-    hoverColor: "#1047AC",
-    tagBg: "#E8F0FE",
-    tagColor: "#1765F5",
-    tagBorder: "#A2C1FB",
-    bulletIconBg: "#E8F0FE",
+      "Explore flexible US degrees, from bachelor's programmes to specialised MS and MBA pathways.",
+    image: "/images/study-usa/3d/study-usa.png",
     bullets: [
       { label: "Bachelor's: Typically 4 years", icon: GraduationCap },
       { label: "Master's: Commonly 1–2 years", icon: BookOpen },
@@ -60,16 +52,8 @@ export const GUIDES_DATA = [
     tagIcon: DollarSign,
     title: "Cost of Studying in USA",
     description:
-      "Tuition depends on your university, degree, and field of study. Use these annual ranges to start planning your budget before comparing specific programs.",
-    image: "/images/study-usa/3d/light_cost.png",
-    cardBg: "from-[#F2FAF5] to-[#E8F6ED]",
-    borderColor: "border-white",
-    primaryColor: "#16A34A",
-    hoverColor: "#0F7234",
-    tagBg: "#E8F6ED",
-    tagColor: "#16A34A",
-    tagBorder: "#A2DAB7",
-    bulletIconBg: "#E8F6ED",
+      "Compare indicative university tuition and plan your study budget with more clarity.",
+    image: "/images/study-usa/3d/cost-studying.png",
     bullets: [
       { label: "Bachelor's: US$19,000–40,000 / yr (₹18–38 L)", icon: DollarSign },
       { label: "Master's: US$16,000–31,000 / yr (₹15.2–29.5 L)", icon: Calculator },
@@ -83,16 +67,8 @@ export const GUIDES_DATA = [
     tagIcon: Home,
     title: "Cost of Living in USA",
     description:
-      "Living costs depend on where you study and how you choose to live. A useful starting budget is US$1,000–2,500 per month, excluding tuition.",
-    image: "/images/study-usa/3d/light_living.png",
-    cardBg: "from-[#FCF8F0] to-[#FEF5E7]",
-    borderColor: "border-white",
-    primaryColor: "#F59E0B",
-    hoverColor: "#AC6F08",
-    tagBg: "#FEF5E7",
-    tagColor: "#AC6F08",
-    tagBorder: "#FBD89D",
-    bulletIconBg: "#FEF5E7",
+      "Plan approximately US$1,000–2,500 monthly for living expenses, excluding tuition.",
+    image: "/images/study-usa/3d/living-cost.png",
     bullets: [
       { label: "Housing: Often your biggest expense", icon: Building2 },
       { label: "Daily essentials: Food, transit & utilities", icon: Users },
@@ -106,16 +82,8 @@ export const GUIDES_DATA = [
     tagIcon: Award,
     title: "Scholarships for Indian Students",
     description:
-      "Indian students may qualify for merit-based scholarships, need-based financial aid, university awards, or graduate research funding. Opportunities depend on your profile.",
-    image: "/images/study-usa/3d/light_scholarships.png",
-    cardBg: "from-[#FAF4FC] to-[#F4ECF8]",
-    borderColor: "border-white",
-    primaryColor: "#9140BA",
-    hoverColor: "#662D82",
-    tagBg: "#F4ECF8",
-    tagColor: "#9140BA",
-    tagBorder: "#D3B3E3",
-    bulletIconBg: "#F4ECF8",
+      "Explore merit-based awards, need-based aid and external funding opportunities.",
+    image: "/images/study-usa/3d/scholarship.png",
     bullets: [
       { label: "Merit-based: Rewards academic achievement", icon: Award },
       { label: "Need-based: Assesses financial circumstances", icon: Sparkles },
@@ -129,16 +97,8 @@ export const GUIDES_DATA = [
     tagIcon: Plane,
     title: "Post-Study Work Visa USA",
     description:
-      "Planning to work in the USA after graduation? Eligible F-1 students can apply for Optional Practical Training (OPT) to gain work experience related to their degree.",
-    image: "/images/study-usa/3d/light_visa.png",
-    cardBg: "from-[#F0F7F7] to-[#E7F1F1]",
-    borderColor: "border-white",
-    primaryColor: "#0F766E",
-    hoverColor: "#0B534D",
-    tagBg: "#E7F1F1",
-    tagColor: "#0F766E",
-    tagBorder: "#9FC8C5",
-    bulletIconBg: "#E7F1F1",
+      "Eligible F-1 graduates can explore OPT and STEM-related work opportunities.",
+    image: "/images/study-usa/3d/post-study.png",
     bullets: [
       { label: "12 months of OPT: Eligible graduates", icon: Clock },
       { label: "Up to 36 months: Qualifying STEM extension", icon: Sparkles },
@@ -152,16 +112,8 @@ export const GUIDES_DATA = [
     tagIcon: Briefcase,
     title: "Jobs & Careers in USA",
     description:
-      "Explore the world's most dynamic job market for international graduates through CPT corporate internships, career fairs, and high-ROI full-time placements.",
-    image: "/images/study-usa/3d/light_jobs.png",
-    cardBg: "from-[#EFF5FD] to-[#E8F0FE]",
-    borderColor: "border-white",
-    primaryColor: "#1047AC",
-    hoverColor: "#0C337B",
-    tagBg: "#E8F0FE",
-    tagColor: "#1047AC",
-    tagBorder: "#A2C1FB",
-    bulletIconBg: "#E8F0FE",
+      "Explore internships, campus work and post-graduation career pathways in the USA.",
+    image: "/images/study-usa/3d/job-career.png",
     bullets: [
       { label: "Paid CPT Summer Internships", icon: Briefcase },
       { label: "On-Campus: Up to 20 hrs/week student work", icon: Building2 },
@@ -170,139 +122,254 @@ export const GUIDES_DATA = [
   },
 ];
 
-export default function InteractiveBookGuides({ onSelectGuide }) {
-  const handleRedirect = (card) => {
-    if (onSelectGuide) {
-      onSelectGuide(card);
-    } else {
-      window.location.href = `/study-in-usa/${card.slug}`;
-    }
-  };
+/* ==========================================
+   BENTO COLOR PALETTE
+========================================== */
 
-  return (
-    <div className="relative mx-auto w-full max-w-[1400px] px-3 sm:px-5 lg:px-6 py-4">
-      {/* 2-Column Responsive Grid (Matching exact wide card aspect ratio of Image 2) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-8 justify-items-center">
-        {GUIDES_DATA.map((card, idx) => {
-          const TagIcon = card.tagIcon;
+const THEMES = [
+  {
+    bg: "#DDEAFF",
+    fg: "#0C337B",
+    muted: "#315584",
+    chip: "#FFFFFF",
+    line: "#B5CCEB",
+    circle: "rgba(255,255,255,.28)",
+  },
+  {
+    bg: "#245BC4",
+    fg: "#FFFFFF",
+    muted: "#E9F1FF",
+    chip: "rgba(255,255,255,.93)",
+    line: "rgba(255,255,255,.26)",
+    circle: "rgba(255,255,255,.08)",
+  },
+  {
+    bg: "#B4CFF2",
+    fg: "#0C337B",
+    muted: "#315584",
+    chip: "#FFFFFF",
+    line: "#91B4E5",
+    circle: "rgba(255,255,255,.22)",
+  },
+  {
+    bg: "#BDD4F5",
+    fg: "#0C337B",
+    muted: "#315584",
+    chip: "#FFFFFF",
+    line: "#9EBFE9",
+    circle: "rgba(255,255,255,.25)",
+  },
+  {
+    bg: "#244779",
+    fg: "#FFFFFF",
+    muted: "#E9F1FF",
+    chip: "rgba(255,255,255,.94)",
+    line: "rgba(255,255,255,.26)",
+    circle: "rgba(255,255,255,.07)",
+  },
+  {
+    bg: "#DDEAFF",
+    fg: "#0C337B",
+    muted: "#315584",
+    chip: "#FFFFFF",
+    line: "#B5CCEB",
+    circle: "rgba(255,255,255,.24)",
+  },
+];
+
+/* ==========================================
+   INDIVIDUAL BENTO CARD
+========================================== */
+
+function GuideCard({ card, index, onSelectGuide, reducedMotion }) {
+  const theme = THEMES[index];
+  const isCenter = index % 3 === 1;
+  const TagIcon = card.tagIcon;
+  const href = `/study-in-usa/${card.slug}`;
+
+  const content = (
+    <>
+      {/* BACKGROUND DECORATION */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-12 -top-14 h-36 w-36 rounded-full"
+        style={{ backgroundColor: theme.circle }}
+      />
+
+      {/* CATEGORY TAG + ARROW */}
+      <div className="relative z-20 flex items-start justify-between gap-2">
+        <span
+          className="inline-flex max-w-[calc(100%-42px)] items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[9px] font-extrabold uppercase tracking-[.05em] shadow-sm sm:text-[10px]"
+          style={{
+            backgroundColor: theme.chip,
+            color: "#0C337B",
+          }}
+        >
+          <TagIcon
+            aria-hidden="true"
+            size={13}
+            strokeWidth={2.2}
+            className="shrink-0"
+          />
+          <span>{card.tag}</span>
+        </span>
+
+        <span
+          aria-hidden="true"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-45"
+          style={{
+            borderColor: theme.line,
+            backgroundColor: "rgba(255,255,255,.15)",
+          }}
+        >
+          <ArrowUpRight size={17} strokeWidth={2} />
+        </span>
+      </div>
+
+      {/* CARD CONTENT */}
+      <div className="relative z-10 flex min-h-0 flex-1 items-center gap-1">
+
+        {/* TITLE + DESCRIPTION */}
+        <div className="relative z-10 w-[62%] min-w-0 py-2">
+          <h3
+            className={`font-extrabold leading-[1.13] tracking-[-.03em] ${
+              isCenter
+                ? "text-[19px] sm:text-[21px] lg:text-[22px]"
+                : "text-[17px] sm:text-[18px] lg:text-[19px]"
+            }`}
+          >
+            {card.title}
+          </h3>
+
+          <p
+            className={`mt-2 text-[10px] leading-[1.45] sm:text-[11px] ${
+              isCenter ? "lg:text-[12px]" : ""
+            }`}
+            style={{ color: theme.muted }}
+          >
+            {card.description}
+          </p>
+        </div>
+
+        {/* 3D CLAY IMAGE */}
+        <div
+          className={`pointer-events-none relative w-[38%] min-w-0 shrink-0 self-center ${
+            isCenter
+              ? "h-[125px] sm:h-[142px] lg:h-[155px]"
+              : "h-[95px] sm:h-[105px] lg:h-[112px]"
+          }`}
+        >
+          <Image
+            src={card.image}
+            alt=""
+            fill
+            sizes={
+              isCenter
+                ? "(min-width: 1024px) 245px, (min-width: 640px) 180px, 36vw"
+                : "(min-width: 1024px) 115px, (min-width: 640px) 150px, 35vw"
+            }
+            className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.04]"
+          />
+        </div>
+      </div>
+
+      {/* ORIGINAL BULLET ICONS */}
+      <div
+        className={`relative z-20 border-t pt-2.5 ${
+          isCenter
+            ? "grid grid-cols-3 gap-2"
+            : "flex flex-col gap-1.5"
+        }`}
+        style={{ borderColor: theme.line }}
+      >
+        {card.bullets.map((bullet, bulletIndex) => {
+          const Icon = bullet.icon;
 
           return (
-            <motion.article
-              key={card.id}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: idx * 0.06 }}
-              onClick={() => handleRedirect(card)}
-              className={`
-                group relative
-                w-full
-                rounded-[32px] sm:rounded-[36px]
-                border-2 ${card.borderColor}
-                bg-gradient-to-br ${card.cardBg}
-                p-5 sm:p-7 md:p-8
-                shadow-[0_16px_36px_rgba(12,51,123,0.06),0_2px_8px_rgba(12,51,123,0.04)]
-                hover:shadow-[0_24px_52px_rgba(12,51,123,0.12)]
-                hover:-translate-y-1.5
-                transition-all duration-300 ease-out
-                cursor-pointer select-none
-                overflow-hidden
-                flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6
-              `}
+            <div
+              key={bulletIndex}
+              className="flex min-w-0 items-start gap-1.5"
             >
-              {/* Playful Floating Accents (Matching Image 2) */}
-              <div
+              <Icon
                 aria-hidden="true"
-                className="pointer-events-none absolute right-6 top-6 h-8 w-8 text-[#F59E0B]/80 opacity-70 group-hover:rotate-12 transition-transform duration-300"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full">
-                  <path d="M12 0L14 9L23 11L15 14L16 23L11 16L2 17L8 12L4 3L12 7Z" opacity="0.3" />
-                </svg>
-              </div>
+                size={13}
+                strokeWidth={2}
+                className="mt-[1px] shrink-0"
+              />
 
-              {/* LEFT COLUMN: Content & Bullet Points */}
-              <div className="relative z-10 flex flex-col justify-between w-full sm:w-[58%] text-left">
-                {/* Category Pill Tag */}
-                <div className="flex items-center">
-                  <span
-                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider border shadow-xs"
-                    style={{
-                      backgroundColor: card.tagBg,
-                      color: card.tagColor,
-                      borderColor: card.tagBorder,
-                    }}
-                  >
-                    <TagIcon size={14} strokeWidth={2.4} />
-                    {card.tag}
-                  </span>
-                </div>
-
-                {/* Main Heading */}
-                <h3 className="mt-3.5 text-[24px] sm:text-[27px] md:text-[30px] font-extrabold text-[#0C337B] tracking-[-0.03em] leading-[1.12]">
-                  {card.title}
-                </h3>
-
-                {/* Subtitle / Excerpt */}
-                <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-[#526B8C]">
-                  {card.description}
-                </p>
-
-                {/* 3 Bullet Points with Soft Square Icon Tiles */}
-                <div className="mt-4 flex flex-col gap-2">
-                  {card.bullets.map((bullet, bIdx) => {
-                    const BulletIcon = bullet.icon;
-                    return (
-                      <div key={bIdx} className="flex items-center gap-2.5">
-                        <span
-                          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg shadow-xs border border-white"
-                          style={{
-                            backgroundColor: card.bulletIconBg,
-                            color: card.primaryColor,
-                          }}
-                        >
-                          <BulletIcon size={14} strokeWidth={2.4} />
-                        </span>
-                        <span className="text-[12.5px] sm:text-[13px] font-bold text-[#1E293B]">
-                          {bullet.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* CTA Button */}
-                <div className="mt-5">
-                  <div
-                    className="
-                      inline-flex items-center gap-2.5
-                      rounded-full px-6 py-2.5 sm:py-3
-                      text-[13px] sm:text-[13.5px] font-extrabold text-white
-                      shadow-[0_8px_20px_rgba(23,101,245,0.25)]
-                      transition-all duration-300
-                      group-hover:gap-3.5 group-hover:shadow-[0_12px_28px_rgba(23,101,245,0.35)]
-                      w-fit
-                    "
-                    style={{ backgroundColor: card.primaryColor }}
-                  >
-                    <span>Read Full Guide</span>
-                    <ArrowRight size={15} strokeWidth={2.6} />
-                  </div>
-                </div>
-              </div>
-
-              {/* RIGHT COLUMN: Large 3D Clay Illustration */}
-              <div className="relative z-10 w-full sm:w-[42%] flex items-center justify-center h-[200px] sm:h-[240px] md:h-[260px]">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                  className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-108"
-                />
-              </div>
-            </motion.article>
+              <span className="min-w-0 text-[9px] font-semibold leading-[1.35] sm:text-[10px]">
+                {bullet.label}
+              </span>
+            </div>
           );
         })}
+      </div>
+    </>
+  );
+
+  const cardClasses =
+    "group relative isolate flex h-full min-h-[260px] w-full min-w-0 flex-col overflow-hidden rounded-[19px] p-4 text-left shadow-[0_5px_22px_rgba(12,51,123,.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_13px_28px_rgba(12,51,123,.13)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1765F5] sm:min-h-[265px] sm:p-[17px] lg:min-h-[270px]";
+
+  return (
+    <motion.article
+      initial={reducedMotion ? false : { opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.35,
+        delay: reducedMotion ? 0 : index * 0.04,
+      }}
+      className="h-full min-w-0"
+    >
+      {onSelectGuide ? (
+        <button
+          type="button"
+          onClick={() => onSelectGuide(card)}
+          aria-label={`Explore ${card.title}`}
+          className={cardClasses}
+          style={{
+            backgroundColor: theme.bg,
+            color: theme.fg,
+          }}
+        >
+          {content}
+        </button>
+      ) : (
+        <Link
+          href={href}
+          aria-label={`Explore ${card.title}`}
+          className={cardClasses}
+          style={{
+            backgroundColor: theme.bg,
+            color: theme.fg,
+          }}
+        >
+          {content}
+        </Link>
+      )}
+    </motion.article>
+  );
+}
+
+/* ==========================================
+   MAIN RESPONSIVE BENTO GRID
+========================================== */
+
+export default function InteractiveBookGuides({ onSelectGuide }) {
+  const reducedMotion = useReducedMotion();
+
+  return (
+    <div className="mx-auto w-full max-w-[1180px] py-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.85fr)_minmax(0,1fr)] lg:gap-3.5">
+        {GUIDES_DATA.map((card, index) => (
+          <GuideCard
+            key={card.id}
+            card={card}
+            index={index}
+            onSelectGuide={onSelectGuide}
+            reducedMotion={reducedMotion}
+          />
+        ))}
       </div>
     </div>
   );

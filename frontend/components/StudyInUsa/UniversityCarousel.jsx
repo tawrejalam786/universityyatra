@@ -445,40 +445,7 @@ export default function UniversityCarousel() {
         </div>
       </div>
 
-      {/* =========================================================
-          3. BOTTOM 3 FEATURE COLUMNS (Exact 1:1 match with Image 1)
-      ========================================================== */}
-      <div className="mx-auto mt-6 sm:mt-7 md:mt-8 grid max-w-[1140px] grid-cols-1 gap-4 px-3.5 sm:px-5 sm:grid-cols-3 sm:gap-6 md:gap-8 text-center">
-        {/* Column 1 */}
-        <div className="flex flex-col items-center">
-          <h4 className="text-[15px] sm:text-[16px] md:text-[17px] font-extrabold text-[#0C337B] tracking-tight">
-            Real-Time Collaboration
-          </h4>
-          <p className="mt-1.5 max-w-[320px] text-[12px] sm:text-[13px] leading-relaxed text-[#526B8C]">
-            Direct one-on-one sessions with expert admission mentors to plan, evaluate, and fast-track your university applications.
-          </p>
-        </div>
-
-        {/* Column 2 */}
-        <div className="flex flex-col items-center">
-          <h4 className="text-[15px] sm:text-[16px] md:text-[17px] font-extrabold text-[#0C337B] tracking-tight">
-            Task & Project Tracking
-          </h4>
-          <p className="mt-1.5 max-w-[320px] text-[12px] sm:text-[13px] leading-relaxed text-[#526B8C]">
-            Stay ahead on application deadlines, eligibility criteria, and fee structures tailored to your exact profile.
-          </p>
-        </div>
-
-        {/* Column 3 */}
-        <div className="flex flex-col items-center">
-          <h4 className="text-[15px] sm:text-[16px] md:text-[17px] font-extrabold text-[#0C337B] tracking-tight">
-            Performance Insights
-          </h4>
-          <p className="mt-1.5 max-w-[320px] text-[12px] sm:text-[13px] leading-relaxed text-[#526B8C]">
-            Gain actionable admission guidance with acceptance rate analytics, scholarship options, and career outcome insights.
-          </p>
-        </div>
-      </div>
+      
     </section>
   );
 }

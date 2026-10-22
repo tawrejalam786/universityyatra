@@ -33,7 +33,7 @@ const NAV_ITEMS = [
     children: [
       {
         label: "Free Career Counselling & Profile Assessment",
-        href: "/career-counseling-admission-guidance",
+        href: "/career-counselling",
       },
       { label: "Admission & Application Support", href: "/test-preparation" },
       {
@@ -81,7 +81,7 @@ export default function Navbar({ active = "Home" }) {
             width={1600}
             height={384}
             priority
-            className="h-11 w-auto sm:h-[42px]"
+            className="h-11 w-auto sm:h-[36px]"
           />{" "}
         </Link>{" "}
         {/* Desktop links */}{" "}

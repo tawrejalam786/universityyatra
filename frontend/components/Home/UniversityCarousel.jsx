@@ -337,15 +337,15 @@ export default function CountriesCarousel() {
             },
             1024: {
               slidesPerView: 3.5,
-              spaceBetween: 0,
+              spaceBetween: 12,
             },
             1280: {
               slidesPerView: 4.2,
-              spaceBetween: 0,
+              spaceBetween: 15,
             },
             1536: {
               slidesPerView: 4.5,
-              spaceBetween: 10,
+              spaceBetween: 18,
             },
           }}
           className="w-full !overflow-visible !py-8"
