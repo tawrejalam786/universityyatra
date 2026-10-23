@@ -92,13 +92,13 @@ function ServiceCard({ item, index }) {
         </p>
 
         {/* EXPLORE LINK */}
-        <Link
+        {/* <Link
           href={item.href}
           aria-label={`Explore ${item.title}`}
           className="relative z-30 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-current/20 bg-white/15 transition-all duration-300 hover:rotate-45 hover:bg-white/25 sm:h-8 sm:w-8"
         >
           <ArrowUpRight size={16} strokeWidth={2} />
-        </Link>
+        </Link> */}
       </div>
 
       {/* LARGE BENTO CARD */}

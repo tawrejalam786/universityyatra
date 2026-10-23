@@ -235,9 +235,9 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
           <GraduationCap size={14} />
           USA Study Guides
         </span>
-        <span className="text-[11px] font-bold text-[#8199B8]">
+        {/* <span className="text-[11px] font-bold text-[#8199B8]">
           {guide.id} / {String(guides.length).padStart(2, "0")}
-        </span>
+        </span> */}
       </div>
 
       {/* image stack: all images stay mounted so switching is instant (no flash) */}
@@ -435,10 +435,10 @@ export default function SupportSystem() {
             />
             <div className="relative">
               <h3 className="text-[14px] font-bold">
-                Need help planning your USA education?
+                Your USA Dream Starts Here!
               </h3>
               <p className="mt-0.5 text-[11px] leading-[1.5] text-white/75">
-                Get guidance tailored to your academic goals.
+                Get Expert Guidance.
               </p>
             </div>
 

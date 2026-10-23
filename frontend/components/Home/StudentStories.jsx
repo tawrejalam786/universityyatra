@@ -290,21 +290,31 @@ export default function StudentTestimonials({
       <div className="mx-auto w-full max-w-[1300px] px-4 sm:px-6 lg:px-8">
 
         {/* SECTION HEADING */}
-        <header className="mb-6 lg:mb-4">
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#E8F0FE] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#1765F5]">
-            <MessageSquare size={14} />
-            Student Story
-          </p>
+      <header className="mb-6 flex flex-col items-center text-center lg:mb-4">
+        {/* BADGE */}
+        <p className="mb-3 inline-flex items-center justify-center gap-2 rounded-full bg-[#E8F0FE] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#1765F5]">
+          <MessageSquare size={14} />
+          Student Story
+        </p>
 
-          <h2 id="student-testimonials-title" className="text-balance text-[27px] font-extrabold leading-[1.1] tracking-[-0.04em] text-[#0C337B] sm:text-[34px] lg:text-[39px]">
-            A Journey of Support,
-            <span className="block text-[#1765F5]">
-              In His Own Words.
-            </span>
-          </h2>
+        {/* HEADING */}
+        <h2
+          id="student-testimonials-title"
+          className="text-balance text-center text-[27px] font-extrabold leading-[1.1] tracking-[-0.04em] text-[#0C337B] sm:text-[34px] lg:text-[39px]"
+        >
+          A Journey of Support,
+          <span className="block text-[#1765F5]">
+            In His Own Words.
+          </span>
+        </h2>
 
-          <div aria-hidden="true" className="ml-20 mt-2 h-[4px] w-20 -rotate-3 rounded-full bg-[#5D93F8] sm:ml-36" />
-        </header>
+        {/* DECORATIVE UNDERLINE */}
+        <div
+          aria-hidden="true"
+          className="mt-3 h-[4px] w-20 -rotate-3 rounded-full bg-[#5D93F8]"
+        />
+      </header>
+
 
         {/* TESTIMONIAL SWIPER */}
         <Swiper

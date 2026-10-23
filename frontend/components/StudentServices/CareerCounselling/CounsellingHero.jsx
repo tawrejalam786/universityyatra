@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 export default function CounsellingHero() {
   return (
@@ -96,20 +97,21 @@ export default function CounsellingHero() {
           </div>
 
           {/* Right visual placeholder */}
-          <div className="relative hidden lg:block">
-            <div className="aspect-square w-full rounded-3xl bg-gradient-to-br from-[#1765F5]/10 to-[#2DD4BF]/10 p-8">
-              {/* Placeholder for illustration/image */}
-              <div className="flex h-full items-center justify-center rounded-2xl border-2 border-dashed border-[#1765F5]/30 bg-white/50">
-                <p className="text-center text-[14px] font-semibold text-[#526B8C]">
-                  Hero Illustration
-                  <br />
-                  <span className="text-[12px] font-normal">
-                    (Add counselling/guidance visual)
-                  </span>
-                </p>
-              </div>
+          
+          <div className="relative lg:block">
+            <div className="w-full overflow-hidden rounded-3xl">
+              <Image
+                src="/images/career-counselling.webp"
+                alt="University Yatra Career Counselling and Admission Guidance"
+                width={600}
+                height={450}
+                sizes="(max-width: 1024px) 50vw, 600px"
+                className="block h-auto w-full object-contain"
+                priority
+              />
             </div>
           </div>
+
         </div>
       </div>
     </section>

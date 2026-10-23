@@ -3,6 +3,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,7 +20,7 @@ const tabs = [
   { id: "all", label: "All Courses" },
   { id: "masters", label: "Master's Degree" },
   { id: "bachelors", label: "Bachelor's Degree" },
-  { id: "stem", label: "STEM*" },
+  // { id: "stem", label: "STEM*" },
 ];
 
 /* =========================================
@@ -28,13 +29,14 @@ const tabs = [
 
 const courseCards = [
   // MASTER'S DEGREE PROGRAMS
+
   {
     id: 1,
     course: "Computer Science (MS)",
     category: "masters",
     stem: true,
     image: "/images/courses/computer-science-ms.webp",
-    color: "#2563EB",
+    color: "#1765F5",
     description:
       "Build advanced skills in software systems, artificial intelligence, algorithms, and computing research.",
   },
@@ -44,7 +46,7 @@ const courseCards = [
     category: "masters",
     stem: true,
     image: "/images/courses/business-analytics-ms.webp",
-    color: "#1765F5",
+    color: "#0D9488",
     description:
       "Use statistics, data visualisation, and predictive modelling to support business decisions.",
   },
@@ -150,6 +152,7 @@ const courseCards = [
   },
 
   // BACHELOR'S DEGREE PROGRAMS
+
   {
     id: 13,
     course: "Computer Science (BS)",
@@ -223,129 +226,287 @@ const courseCards = [
 ];
 
 /* =========================================
-   MAIN COMPONENT
+   MAIN COURSES SLIDER
 ========================================= */
 
 export default function CoursesSlider() {
   const swiperRef = useRef(null);
   const reduceMotion = useReducedMotion();
-  const [activeTab, setActiveTab] = useState("all");
 
+  const [activeTab, setActiveTab] = useState("all");
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  /* FILTER COURSES */
   const filteredCourses = courseCards.filter((item) => {
     if (activeTab === "all") return true;
     if (activeTab === "stem") return item.stem;
     return item.category === activeTab;
   });
 
+  /* CATEGORY CHANGE */
   const changeTab = (tabId) => {
     setActiveTab(tabId);
+    setIsBeginning(true);
+    setIsEnd(false);
   };
 
+  /* PREVIOUS SLIDE */
   const handlePrev = () => {
     swiperRef.current?.slidePrev();
   };
 
+  /* NEXT SLIDE */
   const handleNext = () => {
     swiperRef.current?.slideNext();
   };
 
+  /* UPDATE NAVIGATION STATE */
+  const updateNavigation = (swiper) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
+  /* CATEGORY TITLE */
+  const categoryTitle =
+    activeTab === "masters"
+      ? "Master's Degree Programs for Indian Students"
+      : activeTab === "bachelors"
+      ? "Bachelor's Degree Programs for Indian Students"
+      : activeTab === "stem"
+      ? "Explore STEM Programs"
+      : "Master's & Bachelor's Degree Programs for Indian Students";
+
   return (
     <section className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
 
-      {/* BACKGROUND DECORATION */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[280px] w-[280px] rounded-full bg-[#1765F5]/[0.06] blur-[90px]" />
-      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#0C337B]/[0.05] blur-[100px]" />
+      {/* BACKGROUND DECORATIONS */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-16 h-[280px] w-[280px] rounded-full bg-[#1765F5]/[0.06] blur-[90px]"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#0C337B]/[0.05] blur-[100px]"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-3.5 sm:px-5 lg:px-6">
 
-        {/* SECTION HEADER */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-4 flex items-end justify-between gap-4">
+        {/* =====================================
+            SECTION HEADING
+        ===================================== */}
 
-          <div>
-            <span className="mb-1 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
-              STUDY IN THE UNITED STATES
+        <motion.div
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 16 }
+          }
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.45,
+          }}
+          className="mb-5"
+        >
+          <span className="mb-1 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
+            STUDY IN THE UNITED STATES
+          </span>
+
+          <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] md:text-[36px]">
+            Explore Courses{" "}
+            <span className="text-[#1765F5]">
+              in the USA
             </span>
+          </h2>
 
-            <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] md:text-[36px]">
-              Explore Courses <span className="text-[#1765F5]">in the USA</span>
-            </h2>
+          {/* ACCENT DECORATION */}
+          <div className="mt-2 flex items-center gap-1.5">
+            <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]" />
+            <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/65" />
+            <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/35" />
+            <span className="h-[4px] w-12 rounded-full bg-[#1765F5]" />
+          </div>
+        </motion.div>
 
-            <div className="mt-2 flex items-center gap-1.5">
-              <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]" />
-              <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/65" />
-              <span className="h-[4px] w-[4px] rounded-full bg-[#1765F5]/35" />
-              <span className="h-[4px] w-12 rounded-full bg-[#1765F5]" />
-            </div>
+        {/* =====================================
+            CATEGORY FILTERS + RIGHT ARROWS
+        ===================================== */}
+
+        <div className="mb-4 flex w-full items-center justify-between gap-3">
+
+          {/* LEFT: CATEGORY PILLS */}
+          <div className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-2.5">
+
+            {tabs.map((tab) => {
+              const selected = activeTab === tab.id;
+
+              const count =
+                tab.id === "all"
+                  ? courseCards.length
+                  : tab.id === "stem"
+                  ? courseCards.filter((item) => item.stem).length
+                  : courseCards.filter(
+                      (item) => item.category === tab.id
+                    ).length;
+
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => changeTab(tab.id)}
+                  aria-pressed={selected}
+                  className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2.5 text-[11px] font-semibold transition-all duration-300 sm:px-5 sm:py-3 sm:text-[13px] ${
+                    selected
+                      ? "border-[#1765F5] bg-[#1765F5] text-white shadow-[0_4px_12px_rgba(23,101,245,0.20)]"
+                      : "border-[#E0E7EF] bg-white text-[#344158] hover:border-[#1765F5] hover:text-[#1765F5]"
+                  }`}
+                >
+                  {tab.label}
+
+                  <span
+                    className={`inline-flex min-w-[21px] items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
+                      selected
+                        ? "bg-white/20 text-white"
+                        : "bg-[#F1F5F9] text-[#64748B]"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
-          {/* SLIDER ARROWS */}
-          <div className="flex shrink-0 items-center gap-2">
+          {/* RIGHT: SLIDER ARROWS */}
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
 
-            <button type="button" onClick={handlePrev} aria-label="Previous course" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-10 sm:w-10">
+            {/* PREVIOUS */}
+            <button
+              type="button"
+              onClick={handlePrev}
+              disabled={isBeginning}
+              aria-label="Previous course"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#D9E4ED] disabled:hover:bg-white disabled:hover:text-[#0C337B] sm:h-10 sm:w-10"
+            >
               <ChevronLeft size={18} strokeWidth={2.1} />
             </button>
 
-            <button type="button" onClick={handleNext} aria-label="Next course" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white sm:h-10 sm:w-10">
+            {/* NEXT */}
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={isEnd}
+              aria-label="Next course"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#D9E4ED] disabled:hover:bg-white disabled:hover:text-[#0C337B] sm:h-10 sm:w-10"
+            >
               <ChevronRight size={18} strokeWidth={2.1} />
             </button>
 
           </div>
-        </motion.div>
-
-        {/* CATEGORY PILLS */}
-        <div className="mb-3.5 flex w-full flex-nowrap items-center gap-2 overflow-x-auto pb-1.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-4 sm:gap-2.5">
-          {tabs.map((tab) => {
-            const selected = activeTab === tab.id;
-
-            const count =
-              tab.id === "all"
-                ? courseCards.length
-                : tab.id === "stem"
-                ? courseCards.filter((item) => item.stem).length
-                : courseCards.filter((item) => item.category === tab.id).length;
-
-            return (
-              <button key={tab.id} type="button" onClick={() => changeTab(tab.id)} aria-pressed={selected} className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2.5 text-[12px] font-semibold transition-all duration-300 sm:px-5 sm:py-3 sm:text-[14px] ${selected ? "border-[#1765F5] bg-[#1765F5] text-white shadow-[0_4px_12px_rgba(23,101,245,0.25)]" : "border-[#E0E7EF] bg-white text-[#344158] hover:border-[#1765F5] hover:text-[#1765F5]"}`}>
-                {tab.label}
-                <span className={`inline-flex min-w-[22px] items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${selected ? "bg-white/20 text-white" : "bg-[#F1F5F9] text-[#64748B]"}`}>
-                  {count}
-                </span>
-              </button>
-            );
-          })}
         </div>
 
-        {/* SELECTED CATEGORY HEADING */}
+        {/* =====================================
+            SELECTED CATEGORY TITLE
+        ===================================== */}
+
         <div className="mb-2">
           <h3 className="text-[16px] font-bold text-[#0C337B] sm:text-[19px]">
-            {activeTab === "masters"
-              ? "Master's Degree Programs for Indian Students"
-              : activeTab === "bachelors"
-              ? "Bachelor's Degree Programs for Indian Students"
-              : activeTab === "stem"
-              ? "Explore STEM* Programs"
-              : "Master's & Bachelor's Degree Programs for Indian Students"}
+            {categoryTitle}
           </h3>
         </div>
 
-        {/* COURSE SLIDER */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.6 }} className="relative w-full overflow-hidden">
+        {/* =====================================
+            COURSE SLIDER
+            DESKTOP: 3.5 CARDS VISIBLE
+        ===================================== */}
 
-          <Swiper key={activeTab} modules={[Pagination]} onSwiper={(swiper) => { swiperRef.current = swiper; }} slidesPerView={1} spaceBetween={16} speed={600} grabCursor={true} watchOverflow={true} pagination={{ clickable: true }} breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 18 }, 1024: { slidesPerView: 3, spaceBetween: 20 } }} className="!overflow-hidden !bg-transparent !px-4 !pb-12 !pt-4 [&_.swiper-pagination-bullet]:!bg-[#1765F5] [&_.swiper-pagination-bullet-active]:!opacity-100">
+        <motion.div
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 20 }
+          }
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+          className="relative w-full min-w-0"
+        >
+
+          <Swiper
+            key={activeTab}
+            modules={[Pagination]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+              updateNavigation(swiper);
+            }}
+            onSlideChange={updateNavigation}
+            onReachBeginning={updateNavigation}
+            onReachEnd={updateNavigation}
+            slidesPerView={1.15}
+            spaceBetween={12}
+            speed={550}
+            grabCursor={true}
+            watchOverflow={true}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              480: {
+                slidesPerView: 1.4,
+                spaceBetween: 14,
+              },
+              640: {
+                slidesPerView: 2.1,
+                spaceBetween: 16,
+              },
+              768: {
+                slidesPerView: 2.5,
+                spaceBetween: 18,
+              },
+              1024: {
+                slidesPerView: 3.5,
+                spaceBetween: 18,
+              },
+            }}
+            className="!overflow-hidden !bg-transparent !pb-12 !pt-4 [&_.swiper-pagination-bullet]:!bg-[#1765F5] [&_.swiper-pagination-bullet-active]:!opacity-100"
+          >
 
             {filteredCourses.map((item) => (
-              <SwiperSlide key={item.id} className="!h-auto">
+              <SwiperSlide
+                key={item.id}
+                className="!h-auto"
+              >
                 <CourseCard item={item} />
               </SwiperSlide>
             ))}
 
           </Swiper>
-
         </motion.div>
 
-        {/* STEM DISCLAIMER */}
+        {/* =====================================
+            STEM DISCLAIMER
+        ===================================== */}
+
         <p className="mt-2 text-[11px] leading-[1.6] text-[#64748B] sm:text-[12px]">
-          *STEM designation and eligibility depend on the university, specific program, and applicable US immigration requirements.
+          *STEM designation and eligibility depend on the
+          university, specific program, and applicable US
+          immigration requirements.
         </p>
 
       </div>
@@ -354,57 +515,81 @@ export default function CoursesSlider() {
 }
 
 /* =========================================
-   COURSE CARD
-   IMAGE → HEADING → PARAGRAPH → BUTTON
+   COURSE CARD COMPONENT
 ========================================= */
 
 function CourseCard({ item }) {
   return (
-    <article className="group relative flex h-full min-h-[395px] flex-col overflow-hidden rounded-[22px] border border-[#DCE5EC] bg-white shadow-[0_12px_32px_rgba(6,59,114,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(6,59,114,0.15)]" style={{ "--card-color": item.color }}>
+    <article
+      className="group relative flex h-full min-h-[385px] flex-col overflow-hidden rounded-[20px] border border-[#DCE5EC] bg-white shadow-[0_8px_24px_rgba(6,59,114,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--card-color)] hover:shadow-[0_15px_32px_rgba(6,59,114,0.13)]"
+      style={{
+        "--card-color": item.color,
+      }}
+    >
 
-      {/* COLOR TOP STRIP */}
+      {/* COLORED TOP BORDER */}
       <div className="absolute inset-x-0 top-0 z-20 h-[5px] bg-[var(--card-color)]" />
 
       {/* COURSE IMAGE */}
-      <div className="relative mx-4 mt-4 h-[170px] shrink-0 overflow-hidden rounded-[16px] sm:h-[180px]">
+      <div className="relative mx-3.5 mt-3.5 h-[165px] shrink-0 overflow-hidden rounded-[14px] sm:h-[175px]">
 
-        <Image src={item.image} alt={item.course} fill sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) 50vw, 33vw" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.055]" />
+        <Image
+          src={item.image}
+          alt={item.course}
+          fill
+          sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 28vw"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.055]"
+        />
 
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#031A30]/10 via-transparent to-transparent" />
+        {/* IMAGE GRADIENT */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#031A30]/15 via-transparent to-transparent"
+        />
 
         {/* STEM BADGE */}
         {item.stem && (
           <div className="absolute right-3 top-3 z-30">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#A2C1FB] bg-[#E8F0FE] px-3 py-1.5 text-[11px] font-extrabold tracking-[0.06em] text-[#1047AC] shadow-[0_4px_12px_rgba(12,51,123,0.12)] sm:text-[12px]">
+
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#A2C1FB] bg-[#E8F0FE] px-2.5 py-1.5 text-[10px] font-extrabold tracking-[0.05em] text-[#1047AC] shadow-[0_4px_12px_rgba(12,51,123,0.12)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#1765F5]" />
-              STEM*
+              STEM
             </span>
+
           </div>
         )}
-
       </div>
 
-      {/* CARD CONTENT */}
-      <div className="relative flex flex-1 flex-col px-5 pb-5 pt-5">
+      {/* CARD BODY */}
+      <div className="relative flex flex-1 flex-col px-4 pb-4 pt-4">
 
         {/* COURSE HEADING */}
-        <h3 className="min-h-[52px] text-[20px] font-bold leading-[1.25] tracking-[-0.025em] text-[#0C337B] sm:text-[22px]">
+        <h3 className="min-h-[48px] text-[18px] font-bold leading-[1.25] tracking-[-0.025em] text-[#0C337B] sm:text-[19px]">
           {item.course}
         </h3>
 
-        {/* ACCENT LINE */}
-        <div className="mt-3 h-[2px] w-10 rounded-full bg-[#1765F5]" />
+        {/* DYNAMIC ACCENT LINE */}
+        <div className="mt-3 h-[3px] w-10 rounded-full bg-[var(--card-color)]" />
 
-        {/* PARAGRAPH */}
-        <p className="relative z-10 mt-4 flex-1 text-[13px] leading-[1.7] text-[#40556A] sm:text-[14px]">
+        {/* COURSE DESCRIPTION */}
+        <p className="relative z-10 mt-3 flex-1 text-[12px] leading-[1.6] text-[#40556A] sm:text-[13px]">
           {item.description}
         </p>
 
-        {/* EXPLORE COURSE BUTTON */}
-        <button type="button" className="relative z-10 mt-5 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] bg-[#F4F7FA] px-4 py-2.5 text-left text-[13px] font-bold text-[#0C337B] transition-all duration-300 group-hover:bg-[var(--card-color)] group-hover:text-white">
+        {/* EXPLORE COURSE → CONTACT US */}
+        <Link
+          href="/contact"
+          aria-label={`Enquire about ${item.course}`}
+          className="relative z-10 mt-4 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] border border-[#E8EDF4] bg-[#F4F7FA] px-3.5 py-2.5 text-left text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:border-[var(--card-color)] hover:bg-[var(--card-color)] hover:text-white group-hover:border-[var(--card-color)] group-hover:bg-[var(--card-color)] group-hover:text-white"
+        >
           <span>Explore Course</span>
-          <ArrowRight size={17} strokeWidth={2} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-        </button>
+
+          <ArrowRight
+            size={17}
+            strokeWidth={2}
+            className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
 
       </div>
     </article>
