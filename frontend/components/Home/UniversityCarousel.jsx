@@ -9,7 +9,6 @@ import {
   ChevronRight,
   ArrowUpRight,
   MapPin,
-  Globe2,
 } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,7 +25,7 @@ const countries = [
   {
     name: "USA",
     fullName: "United States of America",
-    image: "/images/countries/new-york.jpg",
+    image: "/images/countries/new-york-usa.webp",
     flag: "us",
     featuredCity: "New York",
     cities: ["New York", "Boston", "Los Angeles", "San Francisco"],
@@ -35,7 +34,7 @@ const countries = [
   {
     name: "Canada",
     fullName: "Canada",
-    image: "/images/countries/toronto.jpg",
+    image: "/images/countries/toronta-canada.webp",
     flag: "ca",
     featuredCity: "Toronto",
     cities: ["Toronto", "Vancouver", "Montreal", "Ottawa"],
@@ -44,7 +43,7 @@ const countries = [
   {
     name: "Europe",
     fullName: "Study in Europe",
-    image: "/images/countries/europe.webp",
+    image: "/images/countries/amsterdam-europe.webp",
     flag: "eu",
     featuredCity: "Amsterdam",
     cities: ["Amsterdam", "Barcelona", "Milan", "Prague"],
@@ -53,7 +52,7 @@ const countries = [
   {
     name: "UK",
     fullName: "United Kingdom",
-    image: "/images/countries/uk.webp",
+    image: "/images/countries/london-uk.webp",
     flag: "gb",
     featuredCity: "London",
     cities: ["London", "Manchester", "Edinburgh", "Birmingham"],
@@ -62,7 +61,7 @@ const countries = [
   {
     name: "Ireland",
     fullName: "Ireland",
-    image: "/images/countries/ireland.webp",
+    image: "/images/countries/dublin-ireland.webp",
     flag: "ie",
     featuredCity: "Dublin",
     cities: ["Dublin", "Cork", "Galway", "Limerick"],
@@ -71,7 +70,7 @@ const countries = [
   {
     name: "UAE",
     fullName: "United Arab Emirates",
-    image: "/images/countries/uae.webp",
+    image: "/images/countries/dubai-uae.webp",
     flag: "ae",
     featuredCity: "Dubai",
     cities: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
@@ -80,7 +79,7 @@ const countries = [
   {
     name: "Germany",
     fullName: "Germany",
-    image: "/images/countries/germany.webp",
+    image: "/images/countries/berlin-germany.webp",
     flag: "de",
     featuredCity: "Berlin",
     cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
@@ -89,7 +88,7 @@ const countries = [
   {
     name: "France",
     fullName: "France",
-    image: "/images/countries/france.webp",
+    image: "/images/countries/paris-france.webp",
     flag: "fr",
     featuredCity: "Paris",
     cities: ["Paris", "Lyon", "Toulouse", "Bordeaux"],
@@ -98,7 +97,7 @@ const countries = [
   {
     name: "Russia",
     fullName: "Russia",
-    image: "/images/countries/russia.webp",
+    image: "/images/countries/moscow-russia.webp",
     flag: "ru",
     featuredCity: "Moscow",
     cities: ["Moscow", "Saint Petersburg", "Kazan", "Novosibirsk"],
@@ -107,7 +106,7 @@ const countries = [
   {
     name: "Australia",
     fullName: "Australia",
-    image: "/images/countries/australia.webp",
+    image: "/images/countries/sydney-australia.webp",
     flag: "au",
     featuredCity: "Sydney",
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth"],
@@ -116,7 +115,7 @@ const countries = [
   {
     name: "New Zealand",
     fullName: "New Zealand",
-    image: "/images/countries/new-zealand.webp",
+    image: "/images/countries/auckland-new-zealand.webp",
     flag: "nz",
     featuredCity: "Auckland",
     cities: ["Auckland", "Wellington", "Christchurch", "Dunedin"],
@@ -125,7 +124,7 @@ const countries = [
   {
     name: "Singapore",
     fullName: "Singapore",
-    image: "/images/countries/singapore.webp",
+    image: "/images/countries/marina-bay-singapore.webp",
     flag: "sg",
     featuredCity: "Singapore",
     cities: ["Clementi", "Queenstown", "Jurong", "Bras Basah"],
@@ -134,7 +133,7 @@ const countries = [
   {
     name: "Japan",
     fullName: "Japan",
-    image: "/images/countries/tokyo.jpg",
+    image: "/images/countries/tokyo-japan.webp",
     flag: "jp",
     featuredCity: "Tokyo",
     cities: ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
@@ -143,13 +142,13 @@ const countries = [
 ];
 
 /* ==========================================
-   ORIGINAL COUNTRY CARD DESIGN
+   COUNTRY CARD — CINEMATIC IMAGE TREATMENT
 ========================================== */
 
 function CountryCard({ country, active, index }) {
   return (
    <article
-  className={`group relative isolate h-[390px] w-full min-w-0 overflow-hidden rounded-[22px] bg-[#0C337B] transition-[opacity,box-shadow] duration-700 sm:h-[420px] sm:rounded-[25px] lg:h-[445px] ${active ? "opacity-100 shadow-[0_25px_60px_rgba(12,51,123,0.25)]" : "opacity-85 shadow-[0_8px_24px_rgba(12,51,123,0.1)]"}`}
+  className={`group relative isolate h-[390px] w-full min-w-0 overflow-hidden rounded-[22px] bg-[#0C337B] transition-[opacity,box-shadow] duration-700 sm:h-[420px] sm:rounded-[25px] lg:h-[445px] ${active ? "opacity-100 shadow-[0_25px_60px_rgba(12,51,123,0.25)]" : "opacity-[0.94] shadow-[0_8px_24px_rgba(12,51,123,0.1)]"}`}
   style={{
     backfaceVisibility: "hidden",
     WebkitBackfaceVisibility: "hidden",
@@ -174,17 +173,21 @@ function CountryCard({ country, active, index }) {
         />
       </div>
 
-      {/* ORIGINAL GRADIENT */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061B3B]/95 via-[#061B3B]/45 to-[#061B3B]/10" />
+      {/* PREMIUM NAVY OVERLAY — LANDMARK VISIBLE ABOVE, TEXT READABLE BELOW */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "linear-gradient(180deg, rgba(6,27,59,0.04) 0%, rgba(6,27,59,0.12) 30%, rgba(6,27,59,0.40) 50%, rgba(6,27,59,0.76) 73%, rgba(6,27,59,0.95) 100%)" }}
+      />
 
       {/* TOP BADGE - COUNTRY FLAG */}
-      <div className="absolute left-4 top-4 z-10 inline-flex h-9 w-[60px] items-center justify-center overflow-hidden rounded-lg border border-white/25 bg-white/90 shadow-sm">
-        <Image
-          src={`https://flagcdn.com/h20/${country.flag}.png`}
+      <div className="absolute left-4 top-4 z-10 inline-flex h-9 w-[60px] items-center justify-center overflow-hidden rounded-lg ">
+       <Image
+          src={`https://flagcdn.com/w320/${country.flag}.png`}
           alt={`${country.name} flag`}
           width={60}
           height={36}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
         />
       </div>
 
@@ -261,21 +264,21 @@ export default function CountriesCarousel() {
       <div className="mx-auto w-full max-w-[800px]">
 
         {/* TOP LABEL */}
-        <p className="mb-2 text-center text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
+        {/* <p className="mb-2 text-center text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
           Explore study opportunities across 40+ countries and leading universities worldwide.
-        </p>
+        </p> */}
 
         {/* MAIN HEADING */}
         <h2 id="countries-carousel-title" className="text-center text-[28px] font-extrabold leading-[1.1] tracking-[-0.035em] text-[#1765F5] sm:text-[35px] lg:text-[44px]">
-          Our Global{" "}
+          The World Is{" "}
           <span className="text-[#0C337B]">
-            University Network.
+            Your Campus..
           </span>
         </h2>
 
         {/* DESCRIPTION */}
         <p className="mx-auto mt-3 max-w-[750px] text-center text-[12px] leading-[1.65] text-[#526B8C] sm:text-[13px] lg:text-[14px]">
-          Explore study abroad destinations. From choosing the right destination to finding programmes that match your goals, discover a world of possibilities for your academic and professional future.
+          Explore study opportunities across 40+ countries and leading universities worldwide. From choosing the right destination to finding programmes that match your goals, discover a world of possibilities for your academic and professional future.
         </p>
 
       </div>
@@ -325,7 +328,7 @@ export default function CountriesCarousel() {
           breakpoints={{
             480: {
               slidesPerView: 1.6,
-              spaceBetween: 0,
+              spaceBetween: 100,
             },
             640: {
               slidesPerView: 2.2,
@@ -333,7 +336,7 @@ export default function CountriesCarousel() {
             },
             768: {
               slidesPerView: 2.8,
-              spaceBetween: 0,
+              spaceBetween: 12,
             },
             1024: {
               slidesPerView: 3.5,

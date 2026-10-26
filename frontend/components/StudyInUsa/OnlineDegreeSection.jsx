@@ -20,14 +20,13 @@ import {
   Plane,
   Clock,
   Briefcase,
-  TrendingUp,
   ArrowUpRight,
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
 
 /* ==========================================
-   USA GUIDE TOPICS
+   USA GUIDE TOPICS - ONLY 5 GUIDES
 ========================================== */
 
 const guides = [
@@ -111,26 +110,10 @@ const guides = [
       { icon: Briefcase, label: "After OPT", value: "Possible H-1B sponsorship" },
     ],
   },
-  {
-    id: "06",
-    slug: "jobs-in-usa",
-    tag: "CAREERS & ROI",
-    title: "Jobs & Careers in USA",
-    shortTitle: "Career Opportunities",
-    icon: Briefcase,
-    description:
-      "Explore the world's most dynamic job market for international graduates through CPT corporate internships, career fairs, and full-time career opportunities.",
-    image: "/images/study-usa/3d/job-career.png",
-    points: [
-      { icon: Briefcase, label: "CPT", value: "Eligible internships" },
-      { icon: Building2, label: "On-campus work", value: "Generally up to 20 hrs/week" },
-      { icon: TrendingUp, label: "Career pathways", value: "Professional opportunities" },
-    ],
-  },
 ];
 
 /* ==========================================
-   LEFT TAB (chip on mobile, row on desktop)
+   TAB (2-col grid on mobile, list on desktop)
 ========================================== */
 
 function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
@@ -146,16 +129,17 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
       tabIndex={active ? 0 : -1}
       onClick={() => onActivate(index)}
       onPointerEnter={(e) => {
-        // hover switching only for mouse; touch uses tap
+        // Hover switching only for mouse; touch uses tap
         if (e.pointerType === "mouse") onActivate(index);
       }}
       onKeyDown={onKeyDown}
-      className={`relative flex w-[210px] shrink-0 snap-start items-center justify-between gap-3 overflow-hidden rounded-xl border px-3.5 py-2.5 text-left transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 lg:w-full lg:flex-1 lg:shrink ${
+      className={`relative flex w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl border px-2.5 py-2 text-left transition-colors duration-300 last:col-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 sm:last:col-span-1 lg:flex-1 lg:gap-3 lg:px-3.5 lg:py-2.5 ${
         active
           ? "border-[#B4CFFA] bg-[#EDF5FF] shadow-[0_5px_20px_rgba(23,101,245,0.07)]"
           : "border-[#E5EDF9] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"
       }`}
     >
+      {/* ACTIVE INDICATOR */}
       {active && (
         <span
           aria-hidden="true"
@@ -163,21 +147,26 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
         />
       )}
 
-      <div className="flex min-w-0 items-center gap-3">
+      <div className="flex min-w-0 items-center gap-2 lg:gap-3">
+        {/* GUIDE ICON */}
         <span
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 ${
-            active ? "bg-[#1765F5] text-white" : "bg-[#EAF2FF] text-[#1765F5]"
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 lg:h-9 lg:w-9 ${
+            active
+              ? "bg-[#1765F5] text-white"
+              : "bg-[#EAF2FF] text-[#1765F5]"
           }`}
         >
-          <Icon size={18} strokeWidth={2} />
+          <Icon size={17} strokeWidth={2} />
         </span>
 
+        {/* GUIDE NAME */}
         <div className="min-w-0">
           <span className="block text-[9px] font-extrabold uppercase tracking-[0.08em] text-[#7390B4]">
             Guide {guide.id}
           </span>
+
           <span
-            className={`block truncate text-[13px] font-bold leading-[1.35] ${
+            className={`block text-[12px] font-bold leading-[1.25] lg:truncate lg:text-[13px] lg:leading-[1.35] ${
               active ? "text-[#1765F5]" : "text-[#0C337B]"
             }`}
           >
@@ -187,6 +176,7 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
         </div>
       </div>
 
+      {/* DESKTOP ARROW */}
       <ChevronRight
         size={16}
         aria-hidden="true"
@@ -199,7 +189,7 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
 }
 
 /* ==========================================
-   RIGHT ACTIVE CARD
+   RIGHT ACTIVE GUIDE CARD
 ========================================== */
 
 function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
@@ -211,17 +201,20 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
       id="usa-guide-panel"
       role="tabpanel"
       aria-labelledby={`usa-guide-tab-${activeIndex}`}
-      className="relative flex h-full flex-col overflow-hidden rounded-[22px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:p-6"
+      className="order-2 relative flex h-full flex-col overflow-hidden rounded-[22px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:p-6"
     >
-      {/* decorations */}
+      {/* BACKGROUND DECORATIONS */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -top-20 h-[250px] w-[250px] rounded-full border border-[#1765F5]/10"
       />
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-24 -left-16 h-[240px] w-[240px] rounded-full bg-[#A2C1FB]/20 blur-[55px]"
       />
+
+      {/* BACKGROUND GUIDE NUMBER */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute right-5 top-12 select-none text-[84px] font-black leading-none text-[#1765F5]/[0.06]"
@@ -229,25 +222,27 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
         {guide.id}
       </span>
 
-      {/* top row */}
+      {/* TOP BADGE */}
       <div className="relative z-10 flex items-center justify-between gap-3">
         <span className="inline-flex items-center gap-2 rounded-full border border-[#C9DCFA] bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.06em] text-[#1765F5]">
           <GraduationCap size={14} />
           USA Study Guides
         </span>
-        {/* <span className="text-[11px] font-bold text-[#8199B8]">
-          {guide.id} / {String(guides.length).padStart(2, "0")}
-        </span> */}
       </div>
 
-      {/* image stack: all images stay mounted so switching is instant (no flash) */}
+      {/* IMAGE STACK: all images stay mounted so switching is instant */}
       <motion.div
         animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="relative z-10 mx-auto mt-2 h-[135px] w-full max-w-[320px] sm:h-[155px] lg:h-[150px]"
       >
         {guides.map((g, i) => {
           const isActive = i === activeIndex;
+
           return (
             <Image
               key={g.id}
@@ -265,14 +260,18 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
         })}
       </motion.div>
 
-      {/* text + points + button */}
+      {/* ACTIVE GUIDE CONTENT */}
       <motion.div
         key={guide.id}
         initial={reduceMotion ? false : { opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.25, ease: "easeOut" }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.25,
+          ease: "easeOut",
+        }}
         className="relative z-10 mt-2 flex flex-1 flex-col"
       >
+        {/* TAG + TITLE + DESCRIPTION */}
         <div className="text-center">
           <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#1765F5]">
             <TagIcon size={13} />
@@ -288,9 +287,11 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
           </p>
         </div>
 
+        {/* HIGHLIGHTS */}
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
           {guide.points.map((point) => {
             const PointIcon = point.icon;
+
             return (
               <div
                 key={point.label}
@@ -299,10 +300,12 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#EAF2FF] text-[#1765F5]">
                   <PointIcon size={15} strokeWidth={2} />
                 </span>
+
                 <div>
                   <span className="block text-[10px] font-bold text-[#0C337B]">
                     {point.label}
                   </span>
+
                   <span className="mt-0.5 block text-[10px] leading-[1.4] text-[#526B8C]">
                     {point.value}
                   </span>
@@ -312,11 +315,13 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
           })}
         </div>
 
+        {/* READ MORE BUTTON */}
         <Link
           href={`/study-in-usa/${guide.slug}`}
           className="group mt-4 inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-[11px] bg-[#1765F5] px-5 py-2.5 text-[12px] font-bold text-white shadow-[0_6px_18px_rgba(23,101,245,0.2)] transition-all duration-300 hover:bg-[#0C337B] hover:shadow-[0_10px_25px_rgba(12,51,123,0.2)]"
         >
           Read More About {guide.shortTitle}
+
           <ArrowUpRight
             size={16}
             strokeWidth={2.2}
@@ -325,7 +330,7 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
         </Link>
       </motion.div>
 
-      {/* clickable progress bars */}
+      {/* CLICKABLE PROGRESS BARS */}
       <div className="relative z-10 mt-3 flex items-center gap-1.5">
         {guides.map((item, index) => (
           <button
@@ -357,14 +362,25 @@ export default function SupportSystem() {
   const [activeIndex, setActiveIndex] = useState(0);
   const reduceMotion = useReducedMotion();
 
-  // arrow keys move between tabs
+  /* KEYBOARD NAVIGATION */
   const handleKeyDown = (e) => {
-    const steps = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+    const steps = {
+      ArrowDown: 1,
+      ArrowRight: 1,
+      ArrowUp: -1,
+      ArrowLeft: -1,
+    };
+
     const step = steps[e.key];
+
     if (!step) return;
+
     e.preventDefault();
+
     const next = (activeIndex + step + guides.length) % guides.length;
+
     setActiveIndex(next);
+
     document.getElementById(`usa-guide-tab-${next}`)?.focus();
   };
 
@@ -374,7 +390,7 @@ export default function SupportSystem() {
       className="relative w-full overflow-hidden bg-white py-8 sm:py-10"
     >
       <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
-        {/* HEADER */}
+        {/* SECTION HEADER */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -395,18 +411,21 @@ export default function SupportSystem() {
           </h2>
 
           <p className="mx-auto mt-2 max-w-[600px] text-[12px] leading-[1.6] text-[#526B8C] sm:text-[13px]">
-            Guides to US education, costs, scholarships, post-study work and
-            careers, all in one place.
+            Guides to US education, costs, scholarships and post-study work,
+            all in one place.
           </p>
         </motion.div>
 
         {/* TABS + CARD + CTA */}
         <div className="grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:grid-rows-[1fr_auto] lg:gap-x-6">
-          {/* TABS (horizontal chips on mobile, vertical list on desktop) */}
+          {/* TABS:
+              mobile  -> on TOP, above the card, all 5 visible (2 columns)
+              tablet  -> 3 columns
+              desktop -> vertical list on the left */}
           <div
             role="tablist"
             aria-label="USA study guides"
-            className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:col-start-1 lg:row-start-1 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
+            className="order-1 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:order-none lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col"
           >
             {guides.map((guide, index) => (
               <GuideTab
@@ -427,26 +446,34 @@ export default function SupportSystem() {
             reduceMotion={reduceMotion}
           />
 
-          {/* CTA (sits under the tabs on desktop) */}
-          <div className="relative flex flex-col items-start justify-between gap-3 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-4 text-white sm:flex-row sm:items-center lg:col-start-1 lg:row-start-2">
+          {/* COUNSELLING CTA
+              Desktop: under the tabs
+              Mobile: last */}
+          <div className="order-3 relative flex flex-col items-start justify-between gap-3 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-4 text-white sm:flex-row sm:items-center lg:order-none lg:col-start-1 lg:row-start-2">
+            {/* DECORATION */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"
             />
+
+            {/* CTA TEXT */}
             <div className="relative">
               <h3 className="text-[14px] font-bold">
                 Your USA Dream Starts Here!
               </h3>
+
               <p className="mt-0.5 text-[11px] leading-[1.5] text-white/75">
                 Get Expert Guidance.
               </p>
             </div>
 
+            {/* CTA BUTTON */}
             <Link
               href="/counselling"
               className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EDF5FF]"
             >
               Book Free Counselling
+
               <ArrowRight
                 size={15}
                 className="transition-transform duration-300 group-hover:translate-x-1"

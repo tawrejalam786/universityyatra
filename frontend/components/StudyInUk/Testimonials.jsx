@@ -119,7 +119,7 @@ export default function Testimonials() {
         <div className="mb-8 flex items-center justify-between gap-4 sm:mb-9">
           <h2 className="max-w-[850px] text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#102C4A] sm:text-[34px] md:text-[38px]">
             What Students Like About{" "}
-            <span className="text-[#008080]">
+            <span className="text-[#1765f5]">
               University Yatra™
             </span>
           </h2>
@@ -197,7 +197,7 @@ export default function Testimonials() {
         </div>
 
         {/* PAGINATION */}
-        <div className="testimonial-pagination !relative mt-5 flex min-h-[10px] items-center justify-center gap-2 [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!h-[8px] [&_.swiper-pagination-bullet]:!w-[8px] [&_.swiper-pagination-bullet]:!rounded-full [&_.swiper-pagination-bullet]:!bg-[#C9D6E1] [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!transition-all [&_.swiper-pagination-bullet-active]:!w-[28px] [&_.swiper-pagination-bullet-active]:!bg-[#18B8B5]" />
+        <div className="testimonial-pagination !relative mt-5 flex min-h-[10px] items-center justify-center gap-2 [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!h-[8px] [&_.swiper-pagination-bullet]:!w-[8px] [&_.swiper-pagination-bullet]:!rounded-full [&_.swiper-pagination-bullet]:!bg-[#C9D6E1] [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!transition-all [&_.swiper-pagination-bullet-active]:!w-[28px] [&_.swiper-pagination-bullet-active]:!bg-[#1765f5]" />
 
       </div>
     </section>
@@ -245,7 +245,7 @@ function TestimonialCard({ item }) {
             Verified Student
           </span>
 
-          <span className="rounded-full bg-[#F1F5F8] px-2.5 py-1 text-[8px] font-medium text-[#738492] sm:text-[9px]">
+          <span className="rounded-full bg-[#F1F5F8] px-2.5 py-1 text-[8px] font-medium text-[#1765f5] sm:text-[9px]">
             University Yatra
           </span>
         </div>

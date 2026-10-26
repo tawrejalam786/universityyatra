@@ -1,7 +1,7 @@
 import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
 import StudyInUkHero from '@/components/StudyInUk/StudyInUkHero';
-import OnlineDegreeSection from "@/components/StudyInUk/OnlineDegreeSection";
+import OnlineGuideSection from "@/components/StudyInUk/OnlineGuideSection";
 import WhatItGetsYou from "@/components/StudyInUk/WhatItGetsYou";
 import CoursesSlider from "@/components/StudyInUk/CoursesSlider";
 import HowUniversityYatraHelps from "@/components/StudyInUk/HowUniversityYatraHelps";
@@ -33,7 +33,7 @@ export default function StudyInUkPage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInUkHero />
-        <OnlineDegreeSection />
+        <OnlineGuideSection />
         <WhatItGetsYou />
         <CoursesSlider />
         <HowUniversityYatraHelps />

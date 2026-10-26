@@ -131,15 +131,15 @@ export default function CostOfStudyingCanada() {
 
         {/* HEADING */}
         <div className="mx-auto mb-12 max-w-[760px] text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/30 bg-[#18B8B5]/10 px-4 py-2">
-            <CircleDollarSign size={15} className="text-[#18B8B5]" strokeWidth={2} />
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#085af9]/30 bg-[#085af9]/10 px-4 py-2">
+            <CircleDollarSign size={15} className="text-[#085af9]" strokeWidth={2} />
             <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#53D8D2]">
               Study Cost
             </span>
           </div>
 
           <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
-            Cost Of Studying <span className="text-[#18B8B5]">in Canada</span>
+            Cost Of Studying <span className="text-[#085af9]">in Canada</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">

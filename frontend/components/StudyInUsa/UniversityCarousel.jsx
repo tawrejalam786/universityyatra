@@ -851,12 +851,12 @@ export default function UniversityCarousel() {
                   </div>
 
                   {/* NAAC BADGE */}
-                  <div className="pointer-events-none absolute left-2.5 top-2.5 z-20">
+                  {/* <div className="pointer-events-none absolute left-2.5 top-2.5 z-20">
                     <span className="inline-flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-0.5 text-[9px] font-extrabold text-[#0C337B] shadow-md">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#1765F5]" />
                       NAAC {univ.grade}
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* DEPTH VIGNETTE */}
                   <div
@@ -866,9 +866,9 @@ export default function UniversityCarousel() {
 
                   {/* UNIVERSITY INFORMATION */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 p-3 pt-6">
-                    <p className="mb-0.5 line-clamp-1 text-[9px] font-bold uppercase tracking-wider text-[#93C5FD]">
+                    {/* <p className="mb-0.5 line-clamp-1 text-[9px] font-bold uppercase tracking-wider text-[#93C5FD]">
                       {univ.tier}
-                    </p>
+                    </p> */}
 
                     <h3 className="line-clamp-1 text-[12px] font-black text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-[13px]">
                       {univ.name}

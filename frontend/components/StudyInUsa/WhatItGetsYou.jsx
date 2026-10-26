@@ -193,8 +193,13 @@ export default function WhatItGetsYou() {
       setManualStep(null);
     };
 
-    window.addEventListener("wheel", resumeScrollMode, { passive: true });
-    window.addEventListener("touchmove", resumeScrollMode, { passive: true });
+    window.addEventListener("wheel", resumeScrollMode, {
+      passive: true,
+    });
+
+    window.addEventListener("touchmove", resumeScrollMode, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("wheel", resumeScrollMode);
@@ -203,12 +208,20 @@ export default function WhatItGetsYou() {
   }, [manualStep]);
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
+    <section
+      ref={sectionRef}
+      className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9"
+    >
       <div className="mx-auto w-full max-w-[1180px] px-3.5 sm:px-5 lg:px-6">
 
         {/* SECTION HEADING */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-4 text-center sm:mb-6">
-
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45 }}
+          className="mb-4 text-center sm:mb-6"
+        >
           <span className="mb-1.5 inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
             WHY STUDY IN USA?
           </span>
@@ -220,16 +233,22 @@ export default function WhatItGetsYou() {
             </span>{" "}
             Experience
           </h2>
-
         </motion.div>
 
         {/* TIMELINE */}
         <div className="relative mx-auto w-full max-w-[1100px]">
 
           {/* MULTICOLOR CENTER BAR */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-y-3 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-3 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]"
+          >
             {benefits.map((item) => (
-              <div key={item.number} className="min-h-0 flex-1" style={{ backgroundColor: item.accent }} />
+              <div
+                key={item.number}
+                className="min-h-0 flex-1"
+                style={{ backgroundColor: item.accent }}
+              />
             ))}
           </div>
 
@@ -240,7 +259,10 @@ export default function WhatItGetsYou() {
               const isActive = activeStep === index;
 
               return (
-                <div key={item.number} className="relative grid min-h-[90px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-2 sm:min-h-[110px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] sm:py-2.5 md:min-h-[125px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] md:py-3">
+                <div
+                  key={item.number}
+                  className="relative grid min-h-[90px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-2 sm:min-h-[110px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] sm:py-2.5 md:min-h-[125px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] md:py-3"
+                >
 
                   {/* LEFT COLUMN */}
                   <div className="flex min-w-0 items-center justify-end">
@@ -254,13 +276,30 @@ export default function WhatItGetsYou() {
                         side="left"
                       />
                     ) : (
-                      <StepLabel item={item} active={isActive} side="left" />
+                      <StepLabel
+                        item={item}
+                        active={isActive}
+                        side="left"
+                      />
                     )}
                   </div>
 
                   {/* CENTER STEP NUMBER */}
-                  <div ref={(element) => { nodeRefs.current[index] = element; }} className="relative z-20 flex items-center justify-center">
-                    <motion.span initial={false} animate={{ scale: isActive ? 1.15 : 1, opacity: isActive ? 1 : 0.92 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[15px] font-black tracking-tight text-white drop-shadow-sm sm:h-[60px] sm:w-[60px] sm:text-[20px] md:h-[76px] md:w-[76px] md:text-[26px]">
+                  <div
+                    ref={(element) => {
+                      nodeRefs.current[index] = element;
+                    }}
+                    className="relative z-20 flex items-center justify-center"
+                  >
+                    <motion.span
+                      initial={false}
+                      animate={{
+                        scale: isActive ? 1.15 : 1,
+                        opacity: isActive ? 1 : 0.92,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="flex h-[44px] w-[44px] items-center justify-center text-[15px] font-black tracking-tight text-white drop-shadow-sm sm:h-[60px] sm:w-[60px] sm:text-[20px] md:h-[76px] md:w-[76px] md:text-[26px]"
+                    >
                       {item.number}
                     </motion.span>
                   </div>
@@ -277,13 +316,24 @@ export default function WhatItGetsYou() {
                         side="right"
                       />
                     ) : (
-                      <StepLabel item={item} active={isActive} side="right" />
+                      <StepLabel
+                        item={item}
+                        active={isActive}
+                        side="right"
+                      />
                     )}
                   </div>
 
                   {/* ACTIVE GLOW */}
                   {isActive && (
-                    <motion.span initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[32px] sm:h-[100px] sm:w-[100px]" style={{ backgroundColor: `${item.accent}12` }} />
+                    <motion.span
+                      initial={reduceMotion ? false : { opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[32px] sm:h-[100px] sm:w-[100px]"
+                      style={{
+                        backgroundColor: `${item.accent}12`,
+                      }}
+                    />
                   )}
 
                 </div>
@@ -298,7 +348,8 @@ export default function WhatItGetsYou() {
 }
 
 /* =========================================
-   SIDE STEP LABEL - LUCIDE ICON BADGE
+   SIDE STEP LABEL - WHITE ICONS
+   MATCHING COLOR BACKGROUNDS
 ========================================= */
 
 function StepLabel({ item, active, side }) {
@@ -312,15 +363,16 @@ function StepLabel({ item, active, side }) {
         <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
       )}
 
-      {/* ICON BADGE */}
+      {/* COLORED ICON BADGE */}
       <motion.span
         initial={false}
         animate={{
-          backgroundColor: active ? item.soft : "#FFFFFF",
-          borderColor: active ? item.accent : `${item.accent}35`,
+          backgroundColor: item.accent,
+          borderColor: active ? "#FFFFFF" : item.accent,
           boxShadow: active
-            ? `0 4px 14px ${item.accent}25`
-            : "0 2px 8px rgba(6,59,114,0.06)",
+            ? `0 5px 18px ${item.accent}45`
+            : `0 3px 10px ${item.accent}25`,
+          scale: active ? 1.04 : 1,
         }}
         transition={{ duration: 0.3 }}
         className="inline-flex h-[36px] w-[54px] items-center justify-center overflow-hidden rounded-full border sm:h-[44px] sm:w-[66px] md:h-[48px] md:w-[74px]"
@@ -328,8 +380,7 @@ function StepLabel({ item, active, side }) {
         <Icon
           aria-hidden="true"
           strokeWidth={2.3}
-          style={{ color: item.accent }}
-          className="h-[18px] w-[18px] transition-transform duration-300 hover:scale-110 sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px]"
+          className="h-[18px] w-[18px] text-white transition-transform duration-300 hover:scale-110 sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px]"
         />
       </motion.span>
 
@@ -377,26 +428,34 @@ function TimelineAccordionCard({
         aria-controls={contentId}
         className="flex w-full min-w-0 items-center justify-between gap-2.5 px-4 py-2.5 text-left sm:gap-3.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5"
       >
+
         <div className="flex min-w-0 flex-1 items-center">
           <h3 className="min-w-0 text-[11px] font-bold leading-[1.35] text-[#0C337B] sm:text-[13px] md:text-[15px] lg:text-[16px]">
             {item.title}
           </h3>
         </div>
 
-        {/* PLUS / MINUS */}
+        {/* WHITE PLUS / MINUS ICON ON ACCENT BACKGROUND */}
         <span
           className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full sm:h-[26px] sm:w-[26px] md:h-[30px] md:w-[30px]"
           style={{
-            backgroundColor: active ? item.accent : item.soft,
-            color: active ? "#FFFFFF" : item.accent,
+            backgroundColor: item.accent,
+            color: "#FFFFFF",
           }}
         >
           {active ? (
-            <Minus className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
+            <Minus
+              className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5"
+              strokeWidth={2.5}
+            />
           ) : (
-            <Plus className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
+            <Plus
+              className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5"
+              strokeWidth={2.5}
+            />
           )}
         </span>
+
       </button>
 
       {/* ACCORDION DESCRIPTION */}
@@ -405,9 +464,20 @@ function TimelineAccordionCard({
           <motion.div
             key="description"
             id={contentId}
-            initial={reduceMotion ? false : { height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            initial={
+              reduceMotion
+                ? false
+                : { height: 0, opacity: 0 }
+            }
+            animate={{
+              height: "auto",
+              opacity: 1,
+            }}
+            exit={
+              reduceMotion
+                ? { opacity: 0 }
+                : { height: 0, opacity: 0 }
+            }
             transition={{
               height: {
                 duration: reduceMotion ? 0 : 0.35,

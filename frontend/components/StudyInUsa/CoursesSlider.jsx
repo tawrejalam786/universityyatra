@@ -17,10 +17,9 @@ import "swiper/css/pagination";
 ========================================= */
 
 const tabs = [
-  { id: "all", label: "All Courses" },
-  { id: "masters", label: "Master's Degree" },
-  { id: "bachelors", label: "Bachelor's Degree" },
-  // { id: "stem", label: "STEM*" },
+  { id: "all", label: "All Programs" },
+  { id: "masters", label: "Master's" },
+  { id: "bachelors", label: "Bachelor's" },
 ];
 
 /* =========================================
@@ -226,6 +225,27 @@ const courseCards = [
 ];
 
 /* =========================================
+   COMPACT CATEGORY PILL
+========================================= */
+
+function CategoryPill({ tab, selected, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={selected}
+      className={`inline-flex h-[34px] shrink-0 items-center justify-center whitespace-nowrap rounded-full border px-3 text-[10px] font-semibold transition-all duration-300 sm:h-[40px] sm:px-5 sm:text-[12px] ${
+        selected
+          ? "border-[#1765F5] bg-[#1765F5] text-white shadow-[0_4px_12px_rgba(23,101,245,0.15)]"
+          : "border-[#DCE6F3] bg-white text-[#0C337B] hover:border-[#1765F5] hover:text-[#1765F5]"
+      }`}
+    >
+      {tab.label}
+    </button>
+  );
+}
+
+/* =========================================
    MAIN COURSES SLIDER
 ========================================= */
 
@@ -240,7 +260,6 @@ export default function CoursesSlider() {
   /* FILTER COURSES */
   const filteredCourses = courseCards.filter((item) => {
     if (activeTab === "all") return true;
-    if (activeTab === "stem") return item.stem;
     return item.category === activeTab;
   });
 
@@ -249,6 +268,7 @@ export default function CoursesSlider() {
     setActiveTab(tabId);
     setIsBeginning(true);
     setIsEnd(false);
+    swiperRef.current = null;
   };
 
   /* PREVIOUS SLIDE */
@@ -263,6 +283,7 @@ export default function CoursesSlider() {
 
   /* UPDATE NAVIGATION STATE */
   const updateNavigation = (swiper) => {
+    if (!swiper || swiper.destroyed) return;
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };
@@ -273,8 +294,6 @@ export default function CoursesSlider() {
       ? "Master's Degree Programs for Indian Students"
       : activeTab === "bachelors"
       ? "Bachelor's Degree Programs for Indian Students"
-      : activeTab === "stem"
-      ? "Explore STEM Programs"
       : "Master's & Bachelor's Degree Programs for Indian Students";
 
   return (
@@ -298,22 +317,10 @@ export default function CoursesSlider() {
         ===================================== */}
 
         <motion.div
-          initial={
-            reduceMotion
-              ? false
-              : { opacity: 0, y: 16 }
-          }
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
-          transition={{
-            duration: 0.45,
-          }}
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45 }}
           className="mb-5"
         >
           <span className="mb-1 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
@@ -321,7 +328,7 @@ export default function CoursesSlider() {
           </span>
 
           <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] md:text-[36px]">
-            Explore Courses{" "}
+            Explore Programs{" "}
             <span className="text-[#1765F5]">
               in the USA
             </span>
@@ -337,56 +344,35 @@ export default function CoursesSlider() {
         </motion.div>
 
         {/* =====================================
-            CATEGORY FILTERS + RIGHT ARROWS
+            CATEGORY FILTERS + SLIDER ARROWS
+
+            MOBILE:
+            - ALL 3 TABS IN ONE LINE
+            - ARROWS BELOW, RIGHT ALIGNED
+
+            DESKTOP:
+            - TABS LEFT
+            - ARROWS RIGHT
         ===================================== */}
 
-        <div className="mb-4 flex w-full items-center justify-between gap-3">
+        <div className="mb-4 flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
 
-          {/* LEFT: CATEGORY PILLS */}
-          <div className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-2.5">
+          {/* CATEGORY BUTTONS - NO SCROLL */}
+          <div className="flex w-full min-w-0 flex-nowrap items-center justify-start gap-1.5 sm:w-auto sm:flex-1 sm:gap-2.5">
 
-            {tabs.map((tab) => {
-              const selected = activeTab === tab.id;
+            {tabs.map((tab) => (
+              <CategoryPill
+                key={tab.id}
+                tab={tab}
+                selected={activeTab === tab.id}
+                onClick={() => changeTab(tab.id)}
+              />
+            ))}
 
-              const count =
-                tab.id === "all"
-                  ? courseCards.length
-                  : tab.id === "stem"
-                  ? courseCards.filter((item) => item.stem).length
-                  : courseCards.filter(
-                      (item) => item.category === tab.id
-                    ).length;
-
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => changeTab(tab.id)}
-                  aria-pressed={selected}
-                  className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2.5 text-[11px] font-semibold transition-all duration-300 sm:px-5 sm:py-3 sm:text-[13px] ${
-                    selected
-                      ? "border-[#1765F5] bg-[#1765F5] text-white shadow-[0_4px_12px_rgba(23,101,245,0.20)]"
-                      : "border-[#E0E7EF] bg-white text-[#344158] hover:border-[#1765F5] hover:text-[#1765F5]"
-                  }`}
-                >
-                  {tab.label}
-
-                  <span
-                    className={`inline-flex min-w-[21px] items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
-                      selected
-                        ? "bg-white/20 text-white"
-                        : "bg-[#F1F5F9] text-[#64748B]"
-                    }`}
-                  >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
           </div>
 
-          {/* RIGHT: SLIDER ARROWS */}
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          {/* SLIDER NAVIGATION */}
+          <div className="flex w-full shrink-0 items-center justify-end gap-2 sm:w-auto sm:gap-2">
 
             {/* PREVIOUS */}
             <button
@@ -394,9 +380,9 @@ export default function CoursesSlider() {
               onClick={handlePrev}
               disabled={isBeginning}
               aria-label="Previous course"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#D9E4ED] disabled:hover:bg-white disabled:hover:text-[#0C337B] sm:h-10 sm:w-10"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#D9E4ED] disabled:hover:bg-white disabled:hover:text-[#0C337B] sm:h-10 sm:w-10"
             >
-              <ChevronLeft size={18} strokeWidth={2.1} />
+              <ChevronLeft size={17} strokeWidth={2.1} />
             </button>
 
             {/* NEXT */}
@@ -405,9 +391,9 @@ export default function CoursesSlider() {
               onClick={handleNext}
               disabled={isEnd}
               aria-label="Next course"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#D9E4ED] disabled:hover:bg-white disabled:hover:text-[#0C337B] sm:h-10 sm:w-10"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#0C337B] shadow-[0_4px_12px_rgba(12,51,123,0.06)] transition-all duration-300 hover:border-[#1765F5] hover:bg-[#1765F5] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#D9E4ED] disabled:hover:bg-white disabled:hover:text-[#0C337B] sm:h-10 sm:w-10"
             >
-              <ChevronRight size={18} strokeWidth={2.1} />
+              <ChevronRight size={17} strokeWidth={2.1} />
             </button>
 
           </div>
@@ -425,26 +411,15 @@ export default function CoursesSlider() {
 
         {/* =====================================
             COURSE SLIDER
+
             DESKTOP: 3.5 CARDS VISIBLE
         ===================================== */}
 
         <motion.div
-          initial={
-            reduceMotion
-              ? false
-              : { opacity: 0, y: 20 }
-          }
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
-          transition={{
-            duration: 0.5,
-          }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.5 }}
           className="relative w-full min-w-0"
         >
 
@@ -558,6 +533,7 @@ function CourseCard({ item }) {
 
           </div>
         )}
+
       </div>
 
       {/* CARD BODY */}

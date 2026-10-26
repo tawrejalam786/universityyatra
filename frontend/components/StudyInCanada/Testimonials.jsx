@@ -117,9 +117,9 @@ export default function Testimonials() {
 
         {/* HEADER */}
         <div className="mb-8 flex items-center justify-between gap-4 sm:mb-9">
-          <h2 className="max-w-[850px] text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#102C4A] sm:text-[34px] md:text-[38px]">
+          <h2 className="max-w-[850px] text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#101169] sm:text-[34px] md:text-[38px]">
             What Students Like About{" "}
-            <span className="text-[#008080]">
+            <span className="text-[#085af9]">
               University Yatra™
             </span>
           </h2>

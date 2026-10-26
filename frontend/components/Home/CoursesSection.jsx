@@ -174,7 +174,7 @@ export default function CoursesSection() {
           {/* DESCRIPTION */}
           <p className="mx-auto mt-2.5 max-w-[590px] text-[12px] leading-[1.7] text-[#526B8C] sm:text-[13px]">
             From bachelor&apos;s to master&apos;s programmes,
-            explore 20+ courses across 40+ countries and discover
+            explore 1500+ courses across 40+ countries and discover
             opportunities at universities around the world.
             Find a programme that fits your interests, ambitions,
             and career goals.

@@ -333,7 +333,7 @@ const GUIDE_DETAILS_DATABASE = {
   "post-study-visa": {
     id: "05",
     vol: "VOL. V",
-    title: "Post-Study Work Visa USA",
+    title: "Post-Study Work Visa In USA",
     shortTitle: "Post-Study Visa",
     badge: "OPT, STEM Extensions & Careers",
     tagline: "12-Month Optional Practical Training (OPT), 24-Month STEM Extension & Career Planning",
@@ -510,104 +510,133 @@ export default async function GuideDetailPage({ params }) {
         {/* =====================================================================
             02. HERO SECTION (Tailored Photographic Background + Home Floating Pills)
         ====================================================================== */}
-        <section className="relative isolate min-h-[660px] w-full overflow-hidden bg-[#EAF4FA] text-[#063B72] sm:min-h-[700px] lg:min-h-[740px]">
-          {/* Background Photograph */}
-          <div className="pointer-events-none absolute inset-0 -z-20">
-            <Image
-              src={guideData.heroImage}
-              alt={guideData.title}
-              fill
-              priority
-              unoptimized
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
+       
+<section className="relative isolate w-full overflow-hidden bg-[#EAF4FA] text-[#063B72] lg:min-h-[600px]">
 
-          {/* Light Ambient Overlay (Matching Home Screen Bright & Fresh Aesthetic) */}
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white/95 via-white/85 to-white/40" />
+  {/* BACKGROUND PHOTOGRAPH */}
+  <div className="pointer-events-none absolute inset-0 -z-20">
+    <Image
+      src={guideData.heroImage}
+      alt={guideData.title}
+      fill
+      priority
+      sizes="100vw"
+      unoptimized
+      className="object-cover object-center"
+    />
+  </div>
 
-          {/* Hero Content Wrapper */}
-          <div className="relative mx-auto flex w-full max-w-[1360px] flex-col items-center px-4 pb-16 pt-32 text-center sm:px-6 sm:pt-36 lg:px-8 lg:pt-40">
-            {/* Top Breadcrumbs & Back Link */}
-            <div className="relative z-10 mb-5 flex flex-wrap items-center justify-center gap-2 text-[12px] font-semibold text-[#526B8C]">
-              <Link href="/" className="hover:text-[#1765F5] transition">Home</Link>
-              <span>/</span>
-              <Link href="/study-in-usa" className="hover:text-[#1765F5] transition">Study in USA</Link>
-              <span>/</span>
-              <span className="text-[#0C337B] font-bold">{guideData.shortTitle}</span>
-            </div>
+  {/* OPTIONAL LIGHT OVERLAY */}
+  {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white/20 via-transparent to-black/10" /> */}
 
-            {/* Floating Characteristic Pills (Home Screen UI Element) */}
-            <div className="relative z-10 mb-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-              {guideData.pillColors.map((pill, pIdx) => (
-                <span
-                  key={pIdx}
-                  style={{ backgroundColor: pill.bg, color: pill.text }}
-                  className="rounded-full px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-wider shadow-sm sm:text-[11px]"
-                >
-                  {pill.label}
-                </span>
-              ))}
-            </div>
+  {/* HERO CONTENT WRAPPER */}
+  <div className="relative mx-auto flex w-full max-w-[1360px] flex-col items-center px-3 pb-8 pt-[112px] text-center min-[390px]:px-4 sm:px-6 sm:pb-12 sm:pt-[135px] lg:min-h-[600px] lg:justify-center lg:px-8 lg:pb-16 lg:pt-[100px]">
 
-            {/* Small Volume Badge */}
-            <div className="relative z-10 mb-3 inline-flex items-center gap-2 rounded-full border border-[#1765F5]/25 bg-white/80 px-4 py-1 backdrop-blur-md shadow-sm">
-              <Bookmark size={13} className="text-[#1765F5]" />
-              <span className="font-mono text-[11px] font-extrabold uppercase tracking-widest text-[#1765F5]">
-                {guideData.vol} • {guideData.badge}
-              </span>
-            </div>
+    {/* BREADCRUMBS */}
+    <div className="relative z-10 mb-4 flex flex-wrap items-center justify-center gap-2 text-[11px] font-semibold text-[#526B8C] sm:mb-5 sm:text-[12px]">
 
-            {/* Main Title (Home Screen Typography Hierarchy) */}
-            <h1 className="relative z-10 mx-auto max-w-[1100px] text-balance text-[34px] font-extrabold leading-[1.08] tracking-[-0.04em] text-[#0C337B] sm:text-[48px] md:text-[58px] lg:text-[64px]">
-              {guideData.title}
-            </h1>
+      <Link
+        href="/"
+        className="transition-colors hover:text-[#1765F5]"
+      >
+        Home
+      </Link>
 
-            {/* Subtitle / Tagline */}
-            <p className="relative z-10 mx-auto mt-4 max-w-[760px] text-[14px] font-medium leading-[1.7] text-[#425A70] sm:text-[16px]">
-              {guideData.tagline}
-            </p>
+      <span>/</span>
 
-            {/* CTA Buttons (Matching Home & Destination Page) */}
-            <div className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-              <a
-                href="#contact-advisory"
-                className="group inline-flex items-center justify-center gap-3 rounded-full border border-[#1765F5] bg-[#1765F5] px-8 py-4 text-[14px] font-bold text-white shadow-[0_12px_32px_rgba(23,101,245,0.32)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0C337B] hover:shadow-[0_16px_40px_rgba(12,51,123,0.4)] sm:text-[15px]"
-              >
-                <span>Book a Free Consultation</span>
-                <ArrowRight size={17} strokeWidth={2.4} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+      <Link
+        href="/study-in-usa"
+        className="transition-colors hover:text-[#1765F5]"
+      >
+        Study in USA
+      </Link>
 
-              <a
-                href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20studying%20in%20USA."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-3 rounded-full border border-[#25D366] bg-white px-8 py-4 text-[14px] font-bold text-[#0C337B] shadow-[0_10px_28px_rgba(37,211,102,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white sm:text-[15px]"
-              >
-                <svg className="h-5 w-5 fill-[#25D366] group-hover:fill-white transition-colors" viewBox="0 0 24 24">
-                  <path d="M21 11.6a9 9 0 0 1-13.3 7.9L3 21l1.5-4.5A9 9 0 1 1 21 11.6Z" />
-                </svg>
-                <span>Chat On Whatsapp</span>
-              </a>
-            </div>
+      <span>/</span>
 
-            {/* 4 Key Metrics Bar (Floating Card) */}
-            <div className="relative z-10 mt-12 w-full max-w-[1100px] rounded-2xl border border-white/80 bg-white/85 p-4 shadow-[0_16px_40px_rgba(12,51,123,0.08)] backdrop-blur-md sm:p-5">
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {guideData.metrics.map((metric, mIdx) => (
-                  <div key={mIdx} className="rounded-xl border border-slate-100 bg-white/70 p-3 text-center sm:p-4">
-                    <span className="block text-[10px] font-bold uppercase tracking-wider text-[#64748B] sm:text-[11px]">
-                      {metric.label}
-                    </span>
-                    <span className="mt-1 block text-[13px] font-extrabold text-[#1765F5] sm:text-[15px]">
-                      {metric.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+      <span className="font-bold text-[#0C337B]">
+        {guideData.shortTitle}
+      </span>
+
+    </div>
+
+    {/* MAIN HEADING */}
+    <h1 className="relative z-10 mx-auto max-w-[1100px] text-balance text-[32px] font-extrabold leading-[1.08] tracking-[-0.04em] text-white [-webkit-text-fill-color:#FFFFFF] [-webkit-text-stroke:1px_#0C337B] [paint-order:stroke_fill] [text-shadow:0_3px_12px_rgba(12,51,123,0.25)] min-[390px]:text-[34px] sm:text-[48px] md:text-[58px] lg:text-[64px]">
+      {guideData.title}
+    </h1>
+
+    {/* VOLUME BADGE */}
+    <div className="relative z-10 mb-3 mt-3 inline-flex max-w-full items-center gap-2 rounded-full border border-[#1765F5]/25 bg-white/85 px-3 py-1.5 shadow-sm backdrop-blur-md sm:px-4">
+
+      <Bookmark
+        size={13}
+        className="shrink-0 text-[#1765F5]"
+      />
+
+      <span className="text-center font-mono text-[9px] font-extrabold uppercase tracking-[0.07em] text-[#1765F5] min-[390px]:text-[10px] sm:text-[11px] sm:tracking-widest">
+        {guideData.vol} • {guideData.badge}
+      </span>
+
+    </div>
+
+    {/* COLORED CHARACTERISTIC PILLS */}
+    <div className="relative z-10 mb-2 mt-2 flex max-w-[580px] flex-wrap items-center justify-center gap-2 sm:mb-4 sm:mt-4 sm:gap-3">
+
+      {guideData.pillColors.map((pill, pIdx) => (
+        <span
+          key={pIdx}
+          style={{
+            backgroundColor: pill.bg,
+            color: pill.text,
+          }}
+          className="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-[0.04em] shadow-sm min-[390px]:px-3.5 min-[390px]:text-[10px] sm:text-[11px]"
+        >
+          {pill.label}
+        </span>
+      ))}
+
+    </div>
+
+    {/* CTA BUTTONS - SAME ROW ON MOBILE */}
+    <div className="relative z-10 mt-5 flex w-full flex-nowrap items-center justify-center gap-2 px-1 sm:mt-8 sm:gap-6 sm:px-0">
+
+      {/* FREE CONSULTATION */}
+      <a
+        href="#contact-advisory"
+        className="group inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#1765F5] bg-[#1765F5] px-1.5 py-3 text-[9px] font-bold text-white shadow-[0_8px_22px_rgba(23,101,245,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0C337B] hover:shadow-[0_16px_40px_rgba(12,51,123,0.4)] min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:gap-2 min-[390px]:px-3 min-[390px]:text-[11px] sm:flex-none sm:gap-3 sm:px-8 sm:py-4 sm:text-[15px]"
+      >
+        <span>Book a Free Consultation</span>
+
+        <ArrowRight
+          size={14}
+          strokeWidth={2.4}
+          className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 sm:size-[17px]"
+        />
+      </a>
+
+      {/* WHATSAPP BUTTON */}
+      <a
+        href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20studying%20in%20USA."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#25D366] bg-white px-1.5 py-3 text-[9px] font-bold text-[#0C337B] shadow-[0_8px_20px_rgba(37,211,102,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:gap-2 min-[390px]:px-3 min-[390px]:text-[11px] sm:flex-none sm:gap-3 sm:px-8 sm:py-4 sm:text-[15px]"
+      >
+
+        <svg
+          aria-hidden="true"
+          className="h-[14px] w-[14px] shrink-0 fill-[#25D366] transition-colors group-hover:fill-white sm:h-5 sm:w-5"
+          viewBox="0 0 24 24"
+        >
+          <path d="M21 11.6a9 9 0 0 1-13.3 7.9L3 21l1.5-4.5A9 9 0 1 1 21 11.6Z" />
+        </svg>
+
+        <span>Chat On Whatsapp</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
 
         {/* =====================================================================
             03. DETAILED EDITORIAL CHAPTERS (Clean, Deep, Structured Knowledge)

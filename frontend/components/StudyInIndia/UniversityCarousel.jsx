@@ -1,15 +1,16 @@
+
 "use client";
 
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, BadgeCheck } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
+import { BadgeCheck, ChevronLeft, ChevronRight } from "lucide-react";
 
-import "swiper/css";
-import "swiper/css/effect-coverflow";
+/* ==========================================
+   STUDY IN INDIA - ORIGINAL UNIVERSITY DATA
+   NAMES, IMAGES AND GRADES UNCHANGED
+========================================== */
 
-const universities = [
+const UNIVERSITIES = [
   {
     name: "Chandigarh University",
     grade: "A+",
@@ -82,155 +83,767 @@ const universities = [
   },
 ];
 
-export default function UniversityCarousel() {
-  const swiperRef = useRef(null);
+const TOTAL = UNIVERSITIES.length;
 
-  const handlePrev = () => {
-    swiperRef.current?.slidePrev();
-  };
+const AUTOPLAY_DELAY = 4500;
+const SCROLL_PAUSE = 2500;
 
-  const handleNext = () => {
-    swiperRef.current?.slideNext();
-  };
+/* ==========================================
+   3D ARC HELPERS - USA LAYOUT
+========================================== */
 
+function getWrappedDelta(index, position) {
+  let delta = index - position;
+
+  delta = ((delta % TOTAL) + TOTAL) % TOTAL;
+
+  if (delta > TOTAL / 2) {
+    delta -= TOTAL;
+  }
+
+  return delta;
+}
+
+function getScale(absDelta) {
+  return 1 + Math.pow(absDelta, 1.35) * 0.16;
+}
+
+function getRotY(delta) {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F4F7FA] py-12 sm:py-14 md:py-16 lg:py-[72px]">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[320px] w-[320px] rounded-full bg-[#18B8B5]/[0.06] blur-[90px]" />
-      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[340px] w-[340px] rounded-full bg-[#063B72]/[0.05] blur-[100px]" />
-
-      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-5 md:px-6 lg:px-8">
-        <div className="mb-8 flex items-end justify-between gap-5 md:mb-10 lg:mb-12">
-          <div className="max-w-[760px]">
-            <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[#18A9A6] sm:text-[13px]">
-             Explore Universities
-            </p>
-
-            <h2 className="text-[30px] font-bold leading-[1.08] tracking-[-0.035em] text-[#063B72] sm:text-[35px] md:text-[41px] lg:text-[46px]">
-              Where Could You Go <span className="text-[#18B8B5]">Next !!</span>
-            </h2>
-          </div>
-
-          <div className="flex shrink-0 items-center gap-2.5">
-            <button type="button" onClick={handlePrev} aria-label="Previous university" className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_8px_24px_rgba(6,59,114,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-12 sm:w-12">
-              <ChevronLeft size={21} strokeWidth={2} />
-            </button>
-
-            <button type="button" onClick={handleNext} aria-label="Next university" className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D9E4ED] bg-white text-[#063B72] shadow-[0_8px_24px_rgba(6,59,114,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#18B8B5] hover:bg-[#18B8B5] hover:text-white sm:h-12 sm:w-12">
-              <ChevronRight size={21} strokeWidth={2} />
-            </button>
-          </div>
-        </div>
-
-        <div className="relative w-full overflow-hidden px-0 py-3 sm:px-1">
-          <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 top-0 z-30 w-[8px] bg-gradient-to-r from-[#F4F7FA] to-transparent sm:w-[14px]" />
-          <div aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 top-0 z-30 w-[8px] bg-gradient-to-l from-[#F4F7FA] to-transparent sm:w-[14px]" />
-
-          <Swiper
-            modules={[EffectCoverflow]}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            effect="coverflow"
-            centeredSlides={true}
-            loop={true}
-            grabCursor={true}
-            speed={650}
-            slidesPerView={1.18}
-            spaceBetween={12}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 115,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            breakpoints={{
-              480: {
-                slidesPerView: 1.45,
-                spaceBetween: 14,
-              },
-              640: {
-                slidesPerView: 2.15,
-                spaceBetween: 16,
-              },
-              768: {
-                slidesPerView: 2.55,
-                spaceBetween: 18,
-              },
-              1024: {
-                slidesPerView: 3.35,
-                spaceBetween: 20,
-              },
-              1280: {
-                slidesPerView: 3.65,
-                spaceBetween: 22,
-              },
-            }}
-            className="!overflow-visible !pb-8 !pt-3"
-          >
-            {universities.map((university) => (
-              <SwiperSlide key={university.name} className="h-auto">
-                {({ isActive }) => (
-                  <UniversityCard university={university} active={isActive} />
-                )}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-    </section>
+    -Math.sign(delta) *
+    Math.min(38, Math.pow(Math.abs(delta), 1.05) * 10.5)
   );
 }
 
-function UniversityCard({ university, active }) {
+/* ==========================================
+   MAIN UNIVERSITY CAROUSEL
+========================================== */
+
+export default function UniversityCarousel() {
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+  const animationRef = useRef(null);
+  const autoplayRef = useRef(null);
+  const scrollResumeRef = useRef(null);
+
+  const [currentIndex, setCurrentIndex] = useState(3);
+  const [containerWidth, setContainerWidth] = useState(1300);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const currentRef = useRef(3);
+  const targetRef = useRef(3);
+
+  const visibleRef = useRef(false);
+  const hoveringRef = useRef(false);
+  const scrollingRef = useRef(false);
+  const interactingRef = useRef(false);
+  const suppressClickRef = useRef(false);
+
+  const dragRef = useRef({
+    active: false,
+    horizontal: false,
+    pointerId: null,
+    startX: 0,
+    startY: 0,
+    startIndex: 3,
+    lastX: 0,
+    lastTime: 0,
+    velocity: 0,
+  });
+
+  /* ==========================================
+     CHANGE CAROUSEL POSITION
+  ========================================== */
+
+  const moveTo = useCallback((value) => {
+    targetRef.current = value;
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    moveTo(Math.round(targetRef.current) - 1);
+  }, [moveTo]);
+
+  const handleNext = useCallback(() => {
+    moveTo(Math.round(targetRef.current) + 1);
+  }, [moveTo]);
+
+  /* ==========================================
+     RESPONSIVE RESIZE OBSERVER
+  ========================================== */
+
+  useEffect(() => {
+    const element = containerRef.current;
+
+    if (!element) return;
+
+    const update = () => {
+      setContainerWidth(element.clientWidth);
+    };
+
+    update();
+
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", update);
+
+      return () => {
+        window.removeEventListener("resize", update);
+      };
+    }
+
+    const observer = new ResizeObserver(update);
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  /* ==========================================
+     RUN AUTOPLAY ONLY WHEN VISIBLE
+  ========================================== */
+
+  useEffect(() => {
+    const element = sectionRef.current;
+
+    if (!element) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      visibleRef.current = true;
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visibleRef.current = entry.isIntersecting;
+
+        if (!entry.isIntersecting) {
+          scrollingRef.current = false;
+          interactingRef.current = false;
+        }
+      },
+      {
+        threshold: 0.35,
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  /* ==========================================
+     PAUSE AUTOPLAY DURING PAGE SCROLL
+  ========================================== */
+
+  useEffect(() => {
+    const handlePageScroll = () => {
+      scrollingRef.current = true;
+
+      if (scrollResumeRef.current) {
+        clearTimeout(scrollResumeRef.current);
+      }
+
+      scrollResumeRef.current = setTimeout(() => {
+        scrollingRef.current = false;
+      }, SCROLL_PAUSE);
+    };
+
+    window.addEventListener("scroll", handlePageScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("wheel", handlePageScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handlePageScroll);
+      window.removeEventListener("wheel", handlePageScroll);
+
+      if (scrollResumeRef.current) {
+        clearTimeout(scrollResumeRef.current);
+      }
+    };
+  }, []);
+
+  /* ==========================================
+     STABLE AUTO SLIDER
+  ========================================== */
+
+  useEffect(() => {
+    autoplayRef.current = setInterval(() => {
+      if (
+        !visibleRef.current ||
+        hoveringRef.current ||
+        scrollingRef.current ||
+        interactingRef.current ||
+        dragRef.current.active ||
+        document.hidden
+      ) {
+        return;
+      }
+
+      // Do not move while an animation is running.
+      if (
+        Math.abs(
+          targetRef.current - currentRef.current
+        ) > 0.025
+      ) {
+        return;
+      }
+
+      moveTo(Math.round(targetRef.current) + 1);
+    }, AUTOPLAY_DELAY);
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, [moveTo]);
+
+  /* ==========================================
+     SMOOTH 3D CAROUSEL ANIMATION
+  ========================================== */
+
+  useEffect(() => {
+    let running = true;
+
+    const animate = () => {
+      if (!running) return;
+
+      const target = targetRef.current;
+      const current = currentRef.current;
+      const difference = target - current;
+
+      if (Math.abs(difference) > 0.002) {
+        const easing = dragRef.current.horizontal
+          ? 0.42
+          : 0.15;
+
+        const next = current + difference * easing;
+
+        currentRef.current = next;
+        setCurrentIndex(next);
+      } else if (current !== target) {
+        currentRef.current = target;
+        setCurrentIndex(target);
+      }
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      running = false;
+
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
+  /* ==========================================
+     RESPONSIVE CARD DIMENSIONS
+     SAME GEOMETRY AS USA CAROUSEL
+  ========================================== */
+
+  const isMobile = containerWidth < 640;
+
+  const factor = isMobile
+    ? 1
+    : Math.max(
+        0.72,
+        Math.min(1, containerWidth / 1400)
+      );
+
+  const cardW = Math.round(
+    (isMobile ? 130 : 142) * factor
+  );
+
+  const cardH = Math.round(
+    (isMobile ? 210 : 230) * factor
+  );
+
+  const gap = Math.round(
+    (isMobile ? 20 : 30) * factor
+  );
+
+  /* ==========================================
+     SPACING BETWEEN 3D ARC CARDS
+  ========================================== */
+
+  const xTable = [0];
+
+  for (let i = 1; i <= 6; i++) {
+    const previousScale = getScale(i - 1);
+    const nextScale = getScale(i);
+
+    xTable.push(
+      xTable[i - 1] +
+        (cardW * (previousScale + nextScale)) / 2 +
+        gap
+    );
+  }
+
+  const getXPos = (delta) => {
+    const sign = Math.sign(delta);
+    const abs = Math.abs(delta);
+
+    const index = Math.floor(abs);
+    const fraction = abs - index;
+
+    if (index >= xTable.length - 1) {
+      return (
+        sign *
+        (
+          xTable[xTable.length - 1] +
+          (abs - (xTable.length - 1)) * 300
+        )
+      );
+    }
+
+    return (
+      sign *
+      (
+        xTable[index] +
+        fraction * (xTable[index + 1] - xTable[index])
+      )
+    );
+  };
+
+  /* ==========================================
+     POINTER / TOUCH DRAG
+  ========================================== */
+
+  const handlePointerDown = (event) => {
+    if (
+      event.pointerType === "mouse" &&
+      event.button !== 0
+    ) {
+      return;
+    }
+
+    if (
+      event.target.closest(
+        "button, a, input, textarea, select"
+      )
+    ) {
+      return;
+    }
+
+    const now = performance.now();
+
+    dragRef.current = {
+      active: true,
+      horizontal: false,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startIndex: targetRef.current,
+      lastX: event.clientX,
+      lastTime: now,
+      velocity: 0,
+    };
+
+    interactingRef.current = true;
+  };
+
+  const handlePointerMove = (event) => {
+    const drag = dragRef.current;
+
+    if (
+      !drag.active ||
+      drag.pointerId !== event.pointerId
+    ) {
+      return;
+    }
+
+    const dx = event.clientX - drag.startX;
+    const dy = event.clientY - drag.startY;
+
+    if (!drag.horizontal) {
+      if (
+        Math.abs(dx) < 8 &&
+        Math.abs(dy) < 8
+      ) {
+        return;
+      }
+
+      // Keep normal vertical scrolling functional.
+      if (Math.abs(dy) > Math.abs(dx)) {
+        drag.active = false;
+        interactingRef.current = false;
+        return;
+      }
+
+      drag.horizontal = true;
+      setIsDragging(true);
+      suppressClickRef.current = true;
+
+      try {
+        event.currentTarget.setPointerCapture(event.pointerId);
+      } catch {
+        // Continue without pointer capture.
+      }
+    }
+
+    const now = performance.now();
+    const elapsed = Math.max(1, now - drag.lastTime);
+
+    drag.velocity =
+      (event.clientX - drag.lastX) / elapsed;
+
+    drag.lastX = event.clientX;
+    drag.lastTime = now;
+
+    const distancePerCard = isMobile ? 125 : 185;
+
+    moveTo(
+      drag.startIndex - dx / distancePerCard
+    );
+  };
+
+  const handlePointerEnd = (event) => {
+    const drag = dragRef.current;
+
+    if (
+      !drag.active ||
+      drag.pointerId !== event.pointerId
+    ) {
+      return;
+    }
+
+    if (drag.horizontal) {
+      const movement =
+        event.clientX - drag.startX;
+
+      const swipeDirection =
+        movement === 0
+          ? 0
+          : -Math.sign(movement);
+
+      const distancePerCard = isMobile ? 125 : 185;
+
+      const travelled =
+        Math.abs(movement) / distancePerCard;
+
+      let snapped = Math.round(targetRef.current);
+
+      if (travelled > 0.18 && travelled < 0.5) {
+        snapped =
+          Math.round(drag.startIndex) +
+          swipeDirection;
+      }
+
+      if (Math.abs(drag.velocity) > 0.8) {
+        snapped += -Math.sign(drag.velocity);
+      }
+
+      moveTo(snapped);
+
+      setTimeout(() => {
+        suppressClickRef.current = false;
+      }, 120);
+    }
+
+    dragRef.current.active = false;
+    dragRef.current.horizontal = false;
+    dragRef.current.pointerId = null;
+
+    setIsDragging(false);
+    interactingRef.current = false;
+
+    try {
+      if (
+        event.currentTarget.hasPointerCapture(
+          event.pointerId
+        )
+      ) {
+        event.currentTarget.releasePointerCapture(
+          event.pointerId
+        );
+      }
+    } catch {
+      // Safe fallback.
+    }
+  };
+
+  /* ==========================================
+     CLICK ANY CARD TO BRING IT TO CENTER
+  ========================================== */
+
+  const handleCardClick = (index) => {
+    if (
+      suppressClickRef.current ||
+      dragRef.current.active
+    ) {
+      return;
+    }
+
+    const target = Math.round(targetRef.current);
+    const delta = getWrappedDelta(index, target);
+
+    moveTo(target + delta);
+  };
+
+  /* ==========================================
+     KEYBOARD ARROW NAVIGATION
+  ========================================== */
+
+  const handleKeyDown = (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      handlePrev();
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      handleNext();
+    }
+  };
+
+  /* ==========================================
+     MAIN RENDER
+  ========================================== */
+
   return (
-    <article className={`group relative h-full overflow-hidden rounded-[26px] border bg-white transition-all duration-500 ${active ? "z-20 scale-100 border-[#18B8B5]/40 opacity-100 shadow-[0_24px_60px_rgba(6,59,114,0.16)]" : "z-10 scale-[0.93] border-[#DCE6ED] opacity-[0.82] shadow-[0_10px_30px_rgba(6,59,114,0.08)]"}`}>
+    <section
+      ref={sectionRef}
+      role="region"
+      aria-label="Explore Universities"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      onMouseEnter={() => {
+        hoveringRef.current = true;
+      }}
+      onMouseLeave={() => {
+        hoveringRef.current = false;
+      }}
+      className="relative w-full select-none overflow-hidden bg-[#F4F7FA] py-7 outline-none sm:py-9 md:py-11"
+    >
+      {/* BACKGROUND DECORATIONS */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[320px] w-[320px] rounded-full bg-[#18B8B5]/[0.06] blur-[90px]" />
 
-      <div className="relative h-[285px] w-full overflow-hidden sm:h-[300px] md:h-[320px] lg:h-[335px]">
-        <Image src={university.image} alt={university.name} fill sizes="(max-width: 639px) 88vw, (max-width: 1023px) 48vw, 31vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[340px] w-[340px] rounded-full bg-[#063B72]/[0.05] blur-[100px]" />
 
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#041C35]/70 via-[#041C35]/5 to-transparent" />
+      {/* =====================================
+          HEADER - ORIGINAL INDIA CONTENT
+          USA STYLE CENTERED PLACEMENT
+      ===================================== */}
 
-        <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/60 bg-white/90 px-3.5 py-2 shadow-[0_6px_18px_rgba(6,59,114,0.10)] backdrop-blur-md">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#18B8B5]/10 text-[#119D9A]">
-            <BadgeCheck size={16} strokeWidth={2.3} />
+      <div className="relative z-10 mx-auto max-w-[850px] px-3.5 text-center sm:px-5">
+
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#085af9] sm:text-[12px]">
+          Explore Universities
+        </p>
+
+        <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] text-[#063B72] sm:text-[36px] md:text-[42px] lg:text-[46px]">
+          Where Could You Go{" "}
+          <span className="text-[#085af9]">
+            Next !!
           </span>
+        </h2>
 
-          <div className="leading-none">
-            <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#7A8998]">
-              NAAC
-            </p>
+      </div>
 
-            <p className="mt-1 text-[13px] font-bold text-[#063B72]">
-              {university.grade}
-            </p>
-          </div>
-        </div>
+      {/* =====================================
+          USA STYLE 3D ARC SHOWCASE
+      ===================================== */}
 
-        <div className="absolute bottom-4 left-5 right-5">
-          <p className="line-clamp-2 text-[19px] font-bold leading-[1.25] text-white sm:text-[20px] md:text-[21px]">
-            {university.name}
-          </p>
+      <div
+        ref={containerRef}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerEnd}
+        onPointerCancel={handlePointerEnd}
+        className={`relative mt-4 flex h-[320px] w-full items-center justify-center overflow-hidden sm:mt-6 sm:h-[380px] md:h-[430px] lg:h-[460px] ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
+        style={{
+          perspective: "1200px",
+          perspectiveOrigin: "50% 50%",
+          touchAction: "pan-y",
+          WebkitUserSelect: "none",
+          userSelect: "none",
+          maskImage:
+            "linear-gradient(90deg,transparent 0%,black 4%,black 96%,transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(90deg,transparent 0%,black 4%,black 96%,transparent 100%)",
+        }}
+      >
+
+        {/* LEFT EDGE FADE */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-40 w-12 bg-gradient-to-r from-[#F4F7FA] to-transparent sm:w-20" />
+
+        {/* RIGHT EDGE FADE */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-40 w-12 bg-gradient-to-l from-[#F4F7FA] to-transparent sm:w-20" />
+
+        {/* LEFT ARROW */}
+        <button
+          type="button"
+          onClick={handlePrev}
+          aria-label="Previous university"
+          className="absolute left-2 top-1/2 z-50 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white/95 text-[#063B72] shadow-md transition-all duration-200 hover:scale-110 hover:bg-[#18B8B5] hover:text-white sm:left-4 sm:h-11 sm:w-11"
+        >
+          <ChevronLeft size={20} strokeWidth={2.4} />
+        </button>
+
+        {/* RIGHT ARROW */}
+        <button
+          type="button"
+          onClick={handleNext}
+          aria-label="Next university"
+          className="absolute right-2 top-1/2 z-50 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white/95 text-[#063B72] shadow-md transition-all duration-200 hover:scale-110 hover:bg-[#18B8B5] hover:text-white sm:right-4 sm:h-11 sm:w-11"
+        >
+          <ChevronRight size={20} strokeWidth={2.4} />
+        </button>
+
+        {/* =====================================
+            3D CARDS TRACK
+        ===================================== */}
+
+        <div
+          className="relative flex h-full w-full items-center justify-center"
+          style={{
+            transformStyle: "preserve-3d",
+          }}
+        >
+
+          {UNIVERSITIES.map((university, index) => {
+            const delta = getWrappedDelta(
+              index,
+              currentIndex
+            );
+
+            if (Math.abs(delta) > 3.8) {
+              return null;
+            }
+
+            const absDelta = Math.abs(delta);
+
+            const scale = getScale(absDelta);
+            const rotY = getRotY(delta);
+            const xPos = getXPos(delta);
+
+            const zIndex = Math.round(
+              50 + absDelta * 10
+            );
+
+            const opacity =
+              absDelta <= 2.8
+                ? 1
+                : Math.max(
+                    0,
+                    1 -
+                      Math.pow(
+                        absDelta - 2.8,
+                        1.6
+                      )
+                  );
+
+            return (
+              <div
+                key={university.name}
+                onClick={() => handleCardClick(index)}
+                className="absolute left-1/2 top-1/2 cursor-grab active:cursor-grabbing"
+                style={{
+                  width: `${cardW}px`,
+                  height: `${cardH}px`,
+                  transform: `translate(-50%, -50%) translateX(${xPos.toFixed(1)}px) scale(${scale.toFixed(3)}) rotateY(${rotY.toFixed(1)}deg)`,
+                  transformOrigin: "center center",
+                  transformStyle: "preserve-3d",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  zIndex,
+                  opacity,
+                  userSelect: "none",
+                  touchAction: "pan-y",
+                }}
+              >
+
+                {/* =====================================
+                    UNIVERSITY IMAGE CARD
+                ===================================== */}
+
+                <div
+                  className="group relative h-full w-full overflow-hidden rounded-[24px] bg-slate-950 shadow-[0_16px_36px_rgba(0,0,0,0.18)] transition-shadow duration-300 hover:shadow-[0_24px_48px_rgba(6,59,114,0.28)]"
+                  style={{
+                    isolation: "isolate",
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
+                  }}
+                >
+
+                  {/* ORIGINAL UNIVERSITY IMAGE */}
+                  <Image
+                    src={university.image}
+                    alt={university.name}
+                    fill
+                    draggable={false}
+                    sizes="(max-width: 640px) 160px, 220px"
+                    className="pointer-events-none select-none object-cover object-center"
+                    style={{
+                      transform: "scale(1.015)",
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
+                    }}
+                    priority={absDelta < 2}
+                  />
+
+                  {/* IMAGE DEPTH OVERLAY */}
+                  <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/10" />
+
+                  {/* =====================================
+                      ORIGINAL NAAC GRADE
+                  ===================================== */}
+
+                  <div className="pointer-events-none absolute left-2.5 top-2.5 z-20">
+
+                    <span className="inline-flex items-center gap-1 rounded-full border border-white/40 bg-white/95 px-2 py-1 text-[9px] font-extrabold text-[#063B72] shadow-md">
+
+                      <BadgeCheck
+                        size={12}
+                        strokeWidth={2.3}
+                        className="text-[#085af9]"
+                      />
+
+                      NAAC {university.grade}
+
+                    </span>
+
+                  </div>
+
+                  {/* =====================================
+                      ORIGINAL UNIVERSITY NAME
+                      + ACCREDITATION
+                  ===================================== */}
+
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 p-3 pt-7">
+
+                    <h3 className="line-clamp-3 text-[12px] font-extrabold leading-[1.3] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-[13px]">
+                      {university.name}
+                    </h3>
+
+                    <p className="mt-1 text-[9px] font-medium leading-snug text-white/80">
+                      NAAC {university.grade} Accredited
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+            );
+          })}
+
         </div>
       </div>
 
-      <div className="px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
-        <div className="flex items-center justify-between gap-4">
-          <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-[#8A98A7]">
-              Accreditation
-            </p>
-
-            <p className="mt-1.5 text-[14px] font-bold text-[#063B72] sm:text-[15px]">
-              NAAC {university.grade} Accredited
-            </p>
-          </div>
-
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-[#18B8B5]/15 bg-[#18B8B5]/10 text-[#18A9A6]">
-            <BadgeCheck size={21} strokeWidth={2} />
-          </div>
-        </div>
-      </div>
-    </article>
+    </section>
   );
 }

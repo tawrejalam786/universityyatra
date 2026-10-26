@@ -1,353 +1,291 @@
+
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
-import {
-  MessagesSquare,
-  GraduationCap,
-  Plane,
-  ArrowRight,
-  ClipboardCheck,
-  Coins,
-  FileText,
-  FileCheck2,
-  PlaneTakeoff,
-  MapPin,
-} from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { helpItems } from "../StudyInUsa/helpItems";
 
-/* =====================================================================
-   COMPREHENSIVE 8-STEP DATA (MATCHING IMAGE 1 & IMAGE 2)
-===================================================================== */
-const helpItems = [
-  {
-    number: "1",
-    title: "Personalised Counselling",
-    description: "One-on-one expert guidance to understand your academic goals and preferences.",
-    image: "/images/guidance/counselling.png",
-    accent: "#1765F5",
-    soft: "#E8F0FE",
-  },
-  {
-    number: "2",
-    title: "Profile Assessment",
-    description: "We analyse your academic background, test scores, and high-potential opportunities.",
-    image: "/images/how-we-help/eligibility-format.png",
-    accent: "#2EBEB5",
-    soft: "#E0F7F5",
-  },
-  {
-    number: "3",
-    title: "Costs & Funding",
-    description: "Crystal-clear breakdown of tuition fees, living costs, and funding options.",
-    image: "/images/guidance/scholarship.png",
-    accent: "#FF9F43",
-    soft: "#FFF3E6",
-  },
-  {
-    number: "4",
-    title: "Admission Guidance",
-    description: "Select the right programs and submit error-free university applications.",
-    image: "/images/guidance/application.png",
-    accent: "#9B59B6",
-    soft: "#F4ECF7",
-  },
-  {
-    number: "5",
-    title: "SOP & Documentation",
-    description: "Craft compelling statements of purpose and recommendation letters.",
-    image: "/images/how-we-help/documentation-application.png",
-    accent: "#E74C3C",
-    soft: "#FADBD8",
-  },
-  {
-    number: "6",
-    title: "Visa Support",
-    description: "Navigate the visa process with confidence and expert mock interviews.",
-    image: "/images/study-canada/visa-guidance.png",
-    accent: "#3498DB",
-    soft: "#EBF5FB",
-  },
-  {
-    number: "7",
-    title: "Pre-Departure",
-    description: "Flight bookings, housing, health insurance and essential packing checklists.",
-    image: "/images/guidance/departure.png",
-    accent: "#16A085",
-    soft: "#D5F4E6",
-  },
-  {
-    number: "8",
-    title: "Campus Landing",
-    description: "Airport pickup, campus orientation and settling in smoothly.",
-    image: "/images/study-canada/landing.png",
-    accent: "#1765F5",
-    soft: "#E8F0FE",
-  },
-];
+const RADIUS = 38;
 
-/* ==========================================
-   WORLD GLOBE DECORATION
-========================================== */
+// Precalculate positions with fixed precision.
+// This prevents server/client hydration mismatches.
+const ringNodes = helpItems.map((h, i) => {
+  const angle = ((-90 + i * (360 / helpItems.length)) * Math.PI) / 180;
 
-function WorldGlobe() {
-  return (
-    <div aria-hidden="true" className="pointer-events-none absolute -left-10 -top-8 z-0 hidden h-[240px] w-[240px] opacity-60 lg:block xl:-left-5 xl:-top-5 xl:h-[280px] xl:w-[280px]">
+  return {
+    ...h,
+    left: (50 + RADIUS * Math.cos(angle)).toFixed(4),
+    top: (50 + RADIUS * Math.sin(angle)).toFixed(4),
+  };
+});
 
-      {/* Globe */}
-      <svg viewBox="0 0 300 300" fill="none" className="h-full w-full">
-        <defs>
-          <radialGradient id="uy-globe-gradient" cx="40%" cy="30%" r="75%">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="45%" stopColor="#C4EFFF" />
-            <stop offset="100%" stopColor="#83CFF3" />
-          </radialGradient>
+export default function HowItWorksRing() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-          <linearGradient id="uy-continent-gradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="#E7FAFF" />
-          </linearGradient>
-        </defs>
-
-        {/* Outer globe */}
-        <circle cx="150" cy="150" r="118" fill="url(#uy-globe-gradient)" opacity="0.85" />
-
-        {/* Globe latitude lines */}
-        <ellipse cx="150" cy="150" rx="118" ry="43" stroke="#61BDF2" strokeWidth="1.3" opacity="0.5" />
-        <ellipse cx="150" cy="150" rx="118" ry="82" stroke="#61BDF2" strokeWidth="1.2" opacity="0.35" />
-
-        {/* Globe longitude lines */}
-        <ellipse cx="150" cy="150" rx="50" ry="118" stroke="#61BDF2" strokeWidth="1.3" opacity="0.4" />
-        <ellipse cx="150" cy="150" rx="88" ry="118" stroke="#61BDF2" strokeWidth="1.2" opacity="0.3" />
-
-        {/* North America */}
-        <path d="M55 91 L77 70 L103 67 L117 81 L139 83 L145 98 L126 107 L120 127 L101 135 L94 156 L81 146 L70 124 L54 117 Z" fill="url(#uy-continent-gradient)" opacity="0.95" />
-
-        {/* South America */}
-        <path d="M106 153 L126 148 L142 160 L151 184 L140 208 L132 230 L119 244 L113 221 L104 201 L110 181 Z" fill="url(#uy-continent-gradient)" opacity="0.95" />
-
-        {/* Europe / Asia */}
-        <path d="M154 76 L177 62 L202 72 L224 83 L247 105 L258 127 L238 138 L217 131 L202 144 L183 128 L165 132 L149 112 Z" fill="url(#uy-continent-gradient)" opacity="0.95" />
-
-        {/* Africa */}
-        <path d="M165 140 L190 136 L210 153 L212 179 L197 205 L183 220 L168 197 L160 173 Z" fill="url(#uy-continent-gradient)" opacity="0.95" />
-
-        {/* Australia */}
-        <path d="M224 209 L246 202 L261 214 L253 231 L232 234 L220 223 Z" fill="url(#uy-continent-gradient)" opacity="0.95" />
-
-        {/* Orbit rings */}
-        <ellipse cx="150" cy="150" rx="145" ry="60" transform="rotate(-23 150 150)" stroke="#45B6FA" strokeWidth="1.5" strokeDasharray="6 6" opacity="0.8" />
-
-        <ellipse cx="150" cy="150" rx="147" ry="97" transform="rotate(30 150 150)" stroke="#45B6FA" strokeWidth="1.2" strokeDasharray="5 7" opacity="0.5" />
-
-        {/* Location marker */}
-        <circle cx="215" cy="166" r="15" fill="#168DF5" />
-        <circle cx="215" cy="163" r="5" fill="white" />
-        <path d="M203 174 L215 190 L227 174" fill="#168DF5" />
-      </svg>
-
-    </div>
-  );
-}
-
-/* ==========================================
-   AIRPLANE + CURVED DOTTED FLIGHT PATH
-========================================== */
-
-function AirplaneFlightPath() {
-  return (
-    <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 z-0 hidden h-[230px] w-[430px] md:block lg:right-3 lg:w-[500px] xl:w-[590px]">
-
-      {/* Curved dashed route */}
-      <svg viewBox="0 0 590 230" fill="none" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-
-        <path
-          d="M8 168 C80 195 110 165 105 126 C101 92 151 83 166 121 C189 186 264 153 324 125 C401 89 470 70 555 29"
-          stroke="#52B8FF"
-          strokeWidth="2"
-          strokeDasharray="8 9"
-          strokeLinecap="round"
-          fill="none"
-        />
-
-        {/* Small route dot */}
-        <circle cx="8" cy="168" r="3" fill="#52B8FF" />
-
-      </svg>
-
-      {/* Airplane */}
-      <motion.div initial={{ opacity: 0, x: -15, y: 10 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9 }} className="absolute right-[3%] top-[4%] rotate-[-27deg]">
-
-        <Plane size={55} strokeWidth={1.8} className="fill-[#4BA9F6] text-[#168DF5] drop-shadow-[0_5px_10px_rgba(22,141,245,0.15)]" />
-
-      </motion.div>
-
-    </div>
-  );
-}
-
-/* ==========================================
-   INDIVIDUAL JOURNEY STEP
-========================================== */
-
-function JourneyStep({ item, index, reduceMotion, compact = false }) {
-  return (
-    <motion.article
-      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay: reduceMotion ? 0 : index * 0.06 }}
-      className="group relative flex h-full min-w-0 flex-col items-center text-center"
-    >
-
-      {/* CIRCULAR ICON */}
-      <div className={`relative flex shrink-0 items-center justify-center ${compact ? "h-[86px] w-[86px] lg:h-[96px] lg:w-[96px] xl:h-[106px] xl:w-[106px]" : "h-[114px] w-[114px] sm:h-[122px] sm:w-[122px]"}`}>
-
-        {/* Outer circle */}
-        <div className="absolute inset-0 rounded-full border border-[#D0EAF6] bg-white/70 shadow-[0_7px_24px_rgba(26,125,184,0.09)]" />
-
-        {/* Soft colored background */}
-        <div className="absolute inset-[7px] rounded-full border-[3px] border-white" style={{ backgroundColor: item.soft }} />
-
-        {/* Image */}
-        <div className={`relative z-10 flex items-center justify-center ${compact ? "h-[62px] w-[62px] lg:h-[68px] lg:w-[68px] xl:h-[76px] xl:w-[76px]" : "h-[76px] w-[76px] sm:h-[84px] sm:w-[84px]"}`}>
-          <Image
-            src={item.image}
-            alt=""
-            width={180}
-            height={180}
-            sizes="(max-width: 767px) 84px, 76px"
-            className="h-full w-full object-contain drop-shadow-[0_8px_8px_rgba(6,59,114,0.14)] transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110"
-          />
-        </div>
-
-        {/* Step number */}
-        <span className="absolute right-[2px] top-[-5px] z-20 flex h-[27px] w-[27px] items-center justify-center rounded-full border-[3px] border-[#F0F9FD] text-[11px] font-extrabold text-white shadow-[0_4px_12px_rgba(6,59,114,0.16)]" style={{ backgroundColor: item.accent }}>
-          {Number(item.number)}
-        </span>
-
-      </div>
-
-      {/* Title */}
-      <h3 className={`mt-4 font-extrabold leading-[1.35] tracking-[-0.02em] text-[#0C337B] ${compact ? "text-[10px] lg:text-[11px] xl:text-[12px]" : "text-[13px] sm:text-[14px]"}`}>
-        {item.title}
-      </h3>
-
-      {/* Description */}
-      <p className={`mt-2 leading-[1.5] text-[#526B8C] ${compact ? "text-[9px] lg:text-[10px] xl:text-[11px]" : "text-[11px] sm:text-[12px]"}`}>
-        {item.description}
-      </p>
-
-    </motion.article>
-  );
-}
-
-/* ==========================================
-   MAIN SECTION
-========================================== */
-
-export default function HowUniversityYatraHelps() {
   const reduceMotion = useReducedMotion();
 
+  const total = helpItems.length;
+  const item = helpItems[active];
+
+  // Autoplay
+  useEffect(() => {
+    if (paused || reduceMotion || total <= 1) return;
+
+    const timer = setInterval(() => {
+      setActive((i) => (i + 1) % total);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [paused, reduceMotion, total]);
+
+  // Previous / Next
+  const go = (step) => {
+    setActive((i) => (i + step + total) % total);
+  };
+
   return (
-    <section className="relative w-full overflow-hidden bg-white py-8 sm:py-10 lg:py-12">
+    <section aria-labelledby="ring-title" className="relative w-full overflow-hidden bg-[#F0F9FD] py-8 sm:py-10">
+      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-6 lg:grid-cols-[1fr_1fr] lg:gap-10">
 
-      <div className="mx-auto w-full max-w-[1600px] px-3 sm:px-5 lg:px-7">
-
-        {/* FULL WIDTH ROUNDED SECTION */}
-        <div className="relative isolate overflow-hidden rounded-[28px] bg-[#F0F9FD] px-3 pb-9 pt-10 shadow-[0_10px_35px_rgba(6,59,114,0.04)] sm:rounded-[38px] sm:px-6 md:px-7 md:pb-12 md:pt-12 lg:px-9 lg:pt-14">
-
-          {/* BACKGROUND DECORATIONS */}
-          <WorldGlobe />
-          <AirplaneFlightPath />
-
-          {/* Soft clouds */}
-          <div aria-hidden="true" className="pointer-events-none absolute left-[25%] top-[45px] hidden h-12 w-28 rounded-full bg-white/65 blur-xl lg:block" />
-          <div aria-hidden="true" className="pointer-events-none absolute right-[18%] top-[75px] hidden h-10 w-32 rounded-full bg-white/70 blur-xl lg:block" />
-
-          {/* HEADER */}
-          <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.55 }}
-            className="relative z-10 mx-auto mb-12 max-w-[850px] text-center sm:mb-14 md:mb-16 lg:mb-20"
-          >
-
-            <span className="mb-3 block text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#1765F5] sm:text-[11px]">
-              YOUR JOURNEY, OUR SUPPORT
+          {/* LEFT CONTENT */}
+          <div className="min-w-0">
+            <span className="mb-2 block text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#1765F5]">
+              Your journey, our support
             </span>
 
-            <h2 className="text-[27px] font-extrabold leading-[1.13] tracking-[-0.045em] text-[#0C337B] sm:text-[34px] md:text-[40px] lg:text-[44px]">
-              How <span className="text-[#1765F5]">University Yatra™</span> Helps You
+            <h2 id="ring-title" className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[30px] lg:text-[34px]">
+              How <span className="text-[#1765F5]">University Yatra™</span>{" "}
+              Helps You
             </h2>
 
-            {/* Small underline accent */}
-            <div aria-hidden="true" className="mx-auto mt-3 h-[4px] w-24 -rotate-2 rounded-full bg-[#1765F5]" />
-
-            <p className="mx-auto mt-5 max-w-[640px] text-[12px] leading-[1.65] text-[#526B8C] sm:text-[13px] md:text-[14px]">
-              From your first question to your study abroad journey, we guide you every step.
+            <p className="mt-2 max-w-[460px] text-[13px] leading-[1.65] text-[#526B8C]">
+              From your first question to your study abroad journey, we guide
+              you every step.
             </p>
 
-          </motion.div>
+            {/* ACTIVE STEP CARD */}
+                        {/* ACTIVE STEP CARD */}
+            <div
+              className="relative mt-5 overflow-hidden rounded-2xl border p-4 shadow-[0_8px_24px_rgba(26,125,184,0.08)] transition-colors duration-500 sm:p-5"
+              style={{
+                backgroundColor: item.soft,
+                borderColor: `${item.accent}33`,
+              }}
+              aria-live="polite"
+            >
+              {/* DECORATIVE ARC */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-16 -top-20 h-[210px] w-[210px] rounded-full border transition-colors duration-500"
+                style={{ borderColor: `${item.accent}26` }}
+              />
 
-          {/* MOBILE - SWIPE TIMELINE */}
-          <div className="relative z-10 md:hidden">
+              {/* BIG WATERMARK NUMBER (right corner) */}
+              <AnimatePresence mode="wait" initial={false}>
+=                <motion.span
+                  key={`num-${item.number}`}
+                  aria-hidden="true"
+                  initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+                  transition={{ duration: 0.25 }}
+                  className="pointer-events-none absolute right-3 top-[28%] -translate-y-1/2 select-none text-[52px] font-black leading-none tracking-[-0.04em] sm:text-[62px]"
+                  style={{
+                    color: `${item.accent}26`,
+                    textShadow: `0 6px 14px ${item.accent}1F`,
+                  }}
+                >
+                  {String(item.number).padStart(2, "0")}
+                </motion.span>
+              </AnimatePresence>
 
-            {/* Dashed connector */}
-            <div aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-[57px] border-t-2 border-dashed border-[#A2C1FB]" />
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={item.number}
+                  initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
+                  transition={{ duration: 0.22 }}
+                  className="relative z-10 flex items-start gap-3 pr-14 sm:pr-20"
+                >
+                  {/* ICON (same image as the ring step) */}
+                  <span
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 bg-white shadow-[0_6px_14px_rgba(6,59,114,0.14)]"
+                    style={{ borderColor: item.accent }}
+                  >
+                    <span className="relative block h-8 w-8">
+                      <Image
+                        src={item.image}
+                        alt=""
+                        fill
+                        sizes="32px"
+                        className="object-contain"
+                      />
+                    </span>
+                  </span>
 
-            <div className="flex snap-x snap-mandatory gap-0 overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  <div className="min-w-0">
+                    <h3
+                      className="text-[15px] font-bold"
+                      style={{ color: item.accent }}
+                    >
+                      {item.title}
+                    </h3>
 
-              {helpItems.map((item, index) => (
-                <div key={item.number} className="relative w-[185px] shrink-0 snap-start px-2 sm:w-[205px]">
+                    <p className="mt-1 text-[13px] leading-[1.65] text-[#526B8C]">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
-                  <JourneyStep item={item} index={index} reduceMotion={reduceMotion} />
-
-                  {index !== helpItems.length - 1 && (
-                    <div aria-hidden="true" className="pointer-events-none absolute right-[-10px] top-[48px] z-20 flex h-[21px] w-[21px] items-center justify-center rounded-full border-2 border-[#F0F9FD] bg-[#1765F5] text-white">
-                      <ArrowRight size={12} strokeWidth={3} />
-                    </div>
-                  )}
-
+              {/* PROGRESS AND NAVIGATION */}
+              <div className="relative z-10 mt-4 flex items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {helpItems.map((h, i) => (
+                    <span
+                      key={h.number}
+                      className="h-1.5 rounded-full transition-all duration-300"
+                      style={{
+                        width: i === active ? 20 : 6,
+                        backgroundColor:
+                          i === active ? item.accent : `${item.accent}40`,
+                      }}
+                    />
+                  ))}
                 </div>
-              ))}
 
+                <div className="flex shrink-0 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => go(-1)}
+                    aria-label="Previous step"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border bg-white shadow-[0_4px_10px_rgba(6,59,114,0.1)] transition-transform hover:scale-105"
+                    style={{ borderColor: `${item.accent}55`, color: item.accent }}
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => go(1)}
+                    aria-label="Next step"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border bg-white shadow-[0_4px_10px_rgba(6,59,114,0.1)] transition-transform hover:scale-105"
+                    style={{ borderColor: `${item.accent}55`, color: item.accent }}
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <p className="mt-1 text-center text-[10px] font-semibold tracking-[0.08em] text-[#7890A8]">
-              Swipe to explore your journey →
-            </p>
-
           </div>
 
-          {/* DESKTOP - 8 CONNECTED STEPS */}
-          <div className="relative z-10 hidden md:block">
+          {/* RIGHT RING */}
+          <div
+            className="relative mx-auto aspect-square w-full max-w-[380px] lg:max-w-[420px]"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onTouchStart={() => setPaused(true)}
+            onTouchEnd={() => setPaused(false)}
+            onTouchCancel={() => setPaused(false)}
+          >
+            {/* DASHED ORBIT */}
+            <svg viewBox="0 0 100 100" aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full">
+              <circle
+                cx="50"
+                cy="50"
+                r={RADIUS}
+                fill="none"
+                stroke="#A2C1FB"
+                strokeWidth="0.5"
+                strokeDasharray="1.6 1.6"
+              />
+            </svg>
 
-            {/* Dashed timeline */}
-            <div aria-hidden="true" className="pointer-events-none absolute left-[6%] right-[6%] top-[43px] z-0 border-t-2 border-dashed border-[#A2C1FB] lg:top-[47px] xl:top-[52px]" />
+            {/* CENTER ACTIVE STEP */}
+            <div className="absolute inset-[27%] flex flex-col items-center justify-center rounded-full border border-[#D0EAF6] bg-white p-2 text-center shadow-[0_10px_30px_rgba(26,125,184,0.12)]">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={item.number}
+                  initial={reduceMotion ? false : { opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.85 }}
+                  transition={{ duration: 0.22 }}
+                  className="flex flex-col items-center"
+                >
+                  <div className="relative h-[56px] w-[56px] sm:h-[72px] sm:w-[72px]">
+                    <Image
+                      src={item.image}
+                      alt=""
+                      fill
+                      sizes="72px"
+                      className="object-contain"
+                    />
+                  </div>
 
-            <div className="relative z-10 grid grid-cols-8 gap-1 lg:gap-2 xl:gap-3">
+                  <span
+                    className="mt-1 text-[10px] font-extrabold uppercase tracking-[0.12em]"
+                    style={{ color: item.accent }}
+                  >
+                    Step {item.number}
+                  </span>
 
-              {helpItems.map((item, index) => (
-                <div key={item.number} className="relative min-w-0">
-
-                  <JourneyStep item={item} index={index} reduceMotion={reduceMotion} compact />
-
-                  {index !== helpItems.length - 1 && (
-                    <div aria-hidden="true" className="pointer-events-none absolute right-[-10px] top-[34px] z-20 flex h-[20px] w-[20px] items-center justify-center rounded-full border-[3px] border-[#F0F9FD] bg-[#1765F5] text-white lg:right-[-12px] lg:top-[38px] xl:top-[43px]">
-                      <ArrowRight size={11} strokeWidth={3} />
-                    </div>
-                  )}
-
-                </div>
-              ))}
-
+                  <span className="mt-0.5 text-[11px] font-bold leading-[1.25] text-[#0C337B] sm:text-[13px]">
+                    {item.title}
+                  </span>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
-          </div>
+            {/* RING NODES */}
+            {ringNodes.map((h, i) => {
+              const isActive = i === active;
 
+              return (
+                <button
+                  key={h.number}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  onPointerEnter={(e) => {
+                    if (e.pointerType === "mouse") {
+                      setActive(i);
+                    }
+                  }}
+                  aria-label={`Step ${h.number}: ${h.title}`}
+                  aria-pressed={isActive}
+                  style={{
+                    left: `${h.left}%`,
+                    top: `${h.top}%`,
+                    backgroundColor: h.soft,
+                    borderColor: isActive ? h.accent : "#FFFFFF",
+                  }}
+                  className={isActive ? "absolute z-20 aspect-square w-[17%] -translate-x-1/2 -translate-y-1/2 scale-[1.18] rounded-full border-[3px] shadow-[0_10px_24px_rgba(26,125,184,0.25)] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50" : "absolute z-10 aspect-square w-[17%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] shadow-[0_6px_16px_rgba(26,125,184,0.12)] transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50"}
+                >
+                  <span className="absolute inset-[16%]">
+                    <Image
+                      src={h.image}
+                      alt=""
+                      fill
+                      sizes="64px"
+                      className="object-contain"
+                    />
+                  </span>
+
+                  <span
+                    className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#F0F9FD] text-[10px] font-extrabold text-white"
+                    style={{ backgroundColor: h.accent }}
+                  >
+                    {h.number}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-
       </div>
     </section>
   );

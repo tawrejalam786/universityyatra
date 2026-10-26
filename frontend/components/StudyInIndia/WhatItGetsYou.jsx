@@ -14,9 +14,15 @@ import {
   BrainCircuit,
   Plus,
   Minus,
-  ArrowRight,
   ArrowLeft,
+  ArrowRight,
 } from "lucide-react";
+
+/* =========================================
+   STUDY IN INDIA - ORIGINAL CONTENT
+
+   ALL TITLES, DESCRIPTIONS & COLORS KEPT
+========================================= */
 
 const benefits = [
   {
@@ -57,6 +63,10 @@ const benefits = [
   },
 ];
 
+/* =========================================
+   MAIN COMPONENT
+========================================= */
+
 export default function WhatItGetsYou() {
   const [activeStep, setActiveStep] = useState(0);
   const [manualStep, setManualStep] = useState(null);
@@ -67,11 +77,20 @@ export default function WhatItGetsYou() {
 
   const reduceMotion = useReducedMotion();
 
+  /* =========================================
+     SYNC ACTIVE STEP
+  ========================================= */
+
   useEffect(() => {
     activeRef.current = activeStep;
   }, [activeStep]);
 
-  // AUTOMATIC SCROLL-BASED ACCORDION
+  /* =========================================
+     SCROLL-BASED ACTIVE ACCORDION
+
+     SAME BEHAVIOR AS USA SECTION
+  ========================================= */
+
   useEffect(() => {
     let frame = null;
 
@@ -81,11 +100,15 @@ export default function WhatItGetsYou() {
       if (manualStep !== null) return;
 
       const section = sectionRef.current;
+
       if (!section) return;
 
       const bounds = section.getBoundingClientRect();
 
-      if (bounds.bottom < 0 || bounds.top > window.innerHeight) {
+      if (
+        bounds.bottom < 0 ||
+        bounds.top > window.innerHeight
+      ) {
         return;
       }
 
@@ -98,7 +121,9 @@ export default function WhatItGetsYou() {
         if (!node) return;
 
         const rect = node.getBoundingClientRect();
+
         const centerY = rect.top + rect.height / 2;
+
         const distance = Math.abs(centerY - targetY);
 
         if (distance < closestDistance) {
@@ -124,6 +149,7 @@ export default function WhatItGetsYou() {
     window.addEventListener("scroll", onScroll, {
       passive: true,
     });
+
     window.addEventListener("resize", onScroll);
 
     return () => {
@@ -136,14 +162,20 @@ export default function WhatItGetsYou() {
     };
   }, [manualStep]);
 
-  // MANUAL CARD CLICK
+  /* =========================================
+     MANUAL ACCORDION SELECTION
+  ========================================= */
+
   const handleCardClick = (index) => {
     activeRef.current = index;
     setActiveStep(index);
     setManualStep(index);
   };
 
-  // RESUME AUTO MODE ON SCROLL
+  /* =========================================
+     RESUME AUTO MODE ON SCROLL
+  ========================================= */
+
   useEffect(() => {
     if (manualStep === null) return;
 
@@ -154,6 +186,7 @@ export default function WhatItGetsYou() {
     window.addEventListener("wheel", resumeScrollMode, {
       passive: true,
     });
+
     window.addEventListener("touchmove", resumeScrollMode, {
       passive: true,
     });
@@ -164,73 +197,191 @@ export default function WhatItGetsYou() {
     };
   }, [manualStep]);
 
-  return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:py-16">
-      <div className="mx-auto w-full max-w-[1180px] px-3 sm:px-5 lg:px-6">
+  /* =========================================
+     SECTION LAYOUT
+  ========================================= */
 
-        {/* HEADING */}
-        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45 }} className="mb-9 text-center sm:mb-10 md:mb-12">
-          <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
-            What It <span className="text-[#18B8B5]">Get’s You</span>
+  return (
+    <section
+      ref={sectionRef}
+      className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9"
+    >
+      <div className="mx-auto w-full max-w-[1180px] px-3.5 sm:px-5 lg:px-6">
+
+        {/* =====================================
+            ORIGINAL STUDY IN INDIA HEADING
+        ===================================== */}
+
+        <motion.div
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 14 }
+          }
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.45,
+          }}
+          className="mb-4 text-center sm:mb-6"
+        >
+          <h2 className="text-[24px] font-bold leading-[1.18] tracking-[-0.03em] text-[#063B72] sm:text-[30px] md:text-[34px] lg:text-[38px]">
+            What It{" "}
+            <span className="text-[#085af9]">
+              Get’s You
+            </span>
           </h2>
         </motion.div>
 
-        {/* TIMELINE */}
+        {/* =====================================
+            USA-STYLE COMPACT TIMELINE
+        ===================================== */}
+
         <div className="relative mx-auto w-full max-w-[1100px]">
 
-          {/* CENTER MULTICOLOR BAR */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-y-5 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]">
+          {/* =====================================
+              ORIGINAL MULTICOLOR CENTER BAR
+          ===================================== */}
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-3 left-1/2 z-10 flex w-[44px] -translate-x-1/2 flex-col overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(6,59,114,0.15)] sm:w-[60px] sm:rounded-[28px] md:w-[76px] md:rounded-[34px]"
+          >
             {benefits.map((item) => (
-              <div key={item.number} className="min-h-0 flex-1" style={{ backgroundColor: item.accent }} />
+              <div
+                key={item.number}
+                className="min-h-0 flex-1"
+                style={{
+                  backgroundColor: item.accent,
+                }}
+              />
             ))}
           </div>
 
-          {/* TIMELINE ROWS */}
+          {/* =====================================
+              TIMELINE ROWS
+          ===================================== */}
+
           <div className="relative z-20">
+
             {benefits.map((item, index) => {
               const isLeft = index % 2 === 1;
               const isActive = activeStep === index;
 
               return (
-                <div key={item.number} className="relative grid min-h-[135px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-5 sm:min-h-[155px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] md:min-h-[175px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)]">
+                <div
+                  key={item.number}
+                  className="relative grid min-h-[90px] grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] items-center py-2 sm:min-h-[110px] sm:grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] sm:py-2.5 md:min-h-[125px] md:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] md:py-3"
+                >
 
-                  {/* LEFT SIDE */}
+                  {/* =====================================
+                      LEFT COLUMN
+                  ===================================== */}
+
                   <div className="flex min-w-0 items-center justify-end">
+
                     {isLeft ? (
-                      <TimelineAccordionCard item={item} index={index} active={isActive} onClick={() => handleCardClick(index)} reduceMotion={reduceMotion} side="left" />
+                      <TimelineAccordionCard
+                        item={item}
+                        index={index}
+                        active={isActive}
+                        onClick={() => handleCardClick(index)}
+                        reduceMotion={reduceMotion}
+                        side="left"
+                      />
                     ) : (
-                      <StepLabel item={item} active={isActive} side="left" />
+                      <StepLabel
+                        item={item}
+                        active={isActive}
+                        side="left"
+                      />
                     )}
+
                   </div>
 
-                  {/* CENTER NUMBER */}
-                  <div ref={(element) => { nodeRefs.current[index] = element; }} className="relative z-20 flex items-center justify-center">
-                    <motion.span initial={false} animate={{ scale: isActive ? 1.12 : 1, opacity: isActive ? 1 : 0.9 }} transition={{ duration: 0.3 }} className="flex h-[44px] w-[44px] items-center justify-center text-[14px] font-extrabold text-white sm:h-[60px] sm:w-[60px] sm:text-[19px] md:h-[76px] md:w-[76px] md:text-[24px]">
+                  {/* =====================================
+                      CENTER STEP NUMBER
+                  ===================================== */}
+
+                  <div
+                    ref={(element) => {
+                      nodeRefs.current[index] = element;
+                    }}
+                    className="relative z-20 flex items-center justify-center"
+                  >
+                    <motion.span
+                      initial={false}
+                      animate={{
+                        scale: isActive ? 1.15 : 1,
+                        opacity: isActive ? 1 : 0.92,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                      }}
+                      className="flex h-[44px] w-[44px] items-center justify-center text-[15px] font-black tracking-tight text-white drop-shadow-sm sm:h-[60px] sm:w-[60px] sm:text-[20px] md:h-[76px] md:w-[76px] md:text-[26px]"
+                    >
                       {item.number}
                     </motion.span>
                   </div>
 
-                  {/* RIGHT SIDE */}
+                  {/* =====================================
+                      RIGHT COLUMN
+                  ===================================== */}
+
                   <div className="flex min-w-0 items-center justify-start">
+
                     {!isLeft ? (
-                      <TimelineAccordionCard item={item} index={index} active={isActive} onClick={() => handleCardClick(index)} reduceMotion={reduceMotion} side="right" />
+                      <TimelineAccordionCard
+                        item={item}
+                        index={index}
+                        active={isActive}
+                        onClick={() => handleCardClick(index)}
+                        reduceMotion={reduceMotion}
+                        side="right"
+                      />
                     ) : (
-                      <StepLabel item={item} active={isActive} side="right" />
+                      <StepLabel
+                        item={item}
+                        active={isActive}
+                        side="right"
+                      />
                     )}
+
                   </div>
 
-                  {/* CARD CONNECTOR */}
-                  <span aria-hidden="true" className={`pointer-events-none absolute top-1/2 z-0 h-[2px] w-[10px] -translate-y-1/2 bg-[#CBD5E1] sm:w-[17px] md:w-[25px] ${isLeft ? "left-[calc(50%-37px)] -translate-x-full sm:left-[calc(50%-45px)] md:left-[calc(50%-61px)]" : "right-[calc(50%-37px)] translate-x-full sm:right-[calc(50%-45px)] md:right-[calc(50%-61px)]"}`} />
+                  {/* =====================================
+                      ACTIVE GLOW
+                  ===================================== */}
 
-                  {/* ACTIVE ACCENT */}
                   {isActive && (
-                    <motion.span initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[32px] sm:h-[100px] sm:w-[100px]" style={{ backgroundColor: `${item.accent}12` }} />
+                    <motion.span
+                      initial={
+                        reduceMotion
+                          ? false
+                          : { opacity: 0 }
+                      }
+                      animate={{
+                        opacity: 1,
+                      }}
+                      className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[32px] sm:h-[100px] sm:w-[100px]"
+                      style={{
+                        backgroundColor: `${item.accent}12`,
+                      }}
+                    />
                   )}
 
                 </div>
               );
             })}
+
           </div>
+
         </div>
       </div>
     </section>
@@ -238,27 +389,72 @@ export default function WhatItGetsYou() {
 }
 
 /* =========================================
-   STEP NUMBER LABEL
+   SIDE STEP LABEL
+
+   USA STYLE:
+   - WHITE ICON
+   - SOLID MATCHING BACKGROUND
+   - COMPACT BADGE
 ========================================= */
 
 function StepLabel({ item, active, side }) {
   const isLeft = side === "left";
+  const Icon = item.icon;
 
   return (
-    <div className={`flex min-w-0 items-center gap-1 sm:gap-2 ${isLeft ? "justify-end" : "justify-start"}`}>
-      {!isLeft && <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />}
+    <div
+      className={`flex min-w-0 items-center gap-1.5 sm:gap-2.5 ${
+        isLeft ? "justify-end" : "justify-start"
+      }`}
+    >
 
-      <motion.span initial={false} animate={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent, borderColor: active ? item.accent : `${item.accent}40` }} transition={{ duration: 0.3 }} className="inline-flex h-[30px] min-w-[37px] items-center justify-center rounded-full border px-2 text-[11px] font-bold shadow-sm sm:h-[36px] sm:min-w-[55px] sm:text-[13px] md:min-w-[62px] md:text-[15px]">
-        {item.number}
+      {/* LEFT ARROW */}
+      {!isLeft && (
+        <ArrowLeft className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
+      )}
+
+      {/* =====================================
+          COLOR MATCHING ICON BADGE
+      ===================================== */}
+
+      <motion.span
+        initial={false}
+        animate={{
+          backgroundColor: item.accent,
+          borderColor: active
+            ? "#FFFFFF"
+            : item.accent,
+          boxShadow: active
+            ? `0 5px 18px ${item.accent}45`
+            : `0 3px 10px ${item.accent}25`,
+          scale: active ? 1.04 : 1,
+        }}
+        transition={{
+          duration: 0.3,
+        }}
+        className="inline-flex h-[36px] w-[54px] items-center justify-center overflow-hidden rounded-full border sm:h-[44px] sm:w-[66px] md:h-[48px] md:w-[74px]"
+      >
+        <Icon
+          aria-hidden="true"
+          strokeWidth={2.3}
+          className="h-[18px] w-[18px] text-white transition-transform duration-300 hover:scale-110 sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px]"
+        />
       </motion.span>
 
-      {isLeft && <ArrowRight className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />}
+      {/* RIGHT ARROW */}
+      {isLeft && (
+        <ArrowRight className="hidden h-4 w-4 shrink-0 text-[#A5B6C9] sm:block" />
+      )}
+
     </div>
   );
 }
 
 /* =========================================
-   ACCORDION CARD
+   TIMELINE ACCORDION CARD
+
+   SAME COMPACT LAYOUT AS USA
+   ORIGINAL INDIA CONTENT
 ========================================= */
 
 function TimelineAccordionCard({
@@ -273,42 +469,127 @@ function TimelineAccordionCard({
   const contentId = `india-benefit-${index}`;
 
   return (
-    <motion.div initial={false} animate={{ borderColor: active ? item.accent : "#E2E8F0", boxShadow: active ? "0 8px 25px rgba(6,59,114,0.11)" : "0 4px 16px rgba(6,59,114,0.035)" }} transition={{ duration: 0.3 }} className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"}`}>
+    <motion.div
+      initial={false}
+      animate={{
+        borderColor: active
+          ? item.accent
+          : "#E2E8F0",
+        boxShadow: active
+          ? "0 8px 25px rgba(6,59,114,0.11)"
+          : "0 4px 16px rgba(6,59,114,0.035)",
+      }}
+      transition={{
+        duration: 0.3,
+      }}
+      className={`relative w-full min-w-0 max-w-[470px] overflow-hidden rounded-[15px] border bg-white sm:rounded-[19px] md:rounded-[24px] ${
+        isLeft ? "mr-1 sm:mr-2" : "ml-1 sm:ml-2"
+      }`}
+    >
 
-      {/* CARD HEADING / TOGGLE */}
-      <button type="button" onClick={onClick} aria-expanded={active} aria-controls={contentId} className="flex w-full min-w-0 items-center justify-between gap-1.5 px-2.5 py-3 text-left sm:gap-3 sm:px-4 sm:py-4 md:px-5 md:py-5">
+      {/* =====================================
+          CARD HEADER
+      ===================================== */}
 
-        <div className="flex min-w-0 flex-1 items-start gap-1.5 sm:gap-2.5">
-          <span className="shrink-0 text-[11px] font-extrabold sm:text-[14px] md:text-[18px]" style={{ color: item.accent }}>
-            {item.number}
-          </span>
+      <button
+        type="button"
+        onClick={onClick}
+        aria-expanded={active}
+        aria-controls={contentId}
+        className="flex w-full min-w-0 items-center justify-between gap-2.5 px-4 py-2.5 text-left sm:gap-3.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5"
+      >
 
-          <h3 className="min-w-0 text-[10px] font-bold leading-[1.35] text-[#063B72] sm:text-[13px] md:text-[17px] lg:text-[18px]">
+        <div className="flex min-w-0 flex-1 items-center">
+
+          <h3 className="min-w-0 text-[11px] font-bold leading-[1.35] text-[#063B72] sm:text-[13px] md:text-[15px] lg:text-[16px]">
             {item.title}
           </h3>
+
         </div>
 
-        <span className="flex h-[23px] w-[23px] shrink-0 items-center justify-center rounded-full sm:h-[29px] sm:w-[29px] md:h-[34px] md:w-[34px]" style={{ backgroundColor: active ? item.accent : item.soft, color: active ? "#FFFFFF" : item.accent }}>
+        {/* =====================================
+            PLUS / MINUS ICON
+
+            WHITE ICON + MATCHING BACKGROUND
+        ===================================== */}
+
+        <span
+          className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full sm:h-[26px] sm:w-[26px] md:h-[30px] md:w-[30px]"
+          style={{
+            backgroundColor: item.accent,
+            color: "#FFFFFF",
+          }}
+        >
           {active ? (
-            <Minus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
+            <Minus
+              className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5"
+              strokeWidth={2.5}
+            />
           ) : (
-            <Plus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
+            <Plus
+              className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5"
+              strokeWidth={2.5}
+            />
           )}
         </span>
+
       </button>
 
-      {/* EXPANDED DESCRIPTION */}
+      {/* =====================================
+          ACCORDION DESCRIPTION
+
+          ORIGINAL INDIA DESCRIPTION
+      ===================================== */}
+
       <AnimatePresence initial={false}>
         {active && (
-          <motion.div key="description" id={contentId} initial={reduceMotion ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }} transition={{ height: { duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: reduceMotion ? 0 : 0.2 } }} className="overflow-hidden">
-            <div className="border-t border-[#EDF1F5] px-2.5 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4 md:px-5">
-              <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:text-[14px] md:leading-[1.7]">
+          <motion.div
+            key="description"
+            id={contentId}
+            initial={
+              reduceMotion
+                ? false
+                : { height: 0, opacity: 0 }
+            }
+            animate={{
+              height: "auto",
+              opacity: 1,
+            }}
+            exit={
+              reduceMotion
+                ? { opacity: 0 }
+                : { height: 0, opacity: 0 }
+            }
+            transition={{
+              height: {
+                duration: reduceMotion ? 0 : 0.35,
+                ease: [0.22, 1, 0.36, 1],
+              },
+              opacity: {
+                duration: reduceMotion ? 0 : 0.2,
+              },
+            }}
+            className="overflow-hidden"
+          >
+
+            <div className="border-t border-[#EDF1F5] px-4 pb-3 pt-2.5 sm:px-5 sm:pb-3.5 sm:pt-3 md:px-6 md:pb-4">
+
+              {/* SAME ORIGINAL CONTENT ON DESKTOP */}
+              <p className="hidden text-[13px] leading-[1.6] text-[#526477] md:block">
                 {item.description}
               </p>
+
+              {/* SAME ORIGINAL CONTENT ON MOBILE */}
+              <p className="text-[9px] leading-[1.55] text-[#526477] sm:text-[12px] sm:leading-[1.6] md:hidden">
+                {item.description}
+              </p>
+
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
+
     </motion.div>
   );
 }

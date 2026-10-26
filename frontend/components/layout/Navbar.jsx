@@ -12,7 +12,15 @@ import { ChevronDown, Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Study in India", href: "/study-in-india" },
+  // { label: "Study India", href: "/study-in-india" },
+    {
+    label: "Study In India",
+    href: "#",
+    children: [
+      { label: "Online Degree Programs", href: "/study-in-india" },
+      { label: "Regular Degree Programs", href: "/regular-degree",},
+    ],
+  },
 
   {
     label: "Study Abroad",
@@ -20,7 +28,7 @@ const NAV_ITEMS = [
     children: [
       { label: "Study in Canada", href: "/study-in-canada" },
       { label: "Study in the USA", href: "/study-in-usa" },
-      { label: "Study in Europe", href: "/study-in-europe" },
+      // { label: "Study in Europe", href: "/study-in-europe" },
       { label: "Study in UK", href: "/study-in-uk" },
       { label: "Study in Ireland", href: "/study-in-ireland" },
       { label: "Study in UAE", href: "/study-in-uae" },
