@@ -1,0 +1,39 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Create complete Germany study page infrastructure from scratch with all 10 components and [guide] dynamic route, using Canada design system as template",
+  "status": "pending",
+  "steps": [
+    "Create c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\components\\StudyInGermany\\ directory",
+    "Create StudyInGermanyHero.jsx component adapting StudyInCanadaHero.jsx: update hero image path to /images/hero/study-in-germany.webp, change WhatsApp URL text to reference Germany, update heading text for Germany context",
+    "Create OnlineDegreeSection.jsx component with 5 Germany guide cards (study-in-germany, cost-of-studying, living-and-culture, scholarships, post-study-work-visa), update guide slugs to /study-in-germany/[slug], update content for Germany context (EUR currency, German cities, German academic system)",
+    "Create WhatItGetsYou.jsx component with 5 Germany-specific benefits (Strong engineering focus, Tuition-free or low-cost public universities, EU work opportunities, Research excellence, High quality of life)",
+    "Create CoursesSlider.jsx using exact same 9 courses structure as Canada (BBA, BCA, MBA, MCA, B.Com, M.Com, M.Sc., MA, BA)",
+    "Create HowUniversityYatraHelps.jsx with same 5 help items structure, updating images to use existing Germany-themed images from /images/study-canada/ (repurpose as Germany context)",
+    "Create UniversityCarousel.jsx with 12 German universities: TU Munich, Heidelberg University, LMU Munich, Humboldt University Berlin, RWTH Aachen, Free University of Berlin, University of Freiburg, University of Bonn, TU Dresden, University of Mannheim, Karlsruhe Institute of Technology, University of Göttingen. Use placeholder image paths /images/universities/germany/[university-slug].webp with German city names as location badges",
+    "Create CostOfStudyingIndia.jsx renamed to CostOfStudyingGermany.jsx with EUR currency: Public university tuition EUR 0-500/semester, Private university EUR 10,000-20,000/year, Living expenses EUR 850-1,200/month, Health insurance EUR 110/month",
+    "Create Testimonials.jsx (reuse exact same testimonial data and component structure as Canada)",
+    "Create GlobalEducationCTA.jsx (reuse exact same structure, update text to reference Germany)",
+    "Create c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-germany\\page.js with metadata for Germany and all 10 component imports",
+    "Create c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-germany\\[guide]\\page.js with dynamic route handling 5 Germany guide slugs, use placeholder content for guide markdown (can be filled later)"
+  ],
+  "acceptance_criteria": [
+    "All 10 component files exist in components/StudyInGermany/ directory",
+    "app/study-in-germany/page.js exists and imports all 10 components correctly",
+    "app/study-in-germany/[guide]/page.js exists with dynamic route for 5 guide slugs",
+    "Page renders at http://localhost:3000/study-in-germany without errors",
+    "Guide pages render at http://localhost:3000/study-in-germany/cost-of-studying etc.",
+    "All components use Canada design system: colors, spacing, layout, animations"
+  ],
+  "verification": [
+    "Run npm run dev",
+    "Navigate to http://localhost:3000/study-in-germany and verify all 10 sections render",
+    "Test all 5 guide links from OnlineDegreeSection component",
+    "Navigate to http://localhost:3000/study-in-germany/cost-of-studying and verify guide page renders",
+    "Test invalid guide slug http://localhost:3000/study-in-germany/invalid returns 404",
+    "Check responsive behavior on mobile, tablet, desktop widths",
+    "Verify no console errors or warnings"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

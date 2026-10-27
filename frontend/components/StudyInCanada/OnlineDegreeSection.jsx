@@ -111,7 +111,7 @@ const guides = [
     title: "Cost of Living & Culture in Canada",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/universities/canada/university-of-saskatchewan.webp",
+    image: "/images/3d/living-cost.webp",
 
     description:
       "Your living costs depend on your city, accommodation, commute, and daily routine. Beyond budgeting, prepare for Canada's diverse communities, independent student life, and regional weather differences.",

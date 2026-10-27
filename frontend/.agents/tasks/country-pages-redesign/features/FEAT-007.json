@@ -1,0 +1,37 @@
+{
+  "id": "FEAT-007",
+  "type": "test",
+  "description": "Cross-FEAT integration verification: run full build, test all country pages end-to-end, verify design consistency across all 6 countries",
+  "status": "pending",
+  "steps": [
+    "Run npm run build to verify production build succeeds without errors",
+    "Start npm run dev and systematically test all 6 country main pages: /study-in-canada, /study-in-ireland, /study-in-uae, /study-in-russia, /study-in-australia, /study-in-germany",
+    "For each country, verify all 10 components render in correct order: Hero, OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, UniversityCarousel, CostOfStudying, Testimonials, GlobalEducationCTA",
+    "Test all 5 guide pages for each country (30 total guide pages): study-in-{country}, cost-of-studying, living-and-culture, scholarships, post-study-work-visa",
+    "Verify design consistency: compare all 6 country pages side-by-side to ensure Canada design system applied uniformly (colors, spacing, typography, animations)",
+    "Test responsive behavior on mobile (375px), tablet (768px), and desktop (1440px) for at least 2 countries",
+    "Check browser console for any errors, warnings, or React hydration mismatches across all pages",
+    "Verify navigation: test Navbar destination links between countries, footer links, breadcrumb navigation in guides",
+    "Verify metadata: check page titles and descriptions are country-specific",
+    "Create a findings summary documenting any visual inconsistencies, missing images, or areas needing refinement"
+  ],
+  "acceptance_criteria": [
+    "npm run build completes successfully with no errors",
+    "All 6 country main pages render without errors or console warnings",
+    "All 30 guide pages (6 countries × 5 guides) render correctly",
+    "Visual design is consistent across all 6 countries following Canada pattern",
+    "All WhatsApp links, guide navigation, and internal links work correctly",
+    "Responsive behavior works on mobile, tablet, desktop",
+    "No React errors, hydration mismatches, or import failures"
+  ],
+  "verification": [
+    "Run npm run build and confirm exit code 0",
+    "Run npm run dev and manually test each of 6 country pages",
+    "Test guide navigation from OnlineDegreeSection for all countries",
+    "Compare screenshots of all 6 countries' Hero sections to verify design consistency",
+    "Check Network tab for 404 errors on images or assets",
+    "Document findings in FEAT-007 findings field for any issues requiring follow-up"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

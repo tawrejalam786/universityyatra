@@ -1,264 +1,580 @@
-
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  GraduationCap,
+  BookOpen,
+  Calendar,
+  DollarSign,
+  Calculator,
+  Home,
+  Award,
+  Sparkles,
+  Plane,
+  Clock,
+  BriefcaseBusiness,
+  FileCheck2,
+  ArrowUpRight,
+  ArrowRight,
+  ChevronRight,
+  Globe2,
+  Wallet,
+} from "lucide-react";
 
-/* =========================================
-   DESKTOP CONTENT - UAE
-========================================= */
+/* ==========================================
+   STUDY IN UAE - 5 GUIDES
+========================================== */
 
-const chooseYourStudyPathwayDesktop = [
-  "Undergraduate, postgraduate & professional programs",
-  "University & course selection based on your profile",
-  "Programs aligned with your academic & career goals",
-  "Guidance on eligibility & admission requirements",
+
+const guides = [
+  {
+    id: "01",
+    slug: "study-in-uae",
+    tag: "STUDY IN UAE",
+    title: "Study in the UAE",
+    shortTitle: "Education Pathways",
+    icon: GraduationCap,
+    image: "/images/study-canada/canadian-flag.png",
+
+    description:
+      "The UAE offers undergraduate and postgraduate programs through international branch campuses and local universities. Choose a bachelor's degree, master's program, or specialized qualification based on your academic background and career goals.",
+
+    points: [
+      {
+        icon: GraduationCap,
+        label: "Bachelor's",
+        value: "Usually 3–4 years",
+      },
+      {
+        icon: BookOpen,
+        label: "Master's",
+        value: "Usually 1–2 years",
+      },
+      {
+        icon: Calendar,
+        label: "Main intakes",
+        value: "September, January, and selected May programs",
+      },
+    ],
+  },
+
+  {
+    id: "02",
+    slug: "cost-of-studying",
+    tag: "TUITION & EXPENSES",
+    title: "Cost of Studying in the UAE",
+    shortTitle: "Tuition & Study Budget",
+    icon: DollarSign,
+    image: "/images/study-canada/gold-coins.png",
+
+    description:
+      "Your budget depends on the university, program type, and emirate. Tuition fees vary between local institutions and international branch campuses, with living costs influenced by your choice of accommodation and lifestyle.",
+
+    points: [
+      {
+        icon: Calculator,
+        label: "Undergraduate tuition",
+        value: "AED 40,000–90,000/year",
+      },
+      {
+        icon: DollarSign,
+        label: "Postgraduate tuition",
+        value: "AED 50,000–120,000/year",
+      },
+      {
+        icon: Home,
+        label: "Living expenses",
+        value:
+          "AED 3,000–5,000/month depending on emirate and housing",
+      },
+      {
+        icon: Wallet,
+        label: "Other costs",
+        value:
+          "Health insurance, visa fees, transport, and course materials",
+      },
+    ],
+
+    note:
+      "Tuition and living costs are separate. Plan for both before applying.",
+  },
+
+  {
+    id: "03",
+    slug: "living-and-culture",
+    tag: "COST OF LIVING & CULTURE",
+    title: "Cost of Living & Culture in the UAE",
+    shortTitle: "Living & Culture",
+    icon: Home,
+    image: "/images/3d/living-cost.webp",
+
+    description:
+      "Your living costs depend on the emirate, accommodation type, transport, and daily routine. Dubai and Abu Dhabi tend to be more expensive, while Sharjah offers more affordable options. The UAE offers a multicultural environment with modern amenities.",
+
+    points: [
+      {
+        icon: Home,
+        label: "Biggest variable",
+        value: "Accommodation and emirate choice",
+      },
+      {
+        icon: Wallet,
+        label: "Plan for",
+        value: "Food, transport, utilities, and visa renewals",
+      },
+      {
+        icon: Globe2,
+        label: "Culture",
+        value:
+          "Multicultural environment, modern lifestyle, and international community",
+      },
+    ],
+  },
+
+  {
+    id: "04",
+    slug: "scholarships",
+    tag: "SCHOLARSHIPS & FUNDING",
+    title: "Scholarships in the UAE",
+    shortTitle: "Scholarships & Funding",
+    icon: Award,
+    image: "/images/study-canada/education-graduation.png",
+
+    description:
+      "UAE scholarships may be offered by universities based on academic merit, leadership, or specific program criteria. Availability varies by institution and nationality, so check eligibility requirements before applying.",
+
+    points: [
+      {
+        icon: Award,
+        label: "Undergraduate",
+        value: "Merit-based and need-based awards",
+      },
+      {
+        icon: Sparkles,
+        label: "Master's",
+        value: "University and program-specific funding",
+      },
+      {
+        icon: GraduationCap,
+        label: "PhD",
+        value: "Research funding and assistantships",
+      },
+    ],
+  },
+
+  {
+    id: "05",
+    slug: "post-study-work-visa",
+    tag: "POST-STUDY WORK VISA",
+    title: "Post-Study Work Visa in the UAE",
+    shortTitle: "Work Pathways",
+    icon: Plane,
+    image: "/images/study-canada/documentation-approval.png",
+
+    description:
+      "The UAE offers various visa options for graduates seeking employment. Employment visas are typically sponsored by employers, and graduates should explore opportunities during or after completing their studies.",
+
+    points: [
+      {
+        icon: Clock,
+        label: "Duration",
+        value: "Depends on employer sponsorship",
+      },
+      {
+        icon: FileCheck2,
+        label: "Requirements",
+        value: "Job offer and employer sponsorship",
+      },
+      {
+        icon: BriefcaseBusiness,
+        label: "Opportunities",
+        value: "Tax-free income and growing job market",
+      },
+    ],
+  },
 ];
 
-const planJourneyToUAEDesktop = [
-  "University application & documentation support",
-  "SOP & LOR guidance",
-  "Student visa guidance",
-  "Pre-departure & arrival support",
-];
 
-/* =========================================
-   MOBILE CONTENT - UAE
-========================================= */
+/* ==========================================
+   LEFT GUIDE TAB
+   MOBILE  : 2-COLUMN GRID
+   TABLET  : 3-COLUMN GRID
+   DESKTOP : VERTICAL TABS
+========================================== */
 
-const chooseYourStudyPathwayMobile = [
-  "Undergraduate & postgraduate programs",
-  "University & course shortlisting",
-  "Career-focused program selection",
-  "Eligibility & admission guidance",
-];
+function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
+  const Icon = guide.icon;
 
-const planJourneyToUAEMobile = [
-  "Application & documentation support",
-  "SOP & LOR guidance",
-  "Student visa guidance",
-  "Pre-departure support",
-];
-
-/* =========================================
-   ANIMATION
-========================================= */
-
-const reveal = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0 },
-};
-
-/* =========================================
-   CHECK ITEM
-========================================= */
-
-function CheckItem({ children, color = "#063B72" }) {
   return (
-    <li className="flex items-start gap-3 text-[13px] leading-[1.5] text-[#405268] sm:text-[14px]">
-      <span className="mt-[1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white" style={{ backgroundColor: color }}>
-        <Check size={12} strokeWidth={2.7} />
-      </span>
-      <span>{children}</span>
-    </li>
+    <button
+      type="button"
+      role="tab"
+      id={`uae-guide-tab-${index}`}
+      aria-label={guide.title}
+      aria-selected={active}
+      aria-controls="uae-guide-panel"
+      tabIndex={active ? 0 : -1}
+      onClick={() => onActivate(index)}
+      onPointerEnter={(event) => {
+        if (event.pointerType === "mouse") {
+          onActivate(index);
+        }
+      }}
+      onKeyDown={onKeyDown}
+      className={`relative flex w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl border px-2.5 py-2 text-left transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 lg:flex-1 lg:gap-3 lg:px-3.5 lg:py-2.5 ${
+        active
+          ? "border-[#B4CFFA] bg-[#EDF5FF] shadow-[0_5px_20px_rgba(23,101,245,0.07)]"
+          : "border-[#E5EDF9] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"
+      }`}
+    >
+      {/* ACTIVE LEFT INDICATOR */}
+      {active && (
+        <span
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 hidden w-1 bg-[#1765F5] lg:block"
+        />
+      )}
+
+      <div className="flex min-w-0 items-center gap-2 lg:gap-3">
+        {/* GUIDE ICON */}
+        <span
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 lg:h-9 lg:w-9 ${
+            active ? "bg-[#1765F5] text-white" : "bg-[#EAF2FF] text-[#1765F5]"
+          }`}
+        >
+          <Icon size={17} strokeWidth={2} />
+        </span>
+
+        {/* NUMBER AND TITLE */}
+        <div className="min-w-0">
+          <span className="block text-[9px] font-extrabold uppercase tracking-[0.08em] text-[#7390B4]">
+            Guide {guide.id}
+          </span>
+
+          <span
+            className={`block text-[12px] font-bold leading-[1.25] lg:truncate lg:text-[13px] lg:leading-[1.35] ${
+              active ? "text-[#1765F5]" : "text-[#0C337B]"
+            }`}
+          >
+            <span className="lg:hidden">{guide.shortTitle}</span>
+            <span className="hidden lg:inline">{guide.title}</span>
+          </span>
+        </div>
+      </div>
+
+      {/* DESKTOP ARROW */}
+      <ChevronRight
+        size={16}
+        aria-hidden="true"
+        className={`hidden shrink-0 transition-transform duration-300 lg:block ${
+          active ? "translate-x-0.5 text-[#1765F5]" : "text-[#9AAEC6]"
+        }`}
+      />
+    </button>
   );
 }
 
-/* =========================================
-   STUDENT VISUAL - ORIGINAL DESIGN
-========================================= */
+/* ==========================================
+   ACTIVE GUIDE CARD
+========================================== */
 
-function StudentVisual({ src, alt, color, position = "object-center" }) {
+function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
+  const guide = guides[activeIndex];
+  const TagIcon = guide.icon;
+
   return (
-    <div className="relative mx-auto w-full max-w-[430px]">
-      <div className="relative aspect-[1.12/1] w-full">
+    <div
+      id="uae-guide-panel"
+      role="tabpanel"
+      aria-labelledby={`uae-guide-tab-${activeIndex}`}
+      className="order-2 relative flex h-full min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-4 shadow-[0_12px_35px_rgba(12,51,123,0.07)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:p-5"
+    >
+      {/* BACKGROUND DECORATIONS */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 -top-20 h-[250px] w-[250px] rounded-full border border-[#1765F5]/10"
+      />
 
-        {/* ORGANIC BACKGROUND */}
-        <div className="absolute left-[4%] top-[5%] h-[88%] w-[88%] rotate-[-5deg] rounded-[38%_62%_58%_42%/45%_38%_62%_55%]" style={{ backgroundColor: color }} />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 -left-16 h-[240px] w-[240px] rounded-full bg-[#A2C1FB]/20 blur-[55px]"
+      />
 
-        {/* DECORATIVE CIRCLE */}
-        <div className="absolute bottom-[2%] right-[2%] h-[34%] w-[34%] rounded-full border-[18px] opacity-20" style={{ borderColor: color }} />
+      {/* BACKGROUND GUIDE NUMBER */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-4 top-10 select-none text-[78px] font-black leading-none text-[#1765F5]/[0.06]"
+      >
+        {guide.id}
+      </span>
 
-        {/* DOTS */}
-        <div className="absolute left-[1%] top-[13%] h-3 w-3 rounded-full opacity-60" style={{ backgroundColor: color }} />
-        <div className="absolute right-[7%] top-[7%] h-5 w-5 rounded-full opacity-30" style={{ backgroundColor: color }} />
+      {/* TOP BADGE */}
+      <div className="relative z-10 flex items-center justify-between gap-3">
+        <span className="inline-flex items-center gap-2 rounded-full border border-[#C9DCFA] bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.06em] text-[#1765F5]">
+          <GraduationCap size={14} />
+          UAE Study Guides
+        </span>
+      </div>
 
-        {/* STUDENT IMAGE */}
-        <div className="absolute inset-[6%] overflow-hidden rounded-[36%_64%_58%_42%/44%_38%_62%_56%]">
-          <Image src={src} alt={alt} fill sizes="(max-width: 767px) 92vw, 430px" className={`object-cover ${position}`} />
+      {/* FLOATING GUIDE IMAGES (all stay mounted) */}
+      <motion.div
+        animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="relative z-10 mx-auto mt-1 h-[125px] w-full max-w-[320px] sm:h-[140px] lg:h-[150px]"
+      >
+        {guides.map((item, index) => {
+          const isActive = index === activeIndex;
+
+          return (
+            <Image
+              key={item.id}
+              src={item.image}
+              alt={isActive ? item.title : ""}
+              aria-hidden={!isActive}
+              fill
+              priority={index === 0}
+              sizes="(max-width: 1023px) 80vw, 320px"
+              className={`object-contain object-center transition-all duration-300 ${
+                isActive ? "scale-100 opacity-100" : "scale-95 opacity-0"
+              }`}
+            />
+          );
+        })}
+      </motion.div>
+
+      {/* ACTIVE GUIDE CONTENT */}
+      <motion.div
+        key={guide.id}
+        initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.25,
+          ease: "easeOut",
+        }}
+        className="relative z-10 mt-1.5 flex min-w-0 flex-1 flex-col"
+      >
+        {/* TAG / HEADING / DESCRIPTION */}
+        <div className="text-center">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#1765F5]">
+            <TagIcon size={13} />
+            {guide.tag}
+          </span>
+
+          <h3 className="mt-1 text-[21px] font-extrabold leading-[1.2] tracking-[-0.03em] text-[#0C337B] sm:text-[23px]">
+            {guide.title}
+          </h3>
+
+          <p className="mx-auto mt-1.5 max-w-[560px] text-[12px] leading-[1.6] text-[#526B8C]">
+            {guide.description}
+          </p>
         </div>
 
+        {/* HIGHLIGHT POINTS */}
+        <div
+          className={`mt-2.5 grid grid-cols-1 gap-2 ${
+            guide.points.length === 4 ? "sm:grid-cols-2" : "sm:grid-cols-3"
+          }`}
+        >
+          {guide.points.map((point) => {
+            const PointIcon = point.icon;
+
+            return (
+              <div
+                key={point.label}
+                className="flex min-w-0 items-center gap-2 rounded-[11px] border border-[#DAE7FA] bg-white/85 p-2 sm:flex-col sm:items-start sm:gap-1.5 sm:p-2.5"
+              >
+                {/* POINT ICON */}
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#EAF2FF] text-[#1765F5]">
+                  <PointIcon size={15} strokeWidth={2} />
+                </span>
+
+                <div className="min-w-0">
+                  <span className="block text-[10px] font-bold text-[#0C337B]">
+                    {point.label}
+                  </span>
+
+                  <span className="mt-0.5 block text-[10px] leading-[1.4] text-[#526B8C]">
+                    {point.value}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* UAE COST NOTE */}
+        {guide.note && (
+          <p className="mt-2.5 rounded-lg border border-[#DAE7FA] bg-white/75 px-3 py-1.5 text-center text-[11px] leading-[1.5] text-[#526B8C]">
+            {guide.note}
+          </p>
+        )}
+
+        {/* READ MORE BUTTON */}
+        <Link
+          href={`/study-in-uae/${guide.slug}`}
+          className="group mt-3 inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] bg-[#1765F5] px-5 py-2 text-[12px] font-bold text-white shadow-[0_6px_18px_rgba(23,101,245,0.2)] transition-all duration-300 hover:bg-[#0C337B] hover:shadow-[0_10px_25px_rgba(12,51,123,0.2)]"
+        >
+          Read More
+
+          <ArrowUpRight
+            size={16}
+            strokeWidth={2.2}
+            className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </Link>
+      </motion.div>
+
+      {/* CLICKABLE PROGRESS BARS */}
+      <div className="relative z-10 mt-2 flex items-center gap-1.5">
+        {guides.map((item, index) => (
+          <button
+            key={item.id}
+            type="button"
+            onClick={() => onSelect(index)}
+            aria-label={`Go to guide ${item.id}: ${item.title}`}
+            aria-current={index === activeIndex ? "step" : undefined}
+            className="group flex-1 py-1"
+          >
+            <span
+              className={`block h-[3px] rounded-full transition-colors duration-300 ${
+                index === activeIndex
+                  ? "bg-[#1765F5]"
+                  : "bg-[#B8CEEE] group-hover:bg-[#8FB2EC]"
+              }`}
+            />
+          </button>
+        ))}
       </div>
     </div>
   );
 }
 
-/* =========================================
-   MAIN UAE SECTION
-========================================= */
+/* ==========================================
+   MAIN COMPONENT
+========================================== */
 
 export default function OnlineDegreeSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
+
+  /* KEYBOARD NAVIGATION */
+  const handleKeyDown = (event) => {
+    const steps = {
+      ArrowDown: 1,
+      ArrowRight: 1,
+      ArrowUp: -1,
+      ArrowLeft: -1,
+    };
+
+    const step = steps[event.key];
+
+    if (!step) return;
+
+    event.preventDefault();
+
+    const next = (activeIndex + step + guides.length) % guides.length;
+
+    setActiveIndex(next);
+
+    document.getElementById(`uae-guide-tab-${next}`)?.focus();
+  };
+
   return (
-    <section className="w-full overflow-hidden bg-white py-8 sm:py-10 md:py-12 lg:py-14">
-      <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5 lg:px-6">
+    <section
+      aria-labelledby="uae-guide-section-title"
+      className="relative w-full overflow-hidden bg-white py-5 sm:py-7"
+    >
+      {/* FULL 1250px CONTAINER, MINIMAL SIDE PADDING */}
+      <div className="mx-auto w-full max-w-[1250px] px-3 sm:px-5 lg:px-6">
+        {/* UAE SECTION HEADING */}
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45 }}
+          className="mx-auto mb-4 max-w-[720px] text-center"
+        >
+          <p className="mb-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
+            WHAT STUDYING IN THE UAE MEANS
+          </p>
 
-        {/* =====================================
-            SECTION HEADING
-        ===================================== */}
-
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55 }} className="mx-auto mb-8 max-w-[760px] text-center md:mb-10 lg:mb-12">
-
-          <span className="mb-2 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#18B8B5] sm:text-[13px]">
-            WHAT STUDYING IN UAE MEANS
-          </span>
-
-          <h2 className="text-[29px] font-bold leading-[1.12] tracking-[-0.035em] text-[#063B72] sm:text-[34px] md:text-[40px] lg:text-[44px]">
-            Designed for <span className="text-[#18B8B5]">Your Future</span>
+          <h2
+            id="uae-guide-section-title"
+            className="text-balance text-[22px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[27px] lg:text-[31px]"
+          >
+            Your Next Academic Chapter:{" "}
+            <span className="text-[#1765F5]">UAE</span>
           </h2>
-
         </motion.div>
 
-        {/* =====================================
-            ROW 01 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
+        {/* TABS + ACTIVE CARD + CTA */}
+        <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-rows-[1fr_auto] lg:gap-x-5 lg:gap-y-3">
+          {/* LEFT GUIDE TABS
+              MOBILE: 2 COLUMNS | TABLET: 3 COLUMNS | DESKTOP: VERTICAL LIST */}
+          <div
+            role="tablist"
+            aria-label="UAE study guides"
+            className="order-1 grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-3 lg:order-none lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col"
+          >
+            {guides.map((guide, index) => (
+              <GuideTab
+                key={guide.id}
+                guide={guide}
+                index={index}
+                active={activeIndex === index}
+                onActivate={setActiveIndex}
+                onKeyDown={handleKeyDown}
+              />
+            ))}
+          </div>
 
-        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
+          {/* RIGHT ACTIVE GUIDE CARD */}
+          <ActiveGuideCard
+            activeIndex={activeIndex}
+            onSelect={setActiveIndex}
+            reduceMotion={reduceMotion}
+          />
 
-          {/* STUDENT IMAGE */}
-          <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/online-degree-student.webp" alt="Student exploring academic opportunities in the UAE" color="#2563EB" position="object-center" />
-          </motion.div>
+          {/* COUNSELLING CTA */}
+          <div className="order-3 relative flex min-w-0 flex-col items-start justify-between gap-2.5 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-3.5 text-white sm:flex-row sm:items-center lg:order-none lg:col-start-1 lg:row-start-2">
+            {/* DECORATIVE SHAPE */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"
+            />
 
-          {/* CONTENT */}
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative">
+            {/* CTA TEXT */}
+            <div className="relative min-w-0">
+              <h3 className="text-[14px] font-bold">
+                Your UAE Dream Starts Here!
+              </h3>
 
-            <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#2563EB]">
-              01
-            </span>
-
-            <h3 className="max-w-[520px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Your Next Academic Chapter: <span className="text-[#2563EB]">UAE</span>
-            </h3>
-
-            {/* DESKTOP DESCRIPTION */}
-            <div className="mt-3 hidden max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:block lg:text-[15px]">
-              <p>
-                The UAE offers an increasingly diverse higher education landscape, with international universities, specialized institutions, and programs across business, technology, engineering, healthcare, and other fields. Its location also puts students close to a growing regional business and professional ecosystem.
+              <p className="mt-0.5 text-[11px] leading-[1.5] text-white/75">
+                Get Expert Guidance.
               </p>
             </div>
 
-            {/* MOBILE DESCRIPTION */}
-            <div className="mt-3 max-w-[570px] text-[14px] leading-[1.65] text-[#43556b] md:hidden">
-              <p>
-                Explore diverse programs and international university options in the UAE, with guidance to help you choose a course and institution that fits your plans.
-              </p>
-            </div>
+            {/* CTA BUTTON */}
+            <Link
+              href="/counselling"
+              className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EDF5FF]"
+            >
+              Book Free Counselling
 
-            <div className="mt-4 h-[3px] w-16 rounded-full bg-[#2563EB]" />
-
-          </motion.div>
-
+              <ArrowRight
+                size={15}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
         </div>
-
-        {/* DIVIDER */}
-        <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
-
-        {/* =====================================
-            ROW 02 - CONTENT LEFT, IMAGE RIGHT
-        ===================================== */}
-
-        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
-
-          {/* CONTENT */}
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative order-2 md:order-1">
-
-            <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#18B8B5]">
-              02
-            </span>
-
-            <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Choose Your <span className="text-[#18B8B5]">Study Pathway</span>
-            </h3>
-
-            {/* DESKTOP LIST */}
-            <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
-              {chooseYourStudyPathwayDesktop.map((item) => (
-                <CheckItem key={item} color="#18B8B5">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            {/* MOBILE LIST */}
-            <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
-              {chooseYourStudyPathwayMobile.map((item) => (
-                <CheckItem key={item} color="#18B8B5">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            <div className="mt-4 h-[3px] w-16 rounded-full bg-[#18B8B5]" />
-
-          </motion.div>
-
-          {/* STUDENT IMAGE */}
-          <motion.div initial={{ opacity: 0, x: 35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }} className="order-1 md:order-2">
-            <StudentVisual src="/images/study-india/program-fit-student.webp" alt="Student exploring university and study pathway options in the UAE" color="#28599f" position="object-center" />
-          </motion.div>
-
-        </div>
-
-        {/* DIVIDER */}
-        <div className="mx-auto my-8 h-px w-full max-w-[1050px] bg-[#E7EDF4] md:my-10 lg:my-12" />
-
-        {/* =====================================
-            ROW 03 - IMAGE LEFT, CONTENT RIGHT
-        ===================================== */}
-
-        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-8 lg:gap-12">
-
-          {/* STUDENT IMAGE */}
-          <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <StudentVisual src="/images/study-india/guidance-student.webp" alt="Student receiving guidance for studying in the UAE" color="#7C3AED" position="object-top" />
-          </motion.div>
-
-          {/* CONTENT */}
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.6 }} className="relative">
-
-            <span className="mb-2 block text-[12px] font-bold tracking-[0.16em] text-[#7C3AED]">
-              03
-            </span>
-
-            <h3 className="max-w-[500px] text-[25px] font-bold leading-[1.15] tracking-[-0.025em] text-[#063B72] sm:text-[29px] lg:text-[34px]">
-              Plan Your Journey <span className="text-[#7C3AED]">to UAE</span>
-            </h3>
-
-            {/* DESKTOP LIST */}
-            <ul className="mt-4 hidden max-w-[520px] space-y-2 md:block">
-              {planJourneyToUAEDesktop.map((item) => (
-                <CheckItem key={item} color="#7C3AED">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            {/* MOBILE LIST */}
-            <ul className="mt-4 max-w-[520px] space-y-2 md:hidden">
-              {planJourneyToUAEMobile.map((item) => (
-                <CheckItem key={item} color="#7C3AED">
-                  {item}
-                </CheckItem>
-              ))}
-            </ul>
-
-            <div className="mt-4 h-[3px] w-16 rounded-full bg-[#7C3AED]" />
-
-          </motion.div>
-
-        </div>
-
       </div>
     </section>
   );

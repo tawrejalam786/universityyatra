@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-006",
+  "type": "feat",
+  "description": "Update Australia study page to Canada design system: replace all 10 components in components/StudyInAustralia/ and create [guide] dynamic route",
+  "status": "pending",
+  "steps": [
+    "Replace c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\components\\StudyInAustralia\\StudyInAustraliaHero.jsx using Canada design, update hero image to /images/hero/study-in-australia.webp, WhatsApp URL to reference Australia",
+    "Replace OnlineDegreeSection.jsx with 5 Australia guides (study-in-australia, cost-of-studying, living-and-culture, scholarships, post-study-work-visa), update guide slugs to /study-in-australia/[slug], AUD currency, Sydney/Melbourne/Brisbane/Perth cities",
+    "Replace WhatItGetsYou.jsx with 5 Australia benefits (World-class universities, Post-study work opportunities, Safe and welcoming environment, Research excellence, High standard of living)",
+    "Replace CoursesSlider.jsx with same 9 courses structure as Canada",
+    "Replace HowUniversityYatraHelps.jsx using Canada 5-item circular design",
+    "Replace UniversityCarousel.jsx with Australian universities: University of Sydney, University of Melbourne, Australian National University, University of Queensland, UNSW Sydney, Monash University, University of Western Australia, University of Adelaide, University of Technology Sydney, Macquarie University. Use paths /images/universities/australia/[university-slug].webp",
+    "Replace CostOfStudyingAustralia.jsx using Canada card stack design with AUD: undergraduate AUD 20,000-45,000/year, postgraduate AUD 22,000-50,000/year, living expenses AUD 1,500-2,500/month",
+    "Replace Testimonials.jsx using Canada testimonial slider design",
+    "Replace GlobalEducationCTA.jsx using Canada CTA design with Australia context",
+    "Verify app/study-in-australia/page.js imports all updated components correctly (should already be fixed by FEAT-001)",
+    "Create c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-australia\\[guide]\\page.js with 5 Australia guide slugs and placeholder markdown content"
+  ],
+  "acceptance_criteria": [
+    "All 10 component files in components/StudyInAustralia/ match Canada design system",
+    "app/study-in-australia/page.js renders correctly with all 10 sections",
+    "app/study-in-australia/[guide]/page.js handles all 5 guide slugs",
+    "Visual design matches Canada: colors, spacing, animations, component structure",
+    "Australia-specific content: AUD currency, Australian cities, Australian universities, Group of Eight"
+  ],
+  "verification": [
+    "Run npm run dev",
+    "Navigate to http://localhost:3000/study-in-australia and compare design with http://localhost:3000/study-in-canada",
+    "Verify all 10 sections render in correct order with Australia-specific content",
+    "Test guide navigation to http://localhost:3000/study-in-australia/study-in-australia",
+    "Check responsive behavior matches Canada page",
+    "Verify no console errors"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

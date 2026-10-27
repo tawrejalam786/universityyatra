@@ -1,0 +1,25 @@
+{
+  "id": "FEAT-001",
+  "type": "fix",
+  "description": "Fix critical import bugs in Russia and Australia page files where imports reference wrong country components",
+  "status": "completed",
+  "steps": [
+    "Fix c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-russia\\page.js to import from components/StudyInRussia/* instead of components/StudyInAustralia/*",
+    "Fix c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-australia\\page.js to import from components/StudyInAustralia/* instead of components/StudyInRussia/*",
+    "Verify both files import all 10 correct components: Hero, OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, UniversityCarousel, CostOfStudying{Country}, Testimonials, GlobalEducationCTA"
+  ],
+  "acceptance_criteria": [
+    "study-in-russia/page.js imports all components from components/StudyInRussia/ directory",
+    "study-in-australia/page.js imports all components from components/StudyInAustralia/ directory",
+    "Both files follow exact same import pattern as study-in-canada/page.js",
+    "npm run dev starts without import errors for these two pages"
+  ],
+  "verification": [
+    "Run npm run dev and verify no import errors in console",
+    "Navigate to http://localhost:3000/study-in-russia and verify page renders",
+    "Navigate to http://localhost:3000/study-in-australia and verify page renders",
+    "Check browser console for any component import errors"
+  ],
+  "blocked_reason": null,
+  "findings": "All import bugs successfully fixed. Both study-in-russia/page.js and study-in-australia/page.js now import from their correct component directories. Build completed without errors. All 9 components properly imported for each page (Hero, OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, UniversityCarousel, CostOfStudying{Country}, Testimonials, GlobalEducationCTA)."
+}

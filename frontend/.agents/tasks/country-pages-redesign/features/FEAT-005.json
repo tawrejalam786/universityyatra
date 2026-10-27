@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-005",
+  "type": "feat",
+  "description": "Update Russia study page to Canada design system: replace all 10 components in components/StudyInRussia/ and create [guide] dynamic route",
+  "status": "pending",
+  "steps": [
+    "Replace c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\components\\StudyInRussia\\StudyInRussiaHero.jsx using Canada design, update hero image to /images/hero/study-in-russia.webp, WhatsApp URL to reference Russia",
+    "Replace OnlineDegreeSection.jsx with 5 Russia guides (study-in-russia, cost-of-studying, living-and-culture, scholarships, post-study-work-visa), update guide slugs to /study-in-russia/[slug], RUB currency, Moscow/Saint Petersburg/Kazan cities",
+    "Replace WhatItGetsYou.jsx with 5 Russia benefits (Affordable tuition fees, Strong MBBS programs, Rich cultural heritage, No IELTS requirement for many universities, Quality technical education)",
+    "Replace CoursesSlider.jsx with same 9 courses structure as Canada",
+    "Replace HowUniversityYatraHelps.jsx using Canada 5-item circular design",
+    "Replace UniversityCarousel.jsx with Russian universities: Lomonosov Moscow State University, Saint Petersburg State University, Kazan Federal University, Moscow Institute of Physics and Technology, Novosibirsk State University, Higher School of Economics, RUDN University, Sechenov First Moscow State Medical University. Use paths /images/universities/russia/[university-slug].webp",
+    "Replace CostOfStudyingRussia.jsx using Canada card stack design with RUB: MBBS RUB 250,000-450,000/year, Engineering RUB 150,000-300,000/year, living expenses RUB 20,000-40,000/month",
+    "Replace Testimonials.jsx using Canada testimonial slider design",
+    "Replace GlobalEducationCTA.jsx using Canada CTA design with Russia context",
+    "Verify app/study-in-russia/page.js imports all updated components correctly (should already be fixed by FEAT-001)",
+    "Create c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-russia\\[guide]\\page.js with 5 Russia guide slugs and placeholder markdown content"
+  ],
+  "acceptance_criteria": [
+    "All 10 component files in components/StudyInRussia/ match Canada design system",
+    "app/study-in-russia/page.js renders correctly with all 10 sections",
+    "app/study-in-russia/[guide]/page.js handles all 5 guide slugs",
+    "Visual design matches Canada: colors, spacing, animations, component structure",
+    "Russia-specific content: RUB currency, Russian cities, Russian universities, MBBS focus"
+  ],
+  "verification": [
+    "Run npm run dev",
+    "Navigate to http://localhost:3000/study-in-russia and compare design with http://localhost:3000/study-in-canada",
+    "Verify all 10 sections render in correct order with Russia-specific content",
+    "Test guide navigation to http://localhost:3000/study-in-russia/post-study-work-visa",
+    "Check responsive behavior matches Canada page",
+    "Verify no console errors"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

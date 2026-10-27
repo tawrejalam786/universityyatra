@@ -1,0 +1,27 @@
+{
+  "project_type": "Next.js 16.3.5 (App Router) with React 19, Tailwind CSS 4, Framer Motion, Swiper",
+  "language": "JavaScript (JSX), no TypeScript",
+  "build_system": "Next.js App Router, npm scripts",
+  "test_framework": "None configured — verify manually by running dev server and checking pages",
+  "build_command": "npm run build",
+  "test_command": "npm run dev (manual verification at http://localhost:3000)",
+  "verification_instructions": "1. Run 'npm run dev' 2. Navigate to each country page URL 3. Verify all 10 components render 4. Check [guide] dynamic routes 5. Inspect for console errors 6. Verify responsive behavior (mobile/tablet/desktop)",
+  "snapshot_or_generated_files": "null",
+  "environment_constraints": "Next.js 16.3.5 may have breaking changes from training data — heed AGENTS.md warning. Do not restart dev server if already running on :3000. All components use 'use client' directive. Image paths use /images/ structure.",
+  "contribution_requirements": "Follow Next.js App Router conventions. Use metadata export for SEO. All interactive components must have 'use client' directive. Match existing code style: 2-space indentation, double quotes for JSX attributes, arrow functions for components.",
+  "key_patterns": "Country pages follow pattern: app/study-in-{country}/page.js imports from components/StudyIn{Country}/ folder. 10 components per country: Hero, OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, UniversityCarousel, CostOfStudying{Country}, Testimonials, GlobalEducationCTA. [guide] pages use dynamic routes with notFound() for invalid slugs.",
+  "relevant_files": [
+    "app/study-in-canada/page.js",
+    "app/study-in-canada/[guide]/page.js",
+    "components/StudyInCanada/*.jsx (all 10 files)",
+    "app/study-in-russia/page.js (BUG: imports Australia components)",
+    "app/study-in-australia/page.js (BUG: imports Russia components)",
+    "app/study-in-ireland/page.js",
+    "app/study-in-uae/page.js",
+    "components/StudyInIreland/*.jsx",
+    "components/StudyInUae/*.jsx",
+    "components/StudyInRussia/*.jsx",
+    "components/StudyInAustralia/*.jsx"
+  ],
+  "directory_structure": "frontend/app/ - Next.js App Router pages. frontend/components/ - Organized by feature (StudyInCanada, StudyInIreland, etc.). frontend/public/images/ - Static assets including country hero images, universities, courses, testimonials."
+}

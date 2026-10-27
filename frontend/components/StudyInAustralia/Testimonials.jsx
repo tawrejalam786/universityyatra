@@ -117,12 +117,18 @@ export default function Testimonials() {
 
         {/* HEADER */}
         <div className="mb-8 flex items-center justify-between gap-4 sm:mb-9">
-          <h2 className="max-w-[850px] text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#102C4A] sm:text-[34px] md:text-[38px]">
-            What Students Like About{" "}
-            <span className="text-[#008080]">
-              University Yatra™
-            </span>
-          </h2>
+
+        <h2 className="max-w-[850px] text-[27px] font-bold leading-[1.15] tracking-[-0.035em] text-[#101169] sm:text-[34px] md:text-[38px]">
+          What Students Like About{" "}
+          <span className="text-[#085af9]">
+            University Yatra
+            <sup className="ml-[2px] text-[9px] font-medium sm:text-[11px] md:text-[12px]">
+              ™
+            </sup>
+          </span>
+        </h2>
+
+
 
           {/* DESKTOP ARROWS */}
           <div className="hidden shrink-0 items-center gap-2 sm:flex">

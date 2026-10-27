@@ -1,0 +1,15 @@
+{
+  "task_id": "country-pages-redesign",
+  "task_description": "Redesign 5 country study pages (Ireland, UAE, Russia, Australia, Germany) to match the StudyInCanada design system, including all 10 components and [guide] inner pages for each country",
+  "status": "pending",
+  "feature_order": [
+    "FEAT-001",
+    "FEAT-002",
+    "FEAT-003",
+    "FEAT-004",
+    "FEAT-005",
+    "FEAT-006",
+    "FEAT-007"
+  ],
+  "blocked_reason": null
+}

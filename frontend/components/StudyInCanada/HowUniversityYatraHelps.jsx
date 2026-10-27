@@ -54,6 +54,48 @@ const helpItems = [
 ];
 
 /* =========================================
+   STUDY IN IRELAND CONTENT
+========================================= */
+
+export const helpItemsIreland = [
+  {
+    number: "01",
+    title: "Providing one-on-one personalised counselling",
+    image: "/images/study-canada/customer-support.png",
+    accent: "#0F8B83",
+    soft: "#EAF8F7",
+  },
+  {
+    number: "02",
+    title: "Comparing multiple Irish courses and universities",
+    image: "/images/study-canada/canadian-flag.png",
+    accent: "#2563EB",
+    soft: "#EEF4FF",
+  },
+  {
+    number: "03",
+    title: "Explaining tuition fees, living costs, and intakes",
+    image: "/images/study-canada/gold-coins.png",
+    accent: "#14B8A6",
+    soft: "#EAFBF8",
+  },
+  {
+    number: "04",
+    title: "Guiding through admission and documentation",
+    image: "/images/study-canada/education-graduation.png",
+    accent: "#F59E0B",
+    soft: "#FFF7E8",
+  },
+  {
+    number: "05",
+    title: "Supporting student application for Ireland",
+    image: "/images/study-canada/documentation-approval.png",
+    accent: "#EC4899",
+    soft: "#FFF0F6",
+  },
+];
+
+/* =========================================
    RING SETTINGS
 ========================================= */
 

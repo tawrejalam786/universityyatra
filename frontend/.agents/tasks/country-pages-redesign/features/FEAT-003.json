@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Update Ireland study page to Canada design system: replace all 10 components in components/StudyInIreland/ and create [guide] dynamic route",
+  "status": "pending",
+  "steps": [
+    "Replace c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\components\\StudyInIreland\\StudyInIrelandHero.jsx using Canada design, update hero image to /images/hero/study-in-ireland.webp, WhatsApp URL to reference Ireland",
+    "Replace OnlineDegreeSection.jsx with 5 Ireland guides (study-in-ireland, cost-of-studying, living-and-culture, scholarships, post-study-work-visa), update guide slugs to /study-in-ireland/[slug], EUR currency, Dublin/Cork/Galway cities",
+    "Replace WhatItGetsYou.jsx with 5 Ireland benefits (EU member state advantages, Post-study work visa, English-speaking country, Growing tech hub, Quality education system)",
+    "Replace CoursesSlider.jsx with same 9 courses structure as Canada",
+    "Replace HowUniversityYatraHelps.jsx using Canada 5-item circular design",
+    "Replace UniversityCarousel.jsx with Irish universities: Trinity College Dublin, University College Dublin, University College Cork, National University of Ireland Galway, Dublin City University, Maynooth University, University of Limerick, Technological University Dublin. Use paths /images/universities/ireland/[university-slug].webp",
+    "Replace CostOfStudyingIreland.jsx using Canada card stack design with EUR: undergraduate EUR 10,000-25,000/year, postgraduate EUR 10,000-30,000/year, living expenses EUR 1,000-1,500/month",
+    "Replace Testimonials.jsx using Canada testimonial slider design",
+    "Replace GlobalEducationCTA.jsx using Canada CTA design with Ireland context",
+    "Verify app/study-in-ireland/page.js imports all updated components correctly",
+    "Create c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend\\app\\study-in-ireland\\[guide]\\page.js with 5 Ireland guide slugs and placeholder markdown content"
+  ],
+  "acceptance_criteria": [
+    "All 10 component files in components/StudyInIreland/ match Canada design system",
+    "app/study-in-ireland/page.js renders correctly with all 10 sections",
+    "app/study-in-ireland/[guide]/page.js handles all 5 guide slugs",
+    "Visual design matches Canada: colors, spacing, animations, component structure",
+    "Ireland-specific content: EUR currency, Irish cities, Irish universities"
+  ],
+  "verification": [
+    "Run npm run dev",
+    "Navigate to http://localhost:3000/study-in-ireland and compare design with http://localhost:3000/study-in-canada",
+    "Verify all 10 sections render in correct order with Ireland-specific content",
+    "Test guide navigation to http://localhost:3000/study-in-ireland/scholarships",
+    "Check responsive behavior matches Canada page",
+    "Verify no console errors"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
