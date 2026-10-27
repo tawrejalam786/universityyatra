@@ -1,46 +1,45 @@
 import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
-import StudyInRussiaHero from '@/components/StudyInRussia/StudyInRussiaHero';
-import OnlineDegreeSection from "@/components/StudyInRussia/OnlineDegreeSection";
-import WhatItGetsYou from "@/components/StudyInRussia/WhatItGetsYou";
-import CoursesSlider from "@/components/StudyInRussia/CoursesSlider";
-import HowUniversityYatraHelps from "@/components/StudyInRussia/HowUniversityYatraHelps";
-import UniversityCarousel from "@/components/StudyInRussia/UniversityCarousel";
-import CostOfStudyingRussia from "@/components/StudyInRussia/CostOfStudyingRussia";
-import Testimonials from "@/components/StudyInRussia/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInRussia/GlobalEducationCTA";
+import StudyInAustraliaHero from '@/components/StudyInAustralia/StudyInAustraliaHero';
+import OnlineDegreeSection from "@/components/StudyInAustralia/OnlineDegreeSection";
+import WhatItGetsYou from "@/components/StudyInAustralia/WhatItGetsYou";
+import CoursesSlider from "@/components/StudyInAustralia/CoursesSlider";
+import HowUniversityYatraHelps from "@/components/StudyInAustralia/HowUniversityYatraHelps";
+import UniversityCarousel from "@/components/StudyInAustralia/UniversityCarousel";
+import CostOfStudyingAustralia from "@/components/StudyInAustralia/CostOfStudyingAustralia";
+import Testimonials from "@/components/StudyInAustralia/Testimonials";
+import GlobalEducationCTA from "@/components/StudyInAustralia/GlobalEducationCTA";
 
 
 
 export const metadata = {
-  title: "Study in Russia | Top Universities & Admission Guide - University Yatra",
+  title: "Study in Australia | Top Universities & Admission Guide - University Yatra",
   description:
-    "Explore study opportunities in Russia with University Yatra. Compare universities in Moscow, Saint Petersburg, Kazan, and other cities, undergraduate and postgraduate programs, MBBS courses, admission requirements, and choose the right pathway for your academic and career goals.",
+    "Explore study opportunities in Australia with University Yatra. Compare top universities in Sydney, Melbourne, Brisbane, Perth, and Adelaide. Discover undergraduate and postgraduate programs, scholarships, admission requirements, and student visa guidance to plan your academic future.",
   keywords:
-    "study in Russia, Russia universities, study abroad Russia, study in Moscow, study in Saint Petersburg, bachelors in Russia, masters in Russia, MBBS in Russia, Russia admission guide, top universities in Russia, higher education Russia, Russia student visa, courses in Russia, University Yatra",
+    "study in Australia, Australia universities, study abroad Australia, study in Sydney, study in Melbourne, study in Brisbane, study in Perth, study in Adelaide, bachelors in Australia, masters in Australia, MBA in Australia, top universities in Australia, Australia admission guide, scholarships in Australia, higher education Australia, Australia student visa, courses in Australia, University Yatra",
   openGraph: {
-    title: "Study in Russia | Universities, Programs & Admission Guidance",
+    title: "Study in Australia | Universities, Programs & Admission Guidance",
     description:
-      "Explore universities, MBBS courses, degree programs, and study opportunities across Russia with admission guidance from University Yatra.",
+      "Explore leading Australian universities, undergraduate and postgraduate programs, scholarships, and study opportunities with admission guidance from University Yatra.",
     type: "website",
   },
 };
 
 
 
-export default function StudyInRussiaPage() {
+export default function StudyInAustraliaPage() {
   return (
     <>
       <Navbar active="Destinations" />
       <main>
-        <StudyInRussiaHero />
+        <StudyInAustraliaHero />
         <OnlineDegreeSection />
         <WhatItGetsYou />
         <CoursesSlider />
         <HowUniversityYatraHelps />
         <UniversityCarousel />
-        {/* <DegreeComparison /> */}
-        <CostOfStudyingRussia />
+        <CostOfStudyingAustralia />
         <Testimonials />
         <GlobalEducationCTA />
       </main>
