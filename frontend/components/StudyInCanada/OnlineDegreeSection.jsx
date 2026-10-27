@@ -38,7 +38,7 @@ const guides = [
     title: "Study in Canada",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-canada/canadian-flag.png",
+    image: "/images/study-usa/3d/study-usa.png",
 
     description:
       "Canada offers university degrees and career-focused college programs for international students. Choose a bachelor's degree, master's program, or specialised postgraduate qualification based on your previous education and goals.",

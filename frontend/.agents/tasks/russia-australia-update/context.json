@@ -1,0 +1,29 @@
+{
+  "project_type": "Next.js 16 App Router frontend with React 19, Tailwind CSS, Framer Motion animations",
+  "language": "JavaScript (JSX)",
+  "build_system": "Next.js with npm. Uses App Router (app/ directory), not Pages Router",
+  "test_framework": "No automated tests found. Verification is build-based.",
+  "build_command": "npm run build",
+  "test_command": "npm run build (build verification serves as test)",
+  "verification_instructions": "Run 'npm run build' in the frontend directory. Success means all imports resolve, no JSX errors, and Next.js compiles successfully. Start dev server with 'npm run dev' and manually verify pages at /study-in-russia and /study-in-australia.",
+  "snapshot_or_generated_files": "None. No generated files are checked in.",
+  "environment_constraints": "Working in c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend (not the repo root). Dev server runs on default Next.js port (3000). Path separators: Windows backslashes in file paths.",
+  "contribution_requirements": "Follow Next.js 16 App Router conventions. Read official Next.js docs at node_modules/next/dist/docs/ before making changes as this version may have breaking changes from training data. Component files use .jsx extension. All components are client components using 'use client' directive when they use hooks or interactivity.",
+  "key_patterns": "Hero components: Two patterns found. (1) Canada/Ireland/UAE style: Static image background with overlay, 'use client', Image from next/image, framer-motion animations, two CTA buttons at bottom (consultation + WhatsApp). (2) Russia/Australia old style: Video background with motion effects, stats array below heading, single CTA button. Target: migrate Russia/Australia to Canada/Ireland image-based pattern. UniversityCarousel: Two implementations. (1) Canada/Ireland: Custom 3D arc carousel with manual transform calculations, no external carousel library, touch/mouse drag, autoplay. (2) Russia/Australia old: Swiper.js EffectCoverflow. Target: migrate Russia/Australia to Canada 3D arc implementation. All other components (OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, CostOfStudying*, Testimonials, GlobalEducationCTA): Follow established patterns in Ireland/UAE completed examples. Color scheme: Primary blue #1765F5, navy #0C337B, teal accent #18B8B5, neutral backgrounds #F8FAFC and #F4F7FA.",
+  "relevant_files": [
+    "components/StudyInCanada/StudyInCanadaHero.jsx (design template - image-based hero)",
+    "components/StudyInIreland/StudyInIrelandHero.jsx (completed example matching Canada)",
+    "components/StudyInCanada/UniversityCarousel.jsx (3D arc carousel template)",
+    "components/StudyInIreland/UniversityCarousel.jsx (completed 3D arc example)",
+    "components/StudyInIreland/OnlineDegreeSection.jsx (guide links component example)",
+    "components/StudyInIreland/*.jsx (all 10 completed Ireland components)",
+    "components/StudyInUae/*.jsx (all 10 completed UAE components)",
+    "app/study-in-ireland/[guide]/page.js (guide page implementation with 5 guides)",
+    "app/study-in-uae/[guide]/page.js (another guide page example)",
+    "components/StudyInRussia/*.jsx (10 target components to update)",
+    "components/StudyInAustralia/*.jsx (10 target components to update)",
+    "app/study-in-russia/page.js (main Russia page - imports already correct)",
+    "app/study-in-australia/page.js (main Australia page - imports already correct)"
+  ],
+  "directory_structure": "frontend/app/ contains route pages using App Router convention. frontend/components/ contains reusable components organized by country (StudyInCanada/, StudyInIreland/, StudyInUae/, StudyInRussia/, StudyInAustralia/). Each country folder has 10 components: Hero, OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, UniversityCarousel, CostOfStudying[Country], Testimonials, GlobalEducationCTA, and optionally DegreeComparison. Guide pages live at app/study-in-[country]/[guide]/page.js using dynamic routes."
+}

@@ -133,7 +133,7 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
         if (e.pointerType === "mouse") onActivate(index);
       }}
       onKeyDown={onKeyDown}
-      className={`relative flex w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl border px-2.5 py-2 text-left transition-colors duration-300 last:col-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 sm:last:col-span-1 lg:flex-1 lg:gap-3 lg:px-3.5 lg:py-2.5 ${
+      className={`relative flex w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl border px-2.5 py-2 text-left transition-colors duration-300 last:col-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 sm:last:col-span-1 lg:flex-1 lg:gap-3 lg:px-4 lg:py-2.5 ${
         active
           ? "border-[#B4CFFA] bg-[#EDF5FF] shadow-[0_5px_20px_rgba(23,101,245,0.07)]"
           : "border-[#E5EDF9] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"
@@ -282,7 +282,7 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
             {guide.title}
           </h3>
 
-          <p className="mx-auto mt-1.5 min-h-[4.9rem] max-w-[440px] text-[12px] leading-[1.65] text-[#526B8C]">
+          <p className="mx-auto mt-1.5 min-h-[4.9rem] max-w-[520px] text-[12px] leading-[1.65] text-[#526B8C]">
             {guide.description}
           </p>
         </div>
@@ -389,7 +389,8 @@ export default function SupportSystem() {
       aria-labelledby="usa-guide-section-title"
       className="relative w-full overflow-hidden bg-white py-8 sm:py-10"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
+      {/* 1200px CONTAINER */}
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         {/* SECTION HEADER */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
@@ -417,7 +418,7 @@ export default function SupportSystem() {
         </motion.div>
 
         {/* TABS + CARD + CTA */}
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:grid-rows-[1fr_auto] lg:gap-x-6">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:grid-rows-[1fr_auto] lg:gap-x-6">
           {/* TABS:
               mobile  -> on TOP, above the card, all 5 visible (2 columns)
               tablet  -> 3 columns

@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Update all StudyInAustralia components to Canada design system and create guide pages. This feature is independent of FEAT-001 but follows the identical pattern. Migrate StudyInAustraliaHero from video-based to image-based hero, update UniversityCarousel to 3D arc, modernize all remaining components, and create guide pages.",
+  "status": "pending",
+  "steps": [
+    "1. Update components/StudyInAustralia/StudyInAustraliaHero.jsx: Replace video background with static image background using /images/hero/study-in-australia.webp (create if needed). Follow components/StudyInIreland/StudyInIrelandHero.jsx structure with gradient overlay, centered heading, two CTAs at bottom (consultation + WhatsApp with Australian context), remove stats array, use framer-motion animations.",
+    "2. Update components/StudyInAustralia/UniversityCarousel.jsx: Replace current implementation with Canada's custom 3D arc carousel from components/StudyInCanada/UniversityCarousel.jsx. Keep existing Australia university data but apply 3D arc transform logic, touch/mouse drag, autoplay, matching visual styling.",
+    "3. Update components/StudyInAustralia/OnlineDegreeSection.jsx: Follow components/StudyInIreland/OnlineDegreeSection.jsx pattern with guide links section (5 guides: study-in-australia, cost-of-studying, living-and-culture, scholarships, post-study-work-visa), modern card layout, consistent color scheme.",
+    "4. Update components/StudyInAustralia/WhatItGetsYou.jsx: Match components/StudyInIreland/WhatItGetsYou.jsx layout and styling with Australia-specific benefits content.",
+    "5. Update components/StudyInAustralia/CoursesSlider.jsx: Ensure it matches components/StudyInIreland/CoursesSlider.jsx pattern.",
+    "6. Update components/StudyInAustralia/HowUniversityYatraHelps.jsx: Match components/StudyInIreland/HowUniversityYatraHelps.jsx with Australia-specific services.",
+    "7. Update components/StudyInAustralia/CostOfStudyingAustralia.jsx: Follow components/StudyInIreland/CostOfStudyingIreland.jsx structure with Australia tuition and living cost data.",
+    "8. Update components/StudyInAustralia/Testimonials.jsx: Verify it matches components/StudyInIreland/Testimonials.jsx pattern.",
+    "9. Update components/StudyInAustralia/GlobalEducationCTA.jsx: Ensure it matches components/StudyInIreland/GlobalEducationCTA.jsx design.",
+    "10. Create app/study-in-australia/[guide]/page.js: Create dynamic route page following app/study-in-ireland/[guide]/page.js structure. Include 5 guides in AUSTRALIA_GUIDES object with Australia-specific content: 'study-in-australia', 'cost-of-studying', 'living-and-culture', 'scholarships', 'post-study-work-visa'. Each guide with id, vol, slug, title, shortTitle, badge, tagline, heroImage (use Australian university images), pillColors, and markdown content tailored to studying in Australia."
+  ],
+  "acceptance_criteria": [
+    "All 10 Australia components updated to Canada design system with consistent colors and layouts",
+    "StudyInAustraliaHero uses image background, two CTA buttons at bottom",
+    "UniversityCarousel implements 3D arc design with Australian universities",
+    "Guide pages accessible at /study-in-australia/study-in-australia, /study-in-australia/cost-of-studying, /study-in-australia/living-and-culture, /study-in-australia/scholarships, /study-in-australia/post-study-work-visa",
+    "OnlineDegreeSection includes links to all 5 Australia guide pages",
+    "All components use 'use client' directive where needed",
+    "Australia-specific content preserved (university names, cities like Sydney/Melbourne/Brisbane)"
+  ],
+  "verification": [
+    "Run 'npm run build' from c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend and confirm successful build",
+    "Start dev server with 'npm run dev' and visit http://localhost:3000/study-in-australia - verify modern hero and layout",
+    "Navigate to http://localhost:3000/study-in-australia/study-in-australia and verify guide page renders",
+    "Test all 5 guide routes and verify navigation works",
+    "Verify UniversityCarousel shows Australian universities in 3D arc layout with interactions"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

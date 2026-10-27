@@ -1,0 +1,7 @@
+{
+  "task_id": "russia-australia-update",
+  "task_description": "Update StudyInRussia and StudyInAustralia country pages to match the StudyInCanada design system with modern image-based hero, updated component layouts, and guide pages",
+  "status": "pending",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null
+}

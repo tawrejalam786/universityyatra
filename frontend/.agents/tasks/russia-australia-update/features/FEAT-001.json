@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Update all StudyInRussia components to Canada design system and create guide pages. Migrate StudyInRussiaHero from video-based to image-based hero matching StudyInIrelandHero.jsx pattern. Update UniversityCarousel from Swiper.js to Canada's 3D arc implementation. Update all remaining 8 components (OnlineDegreeSection, WhatItGetsYou, CoursesSlider, HowUniversityYatraHelps, CostOfStudyingRussia, Testimonials, GlobalEducationCTA) to match Ireland's modern layouts and color scheme. Create app/study-in-russia/[guide]/page.js with 5 guide pages following the Ireland guide structure.",
+  "status": "pending",
+  "steps": [
+    "1. Update components/StudyInRussia/StudyInRussiaHero.jsx: Replace video background with static image background using /images/hero/study-in-russia.webp (create if needed). Follow components/StudyInIreland/StudyInIrelandHero.jsx structure: gradient overlay, centered heading, two CTAs at bottom (consultation + WhatsApp with Russian phone number context), remove stats array, use framer-motion animations, clean image-based design.",
+    "2. Update components/StudyInRussia/UniversityCarousel.jsx: Replace Swiper.js implementation with Canada's custom 3D arc carousel from components/StudyInCanada/UniversityCarousel.jsx. Keep existing Russia university data (Lomonosov, Saint Petersburg, Kazan, etc.) but apply 3D arc transform logic, touch/mouse drag, autoplay functionality, and matching visual styling.",
+    "3. Update components/StudyInRussia/OnlineDegreeSection.jsx: Follow components/StudyInIreland/OnlineDegreeSection.jsx pattern with guide links section (5 guides: study-in-russia, cost-of-studying, living-and-culture, scholarships, post-study-work-visa), modern card layout, color scheme matching Ireland (#1765F5 blue, #0C337B navy).",
+    "4. Update components/StudyInRussia/WhatItGetsYou.jsx: Match components/StudyInIreland/WhatItGetsYou.jsx layout and styling with Russia-specific benefits content, same section structure and color palette.",
+    "5. Update components/StudyInRussia/CoursesSlider.jsx: Ensure it matches components/StudyInIreland/CoursesSlider.jsx (already similar but verify colors and layout consistency).",
+    "6. Update components/StudyInRussia/HowUniversityYatraHelps.jsx: Match components/StudyInIreland/HowUniversityYatraHelps.jsx with Russia-specific services, same visual design and icons.",
+    "7. Update components/StudyInRussia/CostOfStudyingRussia.jsx: Follow components/StudyInIreland/CostOfStudyingIreland.jsx structure with Russia tuition and living cost data, matching color scheme and layout.",
+    "8. Update components/StudyInRussia/Testimonials.jsx: Verify it matches components/StudyInIreland/Testimonials.jsx pattern (likely already similar, confirm visual consistency).",
+    "9. Update components/StudyInRussia/GlobalEducationCTA.jsx: Ensure it matches components/StudyInIreland/GlobalEducationCTA.jsx design.",
+    "10. Create app/study-in-russia/[guide]/page.js: Create dynamic route page following app/study-in-ireland/[guide]/page.js structure. Include 5 guides in RUSSIA_GUIDES object: 'study-in-russia' (overview), 'cost-of-studying' (tuition and fees), 'living-and-culture' (accommodation and culture), 'scholarships' (funding opportunities), 'post-study-work-visa' (work options). Each guide needs: id, vol, slug, title, shortTitle, badge, tagline, heroImage (use Russian university images from /images/universities/), pillColors array, and markdown content. Use Russia-specific content with same page structure: hero section, article content, CTA block, other guides section."
+  ],
+  "acceptance_criteria": [
+    "All 10 Russia components updated to Canada design system with consistent colors (#1765F5, #0C337B, #18B8B5) and layouts matching Ireland examples",
+    "StudyInRussiaHero uses image background instead of video, two CTA buttons at bottom",
+    "UniversityCarousel implements 3D arc design with Russian universities, no Swiper.js dependency",
+    "Guide pages accessible at /study-in-russia/study-in-russia, /study-in-russia/cost-of-studying, /study-in-russia/living-and-culture, /study-in-russia/scholarships, /study-in-russia/post-study-work-visa",
+    "OnlineDegreeSection includes links to all 5 Russia guide pages",
+    "All components use 'use client' directive where needed (hooks, interactivity)",
+    "Russia-specific content preserved (university names, programs like MBBS, Russian cities)"
+  ],
+  "verification": [
+    "Run 'npm run build' from c:\\Users\\Tawrej\\OneDrive\\Desktop\\universityyatra\\frontend and confirm successful build with no errors",
+    "Start dev server with 'npm run dev' and visit http://localhost:3000/study-in-russia - verify hero loads with image background and modern layout",
+    "Navigate to http://localhost:3000/study-in-russia/study-in-russia and verify guide page renders correctly",
+    "Test all 5 guide routes and verify navigation between guides works",
+    "Verify UniversityCarousel shows Russian universities in 3D arc layout with drag functionality"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

@@ -34,20 +34,11 @@ const NAV_ITEMS = [
       { label: "Study in UAE", href: "/study-in-uae" },
       { label: "Study in Russia", href: "/study-in-russia" },
       { label: "Study in Australia", href: "/study-in-australia" },
-      { label: "Study in New Zealand", href: "/study-in-new-zealand" },
-      {
-        label: "Study in New Singapore",
-        href: "/study-in-new-singapore",
-      },
-      {
-        label: "Study in New Japan",
-        href: "/study-in-new-japan",
-      },
-      { label: "Mbbs Abroad", href: "/mbbs-abroad" },
-      {
-        label: "PhD Programs Abroad",
-        href: "/phd-programs-abroad",
-      },
+      // { label: "Study in New Zealand", href: "/study-in-new-zealand" },
+      // { label: "Study in New Singapore", href: "/study-in-new-singapore",},
+      // { label: "Study in New Japan", href: "/study-in-new-japan",},
+      // { label: "Mbbs Abroad", href: "/mbbs-abroad" },
+      // { label: "PhD Programs Abroad", href: "/phd-programs-abroad",},
     ],
   },
 
