@@ -1,41 +1,25 @@
 
 "use client";
 
-import {
-  Award,
-  BookOpen,
-  CircleDollarSign,
-  GraduationCap,
-  House,
-  WalletCards,
-} from "lucide-react";
-
-/* =========================================
-   Ireland COST DATA - CONTENT UNCHANGED
-========================================= */
+import { Award, BookOpen, CircleDollarSign, GraduationCap, House, WalletCards } from "lucide-react";
 
 const tuitionFees = [
   {
-    title: "PG Diploma, Diploma & Certificate Program",
-    price: "€ —",
-    icon: Award,
-  },
-  {
-    title: "Bachelor’s",
-    price: "€10,000 – €20,000",
+    title: "Bachelor's",
+    price: "EUR 10,000 – 25,000",
     icon: GraduationCap,
   },
   {
-    title: "Master’s",
-    price: "€12,000 – €25,000",
+    title: "Master's",
+    price: "EUR 10,000 – 30,000",
     icon: BookOpen,
   },
 ];
 
 const livingExpenses = [
   {
-    title: "Average",
-    price: "€10,000 – €20,000",
+    title: "Average Living Expenses",
+    price: "EUR 1,000 – 1,500",
     icon: WalletCards,
   },
 ];
@@ -43,24 +27,20 @@ const livingExpenses = [
 const accommodationCosts = [
   {
     title: "On-Campus",
-    price: "€6,000 – €12,000",
+    price: "EUR 400 – 800",
     icon: House,
   },
   {
     title: "Off-Campus",
-    price: "€7,000 – €18,000",
+    price: "EUR 500 – 1,000",
     icon: House,
   },
   {
-    title: "Rentals / Homestays",
-    price: "€8,000 – €18,000",
+    title: "Private Rentals",
+    price: "EUR 600 – 1,200",
     icon: House,
   },
 ];
-
-/* =========================================
-   EUROPE REFERENCE CARD THEMES
-========================================= */
 
 const cardThemes = {
   purple: {
@@ -80,10 +60,6 @@ const cardThemes = {
   },
 };
 
-/* =========================================
-   MAIN SECTION
-========================================= */
-
 export default function CostOfStudyingIreland() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#031126] py-14 sm:py-16 lg:py-20">
@@ -91,7 +67,7 @@ export default function CostOfStudyingIreland() {
       {/* DARK NAVY BACKGROUND */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_10%,#09254B_0%,#06182F_42%,#020B1C_100%)]" />
 
-      {/* TOP LEFT BLUE GLOW */}
+      {/* TOP LEFT CIRCLE INNER GLOW */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-[110px] -top-[150px] -z-10 h-[280px] w-[280px] rounded-full bg-[#0864C0]/20 blur-[75px]" />
 
       {/* TOP RIGHT BLUE GLOW */}
@@ -103,71 +79,46 @@ export default function CostOfStudyingIreland() {
       {/* LEFT SIDE OUTLINE */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-[240px] top-[45%] -z-10 h-[400px] w-[400px] rounded-full border border-[#0967C5]/35 sm:-left-[210px] sm:h-[460px] sm:w-[460px]" />
 
-      {/* LEFT DOT PATTERN */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-45 md:block" style={{ backgroundImage: "radial-gradient(circle, #1376CF 1.5px, transparent 1.5px)", backgroundSize: "23px 23px" }} />
+      {/* LEFT CENTER DOT PATTERN */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-2 top-[42%] -z-10 hidden h-[120px] w-[145px] opacity-45 md:block"
+        style={{
+          backgroundImage: "radial-gradient(circle, #1376CF 1.5px, transparent 1.5px)",
+          backgroundSize: "23px 23px",
+        }}
+      />
 
-      {/* CENTER BLUE GLOW */}
+      {/* CENTER SOFT BLUE GLOW */}
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[45%] -z-10 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#0B3770]/15 blur-[120px]" />
 
-      {/* MAIN CONTAINER */}
+      {/* MAIN CONTENT */}
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
 
         {/* HEADING */}
         <div className="mx-auto mb-12 max-w-[760px] text-center">
-
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/30 bg-[#18B8B5]/10 px-4 py-2">
-            <CircleDollarSign size={15} className="text-[#18B8B5]" strokeWidth={2} />
-
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#085af9]/30 bg-[#085af9]/10 px-4 py-2">
+            <CircleDollarSign size={15} className="text-[#085af9]" strokeWidth={2} />
             <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#53D8D2]">
               Study Cost
             </span>
           </div>
 
           <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
-            Cost Of Studying{" "}
-            <span className="text-[#18B8B5]">in Ireland</span>
+            Cost Of Studying <span className="text-[#085af9]">in Ireland</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">
-           The cost of studying varies based on program, city, and university. Below is an approximate breakdown to help plan your study budget.
+            The cost of studying in Ireland for international students depends on the institution, program, location and lifestyle. Explore the major expenses you should consider before planning your studies.
           </p>
-
         </div>
 
         {/* STACKED CARDS */}
         <div className="mx-auto max-w-[900px]">
           <div className="relative flex flex-col items-center">
-
-            {/* PURPLE CARD */}
-            <CostStackCard
-              title="Tuition Fees"
-              subtitle="Average per annum"
-              color="purple"
-              rotate="-rotate-2"
-              icon={CircleDollarSign}
-              items={tuitionFees}
-            />
-
-            {/* PINK CARD */}
-            <CostStackCard
-              title="Living Expenses"
-              subtitle="Annual"
-              color="pink"
-              rotate="rotate-1"
-              icon={WalletCards}
-              items={livingExpenses}
-            />
-
-            {/* YELLOW CARD */}
-            <CostStackCard
-              title="Accommodation Costs"
-              subtitle="Annual"
-              color="yellow"
-              rotate="-rotate-1"
-              icon={House}
-              items={accommodationCosts}
-            />
-
+            <CostStackCard title="Tuition Fees" subtitle="Average per annum" color="purple" rotate="-rotate-2" icon={CircleDollarSign} items={tuitionFees} />
+            <CostStackCard title="Living Expenses" subtitle="Monthly average" color="pink" rotate="rotate-1" icon={WalletCards} items={livingExpenses} />
+            <CostStackCard title="Accommodation Costs" subtitle="Monthly average" color="yellow" rotate="-rotate-1" icon={House} items={accommodationCosts} />
           </div>
         </div>
 
@@ -176,24 +127,14 @@ export default function CostOfStudyingIreland() {
   );
 }
 
-/* =========================================
-   STACKED CARD
-========================================= */
+/* =========================================================
+   STACK CARD
+========================================================= */
 
-function CostStackCard({
-  title,
-  subtitle,
-  color,
-  rotate,
-  icon: Icon,
-  items,
-}) {
+function CostStackCard({ title, subtitle, color, rotate, icon: Icon, items }) {
   const theme = cardThemes[color];
 
-  const spacingClass =
-    color === "pink" || color === "yellow"
-      ? "-mt-3 sm:-mt-5"
-      : "";
+  const spacingClass = color === "pink" || color === "yellow" ? "-mt-3 sm:-mt-5" : "";
 
   return (
     <div className={`group relative w-[96%] rounded-[22px] px-5 py-5 shadow-[0_18px_40px_rgba(0,0,0,0.28)] transition-all duration-500 hover:z-30 hover:-translate-y-2 hover:rotate-0 sm:w-[92%] sm:rounded-[26px] sm:px-7 sm:py-6 lg:w-[86%] lg:px-9 lg:py-7 ${theme.cardClass} ${rotate} ${spacingClass}`}>
@@ -205,7 +146,6 @@ function CostStackCard({
 
       {/* CARD HEADER */}
       <div className="relative z-10 pr-10">
-
         <p className="text-[10px] font-bold uppercase tracking-[0.15em] opacity-80 sm:text-[11px]">
           {subtitle}
         </p>
@@ -213,41 +153,26 @@ function CostStackCard({
         <h3 className="mt-1 text-[21px] font-extrabold leading-tight sm:text-[25px] md:text-[28px]">
           {title}
         </h3>
-
       </div>
 
       {/* CARD ITEMS */}
       <div className="relative z-10 mt-4 grid gap-2.5 sm:mt-5 sm:grid-cols-2 lg:grid-cols-3">
-
         {items.map((item) => (
-          <CostItem
-            key={item.title}
-            title={item.title}
-            price={item.price}
-            icon={item.icon}
-            darkText={color === "yellow"}
-          />
+          <CostItem key={item.title} title={item.title} price={item.price} icon={item.icon} darkText={color === "yellow"} />
         ))}
-
       </div>
 
       {/* DECORATIVE DOT */}
       <span className={`absolute -left-2 bottom-4 h-2 w-2 rounded-full sm:-left-3 ${theme.dotClass}`} />
-
     </div>
   );
 }
 
-/* =========================================
+/* =========================================================
    COST ITEM
-========================================= */
+========================================================= */
 
-function CostItem({
-  title,
-  price,
-  icon: Icon,
-  darkText = false,
-}) {
+function CostItem({ title, price, icon: Icon, darkText = false }) {
   return (
     <div className="flex min-w-0 items-center gap-3 rounded-[13px] bg-black/[0.10] px-3 py-3 backdrop-blur-sm">
 
@@ -258,7 +183,6 @@ function CostItem({
 
       {/* TEXT */}
       <div className="min-w-0">
-
         <p className={`text-[11px] font-semibold leading-tight sm:text-[12px] ${darkText ? "text-[#263238]" : "text-white"}`}>
           {title}
         </p>
@@ -266,7 +190,6 @@ function CostItem({
         <p className={`mt-1 text-[12px] font-extrabold leading-tight sm:text-[13px] ${darkText ? "text-[#263238]" : "text-white"}`}>
           {price}
         </p>
-
       </div>
 
     </div>
