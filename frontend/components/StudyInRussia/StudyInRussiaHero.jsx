@@ -1,348 +1,168 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight,
-  BadgeDollarSign,
-  Languages,
-  BriefcaseBusiness,
-  ArrowUpRight,
-} from "lucide-react";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
-const stats = [
-  {
-    label: "Medical Education Options",
-    icon: BadgeDollarSign,
-  },
-  {
-    label: "Technical & Science Programs",
-    icon: Languages,
-  },
-  {
-    label: "Specialized Degree Pathways",
-    icon: BriefcaseBusiness,
-  },
-];
+export default function StudyInRussiaHero() {
+  const reduceMotion = useReducedMotion();
 
-export default function StudyIndiaHero() {
+  const handleConsultationClick = () => {
+    const el =
+      document.getElementById("faq-section") ||
+      document.querySelector("footer");
+
+    el?.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <section
-      className="
-        relative isolate
-        flex min-h-[650px] w-full
-        flex-col overflow-hidden
-        bg-[#041a3a]
+    <section className="relative isolate flex min-h-[620px] w-full flex-col overflow-hidden bg-[#F8FAFC] min-[390px]:min-h-[650px] sm:min-h-[600px] lg:min-h-[600px]">
 
-        md:min-h-[720px]
-        lg:min-h-[760px]
-      "
-    >
-      {/* =====================================================
-          BACKGROUND VIDEO
-      ====================================================== */}
+      {/* =====================================
+          BACKGROUND IMAGE
+      ===================================== */}
       <div className="absolute inset-0 -z-30 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-          className="
-            h-full w-full
-            scale-[1.03]
-            object-cover
-            object-center
-          "
-        >
-          <source
-            src="/videos/study-in-india.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <Image
+          src="/images/hero/study-in-russia.webp"
+          alt="Russia landmarks and scenic landscapes"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
       </div>
 
-      {/* =====================================================
-          VIDEO OVERLAYS
-      ====================================================== */}
-
-      {/* Top dark layer */}
+      {/* =====================================
+          BACKGROUND OVERLAY
+      ===================================== */}
       <div
         aria-hidden="true"
-        className="
-          absolute inset-0 -z-20
-          bg-gradient-to-b
-          from-[#02132e]/80
-          via-[#052452]/30
-          to-[#02132e]/90
-        "
+        className="pointer-events-none absolute inset-0 -z-20 bg-gradient-to-t from-black/40 via-transparent to-black/10"
       />
 
-      {/* Center glow */}
-      <div
-        aria-hidden="true"
-        className="
-          absolute left-1/2 top-[48%] -z-10
-          h-[400px] w-[700px]
-          -translate-x-1/2 -translate-y-1/2
-          rounded-full
-          bg-emerald-400/[0.08]
-          blur-[110px]
-        "
-      />
+      {/* =====================================
+          TOP HEADING
+          MOBILE NAVBAR SPACING FIX
+      ===================================== */}
+      <div className="relative z-10 w-full px-4 pt-[105px] text-center min-[390px]:pt-[115px] sm:px-6 sm:pt-[115px] md:pt-[120px] lg:pt-[110px]">
 
-      {/* Saffron subtle glow */}
-      <div
-        aria-hidden="true"
-        className="
-          absolute -left-32 top-16 -z-10
-          h-[320px] w-[320px]
-          rounded-full
-          bg-orange-500/[0.09]
-          blur-[120px]
-        "
-      />
-
-      {/* India green glow */}
-      <div
-        aria-hidden="true"
-        className="
-          absolute -right-32 bottom-16 -z-10
-          h-[340px] w-[340px]
-          rounded-full
-          bg-emerald-400/[0.11]
-          blur-[120px]
-        "
-      />
-
-      {/* Noise / dot feeling */}
-      <div
-        aria-hidden="true"
-        className="
-          absolute inset-0 -z-10
-          opacity-[0.08]
-          [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)]
-          [background-size:34px_34px]
-        "
-      />
-
-      {/* =====================================================
-          HERO CONTENT
-      ====================================================== */}
-
-      <div
-        className="
-          relative z-10
-          mx-auto flex w-full
-          max-w-[1450px]
-          flex-1 items-center justify-center
-          px-5
-          pb-14 pt-20
-
-          sm:px-8
-          md:px-10 md:pb-20 md:pt-24
-          lg:px-16
-        "
-      >
-        <div
-          className="
-            mx-auto
-            max-w-[1050px]
-            text-center
-          "
+        <motion.h1
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: -10 }
+          }
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.55,
+            delay: 0.08,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mx-auto max-w-[1100px] text-balance text-[22px] font-extrabold leading-[1.25] tracking-[-0.03em] text-[#0C337B] min-[390px]:text-[24px] sm:text-[26px] md:text-[30px] lg:text-[34px]"
         >
-          {/* Study In Russia label */}
-         
-
-        <motion.div
-          initial={{ opacity: 0, y: 12, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mb-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-white/20 bg-[#0B2538]/75 py-1.5 pl-1.5 pr-4 shadow-[0_8px_25px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-xl sm:gap-3 sm:pr-5"
-        >
-          {/* SUBTLE GLASS HIGHLIGHT */}
-          <span aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-
-          {/* UK FLAG */}
-          <span className="relative flex h-[34px] w-[34px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-white/85 bg-white shadow-[0_3px_10px_rgba(0,0,0,0.25)]">
-            <Image
-              src="/images/countrylogo/russia.webp"
-              alt="Russia flag"
-              width={34}
-              height={34}
-              className="h-full w-full object-cover"
-            />
+            Explore Medical & Technical{" "}
+          <span className="text-[#1765F5]">
+            Education in Russia.
           </span>
+        </motion.h1>
 
-          {/* LABEL */}
-          <span className="flex flex-col items-start gap-[2px]">
-            {/* <span className="text-[8px] font-bold uppercase leading-none tracking-[0.18em] text-[#8CE5DE] sm:text-[9px]">
-              Your Destination
-            </span> */}
+      </div>
 
-            <span className="whitespace-nowrap text-[13px] font-extrabold uppercase leading-tight tracking-[0.08em] text-white sm:text-[14px]">
-              Study In Russia
-            </span>
-          </span>
-        </motion.div>
+      {/* =====================================
+          BOTTOM CTA BUTTONS
+      ===================================== */}
+      <div className="relative z-10 mt-auto w-full px-4 pb-8 sm:px-8 sm:pb-9 md:px-12 md:pb-10 lg:px-16">
 
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-between gap-3 sm:flex-row sm:gap-5">
 
-
-          {/* Heading */}
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 28,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 0.08,
-              duration: 0.7,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              text-[43px]
-              font-bold
-              leading-[1.02]
-              tracking-[-0.045em]
-              text-white
-
-              sm:text-[54px]
-              md:text-[68px]
-              lg:text-[40px]
-              xl:text-[50px]
-            "
-          >
-       Explore Medical & Technical 
-
-            <span
-              className="
-                mt-1 block
-               text-[#2DD4BF]
-                md:mt-2
-              "
-            >
-             Education in Russia
-            </span>
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            initial={{
-              opacity: 0,
-              y: 22,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 0.16,
-              duration: 0.65,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              mx-auto
-              mt-6
-              max-w-[790px]
-              text-[15px]
-              font-normal
-              leading-[1.75]
-              text-white/80
-
-              sm:text-[16px]
-              md:mt-7
-              md:text-[18px]
-              md:leading-[1.7]
-
-              lg:text-[19px]
-            "
-          >
-            Explore undergraduate, postgraduate, and specialized programs across Russian universities, with guidance to help you choose the right institution, course, and academic pathway for your goals.
-          </motion.p>
-
-          {/* STATS BELOW DESCRIPTION */}
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.23, duration: 0.6 }} className="mx-auto mt-4 flex max-w-[1050px] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center sm:mt-5">
-              {stats.map((item, index) => (
-                <span key={item.label} className="inline-flex items-center gap-1.5">
-                  <span className="text-[10px] font-semibold uppercase leading-[1.6] tracking-[0.015em] text-[#5EEAD4] sm:text-[11px] md:text-[12px] lg:font-extrabold lg:text-[11px]">
-                    {item.label}
-                  </span>
-
-                  {index !== stats.length - 1 && (
-                    <span aria-hidden="true" className="text-[10px] font-bold text-white/75">•</span>
-                  )}
-                </span>
-              ))}
-            </motion.div>
-
-          {/* CTA */}
+          {/* =================================
+              FREE CONSULTATION BUTTON
+          ================================= */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
+            initial={
+              reduceMotion
+                ? false
+                : { opacity: 0, x: -20 }
+            }
             animate={{
               opacity: 1,
-              y: 0,
+              x: 0,
             }}
             transition={{
-              delay: 0.24,
-              duration: 0.65,
-              ease: [0.22, 1, 0.36, 1],
+              delay: 0.15,
+              duration: 0.55,
             }}
-            className="
-              mt-8
-              flex justify-center
-
-              md:mt-9
-            "
+            className="w-full sm:w-auto"
           >
             <button
               type="button"
-              className="
-                group
-                inline-flex items-center justify-center
-                gap-3
-                rounded-full
-                border border-emerald-300/30
-                bg-[#2DD4BF]
-                px-7 py-[15px]
-                text-[14px]
-                font-semibold
-                text-brand-navy-dark
-                shadow-[0_10px_40px_rgba(16,185,129,0.28)]
-                transition-all
-                duration-300
-
-                hover:-translate-y-1
-                hover:bg-[#0ab985]
-                hover:shadow-[0_15px_45px_rgba(16,185,129,0.38)]
-
-                sm:px-9 sm:py-4
-                sm:text-[15px]
-
-                md:text-[16px]
-              "
+              onClick={handleConsultationClick}
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[12px] font-bold text-white shadow-[0_8px_24px_rgba(23,101,245,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0C337B] hover:bg-[#0C337B] sm:w-auto sm:px-6 sm:py-3.5 sm:text-[13px] md:text-[14px]"
             >
-            Book a Free Consultation
+              <span>Book a Free Consultation</span>
 
               <ArrowRight
-                size={18}
-                strokeWidth={2}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
+                size={16}
+                strokeWidth={2.4}
+                className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </button>
           </motion.div>
+
+          {/* =================================
+              WHATSAPP BUTTON
+          ================================= */}
+          <motion.div
+            initial={
+              reduceMotion
+                ? false
+                : { opacity: 0, x: 20 }
+            }
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              delay: 0.15,
+              duration: 0.55,
+            }}
+            className="w-full sm:w-auto"
+          >
+            <a
+              href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20my%20study%20options%20in%20Russia."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-[#25D366] bg-white/95 px-5 py-3 text-[12px] font-bold text-[#0C337B] shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white sm:w-auto sm:px-6 sm:py-3.5 sm:text-[13px] md:text-[14px]"
+            >
+              {/* WHATSAPP ICON */}
+              <svg
+                aria-hidden="true"
+                className="h-[18px] w-[18px] fill-[#25D366] transition-colors group-hover:fill-white"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 11.6a9 9 0 0 1-13.3 7.9L3 21l1.5-4.5A9 9 0 1 1 21 11.6Z" />
+              </svg>
+
+              <span>Chat On WhatsApp</span>
+            </a>
+          </motion.div>
+
         </div>
       </div>
+
+      {/* =====================================
+          BOTTOM WHITE BLEND
+      ===================================== */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-8 bg-gradient-to-b from-transparent to-white"
+      />
 
     </section>
   );
