@@ -9,6 +9,8 @@ import UniversityCarousel from "@/components/StudyInCanada/UniversityCarousel";
 import DegreeComparison from "@/components/StudyInCanada/DegreeComparison";
 import CostOfStudyingIndia from "@/components/StudyInCanada/CostOfStudyingIndia";
 import Testimonials from "@/components/StudyInCanada/Testimonials";
+import AdmissionGuide from "@/components/StudyInCanada/AdmissionGuide";
+import CanadaFAQ from "@/components/StudyInCanada/CanadaFAQ";
 import GlobalEducationCTA from "@/components/StudyInCanada/GlobalEducationCTA";
 
 
@@ -29,14 +31,24 @@ export default function StudyInCanadaPage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInCanadaHero />
+
         <OnlineDegreeSection />
-        <WhatItGetsYou />
+
         <CoursesSlider />
-        <HowUniversityYatraHelps />
+
         <UniversityCarousel />
+
+        <WhatItGetsYou />
+
+        <HowUniversityYatraHelps />
+
+        <AdmissionGuide />
+
+        <CanadaFAQ />
+
         {/* <DegreeComparison /> */}
-        <CostOfStudyingIndia />
-        <Testimonials />
+        {/* <CostOfStudyingIndia />
+        <Testimonials /> */}
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />

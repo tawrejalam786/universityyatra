@@ -404,7 +404,7 @@ function SocialMediaLinks({ socialLinks, whatsappHref }) {
 
 export default function UniversityFooter({
   siteUrl = "http://localhost:3000/",
-  logoSrc = "/images/footer/university-yatra-logo.png",
+  logoSrc = "/images/logo/university-yatra-logo-f.png",
   skylineSrc = "/images/footer/global-skyline.png",
   phone = "+91 92868 44550",
   email = "info@universityyatra.com",

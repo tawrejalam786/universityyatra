@@ -29,6 +29,7 @@ import {
    STUDY IN AUSTRALIA - 5 GUIDES
 ========================================== */
 
+
 const guides = [
   {
     id: "01",
@@ -37,7 +38,7 @@ const guides = [
     title: "Study in Australia",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-canada/canadian-flag.png",
+    image: "/images/study-usa/3d/study-usa.png",
 
     description:
       "Australia offers university degrees and practical college programs for international students. Choose a bachelor's degree, master's program, or specialized postgraduate qualification based on your academic background and career goals.",
@@ -68,7 +69,7 @@ const guides = [
     title: "Cost of Studying in Australia",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    image: "/images/study-canada/gold-coins.png",
+    image: "/images/study-usa/3d/cost-studying.png",
 
     description:
       "Your budget depends on your qualification, program, and institution. International tuition typically ranges from AUD 20,000 to AUD 45,000 per year for undergraduate programs and AUD 22,000 to AUD 50,000 for postgraduate programs.",
@@ -107,7 +108,7 @@ const guides = [
     title: "Cost of Living & Culture in Australia",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/3d/living-cost.webp",
+    image: "/images/study-usa/3d/living-cost.png",
 
     description:
       "Your living costs depend on your city, accommodation, commute, and daily routine. Australia offers a welcoming English-speaking environment with vibrant student communities in Sydney, Melbourne, Brisbane, and Perth.",
@@ -138,7 +139,7 @@ const guides = [
     title: "Scholarships in Australia for Indian Students",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    image: "/images/study-canada/education-graduation.png",
+    image: "/images/study-usa/3d/scholarship.png",
 
     description:
       "Australian scholarships reward academic excellence, leadership, and research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.",
@@ -169,7 +170,7 @@ const guides = [
     title: "Post-Study Work Visa in Australia",
     shortTitle: "Work Pathways",
     icon: Plane,
-    image: "/images/study-canada/documentation-approval.png",
+    image: "/images/study-usa/3d/post-study.png",
 
     description:
       "Australia's Temporary Graduate visa (subclass 485) allows eligible international graduates to remain and work in Australia after completing their studies. The duration depends on your qualification level.",
@@ -193,6 +194,7 @@ const guides = [
     ],
   },
 ];
+
 
 /* ==========================================
    LEFT GUIDE TAB

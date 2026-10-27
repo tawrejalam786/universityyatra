@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 /* =========================================
-   USA COST DATA - CONTENT UNCHANGED
+   UK COST DATA - CONTENT UNCHANGED
 ========================================= */
 
 const tuitionFees = [
@@ -84,7 +84,7 @@ const cardThemes = {
    MAIN SECTION
 ========================================= */
 
-export default function CostOfStudyingUSA() {
+export default function CostOfStudyingUK() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#031126] py-14 sm:py-16 lg:py-20">
 
@@ -125,11 +125,11 @@ export default function CostOfStudyingUSA() {
 
           <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
             Cost Of Studying{" "}
-            <span className="text-[#1765f5]">in USA</span>
+            <span className="text-[#1765f5]">in UK</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-[680px] text-[14px] leading-[1.75] text-[#A9BAC8] sm:text-[15px] md:text-[16px]">
-            The cost of studying in the USA for international students depends on several factors, including the university, program of study, location, and available scholarships or financial aid. Living expenses such as accommodation, transportation, utilities, and personal expenses also contribute to the overall cost of studying in the United States.
+            The cost of studying in the UK for international students depends on several factors, including the university, program of study, location, and available scholarships or financial aid. Living expenses such as accommodation, transportation, utilities, and personal expenses also contribute to the overall cost of studying in the United States.
           </p>
 
         </div>

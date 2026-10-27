@@ -8,6 +8,8 @@ import HowUniversityYatraHelps from "@/components/StudyInIreland/HowUniversityYa
 import UniversityCarousel from "@/components/StudyInIreland/UniversityCarousel";
 import CostOfStudyingIreland from "@/components/StudyInIreland/CostOfStudyingIreland";
 import Testimonials from "@/components/StudyInIreland/Testimonials";
+import AdmissionGuide from "@/components/StudyInIreland/AdmissionGuide";
+import FaqIreland from "@/components/StudyInIreland/USAFAQ";
 import GlobalEducationCTA from "@/components/StudyInIreland/GlobalEducationCTA";
 
 
@@ -32,14 +34,25 @@ export default function StudyInIrelandPage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInIrelandHero />
+
         <OnlineDegreeSection />
-        <WhatItGetsYou />
+
         <CoursesSlider />
-        <HowUniversityYatraHelps />
+
         <UniversityCarousel />
+
+        <WhatItGetsYou />
+
+        <HowUniversityYatraHelps />
+
+        <AdmissionGuide />
+
+        <FaqIreland />
         {/* <DegreeComparison /> */}
-        <CostOfStudyingIreland />
-        <Testimonials />
+        {/* <CostOfStudyingIreland /> */}
+
+        {/* <Testimonials /> */}
+
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />

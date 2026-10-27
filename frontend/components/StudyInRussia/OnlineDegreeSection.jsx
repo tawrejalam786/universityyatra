@@ -28,6 +28,7 @@ import {
    STUDY IN RUSSIA - 5 GUIDES
 ========================================== */
 
+
 const guides = [
   {
     id: "01",
@@ -36,7 +37,7 @@ const guides = [
     title: "Study in Russia",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-canada/canadian-flag.png",
+    image: "/images/study-usa/3d/study-usa.png",
 
     description:
       "Russia offers medical, engineering, and technical programs at universities across major cities. Explore degree options, program structures, and admission pathways based on your academic background and career interests.",
@@ -67,7 +68,7 @@ const guides = [
     title: "Cost of Studying in Russia",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    image: "/images/study-canada/gold-coins.png",
+    image: "/images/study-usa/3d/cost-studying.png",
 
     description:
       "Your study budget covers tuition fees, accommodation, living expenses, and additional costs like health insurance and visa fees. Costs vary by city, university, and program.",
@@ -106,7 +107,7 @@ const guides = [
     title: "Cost of Living & Culture in Russia",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/3d/living-cost.webp",
+    image: "/images/study-usa/3d/living-cost.png",
 
     description:
       "Living costs depend on your city, accommodation type, and lifestyle. Major cities like Moscow and St. Petersburg have higher costs compared to smaller cities.",
@@ -137,7 +138,7 @@ const guides = [
     title: "Scholarships in Russia for Indian Students",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    image: "/images/study-canada/education-graduation.png",
+    image: "/images/study-usa/3d/scholarship.png",
 
     description:
       "Explore Russian government scholarships and university-specific funding opportunities. Eligibility criteria and application processes vary by program and scholarship type.",
@@ -168,7 +169,7 @@ const guides = [
     title: "Post-Study Work Options in Russia",
     shortTitle: "Work Pathways",
     icon: Plane,
-    image: "/images/study-canada/documentation-approval.png",
+    image: "/images/study-usa/3d/post-study.png",
 
     description:
       "International graduates can explore work opportunities in Russia through work permits and employment routes. Requirements and processes depend on visa type and employer sponsorship.",
@@ -192,6 +193,7 @@ const guides = [
     ],
   },
 ];
+
 
 /* ==========================================
    LEFT GUIDE TAB

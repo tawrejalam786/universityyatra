@@ -117,7 +117,7 @@ export default function CostOfStudyingAustralia() {
         <div className="mx-auto mb-12 max-w-[760px] text-center">
 
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#18B8B5]/30 bg-[#18B8B5]/10 px-4 py-2">
-            <CircleDollarSign size={15} className="text-[#18B8B5]" strokeWidth={2} />
+            <CircleDollarSign size={15} className="text-[#1765f5]" strokeWidth={2} />
 
             <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#53D8D2]">
               Study Cost
@@ -126,7 +126,7 @@ export default function CostOfStudyingAustralia() {
 
           <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[40px] md:text-[48px]">
             Cost Of Studying{" "}
-            <span className="text-[#18B8B5]">
+            <span className="text-[#1765f5]">
               in Australia
             </span>
           </h2>

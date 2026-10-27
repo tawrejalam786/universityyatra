@@ -210,7 +210,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const slug = params.guide;
+  const { guide: slug } = await params;
   const guide = UAE_GUIDES[slug];
 
   if (!guide) {
@@ -230,172 +230,382 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function UaeGuidePage({ params }) {
-  const slug = params.guide;
-  const guide = UAE_GUIDES[slug];
 
-  if (!guide) {
-    notFound();
+/* ============================================
+   UAE MARKDOWN PARSER
+   Preserves original content
+============================================ */
+
+function parseUaeMarkdown(markdown = "") {
+  const intro = [];
+  const chapters = [];
+  let current = intro;
+
+  for (const rawLine of markdown.split(/\r?\n/)) {
+    const line = rawLine.trimEnd();
+
+    if (/^# /.test(line)) continue;
+
+    if (/^## /.test(line)) {
+      const chapter = {
+        title: line.slice(3).trim(),
+        lines: [],
+      };
+
+      chapters.push(chapter);
+      current = chapter.lines;
+      continue;
+    }
+
+    if (line.trim()) current.push(line);
   }
 
-  const allGuidesList = Object.values(UAE_GUIDES);
+  return { intro, chapters };
+}
+
+/* ============================================
+   INLINE MARKDOWN TEXT
+============================================ */
+
+function UaeInlineText({ text = "" }) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={index} className="font-bold text-[#0C337B]">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+
+        if (part.startsWith("*") && part.endsWith("*")) {
+          return <em key={index}>{part.slice(1, -1)}</em>;
+        }
+
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+}
+
+/* ============================================
+   MARKDOWN CONTENT RENDERER
+============================================ */
+
+function UaeMarkdownContent({ lines = [] }) {
+  return (
+    <div className="space-y-3.5">
+      {lines.map((rawLine, index) => {
+        const line = rawLine.trim();
+
+        if (line.startsWith("### ")) {
+          return (
+            <h3 key={index} className="pt-3 text-[16px] font-extrabold leading-[1.45] text-[#0C337B] sm:text-[18px]">
+              <UaeInlineText text={line.slice(4)} />
+            </h3>
+          );
+        }
+
+        const nested = rawLine.match(/^\s{2,}-\s+(.+)$/);
+
+        if (nested) {
+          return (
+            <div key={index} className="ml-5 flex items-start gap-2.5 sm:ml-7">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1765F5]" />
+              <p className="min-w-0 break-words text-[13px] leading-[1.75] text-[#425A70] sm:text-[14px]">
+                <UaeInlineText text={nested[1]} />
+              </p>
+            </div>
+          );
+        }
+
+        const unordered = line.match(/^-\s+(.+)$/);
+
+        if (unordered) {
+          return (
+            <div key={index} className="flex items-start gap-3">
+              <CheckCircle2 size={17} className="mt-1 shrink-0 text-[#1765F5]" />
+              <p className="min-w-0 break-words text-[13px] leading-[1.75] text-[#425A70] sm:text-[14px]">
+                <UaeInlineText text={unordered[1]} />
+              </p>
+            </div>
+          );
+        }
+
+        const ordered = line.match(/^(\d+)\.\s+(.+)$/);
+
+        if (ordered) {
+          return (
+            <div key={index} className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E8F0FE] text-[11px] font-extrabold text-[#1765F5]">
+                {ordered[1]}
+              </span>
+              <p className="min-w-0 break-words text-[13px] leading-[1.75] text-[#425A70] sm:text-[14px]">
+                <UaeInlineText text={ordered[2]} />
+              </p>
+            </div>
+          );
+        }
+
+        return (
+          <p key={index} className="break-words text-[13px] leading-[1.85] text-[#425A70] sm:text-[15px]">
+            <UaeInlineText text={line} />
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ============================================
+   UAE GUIDE DETAIL PAGE
+   USA-STYLE DESIGN
+============================================ */
+
+export default async function UaeGuidePage({ params }) {
+  const { guide: slug } = await params;
+  const guide = UAE_GUIDES[slug];
+
+  if (!guide) notFound();
+
+  const { intro, chapters } = parseUaeMarkdown(guide.markdown);
+
+  const otherGuides = Object.values(UAE_GUIDES).filter(
+    (item) => item.slug !== slug
+  );
+
+  const whatsappUrl = `https://wa.me/919286844550?text=${encodeURIComponent("Hi University Yatra, I would like guidance on studying in the UAE.")}`;
 
   return (
     <>
       <Navbar active="Destinations" />
 
-      <main className="relative w-full overflow-hidden bg-white">
-        {/* HERO */}
-        <section className="relative isolate flex min-h-[420px] w-full flex-col overflow-hidden bg-gradient-to-br from-[#0C337B] via-[#1765F5] to-[#0C337B] sm:min-h-[480px] lg:min-h-[520px]">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1765F5_0%,transparent_60%)] opacity-60"
-          />
+      <main className="min-h-screen w-full overflow-x-clip bg-[#F8FAFC]">
 
-          <div className="relative z-10 mx-auto flex w-full max-w-[1240px] flex-1 flex-col px-4 pb-10 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36">
-            <div className="flex flex-1 flex-col justify-center">
-              <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 backdrop-blur-sm">
-                <BookOpen size={14} className="text-white" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-white">
-                  {guide.badge}
-                </span>
-              </div>
+        {/* =====================================
+            01. USA-STYLE IMAGE HERO
+        ===================================== */}
 
-              <h1 className="max-w-[860px] text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-[42px] md:text-[50px] lg:text-[56px]">
-                {guide.title}
-              </h1>
+        <section className="relative isolate w-full overflow-hidden bg-[#EAF4FA] text-[#063B72] lg:min-h-[600px]">
 
-              <p className="mt-4 max-w-[680px] text-[14px] leading-[1.65] text-white/85 sm:text-[16px]">
-                {guide.tagline}
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                {guide.pillColors.map((pill, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] sm:text-[11px]"
-                    style={{
-                      backgroundColor: pill.bg,
-                      color: pill.text,
-                    }}
-                  >
-                    {pill.label}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {/* HERO IMAGE */}
+          <div className="pointer-events-none absolute inset-0 -z-20">
+            <Image
+              src={guide.heroImage}
+              alt={guide.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
           </div>
 
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-8 bg-gradient-to-b from-transparent to-white"
-          />
+          {/* LIGHT OVERLAY */}
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-white/25" />
+
+          {/* HERO CONTENT */}
+          <div className="relative mx-auto flex w-full max-w-[1360px] flex-col items-center px-3 pb-8 pt-[112px] text-center min-[390px]:px-4 sm:px-6 sm:pb-12 sm:pt-[135px] lg:min-h-[600px] lg:justify-center lg:px-8 lg:pb-16 lg:pt-[100px]">
+
+            {/* BREADCRUMB */}
+            <nav aria-label="Breadcrumb" className="relative z-10 mb-4 flex flex-wrap items-center justify-center gap-2 text-[11px] font-semibold text-[#526B8C] sm:mb-5 sm:text-[12px]">
+              <Link href="/" className="transition-colors hover:text-[#1765F5]">
+                Home
+              </Link>
+
+              <span>/</span>
+
+              <Link href="/study-in-uae" className="transition-colors hover:text-[#1765F5]">
+                Study in UAE
+              </Link>
+
+              <span>/</span>
+
+              <span className="font-bold text-[#0C337B]">
+                {guide.shortTitle}
+              </span>
+            </nav>
+
+            {/* OUTLINED HEADING */}
+            <h1 className="relative z-10 mx-auto max-w-[1100px] break-words text-balance text-[32px] font-extrabold leading-[1.08] tracking-[-0.04em] text-white [-webkit-text-fill-color:#FFFFFF] [-webkit-text-stroke:1px_#0C337B] [paint-order:stroke_fill] [text-shadow:0_3px_12px_rgba(12,51,123,0.25)] min-[390px]:text-[34px] sm:text-[48px] md:text-[58px] lg:text-[64px]">
+              {guide.title}
+            </h1>
+
+            {/* VOLUME BADGE */}
+            <div className="relative z-10 mb-3 mt-3 inline-flex max-w-full items-center gap-2 rounded-full border border-[#1765F5]/25 bg-white/85 px-3 py-1.5 shadow-sm backdrop-blur-md sm:px-4">
+              <Bookmark size={13} className="shrink-0 text-[#1765F5]" />
+              <span className="text-center font-mono text-[9px] font-extrabold uppercase tracking-[0.07em] text-[#1765F5] min-[390px]:text-[10px] sm:text-[11px] sm:tracking-widest">
+                {guide.vol} • {guide.badge}
+              </span>
+            </div>
+
+            {/* UAE TAGLINE */}
+            <p className="relative z-10 mx-auto max-w-[720px] text-[12px] font-semibold leading-[1.6] text-[#0C337B] sm:text-[14px]">
+              {guide.tagline}
+            </p>
+
+            {/* COLORED PILLS */}
+            <div className="relative z-10 mb-2 mt-3 flex max-w-[580px] flex-wrap items-center justify-center gap-2 sm:mb-4 sm:mt-4 sm:gap-3">
+              {guide.pillColors.map((pill, index) => (
+                <span
+                  key={index}
+                  style={{ backgroundColor: pill.bg, color: pill.text }}
+                  className="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-[0.04em] shadow-sm min-[390px]:px-3.5 min-[390px]:text-[10px] sm:text-[11px]"
+                >
+                  {pill.label}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA BUTTONS */}
+            <div className="relative z-10 mt-5 flex w-full flex-nowrap items-center justify-center gap-2 px-1 sm:mt-8 sm:gap-6 sm:px-0">
+
+              <a href="#contact-advisory" className="group inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#1765F5] bg-[#1765F5] px-1.5 py-3 text-[9px] font-bold text-white shadow-[0_8px_22px_rgba(23,101,245,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0C337B] min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:gap-2 min-[390px]:px-3 min-[390px]:text-[11px] sm:flex-none sm:gap-3 sm:px-8 sm:py-4 sm:text-[15px]">
+                <span>Book a Free Consultation</span>
+                <ArrowRight size={14} strokeWidth={2.4} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 sm:size-[17px]" />
+              </a>
+
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#25D366] bg-white px-1.5 py-3 text-[9px] font-bold text-[#0C337B] shadow-[0_8px_20px_rgba(37,211,102,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:gap-2 min-[390px]:px-3 min-[390px]:text-[11px] sm:flex-none sm:gap-3 sm:px-8 sm:py-4 sm:text-[15px]">
+                <MessageCircle size={15} className="shrink-0 text-[#25D366] transition-colors group-hover:text-white sm:size-[18px]" />
+                <span>Chat On Whatsapp</span>
+              </a>
+
+            </div>
+          </div>
         </section>
 
-        {/* CONTENT */}
-        <article className="relative w-full bg-white py-10 sm:py-12 lg:py-16">
-          <div className="mx-auto w-full max-w-[820px] px-4 sm:px-6 lg:px-8">
-            <div
-              className="prose prose-lg prose-slate max-w-none prose-headings:font-extrabold prose-headings:tracking-[-0.02em] prose-h1:text-[28px] prose-h1:sm:text-[36px] prose-h2:text-[24px] prose-h2:sm:text-[30px] prose-h3:text-[20px] prose-h3:sm:text-[24px] prose-p:text-[15px] prose-p:leading-[1.7] prose-p:text-[#475569] prose-a:text-[#1765F5] prose-a:no-underline hover:prose-a:underline prose-strong:font-bold prose-strong:text-[#0C337B] prose-ul:text-[15px] prose-ul:text-[#475569] prose-ol:text-[15px] prose-ol:text-[#475569]"
-              dangerouslySetInnerHTML={{
-                __html: guide.markdown
-                  .split("\n")
-                  .map((line) => {
-                    if (line.startsWith("# ")) {
-                      return `<h1>${line.substring(2)}</h1>`;
-                    }
-                    if (line.startsWith("## ")) {
-                      return `<h2>${line.substring(3)}</h2>`;
-                    }
-                    if (line.startsWith("### ")) {
-                      return `<h3>${line.substring(4)}</h3>`;
-                    }
-                    if (line.startsWith("- **") || line.startsWith("- ")) {
-                      return `<li>${line.substring(2)}</li>`;
-                    }
-                    if (line.trim() === "") {
-                      return "<br/>";
-                    }
-                    return `<p>${line}</p>`;
-                  })
-                  .join(""),
-              }}
-            />
+        {/* =====================================
+            02. USA-STYLE CONTENT SECTION
+        ===================================== */}
 
-            <div className="mt-12 flex flex-col gap-4 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-6 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1765F5]">
-                  <MessageCircle size={22} className="text-white" />
+        <section className="mx-auto w-full max-w-[1360px] px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+
+          <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+
+            {/* MAIN CONTENT */}
+            <div className="min-w-0 space-y-6 lg:col-span-2 lg:space-y-8">
+
+              {/* EXECUTIVE SUMMARY */}
+              {intro.length > 0 && (
+                <div className="min-w-0 rounded-3xl border border-[#A2C1FB]/40 bg-gradient-to-br from-[#EBF3FE] to-white p-5 shadow-sm sm:p-8">
+                  <div className="flex items-center gap-2 text-[#1765F5]">
+                    <Compass size={18} />
+                    <span className="font-mono text-[11px] font-extrabold uppercase tracking-widest">
+                      Executive Summary
+                    </span>
+                  </div>
+
+                  <h2 className="mb-4 mt-2 text-[20px] font-extrabold text-[#0C337B] sm:text-[24px]">
+                    Navigating {guide.shortTitle}
+                  </h2>
+
+                  <UaeMarkdownContent lines={intro} />
+                </div>
+              )}
+
+              {/* CHAPTER CARDS */}
+              {chapters.map((chapter, index) => {
+                const chapterIcons = [BookOpen, Compass, CheckCircle2];
+                const ChapterIcon = chapterIcons[index % chapterIcons.length];
+
+                return (
+                  <article key={index} className="min-w-0 rounded-3xl border border-[#E2E8F0] bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#A2C1FB] hover:shadow-md sm:p-8">
+
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#E8F0FE] text-[#1765F5]">
+                        <ChapterIcon size={22} strokeWidth={2.2} />
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        <h2 className="break-words text-[19px] font-extrabold tracking-tight text-[#0C337B] sm:text-[22px]">
+                          {chapter.title}
+                        </h2>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 border-t border-slate-100 pt-5">
+                      <UaeMarkdownContent lines={chapter.lines} />
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* =====================================
+                03. RIGHT SIDEBAR
+            ===================================== */}
+
+            <aside className="min-w-0 space-y-6">
+
+              {/* FREE COUNSELLING */}
+              <div id="contact-advisory" className="scroll-mt-24 rounded-3xl border border-[#1765F5]/30 bg-gradient-to-br from-[#E8F0FE] to-white p-5 shadow-sm sm:p-7">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1765F5]">
+                  1-on-1 Student Guidance
                 </span>
-                <div>
-                  <h3 className="text-[16px] font-bold text-[#0C337B]">
-                    Need Personalized Guidance?
-                  </h3>
-                  <p className="mt-0.5 text-[13px] text-[#64748B]">
-                    Speak with our UAE study experts
-                  </p>
+
+                <h2 className="mt-1.5 text-[18px] font-extrabold text-[#0C337B]">
+                  Plan Your UAE Journey With an Expert
+                </h2>
+
+                <p className="mt-2 text-[13px] leading-relaxed text-[#526B8C]">
+                  Speak with our UAE study experts
+                </p>
+
+                <div className="mt-5 flex flex-col gap-2.5">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#1eb956]">
+                    <MessageCircle size={16} />
+                    Chat on WhatsApp
+                  </a>
+
+                  <Link href="/counselling" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#0C337B]">
+                    Book Free Consultation
+                  </Link>
                 </div>
               </div>
-              <Link
-                href="/counselling"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white transition-all hover:bg-[#0C337B] sm:shrink-0"
-              >
-                Book Free Counselling
-                <ArrowRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-            </div>
-          </div>
-        </article>
 
-        {/* OTHER GUIDES */}
-        <section className="relative w-full bg-[#F8FAFC] py-12 sm:py-14 lg:py-16">
-          <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 text-center">
-              <h2 className="text-[28px] font-extrabold tracking-[-0.03em] text-[#0C337B] sm:text-[34px]">
-                Explore More UAE Guides
-              </h2>
-            </div>
+              {/* OTHER UAE GUIDES */}
+              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-7">
+                <div className="flex items-center justify-between gap-2">
+                  <h2 className="text-[14px] font-extrabold uppercase tracking-wider text-[#0C337B]">
+                    Other UAE Guides
+                  </h2>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {allGuidesList
-                .filter((g) => g.slug !== slug)
-                .map((otherGuide) => (
-                  <Link
-                    key={otherGuide.slug}
-                    href={`/study-in-uae/${otherGuide.slug}`}
-                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-                  >
-                    <span className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#EDF5FF] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.08em] text-[#1765F5]">
-                      <Bookmark size={11} />
-                      {otherGuide.vol}
-                    </span>
+                  <span className="font-mono text-[10px] text-[#1765F5]">
+                    Series
+                  </span>
+                </div>
 
-                    <h3 className="text-[18px] font-bold leading-[1.3] text-[#0C337B]">
-                      {otherGuide.title}
-                    </h3>
+                <div className="mt-4 space-y-2.5">
+                  {otherGuides.map((item) => (
+                    <Link key={item.slug} href={`/study-in-uae/${item.slug}`} className="group flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 text-[13px] font-bold text-[#0C337B] transition hover:border-[#1765F5] hover:bg-[#E8F0FE]">
+                      <div className="min-w-0 flex-1">
+                        <span className="block break-words">
+                          {item.title}
+                        </span>
 
-                    <p className="mt-2 text-[13px] leading-[1.6] text-[#64748B]">
-                      {otherGuide.tagline}
-                    </p>
+                        <span className="mt-1 block break-words text-[11px] font-medium text-[#64748B]">
+                          {item.badge}
+                        </span>
+                      </div>
 
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#1765F5]">
-                      Read Guide
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
-                    </span>
-                  </Link>
-                ))}
-            </div>
+                      <span className="shrink-0 font-mono text-[11px] font-bold text-[#1765F5] transition-transform group-hover:translate-x-1">
+                        {item.vol} →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </aside>
           </div>
         </section>
+
       </main>
 
       <UniversityFooter />
     </>
   );
 }
+

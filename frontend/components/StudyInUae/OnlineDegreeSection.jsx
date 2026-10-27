@@ -29,6 +29,7 @@ import {
 ========================================== */
 
 
+
 const guides = [
   {
     id: "01",
@@ -37,7 +38,7 @@ const guides = [
     title: "Study in the UAE",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-canada/canadian-flag.png",
+    image: "/images/study-usa/3d/study-usa.png",
 
     description:
       "The UAE offers undergraduate and postgraduate programs through international branch campuses and local universities. Choose a bachelor's degree, master's program, or specialized qualification based on your academic background and career goals.",
@@ -68,7 +69,7 @@ const guides = [
     title: "Cost of Studying in the UAE",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    image: "/images/study-canada/gold-coins.png",
+    image: "/images/study-usa/3d/cost-studying.png",
 
     description:
       "Your budget depends on the university, program type, and emirate. Tuition fees vary between local institutions and international branch campuses, with living costs influenced by your choice of accommodation and lifestyle.",
@@ -87,14 +88,12 @@ const guides = [
       {
         icon: Home,
         label: "Living expenses",
-        value:
-          "AED 3,000–5,000/month depending on emirate and housing",
+        value: "AED 3,000–5,000/month depending on emirate and housing",
       },
       {
         icon: Wallet,
         label: "Other costs",
-        value:
-          "Health insurance, visa fees, transport, and course materials",
+        value: "Health insurance, visa fees, transport, and course materials",
       },
     ],
 
@@ -109,7 +108,7 @@ const guides = [
     title: "Cost of Living & Culture in the UAE",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/3d/living-cost.webp",
+    image: "/images/study-usa/3d/living-cost.png",
 
     description:
       "Your living costs depend on the emirate, accommodation type, transport, and daily routine. Dubai and Abu Dhabi tend to be more expensive, while Sharjah offers more affordable options. The UAE offers a multicultural environment with modern amenities.",
@@ -128,8 +127,7 @@ const guides = [
       {
         icon: Globe2,
         label: "Culture",
-        value:
-          "Multicultural environment, modern lifestyle, and international community",
+        value: "Multicultural environment, modern lifestyle, and international community",
       },
     ],
   },
@@ -141,7 +139,7 @@ const guides = [
     title: "Scholarships in the UAE",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    image: "/images/study-canada/education-graduation.png",
+    image: "/images/study-usa/3d/scholarship.png",
 
     description:
       "UAE scholarships may be offered by universities based on academic merit, leadership, or specific program criteria. Availability varies by institution and nationality, so check eligibility requirements before applying.",
@@ -172,7 +170,7 @@ const guides = [
     title: "Post-Study Work Visa in the UAE",
     shortTitle: "Work Pathways",
     icon: Plane,
-    image: "/images/study-canada/documentation-approval.png",
+    image: "/images/study-usa/3d/post-study.png",
 
     description:
       "The UAE offers various visa options for graduates seeking employment. Employment visas are typically sponsored by employers, and graduates should explore opportunities during or after completing their studies.",
@@ -196,6 +194,7 @@ const guides = [
     ],
   },
 ];
+
 
 
 /* ==========================================

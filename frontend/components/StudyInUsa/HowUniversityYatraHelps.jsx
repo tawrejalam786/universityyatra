@@ -57,10 +57,15 @@ export default function HowItWorksRing() {
               Your journey, our support
             </span>
 
-            <h2 id="ring-title" className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[30px] lg:text-[34px]">
-              How <span className="text-[#1765F5]">University Yatra™</span>{" "}
-              Helps You
-            </h2>
+            
+<h2 id="ireland-help-title" className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[30px] lg:text-[34px]">
+  How{" "}
+  <span className="text-[#6818b8]">
+    University Yatra<sup className="relative -top-2 ml-[1px] text-[10px] font-semibold sm:text-[15px]">™</sup>
+  </span>{" "}
+  Helps You
+</h2>
+
 
             <p className="mt-2 max-w-[460px] text-[13px] leading-[1.65] text-[#526B8C]">
               From your first question to your study abroad journey, we guide

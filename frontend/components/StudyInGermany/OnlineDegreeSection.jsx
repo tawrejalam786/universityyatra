@@ -37,7 +37,7 @@ const guides = [
     title: "Study in Germany",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-canada/canadian-flag.png",
+    image: "/images/study-usa/3d/study-usa.png",
 
     description:
       "Germany offers world-class engineering programs and tuition-free or low-cost public universities for international students. Choose from bachelor's, master's, or PhD programs with strong industry connections.",
@@ -68,7 +68,7 @@ const guides = [
     title: "Cost of Studying in Germany",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    image: "/images/study-canada/gold-coins.png",
+    image: "/images/study-usa/3d/cost-studying.png",
 
     description:
       "Public universities in Germany typically charge no tuition or only semester fees (around EUR 300-500). Private universities may charge EUR 10,000-20,000 per year. Budget for living expenses of EUR 850-1,200 monthly.",
@@ -108,7 +108,7 @@ const guides = [
     title: "Cost of Living & Culture in Germany",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/3d/living-cost.webp",
+    image: "/images/study-usa/3d/living-cost.png",
 
     description:
       "Your living costs vary by city—Munich and Frankfurt are more expensive than Leipzig or Berlin. Germany offers efficient public transport, affordable student accommodation, and a rich cultural experience.",
@@ -139,7 +139,7 @@ const guides = [
     title: "Scholarships in Germany for Indian Students",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    image: "/images/study-canada/education-graduation.png",
+    image: "/images/study-usa/3d/scholarship.png",
 
     description:
       "Germany offers scholarships through DAAD, university-specific programs, and research grants. Opportunities are available for bachelor's, master's, and PhD students based on academic merit and research potential.",
@@ -170,7 +170,7 @@ const guides = [
     title: "Post-Study Work Visa in Germany",
     shortTitle: "Work Permit & PR",
     icon: Plane,
-    image: "/images/study-canada/documentation-approval.png",
+    image: "/images/study-usa/3d/post-study.png",
 
     description:
       "Germany offers an 18-month job seeker visa after graduation, allowing international students to find work matching their qualifications. After working, you may be eligible for EU Blue Card and permanent residence.",

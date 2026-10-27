@@ -228,7 +228,7 @@ export default function WhatItGetsYou() {
         >
           <h2 className="text-[27px] font-bold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[33px] md:text-[38px] lg:text-[42px]">
             Inside the{" "}
-            <span className="text-[#18B8B5]">
+            <span className="text-[#1765f5]">
               Australian Study
             </span>{" "}
             Experience
@@ -364,8 +364,14 @@ export default function WhatItGetsYou() {
    SIDE STEP LABEL
 ========================================= */
 
+
+/* =========================================
+   SIDE STEP LABEL - ICON INSTEAD OF NUMBER
+========================================= */
+
 function StepLabel({ item, active, side }) {
   const isLeft = side === "left";
+  const Icon = item.icon;
 
   return (
     <div className={`flex min-w-0 items-center gap-1 sm:gap-2 ${isLeft ? "justify-end" : "justify-start"}`}>
@@ -377,20 +383,18 @@ function StepLabel({ item, active, side }) {
       <motion.span
         initial={false}
         animate={{
-          backgroundColor: active
-            ? item.accent
-            : item.soft,
-          color: active
-            ? "#FFFFFF"
-            : item.accent,
-          borderColor: active
-            ? item.accent
-            : `${item.accent}40`,
+          backgroundColor: active ? item.accent : item.soft,
+          color: active ? "#FFFFFF" : item.accent,
+          borderColor: active ? item.accent : `${item.accent}40`,
+          scale: active ? 1.08 : 1,
         }}
         transition={{ duration: 0.3 }}
-        className="inline-flex h-[30px] min-w-[37px] items-center justify-center rounded-full border px-2 text-[11px] font-bold shadow-sm sm:h-[36px] sm:min-w-[55px] sm:text-[13px] md:min-w-[62px] md:text-[15px]"
+        className="inline-flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-xl border shadow-sm sm:h-[42px] sm:w-[42px] sm:rounded-[14px] md:h-[52px] md:w-[52px] md:rounded-[16px]"
       >
-        {item.number}
+        <Icon
+          className="h-[15px] w-[15px] sm:h-[20px] sm:w-[20px] md:h-[24px] md:w-[24px]"
+          strokeWidth={2}
+        />
       </motion.span>
 
       {isLeft && (

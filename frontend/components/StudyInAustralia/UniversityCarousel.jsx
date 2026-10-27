@@ -9,48 +9,80 @@ import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
    AUSTRALIAN UNIVERSITIES DATA
 ========================================== */
 
+
 const UNIVERSITIES = [
   {
-    name: "Charles Sturt University",
-    grade: "New South Wales",
-    image: "/images/universities/charles-sturt-university.webp",
+    name: "Arizona State University",
+    grade: "Arizona",
+    image: "/images/universities/arizona-state-university.webp",
   },
   {
-    name: "La Trobe University",
-    grade: "Melbourne, Victoria",
-    image: "/images/universities/la-trobe-university.webp",
+    name: "University of Arizona",
+    grade: "Arizona",
+    image: "/images/universities/university-of-arizona.webp",
   },
   {
-    name: "Griffith University",
-    grade: "Queensland",
-    image: "/images/universities/griffith-university.webp",
+    name: "University of Illinois at Chicago",
+    grade: "Illinois",
+    image: "/images/universities/university-of-illinois-chicago.webp",
   },
   {
-    name: "University of Newcastle",
-    grade: "Newcastle, New South Wales",
-    image: "/images/universities/university-of-newcastle.webp",
+    name: "George Mason University",
+    grade: "Virginia",
+    image: "/images/universities/george-mason-university.webp",
   },
   {
-    name: "Edith Cowan University",
-    grade: "Perth, Western Australia",
-    image: "/images/universities/edith-cowan-university.webp",
+    name: "Northeastern University",
+    grade: "Massachusetts",
+    image: "/images/universities/northeastern-university.webp",
   },
   {
-    name: "Swinburne University of Technology",
-    grade: "Melbourne, Victoria",
-    image: "/images/universities/swinburne-university-of-technology.webp",
+    name: "Illinois State University",
+    grade: "Illinois",
+    image: "/images/universities/illinois-state-university.webp",
   },
   {
-    name: "University of Wollongong",
-    grade: "Wollongong, New South Wales",
-    image: "/images/universities/university-of-wollongong.webp",
+    name: "University of South Florida",
+    grade: "Florida",
+    image: "/images/universities/university-of-south-florida.webp",
   },
   {
-    name: "Queensland University of Technology",
-    grade: "Brisbane, Queensland",
-    image: "/images/universities/queensland-university-of-technology.webp",
+    name: "University of Dayton",
+    grade: "Ohio",
+    image: "/images/universities/university-of-dayton.webp",
+  },
+  {
+    name: "Pace University",
+    grade: "New York",
+    image: "/images/universities/pace-university.webp",
+  },
+  {
+    name: "Saint Louis University",
+    grade: "Missouri",
+    image: "/images/universities/saint-louis-university.webp",
+  },
+  {
+    name: "University of New Haven",
+    grade: "Connecticut",
+    image: "/images/universities/university-of-new-haven.webp",
+  },
+  {
+    name: "Drexel University",
+    grade: "Pennsylvania",
+    image: "/images/universities/drexel-university.webp",
+  },
+  {
+    name: "New York Institute of Technology",
+    grade: "New York",
+    image: "/images/universities/new-york-institute-of-technology.webp",
+  },
+  {
+    name: "Florida International University",
+    grade: "Florida",
+    image: "/images/universities/florida-international-university.webp",
   },
 ];
+
 
 const TOTAL = UNIVERSITIES.length;
 const AUTOPLAY_DELAY = 4500;

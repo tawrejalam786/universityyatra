@@ -208,7 +208,7 @@ function MobileFloatingWord({ item, reduceMotion }) {
 ========================================= */
 
 export default function Hero({
-  videoSrc = "/videos/university-yatra-heros.mp4",
+  videoSrc = "/videos/university-yatra-hero-f.mp4",
   posterImage = "",
   whatsappNumber = "917838195948",
 }) {
@@ -251,18 +251,18 @@ export default function Hero({
 
           {/* SMALL INTRO */}
 
-          <motion.p
-            initial={
-              reduceMotion
-                ? false
-                : { opacity: 0, y: 12 }
-            }
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative z-10 mb-5 text-[9px] font-bold uppercase tracking-[0.18em] text-[#2459C5] sm:mb-4 sm:text-[12px]"
-          >
-            Your Dreams • Our Guidance
-          </motion.p>
+            {/* <motion.p
+              initial={
+                reduceMotion
+                  ? false
+                  : { opacity: 0, y: 12 }
+              }
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative z-10 mb-5 text-[9px] font-bold uppercase tracking-[0.18em] text-[#2459C5] sm:mb-4 sm:text-[12px]"
+            >
+              Your Dreams • Our Guidance
+            </motion.p> */}
 
           {/* =====================================
               HEADING WRAPPER
@@ -275,7 +275,7 @@ export default function Hero({
 
             {/* MOBILE FLOATING WORDS ONLY */}
 
-            <div className="pointer-events-none absolute inset-0 z-20 sm:hidden">
+            {/* <div className="pointer-events-none absolute inset-0 z-20 sm:hidden">
               {FLOATING_WORDS.map((item) => (
                 <MobileFloatingWord
                   key={`${item.label}-mobile`}
@@ -283,11 +283,11 @@ export default function Hero({
                   reduceMotion={reduceMotion}
                 />
               ))}
-            </div>
+            </div> */}
 
             {/* DESKTOP FLOATING WORDS ONLY */}
 
-            <div className="hidden sm:block">
+            {/* <div className="hidden sm:block">
               {FLOATING_WORDS.map((item) => (
                 <FloatingWord
                   key={item.label}
@@ -295,14 +295,14 @@ export default function Hero({
                   reduceMotion={reduceMotion}
                 />
               ))}
-            </div>
+            </div> */}
 
             {/* =====================================
                 MAIN HEADING
 
                 Desktop font size stays unchanged.
             ===================================== */}
-
+{/* 
             <motion.h1
               initial={
                 reduceMotion
@@ -330,7 +330,7 @@ export default function Hero({
                   Global
                 </span>
               </span>
-            </motion.h1>
+            </motion.h1> */}
 
           </div>
         </div>
@@ -342,61 +342,69 @@ export default function Hero({
             Desktop: Original styling
         ===================================== */}
 
-        <motion.div
-          initial={
-            reduceMotion
-              ? false
-              : {
-                  opacity: 0,
-                  y: 12,
-                }
-          }
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.3,
-          }}
-          className="relative z-10 mt-14 flex w-full flex-nowrap items-center justify-center gap-2 sm:mt-8 sm:w-auto sm:gap-3"
-        >
+        {/* =====================================
+    CTA BUTTONS
 
-          {/* CONSULTATION BUTTON */}
+    Left corner  : Book a Free Consultation
+    Right corner : Chat on WhatsApp
+    (Desktop + Mobile dono par same)
+===================================== */}
 
-          <Link
-            href="/counselling"
-            className="group inline-flex h-[43px] min-w-0 flex-1 items-center justify-center gap-1 rounded-full bg-[#1765F5] px-1.5 text-[9px] font-bold text-white shadow-[0_8px_22px_rgba(6,59,114,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#075094] min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:h-[46px] min-[390px]:gap-1.5 min-[390px]:px-3 sm:h-12 sm:flex-none sm:gap-2 sm:px-6 sm:text-[12px]"
-          >
-            <span className="whitespace-nowrap">
-              Book a Free Consultation
-            </span>
+<motion.div
+  initial={
+    reduceMotion
+      ? false
+      : {
+          opacity: 0,
+          y: 12,
+        }
+  }
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 0.6,
+    delay: 0.3,
+  }}
+  className="absolute inset-x-0 bottom-5 z-10 flex w-full flex-nowrap items-center justify-between gap-2 px-3 min-[390px]:px-4 sm:bottom-8 sm:px-6 lg:bottom-10 lg:px-8"
+>
 
-            <ArrowUpRight
-              size={13}
-              className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:size-[16px]"
-            />
-          </Link>
+  {/* CONSULTATION BUTTON - LEFT CORNER */}
 
-          {/* WHATSAPP BUTTON */}
+  <Link
+    href="/counselling"
+    className="group inline-flex h-[43px] flex-none items-center justify-center gap-1 rounded-full bg-[#1765F5] px-3 text-[9px] font-bold text-white shadow-[0_8px_22px_rgba(6,59,114,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#075094] min-[360px]:text-[10px] min-[390px]:h-[46px] min-[390px]:gap-1.5 min-[390px]:px-4 sm:h-12 sm:gap-2 sm:px-6 sm:text-[12px]"
+  >
+    <span className="whitespace-nowrap">
+      Book a Free Consultation
+    </span>
 
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello University Yatra, I would like guidance for studying abroad.")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-[43px] min-w-0 flex-1 items-center justify-center gap-1 rounded-full border border-[#063B72]/15 bg-white/90 px-1.5 text-[9px] font-bold text-[#063B72] shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:h-[46px] min-[390px]:gap-1.5 min-[390px]:px-3 sm:h-12 sm:flex-none sm:gap-2 sm:px-6 sm:text-[12px]"
-          >
-            <FontAwesomeIcon
-              icon={faWhatsapp}
-              className="shrink-0 text-[14px] text-[#16A34A] sm:text-[18px]"
-            />
+    <ArrowUpRight
+      size={13}
+      className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:size-[16px]"
+    />
+  </Link>
 
-            <span className="whitespace-nowrap">
-              Chat on WhatsApp
-            </span>
-          </a>
+  {/* WHATSAPP BUTTON - RIGHT CORNER */}
 
-        </motion.div>
+  <a
+    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello University Yatra, I would like guidance for studying abroad.")}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex h-[43px] flex-none items-center justify-center gap-1 rounded-full border border-[#063B72]/15 bg-white/90 px-3 text-[9px] font-bold text-[#063B72] shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white min-[360px]:text-[10px] min-[390px]:h-[46px] min-[390px]:gap-1.5 min-[390px]:px-4 sm:h-12 sm:gap-2 sm:px-6 sm:text-[12px]"
+  >
+    <FontAwesomeIcon
+      icon={faWhatsapp}
+      className="shrink-0 text-[14px] text-[#16A34A] sm:text-[18px]"
+    />
+
+    <span className="whitespace-nowrap">
+      Chat on WhatsApp
+    </span>
+  </a>
+
+</motion.div>
 
       </div>
     </section>

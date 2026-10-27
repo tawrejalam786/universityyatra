@@ -9,6 +9,8 @@ import UniversityCarousel from "@/components/StudyInUae/UniversityCarousel";
 import CostOfStudyingUae from "@/components/StudyInUae/CostOfStudyingUae";
 import Testimonials from "@/components/StudyInUae/Testimonials";
 import GlobalEducationCTA from "@/components/StudyInUae/GlobalEducationCTA";
+import AdmissionGuide from "@/components/StudyInUae/AdmissionGuide";
+import UaeFaq from "@/components/StudyInUae/USAFAQ"
 
 
 export const metadata = {
@@ -32,14 +34,23 @@ export default function StudyInUaePage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInUaeHero />
+
         <OnlineDegreeSection />
-        <WhatItGetsYou />
+        
         <CoursesSlider />
-        <HowUniversityYatraHelps />
+
         <UniversityCarousel />
+
+        <WhatItGetsYou />
+
+        <HowUniversityYatraHelps />
+        
         {/* <DegreeComparison /> */}
-        <CostOfStudyingUae />
-        <Testimonials />
+        <AdmissionGuide />
+
+        <UaeFaq />
+
+        {/* <Testimonials /> */}
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />

@@ -31,6 +31,7 @@ const NAV_ITEMS = [
       // { label: "Study in Europe", href: "/study-in-europe" },
       { label: "Study in UK", href: "/study-in-uk" },
       { label: "Study in Ireland", href: "/study-in-ireland" },
+      { label: "Study in Germany", href: "/study-in-germany" },
       { label: "Study in UAE", href: "/study-in-uae" },
       { label: "Study in Russia", href: "/study-in-russia" },
       { label: "Study in Australia", href: "/study-in-australia" },
@@ -113,7 +114,7 @@ export default function Navbar({ active = "Home" }) {
           className="flex min-w-0 shrink-0 items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1765F5]"
         >
           <Image
-            src="/images/logo/university-yatra-logo,.png"
+            src="/images/logo/university-yatra-logo-f.png"
             alt="University Yatra – Making Global Education Easy"
             width={1600}
             height={384}

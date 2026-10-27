@@ -8,6 +8,8 @@ import HowUniversityYatraHelps from "@/components/StudyInUk/HowUniversityYatraHe
 import UniversityCarousel from "@/components/StudyInUk/UniversityCarousel";
 import CostOfStudyingUk from "@/components/StudyInUk/CostOfStudyingUk";
 import Testimonials from "@/components/StudyInUk/Testimonials";
+import AdmissionGuide from "@/components/StudyInUk/AdmissionGuide";
+import FaqUK from "@/components/StudyInUk/USAFAQ";
 import GlobalEducationCTA from "@/components/StudyInUk/GlobalEducationCTA";
 
 
@@ -33,14 +35,23 @@ export default function StudyInUkPage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInUkHero />
+
         <OnlineGuideSection />
-        <WhatItGetsYou />
+        
         <CoursesSlider />
-        <HowUniversityYatraHelps />
+
         <UniversityCarousel />
+
+        <WhatItGetsYou />
+
+        <HowUniversityYatraHelps />
+
+        <AdmissionGuide />
+
+        <FaqUK />
         {/* <DegreeComparison /> */}
-        <CostOfStudyingUk />
-        <Testimonials />
+        {/* <CostOfStudyingUk /> */}
+        {/* <Testimonials /> */}
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />

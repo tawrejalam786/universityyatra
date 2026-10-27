@@ -36,7 +36,7 @@ const guides = [
     title: "Study in Ireland",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-canada/canadian-flag.png",
+    image: "/images/study-usa/3d/study-usa.png",
 
     description:
       "Ireland offers university degrees and practical college programs for international students. Choose a bachelor's degree, master's program, or specialized postgraduate qualification based on your academic background and career goals.",
@@ -67,7 +67,7 @@ const guides = [
     title: "Cost of Studying in Ireland",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    image: "/images/study-canada/gold-coins.png",
+    image: "/images/study-usa/3d/cost-studying.png",
 
     description:
       "Your budget depends on your qualification, program, and institution. International tuition typically ranges from EUR 10,000 to EUR 25,000 per year for undergraduate programs and EUR 10,000 to EUR 30,000 for postgraduate programs.",
@@ -106,7 +106,7 @@ const guides = [
     title: "Cost of Living & Culture in Ireland",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/3d/living-cost.webp",
+    image: "/images/study-usa/3d/living-cost.png",
 
     description:
       "Your living costs depend on your city, accommodation, commute, and daily routine. Ireland offers a welcoming English-speaking environment with vibrant student communities in Dublin, Cork, and Galway.",
@@ -137,7 +137,7 @@ const guides = [
     title: "Scholarships in Ireland for Indian Students",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    image: "/images/study-canada/education-graduation.png",
+    image: "/images/study-usa/3d/scholarship.png",
 
     description:
       "Irish scholarships reward academic excellence, leadership, and research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.",
@@ -168,7 +168,7 @@ const guides = [
     title: "Post-Study Work Visa in Ireland",
     shortTitle: "Work Pathways",
     icon: Plane,
-    image: "/images/study-canada/documentation-approval.png",
+    image: "/images/study-usa/3d/post-study.png",
 
     description:
       "Ireland's Third Level Graduate Scheme allows eligible international graduates to remain and work in Ireland after completing their studies. The duration depends on your qualification level.",

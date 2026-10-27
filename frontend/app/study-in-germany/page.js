@@ -7,7 +7,9 @@ import CoursesSlider from "@/components/StudyInGermany/CoursesSlider";
 import HowUniversityYatraHelps from "@/components/StudyInGermany/HowUniversityYatraHelps";
 import UniversityCarousel from "@/components/StudyInGermany/UniversityCarousel";
 import CostOfStudyingGermany from "@/components/StudyInGermany/CostOfStudyingGermany";
+import AdmissionGuide from "@/components/StudyInGermany/AdmissionGuide";
 import Testimonials from "@/components/StudyInGermany/Testimonials";
+import FaqGermany from "@/components/StudyInGermany/USAFAQ";
 import GlobalEducationCTA from "@/components/StudyInGermany/GlobalEducationCTA";
 
 
@@ -28,13 +30,25 @@ export default function StudyInGermanyPage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInGermanyHero />
+
         <OnlineDegreeSection />
-        <WhatItGetsYou />
+
         <CoursesSlider />
-        <HowUniversityYatraHelps />
+
         <UniversityCarousel />
-        <CostOfStudyingGermany />
-        <Testimonials />
+
+        <WhatItGetsYou />
+
+        <HowUniversityYatraHelps />
+
+        <AdmissionGuide />
+
+        <FaqGermany />
+
+        {/* <CostOfStudyingGermany /> */}
+
+        {/* <Testimonials /> */}
+
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />

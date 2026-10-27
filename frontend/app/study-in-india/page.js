@@ -30,10 +30,10 @@ export default function StudyInIndiaPage() {
       <main>
         <StudyIndiaHero />
         <OnlineDegreeSection />
-        <WhatItGetsYou />
         <CoursesSlider />
-        <HowUniversityYatraHelps />
         <UniversityCarousel />
+        <WhatItGetsYou />
+        <HowUniversityYatraHelps />
         <DegreeComparison />
         <CostOfStudyingIndia />
         <Testimonials />

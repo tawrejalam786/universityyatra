@@ -9,6 +9,8 @@ import UniversityCarousel from "@/components/StudyInRussia/UniversityCarousel";
 import CostOfStudyingRussia from "@/components/StudyInRussia/CostOfStudyingRussia";
 import Testimonials from "@/components/StudyInRussia/Testimonials";
 import GlobalEducationCTA from "@/components/StudyInRussia/GlobalEducationCTA";
+import AdmissionGuide from '@/components/StudyInRussia/AdmissionGuide';
+import USAFAQ from '@/components/StudyInRussia/USAFAQ';
 
 
 
@@ -36,13 +38,26 @@ export default function StudyInRussiaPage() {
       <Navbar active="Destinations" />
       <main>
         <StudyInRussiaHero />
+
         <OnlineDegreeSection />
-        <WhatItGetsYou />
+
         <CoursesSlider />
-        <HowUniversityYatraHelps />
+
         <UniversityCarousel />
-        <CostOfStudyingRussia />
-        <Testimonials />
+
+        <WhatItGetsYou />
+
+        <HowUniversityYatraHelps />
+        
+
+        <AdmissionGuide />
+
+        <USAFAQ />
+
+        {/* <CostOfStudyingRussia /> */}
+
+        {/* <Testimonials /> */}
+
         <GlobalEducationCTA />
       </main>
       <UniversityFooter />
