@@ -637,7 +637,7 @@ export default function UniversityCarousel() {
       <div className="relative z-10 mx-auto max-w-[850px] px-3.5 text-center sm:px-5">
 
         <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765f5] sm:text-[12px]">
-          Universities
+          Universities in Canada
         </p>
 
         <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] text-[#063B72] sm:text-[36px] md:text-[42px] lg:text-[46px]">

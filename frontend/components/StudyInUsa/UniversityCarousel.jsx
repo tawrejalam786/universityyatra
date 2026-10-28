@@ -13,72 +13,72 @@ const UNIVERSITIES = [
   {
     name: "Arizona State University",
     grade: "Arizona",
-    image: "/images/universities/arizona-state-university.webp",
+    image: "/images/universities/usa/arizona-state-university.webp",
   },
   {
     name: "University of Arizona",
     grade: "Arizona",
-    image: "/images/universities/university-of-arizona.webp",
+    image: "/images/universities/usa/university-of-arizona.webp",
   },
-  {
-    name: "University of Illinois at Chicago",
-    grade: "Illinois",
-    image: "/images/universities/university-of-illinois-chicago.webp",
-  },
+  // {
+  //   name: "University of Illinois at Chicago",
+  //   grade: "Illinois",
+  //   image: "/images/universities/usa/university-of-illinois-chicago.webp",
+  // },
   {
     name: "George Mason University",
     grade: "Virginia",
-    image: "/images/universities/george-mason-university.webp",
+    image: "/images/universities/usa/george-mason-university.webp",
   },
   {
     name: "Northeastern University",
     grade: "Massachusetts",
-    image: "/images/universities/northeastern-university.webp",
+    image: "/images/universities/usa/northeastern-university.webp",
   },
   {
     name: "Illinois State University",
     grade: "Illinois",
-    image: "/images/universities/illinois-state-university.webp",
+    image: "/images/universities/usa/illinois-state-university.webp",
   },
   {
     name: "University of South Florida",
     grade: "Florida",
-    image: "/images/universities/university-of-south-florida.webp",
+    image: "/images/universities/usa/university-of-south-florida.webp",
   },
   {
     name: "University of Dayton",
     grade: "Ohio",
-    image: "/images/universities/university-of-dayton.webp",
+    image: "/images/universities/usa/university-of-dayton.webp",
   },
   {
     name: "Pace University",
     grade: "New York",
-    image: "/images/universities/pace-university.webp",
+    image: "/images/universities/usa/pace-university.webp",
   },
   {
     name: "Saint Louis University",
     grade: "Missouri",
-    image: "/images/universities/saint-louis-university.webp",
+    image: "/images/universities/usa/saint-louis-university.webp",
   },
   {
     name: "University of New Haven",
     grade: "Connecticut",
-    image: "/images/universities/university-of-new-haven.webp",
+    image: "/images/universities/usa/university-of-new-haven.webp",
   },
   {
     name: "Drexel University",
     grade: "Pennsylvania",
-    image: "/images/universities/drexel-university.webp",
+    image: "/images/universities/usa/drexel-university.webp",
   },
   {
     name: "New York Institute of Technology",
     grade: "New York",
-    image: "/images/universities/new-york-institute-of-technology.webp",
+    image: "/images/universities/usa/new-york-institute-of-technology.webp",
   },
   {
     name: "Florida International University",
     grade: "Florida",
-    image: "/images/universities/florida-international-university.webp",
+    image: "/images/universities/usa/florida-international-university.webp",
   },
 ];
 
@@ -748,7 +748,7 @@ export default function UniversityCarousel() {
       <div className="relative z-10 mx-auto max-w-[850px] px-3.5 text-center sm:px-5">
 
         <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
-          Universities
+          Universities in USA
         </p>
 
         <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] text-[#0C337B] sm:text-[36px] md:text-[42px] lg:text-[46px]">

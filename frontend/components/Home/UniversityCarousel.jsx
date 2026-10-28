@@ -326,6 +326,10 @@ export default function CountriesCarousel() {
             slideShadows: false,
           }}
           breakpoints={{
+             320: {
+              slidesPerView: 1.2,
+              spaceBetween: 15,
+            },
             480: {
               slidesPerView: 1.6,
               spaceBetween: 100,

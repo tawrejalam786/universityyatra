@@ -29,89 +29,199 @@ const tabs = [
    Specializations replaced with descriptions.
 ========================================= */
 
+
 const courseCards = [
+  // ==========================================
+  // MASTER'S DEGREE PROGRAMS (01–10)
+  // ==========================================
+
   {
     id: 1,
-    course: "BBA",
-    category: "bachelors",
-    image: "/images/courses/bba.png",
+    course: "MSc Computer Science",
+    category: "masters",
+    image: "/images/courses/germany/computer-science-ms.webp",
     color: "#2563EB",
     description:
-      "Build a strong foundation in business management, marketing, finance, and organisational operations while developing leadership and decision-making skills.",
+      "Explore advanced computing, software development and algorithms for careers in the technology sector.",
   },
   {
     id: 2,
-    course: "BCA",
-    category: "bachelors",
-    image: "/images/courses/bca.png",
+    course: "MSc Data Science and Artificial Intelligence",
+    category: "masters",
+    image: "/images/courses/germany/data-science-ai-ms.webp",
     color: "#0DAA9A",
     description:
-      "Develop essential skills in computer applications, programming, software development, databases, and information technology for a career in the digital world.",
+      "Learn to use data, machine learning and AI to solve complex, real-world problems.",
   },
   {
     id: 3,
-    course: "MBA",
+    course: "MSc Mechanical Engineering",
     category: "masters",
-    image: "/images/courses/mba.png",
+    image: "/images/courses/germany/mechanical-engineering-ms.webp",
     color: "#F59E0B",
     description:
-      "Strengthen your understanding of business strategy, leadership, operations, finance, and management to prepare for professional and managerial responsibilities.",
+      "Specialise in mechanical design, manufacturing and advanced engineering systems.",
   },
   {
     id: 4,
-    course: "MCA",
+    course: "MSc Automotive Engineering",
     category: "masters",
-    image: "/images/courses/mca.png",
+    image: "/images/courses/germany/automotive-engineering-ms.webp",
     color: "#7C3AED",
     description:
-      "Advance your knowledge of computer science, application development, programming, software systems, and modern computing technologies.",
+      "Explore vehicle design, electric mobility and technologies shaping the automotive industry.",
   },
   {
     id: 5,
-    course: "B.Com",
-    category: "bachelors",
-    image: "/images/courses/bcom.png",
+    course: "MSc Robotics and Automation",
+    category: "masters",
+    image: "/images/courses/germany/robotics-automation-ms.webp",
     color: "#EC1682",
     description:
-      "Gain foundational knowledge of accounting, commerce, taxation, financial management, and business principles for opportunities in finance and related fields.",
+      "Develop expertise in robotics, intelligent machines and industrial automation systems.",
   },
   {
     id: 6,
-    course: "M.Com",
+    course: "MSc Engineering Management",
     category: "masters",
-    image: "/images/courses/mcom.png",
+    image: "/images/courses/germany/engineering-management-ms.webp",
     color: "#4F46E5",
     description:
-      "Develop advanced understanding of commerce, accounting, financial analysis, economics, and business practices to strengthen your professional knowledge.",
+      "Combine technical expertise with project management, operations and business strategy.",
   },
   {
     id: 7,
-    course: "M.Sc.",
+    course: "MSc International Business and Management",
     category: "masters",
-    image: "/images/courses/msc.png",
+    image: "/images/courses/germany/international-business-management-ms.webp",
     color: "#16A34A",
     description:
-      "Deepen your subject knowledge through advanced scientific concepts, analytical methods, research approaches, and practical problem-solving skills.",
+      "Build skills in global business strategy, international markets and organisational leadership.",
   },
   {
     id: 8,
-    course: "MA",
+    course: "MSc Renewable Energy Engineering",
     category: "masters",
-    image: "/images/courses/ma.png",
+    image: "/images/courses/germany/renewable-energy-engineering-ms.webp",
     color: "#EF4444",
     description:
-      "Explore advanced concepts in humanities and social sciences while developing critical thinking, research, communication, and analytical abilities.",
+      "Explore sustainable energy systems and technologies driving the clean-energy transition.",
   },
   {
     id: 9,
-    course: "BA",
-    category: "bachelors",
-    image: "/images/courses/ba.png",
+    course: "MSc Biotechnology",
+    category: "masters",
+    image: "/images/courses/germany/biotechnology-ms.webp",
     color: "#06B6D4",
     description:
-      "Build a broad understanding of humanities and social sciences while strengthening communication, critical thinking, and analytical skills.",
+      "Study biological processes and their applications in scientific research and industry.",
+  },
+  {
+    id: 10,
+    course: "MSc Supply Chain Management",
+    category: "masters",
+    image: "/images/courses/germany/supply-chain-management-ms.webp",
+    color: "#B45309",
+    description:
+      "Learn to optimise logistics, procurement and operations across global supply networks.",
+  },
+
+  // ==========================================
+  // BACHELOR'S DEGREE PROGRAMS (11–20)
+  // ==========================================
+
+  {
+    id: 11,
+    course: "BSc Computer Science",
+    category: "bachelors",
+    image: "/images/courses/germany/computer-science-bs.webp",
+    color: "#2563EB",
+    description:
+      "Build foundations in programming, algorithms and software systems for technology-focused careers.",
+  },
+  {
+    id: 12,
+    course: "BEng Mechanical Engineering",
+    category: "bachelors",
+    image: "/images/courses/germany/mechanical-engineering-bs.webp",
+    color: "#EA580C",
+    description:
+      "Apply mathematics and physics to machine design, materials and manufacturing processes.",
+  },
+  {
+    id: 13,
+    course: "BEng Automotive Engineering",
+    category: "bachelors",
+    image: "/images/courses/germany/automotive-engineering-bs.webp",
+    color: "#7C3AED",
+    description:
+      "Learn the fundamentals of vehicle systems, automotive design and mobility technology.",
+  },
+  {
+    id: 14,
+    course: "BSc Data Science",
+    category: "bachelors",
+    image: "/images/courses/germany/data-science-bs.webp",
+    color: "#0DAA9A",
+    description:
+      "Develop skills in statistics, programming and data analysis to interpret complex information.",
+  },
+  {
+    id: 15,
+    course: "BSc Electrical Engineering",
+    category: "bachelors",
+    image: "/images/courses/germany/electrical-engineering-bs.webp",
+    color: "#F59E0B",
+    description:
+      "Explore electronics, electrical circuits, energy systems and modern control technologies.",
+  },
+  {
+    id: 16,
+    course: "BBA / BA Business Administration",
+    category: "bachelors",
+    image: "/images/courses/germany/business-administration-bs.webp",
+    color: "#EC1682",
+    description:
+      "Learn about marketing, finance, management and business operations across industries.",
+  },
+  {
+    id: 17,
+    course: "BSc Biotechnology",
+    category: "bachelors",
+    image: "/images/courses/germany/biotechnology-bs.webp",
+    color: "#16A34A",
+    description:
+      "Build scientific foundations in biology, chemistry and biotechnology applications.",
+  },
+  {
+    id: 18,
+    course: "BA Economics",
+    category: "bachelors",
+    image: "/images/courses/germany/economics-ba.webp",
+    color: "#4F46E5",
+    description:
+      "Understand markets, economic policy and financial systems through analytical study.",
+  },
+  {
+    id: 19,
+    course: "BSc Environmental Science",
+    category: "bachelors",
+    image: "/images/courses/germany/environmental-science-bs.webp",
+    color: "#059669",
+    description:
+      "Explore ecosystems, conservation and scientific approaches to environmental challenges.",
+  },
+  {
+    id: 20,
+    course: "BA International Relations",
+    category: "bachelors",
+    image: "/images/courses/germany/international-relations-ba.webp",
+    color: "#0C337B",
+    description:
+      "Study global politics, diplomacy and international cooperation in an interconnected world.",
   },
 ];
+
 
 /* =========================================
    COMPACT CATEGORY PILL
@@ -183,9 +293,9 @@ export default function CoursesSlider() {
   /* CATEGORY TITLE */
   const categoryTitle =
     activeTab === "masters"
-      ? "Master's Degree Programs"
+      ? "Master's Degree Programs for Indian Students"
       : activeTab === "bachelors"
-      ? "Bachelor's Degree Programs"
+      ? "Bachelor's Degree Programs for Indian Students"
       : "All Degree Programs";
 
   return (
@@ -217,7 +327,7 @@ export default function CoursesSlider() {
           className="mb-5"
         >
           <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[32px] md:text-[36px]">
-            Courses
+            Explore Courses in the Germany
           </h2>
 
           {/* ACCENT DECORATION */}

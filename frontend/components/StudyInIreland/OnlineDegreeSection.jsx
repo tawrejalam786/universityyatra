@@ -28,6 +28,7 @@ import {
    STUDY IN IRELAND - 5 GUIDES
 ========================================== */
 
+
 const guides = [
   {
     id: "01",
@@ -39,23 +40,23 @@ const guides = [
     image: "/images/study-usa/3d/study-usa.png",
 
     description:
-      "Ireland offers university degrees and practical college programs for international students. Choose a bachelor's degree, master's program, or specialized postgraduate qualification based on your academic background and career goals.",
+      "Explore English-medium education in an EU country with international industry connections and diverse academic pathways.",
 
     points: [
       {
-        icon: GraduationCap,
-        label: "Bachelor's",
-        value: "Usually 3–4 years",
-      },
-      {
         icon: BookOpen,
-        label: "Master's",
-        value: "Usually 1–2 years",
+        label: "Language",
+        value: "Study in an English-speaking environment.",
       },
       {
-        icon: Calendar,
-        label: "Main intakes",
-        value: "September and January",
+        icon: BriefcaseBusiness,
+        label: "Industry",
+        value: "Explore technology, pharmaceuticals and financial services.",
+      },
+      {
+        icon: GraduationCap,
+        label: "Post-study",
+        value: "Eligible graduates may qualify for up to 24 months under Stamp 1G.",
       },
     ],
   },
@@ -70,33 +71,25 @@ const guides = [
     image: "/images/study-usa/3d/cost-studying.png",
 
     description:
-      "Your budget depends on your qualification, program, and institution. International tuition typically ranges from EUR 10,000 to EUR 25,000 per year for undergraduate programs and EUR 10,000 to EUR 30,000 for postgraduate programs.",
+      "Plan for tuition, accommodation and immigration costs before choosing your Irish university.",
 
     points: [
       {
         icon: Calculator,
-        label: "Undergraduate tuition",
-        value: "EUR 10,000-25,000/year",
+        label: "Financial proof",
+        value: "€10,000 for a course lasting over eight months.",
       },
       {
         icon: DollarSign,
-        label: "Postgraduate tuition",
-        value: "EUR 10,000-30,000/year",
-      },
-      {
-        icon: Home,
-        label: "Living costs",
-        value: "EUR 1,000-1,500/month",
+        label: "Visa",
+        value: "€60 single-entry or €100 multiple-entry, where applicable.",
       },
       {
         icon: Wallet,
-        label: "Other costs",
-        value: "Insurance, books, deposits, and travel",
+        label: "Registration",
+        value: "€300 for an Irish Residence Permit, subject to applicable rules.",
       },
     ],
-
-    note:
-      "Tuition and living funds are separate. Plan for both before applying.",
   },
 
   {
@@ -109,23 +102,23 @@ const guides = [
     image: "/images/study-usa/3d/living-cost.png",
 
     description:
-      "Your living costs depend on your city, accommodation, commute, and daily routine. Ireland offers a welcoming English-speaking environment with vibrant student communities in Dublin, Cork, and Galway.",
+      "Prepare for student life in Ireland by understanding housing costs, everyday expenses and cultural differences.",
 
     points: [
       {
-        icon: Home,
-        label: "Biggest variable",
-        value: "Accommodation",
+        icon: Wallet,
+        label: "Living costs",
+        value: "€10,000 is the annual immigration financial-evidence benchmark.",
       },
       {
-        icon: Wallet,
-        label: "Plan for",
-        value: "Food, transport, utilities, and entertainment",
+        icon: Home,
+        label: "Accommodation",
+        value: "Dublin can be expensive, so compare housing early.",
       },
       {
         icon: Globe2,
         label: "Culture",
-        value: "English-speaking, friendly, and multicultural communities",
+        value: "Expect independent learning, social clubs and a diverse student community.",
       },
     ],
   },
@@ -134,29 +127,29 @@ const guides = [
     id: "04",
     slug: "scholarships",
     tag: "SCHOLARSHIPS & FUNDING",
-    title: "Scholarships in Ireland for Indian Students",
+    title: "Scholarships in Ireland",
     shortTitle: "Scholarships & Funding",
     icon: Award,
     image: "/images/study-usa/3d/scholarship.png",
 
     description:
-      "Irish scholarships reward academic excellence, leadership, and research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.",
+      "Explore government, university and research funding options that may help reduce the cost of studying in Ireland.",
 
     points: [
       {
         icon: Award,
-        label: "Undergraduate",
-        value: "Merit-based and institution-specific awards",
+        label: "Government scholarship",
+        value: "The 2026 GOI-IES offered €10,000 plus a one-year fee waiver.",
       },
       {
         icon: Sparkles,
-        label: "Master's",
-        value: "University and program-specific funding",
+        label: "University awards",
+        value: "Many are programme-specific or merit-based.",
       },
       {
         icon: GraduationCap,
-        label: "PhD",
-        value: "Research scholarships and fellowships",
+        label: "Funding strategy",
+        value: "Check eligibility, deadlines and living-cost coverage early.",
       },
     ],
   },
@@ -171,27 +164,28 @@ const guides = [
     image: "/images/study-usa/3d/post-study.png",
 
     description:
-      "Ireland's Third Level Graduate Scheme allows eligible international graduates to remain and work in Ireland after completing their studies. The duration depends on your qualification level.",
+      "Ireland offers eligible graduates a route from university into professional employment through its Third Level Graduate Programme.",
 
     points: [
       {
         icon: Clock,
-        label: "Bachelor's/Master's",
-        value: "Up to 2 years",
+        label: "Stamp 1G",
+        value: "Up to 12 months for eligible Level 8 graduates.",
       },
       {
-        icon: FileCheck2,
-        label: "Application window",
-        value: "Within 6 months of graduation",
+        icon: GraduationCap,
+        label: "Master's graduates",
+        value: "Eligible Level 9+ graduates may receive up to 24 months.",
       },
       {
         icon: BriefcaseBusiness,
-        label: "Work permission",
-        value: "Full-time work allowed",
+        label: "Next step",
+        value: "A qualifying job and employment permit may be needed to stay longer.",
       },
     ],
   },
 ];
+
 
 /* ==========================================
    LEFT GUIDE TAB

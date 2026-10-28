@@ -37,7 +37,7 @@ const courseCards = [
     course: "Computer Science (MSc / MCS)",
     category: "masters",
     stem: true,
-    image: "/images/courses-canada/computer-science.webp",
+    image: "/images/courses/canada/computer-science.webp",
     color: "#1765F5",
     description:
       "Build expertise in software development, algorithms, artificial intelligence, and advanced computing to solve complex technical problems.",
@@ -47,7 +47,7 @@ const courseCards = [
     course: "Business Analytics (MBAN / MSc)",
     category: "masters",
     stem: true,
-    image: "/images/courses-canada/business-analytics-ms.webp",
+    image: "/images/courses/canada/business-analytics-ms.webp",
     color: "#0D9488",
     description:
       "Use statistics, data visualisation, and predictive modelling to support business decisions and identify performance trends.",
@@ -57,7 +57,7 @@ const courseCards = [
     course: "Cybersecurity (MSc / MEng)",
     category: "masters",
     stem: true,
-    image: "/images/courses-canada/cybersecurity-ms.webp",
+    image: "/images/courses/canada/cybersecurity-ms.webp",
     color: "#7C3AED",
     description:
       "Study threat detection, network defence, and digital risk management to help protect systems, information, and infrastructure.",
@@ -67,7 +67,7 @@ const courseCards = [
     course: "Data Science (MSc)",
     category: "masters",
     stem: true,
-    image: "/images/courses-canada/data-science-ms.webp",
+    image: "/images/courses/canada/data-science-ms.webp",
     color: "#5D93F8",
     description:
       "Apply programming, statistics, and machine learning to interpret complex datasets and develop evidence-based solutions.",
@@ -77,7 +77,7 @@ const courseCards = [
     course: "Business Administration (MBA)",
     category: "masters",
     stem: false,
-    image: "/images/courses-canada/mba.webp",
+    image: "/images/courses/canada/mba.webp",
     color: "#F59E0B",
     description:
       "Develop skills in strategic management, finance, marketing, and leadership through business cases and organisational problem-solving.",
@@ -87,7 +87,7 @@ const courseCards = [
     course: "Finance (MFin / MSc)",
     category: "masters",
     stem: false,
-    image: "/images/courses-canada/finance-ms.webp",
+    image: "/images/courses/canada/finance-ms.webp",
     color: "#EC1682",
     description:
       "Analyse investments, financial markets, valuation, and risk to understand how organisations allocate capital and manage financial decisions.",
@@ -97,7 +97,7 @@ const courseCards = [
     course: "Engineering (MEng / MASc)",
     category: "masters",
     stem: true,
-    image: "/images/courses-canada/engineering-ms.webp",
+    image: "/images/courses/canada/engineering-ms.webp",
     color: "#EA580C",
     description:
       "Apply advanced technical principles to design, test, and improve systems across fields such as civil, mechanical, electrical, and computer engineering.",
@@ -107,7 +107,7 @@ const courseCards = [
     course: "Economics (MA / MSc)",
     category: "masters",
     stem: false,
-    image: "/images/courses-canada/economics-masters.webp",
+    image: "/images/courses/canada/economics-masters.webp",
     color: "#4F46E5",
     description:
       "Examine markets, public policy, and economic behaviour using quantitative analysis, economic modelling, and research methods.",
@@ -117,7 +117,7 @@ const courseCards = [
     course: "Public Health (MPH)",
     category: "masters",
     stem: false,
-    image: "/images/courses-canada/public-health.webp",
+    image: "/images/courses/canada/public-health.webp",
     color: "#16A34A",
     description:
       "Explore epidemiology, health policy, and disease prevention to understand population-level health challenges and design informed interventions.",
@@ -127,7 +127,7 @@ const courseCards = [
     course: "Architecture (MArch)",
     category: "masters",
     stem: false,
-    image: "/images/courses-canada/architecture.webp",
+    image: "/images/courses/canada/architecture.webp",
     color: "#B45309",
     description:
       "Combine spatial design, building technology, and sustainable planning to develop functional and considered architectural solutions.",
@@ -137,7 +137,7 @@ const courseCards = [
     course: "Film and Media Production (MFA / MA)",
     category: "masters",
     stem: false,
-    image: "/images/courses-canada/film-media-production.webp",
+    image: "/images/courses/canada/film-media-production.webp",
     color: "#9333EA",
     description:
       "Develop skills in directing, cinematography, editing, and production while exploring how stories are shaped for different screens and audiences.",
@@ -147,7 +147,7 @@ const courseCards = [
     course: "Biological Sciences (MSc)",
     category: "masters",
     stem: true,
-    image: "/images/courses-canada/biological-sciences-ms.webp",
+    image: "/images/courses/canada/biological-sciences-ms.webp",
     color: "#059669",
     description:
       "Investigate living systems through laboratory research, experimental methods, and areas such as genetics, cell biology, and biotechnology.",
@@ -162,7 +162,7 @@ const courseCards = [
     course: "Computer Science (BSc / BCS)",
     category: "bachelors",
     stem: true,
-    image: "/images/courses-canada/computer-science-bs.webp",
+    image: "/images/courses/canada/computer-science-bs.webp",
     color: "#2563EB",
     description:
       "Learn programming, algorithms, databases, and computing fundamentals to develop software and understand how digital systems work.",
@@ -172,7 +172,7 @@ const courseCards = [
     course: "Engineering (BEng / BASc)",
     category: "bachelors",
     stem: true,
-    image: "/images/courses-canada/engineering-bs.webp",
+    image: "/images/courses/canada/engineering-bs.webp",
     color: "#1047AC",
     description:
       "Apply mathematics and scientific principles to design, build, and test solutions across engineering disciplines.",
@@ -182,7 +182,7 @@ const courseCards = [
     course: "Business Administration (BBA / BCom)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses-canada/business-administration-bs.webp",
+    image: "/images/courses/canada/business-administration-bs.webp",
     color: "#F59E0B",
     description:
       "Explore management, marketing, accounting, and operations to understand how businesses function, compete, and grow.",
@@ -192,7 +192,7 @@ const courseCards = [
     course: "Finance (BCom / BBA)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses-canada/finance-bs.webp",
+    image: "/images/courses/canada/finance-bs.webp",
     color: "#EC1682",
     description:
       "Study financial markets, investment principles, corporate finance, and budgeting to understand how individuals and organisations manage money.",
@@ -202,7 +202,7 @@ const courseCards = [
     course: "Economics (BA / BSc)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses-canada/economics-bs.webp",
+    image: "/images/courses/canada/economics-bs.webp",
     color: "#7C3AED",
     description:
       "Explore how consumers, businesses, and governments make choices through economic theory, data analysis, and the study of markets and policy.",
@@ -212,7 +212,7 @@ const courseCards = [
     course: "Biological Sciences (BSc)",
     category: "bachelors",
     stem: true,
-    image: "/images/courses-canada/biological-sciences-bs.webp",
+    image: "/images/courses/canada/biological-sciences-bs.webp",
     color: "#16A34A",
     description:
       "Study living organisms, genetics, ecology, and cell biology through scientific concepts and practical laboratory work.",
@@ -222,7 +222,7 @@ const courseCards = [
     course: "Film and Media Studies (BA / BFA)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses-canada/film-media-studies.webp",
+    image: "/images/courses/canada/film-media-studies.webp",
     color: "#DB2777",
     description:
       "Explore cinema, visual storytelling, media theory, and digital culture while developing critical and creative approaches to screen media.",

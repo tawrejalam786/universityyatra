@@ -48,7 +48,7 @@ export default function HowItWorksRing() {
 
   return (
     <section aria-labelledby="ring-title" className="relative w-full overflow-hidden bg-[#F0F9FD] py-8 sm:py-10">
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1250px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-6 lg:grid-cols-[1fr_1fr] lg:gap-10">
 
           {/* LEFT CONTENT */}
@@ -58,13 +58,13 @@ export default function HowItWorksRing() {
             </span>
 
             
-<h2 id="ireland-help-title" className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[30px] lg:text-[34px]">
-  How{" "}
-  <span className="text-[#1765f5]">
-    University Yatra<sup className="relative -top-2 ml-[1px] text-[10px] font-semibold sm:text-[15px]">™</sup>
-  </span>{" "}
-  Helps You
-</h2>
+          <h2 id="ireland-help-title" className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#063B72] sm:text-[30px] lg:text-[34px]">
+            How{" "}
+            <span className="text-[#1765f5]">
+              University Yatra<sup className="relative -top-2 ml-[1px] text-[10px] font-semibold sm:text-[15px]">™</sup>
+            </span>{" "}
+            Helps You
+          </h2>
 
 
             <p className="mt-2 max-w-[460px] text-[13px] leading-[1.65] text-[#526B8C]">

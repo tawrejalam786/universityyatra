@@ -10,78 +10,75 @@ import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
    ALL NAMES, IMAGES AND LOCATIONS UNCHANGED
 ========================================== */
 
+
 const UNIVERSITIES = [
   {
-    name: "Durham University",
+    name: "University of Oxford",
     grade: "England",
-    image: "/images/universities/durham-university.webp",
+    image: "/images/universities/uk/university-of-oxford.webp",
   },
   {
-    name: "University of Edinburgh",
+    name: "University of Cambridge",
+    grade: "England",
+    image: "/images/universities/uk/university-of-cambridge.webp",
+  },
+  {
+    name: "Imperial College London",
+    grade: "England",
+    image: "/images/universities/uk/imperial-college-london.webp",
+  },
+  {
+    name: "University College London (UCL)",
+    grade: "England",
+    image: "/images/universities/uk/university-college-london.webp",
+  },
+  {
+    name: "The University of Edinburgh",
     grade: "Scotland",
-    image: "/images/universities/university-of-edinburgh.webp",
+    image: "/images/universities/uk/university-of-edinburgh.webp",
+  },
+  {
+    name: "King's College London",
+    grade: "England",
+    image: "/images/universities/uk/kings-college-london.webp",
+  },
+  {
+    name: "The University of Manchester",
+    grade: "England",
+    image: "/images/universities/uk/university-of-manchester.webp",
+  },
+  {
+    name: "London School of Economics and Political Science (LSE)",
+    grade: "England",
+    image: "/images/universities/uk/london-school-of-economics.webp",
+  },
+  {
+    name: "University of Warwick",
+    grade: "England",
+    image: "/images/universities/uk/university-of-warwick.webp",
+  },
+  {
+    name: "University of Bristol",
+    grade: "England",
+    image: "/images/universities/uk/university-of-bristol.webp",
   },
   {
     name: "University of Birmingham",
     grade: "England",
-    image: "/images/universities/university-of-birmingham.webp",
+    image: "/images/universities/uk/university-of-birmingham.webp",
   },
   {
-    name: "King’s College London",
+    name: "University of Leeds",
     grade: "England",
-    image: "/images/universities/kings-college-london.webp",
-  },
-  {
-    name: "University of Southampton",
-    grade: "England",
-    image: "/images/universities/university-of-southampton.webp",
+    image: "/images/universities/uk/university-of-leeds.webp",
   },
   {
     name: "University of Glasgow",
     grade: "Scotland",
-    image: "/images/universities/university-of-glasgow.webp",
-  },
-  {
-    name: "University of Exeter",
-    grade: "England",
-    image: "/images/universities/university-of-exeter.webp",
-  },
-  {
-    name: "University of Nottingham",
-    grade: "England",
-    image: "/images/universities/university-of-nottingham.webp",
-  },
-  {
-    name: "Cardiff University",
-    grade: "Wales",
-    image: "/images/universities/cardiff-university.webp",
-  },
-  {
-    name: "Loughborough University",
-    grade: "England",
-    image: "/images/universities/loughborough-university.webp",
-  },
-  {
-    name: "Queen's University Belfast",
-    grade: "Northern Ireland",
-    image: "/images/universities/queens-university-belfast.webp",
-  },
-  {
-    name: "University of Strathclyde",
-    grade: "Scotland",
-    image: "/images/universities/university-of-strathclyde.webp",
-  },
-  {
-    name: "University of Aberdeen",
-    grade: "Scotland",
-    image: "/images/universities/university-of-aberdeen.webp",
-  },
-  {
-    name: "University of Reading",
-    grade: "England",
-    image: "/images/universities/university-of-reading.webp",
+    image: "/images/universities/uk/university-of-glasgow.webp",
   },
 ];
+
 
 /* ==========================================
    CAROUSEL SETTINGS
@@ -644,7 +641,7 @@ export default function UniversityCarousel() {
       <div className="relative z-10 mx-auto max-w-[850px] px-3.5 text-center sm:px-5">
 
         <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
-          Universities
+          Top Universities in the UK
         </p>
 
         <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] text-[#0C337B] sm:text-[36px] md:text-[42px] lg:text-[46px]">

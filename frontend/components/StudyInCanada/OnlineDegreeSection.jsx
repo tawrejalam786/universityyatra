@@ -62,46 +62,38 @@ const guides = [
     ],
   },
 
-  {
-    id: "02",
-    slug: "cost-of-studying",
-    tag: "TUITION & EXPENSES",
-    title: "Cost of Studying in Canada",
-    shortTitle: "Tuition & Study Budget",
-    icon: DollarSign,
-    image: "/images/study-canada/gold-coins.png",
 
-    description:
-      "Your budget depends on your qualification, program, and institution. The latest national averages put international tuition at CAD 24,028/year for graduate students and CAD 41,746/year for undergraduates.",
+{
+  id: "02",
+  slug: "cost-of-studying",
+  tag: "TUITION & EXPENSES",
+  title: "Cost of Studying in Canada",
+  shortTitle: "Tuition & Study Budget",
+  icon: DollarSign,
+  image: "/images/study-canada/gold-coins.png",
 
-    points: [
-      {
-        icon: Calculator,
-        label: "Graduate tuition",
-        value: "CAD 24,028/year",
-      },
-      {
-        icon: DollarSign,
-        label: "Undergraduate tuition",
-        value: "CAD 41,746/year",
-      },
-      {
-        icon: Home,
-        label: "Living-funds threshold",
-        value:
-          "CAD 23,448 for a single applicant outside Quebec applying from September 1, 2026.",
-      },
-      {
-        icon: Wallet,
-        label: "Other costs",
-        value:
-          "Insurance, books, deposits, travel, and study-permit fees.",
-      },
-    ],
+  description:
+    "Your budget depends on your qualification, program, and institution. The latest national averages put international tuition at CAD 24,028/year for graduate students and CAD 41,746/year for undergraduates.",
 
-    note:
-      "Tuition and living funds are separate. Plan for both before applying.",
-  },
+  points: [
+    {
+      icon: Home,
+      label: "Living-funds threshold",
+      value:
+        "CAD 23,448 for a single applicant outside Quebec applying from September 1, 2026.",
+    },
+    {
+      icon: Wallet,
+      label: "Other costs",
+      value:
+        "Insurance, books, deposits, travel, and study-permit fees.",
+    },
+  ],
+
+  // note:
+  //   "Tuition and living funds are separate. Plan for both before applying.",
+},
+
 
   // NEW GUIDE - COST OF LIVING & CULTURE
   {
@@ -252,9 +244,9 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
 
         {/* NUMBER AND TITLE */}
         <div className="min-w-0">
-          <span className="block text-[9px] font-extrabold uppercase tracking-[0.08em] text-[#7390B4]">
+          {/* <span className="block text-[9px] font-extrabold uppercase tracking-[0.08em] text-[#7390B4]">
             Guide {guide.id}
-          </span>
+          </span> */}
 
           <span
             className={`block text-[12px] font-bold leading-[1.25] lg:truncate lg:text-[13px] lg:leading-[1.35] ${

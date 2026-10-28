@@ -17,6 +17,10 @@ import {
   Minus,
   ArrowLeft,
   ArrowRight,
+  BookOpen,
+  UsersRound,
+  BriefcaseBusiness,
+  Layers3,
 } from "lucide-react";
 
 /* =========================================
@@ -24,53 +28,76 @@ import {
    ALL TITLES, DESCRIPTIONS & COLORS KEPT
 ========================================= */
 
+
 const benefits = [
   {
     number: "01",
-    title: "Four of the World’s Top 100 Universities",
+    title: "Globally Recognised Institutions",
     description:
-      "Study in a globally competitive education system with multiple Canadian institutions ranked among the world’s leading universities.",
+      "Canada offers universities and colleges known for academic quality, specialised programs, and research opportunities. Students can compare institutions based on curriculum, faculty expertise, campus facilities, location, and long-term academic goals.",
+    mobileDescription:
+      "Explore Canadian universities and colleges offering diverse programs, research opportunities, and learning environments suited to different academic goals.",
     icon: GraduationCap,
     accent: "#1646A0",
     soft: "#EEF4FF",
   },
   {
     number: "02",
-    title: "Globally Recognized Degrees",
+    title: "A Blend of Theory and Practical Learning",
     description:
-      "Canadian qualifications can support academic and career plans beyond Canada, making them a strong option for students thinking internationally.",
-    icon: GitCompareArrows,
+      "Canadian education combines classroom learning with assignments, presentations, group projects, laboratory work, and independent research. The balance varies by institution and program, helping students understand how knowledge is applied in their chosen field.",
+    mobileDescription:
+      "Build knowledge through assignments, presentations, group projects, laboratory sessions, and independent research, depending on your program.",
+    icon: BookOpen,
     accent: "#E83E8C",
     soft: "#FFF0F6",
   },
   {
     number: "03",
-    title: "Post-Study Work Opportunities",
+    title: "Multicultural Campus Experience",
     description:
-      "Eligible graduates can access post-study work opportunities, giving them a chance to gain professional experience after completing their program.",
-    icon: Globe2,
-    accent: "#18B8B5",
-    soft: "#EAF9F8",
+      "Students learn alongside peers from different countries, cultures, and academic backgrounds. Campus clubs, student societies, cultural events, and collaborative projects create opportunities to exchange perspectives and build meaningful connections.",
+    mobileDescription:
+      "Learn alongside students from different backgrounds and engage through campus clubs, cultural events, student societies, and collaborative activities.",
+    icon: UsersRound,
+    accent: "#1765F5",
+    soft: "#EAF2FF",
   },
   {
     number: "04",
-    title: "Work While You Study",
+    title: "Co-op and Industry Exposure",
     description:
-      "Eligible international students can work alongside their studies, helping them gain practical experience while managing their student life.",
-    icon: BrainCircuit,
+      "Many Canadian institutions offer co-op programs, internships, applied projects, and industry-linked learning. These opportunities depend on the course and institution, and placements may have separate eligibility requirements or competitive selection.",
+    mobileDescription:
+      "Explore co-op programs, internships, and applied projects offered by Canadian institutions. Availability and eligibility vary by course and institution.",
+    icon: BriefcaseBusiness,
     accent: "#7C3AED",
     soft: "#F4EFFF",
   },
   {
     number: "05",
-    title: "Safe & Diverse Student Environment",
+    title: "Post-Graduation Work Opportunities",
     description:
-      "Canadian institutions bring together students from different countries, backgrounds, and cultures, creating a genuinely international learning environment.",
-    icon: ShieldCheck,
+      "Eligible graduates of qualifying Canadian institutions and programs may apply for a Post-Graduation Work Permit (PGWP). Its duration and eligibility depend on factors such as the qualification, program, institution, and applicable immigration rules.",
+    mobileDescription:
+      "Eligible graduates may apply for a PGWP after completing a qualifying program. Permit duration and eligibility depend on current IRCC requirements.",
+    icon: Globe2,
     accent: "#A93BBE",
     soft: "#FAEEFC",
   },
+  {
+    number: "06",
+    title: "Diverse Courses and Career Pathways",
+    description:
+      "From Computer Science, Engineering, and Business Analytics to Public Health, Finance, Environmental Studies, and Film Production, Canadian institutions offer programs across academic and professional disciplines.",
+    mobileDescription:
+      "Choose from Computer Science, Engineering, Business Analytics, Public Health, Finance, Environmental Studies, and many other fields.",
+    icon: Layers3,
+    accent: "#0C337B",
+    soft: "#E8F0FE",
+  },
 ];
+
 
 /* =========================================
    MAIN COMPONENT
@@ -225,6 +252,11 @@ export default function WhatItGetsYou() {
           transition={{ duration: 0.45 }}
           className="mb-4 text-center sm:mb-6"
         >
+          
+          <span className="mb-1.5 inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
+            WHY STUDY IN THE CANADA?
+          </span>
+
           <h2 className="text-[24px] font-bold leading-[1.18] tracking-[-0.03em] text-[#063B72] sm:text-[30px] md:text-[34px] lg:text-[38px]">
             Inside the{" "}
             <span className="text-[#1765f5]">

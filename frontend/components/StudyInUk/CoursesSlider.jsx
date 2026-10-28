@@ -29,89 +29,163 @@ const tabs = [
    Specializations replaced with descriptions.
 ========================================= */
 
+
 const courseCards = [
+  // ==========================================
+  // MASTER'S DEGREE PROGRAMS (01–08)
+  // ==========================================
+
   {
     id: 1,
-    course: "BBA",
-    category: "bachelors",
-    image: "/images/courses/bba.png",
+    course: "MSc Data Science",
+    category: "masters",
+    image: "/images/courses/uk/data-science-ms.webp",
     color: "#2563EB",
     description:
-      "Build a strong foundation in business management, marketing, finance, and organisational operations while developing leadership and decision-making skills.",
+      "Use statistics, programming, and machine learning to analyse data and support evidence-based decisions.",
   },
   {
     id: 2,
-    course: "BCA",
-    category: "bachelors",
-    image: "/images/courses/bca.png",
+    course: "MSc Computer Science",
+    category: "masters",
+    image: "/images/courses/uk/computer-science-ms.webp",
     color: "#0DAA9A",
     description:
-      "Develop essential skills in computer applications, programming, software development, databases, and information technology for a career in the digital world.",
+      "Develop advanced knowledge of computing, algorithms, software systems, and emerging technologies.",
   },
   {
     id: 3,
-    course: "MBA",
+    course: "Master of Business Administration (MBA)",
     category: "masters",
-    image: "/images/courses/mba.png",
+    image: "/images/courses/uk/mba.webp",
     color: "#F59E0B",
     description:
-      "Strengthen your understanding of business strategy, leadership, operations, finance, and management to prepare for professional and managerial responsibilities.",
+      "Build skills in business strategy, leadership, finance, and organisational decision-making.",
   },
   {
     id: 4,
-    course: "MCA",
+    course: "MSc Finance",
     category: "masters",
-    image: "/images/courses/mca.png",
+    image: "/images/courses/uk/finance-ms.webp",
     color: "#7C3AED",
     description:
-      "Advance your knowledge of computer science, application development, programming, software systems, and modern computing technologies.",
+      "Analyse financial markets, investment decisions, risk, and corporate financial performance.",
   },
   {
     id: 5,
-    course: "B.Com",
-    category: "bachelors",
-    image: "/images/courses/bcom.png",
+    course: "MSc Cyber Security",
+    category: "masters",
+    image: "/images/courses/uk/cybersecurity-ms.webp",
     color: "#EC1682",
     description:
-      "Gain foundational knowledge of accounting, commerce, taxation, financial management, and business principles for opportunities in finance and related fields.",
+      "Study network protection, digital threats, security testing, and information risk management.",
   },
   {
     id: 6,
-    course: "M.Com",
+    course: "MSc Mechanical Engineering",
     category: "masters",
-    image: "/images/courses/mcom.png",
+    image: "/images/courses/uk/mechanical-engineering-ms.webp",
     color: "#4F46E5",
     description:
-      "Develop advanced understanding of commerce, accounting, financial analysis, economics, and business practices to strengthen your professional knowledge.",
+      "Apply engineering principles to design, test, and improve mechanical systems and technologies.",
   },
   {
     id: 7,
-    course: "M.Sc.",
+    course: "MSc Marketing",
     category: "masters",
-    image: "/images/courses/msc.png",
+    image: "/images/courses/uk/marketing-ms.webp",
     color: "#16A34A",
     description:
-      "Deepen your subject knowledge through advanced scientific concepts, analytical methods, research approaches, and practical problem-solving skills.",
+      "Explore consumer behaviour, brand strategy, digital campaigns, and marketing performance analytics.",
   },
   {
     id: 8,
-    course: "MA",
+    course: "MSc Public Health",
     category: "masters",
-    image: "/images/courses/ma.png",
+    image: "/images/courses/uk/public-health.webp",
     color: "#EF4444",
     description:
-      "Explore advanced concepts in humanities and social sciences while developing critical thinking, research, communication, and analytical abilities.",
+      "Study disease prevention, health policy, epidemiology, and strategies for improving population health.",
   },
+
+  // ==========================================
+  // BACHELOR'S DEGREE PROGRAMS (09–16)
+  // ==========================================
+
   {
     id: 9,
-    course: "BA",
+    course: "BSc Computer Science",
     category: "bachelors",
-    image: "/images/courses/ba.png",
+    image: "/images/courses/uk/computer-science-bs.webp",
     color: "#06B6D4",
     description:
-      "Build a broad understanding of humanities and social sciences while strengthening communication, critical thinking, and analytical skills.",
+      "Learn programming, algorithms, databases, and software development through practical computing projects.",
+  },
+  {
+    id: 10,
+    course: "BSc Artificial Intelligence",
+    category: "bachelors",
+    image: "/images/courses/uk/artificial-intelligence-bs.webp",
+    color: "#2563EB",
+    description:
+      "Explore machine learning, intelligent systems, data-driven models, and AI applications.",
+  },
+  {
+    id: 11,
+    course: "BEng Mechanical Engineering",
+    category: "bachelors",
+    image: "/images/courses/uk/mechanical-engineering-bs.webp",
+    color: "#EA580C",
+    description:
+      "Apply mathematics and physics to mechanical design, manufacturing, materials, and engineering systems.",
+  },
+  {
+    id: 12,
+    course: "BSc Economics",
+    category: "bachelors",
+    image: "/images/courses/uk/economics-bs.webp",
+    color: "#4F46E5",
+    description:
+      "Analyse markets, economic policy, consumer behaviour, and the forces shaping financial decisions.",
+  },
+  {
+    id: 13,
+    course: "BSc Accounting and Finance",
+    category: "bachelors",
+    image: "/images/courses/uk/accounting-finance-bs.webp",
+    color: "#EC1682",
+    description:
+      "Develop skills in financial reporting, auditing, taxation, and business financial analysis.",
+  },
+  {
+    id: 14,
+    course: "BSc Business Management",
+    category: "bachelors",
+    image: "/images/courses/uk/business-management-bs.webp",
+    color: "#F59E0B",
+    description:
+      "Understand business operations, organisational behaviour, strategy, and management principles.",
+  },
+  {
+    id: 15,
+    course: "BSc Psychology",
+    category: "bachelors",
+    image: "/images/courses/uk/psychology-bs.webp",
+    color: "#9333EA",
+    description:
+      "Examine human behaviour, cognition, research methods, and the psychological factors influencing decisions.",
+  },
+  {
+    id: 16,
+    course: "BA International Relations",
+    category: "bachelors",
+    image: "/images/courses/uk/international-relations-ba.webp",
+    color: "#0C337B",
+    description:
+      "Study global politics, diplomacy, international security, and relations between countries.",
   },
 ];
+
 
 /* =========================================
    COMPACT CATEGORY PILL
@@ -183,7 +257,7 @@ export default function CoursesSlider() {
   /* CATEGORY TITLE */
   const categoryTitle =
     activeTab === "masters"
-      ? "Master's Degree Programs"
+      ? "Master's Degree Programs for Indian Students"
       : activeTab === "bachelors"
       ? "Bachelor's Degree Programs"
       : "All Degree Programs";
@@ -216,8 +290,9 @@ export default function CoursesSlider() {
           transition={{ duration: 0.45 }}
           className="mb-5"
         >
+          {/* <p class="mb-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">What studying in the UK means</p> */}
           <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[32px] md:text-[36px]">
-            Courses
+            Explore Courses in the UK
           </h2>
 
           {/* ACCENT DECORATION */}

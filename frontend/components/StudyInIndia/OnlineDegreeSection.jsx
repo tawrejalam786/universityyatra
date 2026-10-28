@@ -1,399 +1,457 @@
+
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  GraduationCap,
+  ArrowRight,
+  ArrowUpRight,
   BookOpen,
   Check,
   ChevronRight,
   ClipboardCheck,
+  GraduationCap,
+  IndianRupee,
+  Scale,
 } from "lucide-react";
 
 /* ==========================================
-   ORIGINAL STUDY IN INDIA CONTENT
-   CONTENT HAS NOT BEEN CHANGED
+   STUDY IN INDIA - 5 GUIDES
+   01-03: ORIGINAL INDIA CONTENT
+   04-05: NEW ADDITIONAL GUIDES
 ========================================== */
 
-const programFitsYou = [
-  "Compare 30+ universities and 5+ specializations",
-  "Explore UGC-recognized online degree programs",
-  "Choose from flexible online formats",
-  "Shortlist programs based on your goals and profile",
-];
-
-const guidanceBeyondAdmission = [
-  "Understand eligibility, fees & program structure",
-  "Get support with applications and documentation",
-  "Guidance on career-relevant specializations",
-  "Make an informed decision with expert guidance",
-];
-
-/* ==========================================
-   INDIA SECTION TABS (brand colours only)
-========================================== */
-
-const sections = [
+const guides = [
   {
     id: "01",
     title: "Making Your Next Move Count.",
+    shortTitle: "Online Degree",
+    tag: "ONLINE DEGREE EXPLAINED",
     icon: GraduationCap,
     image: "/images/study-india/online-degree-student.webp",
-    imageAlt: "Student learning through an online degree program",
-    imageColor: "#1765F5",
-    imagePosition: "object-center",
+    href: "/study-in-india/online-degree-program",
+
+    description:
+      "An online regular degree program lets you earn a university degree through a structured online learning format, without attending campus every day.",
+
+    points: [
+      {
+        label: "Program Structure",
+        text: "You follow a defined curriculum with online classes, study material, assignments, assessments, and examinations, just like a regular academic program—delivered digitally.",
+      },
+      {
+        label: "Learning Flexibility",
+        text: "It gives you the flexibility to pursue your degree and specialization while managing work, other studies, or personal commitments.",
+      },
+    ],
   },
+
   {
     id: "02",
     title: "A Program That Fits You",
+    shortTitle: "Find Your Program",
+    tag: "CHOOSE THE RIGHT PROGRAM",
     icon: BookOpen,
     image: "/images/study-india/program-fit-student.webp",
-    imageAlt: "Student comparing online degree programs and specializations",
-    imageColor: "#0C337B",
-    imagePosition: "object-center",
+    href: "/study-in-india/find-the-right-online-degree",
+
+    description:
+      "Explore flexible online degree options and compare programs based on your goals.",
+
+    points: [
+      {
+        text: "Compare 30+ universities and 5+ specializations",
+      },
+      {
+        text: "Explore UGC-recognized online degree programs",
+      },
+      {
+        text: "Choose from flexible online formats",
+      },
+      {
+        text: "Shortlist programs based on your goals and profile",
+      },
+    ],
   },
+
   {
     id: "03",
     title: "Guidance Beyond Admission",
+    shortTitle: "Admission Guidance",
+    tag: "EXPERT ADMISSION GUIDANCE",
     icon: ClipboardCheck,
     image: "/images/study-india/guidance-student.webp",
-    imageAlt: "Student receiving guidance for online university admission",
-    imageColor: "#5B9BFF",
-    imagePosition: "object-top",
+    href: "/career-counselling",
+
+    description:
+      "Make informed choices with guidance before, during, and beyond the application process.",
+
+    points: [
+      {
+        text: "Understand eligibility, fees & program structure",
+      },
+      {
+        text: "Get support with applications and documentation",
+      },
+      {
+        text: "Guidance on career-relevant specializations",
+      },
+      {
+        text: "Make an informed decision with expert guidance",
+      },
+    ],
+  },
+
+  {
+    id: "04",
+    title: "Online Degree vs Regular Degree",
+    shortTitle: "Compare Degrees",
+    tag: "COMPARE YOUR STUDY OPTIONS",
+    icon: Scale,
+    href: "/study-in-india/online-vs-regular-degree",
+
+    description:
+      "Understand the difference in learning format, flexibility, and student experience before selecting your pathway.",
+
+    points: [
+      {
+        label: "Class Mode",
+        text: "Compare online learning with campus-based teaching.",
+      },
+      {
+        label: "Your Schedule",
+        text: "Understand how each format fits around your commitments.",
+      },
+      {
+        label: "Recognition",
+        text: "Check the university and program's current recognition status.",
+      },
+      {
+        label: "Career Preparation",
+        text: "Compare the practical learning and career support offered.",
+      },
+    ],
+  },
+
+  {
+    id: "05",
+    title: "Cost of Studying in India",
+    shortTitle: "Study Costs",
+    tag: "FEES & FINANCIAL PLANNING",
+    icon: IndianRupee,
+    href: "/study-in-india/cost-of-studying",
+
+    description:
+      "Plan your education budget by reviewing tuition, course-related expenses, and available payment options.",
+
+    points: [
+      {
+        label: "Tuition Fees",
+        text: "Compare fees by university, degree, and specialization.",
+      },
+      {
+        label: "Other Expenses",
+        text: "Check exam fees, materials, internet, and any other charges.",
+      },
+      {
+        label: "Payment Options",
+        text: "Ask about scholarships, instalments, and eligibility.",
+      },
+      {
+        label: "Overall Value",
+        text: "Review the curriculum, support, and outcomes along with cost.",
+      },
+    ],
   },
 ];
 
 /* ==========================================
-   TAB
-   mobile  : icon + number only (3 in one row)
-   tablet+ : icon + number + title
+   LEFT GUIDE TAB
+   MOBILE  : 2-COLUMN GRID
+   TABLET  : 3-COLUMN GRID
+   DESKTOP : VERTICAL TABS
 ========================================== */
 
-function SectionTab({ item, index, active, onActivate, onKeyDown }) {
-  const Icon = item.icon;
+function GuideTab({
+  guide,
+  index,
+  active,
+  onActivate,
+  onKeyDown,
+}) {
+  const Icon = guide.icon;
 
   return (
     <button
       type="button"
       role="tab"
-      id={`india-degree-tab-${index}`}
-      aria-label={item.title}
-      aria-controls="india-degree-panel"
+      id={`india-guide-tab-${index}`}
+      aria-label={guide.title}
       aria-selected={active}
+      aria-controls="india-guide-panel"
       tabIndex={active ? 0 : -1}
       onClick={() => onActivate(index)}
       onPointerEnter={(event) => {
-        if (event.pointerType === "mouse") onActivate(index);
+        if (event.pointerType === "mouse") {
+          onActivate(index);
+        }
       }}
       onKeyDown={onKeyDown}
-      className={`group relative flex w-full min-w-0 flex-col items-center justify-center gap-1 overflow-hidden rounded-xl border px-2 py-2.5 text-center transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 sm:flex-row sm:justify-between sm:gap-2 sm:px-3 sm:text-left lg:flex-1 lg:gap-3 lg:px-4 lg:py-3 ${
-        active
-          ? "border-[#1765F5] bg-[#1765F5] shadow-[0_10px_26px_rgba(23,101,245,0.28)]"
-          : "border-[#E4ECF7] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"
-      }`}
+      className={`group relative flex min-w-0 items-center gap-2 overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 lg:flex-1 lg:gap-3 lg:px-3.5 ${active ? "border-[#B4CFFA] bg-[#EDF5FF] shadow-[0_5px_20px_rgba(23,101,245,0.07)]" : "border-[#E5EDF9] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"}`}
     >
-      <div className="flex min-w-0 flex-col items-center gap-1 sm:flex-row sm:gap-2.5 lg:gap-3">
-        {/* ICON */}
+      {/* ACTIVE LEFT INDICATOR */}
+      {active && (
         <span
-          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 lg:h-10 lg:w-10 ${
-            active ? "bg-white/20 text-white" : "bg-[#EDF5FF] text-[#1765F5]"
-          }`}
-        >
-          <Icon size={18} strokeWidth={2} />
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 hidden w-1 bg-[#1765F5] lg:block"
+        />
+      )}
+
+      {/* GUIDE ICON */}
+      <span
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-colors lg:h-9 lg:w-9 ${active ? "bg-[#1765F5] text-white" : "bg-[#EAF2FF] text-[#1765F5]"}`}
+      >
+        <Icon size={17} strokeWidth={2} />
+      </span>
+
+      {/* NUMBER AND TITLE */}
+      <span className="min-w-0 flex-1">
+        <span className="block text-[9px] font-extrabold uppercase tracking-[0.08em] text-[#7390B4]">
+          Guide {guide.id}
         </span>
 
-        {/* NUMBER + TITLE */}
-        <div className="min-w-0">
-          <span
-            className={`block text-[10px] font-extrabold uppercase tracking-[0.09em] ${
-              active ? "text-white/80" : "text-[#7390B4]"
-            }`}
-          >
-            {item.id}
+        <span
+          className={`block text-[11px] font-bold leading-[1.3] sm:text-[12px] lg:truncate lg:text-[13px] ${active ? "text-[#1765F5]" : "text-[#0C337B]"}`}
+        >
+          <span className="lg:hidden">
+            {guide.shortTitle}
           </span>
 
-          <span
-            className={`mt-0.5 hidden text-[11px] font-bold leading-[1.3] sm:block sm:text-[12px] lg:text-[14px] ${
-              active ? "text-white" : "text-[#0C337B]"
-            }`}
-          >
-            {item.title}
+          <span className="hidden lg:inline">
+            {guide.title}
           </span>
-        </div>
-      </div>
+        </span>
+      </span>
 
       {/* DESKTOP ARROW */}
       <ChevronRight
-        size={17}
+        size={16}
         aria-hidden="true"
-        className={`hidden shrink-0 transition-transform duration-300 lg:block ${
-          active ? "translate-x-0.5 text-white" : "text-[#9AAEC6]"
-        }`}
+        className={`hidden shrink-0 transition-transform lg:block ${active ? "translate-x-0.5 text-[#1765F5]" : "text-[#9AAEC6]"}`}
       />
     </button>
   );
 }
 
 /* ==========================================
-   STUDENT IMAGE (small arch frame)
-   size is controlled by the wrapper below
+   GUIDE VISUAL
+   ORIGINAL INDIA STUDENT IMAGES
+   FALLBACK ICONS FOR NEW GUIDES
 ========================================== */
 
-function StudentVisual({ item }) {
+function GuideVisual({ guide }) {
+  const Icon = guide.icon;
+
   return (
-    <div className="relative mx-auto h-[118px] w-[88px] lg:h-[190px] lg:w-[150px]">
-      {/* dot grid */}
-      <div
-        aria-hidden="true"
-        className="absolute -inset-3 opacity-40"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #9CC0F5 1px, transparent 1px)",
-          backgroundSize: "12px 12px",
-          maskImage:
-            "radial-gradient(circle at center, black 25%, transparent 72%)",
-          WebkitMaskImage:
-            "radial-gradient(circle at center, black 25%, transparent 72%)",
-        }}
-      />
-
-      {/* soft circle behind */}
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-1 -left-3 h-[48%] w-[58%] rounded-full opacity-20"
-        style={{ backgroundColor: item.imageColor }}
-      />
-
-      {/* offset arch outline */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-y-[3%] left-[8%] right-[8%] translate-x-1.5 rounded-t-[999px] rounded-b-[16px] border-2 lg:translate-x-2.5"
-        style={{ borderColor: `${item.imageColor}55` }}
-      />
-
-      {/* photo in arch */}
-      <div className="absolute inset-y-[5%] left-[8%] right-[8%] overflow-hidden rounded-t-[999px] rounded-b-[16px] border-[3px] border-white shadow-[0_12px_26px_rgba(12,51,123,0.18)] lg:border-4">
-        <Image
-          src={item.image}
-          alt={item.imageAlt}
-          fill
-          sizes="(max-width: 1023px) 88px, 150px"
-          className={`object-cover ${item.imagePosition}`}
-        />
-      </div>
-
-      {/* accent dots */}
+    <div className="relative mx-auto flex h-[132px] w-full max-w-[340px] items-center justify-center sm:h-[145px] lg:h-[150px]">
+      {/* BACKGROUND CIRCLE */}
       <span
         aria-hidden="true"
-        className="absolute -right-1 top-[10%] h-3 w-3 rounded-full opacity-40"
-        style={{ backgroundColor: item.imageColor }}
+        className="absolute h-[110px] w-[110px] rounded-full bg-[#DDEAFF] sm:h-[125px] sm:w-[125px]"
       />
+
+      {/* DECORATIVE DOTS */}
       <span
         aria-hidden="true"
-        className="absolute -left-1 top-[22%] h-2 w-2 rounded-full bg-[#1765F5] opacity-60"
+        className="absolute left-[22%] top-[12%] h-2.5 w-2.5 rounded-full bg-[#A2C1FB]"
       />
+
+      <span
+        aria-hidden="true"
+        className="absolute bottom-[16%] right-[21%] h-3 w-3 rounded-full bg-[#1765F5]/20"
+      />
+
+      {/* IMAGE OR ICON */}
+      {guide.image ? (
+        <div className="relative h-[124px] w-[118px] overflow-hidden rounded-t-[65px] rounded-b-[18px] border-[3px] border-white bg-[#EAF2FF] shadow-[0_10px_25px_rgba(12,51,123,0.12)] sm:h-[136px] sm:w-[125px] lg:h-[144px] lg:w-[134px]">
+          <Image
+            src={guide.image}
+            alt={guide.title}
+            fill
+            sizes="(max-width: 639px) 118px, 134px"
+            className="object-cover object-center"
+          />
+        </div>
+      ) : (
+        <div className="relative flex h-[116px] w-[116px] items-center justify-center rounded-[30px] border border-[#C9DCFA] bg-white shadow-[0_12px_28px_rgba(12,51,123,0.10)] sm:h-[126px] sm:w-[126px]">
+          <Icon
+            size={56}
+            strokeWidth={1.35}
+            className="text-[#1765F5]"
+            aria-hidden="true"
+          />
+        </div>
+      )}
     </div>
   );
 }
 
 /* ==========================================
-   ORIGINAL INDIA HEADINGS
+   ACTIVE GUIDE CONTENT CARD
 ========================================== */
 
-function ContentHeading({ index }) {
-  if (index === 0) {
-    return (
-      <>
-        Making Your Next Move <span className="text-[#1765F5]">Count.</span>
-      </>
-    );
-  }
-
-  if (index === 1) {
-    return (
-      <>
-        A Program That <span className="text-[#1765F5]">Fits You</span>
-      </>
-    );
-  }
-
-  return (
-    <>
-      Guidance Beyond <span className="text-[#1765F5]">Admission</span>
-    </>
-  );
-}
-
-/* ==========================================
-   CHECK LIST ITEM
-========================================== */
-
-function CheckItem({ children }) {
-  return (
-    <li className="flex items-start gap-2.5 text-[12px] leading-[1.45] text-[#526B8C] sm:text-[13px]">
-      <span className="mt-[1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1765F5] text-white">
-        <Check size={12} strokeWidth={2.7} />
-      </span>
-
-      <span className="min-w-0 flex-1">{children}</span>
-    </li>
-  );
-}
-
-/* ==========================================
-   ORIGINAL STUDY IN INDIA BODY CONTENT
-   ALL PARAGRAPHS / LISTS PRESERVED
-========================================== */
-
-function IndiaSectionContent({ index }) {
-  if (index === 0) {
-    return (
-      <>
-        {/* ORIGINAL DESKTOP CONTENT */}
-        <div className="hidden space-y-2.5 text-[13px] leading-[1.6] text-[#526B8C] md:block">
-          <p>
-            An online regular degree program lets you earn a university degree through a{" "}
-            <strong className="font-semibold text-[#0C337B]">
-              structured online learning format
-            </strong>
-            , without attending campus every day.
-          </p>
-
-          <p>
-            You follow a defined curriculum with{" "}
-            <strong className="font-semibold text-[#0C337B]">
-              online classes, study material, assignments, assessments, and examinations
-            </strong>
-            , just like a regular academic program—delivered digitally.
-          </p>
-
-          <p>
-            It gives you the flexibility to pursue your{" "}
-            <strong className="font-semibold text-[#0C337B]">
-              degree and specialization
-            </strong>{" "}
-            while managing work, other studies, or personal commitments.
-          </p>
-        </div>
-
-        {/* ORIGINAL MOBILE CONTENT */}
-        <div className="space-y-2.5 text-[12.5px] leading-[1.55] text-[#526B8C] md:hidden">
-          <p>
-            An online regular degree lets you earn a university degree through{" "}
-            <strong className="font-semibold text-[#0C337B]">
-              online classes, study material, assignments, and examinations
-            </strong>
-            —without attending campus every day.
-          </p>
-
-          <p>
-            It offers the flexibility to pursue your{" "}
-            <strong className="font-semibold text-[#0C337B]">
-              degree and specialization
-            </strong>{" "}
-            while managing your other commitments.
-          </p>
-        </div>
-      </>
-    );
-  }
-
-  if (index === 1) {
-    return (
-      <ul className="space-y-2">
-        {programFitsYou.map((item) => (
-          <CheckItem key={item}>{item}</CheckItem>
-        ))}
-      </ul>
-    );
-  }
-
-  return (
-    <ul className="space-y-2">
-      {guidanceBeyondAdmission.map((item) => (
-        <CheckItem key={item}>{item}</CheckItem>
-      ))}
-    </ul>
-  );
-}
-
-/* ==========================================
-   RIGHT ACTIVE CONTENT CARD
-   mobile : [image | heading] then content below
-   desktop: image left, heading + content right
-========================================== */
-
-function ActiveContentCard({ activeIndex, onSelect, reduceMotion }) {
-  const item = sections[activeIndex];
+function ActiveGuideCard({
+  activeIndex,
+  onSelect,
+  reduceMotion,
+}) {
+  const guide = guides[activeIndex];
+  const Icon = guide.icon;
 
   return (
     <div
-      id="india-degree-panel"
+      id="india-guide-panel"
       role="tabpanel"
-      aria-labelledby={`india-degree-tab-${activeIndex}`}
-      className="relative flex min-w-0 flex-col overflow-hidden rounded-[22px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-4 shadow-[0_12px_35px_rgba(12,51,123,0.07)] sm:p-5"
+      aria-labelledby={`india-guide-tab-${activeIndex}`}
+      className="relative order-2 flex min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-4 shadow-[0_12px_35px_rgba(12,51,123,0.07)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:p-5"
     >
       {/* BACKGROUND DECORATIONS */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 -top-20 h-[220px] w-[220px] rounded-full border border-[#1765F5]/10"
+        className="pointer-events-none absolute -right-16 -top-20 h-[250px] w-[250px] rounded-full border border-[#1765F5]/10"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 -left-16 h-[200px] w-[200px] rounded-full bg-[#A2C1FB]/20 blur-[50px]"
+        className="pointer-events-none absolute -bottom-24 -left-16 h-[240px] w-[240px] rounded-full bg-[#A2C1FB]/20 blur-[55px]"
       />
 
-      {/* BACKGROUND NUMBER (soft) */}
+      {/* BACKGROUND GUIDE NUMBER */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute right-4 top-3 select-none text-[64px] font-black leading-none text-[#1765F5]/[0.07] sm:text-[76px]"
+        className="pointer-events-none absolute right-4 top-10 select-none text-[78px] font-black leading-none text-[#1765F5]/[0.06]"
       >
-        {item.id}
+        {guide.id}
       </span>
 
-      {/* BODY: keyed so it fades in on every tab change */}
+      {/* TOP BADGE */}
+      <span className="relative z-10 self-start rounded-full border border-[#C9DCFA] bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.06em] text-[#1765F5]">
+        India Study Guides
+      </span>
+
+      {/* ACTIVE GUIDE IMAGE */}
       <motion.div
-        key={item.id}
-        initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+        key={`visual-${guide.id}`}
+        initial={
+          reduceMotion
+            ? false
+            : { opacity: 0, y: 5 }
+        }
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.25 }}
-        className="relative z-10 grid grid-cols-[88px_1fr] items-center gap-x-3 gap-y-3 lg:min-h-[250px] lg:grid-cols-[150px_1fr] lg:gap-x-6"
+        transition={{
+          duration: reduceMotion ? 0 : 0.3,
+        }}
+        className="relative z-10 mt-1"
       >
-        {/* IMAGE */}
-        <div className="lg:row-span-2 lg:self-center">
-          <StudentVisual item={item} />
+        <GuideVisual guide={guide} />
+      </motion.div>
+
+      {/* ACTIVE GUIDE CONTENT */}
+      <motion.div
+        key={`content-${guide.id}`}
+        initial={
+          reduceMotion
+            ? false
+            : { opacity: 0, y: 8 }
+        }
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.25,
+        }}
+        className="relative z-10 mt-1 flex min-w-0 flex-1 flex-col"
+      >
+        {/* TAG / HEADING / DESCRIPTION */}
+        <div className="text-center">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#1765F5]">
+            <Icon size={13} />
+
+            {guide.tag}
+          </span>
+
+          <h3 className="mt-1 text-[20px] font-extrabold leading-[1.2] tracking-[-0.03em] text-[#0C337B] sm:text-[23px]">
+            {guide.title}
+          </h3>
+
+          <p className="mx-auto mt-1.5 max-w-[570px] text-[12px] leading-[1.6] text-[#526B8C]">
+            {guide.description}
+          </p>
         </div>
 
-        {/* ORIGINAL HEADING */}
-        <h3 className="text-[19px] font-extrabold leading-[1.2] tracking-[-0.03em] text-[#0C337B] sm:text-[22px] lg:self-end lg:text-[24px]">
-          <ContentHeading index={activeIndex} />
-        </h3>
+        {/* HIGHLIGHT POINTS */}
+        <div className="mt-2.5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {guide.points.map((point, index) => (
+            <div
+              key={`${guide.id}-${index}`}
+              className="flex min-w-0 items-start gap-2 rounded-[11px] border border-[#DAE7FA] bg-white/85 p-2.5"
+            >
+              {/* POINT ICON */}
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#EAF2FF] text-[#1765F5]">
+                <Check
+                  size={14}
+                  strokeWidth={2.6}
+                />
+              </span>
 
-        {/* ORIGINAL CONTENT */}
-        <div className="col-span-2 rounded-[13px] border border-[#DAE7FA] bg-white/90 p-3 sm:p-3.5 lg:col-span-1 lg:self-start">
-          <IndiaSectionContent index={activeIndex} />
+              {/* POINT CONTENT */}
+              <div className="min-w-0">
+                {point.label && (
+                  <span className="block text-[11px] font-bold text-[#0C337B]">
+                    {point.label}
+                  </span>
+                )}
+
+                <p className="text-[11px] leading-[1.5] text-[#526B8C]">
+                  {point.text}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
+
+        {/* READ MORE BUTTON */}
+        <Link
+          href={guide.href}
+          className="group mt-3 inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] bg-[#1765F5] px-5 py-2 text-[12px] font-bold text-white shadow-[0_6px_18px_rgba(23,101,245,0.2)] transition-all duration-300 hover:bg-[#0C337B] hover:shadow-[0_10px_25px_rgba(12,51,123,0.2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1765F5]"
+        >
+          Read More
+
+          <ArrowUpRight
+            size={16}
+            strokeWidth={2.2}
+            className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </Link>
       </motion.div>
 
       {/* CLICKABLE PROGRESS BARS */}
-      <div className="relative z-10 mt-3 flex items-center gap-1.5">
-        {sections.map((section, index) => (
+      <div className="relative z-10 mt-2 flex items-center gap-1.5">
+        {guides.map((item, index) => (
           <button
-            key={section.id}
+            key={item.id}
             type="button"
             onClick={() => onSelect(index)}
-            aria-label={`Go to section ${section.id}: ${section.title}`}
-            aria-current={index === activeIndex ? "step" : undefined}
+            aria-label={`Go to guide ${item.id}: ${item.title}`}
+            aria-current={
+              index === activeIndex
+                ? "step"
+                : undefined
+            }
             className="group flex-1 py-1"
           >
             <span
-              className={`block h-[3px] rounded-full transition-colors duration-300 ${
-                index === activeIndex
-                  ? "bg-[#1765F5]"
-                  : "bg-[#B8CEEE] group-hover:bg-[#8FB2EC]"
-              }`}
+              className={`block h-[3px] rounded-full transition-colors ${index === activeIndex ? "bg-[#1765F5]" : "bg-[#B8CEEE] group-hover:bg-[#8FB2EC]"}`}
             />
           </button>
         ))}
@@ -406,88 +464,139 @@ function ActiveContentCard({ activeIndex, onSelect, reduceMotion }) {
    MAIN COMPONENT
 ========================================== */
 
-export default function OnlineDegreeSection() {
+export default function StudyIndiaGuides() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const reduceMotion = useReducedMotion();
 
   /* KEYBOARD NAVIGATION */
   const handleKeyDown = (event) => {
-    const steps = {
+    const direction = {
       ArrowDown: 1,
       ArrowRight: 1,
       ArrowUp: -1,
       ArrowLeft: -1,
-    };
+    }[event.key];
 
-    const step = steps[event.key];
-
-    if (!step) return;
+    if (!direction) return;
 
     event.preventDefault();
 
-    const next = (activeIndex + step + sections.length) % sections.length;
+    const next =
+      (activeIndex + direction + guides.length) %
+      guides.length;
 
     setActiveIndex(next);
 
-    document.getElementById(`india-degree-tab-${next}`)?.focus();
+    document
+      .getElementById(`india-guide-tab-${next}`)
+      ?.focus();
   };
 
   return (
     <section
-      aria-labelledby="india-degree-section-title"
-      className="relative w-full overflow-hidden bg-white py-6 sm:py-8"
+      aria-labelledby="india-guide-section-title"
+      className="relative w-full overflow-hidden bg-white py-5 sm:py-7"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
-        {/* ORIGINAL SECTION HEADER (compact) */}
+      {/* MAIN CONTAINER */}
+      <div className="mx-auto w-full max-w-[1250px] px-3 sm:px-5 lg:px-6">
+
+        {/* SECTION HEADING */}
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, y: 12 }
+          }
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
           transition={{ duration: 0.45 }}
-          className="mx-auto mb-4 max-w-[760px] text-center sm:mb-5"
+          className="mx-auto mb-4 max-w-[720px] text-center"
         >
-          <span className="mb-1.5 inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
-            Study in India
-          </span>
+          <p className="mb-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
+            YOUR ONLINE DEGREE GUIDE
+          </p>
 
           <h2
-            id="india-degree-section-title"
-            className="text-[22px] font-extrabold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[27px] md:text-[32px]"
+            id="india-guide-section-title"
+            className="text-balance text-[22px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[27px] lg:text-[31px]"
           >
-            What Is an Online Regular{" "}
-            <span className="text-[#1765F5]">Degree Program?</span>
+            Your Next Academic Chapter:{" "}
+
+            <span className="text-[#1765F5]">
+              India
+            </span>
           </h2>
         </motion.div>
 
-        {/* TABS + ACTIVE CARD
-            MOBILE : 3 small tabs on top, card below
-            DESKTOP: tabs left (same height as card), card right */}
-        <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,0.62fr)_minmax(0,1.38fr)] lg:items-stretch lg:gap-5">
-          {/* LEFT TABS */}
+        {/* TABS + ACTIVE CARD + CTA */}
+        <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-rows-[1fr_auto] lg:gap-x-5 lg:gap-y-3">
+
+          {/* LEFT GUIDE TABS */}
           <div
             role="tablist"
-            aria-label="Online regular degree program information"
-            className="grid min-w-0 grid-cols-3 gap-2 lg:flex lg:flex-col"
+            aria-label="India online degree guides"
+            className="order-1 grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-3 lg:order-none lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col"
           >
-            {sections.map((item, index) => (
-              <SectionTab
-                key={item.id}
-                item={item}
-                index={index}
-                active={activeIndex === index}
-                onActivate={setActiveIndex}
-                onKeyDown={handleKeyDown}
-              />
+            {guides.map((guide, index) => (
+              <div
+                key={guide.id}
+                className={index === guides.length - 1 ? "col-span-2 sm:col-span-1 lg:flex lg:flex-1" : "min-w-0 lg:flex lg:flex-1"}
+              >
+                <GuideTab
+                  guide={guide}
+                  index={index}
+                  active={index === activeIndex}
+                  onActivate={setActiveIndex}
+                  onKeyDown={handleKeyDown}
+                />
+              </div>
             ))}
           </div>
 
-          {/* RIGHT ACTIVE CARD */}
-          <ActiveContentCard
+          {/* RIGHT ACTIVE GUIDE CARD */}
+          <ActiveGuideCard
             activeIndex={activeIndex}
             onSelect={setActiveIndex}
             reduceMotion={reduceMotion}
           />
+
+          {/* COUNSELLING CTA */}
+          <div className="relative order-3 flex min-w-0 flex-col items-start justify-between gap-2.5 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-3.5 text-white sm:flex-row sm:items-center lg:order-none lg:col-start-1 lg:row-start-2">
+
+            {/* DECORATIVE SHAPE */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"
+            />
+
+            {/* CTA TEXT */}
+            <div className="relative min-w-0">
+              <h3 className="text-[14px] font-bold">
+                Your India Study Journey Starts Here!
+              </h3>
+
+              <p className="mt-0.5 text-[11px] leading-[1.5] text-white/75">
+                Get expert guidance on online degree options.
+              </p>
+            </div>
+
+            {/* CTA BUTTON */}
+            <Link
+              href="/career-counselling"
+              className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EDF5FF]"
+            >
+              Book Free Counselling
+
+              <ArrowRight
+                size={15}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

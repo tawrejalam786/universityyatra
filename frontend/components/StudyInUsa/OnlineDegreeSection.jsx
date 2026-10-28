@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -26,88 +27,88 @@ import {
 } from "lucide-react";
 
 /* ==========================================
-   USA GUIDE TOPICS - ONLY 5 GUIDES
+   INDIA GUIDE TOPICS - ONLY 5 GUIDES
 ========================================== */
 
 const guides = [
   {
     id: "01",
-    slug: "academic-pathways",
-    tag: "STUDY IN USA",
-    title: "Study in USA",
-    shortTitle: "Education Pathways",
+    slug: "online-degree-program",
+    tag: "STUDY IN INDIA",
+    title: "Making Your Next Move Count.",
+    shortTitle: "Online Degree",
     icon: GraduationCap,
     description:
-      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees. From choosing a major to pursuing an MS or MBA, your options depend on your academic background and goals.",
+      "An online regular degree program lets you earn a university degree through a structured online learning format, without attending campus every day.",
     image: "/images/study-usa/3d/study-usa.png",
     points: [
-      { icon: GraduationCap, label: "Bachelor's", value: "Typically 4 years" },
-      { icon: BookOpen, label: "Master's", value: "Commonly 1–2 years" },
-      { icon: Calendar, label: "Main intakes", value: "Fall and Spring" },
+      { icon: GraduationCap, label: "Degree format", value: "Structured online university learning" },
+      { icon: BookOpen, label: "Coursework", value: "Classes, materials, assignments & exams" },
+      { icon: Calendar, label: "Flexibility", value: "Balance your degree with other commitments" },
     ],
   },
   {
     id: "02",
-    slug: "cost-of-studying",
-    tag: "TUITION & EXPENSES",
-    title: "Cost of Studying in USA",
-    shortTitle: "Tuition & Study Budget",
+    slug: "program-that-fits-you",
+    tag: "FIND YOUR PROGRAM",
+    title: "A Program That Fits You",
+    shortTitle: "Program Options",
     icon: DollarSign,
     description:
-      "Tuition depends on your university, degree, and field of study. Use these annual ranges to start planning your budget before comparing specific programs.",
+      "Compare 30+ universities and 5+ specializations. Explore UGC-recognized online degrees, choose flexible learning formats, and shortlist programs based on your goals and profile.",
     image: "/images/study-usa/3d/cost-studying.png",
     points: [
-      { icon: DollarSign, label: "Bachelor's", value: "US$19,000–40,000 / yr" },
-      { icon: Calculator, label: "Master's", value: "US$16,000–31,000 / yr" },
-      { icon: Home, label: "Additional costs", value: "Housing, food & fees" },
+      { icon: DollarSign, label: "Compare choices", value: "30+ universities and 5+ specializations" },
+      { icon: Calculator, label: "Recognition", value: "Explore UGC-recognized online programs" },
+      { icon: Home, label: "Your fit", value: "Flexible formats for your goals & profile" },
     ],
   },
   {
     id: "03",
-    slug: "living-and-culture",
-    tag: "COST OF LIVING & CULTURE",
-    title: "Cost of Living in USA",
-    shortTitle: "Living & Student Life",
+    slug: "guidance-beyond-admission",
+    tag: "ADMISSION GUIDANCE",
+    title: "Guidance Beyond Admission",
+    shortTitle: "Expert Guidance",
     icon: Home,
     description:
-      "Living costs depend on where you study and how you choose to live. A useful starting budget is US$1,000–2,500 per month, excluding tuition.",
+      "Understand eligibility, fees and program structure, get support with applications and documentation, and choose career-relevant specializations with expert guidance.",
     image: "/images/study-usa/3d/living-cost.png",
     points: [
-      { icon: Building2, label: "Housing", value: "Major living expense" },
-      { icon: Users, label: "Daily essentials", value: "Food, transit & utilities" },
-      { icon: ShieldCheck, label: "Campus life", value: "Clubs & community" },
+      { icon: Building2, label: "Eligibility & fees", value: "Understand requirements and program structure" },
+      { icon: Users, label: "Application support", value: "Help with applications and documentation" },
+      { icon: ShieldCheck, label: "Informed choices", value: "Career-relevant specializations & guidance" },
     ],
   },
   {
     id: "04",
-    slug: "scholarships-and-aid",
-    tag: "SCHOLARSHIPS & AID",
-    title: "Scholarships for Indian Students",
-    shortTitle: "Scholarships & Funding",
+    slug: "online-vs-regular-degree",
+    tag: "COMPARE DEGREE FORMATS",
+    title: "Online Degree vs Regular Degree",
+    shortTitle: "Degree Comparison",
     icon: Award,
     description:
-      "Indian students may qualify for merit-based scholarships, need-based financial aid, university awards, or graduate research funding. Opportunities depend on your profile.",
+      "Both pathways can lead to recognized qualifications when the university and specific program meet the applicable requirements. Compare learning formats before choosing.",
     image: "/images/study-usa/3d/scholarship.png",
     points: [
-      { icon: Award, label: "Merit-based", value: "Academic achievement" },
-      { icon: Sparkles, label: "Need-based", value: "Financial circumstances" },
-      { icon: Globe2, label: "External funding", value: "Fulbright-Nehru & Inlaks" },
+      { icon: Award, label: "Class mode", value: "Online learning vs campus classes" },
+      { icon: Sparkles, label: "Your schedule", value: "Flexible study vs fixed timetables" },
+      { icon: Globe2, label: "Study & work", value: "Choose the format that fits your routine" },
     ],
   },
   {
     id: "05",
-    slug: "post-study-visa",
-    tag: "POST-STUDY WORK VISA",
-    title: "Post-Study Work Visa USA",
-    shortTitle: "OPT & Work Pathways",
+    slug: "cost-of-studying",
+    tag: "FEES & STUDY BUDGET",
+    title: "Cost of Studying in India",
+    shortTitle: "Tuition & Costs",
     icon: Plane,
     description:
-      "Planning to work in the USA after graduation? Eligible F-1 students can apply for Optional Practical Training (OPT) to gain work experience related to their degree.",
+      "Education expenses vary by university, degree and study format. Compare tuition, other course charges, and available payment options before making a decision.",
     image: "/images/study-usa/3d/post-study.png",
     points: [
-      { icon: Clock, label: "OPT", value: "Up to 12 months" },
-      { icon: Sparkles, label: "STEM extension", value: "Up to 24 additional months" },
-      { icon: Briefcase, label: "After OPT", value: "Possible H-1B sponsorship" },
+      { icon: Clock, label: "Tuition fees", value: "Compare university and program fees" },
+      { icon: Sparkles, label: "Other expenses", value: "Exams, study materials and related costs" },
+      { icon: Briefcase, label: "Plan your budget", value: "Check scholarships & payment options" },
     ],
   },
 ];
@@ -123,9 +124,9 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
     <button
       type="button"
       role="tab"
-      id={`usa-guide-tab-${index}`}
+      id={`india-guide-tab-${index}`}
       aria-selected={active}
-      aria-controls="usa-guide-panel"
+      aria-controls="india-guide-panel"
       tabIndex={active ? 0 : -1}
       onClick={() => onActivate(index)}
       onPointerEnter={(e) => {
@@ -198,9 +199,9 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
 
   return (
     <div
-      id="usa-guide-panel"
+      id="india-guide-panel"
       role="tabpanel"
-      aria-labelledby={`usa-guide-tab-${activeIndex}`}
+      aria-labelledby={`india-guide-tab-${activeIndex}`}
       className="order-2 relative flex h-full flex-col overflow-hidden rounded-[22px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:p-6"
     >
       {/* BACKGROUND DECORATIONS */}
@@ -226,7 +227,7 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
       <div className="relative z-10 flex items-center justify-between gap-3">
         <span className="inline-flex items-center gap-2 rounded-full border border-[#C9DCFA] bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.06em] text-[#1765F5]">
           <GraduationCap size={14} />
-          USA Study Guides
+          India Study Guides
         </span>
       </div>
 
@@ -317,7 +318,7 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
 
         {/* READ MORE BUTTON */}
         <Link
-          href={`/study-in-usa/${guide.slug}`}
+          href={`/study-in-india/${guide.slug}`}
           className="group mt-4 inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-[11px] bg-[#1765F5] px-5 py-2.5 text-[12px] font-bold text-white shadow-[0_6px_18px_rgba(23,101,245,0.2)] transition-all duration-300 hover:bg-[#0C337B] hover:shadow-[0_10px_25px_rgba(12,51,123,0.2)]"
         >
           Read More About {guide.shortTitle}
@@ -381,12 +382,12 @@ export default function SupportSystem() {
 
     setActiveIndex(next);
 
-    document.getElementById(`usa-guide-tab-${next}`)?.focus();
+    document.getElementById(`india-guide-tab-${next}`)?.focus();
   };
 
   return (
     <section
-      aria-labelledby="usa-guide-section-title"
+      aria-labelledby="india-guide-section-title"
       className="relative w-full overflow-hidden bg-white py-8 sm:py-10"
     >
       {/* 1200px CONTAINER */}
@@ -400,19 +401,19 @@ export default function SupportSystem() {
           className="mx-auto mb-6 max-w-[720px] text-center"
         >
           <p className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#1765F5] sm:text-[11px]">
-            What studying in the USA means
+            What studying in India means
           </p>
 
           <h2
-            id="usa-guide-section-title"
+            id="india-guide-section-title"
             className="text-balance text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[28px] lg:text-[32px]"
           >
             Your Next Academic Chapter:{" "}
-            <span className="text-[#1765F5]">USA</span>
+            <span className="text-[#1765F5]">India</span>
           </h2>
 
           <p className="mx-auto mt-2 max-w-[600px] text-[12px] leading-[1.6] text-[#526B8C] sm:text-[13px]">
-            Guides to US education, costs, scholarships and post-study work,
+            Explore online degree programs, admission guidance, study formats and costs,
             all in one place.
           </p>
         </motion.div>
@@ -425,7 +426,7 @@ export default function SupportSystem() {
               desktop -> vertical list on the left */}
           <div
             role="tablist"
-            aria-label="USA study guides"
+            aria-label="India study guides"
             className="order-1 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:order-none lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col"
           >
             {guides.map((guide, index) => (
@@ -460,7 +461,7 @@ export default function SupportSystem() {
             {/* CTA TEXT */}
             <div className="relative">
               <h3 className="text-[14px] font-bold">
-                Your USA Dream Starts Here!
+                Your India Study Journey Starts Here!
               </h3>
 
               <p className="mt-0.5 text-[11px] leading-[1.5] text-white/75">
@@ -470,7 +471,7 @@ export default function SupportSystem() {
 
             {/* CTA BUTTON */}
             <Link
-              href="/counselling"
+              href="/career-counselling"
               className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EDF5FF]"
             >
               Book Free Counselling
@@ -486,3 +487,4 @@ export default function SupportSystem() {
     </section>
   );
 }
+ 

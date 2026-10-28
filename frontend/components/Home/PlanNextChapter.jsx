@@ -295,7 +295,7 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
                 alt="Student planning her educational future"
                 fill
                 sizes="(min-width: 1100px) 480px, (min-width: 1024px) 45vw, 100vw"
-                className="object-cover object-center"
+                className="object-top object-cover"
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#DCEBFF] to-[#A2C1FB]">

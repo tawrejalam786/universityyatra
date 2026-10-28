@@ -367,7 +367,7 @@ export default function Hero({
     duration: 0.6,
     delay: 0.3,
   }}
-  className="absolute inset-x-0 bottom-5 z-10 flex w-full flex-nowrap items-center justify-between gap-2 px-3 min-[390px]:px-4 sm:bottom-8 sm:px-6 lg:bottom-10 lg:px-8"
+  className="absolute inset-x-0 bottom-5 z-10 flex w-full flex-nowrap items-center justify-between gap-2 px-3 min-[390px]:px-4 sm:bottom-8 sm:px-6 lg:bottom-0 lg:px-8"
 >
 
   {/* CONSULTATION BUTTON - LEFT CORNER */}

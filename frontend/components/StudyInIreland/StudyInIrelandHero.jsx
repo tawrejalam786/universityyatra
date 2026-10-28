@@ -27,7 +27,7 @@ export default function StudyInIrelandHero() {
       ===================================== */}
       <div className="absolute inset-0 -z-30 overflow-hidden">
         <Image
-          src="/images/hero/study-in-ireland.webp"
+          src="/images/hero/study-in-irelands.webp"
           alt="Ireland landmarks and scenic landscapes"
           fill
           priority

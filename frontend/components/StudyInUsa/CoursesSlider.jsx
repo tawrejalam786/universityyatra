@@ -34,7 +34,7 @@ const courseCards = [
     course: "Computer Science (MS)",
     category: "masters",
     stem: true,
-    image: "/images/courses/computer-science-ms.webp",
+    image: "/images/courses/usa/computer-science-ms.webp",
     color: "#1765F5",
     description:
       "Build advanced skills in software systems, artificial intelligence, algorithms, and computing research.",
@@ -44,7 +44,7 @@ const courseCards = [
     course: "Business Analytics (MS)",
     category: "masters",
     stem: true,
-    image: "/images/courses/business-analytics-ms.webp",
+    image: "/images/courses/usa/business-analytics-ms.webp",
     color: "#0D9488",
     description:
       "Use statistics, data visualisation, and predictive modelling to support business decisions.",
@@ -54,7 +54,7 @@ const courseCards = [
     course: "Cybersecurity (MS)",
     category: "masters",
     stem: true,
-    image: "/images/courses/cybersecurity-ms.webp",
+    image: "/images/courses/usa/cybersecurity-ms.webp",
     color: "#7C3AED",
     description:
       "Learn to protect digital systems, assess security risks, and respond to cyber threats.",
@@ -64,7 +64,7 @@ const courseCards = [
     course: "Data Science (MS)",
     category: "masters",
     stem: true,
-    image: "/images/courses/data-science-ms.webp",
+    image: "/images/courses/usa/data-science-ms.webp",
     color: "#5D93F8",
     description:
       "Apply programming, statistical analysis, and machine learning to complex datasets.",
@@ -74,7 +74,7 @@ const courseCards = [
     course: "Business Administration (MBA)",
     category: "masters",
     stem: false,
-    image: "/images/courses/mba.webp",
+    image: "/images/courses/usa/mba.webp",
     color: "#F59E0B",
     description:
       "Develop skills in leadership, finance, marketing, operations, and business strategy.",
@@ -84,7 +84,7 @@ const courseCards = [
     course: "Finance (MS)",
     category: "masters",
     stem: false,
-    image: "/images/courses/finance-ms.webp",
+    image: "/images/courses/usa/finance-ms.webp",
     color: "#EC1682",
     description:
       "Study financial modelling, investment analysis, corporate finance, and risk management.",
@@ -94,7 +94,7 @@ const courseCards = [
     course: "Engineering (MS/MEng)",
     category: "masters",
     stem: true,
-    image: "/images/courses/engineering-ms.webp",
+    image: "/images/courses/usa/engineering-ms.webp",
     color: "#EA580C",
     description:
       "Specialise in areas such as electrical, mechanical, civil, or computer engineering through advanced coursework and projects.",
@@ -104,7 +104,7 @@ const courseCards = [
     course: "Economics (MA/MS)",
     category: "masters",
     stem: false,
-    image: "/images/courses/economics-masters.webp",
+    image: "/images/courses/usa/economics-masters.webp",
     color: "#4F46E5",
     description:
       "Study economic theory, markets, policy, and quantitative methods for analysing economic trends.",
@@ -114,7 +114,7 @@ const courseCards = [
     course: "Public Health (MPH)",
     category: "masters",
     stem: false,
-    image: "/images/courses/public-health.webp",
+    image: "/images/courses/usa/public-health.webp",
     color: "#16A34A",
     description:
       "Focus on epidemiology, health policy, disease prevention, and improving population health.",
@@ -124,7 +124,7 @@ const courseCards = [
     course: "Architecture (MArch)",
     category: "masters",
     stem: false,
-    image: "/images/courses/architecture.webp",
+    image: "/images/courses/usa/architecture.webp",
     color: "#B45309",
     description:
       "Develop skills in architectural design, building systems, and sustainable planning for the built environment.",
@@ -134,7 +134,7 @@ const courseCards = [
     course: "Film and Media Production (MFA/MA)",
     category: "masters",
     stem: false,
-    image: "/images/courses/film-media-production.webp",
+    image: "/images/courses/usa/film-media-production.webp",
     color: "#9333EA",
     description:
       "Study filmmaking, screenwriting, cinematography, and media production through practical and creative work.",
@@ -144,7 +144,7 @@ const courseCards = [
     course: "Biological Sciences (MS)",
     category: "masters",
     stem: true,
-    image: "/images/courses/biological-sciences-ms.webp",
+    image: "/images/courses/usa/biological-sciences-ms.webp",
     color: "#059669",
     description:
       "Study genetics, molecular biology, microbiology, and research methods for careers in life sciences.",
@@ -157,7 +157,7 @@ const courseCards = [
     course: "Computer Science (BS)",
     category: "bachelors",
     stem: true,
-    image: "/images/courses/computer-science-bs.webp",
+    image: "/images/courses/usa/computer-science-bs.webp",
     color: "#2563EB",
     description:
       "Learn programming, algorithms, software development, and the foundations of computing.",
@@ -167,7 +167,7 @@ const courseCards = [
     course: "Engineering (BS/BSE)",
     category: "bachelors",
     stem: true,
-    image: "/images/courses/engineering-bs.webp",
+    image: "/images/courses/usa/engineering-bs.webp",
     color: "#1047AC",
     description:
       "Build technical knowledge in engineering fields such as mechanical, electrical, civil, and computer engineering.",
@@ -177,7 +177,7 @@ const courseCards = [
     course: "Business Administration (BBA/BSBA)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses/business-administration-bs.webp",
+    image: "/images/courses/usa/business-administration-bs.webp",
     color: "#F59E0B",
     description:
       "Learn business fundamentals across management, marketing, accounting, finance, and operations.",
@@ -187,7 +187,7 @@ const courseCards = [
     course: "Finance (BS/BBA)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses/finance-bs.webp",
+    image: "/images/courses/usa/finance-bs.webp",
     color: "#EC1682",
     description:
       "Understand investments, financial markets, corporate finance, and financial planning.",
@@ -197,7 +197,7 @@ const courseCards = [
     course: "Economics (BA/BS)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses/economics-bs.webp",
+    image: "/images/courses/usa/economics-bs.webp",
     color: "#7C3AED",
     description:
       "Learn how markets, public policy, and economic decisions shape businesses and societies.",
@@ -207,7 +207,7 @@ const courseCards = [
     course: "Biological Sciences (BS)",
     category: "bachelors",
     stem: true,
-    image: "/images/courses/biological-sciences-bs.webp",
+    image: "/images/courses/usa/biological-sciences-bs.webp",
     color: "#16A34A",
     description:
       "Study living organisms, genetics, ecology, and cellular processes through coursework and laboratory work.",
@@ -217,7 +217,7 @@ const courseCards = [
     course: "Film and Media Studies (BA/BFA)",
     category: "bachelors",
     stem: false,
-    image: "/images/courses/film-media-studies.webp",
+    image: "/images/courses/usa/film-media-studies.webp",
     color: "#DB2777",
     description:
       "Learn about filmmaking, screen culture, storytelling, and media production.",

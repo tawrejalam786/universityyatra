@@ -27,7 +27,7 @@ export default function StudyInGermanyHero() {
       ===================================== */}
       <div className="absolute inset-0 -z-30 overflow-hidden">
         <Image
-          src="/images/hero/study-in-germany.webp"
+          src="/images/hero/study-in-germanys.webp"
           alt="Germany landmarks including Brandenburg Gate and historic architecture"
           fill
           priority

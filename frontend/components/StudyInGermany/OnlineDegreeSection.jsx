@@ -29,6 +29,7 @@ import {
 ========================================== */
 
 
+
 const guides = [
   {
     id: "01",
@@ -40,23 +41,23 @@ const guides = [
     image: "/images/study-usa/3d/study-usa.png",
 
     description:
-      "Germany offers world-class engineering programs and tuition-free or low-cost public universities for international students. Choose from bachelor's, master's, or PhD programs with strong industry connections.",
+      "Germany offers research-focused universities, applied learning, and specialised degree pathways for international students.",
 
     points: [
       {
         icon: GraduationCap,
-        label: "Bachelor's",
-        value: "Usually 3 years",
+        label: "Bachelor’s",
+        value: "Class 12 may not qualify for direct entry.",
       },
       {
         icon: BookOpen,
-        label: "Master's",
-        value: "Usually 2 years",
+        label: "Master’s",
+        value: "Subject-specific prerequisites can determine eligibility.",
       },
       {
-        icon: Calendar,
-        label: "Main intakes",
-        value: "Winter (October) and Summer (April)",
+        icon: Globe2,
+        label: "Language",
+        value: "English-taught courses exist; German can broaden career options.",
       },
     ],
   },
@@ -71,36 +72,27 @@ const guides = [
     image: "/images/study-usa/3d/cost-studying.png",
 
     description:
-      "Public universities in Germany typically charge no tuition or only semester fees (around EUR 300-500). Private universities may charge EUR 10,000-20,000 per year. Budget for living expenses of EUR 850-1,200 monthly.",
+      "Tuition depends on your university, programme, and state. Plan beyond tuition to understand the full financial commitment.",
 
     points: [
       {
+        icon: GraduationCap,
+        label: "Public universities",
+        value: "Many charge no general tuition.",
+      },
+      {
         icon: Calculator,
-        label: "Public university",
-        value: "EUR 0-500/semester",
-      },
-      {
-        icon: DollarSign,
-        label: "Private university",
-        value: "EUR 10,000-20,000/year",
-      },
-      {
-        icon: Home,
-        label: "Living expenses",
-        value: "EUR 850-1,200/month",
+        label: "Blocked account",
+        value: "€11,904 financial proof for 2026.",
       },
       {
         icon: Wallet,
-        label: "Health insurance",
-        value: "EUR 110/month (mandatory)",
+        label: "Additional costs",
+        value: "Semester contributions, insurance, and setup expenses.",
       },
     ],
-
-    note:
-      "Tuition and living costs are separate. Plan for both before applying.",
   },
 
-  // COST OF LIVING & CULTURE
   {
     id: "03",
     slug: "living-and-culture",
@@ -111,23 +103,23 @@ const guides = [
     image: "/images/study-usa/3d/living-cost.png",
 
     description:
-      "Your living costs vary by city—Munich and Frankfurt are more expensive than Leipzig or Berlin. Germany offers efficient public transport, affordable student accommodation, and a rich cultural experience.",
+      "Your monthly budget depends heavily on rent, city choice and everyday expenses. Plan beyond accommodation to understand the real cost of student life.",
 
     points: [
       {
-        icon: Home,
-        label: "Biggest variable",
-        value: "Accommodation and city choice",
-      },
-      {
         icon: Wallet,
-        label: "Plan for",
-        value: "Food, transport, health insurance, winter clothing",
+        label: "Monthly budget",
+        value: "Plan around €900–€1,200 as a starting estimate.",
       },
       {
-        icon: Globe2,
-        label: "Culture",
-        value: "Engineering excellence, punctuality, diverse student communities",
+        icon: Home,
+        label: "Accommodation",
+        value: "Student residences and shared flats can help manage rent.",
+      },
+      {
+        icon: DollarSign,
+        label: "Extra costs",
+        value: "Budget separately for deposits and settling-in expenses.",
       },
     ],
   },
@@ -142,23 +134,23 @@ const guides = [
     image: "/images/study-usa/3d/scholarship.png",
 
     description:
-      "Germany offers scholarships through DAAD, university-specific programs, and research grants. Opportunities are available for bachelor's, master's, and PhD students based on academic merit and research potential.",
+      "Funding opportunities depend on your academic profile, course and eligibility. Explore scholarships before finalising your study budget.",
 
     points: [
       {
         icon: Award,
-        label: "DAAD Scholarships",
-        value: "Merit-based funding for international students",
+        label: "DAAD",
+        value: "Funding for selected study and research pathways.",
       },
       {
         icon: Sparkles,
-        label: "Master's & PhD",
-        value: "Research and university-specific grants",
+        label: "Erasmus Mundus",
+        value: "Scholarships for eligible international joint master's programmes.",
       },
       {
         icon: GraduationCap,
-        label: "Eligibility",
-        value: "Academic excellence and research proposals",
+        label: "Deutschlandstipendium",
+        value: "€300 per month for selected students at participating universities.",
       },
     ],
   },
@@ -173,27 +165,28 @@ const guides = [
     image: "/images/study-usa/3d/post-study.png",
 
     description:
-      "Germany offers an 18-month job seeker visa after graduation, allowing international students to find work matching their qualifications. After working, you may be eligible for EU Blue Card and permanent residence.",
+      "Germany offers eligible international graduates a pathway from university to skilled employment.",
 
     points: [
       {
         icon: Clock,
-        label: "Job seeker visa",
-        value: "18 months after graduation",
+        label: "18-month permit",
+        value: "Time to find qualified work after graduation.",
       },
       {
         icon: FileCheck2,
         label: "EU Blue Card",
-        value: "For skilled workers with job offers",
+        value: "Requires a qualifying job offer and salary.",
       },
       {
         icon: BriefcaseBusiness,
-        label: "PR pathway",
-        value: "Possible after 21-33 months of work",
+        label: "Long-term stay",
+        value: "Eligible graduates may later qualify for settlement.",
       },
     ],
   },
 ];
+
 
 
 /* ==========================================

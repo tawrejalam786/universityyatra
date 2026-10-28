@@ -29,89 +29,199 @@ const tabs = [
    Specializations replaced with descriptions.
 ========================================= */
 
+
 const courseCards = [
+  // ==========================================
+  // MASTER'S DEGREE PROGRAMS (01–10)
+  // ==========================================
+
   {
     id: 1,
-    course: "BBA",
-    category: "bachelors",
-    image: "/images/courses/bba.png",
+    course: "MSc Computer Science",
+    category: "masters",
+    image: "/images/courses/ireland/computer-science-ms.webp",
     color: "#2563EB",
     description:
-      "Build a strong foundation in business management, marketing, finance, and organisational operations while developing leadership and decision-making skills.",
+      "Explore advanced computing, software engineering and algorithms for careers in technology and software development.",
   },
   {
     id: 2,
-    course: "BCA",
-    category: "bachelors",
-    image: "/images/courses/bca.png",
+    course: "MSc Data Science and Artificial Intelligence",
+    category: "masters",
+    image: "/images/courses/ireland/data-science-ai.webp",
     color: "#0DAA9A",
     description:
-      "Develop essential skills in computer applications, programming, software development, databases, and information technology for a career in the digital world.",
+      "Develop skills in machine learning, statistical modelling and AI-driven problem-solving across industries.",
   },
   {
     id: 3,
-    course: "MBA",
+    course: "MSc Mechanical Engineering",
     category: "masters",
-    image: "/images/courses/mba.png",
+    image: "/images/courses/ireland/mechanical-engineering-ms.webp",
     color: "#F59E0B",
     description:
-      "Strengthen your understanding of business strategy, leadership, operations, finance, and management to prepare for professional and managerial responsibilities.",
+      "Study advanced design, manufacturing, materials and engineering systems for technical and industrial careers.",
   },
   {
     id: 4,
-    course: "MCA",
+    course: "MSc Automotive Engineering",
     category: "masters",
-    image: "/images/courses/mca.png",
+    image: "/images/courses/ireland/automotive-engineering-ms.webp",
     color: "#7C3AED",
     description:
-      "Advance your knowledge of computer science, application development, programming, software systems, and modern computing technologies.",
+      "Explore vehicle design, automotive technologies and sustainable mobility through advanced engineering concepts.",
   },
   {
     id: 5,
-    course: "B.Com",
-    category: "bachelors",
-    image: "/images/courses/bcom.png",
+    course: "MSc Robotics and Automation",
+    category: "masters",
+    image: "/images/courses/ireland/robotics-automation-ms.webp",
     color: "#EC1682",
     description:
-      "Gain foundational knowledge of accounting, commerce, taxation, financial management, and business principles for opportunities in finance and related fields.",
+      "Learn about intelligent machines, control systems, robotics and automated industrial processes.",
   },
   {
     id: 6,
-    course: "M.Com",
+    course: "MSc Engineering Management",
     category: "masters",
-    image: "/images/courses/mcom.png",
+    image: "/images/courses/ireland/engineering-management-ms.webp",
     color: "#4F46E5",
     description:
-      "Develop advanced understanding of commerce, accounting, financial analysis, economics, and business practices to strengthen your professional knowledge.",
+      "Combine technical knowledge with project management, operations and strategic decision-making.",
   },
   {
     id: 7,
-    course: "M.Sc.",
+    course: "MSc International Business and Management",
     category: "masters",
-    image: "/images/courses/msc.png",
+    image: "/images/courses/ireland/international-business-management.webp",
     color: "#16A34A",
     description:
-      "Deepen your subject knowledge through advanced scientific concepts, analytical methods, research approaches, and practical problem-solving skills.",
+      "Understand global markets, business strategy and cross-cultural management in an international business environment.",
   },
   {
     id: 8,
-    course: "MA",
+    course: "MSc Renewable Energy Engineering",
     category: "masters",
-    image: "/images/courses/ma.png",
+    image: "/images/courses/ireland/renewable-energy-engineering.webp",
     color: "#EF4444",
     description:
-      "Explore advanced concepts in humanities and social sciences while developing critical thinking, research, communication, and analytical abilities.",
+      "Explore clean energy technologies, sustainable power systems and renewable energy project development.",
   },
   {
     id: 9,
-    course: "BA",
-    category: "bachelors",
-    image: "/images/courses/ba.png",
+    course: "MSc Biotechnology",
+    category: "masters",
+    image: "/images/courses/ireland/biotechnology-ms.webp",
     color: "#06B6D4",
     description:
-      "Build a broad understanding of humanities and social sciences while strengthening communication, critical thinking, and analytical skills.",
+      "Study molecular biology, bioprocessing and biotechnology applications in healthcare, pharmaceuticals and industry.",
+  },
+  {
+    id: 10,
+    course: "MSc Supply Chain Management",
+    category: "masters",
+    image: "/images/courses/ireland/supply-chain-management-ms.webp",
+    color: "#B45309",
+    description:
+      "Build expertise in logistics, procurement, operations and global supply chain planning.",
+  },
+
+  // ==========================================
+  // BACHELOR'S DEGREE PROGRAMS (11–20)
+  // ==========================================
+
+  {
+    id: 11,
+    course: "BSc Computer Science",
+    category: "bachelors",
+    image: "/images/courses/ireland/computer-science-bs.webp",
+    color: "#2563EB",
+    description:
+      "Build foundations in programming, algorithms, software development and computer systems.",
+  },
+  {
+    id: 12,
+    course: "BEng Mechanical Engineering",
+    category: "bachelors",
+    image: "/images/courses/ireland/mechanical-engineering-bs.webp",
+    color: "#EA580C",
+    description:
+      "Learn engineering design, materials, thermodynamics and mechanical systems through theory and practical work.",
+  },
+  {
+    id: 13,
+    course: "BEng Automotive Engineering",
+    category: "bachelors",
+    image: "/images/courses/ireland/automotive-engineering-bs.webp",
+    color: "#7C3AED",
+    description:
+      "Explore vehicle engineering, automotive systems, manufacturing and emerging mobility technologies.",
+  },
+  {
+    id: 14,
+    course: "BSc Data Science",
+    category: "bachelors",
+    image: "/images/courses/ireland/data-science-bs.webp",
+    color: "#0DAA9A",
+    description:
+      "Learn statistics, programming, data visualisation and analytical techniques for evidence-based decisions.",
+  },
+  {
+    id: 15,
+    course: "BEng Electrical Engineering",
+    category: "bachelors",
+    image: "/images/courses/ireland/electrical-engineering-bs.webp",
+    color: "#F59E0B",
+    description:
+      "Study electrical circuits, power systems, electronics and the technologies behind modern infrastructure.",
+  },
+  {
+    id: 16,
+    course: "Bachelor’s in Business Administration",
+    category: "bachelors",
+    image: "/images/courses/ireland/business-administration-bs.webp",
+    color: "#EC1682",
+    description:
+      "Explore marketing, finance, management and entrepreneurship to build a broad business foundation.",
+  },
+  {
+    id: 17,
+    course: "BSc Biotechnology",
+    category: "bachelors",
+    image: "/images/courses/ireland/biotechnology-bs.webp",
+    color: "#16A34A",
+    description:
+      "Discover biology, genetics and laboratory methods used in healthcare, research and biotechnology industries.",
+  },
+  {
+    id: 18,
+    course: "BA Economics",
+    category: "bachelors",
+    image: "/images/courses/ireland/economics-bs.webp",
+    color: "#4F46E5",
+    description:
+      "Understand markets, economic policy, data analysis and the decisions that shape economies.",
+  },
+  {
+    id: 19,
+    course: "BSc Environmental Science",
+    category: "bachelors",
+    image: "/images/courses/ireland/environmental-science-bs.webp",
+    color: "#059669",
+    description:
+      "Study ecosystems, climate challenges, conservation and sustainable approaches to environmental management.",
+  },
+  {
+    id: 20,
+    course: "BA International Relations",
+    category: "bachelors",
+    image: "/images/courses/ireland/international-relations-ba.webp",
+    color: "#0C337B",
+    description:
+      "Explore global politics, diplomacy, international institutions and the forces shaping world affairs.",
   },
 ];
+
 
 /* =========================================
    COMPACT CATEGORY PILL
@@ -183,9 +293,9 @@ export default function CoursesSlider() {
   /* CATEGORY TITLE */
   const categoryTitle =
     activeTab === "masters"
-      ? "Master's Degree Programs"
+      ? "Master's Degree Programs for Indian Students"
       : activeTab === "bachelors"
-      ? "Bachelor's Degree Programs"
+      ? "Bachelor's Degree Programs for Indian Students"
       : "All Degree Programs";
 
   return (
@@ -217,7 +327,7 @@ export default function CoursesSlider() {
           className="mb-5"
         >
           <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[32px] md:text-[36px]">
-            Courses
+            Explore Courses in Ireland
           </h2>
 
           {/* ACCENT DECORATION */}

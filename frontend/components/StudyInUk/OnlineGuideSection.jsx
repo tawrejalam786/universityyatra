@@ -28,6 +28,7 @@ import {
    UK GUIDE TOPICS - 5 GUIDES
 ========================================== */
 
+
 const guides = [
   {
     id: "01",
@@ -36,80 +37,166 @@ const guides = [
     title: "Study in the UK",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    description:
-      "UK universities offer bachelor's degrees (3-4 years) and specialised postgraduate degrees (1-2 years). From understanding degree structures to choosing the right course, your pathway depends on your background and goals.",
     image: "/images/study-usa/3d/study-usa.png",
+
+    description:
+      "Understand UK degree options, course requirements, and university applications before choosing your study pathway.",
+
     points: [
-      { icon: GraduationCap, label: "Bachelor's", value: "3-4 years" },
-      { icon: BookOpen, label: "Master's", value: "Typically 1 year" },
-      { icon: Calendar, label: "Main intakes", value: "September & January" },
+      {
+        icon: GraduationCap,
+        label: "Bachelor's",
+        value: "Usually 3 years, or 4 in Scotland.",
+      },
+      {
+        icon: BookOpen,
+        label: "Master's",
+        value: "Many full-time taught programmes take 1 year.",
+      },
+      {
+        icon: Calendar,
+        label: "Admissions",
+        value: "Requirements vary by course and university.",
+      },
     ],
   },
+
   {
     id: "02",
     slug: "cost-of-studying",
     tag: "TUITION & EXPENSES",
-    title: "Cost of Studying in UK",
+    title: "Cost of Studying in the UK",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    description:
-      "Tuition depends on your university, degree, and field of study. International students should plan for tuition, living costs, visa fees, and accommodation across the full duration of study.",
     image: "/images/study-usa/3d/cost-studying.png",
+
+    description:
+      "Your total study budget depends on tuition, course duration, accommodation, and location. Plan for living expenses and immigration costs alongside your university fees.",
+
     points: [
-      { icon: DollarSign, label: "Bachelor's", value: "£11,400–£38,000 / yr" },
-      { icon: Calculator, label: "Master's", value: "£11,000–£35,000 / yr" },
-      { icon: Home, label: "Additional costs", value: "Visa, IHS & fees" },
+      {
+        icon: DollarSign,
+        label: "Tuition",
+        value: "Varies by course and institution.",
+      },
+      {
+        icon: Calculator,
+        label: "Visa maintenance funds",
+        value:
+          "£13,761 in London or £10,539 outside London for the standard nine-month calculation.",
+      },
+      {
+        icon: Home,
+        label: "Additional costs",
+        value:
+          "Visa fee, IHS, travel, deposits, and study materials.",
+      },
     ],
   },
+
   {
     id: "03",
     slug: "living-and-culture",
     tag: "COST OF LIVING & CULTURE",
-    title: "Cost of Living & Culture",
+    title: "Cost of Living & Culture in the UK",
     shortTitle: "Living & Student Life",
     icon: Home,
-    description:
-      "Living costs depend on your location and accommodation choices. Budget around £830–£2,300+ per month for living expenses, with London generally more expensive than regional cities.",
     image: "/images/study-usa/3d/living-cost.png",
+
+    description:
+      "Plan for everyday expenses while preparing for life in a diverse, multicultural student community.",
+
     points: [
-      { icon: Building2, label: "Accommodation", value: "£450–£1,500+ / mo" },
-      { icon: Users, label: "Daily essentials", value: "Food, transit & utilities" },
-      { icon: Home, label: "Student life", value: "Culture & communities" },
+      {
+        icon: Calculator,
+        label: "Monthly budget",
+        value:
+          "Around £900–£1,400 outside London; London can cost more.",
+      },
+      {
+        icon: Building2,
+        label: "Accommodation",
+        value:
+          "Halls, shared housing, and private studios offer different cost and privacy trade-offs.",
+      },
+      {
+        icon: Users,
+        label: "Student life",
+        value:
+          "Discover international food, cultural events, music, sport, and university societies.",
+      },
     ],
   },
+
   {
     id: "04",
     slug: "scholarships-and-funding",
     tag: "SCHOLARSHIPS & FUNDING",
-    title: "Scholarships in the UK",
+    title: "Scholarships in the UK for Indian Students",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    description:
-      "Indian students may qualify for Chevening, GREAT Scholarships, Commonwealth schemes, university awards, or merit-based funding. Opportunities depend on your course, profile, and eligibility.",
     image: "/images/study-usa/3d/scholarship.png",
+
+    description:
+      "Explore funding options that can help reduce the cost of a UK degree. Eligibility depends on your course, academic profile, and the scholarship provider.",
+
     points: [
-      { icon: Award, label: "Chevening", value: "Government-funded" },
-      { icon: Sparkles, label: "University awards", value: "Merit & merit-based" },
-      { icon: Globe2, label: "External funding", value: "GREAT & Commonwealth" },
+      {
+        icon: Award,
+        label: "Major awards",
+        value:
+          "Chevening, GREAT, and eligible Commonwealth schemes.",
+      },
+      {
+        icon: Sparkles,
+        label: "University funding",
+        value:
+          "Merit-based and course-specific scholarships.",
+      },
+      {
+        icon: BookOpen,
+        label: "Application essentials",
+        value:
+          "Check eligibility, documents, coverage, and deadlines.",
+      },
     ],
   },
+
   {
     id: "05",
     slug: "post-study-work-visa",
     tag: "POST-STUDY WORK VISA",
-    title: "Post-Study Work Visa",
+    title: "Post-Study Work Visa in the UK",
     shortTitle: "Graduate Visa & Work",
     icon: Plane,
-    description:
-      "Eligible graduates can apply for a Graduate visa to work in the UK after completing their degree. Visa duration depends on your qualification level and application date.",
     image: "/images/study-usa/3d/post-study.png",
+
+    description:
+      "Understand your options for working in the UK after graduation, from the Graduate visa to employer-sponsored employment.",
+
     points: [
-      { icon: Clock, label: "Graduate Visa", value: "2 years / 18 months" },
-      { icon: Sparkles, label: "PhD graduates", value: "3 years available" },
-      { icon: Briefcase, label: "Work flexibility", value: "Most jobs welcome" },
+      {
+        icon: Clock,
+        label: "Graduate visa",
+        value:
+          "2 years for applications by 31 December 2026; 18 months from 1 January 2027.",
+      },
+      {
+        icon: GraduationCap,
+        label: "Doctoral graduates",
+        value:
+          "Eligible PhD graduates can receive 3 years.",
+      },
+      {
+        icon: Briefcase,
+        label: "Long-term work",
+        value:
+          "A qualifying job and sponsorship may enable a Skilled Worker visa application.",
+      },
     ],
   },
 ];
+
 
 /* ==========================================
    TAB (2-col grid on mobile, list on desktop)
