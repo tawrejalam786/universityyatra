@@ -84,6 +84,7 @@ For Indian students planning to study in Canada, the best starting point is to m
     id: "02",
     vol: "VOL. II",
     slug: "cost-of-studying",
+    summary: "Your budget depends on your qualification, program, and institution. The latest national averages put international tuition at CAD 24,028/year for graduate students and CAD 41,746/year for undergraduates.\n\n- Living-funds threshold: CAD 23,448 for a single applicant outside Quebec applying from September 1, 2026.\n- Other costs: Insurance, books, deposits, travel, and study-permit fees.\n\nTuition and living funds are separate. Plan for both before applying.",
     title: "Cost of Studying in Canada",
     shortTitle: "Cost of Studying",
     badge: "Tuition, Fees & Budget Guide",
@@ -102,33 +103,33 @@ Your tuition depends on the qualification you choose, your field of study, and t
 
 ### Master's Degree Tuition Fees
 
-For a postgraduate budget, **CAD 20,000–38,000 per year (approximately ₹13.6–25.8 lakh)** is a useful initial planning range for many master's programs. Some professional degrees, including certain MBA programs, can cost considerably more.
+For a postgraduate budget, CAD 20,000–38,000 per year (approximately ₹13.6–25.8 lakh) is a useful initial planning range for many master's programs. Some professional degrees, including certain MBA programs, can cost considerably more.
 
-For context, the latest national figures published by the Government of Canada's EduCanada portal report average annual tuition of **CAD 24,028 for international graduate students**. This is a national average for graduate study, not a guaranteed price for a specific master's program. Research-based programs may also have funding arrangements that change the amount a student ultimately pays.
+For context, the latest national figures published by the Government of Canada's EduCanada portal report average annual tuition of CAD 24,028 for international graduate students. This is a national average for graduate study, not a guaranteed price for a specific master's program. Research-based programs may also have funding arrangements that change the amount a student ultimately pays.
 
-**Bachelor's Degree Tuition Fees**
+### Bachelor's Degree Tuition Fees
 
-For undergraduate students, a useful initial planning range is **CAD 25,000–45,000 per year (approximately ₹17–30.6 lakh)**, although individual programs can fall outside it.
+For undergraduate students, a useful initial planning range is CAD 25,000–45,000 per year (approximately ₹17–30.6 lakh), although individual programs can fall outside it.
 
-The latest national average published by EduCanada is **CAD 41,746 per year for international undergraduate students**. Professional programs and certain high-demand courses may cost more, while fees at individual institutions can differ substantially.
+The latest national average published by EduCanada is CAD 41,746 per year for international undergraduate students. Professional programs and certain high-demand courses may cost more, while fees at individual institutions can differ substantially.
 
-**College Diplomas and Postgraduate Certificates**
+### College Diplomas and Postgraduate Certificates
 
-Students considering colleges and polytechnics should compare the exact credential and program duration before budgeting. EduCanada gives an indicative range of **CAD 16,000–25,000 per year** for international students in college diploma programs, including mandatory fees such as student association fees and health insurance. Books and supplies may be additional.
+Students considering colleges and polytechnics should compare the exact credential and program duration before budgeting. EduCanada gives an indicative range of CAD 16,000–25,000 per year for international students in college diploma programs, including mandatory fees such as student association fees and health insurance. Books and supplies may be additional.
 
 A postgraduate certificate is not automatically equivalent to a master's degree. Check the credential awarded, entry requirements, and how the program fits your academic and career plans before comparing prices.
 
-*INR conversions above use an illustrative exchange rate of CAD 1 = ₹68. Your actual rupee cost will depend on the exchange rate and bank charges when you transfer funds.*
+INR conversions above use an illustrative exchange rate of CAD 1 = ₹68. Your actual rupee cost will depend on the exchange rate and bank charges when you transfer funds.
 
 ## What Is Included in Your Study Budget?
 
 Tuition is usually the largest academic expense, but it is not the only one. When calculating the total cost of studying in Canada, include these additional items.
 
-- **Mandatory University Fees:** Student association fees, campus services, registration charges, and other compulsory fees may be charged separately or included in the published tuition estimate.
-- **Health Insurance:** Coverage arrangements differ by province and institution. Some students are enrolled in a university plan, while other provinces or institutions have different arrangements. Check the premium, coverage period, and eligibility rules for your destination.
-- **Books, Supplies and Software:** Textbooks, specialist software, laboratory materials, and equipment can add to your academic expenses. Requirements depend on your course.
-- **Application Fees and Tuition Deposits:** Universities and colleges may charge application fees. After accepting an offer, you may also need to pay a deposit towards your tuition. Check whether the deposit is refundable and how it is applied to your fees.
-- **Study Permit and Biometrics:** The standard Canadian study-permit application fee is CAD 150, and the individual biometrics fee is CAD 85 when required. Confirm the current fees and your specific requirements on the official government website. 
+- Mandatory University Fees: Student association fees, campus services, registration charges, and other compulsory fees may be charged separately or included in the published tuition estimate.
+- Health Insurance: Coverage arrangements differ by province and institution. Some students are enrolled in a university plan, while other provinces or institutions have different arrangements. Check the premium, coverage period, and eligibility rules for your destination.
+- Books, Supplies and Software: Textbooks, specialist software, laboratory materials, and equipment can add to your academic expenses. Requirements depend on your course.
+- Application Fees and Tuition Deposits: Universities and colleges may charge application fees. After accepting an offer, you may also need to pay a deposit towards your tuition. Check whether the deposit is refundable and how it is applied to your fees.
+- Study Permit and Biometrics: The standard Canadian study-permit application fee is CAD 150, and the individual biometrics fee is CAD 85 when required. Confirm the current fees and your specific requirements on the official government website.
 
 These costs should be included in your budget even when they are not part of the advertised annual tuition.
 
@@ -136,13 +137,13 @@ These costs should be included in your budget even when they are not part of the
 
 One important part of planning to study in Canada is understanding the financial-support requirements for your study-permit application.
 
-For applications made on or after **September 1, 2026**, a single student applying to study outside Quebec must show **CAD 23,448 for one year's living expenses**, excluding tuition and transportation. The amount increases if family members accompany the applicant. Quebec has separate financial requirements. 
+For applications made on or after September 1, 2026, a single student applying to study outside Quebec must show CAD 23,448 for one year's living expenses, excluding tuition and transportation. The amount increases if family members accompany the applicant. Quebec has separate financial requirements.
 
 This is a government financial-support threshold, not a prediction of exactly how much you will spend. Your actual living costs may be higher or lower depending on accommodation, location, transport, and personal habits.
 
-You must also show that you can pay your tuition and transportation costs. For a program lasting longer than one year, you need to explain how you plan to finance the full duration of your studies. The government may accept different forms of financial evidence, including bank statements, education loans, scholarship documentation, and a Guaranteed Investment Certificate (GIC), where applicable. 
+You must also show that you can pay your tuition and transportation costs. For a program lasting longer than one year, you need to explain how you plan to finance the full duration of your studies. The government may accept different forms of financial evidence, including bank statements, education loans, scholarship documentation, and a Guaranteed Investment Certificate (GIC), where applicable.
 
-**A GIC is not a universal requirement for every study-permit applicant.** Check the current instructions for your application route rather than relying on older references to the former Student Direct Stream.
+A GIC is not a universal requirement for every study-permit applicant. Check the current instructions for your application route rather than relying on older references to the former Student Direct Stream.
 
 ## What Affects Tuition Fees in Canada?
 
@@ -154,9 +155,9 @@ A master's degree, MBA, bachelor's degree, and college diploma have different tu
 
 ### 2. Province and Institution
 
-Tuition varies across provinces and institutions. Statistics Canada's 2025–26 data show that Ontario has some of the highest average international tuition fees, while fees can be considerably lower in provinces such as Newfoundland and Labrador. Compare actual program fees rather than assuming every institution in a province charges the same amount. 
+Tuition varies across provinces and institutions. Statistics Canada's 2025–26 data show that Ontario has some of the highest average international tuition fees, while fees can be considerably lower in provinces such as Newfoundland and Labrador. Compare actual program fees rather than assuming every institution in a province charges the same amount.
 
-**3. Field of Study**
+### 3. Field of Study
 
 Business, engineering, computer science, healthcare, and other specialised programs can have different fee structures. Some courses require laboratory access, specialist equipment, placements, or professional training, which can affect the total cost.
 
@@ -168,11 +169,11 @@ Annual tuition alone does not tell you the full cost of a degree. A program with
 
 The difference between a manageable budget and a financial shortfall often comes down to expenses that are not immediately visible on a university's fee page.
 
-- **Tuition Deposit:** You may need to pay a deposit to secure your place. This is usually credited towards tuition if you enrol, but the amount and refund rules depend on the institution.
-- **First-Month Housing Costs:** Rent may require a deposit or advance payment, and temporary accommodation can be necessary before you move into your longer-term housing.
-- **Initial Setup:** Winter clothing, bedding, kitchen supplies, a mobile plan, and local transport can create significant expenses during your first few weeks.
-- **Currency Exchange and Transfers:** The rupee amount your family pays can change with the exchange rate, transfer fees, and payment timing. A small exchange-rate movement can make a noticeable difference when paying a large tuition instalment.
-- **Course-Specific Charges:** Laboratory supplies, studio materials, software, fieldwork, or professional examinations may not be covered by standard tuition.
+- Tuition Deposit: You may need to pay a deposit to secure your place. This is usually credited towards tuition if you enrol, but the amount and refund rules depend on the institution.
+- First-Month Housing Costs: Rent may require a deposit or advance payment, and temporary accommodation can be necessary before you move into your longer-term housing.
+- Initial Setup: Winter clothing, bedding, kitchen supplies, a mobile plan, and local transport can create significant expenses during your first few weeks.
+- Currency Exchange and Transfers: The rupee amount your family pays can change with the exchange rate, transfer fees, and payment timing. A small exchange-rate movement can make a noticeable difference when paying a large tuition instalment.
+- Course-Specific Charges: Laboratory supplies, studio materials, software, fieldwork, or professional examinations may not be covered by standard tuition.
 
 For these reasons, it is useful to separate the cost of completing your degree from the cash you need to have available before departure and during your first few months.
 
@@ -180,15 +181,15 @@ For these reasons, it is useful to separate the cost of completing your degree f
 
 Instead of looking at tuition alone, organise your finances into three separate amounts.
 
-**1. Total Study Cost**
+### 1. Total Study Cost
 
 Calculate tuition for the full program, mandatory fees, insurance where applicable, books, and other course-related expenses. This gives you a clearer picture of the academic investment.
 
-**2. Proof of Financial Support**
+### 2. Proof of Financial Support
 
 Check the current study-permit requirements for tuition, living expenses, and transportation. This is the amount you need to demonstrate through acceptable financial documents; it should not be confused with your actual spending forecast.
 
-**3. Upfront Cash Requirement**
+### 3. Upfront Cash Requirement
 
 Work out what must be paid before departure or soon after arrival. Include tuition deposits, initial housing costs, travel, insurance payments, and essential setup expenses. Some of these amounts may later form part of your annual budget, but you still need access to the money at the right time.
 
@@ -198,11 +199,11 @@ This three-part approach is especially useful for families funding education fro
 
 Reducing costs starts with comparing the full value of a program, not simply choosing the lowest advertised fee.
 
-- **Compare Total Program Fees:** Calculate the expected cost of all terms, rather than comparing only the first year.
-- **Check Scholarships and Funding:** Look for university awards, department funding, and eligible graduate assistantships before finalising your budget.
-- **Review Housing Options Early:** Compare campus accommodation, shared rentals, and transport costs around your shortlisted institutions.
-- **Understand Your Deposit Terms:** Check whether your deposit is refundable and when the remaining tuition instalments are due.
-- **Plan for Currency Fluctuations:** Keep some flexibility in your rupee budget instead of assuming the exchange rate will remain unchanged.
+- Compare Total Program Fees: Calculate the expected cost of all terms, rather than comparing only the first year.
+- Check Scholarships and Funding: Look for university awards, department funding, and eligible graduate assistantships before finalising your budget.
+- Review Housing Options Early: Compare campus accommodation, shared rentals, and transport costs around your shortlisted institutions.
+- Understand Your Deposit Terms: Check whether your deposit is refundable and when the remaining tuition instalments are due.
+- Plan for Currency Fluctuations: Keep some flexibility in your rupee budget instead of assuming the exchange rate will remain unchanged.
 
 Part-time employment may be permitted for eligible students who meet the conditions of their study permit, but expected earnings should not be treated as a substitute for the funds required to apply. Plan your finances so that you can meet your study and living costs without relying on finding work after arrival.
 
@@ -212,19 +213,20 @@ The answer depends on the program you choose, how you finance it, and what you w
 
 Compare the curriculum, qualification, length of study, available funding, and potential career relevance alongside the total cost. If you're considering a master's degree, also check whether the program's structure and funding opportunities align with your goals.
 
-**The aim is not simply to find a university you can afford for the first year. It is to choose a program you can realistically finance through completion.**`,
+The aim is not simply to find a university you can afford for the first year. It is to choose a program you can realistically finance through completion.`,
   },
   "living-and-culture": {
     id: "03",
     vol: "VOL. III",
     slug: "living-and-culture",
+    summary: "Your living costs depend on your city, accommodation, commute, and daily routine. Beyond budgeting, prepare for Canada's diverse communities, independent student life, and regional weather differences.\n\n- Biggest variable: Accommodation\n- Plan for: Food, transport, utilities, and winter clothing\n- Culture: Campus life, multicultural communities, and regional differences",
     title: "Cost of Living in Canada & Culture",
     shortTitle: "Living & Culture",
     badge: "Living Costs & Student Life",
     tagline: "Accommodation, food, transport, winter and life in Canada",
     heroImage: "/images/universities/canada/university-of-saskatchewan.webp",
     pillColors: [{"label": "BIGGEST VARIABLE","bg": "#D7F77D","text": "#0C337B"},{"label": "DAILY ESSENTIALS","bg": "#B5E9F2","text": "#0C337B"},{"label": "CANADIAN LIFE","bg": "#FFD4E6","text": "#0C337B"}],
-    markdown: String.raw`# Cost of Living in Canada & Culture 
+    markdown: String.raw`# Cost of Living in Canada & Culture
 
 Choosing a Canadian university is also a decision about the kind of everyday life you can afford. Your rent, commute, grocery options, and distance from campus can influence your monthly budget just as much as the city itself.
 
@@ -236,16 +238,16 @@ For Indian students, the most useful approach is to plan around where you will l
 
 Your monthly budget should cover more than rent and groceries. Some expenses recur every month, while others appear mainly when you first arrive or when the weather changes.
 
-| Expense category             | What to include                                                | What students should check                                          |
-| ---------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Accommodation                | Rent, applicable deposits, tenant insurance                    | Whether utilities and internet are included                         |
-| Food and groceries           | Weekly groceries, cooking essentials, occasional meals out     | Access to affordable supermarkets and South Asian grocery stores    |
-| Transportation               | Student transit pass, occasional rides, cycling costs          | Whether your university offers a discounted transit pass            |
-| Utilities and internet       | Electricity, heating, water, Wi-Fi                             | Which bills are included in the rent                                |
-| Phone                        | Monthly mobile plan and data                                   | Coverage, data allowance, and contract terms                        |
-| Health and personal expenses | Required insurance, prescriptions where applicable, toiletries | Provincial and university health coverage arrangements              |
-| Seasonal expenses            | Winter coat, boots, gloves, additional clothing                | What you already own and what you need to purchase locally          |
-| Study and social life        | Printing, supplies, gym, outings, subscriptions                | Which services are covered by student fees or offer student pricing |
+| Expense category | What to include | What students should check |
+| --- | --- | --- |
+| Accommodation | Rent, applicable deposits, tenant insurance | Whether utilities and internet are included |
+| Food and groceries | Weekly groceries, cooking essentials, occasional meals out | Access to affordable supermarkets and South Asian grocery stores |
+| Transportation | Student transit pass, occasional rides, cycling costs | Whether your university offers a discounted transit pass |
+| Utilities and internet | Electricity, heating, water, Wi-Fi | Which bills are included in the rent |
+| Phone | Monthly mobile plan and data | Coverage, data allowance, and contract terms |
+| Health and personal expenses | Required insurance, prescriptions where applicable, toiletries | Provincial and university health coverage arrangements |
+| Seasonal expenses | Winter coat, boots, gloves, additional clothing | What you already own and what you need to purchase locally |
+| Study and social life | Printing, supplies, gym, outings, subscriptions | Which services are covered by student fees or offer student pricing |
 
 The important distinction is between monthly spending and arrival costs. Your first month may involve rent, a permitted deposit, household essentials, winter clothing, and other setup expenses before your normal routine begins.
 
@@ -255,15 +257,15 @@ The figures below are practical planning estimates for a student living independ
 
 Illustrative currency conversion: CAD 1 ≈ ₹68. Actual exchange rates will fluctuate.
 
-| Monthly expense              | Toronto / Vancouver | More affordable city or shared-living setup |
-| ---------------------------- | ------------------- | ------------------------------------------- |
-| Shared accommodation         | CAD 900–1,400       | CAD 600–900                                 |
-| Utilities and internet       | CAD 100–150         | CAD 80–130                                  |
-| Groceries                    | CAD 350–500         | CAD 300–450                                 |
-| Transportation               | CAD 130–160         | CAD 90–120                                  |
-| Personal and social expenses | CAD 200–350         | CAD 150–300                                 |
-| Estimated monthly total      | CAD 1,680–2,560     | CAD 1,220–1,900                             |
-| Approximate INR total        | ₹1.14–1.74 lakh     | ₹83,000–1.29 lakh                           |
+| Monthly expense | Toronto / Vancouver | More affordable city or shared-living setup |
+| --- | --- | --- |
+| Shared accommodation | CAD 900–1,400 | CAD 600–900 |
+| Utilities and internet | CAD 100–150 | CAD 80–130 |
+| Groceries | CAD 350–500 | CAD 300–450 |
+| Transportation | CAD 130–160 | CAD 90–120 |
+| Personal and social expenses | CAD 200–350 | CAD 150–300 |
+| Estimated monthly total | CAD 1,680–2,560 | CAD 1,220–1,900 |
+| Approximate INR total | ₹1.14–1.74 lakh | ₹83,000–1.29 lakh |
 
 These estimates assume shared accommodation and do not necessarily include every insurance, medical, academic, or one-time expense. A private apartment can push the budget substantially higher. Some universities also charge for student transit or health coverage through their fee schedules, so check whether those costs are already included.
 
@@ -353,13 +355,132 @@ Winter can also change your routine. Walking distances that feel manageable in m
 
 ## 8. How Your City Changes the Cost of Living
 
-A university's location can affect your expenses, access to services, commute, and social life. Instead of treating all Canadian cities as one market, compare the places where your shortlisted institutions are actually located.`,
+A university's location can affect your expenses, access to services, commute, and social life. Instead of treating all Canadian cities as one market, compare the places where your shortlisted institutions are actually located.
+
+![Toronto](/images/canada-guides/toronto.jpg)
+
+### Toronto
+
+A large urban environment with extensive transit, diverse communities, and access to business and cultural activities. Housing is a major consideration, so compare neighbourhoods and commute times before choosing a rental.
+
+![Vancouver](/images/canada-guides/vancouver.jpg)
+
+### Vancouver
+
+Known for its coastal setting and outdoor access, Vancouver also has a high-cost housing market. Your accommodation choice can make a substantial difference to the budget.
+
+![Montréal](/images/canada-guides/montreal.jpg)
+
+### Montréal
+
+Montréal offers a distinct French-English environment and a strong cultural scene. French can be useful in everyday life and for some jobs, so consider the language expectations relevant to your course and plans.
+
+![Calgary](/images/canada-guides/calgary.jpg)
+
+### Calgary
+
+Calgary combines a large-city setting with access to outdoor recreation. Compare rent, local transport, and the distance between your home and campus rather than judging affordability from provincial tax rates alone.
+
+![Winnipeg and Edmonton](/images/canada-guides/winnipeg-and-edmonton.jpg)
+
+### Winnipeg and Edmonton
+
+These cities may offer different housing options from Toronto and Vancouver, but winter conditions, transport needs, and neighbourhood-level costs still matter. Compare actual rental listings and university estimates before deciding.
+
+The right comparison is not simply “expensive city versus cheap city.” Consider the full combination of tuition, rent, transport, available housing, climate, and the lifestyle you want to maintain during your studies.
+
+## 9. Culture in Canada: What Everyday Student Life Actually Feels Like
+
+Moving to Canada means adapting to a different social environment, not just a different climate. Your experience will be shaped by your campus, city, roommates, and the communities you become part of.
+
+For Indian students, the adjustment often happens through small everyday experiences: learning how people communicate in class, figuring out grocery shopping, making friends outside familiar circles, and becoming comfortable doing things independently.
+
+### A. Classroom Culture: Participation Matters
+
+Canadian universities and colleges may place considerable emphasis on class participation, presentations, group projects, independent research, and practical assignments. The exact balance depends on the institution and program.
+
+You may be expected to ask questions, explain your reasoning, contribute to group discussions, and communicate with instructors when you need clarification. Academic writing and referencing conventions also matter, particularly when submitting research-based work.
+
+What this means for you: Start practising clear written communication, presentation skills, and academic referencing before your course begins. Being able to explain your ideas is just as useful as understanding the subject itself.
+
+### B. Making Friends Beyond Your Own Community
+
+Canada has diverse communities, including substantial South Asian populations in several cities. You may find Indian grocery stores, familiar restaurants, cultural associations, and student societies that make the transition easier.
+
+At the same time, university life offers opportunities to build friendships with people from different backgrounds. Clubs, volunteering, student events, sports, and group assignments can provide natural ways to meet people.
+
+You do not have to choose between staying connected to Indian culture and experiencing a new environment. Both can be part of your student life.
+
+### C. Food, Festivals, and Familiar Comforts
+
+Adjusting to food is often easier when you learn where to shop and how to use local ingredients. Depending on your city, you may find South Asian supermarkets, restaurants serving regional Indian cuisines, and community events around festivals such as Diwali and Holi.
+
+However, availability is not uniform. A student living in a neighbourhood with several South Asian stores may have different options from someone in a smaller town.
+
+If cooking is important to you, check whether your accommodation has a usable kitchen, adequate storage, and access to grocery shops. These practical details can influence both your spending and your comfort.
+
+### D. Weather Shapes Your Routine
+
+Canada does not have one uniform climate. Winters can be relatively mild in some coastal areas and intensely cold in parts of the Prairies and central Canada. Conditions can also differ between cities within the same province.
+
+Cold weather may affect your commute, outdoor activities, clothing needs, and daily schedule. Learn how to dress in layers, check local forecasts, and allow extra travel time during snow or icy conditions.
+
+The adjustment is not only about owning a warm jacket. It is about learning to plan your day around the conditions outside.
+
+### E. Independence Comes With Responsibility
+
+For many international students, studying abroad is the first time they manage a household without family support nearby.
+
+That can mean planning meals, paying bills, keeping track of appointments, doing laundry, managing deadlines, and dealing with unexpected expenses. Shared accommodation also requires communication about cleaning, noise, visitors, and common spaces.
+
+These responsibilities can feel unfamiliar initially, but building a simple weekly routine makes them easier to manage.
+
+### F. Social Life Does Not Have to Be Expensive
+
+Exploring a new country does not require spending heavily every weekend. University events, student clubs, public parks, libraries, community festivals, and outdoor activities can provide opportunities to socialise without making every outing a major expense.
+
+Check what your institution offers through student services and societies. Some activities are included in student fees, while others charge separately.
+
+The most useful approach is to set aside a realistic amount for social activities rather than treating them as either unnecessary expenses or unlimited spending.
+
+## 10. Five Practical Ways to Manage Your Living Costs
+
+### 1. Choose accommodation using the full monthly cost
+
+Compare rent, utilities, internet, transport, and the journey to campus. A lower rental price is not automatically the better deal if it creates additional expenses elsewhere.
+
+### 2. Build a weekly grocery routine
+
+Plan meals, compare supermarket prices, and buy staples you regularly use. Familiar home-cooked food can remain part of your routine without requiring you to shop at the most expensive store nearby.
+
+### 3. Use student benefits where available
+
+Check your university's transit arrangements, student discounts, campus facilities, software offers, and library services. Benefits differ by institution, so confirm eligibility and terms instead of assuming every student receives the same offers.
+
+### 4. Keep an arrival fund separate
+
+Budget for the first rent payment, any lawful housing deposit, travel, winter clothing, household essentials, and other setup expenses. Keep this separate from your normal monthly budget so you do not use your first month's living money before your routine begins.
+
+### 5. Do not build your financial plan around a future job
+
+Eligible international students may work off campus for up to 24 hours per week during regular academic sessions, with different rules applying during scheduled breaks. Eligibility and study-permit conditions must be met.
+
+Part-time work can help with some expenses, but finding a job and earning enough are not guaranteed. Your education and essential living costs should be planned without depending on uncertain future earnings.
+
+## 11. Plan for the Life You Will Actually Live
+
+Before choosing a university, estimate your expenses using the accommodation you are realistically likely to rent, the transport you will need, and the food and activities that matter to you.
+
+Then compare at least two locations or housing arrangements. A small difference in monthly costs can become substantial over a two-year master's degree or a longer bachelor's program.
+
+Canada offers very different student experiences across its cities and regions. The best fit is the place where your academic goals, financial resources, and everyday preferences can work together.`,
   },
  
   "scholarships": {
     id: "04",
     vol: "VOL. IV",
     slug: "scholarships",
+    summary: "Canadian scholarships can reward academic performance, leadership, financial need, or research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.\n\n- Undergraduate: Entrance and leadership awards\n- Master's: University and program-specific funding\n- PhD: Research scholarships and fellowships",
     title: "Scholarships in Canada for Indian Students",
     shortTitle: "Scholarships & Funding",
     badge: "Funding by Degree Level",
@@ -386,316 +507,317 @@ A university's location can affect your expenses, access to services, commute, a
 
     markdown: String.raw`# Scholarships in Canada for Indian Students
 
-  A scholarship can change the financial picture of studying in Canada, but finding the right one requires more than searching for awards that promise to cover your tuition. Each funding opportunity has its own purpose. Some reward academic performance, others prioritise financial need or leadership, and research scholarships may depend on your proposed work and the university supporting it.
+A scholarship can change the financial picture of studying in Canada, but finding the right one requires more than searching for awards that promise to cover your tuition. Each funding opportunity has its own purpose. Some reward academic performance, others prioritise financial need or leadership, and research scholarships may depend on your proposed work and the university supporting it.
 
-  For Indian students planning a bachelor's or master's degree in Canada, the first step is to understand which awards are open to international applicants, how the funding is distributed, and whether the award fits the course you intend to pursue.
+For Indian students planning a bachelor's or master's degree in Canada, the first step is to understand which awards are open to international applicants, how the funding is distributed, and whether the award fits the course you intend to pursue.
 
-  The key is to build your scholarship strategy around your profile and target universities, rather than choosing a university solely because it advertises a large scholarship.
+The key is to build your scholarship strategy around your profile and target universities, rather than choosing a university solely because it advertises a large scholarship.
 
-  ## 1. What Types of Scholarships Can You Apply For?
+## 1. What Types of Scholarships Can You Apply For?
 
-  Scholarships in Canada are offered by universities, research institutions, government bodies, and private organisations. The funding may be deducted from tuition, paid as a stipend, or provided as a one-time award.
+Scholarships in Canada are offered by universities, research institutions, government bodies, and private organisations. The funding may be deducted from tuition, paid as a stipend, or provided as a one-time award.
 
-  ### Merit-Based Scholarships
+### Merit-Based Scholarships
 
-  These awards recognise academic achievement, strong admission results, or other indicators of excellence. Some are assessed automatically when you apply for admission, while others require a separate scholarship application.
+These awards recognise academic achievement, strong admission results, or other indicators of excellence. Some are assessed automatically when you apply for admission, while others require a separate scholarship application.
 
-  They may suit students with consistently strong academic records, although the exact selection criteria vary by institution.
+They may suit students with consistently strong academic records, although the exact selection criteria vary by institution.
 
-  ### Need-Based Financial Aid
+### Need-Based Financial Aid
 
-  Need-based awards consider your financial circumstances alongside the university's eligibility criteria. Applicants may need to provide information about family income, assets, expenses, and available funding.
+Need-based awards consider your financial circumstances alongside the university's eligibility criteria. Applicants may need to provide information about family income, assets, expenses, and available funding.
 
-  These awards are particularly relevant when the main barrier to studying abroad is affordability rather than academic eligibility alone.
+These awards are particularly relevant when the main barrier to studying abroad is affordability rather than academic eligibility alone.
 
-  ### Leadership and Community-Based Awards
+### Leadership and Community-Based Awards
 
-  Some scholarships look beyond examination results. They may consider student leadership, volunteering, community projects, initiative, and evidence that you have contributed to something beyond your own academic progress.
+Some scholarships look beyond examination results. They may consider student leadership, volunteering, community projects, initiative, and evidence that you have contributed to something beyond your own academic progress.
 
-  A meaningful record of involvement is more useful than a long list of activities without clear responsibilities or outcomes.
+A meaningful record of involvement is more useful than a long list of activities without clear responsibilities or outcomes.
 
-  ### Research Scholarships and Graduate Funding
+### Research Scholarships and Graduate Funding
 
-  Students pursuing research-oriented master's degrees or PhD programs may be considered for scholarships, research assistantships, teaching assistantships, and supervisor-funded projects.
+Students pursuing research-oriented master's degrees or PhD programs may be considered for scholarships, research assistantships, teaching assistantships, and supervisor-funded projects.
 
-  The availability of funding depends on the institution, department, research area, and individual opportunity. Not every postgraduate program provides financial support, and a coursework-based master's degree should not be assumed to include research funding.
+The availability of funding depends on the institution, department, research area, and individual opportunity. Not every postgraduate program provides financial support, and a coursework-based master's degree should not be assumed to include research funding.
 
-  ### Entrance Awards and Tuition Reductions
+### Entrance Awards and Tuition Reductions
 
-  Many institutions offer awards to eligible incoming students. Some are automatically assessed using admission information, while others require an additional application, nomination, or supporting documents.
+Many institutions offer awards to eligible incoming students. Some are automatically assessed using admission information, while others require an additional application, nomination, or supporting documents.
 
-  An entrance award may cover only part of the first year's tuition, but a smaller award can still be valuable when combined with other funding.
+An entrance award may cover only part of the first year's tuition, but a smaller award can still be valuable when combined with other funding.
 
-  ## 2. Fully Funded vs Partial Scholarships
+## 2. Fully Funded vs Partial Scholarships
 
-  The headline amount is only one part of a scholarship's value. You also need to understand what the award pays for and how long the funding lasts.
+The headline amount is only one part of a scholarship's value. You also need to understand what the award pays for and how long the funding lasts.
 
-  | **Funding type** | **What it may cover** | **What to verify** |
-  | --- | --- | --- |
-  | Fully funded award | Tuition, living stipend, and potentially additional expenses | Whether all costs are covered and for how long |
-  | Full tuition scholarship | Tuition fees for the specified program or period | Whether living expenses, insurance, and other fees are excluded |
-  | Partial tuition award | A fixed amount or percentage of tuition | Whether it renews in subsequent years |
-  | Living stipend | Regular financial support during eligible study periods | Payment schedule, duration, and conditions |
-  | Research or teaching funding | Financial support connected to an academic or research role | Workload, supervisor approval, and continuation requirements |
-  | Entrance scholarship | An award linked to admission or academic results | Whether a separate application is needed and what maintains eligibility |
+| Funding type | What it may cover | What to verify |
+| --- | --- | --- |
+| Fully funded award | Tuition, living stipend, and potentially additional expenses | Whether all costs are covered and for how long |
+| Full tuition scholarship | Tuition fees for the specified program or period | Whether living expenses, insurance, and other fees are excluded |
+| Partial tuition award | A fixed amount or percentage of tuition | Whether it renews in subsequent years |
+| Living stipend | Regular financial support during eligible study periods | Payment schedule, duration, and conditions |
+| Research or teaching funding | Financial support connected to an academic or research role | Workload, supervisor approval, and continuation requirements |
+| Entrance scholarship | An award linked to admission or academic results | Whether a separate application is needed and what maintains eligibility |
 
-  A full tuition scholarship is not necessarily a fully funded scholarship. If an award covers tuition but not accommodation, food, travel, or insurance, you will still need a separate plan for those expenses.
+A full tuition scholarship is not necessarily a fully funded scholarship. If an award covers tuition but not accommodation, food, travel, or insurance, you will still need a separate plan for those expenses.
 
-  Also check whether the scholarship is renewable. An award that applies only to the first year can reduce your initial costs without solving the financial requirements of the entire degree.
+Also check whether the scholarship is renewable. An award that applies only to the first year can reduce your initial costs without solving the financial requirements of the entire degree.
 
-  ## 3. Major Canadian Scholarships to Know About
+## 3. Major Canadian Scholarships to Know About
 
-  The following opportunities illustrate the different kinds of funding Indian students can investigate. They are not a guarantee of eligibility or selection. Always confirm the current award rules, eligible programs, and deadlines before applying.
+The following opportunities illustrate the different kinds of funding Indian students can investigate. They are not a guarantee of eligibility or selection. Always confirm the current award rules, eligible programs, and deadlines before applying.
 
-  ### 1. Lester B. Pearson International Scholarship
+### 1. Lester B. Pearson International Scholarship
 
-  University of Toronto | Undergraduate
+University of Toronto | Undergraduate
 
-  The Lester B. Pearson International Scholarship is aimed at outstanding international students entering their first undergraduate degree at the University of Toronto.
+The Lester B. Pearson International Scholarship is aimed at outstanding international students entering their first undergraduate degree at the University of Toronto.
 
-  The award is particularly relevant to students who combine strong academic performance with creativity, initiative, and meaningful involvement in their school or community.
+The award is particularly relevant to students who combine strong academic performance with creativity, initiative, and meaningful involvement in their school or community.
 
-  - Funding: Covers tuition, books, incidental fees, and residence support for up to four years, subject to the award's terms.
-  - Who should explore it: International secondary-school students entering their first undergraduate program.
-  - Application route: Students must be nominated by their school and apply for admission to the University of Toronto.
-  - Important consideration: Students already pursuing post-secondary studies are not eligible under the published criteria.
+- Funding: Covers tuition, books, incidental fees, and residence support for up to four years, subject to the award's terms.
+- Who should explore it: International secondary-school students entering their first undergraduate program.
+- Application route: Students must be nominated by their school and apply for admission to the University of Toronto.
+- Important consideration: Students already pursuing post-secondary studies are not eligible under the published criteria.
 
-  The nomination process makes early preparation essential. Students should speak to their school well before the relevant deadline and confirm the admission requirements for their intended intake.
+The nomination process makes early preparation essential. Students should speak to their school well before the relevant deadline and confirm the admission requirements for their intended intake.
 
-  ### 2. UBC International Scholars Program
+### 2. UBC International Scholars Program
 
-  University of British Columbia | Undergraduate
+University of British Columbia | Undergraduate
 
-  UBC's International Scholars Program is designed for international students who demonstrate strong academic achievement, leadership, community involvement, and significant financial need.
+UBC's International Scholars Program is designed for international students who demonstrate strong academic achievement, leadership, community involvement, and significant financial need.
 
-  Unlike a scholarship assessed primarily on grades, this program also examines whether financial support is necessary for the applicant to attend UBC.
+Unlike a scholarship assessed primarily on grades, this program also examines whether financial support is necessary for the applicant to attend UBC.
 
-  - Funding: Award amounts depend on the student's assessed financial need and the particular award.
-  - Who should explore it: Eligible international students entering their first undergraduate degree directly from secondary school.
-  - Application route: A separate award application and school nomination or reference requirements may apply.
-  - Important consideration: Applicants need to document their financial circumstances and meet the program's academic and admission conditions.
+- Funding: Award amounts depend on the student's assessed financial need and the particular award.
+- Who should explore it: Eligible international students entering their first undergraduate degree directly from secondary school.
+- Application route: A separate award application and school nomination or reference requirements may apply.
+- Important consideration: Applicants need to document their financial circumstances and meet the program's academic and admission conditions.
 
-  This opportunity is worth investigating if you have a strong academic record and a substantial funding gap that would otherwise make university attendance difficult.
+This opportunity is worth investigating if you have a strong academic record and a substantial funding gap that would otherwise make university attendance difficult.
 
-  ### 3. McCall MacBain Scholarships
+### 3. McCall MacBain Scholarships
 
-  McGill University | Master's and eligible professional programs
+McGill University | Master's and eligible professional programs
 
-  The McCall MacBain Scholarships support selected students pursuing eligible master's or professional degrees at McGill University. The selection process considers academic ability alongside leadership, character, community engagement, and the capacity to work constructively with others.
+The McCall MacBain Scholarships support selected students pursuing eligible master's or professional degrees at McGill University. The selection process considers academic ability alongside leadership, character, community engagement, and the capacity to work constructively with others.
 
-  - Funding: Full tuition and fees, a living stipend during academic terms, and additional support specified by the program.
-  - Who should explore it: Students whose academic goals and leadership experience align with an eligible McGill program.
-  - Application route: The scholarship application is separate from the application for admission to the chosen degree.
-  - Important consideration: Applicants must meet the scholarship's program and eligibility conditions, including the relevant deadlines for international applicants.
+- Funding: Full tuition and fees, a living stipend during academic terms, and additional support specified by the program.
+- Who should explore it: Students whose academic goals and leadership experience align with an eligible McGill program.
+- Application route: The scholarship application is separate from the application for admission to the chosen degree.
+- Important consideration: Applicants must meet the scholarship's program and eligibility conditions, including the relevant deadlines for international applicants.
 
-  For prospective master's students, this is an example of why a scholarship application should not be reduced to grades alone. Your experiences, decisions, and contributions may also be important parts of the assessment.
+For prospective master's students, this is an example of why a scholarship application should not be reduced to grades alone. Your experiences, decisions, and contributions may also be important parts of the assessment.
 
-  ### 4. President's International Distinction Scholarship
+### 4. President's International Distinction Scholarship
 
-  University of Alberta | Undergraduate
+University of Alberta | Undergraduate
 
-  The University of Alberta offers this high-value entrance award to selected international undergraduate students who demonstrate exceptional academic achievement and leadership.
+The University of Alberta offers this high-value entrance award to selected international undergraduate students who demonstrate exceptional academic achievement and leadership.
 
-  - Funding: Up to CAD 120,000, payable over four years, according to the published award information.
-  - Who should explore it: High-achieving international students entering the first year of an undergraduate degree.
-  - Selection considerations: Academic standing, leadership, and the university's current award criteria.
-  - Important consideration: The maximum award is not a guaranteed amount for every applicant. Confirm the current application process, award availability, and renewal conditions.
+- Funding: Up to CAD 120,000, payable over four years, according to the published award information.
+- Who should explore it: High-achieving international students entering the first year of an undergraduate degree.
+- Selection considerations: Academic standing, leadership, and the university's current award criteria.
+- Important consideration: The maximum award is not a guaranteed amount for every applicant. Confirm the current application process, award availability, and renewal conditions.
 
-  Students should also investigate the university's other international entrance awards. A highly competitive flagship scholarship is not the only potential source of funding.
+Students should also investigate the university's other international entrance awards. A highly competitive flagship scholarship is not the only potential source of funding.
 
-  ### 5. Ontario Trillium Scholarships
+### 5. Ontario Trillium Scholarships
 
-  Participating Ontario universities | Doctoral
+Participating Ontario universities | Doctoral
 
-  The Ontario Trillium Scholarships program supports selected outstanding international doctoral students pursuing eligible research at participating Ontario universities.
+The Ontario Trillium Scholarships program supports selected outstanding international doctoral students pursuing eligible research at participating Ontario universities.
 
-  - Funding: CAD 40,000 per year, with renewal possible for up to four years under the program's conditions.
-  - Who should explore it: International applicants planning eligible full-time doctoral studies in Ontario.
-  - Application route: Universities select candidates, so the admission and nomination process is institution-specific.
-  - Important consideration: Availability and deadlines should be checked with the graduate studies office of the intended university.
+- Funding: CAD 40,000 per year, with renewal possible for up to four years under the program's conditions.
+- Who should explore it: International applicants planning eligible full-time doctoral studies in Ontario.
+- Application route: Universities select candidates, so the admission and nomination process is institution-specific.
+- Important consideration: Availability and deadlines should be checked with the graduate studies office of the intended university.
 
-  This award is primarily relevant to doctoral applicants. It should not be presented as a general scholarship option for bachelor's or taught master's students.
+This award is primarily relevant to doctoral applicants. It should not be presented as a general scholarship option for bachelor's or taught master's students.
 
-  ### What About Vanier and Other Government Research Scholarships?
+### What About Vanier and Other Government Research Scholarships?
 
-  The Vanier Canada Graduate Scholarships program was discontinued as a new competition following the 2024 competition cycle, with funding transitioning into Canada's harmonised research training awards structure. It should therefore not be promoted as an open scholarship for new applicants.
+The Vanier Canada Graduate Scholarships program was discontinued as a new competition following the 2024 competition cycle, with funding transitioning into Canada's harmonised research training awards structure. It should therefore not be promoted as an open scholarship for new applicants.
 
-  Doctoral candidates should instead check the current Canada Graduate Research Scholarship–Doctoral program and the relevant university's guidance on international eligibility. Access to funding can depend on the program's rules and the applicant's institutional status.
+Doctoral candidates should instead check the current Canada Graduate Research Scholarship–Doctoral program and the relevant university's guidance on international eligibility. Access to funding can depend on the program's rules and the applicant's institutional status.
 
-  ## 4. Scholarships Offered by Indian Organisations
+## 4. Scholarships Offered by Indian Organisations
 
-  Your scholarship search does not need to stop at Canadian institutions. Some Indian organisations provide financial support to eligible citizens pursuing higher education overseas.
+Your scholarship search does not need to stop at Canadian institutions. Some Indian organisations provide financial support to eligible citizens pursuing higher education overseas.
 
-  However, it is important to distinguish a scholarship or grant from a loan scholarship. They can reduce the immediate funding burden in different ways, but they do not have the same repayment obligations.
+However, it is important to distinguish a scholarship or grant from a loan scholarship. They can reduce the immediate funding burden in different ways, but they do not have the same repayment obligations.
 
-  ### National Overseas Scholarship
+### National Overseas Scholarship
 
-  The National Overseas Scholarship is a Government of India scheme intended to support eligible students from specified disadvantaged and marginalised communities pursuing higher education abroad, including master's and doctoral programs.
+The National Overseas Scholarship is a Government of India scheme intended to support eligible students from specified disadvantaged and marginalised communities pursuing higher education abroad, including master's and doctoral programs.
 
-  - Funding: Support may include eligible tuition, maintenance, and travel-related expenses under the scheme's rules.
-  - Eligibility: Restricted to specified categories and subject to academic, income, admission, and other conditions.
-  - Application route: Applications are handled through the official scheme portal during the announced application period.
+- Funding: Support may include eligible tuition, maintenance, and travel-related expenses under the scheme's rules.
+- Eligibility: Restricted to specified categories and subject to academic, income, admission, and other conditions.
+- Application route: Applications are handled through the official scheme portal during the announced application period.
 
-  This is not a general scholarship available to every Indian student. Applicants should check the current scheme guidelines carefully to confirm their community category and other eligibility conditions.
+This is not a general scholarship available to every Indian student. Applicants should check the current scheme guidelines carefully to confirm their community category and other eligibility conditions.
 
-  ### J. N. Tata Endowment Loan Scholarship
+### J. N. Tata Endowment Loan Scholarship
 
-  The J. N. Tata Endowment provides merit-based loan scholarships for eligible Indian students pursuing postgraduate, doctoral, and postdoctoral studies overseas.
+The J. N. Tata Endowment provides merit-based loan scholarships for eligible Indian students pursuing postgraduate, doctoral, and postdoctoral studies overseas.
 
-  - Funding type: A loan scholarship, with selected scholars potentially considered for additional travel grants or gift awards under the Endowment's terms.
-  - Who should explore it: Eligible Indian graduates planning qualifying higher studies abroad.
-  - Application route: Apply through the Endowment's official application process.
-  - Important consideration: The support is not automatically a non-repayable grant. Review the loan conditions before including it in your financial plan.
+- Funding type: A loan scholarship, with selected scholars potentially considered for additional travel grants or gift awards under the Endowment's terms.
+- Who should explore it: Eligible Indian graduates planning qualifying higher studies abroad.
+- Application route: Apply through the Endowment's official application process.
+- Important consideration: The support is not automatically a non-repayable grant. Review the loan conditions before including it in your financial plan.
 
-  Students pursuing undergraduate degrees should not assume that this opportunity applies to them, as the Endowment's published eligibility excludes undergraduate study.
+Students pursuing undergraduate degrees should not assume that this opportunity applies to them, as the Endowment's published eligibility excludes undergraduate study.
 
-  ### A Note on Private Foundations
+### A Note on Private Foundations
 
-  Private foundations and trusts may offer overseas education funding, but their eligibility criteria can be narrow. Some focus on particular qualifications, financial circumstances, academic fields, or applicant backgrounds.
+Private foundations and trusts may offer overseas education funding, but their eligibility criteria can be narrow. Some focus on particular qualifications, financial circumstances, academic fields, or applicant backgrounds.
 
-  Before spending time on an application, confirm that the award supports your destination country, degree level, institution, and intended intake. Do not assume that a scholarship available to Indian students studying abroad will necessarily fund every Canadian course.
+Before spending time on an application, confirm that the award supports your destination country, degree level, institution, and intended intake. Do not assume that a scholarship available to Indian students studying abroad will necessarily fund every Canadian course.
 
-  ## 5. How to Find Scholarships That Match Your Profile
+## 5. How to Find Scholarships That Match Your Profile
 
-  The most efficient scholarship search begins with your intended course and academic level. Once you know what you plan to study, you can narrow the search to relevant awards rather than applying indiscriminately.
+The most efficient scholarship search begins with your intended course and academic level. Once you know what you plan to study, you can narrow the search to relevant awards rather than applying indiscriminately.
 
-  ### If You Are Applying for a Bachelor's Degree
+### If You Are Applying for a Bachelor's Degree
 
-  Start with international entrance scholarships and awards linked to secondary-school performance.
+Start with international entrance scholarships and awards linked to secondary-school performance.
 
-  Focus on:
+Focus on:
 
-  - Your Class 11 and 12 academic record and predicted or final results, as applicable.
-  - Whether the award requires a school nomination.
-  - Leadership, volunteering, creative work, or other meaningful involvement.
-  - Whether the award is available to students entering their first undergraduate degree.
-  - The deadline for admission and the separate scholarship deadline, if applicable.
+- Your Class 11 and 12 academic record and predicted or final results, as applicable.
+- Whether the award requires a school nomination.
+- Leadership, volunteering, creative work, or other meaningful involvement.
+- Whether the award is available to students entering their first undergraduate degree.
+- The deadline for admission and the separate scholarship deadline, if applicable.
 
-  For highly competitive undergraduate awards, school nominations and early application requirements can be just as important as academic preparation.
+For highly competitive undergraduate awards, school nominations and early application requirements can be just as important as academic preparation.
 
-  ### If You Are Applying for a Master's Degree
+### If You Are Applying for a Master's Degree
 
-  Your search should include university entrance awards, faculty-specific funding, external scholarships, and research funding where relevant.
+Your search should include university entrance awards, faculty-specific funding, external scholarships, and research funding where relevant.
 
-  Focus on:
+Focus on:
 
-  - Your undergraduate grades and the relevance of your academic background.
-  - Whether the program is coursework-based, research-based, or mixed.
-  - Research experience, projects, professional achievements, and academic references.
-  - Whether funding is available for international students.
-  - Whether the award covers tuition, living expenses, or only part of the total cost.
+- Your undergraduate grades and the relevance of your academic background.
+- Whether the program is coursework-based, research-based, or mixed.
+- Research experience, projects, professional achievements, and academic references.
+- Whether funding is available for international students.
+- Whether the award covers tuition, living expenses, or only part of the total cost.
 
-  For research-oriented programs, contacting the relevant department and understanding the funding structure may be especially useful. For coursework-based programs, check the university's financial aid and entrance award pages directly.
+For research-oriented programs, contacting the relevant department and understanding the funding structure may be especially useful. For coursework-based programs, check the university's financial aid and entrance award pages directly.
 
-  ### If You Are Applying for a PhD
+### If You Are Applying for a PhD
 
-  Doctoral funding requires a more specialised search. Look at university fellowships, department funding packages, supervisor-funded research opportunities, and eligible national research awards.
+Doctoral funding requires a more specialised search. Look at university fellowships, department funding packages, supervisor-funded research opportunities, and eligible national research awards.
 
-  Focus on:
+Focus on:
 
-  - The strength and fit of your research proposal.
-  - Your academic and research record.
-  - Potential supervisors and the funding available in their research groups.
-  - Whether the award is open to international candidates.
-  - The duration of funding and any teaching or research responsibilities.
+- The strength and fit of your research proposal.
+- Your academic and research record.
+- Potential supervisors and the funding available in their research groups.
+- Whether the award is open to international candidates.
+- The duration of funding and any teaching or research responsibilities.
 
-  A PhD offer and a funded PhD offer are not the same thing. Ask for the financial terms in writing, including stipend amounts, tuition arrangements, renewal conditions, and expected work commitments.
+A PhD offer and a funded PhD offer are not the same thing. Ask for the financial terms in writing, including stipend amounts, tuition arrangements, renewal conditions, and expected work commitments.
 
-  ## 6. What Scholarship Committees May Look For
+## 6. What Scholarship Committees May Look For
 
-  Every scholarship has its own assessment framework. Some place most of the weight on academic achievement, while others consider financial need, research potential, leadership, or community contribution.
+Every scholarship has its own assessment framework. Some place most of the weight on academic achievement, while others consider financial need, research potential, leadership, or community contribution.
 
-  A strong application makes the evidence relevant to the award rather than relying on a generic list of accomplishments.
+A strong application makes the evidence relevant to the award rather than relying on a generic list of accomplishments.
 
-  ### Academic Performance
+### Academic Performance
 
-  Provide accurate transcripts, grading information, and any required academic documents. If the award sets a minimum academic threshold, meeting it makes you eligible for consideration; it does not guarantee selection.
+Provide accurate transcripts, grading information, and any required academic documents. If the award sets a minimum academic threshold, meeting it makes you eligible for consideration; it does not guarantee selection.
 
-  ### Leadership and Contribution
+### Leadership and Contribution
 
-  Explain what you actually did in a project, society, workplace, or community initiative. Describe your responsibilities, the decisions you made, and the outcome where it can be demonstrated.
+Explain what you actually did in a project, society, workplace, or community initiative. Describe your responsibilities, the decisions you made, and the outcome where it can be demonstrated.
 
-  ### Purpose and Direction
+### Purpose and Direction
 
-  Your application should make a clear connection between the proposed course, your past experience, and your future goals. Avoid broad claims about wanting to succeed internationally without explaining why the particular program is relevant to you.
+Your application should make a clear connection between the proposed course, your past experience, and your future goals. Avoid broad claims about wanting to succeed internationally without explaining why the particular program is relevant to you.
 
-  ### References
+### References
 
-  Choose referees who can speak directly about your academic ability, research potential, professional work, or leadership. Give them enough time and provide accurate details about the scholarship and its selection criteria.
+Choose referees who can speak directly about your academic ability, research potential, professional work, or leadership. Give them enough time and provide accurate details about the scholarship and its selection criteria.
 
-  ### Financial Documentation
+### Financial Documentation
 
-  For need-based awards, provide complete and consistent information about your financial circumstances. Follow the institution's requirements for documents and disclosure rather than estimating or omitting figures.
+For need-based awards, provide complete and consistent information about your financial circumstances. Follow the institution's requirements for documents and disclosure rather than estimating or omitting figures.
 
-  There is no universal IELTS score, GPA, or percentage that guarantees a Canadian scholarship. Meet the specific eligibility criteria first, then assess how well your application addresses the award's actual selection priorities.
+There is no universal IELTS score, GPA, or percentage that guarantees a Canadian scholarship. Meet the specific eligibility criteria first, then assess how well your application addresses the award's actual selection priorities.
 
-  ## 7. How to Apply for Scholarships in Canada From India
+## 7. How to Apply for Scholarships in Canada From India
 
-  A well-organised application process helps you avoid missing deadlines or discovering late in the process that an award requires a nomination or separate submission.
+A well-organised application process helps you avoid missing deadlines or discovering late in the process that an award requires a nomination or separate submission.
 
-  ### Step 1: Shortlist Universities and Courses
+### Step 1: Shortlist Universities and Courses
 
-  Identify suitable bachelor's, master's, or doctoral programs. Check their admission requirements, fees, and whether international students can access institutional funding.
+Identify suitable bachelor's, master's, or doctoral programs. Check their admission requirements, fees, and whether international students can access institutional funding.
 
-  ### Step 2: Create a Scholarship Tracker
+### Step 2: Create a Scholarship Tracker
 
-  For every relevant award, record:
+For every relevant award, record:
 
-  - Scholarship name and official application link.
-  - Eligible degree level and applicant category.
-  - Funding amount and what it covers.
-  - Minimum eligibility criteria.
-  - Required documents and nomination requirements.
-  - Admission deadline and scholarship deadline.
-  - Renewal conditions and any service or work obligations.
+- Scholarship name and official application link.
+- Eligible degree level and applicant category.
+- Funding amount and what it covers.
+- Minimum eligibility criteria.
+- Required documents and nomination requirements.
+- Admission deadline and scholarship deadline.
+- Renewal conditions and any service or work obligations.
 
-  Keep the information from official scholarship pages, since deadlines and eligibility can change between intakes.
+Keep the information from official scholarship pages, since deadlines and eligibility can change between intakes.
 
-  ### Step 3: Prepare Your Documents Early
+### Step 3: Prepare Your Documents Early
 
-  Depending on the award, you may need academic transcripts, certificates, a CV or résumé, personal statements, reference letters, financial documents, and evidence of leadership or research.
+Depending on the award, you may need academic transcripts, certificates, a CV or résumé, personal statements, reference letters, financial documents, and evidence of leadership or research.
 
-  Prepare a reliable core set of documents, but tailor each application to the requirements of the specific award.
+Prepare a reliable core set of documents, but tailor each application to the requirements of the specific award.
 
-  ### Step 4: Apply for Admission and Funding in the Correct Order
+### Step 4: Apply for Admission and Funding in the Correct Order
 
-  Some scholarships require an offer of admission, while others require you to apply for admission and the scholarship separately. A small number also require school or university nominations.
+Some scholarships require an offer of admission, while others require you to apply for admission and the scholarship separately. A small number also require school or university nominations.
 
-  Follow the exact sequence for each award. Do not assume that submitting a university application automatically enters you into every scholarship competition.
+Follow the exact sequence for each award. Do not assume that submitting a university application automatically enters you into every scholarship competition.
 
-  ### Step 5: Tailor Your Statement and Supporting Evidence
+### Step 5: Tailor Your Statement and Supporting Evidence
 
-  Explain why you fit the scholarship's purpose. Use concrete examples from your education, research, employment, or community involvement rather than relying on general statements about being hardworking or ambitious.
+Explain why you fit the scholarship's purpose. Use concrete examples from your education, research, employment, or community involvement rather than relying on general statements about being hardworking or ambitious.
 
-  ### Step 6: Track Decisions and Conditions
+### Step 6: Track Decisions and Conditions
 
-  Check your application portal and email regularly. If selected, read the award terms carefully before accepting. Confirm the payment schedule, renewal criteria, and any remaining costs you must finance yourself.
+Check your application portal and email regularly. If selected, read the award terms carefully before accepting. Confirm the payment schedule, renewal criteria, and any remaining costs you must finance yourself.
 
-  ## 8. Common Scholarship Mistakes to Avoid
+## 8. Common Scholarship Mistakes to Avoid
 
-  - Applying without checking eligibility: An award may be limited to a specific degree level, institution, or applicant category.
-  - Confusing a loan with a grant: Funding that must be repaid should be treated differently from non-repayable assistance.
-  - Relying on outdated deadlines: Scholarship dates can change every intake.
-  - Assuming every award is fully funded: Verify whether living costs and other expenses are included.
-  - Using the same statement everywhere: Different awards may prioritise academic merit, financial need, research, or leadership.
-  - Ignoring smaller awards: A partial scholarship can still reduce the amount you need to finance.
-  - Treating a scholarship as a visa guarantee: A scholarship may form part of your financial documentation, but it does not guarantee a study permit or any future immigration outcome.
+- Applying without checking eligibility: An award may be limited to a specific degree level, institution, or applicant category.
+- Confusing a loan with a grant: Funding that must be repaid should be treated differently from non-repayable assistance.
+- Relying on outdated deadlines: Scholarship dates can change every intake.
+- Assuming every award is fully funded: Verify whether living costs and other expenses are included.
+- Using the same statement everywhere: Different awards may prioritise academic merit, financial need, research, or leadership.
+- Ignoring smaller awards: A partial scholarship can still reduce the amount you need to finance.
+- Treating a scholarship as a visa guarantee: A scholarship may form part of your financial documentation, but it does not guarantee a study permit or any future immigration outcome.
 
-  ## 9. Build a Funding Plan, Not Just a Scholarship List
+## 9. Build a Funding Plan, Not Just a Scholarship List
 
-  Before accepting an offer, calculate the remaining cost after confirmed funding has been deducted. Include tuition, living expenses, insurance, travel, and any costs not covered by the award.
+Before accepting an offer, calculate the remaining cost after confirmed funding has been deducted. Include tuition, living expenses, insurance, travel, and any costs not covered by the award.
 
-  For example, a CAD 10,000 tuition award may be valuable, but its impact depends on the total fee and whether it is renewable. A smaller recurring award could provide more support across a longer program than a larger one-time payment.
+For example, a CAD 10,000 tuition award may be valuable, but its impact depends on the total fee and whether it is renewable. A smaller recurring award could provide more support across a longer program than a larger one-time payment.
 
-  Also keep a backup plan. Scholarship decisions are competitive, and you should not commit to a program on the assumption that funding you have not yet secured will arrive.
+Also keep a backup plan. Scholarship decisions are competitive, and you should not commit to a program on the assumption that funding you have not yet secured will arrive.
 
-  The strongest approach is to combine realistic university choices, suitable scholarship applications, and a financial plan that remains workable even if you do not receive your first-choice award.`,
+The strongest approach is to combine realistic university choices, suitable scholarship applications, and a financial plan that remains workable even if you do not receive your first-choice award.`,
   },
 
   "post-study-work-visa": {
     id: "05",
     vol: "VOL. V",
     slug: "post-study-work-visa",
+    summary: "Canada's Post-Graduation Work Permit (PGWP) lets eligible international graduates gain Canadian work experience after completing their studies. Eligibility depends on your institution, program, and applicable rules.\n\n- Master's: Potentially up to 3 years\n- Application window: Up to 180 days after completion\n- PR pathway: Possible, not guaranteed",
     title: "Post-Study Work Visa in Canada",
     shortTitle: "Post-Study Work Visa",
     badge: "PGWP & Work Pathways",
@@ -722,228 +844,251 @@ A university's location can affect your expenses, access to services, commute, a
 
     markdown: String.raw`# Post-Study Work Visa in Canada
 
-  For many international students, studying in Canada is not only about earning a qualification. It is also an opportunity to gain professional experience, understand the Canadian job market, and explore possible career options after graduation.
+For many international students, studying in Canada is not only about earning a qualification. It is also an opportunity to gain professional experience, understand the Canadian job market, and explore possible career options after graduation.
 
-  Canada's Post-Graduation Work Permit (PGWP) allows eligible graduates to work in Canada after completing their studies. It can provide time to apply their skills in a professional setting, build relevant work experience, and assess whether they may qualify for a longer-term immigration pathway.
+Canada's Post-Graduation Work Permit (PGWP) allows eligible graduates to work in Canada after completing their studies. It can provide time to apply their skills in a professional setting, build relevant work experience, and assess whether they may qualify for a longer-term immigration pathway.
 
-  However, graduating from a Canadian institution does not automatically make you eligible for a PGWP. Your institution, program, study history, language proficiency, and the rules applicable to your application can all affect eligibility.
+However, graduating from a Canadian institution does not automatically make you eligible for a PGWP. Your institution, program, study history, language proficiency, and the rules applicable to your application can all affect eligibility.
 
-  For Indian students choosing a university or college, understanding these requirements before enrolling is an important part of making an informed study-abroad decision.
+For Indian students choosing a university or college, understanding these requirements before enrolling is an important part of making an informed study-abroad decision.
 
-  ## 1. What Is the Post-Graduation Work Permit (PGWP)?
+## 1. What Is the Post-Graduation Work Permit (PGWP)?
 
-  The Post-Graduation Work Permit is an open work permit available to eligible graduates of qualifying Canadian institutions and programs. Unlike an employer-specific work permit, it generally allows the holder to work for eligible employers across Canada without needing a separate job offer from a particular employer to obtain the permit.
+The Post-Graduation Work Permit is an open work permit available to eligible graduates of qualifying Canadian institutions and programs. Unlike an employer-specific work permit, it generally allows the holder to work for eligible employers across Canada without needing a separate job offer from a particular employer to obtain the permit.
 
-  The PGWP is designed to help eligible international graduates gain Canadian work experience after completing their education.
+The PGWP is designed to help eligible international graduates gain Canadian work experience after completing their education.
 
-  Here is what it can mean for your plans:
+Here is what it can mean for your plans:
 
-  - Professional experience: Apply the knowledge and skills gained during your Canadian degree or diploma.
-  - Career exploration: Apply for suitable roles and gain exposure to Canadian workplace expectations.
-  - Employment flexibility: An open work permit generally provides more freedom to change employers than an employer-specific permit, subject to the permit's conditions.
-  - Potential immigration options: Eligible Canadian work experience may help you qualify for certain permanent residence programs, depending on their requirements at the time.
+- Professional experience: Apply the knowledge and skills gained during your Canadian degree or diploma.
+- Career exploration: Apply for suitable roles and gain exposure to Canadian workplace expectations.
+- Employment flexibility: An open work permit generally provides more freedom to change employers than an employer-specific permit, subject to the permit's conditions.
+- Potential immigration options: Eligible Canadian work experience may help you qualify for certain permanent residence programs, depending on their requirements at the time.
 
-  The distinction is important: a PGWP gives eligible graduates temporary work authorisation. It does not guarantee a job, permanent residency, or an extension of their stay beyond the permit's validity.
+The distinction is important: a PGWP gives eligible graduates temporary work authorisation. It does not guarantee a job, permanent residency, or an extension of their stay beyond the permit's validity.
 
-  ## 2. Who Is Eligible for a PGWP in Canada?
+## 2. Who Is Eligible for a PGWP in Canada?
 
-  PGWP eligibility depends on several requirements, not simply whether you studied at a Canadian college or university.
+PGWP eligibility depends on several requirements, not simply whether you studied at a Canadian college or university.
 
-  ### Study at a PGWP-Eligible Institution
+### Study at a PGWP-Eligible Institution
 
-  You must complete an eligible program at a designated learning institution (DLI) that offers a qualifying program for the PGWP.
+You must complete an eligible program at a designated learning institution (DLI) that offers a qualifying program for the PGWP.
 
-  A school appearing on Canada's DLI list does not automatically mean every program it offers qualifies. Check the institution's PGWP status and the specific program's eligibility before paying a deposit or accepting an offer.
+A school appearing on Canada's DLI list does not automatically mean every program it offers qualifies. Check the institution's PGWP status and the specific program's eligibility before paying a deposit or accepting an offer.
 
-  ### Complete an Eligible Program
+### Complete an Eligible Program
 
-  In general, your program must meet the minimum duration requirements and other applicable conditions. Most qualifying programs must be at least eight months long, while certain Quebec programs have different duration rules.
+In general, your program must meet the minimum duration requirements and other applicable conditions. Most qualifying programs must be at least eight months long, while certain Quebec programs have different duration rules.
 
-  You must also satisfy the applicable study requirements, including rules relating to full-time enrolment and the completion of your program. Exceptions and specific conditions may apply, so review the official criteria for your circumstances.
+You must also satisfy the applicable study requirements, including rules relating to full-time enrolment and the completion of your program. Exceptions and specific conditions may apply, so review the official criteria for your circumstances.
 
-  ### Meet the Language Requirement
+### Meet the Language Requirement
 
-  Most PGWP applicants who apply under the rules introduced on November 1, 2024, must provide proof of English or French proficiency.
+Most PGWP applicants who apply under the rules introduced on November 1, 2024, must provide proof of English or French proficiency.
 
-  The minimum language level depends on the qualification completed:
+The minimum language level depends on the qualification completed:
 
-  - Bachelor's, master's, and doctoral graduates: Generally require CLB 7 in English or NCLC 7 in French across all four language abilities.
-  - Graduates of other eligible university programs: Generally require CLB 7 or NCLC 7.
-  - Graduates of eligible college and other non-university programs: Generally require CLB 5 or NCLC 5.
+- Bachelor's, master's, and doctoral graduates: Generally require CLB 7 in English or NCLC 7 in French across all four language abilities.
+- Graduates of other eligible university programs: Generally require CLB 7 or NCLC 7.
+- Graduates of eligible college and other non-university programs: Generally require CLB 5 or NCLC 5.
 
-  Applicants must use an accepted language test and meet the applicable validity and evidence requirements. Do not assume that the test score used for university admission will automatically satisfy the PGWP requirement.
+Applicants must use an accepted language test and meet the applicable validity and evidence requirements. Do not assume that the test score used for university admission will automatically satisfy the PGWP requirement.
 
-  ### Check Whether Your Field of Study Matters
+### Check Whether Your Field of Study Matters
 
-  Field-of-study rules apply to certain non-degree programs, particularly where the applicant's study permit application falls under the rules introduced on November 1, 2024.
+Field-of-study rules apply to certain non-degree programs, particularly where the applicant's study permit application falls under the rules introduced on November 1, 2024.
 
-  Bachelor's, master's, and doctoral graduates are generally exempt from the field-of-study requirement. For other eligible college and non-university programs, the qualification may need to correspond to an eligible field identified through its Classification of Instructional Programs (CIP) code.
+Bachelor's, master's, and doctoral graduates are generally exempt from the field-of-study requirement. For other eligible college and non-university programs, the qualification may need to correspond to an eligible field identified through its Classification of Instructional Programs (CIP) code.
 
-  These rules can be affected by when you applied for your study permit and the applicable list of eligible fields. A course title alone is not enough to establish eligibility.
+These rules can be affected by when you applied for your study permit and the applicable list of eligible fields. A course title alone is not enough to establish eligibility.
 
-  Before choosing a college diploma or certificate, verify the exact program and its CIP code against the official PGWP requirements. This check should happen before you commit to the course, not after graduation.
+Before choosing a college diploma or certificate, verify the exact program and its CIP code against the official PGWP requirements. This check should happen before you commit to the course, not after graduation.
 
-  ## 3. How Long Can You Stay and Work in Canada After Studying?
+## 3. How Long Can You Stay and Work in Canada After Studying?
 
-  The duration of a post-study work visa in Canada depends on the type and length of your qualification, the applicable PGWP rules, and your passport's expiry date.
+The duration of a post-study work visa in Canada depends on the type and length of your qualification, the applicable PGWP rules, and your passport's expiry date.
 
-  ### Master's degree
+### Master's degree
 
-  # Up to 3 years
+**Up to 3 years**
 
-  Eligible master's graduates may qualify for a three-year PGWP if their program meets the applicable requirements, including the minimum program duration of eight months.
+Eligible master's graduates may qualify for a three-year PGWP if their program meets the applicable requirements, including the minimum program duration of eight months.
 
-  ### Bachelor's or doctoral degree
+### Bachelor's or doctoral degree
 
-  # Up to 3 years
+**Up to 3 years**
 
-  Eligible graduates may qualify for a permit of up to three years, subject to the applicable rules and passport validity.
+Eligible graduates may qualify for a permit of up to three years, subject to the applicable rules and passport validity.
 
-  ### Eligible college or other non-degree program
+### Eligible college or other non-degree program
 
-  # Depends on the program
+**Depends on the program**
 
-  The permit may reflect the length of the completed program. Programs lasting two years or more may qualify for a permit of up to three years if all relevant requirements are met.
+The permit may reflect the length of the completed program. Programs lasting two years or more may qualify for a permit of up to three years if all relevant requirements are met.
 
-  These are general duration guidelines, not guarantees. The final permit length is determined under the rules that apply to your case.
+These are general duration guidelines, not guarantees. The final permit length is determined under the rules that apply to your case.
 
-  ### Does a One-Year Master's Degree Qualify for a Three-Year PGWP?
+### Does a One-Year Master's Degree Qualify for a Three-Year PGWP?
 
-  An eligible master's program lasting at least eight months may qualify its graduate for a PGWP of up to three years, even if the program itself is shorter than two years.
+An eligible master's program lasting at least eight months may qualify its graduate for a PGWP of up to three years, even if the program itself is shorter than two years.
 
-  This makes the eligibility of the specific master's program important. Before applying, confirm that the institution and program qualify and that you meet the other applicable requirements.
+This makes the eligibility of the specific master's program important. Before applying, confirm that the institution and program qualify and that you meet the other applicable requirements.
 
-  ### What If Your Course Is Shorter Than Eight Months?
+### What If Your Course Is Shorter Than Eight Months?
 
-  Programs shorter than the applicable minimum duration generally do not qualify for a PGWP. Certain Quebec programs have different minimum-duration rules.
+Programs shorter than the applicable minimum duration generally do not qualify for a PGWP. Certain Quebec programs have different minimum-duration rules.
 
-  If your main objective is to work in Canada after graduation, verify the permit implications before selecting a short course or certificate.
+If your main objective is to work in Canada after graduation, verify the permit implications before selecting a short course or certificate.
 
-  ## 4. Can You Extend a PGWP?
+## 4. Can You Extend a PGWP?
 
-  A PGWP is generally issued only once. Completing another course later does not automatically entitle you to a second PGWP, and you should not plan your education around the assumption that you can simply renew the permit.
+A PGWP is generally issued only once. Completing another course later does not automatically entitle you to a second PGWP, and you should not plan your education around the assumption that you can simply renew the permit.
 
-  There are limited situations in which your status or work authorisation may be extended or changed.
+There are limited situations in which your status or work authorisation may be extended or changed.
 
-  ### Passport-Validity Limitations
+### Passport-Validity Limitations
 
-  A PGWP cannot normally extend beyond your passport's validity. If your permit was issued for a shorter period because your passport was expiring, you may be able to apply for the remaining eligible duration after renewing your passport, subject to IRCC's rules and application procedure.
+A PGWP cannot normally extend beyond your passport's validity. If your permit was issued for a shorter period because your passport was expiring, you may be able to apply for the remaining eligible duration after renewing your passport, subject to IRCC's rules and application procedure.
 
-  This is different from extending a permit simply because you want more time to find a job.
+This is different from extending a permit simply because you want more time to find a job.
 
-  ### Bridging Open Work Permit
+### Bridging Open Work Permit
 
-  A Bridging Open Work Permit (BOWP) may be available to certain applicants who have submitted an eligible permanent residence application and meet the relevant conditions.
+A Bridging Open Work Permit (BOWP) may be available to certain applicants who have submitted an eligible permanent residence application and meet the relevant conditions.
 
-  It is not a general extension for every PGWP holder. Eligibility depends on the immigration program, the status of the permanent residence application, and other requirements.
+It is not a general extension for every PGWP holder. Eligibility depends on the immigration program, the status of the permanent residence application, and other requirements.
 
-  ### Employer-Specific Work Permit
+### Employer-Specific Work Permit
 
-  Some graduates may qualify for another type of work permit through an employer, depending on the applicable program and requirements. An employer-specific permit may restrict the holder to the employer or employment conditions specified in the permit.
+Some graduates may qualify for another type of work permit through an employer, depending on the applicable program and requirements. An employer-specific permit may restrict the holder to the employer or employment conditions specified in the permit.
 
-  A job offer alone does not guarantee eligibility. Additional requirements may apply, including a Labour Market Impact Assessment (LMIA) where required, or an applicable exemption.
+A job offer alone does not guarantee eligibility. Additional requirements may apply, including a Labour Market Impact Assessment (LMIA) where required, or an applicable exemption.
 
-  The practical takeaway: Treat your PGWP as a defined period of work authorisation. If you may need another status later, research the relevant pathway early rather than waiting until the permit is close to expiry.
+The practical takeaway: Treat your PGWP as a defined period of work authorisation. If you may need another status later, research the relevant pathway early rather than waiting until the permit is close to expiry.
 
-  ## 5. How to Apply for a Post-Graduation Work Permit
+## 5. How to Apply for a Post-Graduation Work Permit
 
-  Eligible graduates can generally apply for a PGWP online from within Canada or from outside Canada, subject to the applicable requirements.
+Eligible graduates can generally apply for a PGWP online from within Canada or from outside Canada, subject to the applicable requirements.
 
-  You have up to 180 days after completing your program to apply. Your study permit must also have been valid at some point during the relevant 180-day period. Other rules determine whether you can remain in Canada or work while your application is being processed.
+You have up to 180 days after completing your program to apply. Your study permit must also have been valid at some point during the relevant 180-day period. Other rules determine whether you can remain in Canada or work while your application is being processed.
 
-  ### Step 1: Confirm Your Eligibility
+### Step 1: Confirm Your Eligibility
 
-  Before starting the application, check:
+Before starting the application, check:
 
-  - Whether your institution and completed program qualify.
-  - Whether you meet the applicable language requirements.
-  - Whether a field-of-study requirement applies to your program.
-  - Whether your study history meets the relevant conditions.
-  - Whether your passport is valid for the period you may be eligible to receive.
+- Whether your institution and completed program qualify.
+- Whether you meet the applicable language requirements.
+- Whether a field-of-study requirement applies to your program.
+- Whether your study history meets the relevant conditions.
+- Whether your passport is valid for the period you may be eligible to receive.
 
-  ### Step 2: Prepare Your Documents
+### Step 2: Prepare Your Documents
 
-  The documents required depend on your circumstances, but may include:
+The documents required depend on your circumstances, but may include:
 
-  - An official completion letter from your institution.
-  - Your official transcript or an accepted copy of your transcript.
-  - Proof of language results, where required.
-  - Proof of an eligible field of study, where applicable.
-  - Your passport and current immigration documents.
-  - Other documents requested by IRCC for your application.
+- An official completion letter from your institution.
+- Your official transcript or an accepted copy of your transcript.
+- Proof of language results, where required.
+- Proof of an eligible field of study, where applicable.
+- Your passport and current immigration documents.
+- Other documents requested by IRCC for your application.
 
-  Use the personalised checklist provided through the official application process. Do not rely on an old checklist from another applicant, as the requirements can differ.
+Use the personalised checklist provided through the official application process. Do not rely on an old checklist from another applicant, as the requirements can differ.
 
-  ### Step 3: Submit Your Application Online
+### Step 3: Submit Your Application Online
 
-  Complete the applicable work permit application, upload the required documents, and pay the current fee. Review your answers and attachments before submitting, particularly your education history and evidence of completion.
+Complete the applicable work permit application, upload the required documents, and pay the current fee. Review your answers and attachments before submitting, particularly your education history and evidence of completion.
 
-  Keep a copy of your submission confirmation and payment receipt.
+Keep a copy of your submission confirmation and payment receipt.
 
-  ### Step 4: Understand Your Work Authorisation While Waiting
+### Step 4: Understand Your Work Authorisation While Waiting
 
-  Some graduates may work full-time while IRCC processes their PGWP application, but only if they meet the specific conditions.
+Some graduates may work full-time while IRCC processes their PGWP application, but only if they meet the specific conditions.
 
-  For example, when submitting the application, they generally must have a valid study permit, have completed their program, have been authorised to work off campus during their studies, and have complied with the applicable work-hour limits.
+For example, when submitting the application, they generally must have a valid study permit, have completed their program, have been authorised to work off campus during their studies, and have complied with the applicable work-hour limits.
 
-  Do not assume that submitting an application automatically gives you permission to work. Check the official conditions that apply to your status and retain the documents needed to demonstrate your authorisation.
+Do not assume that submitting an application automatically gives you permission to work. Check the official conditions that apply to your status and retain the documents needed to demonstrate your authorisation.
 
-  ## 6. What Does a PGWP Cost?
+## 6. What Does a PGWP Cost?
 
-  The published PGWP application fee is CAD 255. Additional costs may apply if you need to restore your status or meet other requirements.
+The published PGWP application fee is CAD 255. Additional costs may apply if you need to restore your status or meet other requirements.
 
-  | **Fee** | **Amount** |
-  | --- | --- |
-  | PGWP application and open work permit holder fees | CAD 255 |
-  | Other applicable charges | Depends on your circumstances |
+| Fee | Amount |
+| --- | --- |
+| PGWP application and open work permit holder fees | CAD 255 |
+| Other applicable charges | Depends on your circumstances |
 
-  Check the official IRCC fee schedule before applying, since immigration fees can change. Budget separately for document preparation, language testing where required, and any other costs relevant to your case.
+Check the official IRCC fee schedule before applying, since immigration fees can change. Budget separately for document preparation, language testing where required, and any other costs relevant to your case.
 
-  ## 7. Can a PGWP Lead to Permanent Residency in Canada?
+## 7. Can a PGWP Lead to Permanent Residency in Canada?
 
-  A PGWP can give eligible graduates an opportunity to gain Canadian work experience that may be relevant to certain permanent residence programs. However, the permit itself does not provide permanent residency.
+A PGWP can give eligible graduates an opportunity to gain Canadian work experience that may be relevant to certain permanent residence programs. However, the permit itself does not provide permanent residency.
 
-  One possible route is the Canadian Experience Class (CEC), part of the Express Entry system. Applicants must meet the program's requirements, including qualifying Canadian work experience, language proficiency, and other eligibility conditions.
+One possible route is the Canadian Experience Class (CEC), part of the Express Entry system. Applicants must meet the program's requirements, including qualifying Canadian work experience, language proficiency, and other eligibility conditions.
 
-  Not every job counts as qualifying work experience for every immigration pathway. For example, work performed while you were a full-time student generally does not count towards the Canadian Experience Class minimum work-experience requirement.
+Not every job counts as qualifying work experience for every immigration pathway. For example, work performed while you were a full-time student generally does not count towards the Canadian Experience Class minimum work-experience requirement.
 
-  Other pathways may include eligible provincial nominee programs or additional immigration programs, depending on your qualifications, work experience, location, and the rules in force when you apply.
+Other pathways may include eligible provincial nominee programs or additional immigration programs, depending on your qualifications, work experience, location, and the rules in force when you apply.
 
-  Your eligibility and chances of receiving an invitation can change as immigration policies and selection criteria change. A PGWP should therefore be treated as an opportunity to build a career and explore eligible options, not a guarantee of settlement.
+Your eligibility and chances of receiving an invitation can change as immigration policies and selection criteria change. A PGWP should therefore be treated as an opportunity to build a career and explore eligible options, not a guarantee of settlement.
 
-  ## 8. Advantages and Limitations of the PGWP
+## 8. Advantages and Limitations of the PGWP
 
-  ### Advantages
+### Advantages
 
-  - Open work authorisation: Eligible holders generally have flexibility to work for different employers, subject to permit conditions.
-  - Canadian work experience: Graduates can gain professional experience after completing their education.
-  - Career development: Work experience can help graduates develop industry knowledge, professional networks, and transferable skills.
-  - Potential immigration options: Qualifying work experience may support an application under an eligible permanent residence pathway.
+- Open work authorisation: Eligible holders generally have flexibility to work for different employers, subject to permit conditions.
+- Canadian work experience: Graduates can gain professional experience after completing their education.
+- Career development: Work experience can help graduates develop industry knowledge, professional networks, and transferable skills.
+- Potential immigration options: Qualifying work experience may support an application under an eligible permanent residence pathway.
 
-  ### Limitations
+### Limitations
 
-  - Eligibility is not automatic: Graduating from a Canadian institution does not by itself establish PGWP eligibility.
-  - Employment is not guaranteed: A work permit allows eligible employment but does not secure a job.
-  - The permit has a defined duration: Graduates must plan around its expiry date and should not assume that it can be renewed.
-  - Permanent residence is a separate process: Applicants must meet the criteria of the immigration pathway they pursue.
-  - Rules may change: Students should check the requirements that apply to their own application dates and circumstances.
+- Eligibility is not automatic: Graduating from a Canadian institution does not by itself establish PGWP eligibility.
+- Employment is not guaranteed: A work permit allows eligible employment but does not secure a job.
+- The permit has a defined duration: Graduates must plan around its expiry date and should not assume that it can be renewed.
+- Permanent residence is a separate process: Applicants must meet the criteria of the immigration pathway they pursue.
+- Rules may change: Students should check the requirements that apply to their own application dates and circumstances.
 
-  ## 9. Plan Your Canadian Education With the PGWP in Mind
+## 9. Plan Your Canadian Education With the PGWP in Mind
 
-  If working in Canada after graduation is part of your long-term plan, evaluate more than the university's ranking or the course's popularity.
+If working in Canada after graduation is part of your long-term plan, evaluate more than the university's ranking or the course's popularity.
 
-  Before selecting a program, confirm its PGWP eligibility, the qualification you will receive, its duration, the applicable language and field-of-study requirements, and the likely cost of completing the course. You should also assess whether the program fits your career goals and the kind of work you intend to pursue.
+Before selecting a program, confirm its PGWP eligibility, the qualification you will receive, its duration, the applicable language and field-of-study requirements, and the likely cost of completing the course. You should also assess whether the program fits your career goals and the kind of work you intend to pursue.
 
-  For bachelor's and master's applicants, this means checking the eligibility of the degree and institution. For students considering college diplomas or certificates, it is especially important to verify the program-specific requirements before enrolling.
+For bachelor's and master's applicants, this means checking the eligibility of the degree and institution. For students considering college diplomas or certificates, it is especially important to verify the program-specific requirements before enrolling.
 
-  A well-informed study decision begins with understanding both the education you will receive and the options available after graduation.`,
+A well-informed study decision begins with understanding both the education you will receive and the options available after graduation.`,
   },
 
 };
 
-const CANADA_BOOK_GUIDES = Object.values(CANADA_GUIDES).map(({ id, vol, slug, title, shortTitle, badge }) => ({ id, vol, slug, title, shortTitle, badge }));
+const CANADA_BOOK_GUIDES = Object.values(CANADA_GUIDES).map(({ id, vol, slug, title, shortTitle, badge, summary }) => ({ id, vol, slug, title, shortTitle, badge, summary }));
 
-/* Parse headings, paragraphs, bullet lists, and Markdown tables without packages. */
+const GUIDE_IMAGES = {
+  "/images/canada-guides/toronto.jpg": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/canada-guides/vancouver.jpg": {
+    "width": 600,
+    "height": 600
+  },
+  "/images/canada-guides/montreal.jpg": {
+    "width": 1147,
+    "height": 860
+  },
+  "/images/canada-guides/calgary.jpg": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/canada-guides/winnipeg-and-edmonton.jpg": {
+    "width": 1024,
+    "height": 1024
+  }
+};
+
+/* Parse headings, paragraphs, bullet lists, images, and Markdown tables without packages. */
 function parseSections(markdown) {
   const intro = [];
   const chapters = [];
@@ -979,6 +1124,12 @@ function MarkdownContent({ lines }) {
   while (i < lines.length) {
     const line = lines[i].trim();
     if (!line || line === "---") { i++; continue; }
+    const imageMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imageMatch && GUIDE_IMAGES[imageMatch[2]]) {
+      blocks.push({ type: "image", alt: imageMatch[1], src: imageMatch[2], ...GUIDE_IMAGES[imageMatch[2]] });
+      i++;
+      continue;
+    }
     if (/^### /.test(line)) {
       blocks.push({ type: "heading", text: line.slice(4) });
       i++;
@@ -1005,7 +1156,7 @@ function MarkdownContent({ lines }) {
       continue;
     }
     const paragraph = [];
-    while (i < lines.length && lines[i].trim() && !/^(?:### |## |# |- |\d+\. |\|)/.test(lines[i].trim())) {
+    while (i < lines.length && lines[i].trim() && !/^(?:### |## |# |- |\d+\. |\||!\[)/.test(lines[i].trim())) {
       paragraph.push(lines[i].trim());
       i++;
     }
@@ -1016,6 +1167,7 @@ function MarkdownContent({ lines }) {
   return (
     <div className="space-y-4">
       {blocks.map((block, index) => {
+        if (block.type === "image") return <Image key={index} src={block.src} alt={block.alt} width={block.width} height={block.height} sizes="(min-width: 1024px) 800px, 100vw" className="mx-auto h-auto w-full max-w-full rounded-xl" />;
         if (block.type === "heading") return <h3 key={index} className="pt-3 text-[17px] font-extrabold leading-[1.35] text-[#0C337B] sm:text-[19px]"><Inline value={block.text} /></h3>;
         if (block.type === "paragraph") return <p key={index} className="text-[13px] leading-[1.75] text-[#526B8C] sm:text-[14px]"><Inline value={block.text} /></p>;
         if (block.type === "list") {
@@ -1076,7 +1228,7 @@ export default async function GuideDetailPage({ params }) {
             </div>
             <aside className="min-w-0 space-y-6">
               <div id="contact-advisory" className="scroll-mt-24 rounded-3xl border border-[#1765F5]/30 bg-[#E8F0FE] p-6 shadow-sm sm:p-7"><span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1765F5]">1-on-1 Student Guidance</span><h3 className="mt-1.5 text-[18px] font-extrabold text-[#0C337B]">Plan Your Canada Journey With an Expert</h3><div className="mt-5 flex flex-col gap-2.5"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white transition hover:bg-[#1EB956]"><MessageCircle size={16} /> Chat on WhatsApp</a><Link href="/counselling" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white transition hover:bg-[#0C337B]">Book Free Consultation <ArrowRight size={15} /></Link></div></div>
-              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-7"><div className="flex items-center justify-between gap-2"><h3 className="text-[14px] font-extrabold uppercase tracking-wider text-[#0C337B]">Other Canada Guides</h3><span className="font-mono text-[10px] text-[#1765F5]">Series</span></div><div className="mt-4 space-y-2.5">{CANADA_BOOK_GUIDES.filter((item) => item.slug !== guide).map((item) => <Link key={item.id} href={`/study-in-canada/${item.slug}`} className="group flex items-center justify-between gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 text-[13px] font-bold text-[#0C337B] transition hover:border-[#1765F5] hover:bg-[#E8F0FE]"><span className="min-w-0"><span className="block">{item.title}</span><span className="mt-1 block text-[11px] font-medium text-[#64748B]">{item.badge}</span></span><span className="shrink-0 font-mono text-[11px] font-bold text-[#1765F5] transition-transform group-hover:translate-x-1">{item.vol} →</span></Link>)}</div></div>
+              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-7"><div className="flex items-center justify-between gap-2"><h3 className="text-[14px] font-extrabold uppercase tracking-wider text-[#0C337B]">Other Canada Guides</h3><span className="font-mono text-[10px] text-[#1765F5]">Series</span></div><div className="mt-4 space-y-2.5">{CANADA_BOOK_GUIDES.filter((item) => item.slug !== guide).map((item) => <Link key={item.id} href={`/study-in-canada/${item.slug}`} className="group flex items-center justify-between gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 text-[13px] font-bold text-[#0C337B] transition hover:border-[#1765F5] hover:bg-[#E8F0FE]"><div className="min-w-0"><span className="block">{item.title}</span>{item.summary ? <div className="mt-3 font-normal"><MarkdownContent lines={item.summary.split(/\r?\n/)} /><span className="mt-3 block font-bold text-[#1765F5]">Read More →</span></div> : <span className="mt-1 block text-[11px] font-medium text-[#64748B]">{item.badge}</span>}</div><span className="shrink-0 font-mono text-[11px] font-bold text-[#1765F5] transition-transform group-hover:translate-x-1">{item.vol} →</span></Link>)}</div></div>
             </aside>
           </div>
         </section>
