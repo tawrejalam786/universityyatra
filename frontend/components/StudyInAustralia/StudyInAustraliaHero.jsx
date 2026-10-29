@@ -48,7 +48,7 @@ export default function StudyInAustraliaHero() {
           TOP HEADING
           MOBILE NAVBAR SPACING FIX
       ===================================== */}
-      <div className="relative z-10 w-full px-4 pt-[105px] text-center min-[390px]:pt-[115px] sm:px-6 sm:pt-[115px] md:pt-[120px] lg:pt-[110px]">
+      <div className="relative z-10 w-full px-4 pt-[105px] text-center min-[390px]:pt-[115px] sm:px-6 sm:pt-[115px] md:pt-[120px] lg:pt-[98px]">
 
         <motion.h1
           initial={

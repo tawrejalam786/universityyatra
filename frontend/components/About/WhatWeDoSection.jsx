@@ -1,124 +1,73 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
-
-const services = [
-  "Profile-based country and course selection",
-  "University shortlisting and application support",
-  "Document preparation and SOP guidance",
-  "Visa process support and interview preparation",
-  "Pre-departure guidance and orientation",
-  "Post-landing support and career guidance",
+const steps = [
+  {
+    "title": "University & Course Selection",
+    "description": "We assess your academic background, interests, and goals, then shortlist universities based on eligibility, course structure, tuition fees, and career opportunities."
+  },
+  {
+    "title": "Admissions",
+    "description": "We guide you through application planning, university requirements, submission timelines, and follow-ups to keep your admissions journey organised."
+  },
+  {
+    "title": "Test Preparation",
+    "description": "Through Academic Yatra, we offer preparation for IELTS, PTE, TOEFL, Duolingo English Test, GRE, GMAT, SAT, and other relevant examinations."
+  },
+  {
+    "title": "Documentation",
+    "description": "We help organise academic records, statements of purpose, letters of recommendation, and supporting documents according to university and application requirements."
+  },
+  {
+    "title": "Scholarships & Education Loans",
+    "description": "We help students explore suitable scholarships and education financing options, understand eligibility criteria, and prepare for the relevant application processes."
+  },
+  {
+    "title": "Visa Guidance",
+    "description": "We guide students through destination-specific visa requirements, document preparation, application procedures, and interview readiness where applicable."
+  },
+  {
+    "title": "Pre-Departure Support",
+    "description": "We help students prepare for their transition abroad through practical guidance on travel, accommodation, essential documents, and settling into a new environment."
+  }
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
 
-export default function WhatWeDoSection() {
+const accents = [
+  { bg: "bg-[#1765F5]", text: "text-white", fill: "#1765F5" },
+  { bg: "bg-[#5D93F8]", text: "text-white", fill: "#5D93F8" },
+  { bg: "bg-[#A2C1FB]", text: "text-[#0C337B]", fill: "#A2C1FB" },
+  { bg: "bg-[#1047AC]", text: "text-white", fill: "#1047AC" },
+];
+
+export default function WhatWeDo() {
   return (
-    <section
-      aria-labelledby="what-we-do-title"
-      className="relative w-full overflow-hidden bg-white py-12 sm:py-14 lg:py-16"
-    >
-      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 md:grid-cols-[1fr_0.95fr] md:gap-12 lg:gap-16">
-          {/* LEFT - CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, x: -35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="min-w-0"
-          >
-            {/* EYEBROW */}
-            <div className="mb-4 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#1765F5]">
-              <span className="h-[7px] w-[7px] rounded-full bg-[#1765F5]" />
-              What We Do
-            </div>
-
-            {/* HEADING */}
-            <h2
-              id="what-we-do-title"
-              className="max-w-[540px] text-[29px] font-extrabold leading-[1.16] tracking-[-0.035em] text-[#0C337B] sm:text-[35px] lg:text-[40px]"
-            >
-              Comprehensive{" "}
-              <span className="text-[#1765F5]">Study Abroad</span>{" "}
-              Support
-            </h2>
-
-            {/* DESCRIPTION */}
-            <p className="mt-5 max-w-[560px] text-[14px] leading-[1.85] text-[#53647C] sm:text-[15px]">
-              From profile evaluation to post-landing support, we guide you through every step of your study abroad journey with honesty and expertise.
-            </p>
-
-            {/* SERVICE LIST */}
-            <div className="mt-7 space-y-4">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service}
-                  initial={{ opacity: 0, x: -15 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
-                    ease: "easeOut",
-                  }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EDF5FF] text-[#1765F5]">
-                    <CheckCircle2 size={16} strokeWidth={2.5} />
-                  </div>
-                  <p className="text-[14px] font-medium leading-[1.65] text-[#0C337B] sm:text-[15px]">
-                    {service}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* RIGHT - IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, x: 35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[520px]"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-[#DFEAFB] bg-[#EDF5FF]">
-              <Image
-                src="/images/about/what-we-do.webp"
-                alt="Students receiving study abroad guidance and counselling"
-                fill
-                sizes="(max-width: 767px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-
-            {/* FLOATING 3D ICON */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 -right-6 h-[120px] w-[120px] rounded-full border-4 border-white bg-[#EDF5FF] shadow-[0_12px_32px_rgba(12,51,123,0.12)] sm:-bottom-8 sm:-right-8 sm:h-[140px] sm:w-[140px]"
-            >
-              <div className="relative h-full w-full p-4">
-                <Image
-                  src="/images/about/icons/guidance-support-3d.webp"
-                  alt="Support icon"
-                  fill
-                  sizes="140px"
-                  className="object-contain p-4"
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
+    <section aria-label="What We Do. How We Do It." className="box-border w-full overflow-x-clip bg-[#E8F0FE] px-4 py-7 text-[#0C337B] sm:px-6 sm:py-9">
+      <div className="mx-auto w-full max-w-[900px]">
+        <h2 className="mx-auto mb-7 max-w-[580px] text-center text-[22px] font-extrabold leading-[1.12] tracking-[-0.035em] sm:mb-9 sm:text-[28px]">
+          What We Do. <span className="text-[#1765F5]">How We Do It.</span>
+        </h2>
+        <ol className="m-0 grid list-none gap-6 p-0 sm:gap-8">
+          {steps.map((step, index) => {
+            const reverse = index % 2 === 1;
+            const accent = accents[index % accents.length];
+            return (
+              <li key={step.title} className={`relative mx-auto flex min-h-[94px] w-full max-w-[820px] min-w-0 items-stretch drop-shadow-[0_4px_4px_#0C337B22] sm:min-h-[82px] ${reverse ? "flex-row-reverse" : ""}`}>
+                <div className={`relative z-10 flex w-[82px] shrink-0 flex-col items-center justify-center rounded-[17px] sm:w-[155px] sm:rounded-[22px] ${accent.bg} ${accent.text}`}>
+                  <span className="text-[25px] font-black leading-none tracking-[-0.06em] sm:text-[30px]">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="mt-1 text-[8px] font-bold leading-none sm:text-[9px]">Step {String(index + 1).padStart(2, "0")}</span>
+                  <svg aria-hidden="true" className={`absolute bottom-[-15px] h-[22px] w-[29px] ${reverse ? "right-0 -scale-x-100" : "left-0"}`} viewBox="0 0 29 22"><path d="M0 0h29L0 22Z" fill={accent.fill} /></svg>
+                </div>
+                <div className={`relative flex min-w-0 flex-1 flex-col justify-center rounded-[24px] bg-white py-3 sm:rounded-full sm:py-4 ${reverse ? "pl-4 pr-7 sm:pl-8 sm:pr-[62px]" : "pl-7 pr-4 sm:pl-[62px] sm:pr-8"}`}>
+                  <span aria-hidden="true" className={`absolute top-[7px] h-px w-[42%] bg-[#E8F0FE] ${reverse ? "right-7" : "left-7"}`} />
+                  <h3 className="m-0 mb-1 text-[11px] font-extrabold uppercase leading-[1.25] text-[#1765F5] sm:text-[12px]">{step.title}</h3>
+                  <p className="m-0 text-[10px] leading-[1.4] text-[#0C337B] [overflow-wrap:anywhere] sm:text-[11px] sm:leading-[1.45]">{step.description}</p>
+                </div>
+                <svg aria-hidden="true" className={`pointer-events-none absolute left-[60px] top-1/2 z-20 h-[47px] w-[57px] -translate-y-1/2 overflow-visible sm:left-[127px] sm:h-[54px] sm:w-[66px] ${reverse ? "!left-auto right-[60px] scale-x-[-1] sm:!right-[127px]" : ""}`} viewBox="0 0 66 54" fill="none">
+                  <circle cx="24" cy="27" r="17" stroke="#1047AC" strokeWidth="10" />
+                  <circle cx="43" cy="27" r="17" stroke="#FFFFFF" strokeWidth="10" />
+                </svg>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );

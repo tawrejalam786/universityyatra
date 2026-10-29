@@ -90,11 +90,7 @@ const guides = [
         label: "Living costs",
         value: "AUD 1,800-2,500/month",
       },
-      {
-        icon: Wallet,
-        label: "Other costs",
-        value: "Insurance, books, deposits, and travel",
-      },
+      
     ],
 
     note:

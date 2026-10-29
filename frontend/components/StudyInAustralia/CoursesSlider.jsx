@@ -29,89 +29,201 @@ const tabs = [
    Specializations replaced with descriptions.
 ========================================= */
 
+
+
 const courseCards = [
+  // ==========================================
+  // MASTER'S DEGREE PROGRAMS (01–10)
+  // ==========================================
+
   {
     id: 1,
-    course: "BBA",
-    category: "bachelors",
-    image: "/images/courses/bba.png",
+    course: "Master of Computer Science",
+    category: "masters",
+    image: "/images/courses/australia/master-computer-science.webp",
     color: "#2563EB",
     description:
-      "Build a strong foundation in business management, marketing, finance, and organisational operations while developing leadership and decision-making skills.",
+      "Develop advanced skills in computing, software systems, algorithms, and emerging technologies for technical and research-oriented careers.",
   },
   {
     id: 2,
-    course: "BCA",
-    category: "bachelors",
-    image: "/images/courses/bca.png",
+    course: "Master of Data Science",
+    category: "masters",
+    image: "/images/courses/australia/master-data-science.webp",
     color: "#0DAA9A",
     description:
-      "Develop essential skills in computer applications, programming, software development, databases, and information technology for a career in the digital world.",
+      "Learn statistical modelling, data analysis, machine learning, and visualisation to interpret complex datasets and support business decisions.",
   },
   {
     id: 3,
-    course: "MBA",
+    course: "Master of Artificial Intelligence",
     category: "masters",
-    image: "/images/courses/mba.png",
+    image: "/images/courses/australia/master-artificial-intelligence.webp",
     color: "#F59E0B",
     description:
-      "Strengthen your understanding of business strategy, leadership, operations, finance, and management to prepare for professional and managerial responsibilities.",
+      "Explore intelligent systems, machine learning, neural networks, and AI applications across technology, research, and industry.",
   },
   {
     id: 4,
-    course: "MCA",
+    course: "Master of Cyber Security",
     category: "masters",
-    image: "/images/courses/mca.png",
+    image: "/images/courses/australia/master-cyber-security.webp",
     color: "#7C3AED",
     description:
-      "Advance your knowledge of computer science, application development, programming, software systems, and modern computing technologies.",
+      "Study network security, digital forensics, risk management, and cyber defence to understand and address evolving digital threats.",
   },
   {
     id: 5,
-    course: "B.Com",
-    category: "bachelors",
-    image: "/images/courses/bcom.png",
+    course: "Master of Mechanical Engineering",
+    category: "masters",
+    image: "/images/courses/australia/master-mechanical-engineering.webp",
     color: "#EC1682",
     description:
-      "Gain foundational knowledge of accounting, commerce, taxation, financial management, and business principles for opportunities in finance and related fields.",
+      "Build expertise in engineering design, manufacturing, materials, and mechanical systems through advanced technical study and projects.",
   },
   {
     id: 6,
-    course: "M.Com",
+    course: "Master of Civil Engineering",
     category: "masters",
-    image: "/images/courses/mcom.png",
+    image: "/images/courses/australia/master-civil-engineering.webp",
     color: "#4F46E5",
     description:
-      "Develop advanced understanding of commerce, accounting, financial analysis, economics, and business practices to strengthen your professional knowledge.",
+      "Explore structural design, infrastructure, construction systems, and sustainable engineering for complex built-environment challenges.",
   },
   {
     id: 7,
-    course: "M.Sc.",
+    course: "Master of Renewable Energy",
     category: "masters",
-    image: "/images/courses/msc.png",
+    image: "/images/courses/australia/master-renewable-energy.webp",
     color: "#16A34A",
     description:
-      "Deepen your subject knowledge through advanced scientific concepts, analytical methods, research approaches, and practical problem-solving skills.",
+      "Study clean-energy technologies, energy systems, sustainability, and renewable power solutions for a changing global energy landscape.",
   },
   {
     id: 8,
-    course: "MA",
+    course: "Master of International Business",
     category: "masters",
-    image: "/images/courses/ma.png",
+    image: "/images/courses/australia/master-international-business.webp",
     color: "#EF4444",
     description:
-      "Explore advanced concepts in humanities and social sciences while developing critical thinking, research, communication, and analytical abilities.",
+      "Understand global markets, cross-border strategy, international trade, and business management across diverse economic environments.",
   },
   {
     id: 9,
-    course: "BA",
-    category: "bachelors",
-    image: "/images/courses/ba.png",
+    course: "Master of Applied Finance",
+    category: "masters",
+    image: "/images/courses/australia/master-applied-finance.webp",
     color: "#06B6D4",
     description:
-      "Build a broad understanding of humanities and social sciences while strengthening communication, critical thinking, and analytical skills.",
+      "Develop knowledge of financial markets, investment analysis, risk management, and corporate finance for finance-focused career pathways.",
+  },
+  {
+    id: 10,
+    course: "Master of Public Health",
+    category: "masters",
+    image: "/images/courses/australia/master-public-health.webp",
+    color: "#B45309",
+    description:
+      "Explore epidemiology, health policy, disease prevention, and population health to understand healthcare challenges at community and national levels.",
+  },
+
+  // ==========================================
+  // BACHELOR'S DEGREE PROGRAMS (11–20)
+  // ==========================================
+
+  {
+    id: 11,
+    course: "Bachelor of Computer Science",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-computer-science.webp",
+    color: "#2563EB",
+    description:
+      "Learn programming, algorithms, software development, and computing fundamentals to build a foundation for careers in technology and software engineering.",
+  },
+  {
+    id: 12,
+    course: "Bachelor of Data Science",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-data-science.webp",
+    color: "#0DAA9A",
+    description:
+      "Develop skills in statistics, coding, data visualisation, and analytical methods to interpret information and solve real-world problems.",
+  },
+  {
+    id: 13,
+    course: "Bachelor of Mechanical Engineering",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-mechanical-engineering.webp",
+    color: "#F59E0B",
+    description:
+      "Explore mechanics, thermodynamics, materials, and engineering design to understand how machines, products, and industrial systems work.",
+  },
+  {
+    id: 14,
+    course: "Bachelor of Civil Engineering",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-civil-engineering.webp",
+    color: "#7C3AED",
+    description:
+      "Study structural systems, construction materials, infrastructure design, and engineering principles used to develop buildings and public facilities.",
+  },
+  {
+    id: 15,
+    course: "Bachelor of Electrical Engineering",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-electrical-engineering.webp",
+    color: "#EC1682",
+    description:
+      "Build foundational knowledge in electrical circuits, electronics, power systems, and control technologies through theoretical and practical learning.",
+  },
+  {
+    id: 16,
+    course: "Bachelor of Business",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-business.webp",
+    color: "#4F46E5",
+    description:
+      "Explore management, marketing, finance, and organisational strategy while developing a broad understanding of how businesses operate.",
+  },
+  {
+    id: 17,
+    course: "Bachelor of Commerce",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-commerce.webp",
+    color: "#16A34A",
+    description:
+      "Study accounting, economics, finance, and business analytics to build a foundation for careers in commerce and financial services.",
+  },
+  {
+    id: 18,
+    course: "Bachelor of Biotechnology",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-biotechnology.webp",
+    color: "#EF4444",
+    description:
+      "Learn how biology, genetics, and laboratory science contribute to applications in healthcare, agriculture, pharmaceuticals, and scientific research.",
+  },
+  {
+    id: 19,
+    course: "Bachelor of Environmental Science",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-environmental-science.webp",
+    color: "#059669",
+    description:
+      "Explore ecosystems, conservation, climate science, and environmental management to understand sustainability challenges and potential solutions.",
+  },
+  {
+    id: 20,
+    course: "Bachelor of Psychology",
+    category: "bachelors",
+    image: "/images/courses/australia/bachelor-psychology.webp",
+    color: "#9333EA",
+    description:
+      "Study human behaviour, cognition, development, and psychological research while building a foundation for further study in psychology-related fields.",
   },
 ];
+
+
 
 /* =========================================
    COMPACT CATEGORY PILL
@@ -183,7 +295,7 @@ export default function CoursesSlider() {
   /* CATEGORY TITLE */
   const categoryTitle =
     activeTab === "masters"
-      ? "Master's Degree Programs"
+      ? "Master's Degree Programs for Indian Students"
       : activeTab === "bachelors"
       ? "Bachelor's Degree Programs"
       : "All Degree Programs";
@@ -217,7 +329,7 @@ export default function CoursesSlider() {
           className="mb-5"
         >
           <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[32px] md:text-[36px]">
-            Courses
+            Explore Courses in Australia
           </h2>
 
           {/* ACCENT DECORATION */}

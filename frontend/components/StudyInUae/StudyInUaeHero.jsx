@@ -27,7 +27,7 @@ export default function StudyInUaeHero() {
       ===================================== */}
       <div className="absolute inset-0 -z-30 overflow-hidden">
         <Image
-          src="/images/hero/study-in-uae.webp"
+          src="/images/hero/study-in-uaes.webp"
           alt="UAE landmarks including Dubai skyline and modern architecture"
           fill
           priority

@@ -301,7 +301,7 @@ export default function CountriesCarousel() {
 
 
       {/* FULL WIDTH 3D SWIPER */}
-      <div className="relative w-full overflow-hidden py-4">
+      <div className="relative w-full overflow-hidden py-1">
         <Swiper
           modules={[EffectCoverflow]}
           onSwiper={(swiper) => {
@@ -355,7 +355,7 @@ export default function CountriesCarousel() {
               spaceBetween: 18,
             },
           }}
-          className="w-full !overflow-visible !py-8"
+          className="w-full !overflow-visible !py-0"
         >
           {countries.map((country, index) => (
             <SwiperSlide key={country.name} className="!h-auto">

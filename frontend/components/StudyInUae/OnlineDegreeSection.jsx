@@ -90,11 +90,6 @@ const guides = [
         label: "Living expenses",
         value: "AED 3,000–5,000/month depending on emirate and housing",
       },
-      {
-        icon: Wallet,
-        label: "Other costs",
-        value: "Health insurance, visa fees, transport, and course materials",
-      },
     ],
 
     note:

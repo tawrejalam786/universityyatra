@@ -26,7 +26,7 @@ export default function StudyInRussiaHero() {
       ===================================== */}
       <div className="absolute inset-0 -z-30 overflow-hidden">
         <Image
-          src="/images/hero/study-in-russia.webp"
+          src="/images/hero/study-in-russias.webp"
           alt="Russia landmarks and scenic landscapes"
           fill
           priority

@@ -38,11 +38,11 @@ const GUIDE_DETAILS_DATABASE = {
   "academic-pathways": {
     id: "01",
     vol: "VOL. I",
-    title: "Study in USA: Academic Pathways",
+    title: "Study in USA",
     shortTitle: "Academic Pathways",
     badge: "Degrees, Programs & Intakes",
     tagline: "Undergraduate Pathways, Specialized Master's Degrees & US Intake Calendars",
-    heroImage: "/images/hero/usa-3d-depth-hero.jpg",
+    heroImage: "/images/universities/canada/university-of-ottawas.webp",
     accentColor: "#0A1E3F",
     pillColors: [
       { label: "4-YEAR BACHELOR'S", bg: "#D7F77D", text: "#063B72" },
@@ -72,10 +72,9 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: BookOpen,
         title: "What is studying in the USA actually like?",
-        desc: "Learning extends far beyond traditional lectures and final examinations.",
+        desc: "Learning often extends beyond lectures and final examinations. Students may complete research projects, participate in seminars, give presentations, and work on group assignments. Assessment can include coursework, quizzes, midterms, class participation, and final examinations, depending on the program.",
         points: [
-          "Hands-On Learning & Assessment: Students may complete research projects, participate in seminars, give presentations, and work on group assignments. Assessment can include coursework, quizzes, midterms, class participation, and final examinations, depending on the program.",
-          "Looking Beyond Rankings: When comparing universities, look beyond rankings. Course structure, faculty expertise, research opportunities, assessment methods, and program requirements can all influence your academic experience.",
+          "When comparing universities, look beyond rankings. Course structure, faculty expertise, research opportunities, assessment methods, and program requirements can all influence your academic experience.",
         ],
       },
       {
@@ -86,31 +85,22 @@ const GUIDE_DETAILS_DATABASE = {
           "Fall Intake (August–September): The main intake, generally with the widest range of available programs.",
           "Spring Intake (January): An alternative for students who need additional time to prepare applications or meet admission requirements.",
           "Summer Intake (May–June): Available for selected courses and institutions.",
-          "Deadlines & Availability: Intake availability and deadlines differ by university and program. Check the specific course page before planning your application.",
-          "Strategic Planning for Indian Students: For Indian students planning to study in the USA, start by identifying the right degree level, checking entry requirements, and comparing programs that match your academic background and career goals.",
+          "Intake availability and deadlines differ by university and program. Check the specific course page before planning your application.",
+          "For Indian students planning to study in the USA, start by identifying the right degree level, checking entry requirements, and comparing programs that match your academic background and career goals.",
         ],
       },
     ],
-    faqs: [
-      {
-        q: "Which US intake offers the most scholarships and courses?",
-        a: "The Fall intake (August–September) is the primary academic intake in the United States, offering the widest selection of programs, maximum scholarship allocations, and campus recruitment opportunities.",
-      },
-      {
-        q: "Can I study subjects outside my declared major in the US?",
-        a: "Yes. Many US undergraduate programs allow students to combine a major with minors, electives, and courses from other disciplines, giving students greater flexibility to shape their academic pathway.",
-      },
-    ],
+    faqs: [],
   },
 
   "cost-of-studying": {
     id: "02",
     vol: "VOL. II",
-    title: "Cost of Studying in the USA",
+    title: "Cost of Studying in USA",
     shortTitle: "Cost of Studying",
     badge: "Tuition, Fees & Budget Guide",
     tagline: "Indicative Tuition Fees, Living Costs, Health Insurance & Financial Planning",
-    heroImage: "/images/study-usa/modal-depth-bg.jpg",
+    heroImage: "/images/universities/canada/toronto-metropolitan-university.webp",
     accentColor: "#4A101D",
     pillColors: [
       { label: "MASTER'S TUITION", bg: "#D7F77D", text: "#063B72" },
@@ -130,12 +120,13 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: DollarSign,
         title: "How Much Does It Cost to Study in the USA?",
-        desc: "Tuition benchmarks across master's and bachelor's degree programs.",
         points: [
           "Master's Degree Tuition Fees: For initial planning, international students can use US$22,000–45,000 per year (approximately ₹20.9–42.75 lakh) as an indicative tuition range for many master's programs. This is a planning estimate, not a verified national average. MBA programs, specialised degrees, and universities with higher tuition may cost more, while some institutions offer lower-cost options or funding.",
-          "Bachelor's Degree Tuition Fees (College Board 2025): For bachelor's programs, the College Board's Trends in College Pricing 2025 reports the following average annual tuition and fees for 2025–26: Public four-year universities, out-of-state: US$31,880 (approximately ₹30.3 lakh); Private nonprofit four-year universities: US$45,000 (approximately ₹42.75 lakh).",
-          "Institutional Rates: These figures are useful reference points for Indian students, but they are undergraduate averages rather than guaranteed international-student fees. Public universities may have different published rates for international students, and individual programs can charge more or less.",
-          "Currency Conversion Note: Rupee conversions are illustrative, using ₹95 per US dollar. Actual costs will change with the prevailing exchange rate.",
+          "Bachelor's Degree Tuition Fees: For bachelor's programs, the College Board's Trends in College Pricing 2025 reports the following average annual tuition and fees for 2025–26:",
+          "Public four-year universities, out-of-state: US$31,880 (approximately ₹30.3 lakh).",
+          "Private nonprofit four-year universities: US$45,000 (approximately ₹42.75 lakh).",
+          "These figures are useful reference points for Indian students, but they are undergraduate averages rather than guaranteed international-student fees. Public universities may have different published rates for international students, and individual programs can charge more or less.",
+          "Rupee conversions are illustrative, using ₹95 per US dollar. Actual costs will change with the exchange rate.",
         ],
       },
       {
@@ -153,35 +144,24 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: Calculator,
         title: "How Much Should You Budget Before Applying?",
-        desc: "Calculating the total cost of completing your degree vs. only first-year tuition.",
         points: [
-          "Check Official Cost-of-Attendance: Start by checking the university's official cost-of-attendance page for your specific course. Compare tuition, mandatory fees, program duration, and any scholarships or assistantships you may qualify for.",
-          "Program Duration: A two-year master's degree, for instance, requires a different total budget from a one-year program, even if the annual tuition is similar.",
-          "Living & Everyday Essentials: You should also account for accommodation, food, transport, utilities, and personal expenses. These costs are covered in our separate Cost of Living & Culture guide.",
-          "Compare Total Degree Cost: The most useful comparison is the total estimated cost of completing your degree, not just the first year's tuition. This helps you shortlist universities that fit your budget before committing to applications.",
+          "Start by checking the university's official cost-of-attendance page for your specific course. Compare tuition, mandatory fees, program duration, and any scholarships or assistantships you may qualify for. A two-year master's degree, for instance, requires a different total budget from a one-year program, even if the annual tuition is similar.",
+          "You should also account for accommodation, food, transport, utilities, and personal expenses. These costs are covered in our separate Cost of Living & Culture guide.",
+          "The most useful comparison is the total estimated cost of completing your degree, not just the first year's tuition. This helps you shortlist universities that fit your budget before committing to applications.",
         ],
       },
     ],
-    faqs: [
-      {
-        q: "What is the typical annual tuition fee range for master's programs?",
-        a: "Indicative annual tuition for master's programs ranges from US$22,000 to US$45,000 per year (approximately ₹20.9–42.75 lakh), depending on the university, specialization, and course structure.",
-      },
-      {
-        q: "Do public universities offer lower rates for international students?",
-        a: "Public state universities offer published out-of-state tuition rates for international students, which typically average US$31,880 annually, though individual universities and programs may vary.",
-      },
-    ],
+    faqs: [],
   },
 
   "living-and-culture": {
     id: "03",
     vol: "VOL. III",
-    title: "Cost of Living & Culture in USA",
+    title: "Cost of Living in USA",
     shortTitle: "Living & Culture",
     badge: "Student Life & Monthly Expenses",
     tagline: "Monthly Expenses, Accommodation, Transit & Finding Your Place in America",
-    heroImage: "/images/study-usa/living-and-culture-hero.jpg",
+    heroImage: "/images/universities/canada/university-of-saskatchewan.webp",
     accentColor: "#165548",
     pillColors: [
       { label: "MONTHLY BUDGET", bg: "#D7F77D", text: "#063B72" },
@@ -201,49 +181,36 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: DollarSign,
         title: "How Much Does It Cost to Live in the USA as a Student?",
-        desc: "Baseline planning estimate for international students.",
         points: [
-          "Planning Estimate: As an initial planning estimate, budget approximately US$1,000–2,500 per month (₹95,000–2.38 lakh) for living expenses, excluding tuition.",
-          "Location Factors: Your actual costs will depend on your university location, accommodation, transport, and lifestyle. Large metropolitan areas can be considerably more expensive than smaller university towns.",
+          "As an initial planning estimate, budget approximately US$1,000–2,500 per month (₹95,000–2.38 lakh) for living expenses, excluding tuition. Your actual costs will depend on your university location, accommodation, transport, and lifestyle. Large metropolitan areas can be considerably more expensive than smaller university towns.",
         ],
       },
       {
         icon: HomeIcon,
         title: "What Will Your Monthly Expenses Include?",
-        desc: "Detailed breakdown of routine essentials.",
         points: [
           "Accommodation: On-campus residence halls, shared apartments, and private rentals come with different costs. Remember to account for deposits, utilities, and any additional housing charges.",
           "Food and Groceries: Cooking at home and shopping for groceries can help you manage your budget. Eating out regularly, ordering delivery, and buying convenience foods will increase your spending.",
           "Transport: Your costs depend on the city and how close you live to campus. Some students rely on public transport, university shuttles, cycling, or walking, while others may need a car.",
           "Utilities and Internet: Depending on your housing arrangement, electricity, heating, water, and internet may be included in rent or billed separately.",
           "Personal Expenses: Mobile plans, laundry, clothing, healthcare-related costs, and social activities are easy to overlook when preparing a budget.",
-          "Location-Specific Budgeting: Before choosing your university, check its official estimated living expenses and compare accommodation options nearby. Build your budget around your actual destination rather than relying on a nationwide average.",
+          "Before choosing your university, check its official estimated living expenses and compare accommodation options nearby. Build your budget around your actual destination rather than relying on a nationwide average.",
         ],
       },
       {
         icon: Users,
         title: "The Culture: Finding Your Place in America",
-        desc: "Adapting to American campus rhythms, social dynamics, and independent student life.",
         points: [
-          "Learning the Social Rhythm: Your first few weeks in the United States may feel like learning a new rhythm. People might be more direct in conversations, plans are often made around individual schedules, and everyday interactions can feel different from what you're used to in India. These differences aren't necessarily better or worse; they're part of getting familiar with a new place.",
-          "Campus Life & Community: Campus life has its own little world. A university can bring together students from different states, countries, and backgrounds. You might find yourself in a debate club one evening, at a cultural festival the next, or sharing a meal with classmates whose experiences are completely different from yours. Student organisations, sports, interest groups, and campus events can make it easier to meet people beyond your course.",
-          "Food & Dietary Adjustments: Food becomes part of the adjustment, too. American campuses and cities offer everything from familiar Indian groceries and restaurants to regional cuisines from around the world. Cooking for yourself may become a regular part of student life, especially when you're balancing a busy schedule with a monthly budget.",
-          "Geography & Routine: In some cities, you can walk or take a train to class, meet friends, and explore neighbourhoods without much planning. In others, distances are greater and a car may be more practical. Weather can also shape your routine, from snowy winters in the Northeast and Midwest to warmer conditions in parts of the South and Southwest.",
-          "Embracing the Experience: The experience won't be identical everywhere. Life in a large city can feel fast-paced and independent, while a smaller college town may revolve more closely around the university. Give yourself time to adjust, ask questions when something feels unfamiliar, and stay open to routines that differ from home.",
-          "Preserving Your Identity: The goal isn't to leave your own culture behind. It's to build a life that lets you carry familiar traditions with you while discovering new ways of living.",
+          "Your first few weeks in the United States may feel like learning a new rhythm. People might be more direct in conversations, plans are often made around individual schedules, and everyday interactions can feel different from what you're used to in India. These differences aren't necessarily better or worse; they're part of getting familiar with a new place.",
+          "Campus life has its own little world. A university can bring together students from different states, countries, and backgrounds. You might find yourself in a debate club one evening, at a cultural festival the next, or sharing a meal with classmates whose experiences are completely different from yours. Student organisations, sports, interest groups, and campus events can make it easier to meet people beyond your course.",
+          "Food becomes part of the adjustment, too. American campuses and cities offer everything from familiar Indian groceries and restaurants to regional cuisines from around the world. Cooking for yourself may become a regular part of student life, especially when you're balancing a busy schedule with a monthly budget.",
+          "Then there's the geography. In some cities, you can walk or take a train to class, meet friends, and explore neighbourhoods without much planning. In others, distances are greater and a car may be more practical. Weather can also shape your routine, from snowy winters in the Northeast and Midwest to warmer conditions in parts of the South and Southwest.",
+          "The experience won't be identical everywhere. Life in a large city can feel fast-paced and independent, while a smaller college town may revolve more closely around the university. Give yourself time to adjust, ask questions when something feels unfamiliar, and stay open to routines that differ from home.",
+          "The goal isn't to leave your own culture behind. It's to build a life that lets you carry familiar traditions with you while discovering new ways of living.",
         ],
       },
     ],
-    faqs: [
-      {
-        q: "How much should an Indian student budget per month for living expenses in the USA?",
-        a: "As an initial planning estimate, budget approximately US$1,000–2,500 per month (₹95,000–2.38 lakh) for living expenses, excluding tuition. Costs vary significantly between major metropolitan cities and college towns.",
-      },
-      {
-        q: "Is it easy to cook Indian meals and find groceries on US campuses?",
-        a: "Yes. Most university towns feature Indian grocery stores with spices, lentils, and fresh essentials, and shared student housing offers full kitchens, making home cooking common and economical.",
-      },
-    ],
+    faqs: [],
   },
 
   "scholarships-and-aid": {
@@ -253,7 +220,7 @@ const GUIDE_DETAILS_DATABASE = {
     shortTitle: "Scholarships & Aid",
     badge: "Funding, Grants & Financial Aid",
     tagline: "Merit Awards, Need-Based Aid, Fellowships & Complete Step-by-Step Application Guide",
-    heroImage: "/images/study-usa/study-in-usa-hero.jpg",
+    heroImage: "/images/universities/canada/trent-university.webp",
     accentColor: "#1A2645",
     pillColors: [
       { label: "MERIT SCHOLARSHIPS", bg: "#D7F77D", text: "#063B72" },
@@ -273,7 +240,6 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: Award,
         title: "Types of Scholarships in USA",
-        desc: "Understanding the five primary funding routes available to international applicants.",
         points: [
           "1. Merit-Based Scholarships: These awards recognise academic achievement and, depending on the university, may also consider leadership, extracurricular involvement, talent, or other accomplishments. Some universities automatically consider eligible applicants during admission, while others require a separate scholarship application. Merit scholarships may cover part of your tuition or provide a larger award. The amount and renewal conditions vary by institution, so check whether the award is one-time or renewable for subsequent years.",
           "2. Need-Based Financial Aid: Need-based aid is intended for students whose families may not be able to meet the full cost of education. Universities assess financial circumstances using their required forms and supporting documents. Some institutions extend substantial need-based aid to international students. For example, Harvard states that it meets the demonstrated financial need of admitted undergraduates, while Yale offers need-based aid to eligible international undergraduate applicants. These are institution-specific policies, not a standard benefit available at every US university.",
@@ -285,7 +251,6 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: Sparkles,
         title: "Scholarships Worth Exploring",
-        desc: "High-impact funding programs for Indian students.",
         points: [
           "Fulbright-Nehru Master's Fellowships: These fellowships support eligible Indian professionals pursuing selected master's programs in the United States. The published eligibility criteria include a recognised bachelor's-level qualification, at least three years of relevant full-time paid professional experience, and evidence of leadership and community engagement. Eligible fields and other requirements are specified by the programme. The fellowship can provide support towards tuition and fees, living and related costs, travel, and health coverage. It is therefore particularly relevant to eligible applicants with professional experience, rather than a general scholarship for every recent graduate.",
           "Inlaks Scholarship: The Inlaks Scholarship supports eligible Indian students pursuing selected postgraduate programmes at approved institutions. Its published award may cover tuition, living expenses, one-way travel, visa costs, and a health allowance, up to the programme's stated funding limit. Applicants must meet the Foundation's eligibility requirements and have the required admission offer. Academic thresholds, age criteria, eligible institutions, subject exclusions, and application rules should be checked against the relevant year's official guidelines.",
@@ -296,48 +261,53 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: CheckCircle2,
         title: "How to Get a Scholarship to Study in USA",
-        desc: "A practical 7-step strategy for securing funding.",
+        desc: "Finding funding is easier to manage when you treat it as part of your university research, rather than something to consider after receiving an offer.",
         points: [
-          "Step 1: Shortlist universities with suitable funding options: Start by identifying universities that offer your intended course and then check their official financial aid pages. Confirm whether international students are eligible for merit awards, need-based aid, departmental scholarships, or assistantships.",
-          "Step 2: Identify which funding route fits your profile: Your next step depends on the type of support you need. Academic achievements may be important for merit scholarships, family financial information may be required for need-based aid, and research experience or professional achievements may matter for specialised fellowships.",
-          "Step 3: Review eligibility before applying: Check the required academic qualifications, eligible nationalities, degree levels, subjects, work experience, age criteria, and any other conditions. A scholarship's name alone does not tell you whether you qualify.",
-          "Step 4: Prepare a strong application: Keep your academic transcripts, CV or résumé, statement of purpose, and letters of recommendation ready where required. For research-based funding, you may also need a research proposal or evidence of previous research. Tailor each application to the award's stated selection criteria.",
-          "Step 5: Complete financial aid documentation carefully: For need-based assistance, universities may request information about family income, assets, expenses, and other financial circumstances through their designated forms. Submit the correct documents in the requested format and ensure that the information is accurate and consistent.",
-          "Step 6: Apply before the relevant deadlines: Scholarship deadlines may be earlier than, the same as, or separate from university admission deadlines. Some awards require no additional application, while others have an independent process. Check the deadline for each university and funding programme rather than relying on a general calendar.",
-          "Step 7: Compare the award with your remaining costs: A scholarship may cover tuition alone or include additional expenses. Once you receive an offer, check the award amount, duration, renewal conditions, and any costs that remain your responsibility. This helps you understand the actual financial commitment before accepting admission.",
+          { title: "Step 1: Shortlist universities with suitable funding options", text: "Start by identifying universities that offer your intended course and then check their official financial aid pages. Confirm whether international students are eligible for merit awards, need-based aid, departmental scholarships, or assistantships." },
+          { title: "Step 2: Identify which funding route fits your profile", text: "Your next step depends on the type of support you need. Academic achievements may be important for merit scholarships, family financial information may be required for need-based aid, and research experience or professional achievements may matter for specialised fellowships." },
+          { title: "Step 3: Review eligibility before applying", text: "Check the required academic qualifications, eligible nationalities, degree levels, subjects, work experience, age criteria, and any other conditions. A scholarship's name alone does not tell you whether you qualify." },
+          { title: "Step 4: Prepare a strong application", text: "Keep your academic transcripts, CV or résumé, statement of purpose, and letters of recommendation ready where required. For research-based funding, you may also need a research proposal or evidence of previous research. Tailor each application to the award's stated selection criteria." },
+          { title: "Step 5: Complete financial aid documentation carefully", text: "For need-based assistance, universities may request information about family income, assets, expenses, and other financial circumstances through their designated forms. Submit the correct documents in the requested format and ensure that the information is accurate and consistent." },
+          { title: "Step 6: Apply before the relevant deadlines", text: "Scholarship deadlines may be earlier than, the same as, or separate from university admission deadlines. Some awards require no additional application, while others have an independent process. Check the deadline for each university and funding programme rather than relying on a general calendar." },
+          { title: "Step 7: Compare the award with your remaining costs", text: "A scholarship may cover tuition alone or include additional expenses. Once you receive an offer, check the award amount, duration, renewal conditions, and any costs that remain your responsibility. This helps you understand the actual financial commitment before accepting admission." },
         ],
       },
       {
         icon: FileText,
-        title: "Required Documents & Application Timing",
-        desc: "Document checklist and timeline recommendations.",
+        title: "What Documents May You Need?",
+        desc: "Requirements differ by scholarship, but common documents include:",
         points: [
-          "Common Documents Required: Academic transcripts and degree certificates; CV or résumé; Statement of purpose or scholarship essays; Letters of recommendation; Standardised test scores, if required by the university or programme; Family income, tax, or asset documents for need-based aid; Research proposal or portfolio, where applicable; and University admission offer, if required by the scholarship. Not every award asks for every document. Follow the official checklist for each application.",
-          "When Should You Apply?: There is no single scholarship deadline for the entire United States. Some universities consider funding applications alongside admission, while external fellowships have their own annual cycles. Start researching well before your intended intake so you have time to prepare documents, request recommendations, and meet separate funding deadlines.",
-          "Prudent Planning Rule: A scholarship can reduce your financial burden, but it should never be assumed until it has been formally awarded. Build your university shortlist around both academic fit and realistic funding options, and calculate the remaining cost before making your final decision.",
+          "Academic transcripts and degree certificates",
+          "CV or résumé",
+          "Statement of purpose or scholarship essays",
+          "Letters of recommendation",
+          "Standardised test scores, if required by the university or programme",
+          "Family income, tax, or asset documents for need-based aid",
+          "Research proposal or portfolio, where applicable",
+          "University admission offer, if required by the scholarship",
+          "Not every award asks for every document. Follow the official checklist for each application.",
+        ],
+      },
+      {
+        icon: Calendar,
+        title: "When Should You Apply?",
+        points: [
+          "There is no single scholarship deadline for the entire United States. Some universities consider funding applications alongside admission, while external fellowships have their own annual cycles. Start researching well before your intended intake so you have time to prepare documents, request recommendations, and meet separate funding deadlines.",
+          "One final thing to remember: A scholarship can reduce your financial burden, but it should never be assumed until it has been formally awarded. Build your university shortlist around both academic fit and realistic funding options, and calculate the remaining cost before making your final decision.",
         ],
       },
     ],
-    faqs: [
-      {
-        q: "Can Indian students qualify for merit-based scholarships in the USA?",
-        a: "Yes. Many US universities automatically evaluate international applicants for merit scholarships based on academic grades, test scores, leadership, and extracurricular achievements.",
-      },
-      {
-        q: "What external scholarships are available for Indian postgraduates in the US?",
-        a: "Prominent external funding programs include the Fulbright-Nehru Master's Fellowships and the Inlaks Scholarship, both offering substantial support towards tuition, living costs, and travel for qualifying scholars.",
-      },
-    ],
+    faqs: [],
   },
 
   "post-study-visa": {
     id: "05",
     vol: "VOL. V",
-    title: "Post-Study Work Visa In USA",
+    title: "Post-Study Work Visa USA",
     shortTitle: "Post-Study Visa",
     badge: "OPT, STEM Extensions & Careers",
     tagline: "12-Month Optional Practical Training (OPT), 24-Month STEM Extension & Career Planning",
-    heroImage: "/images/hero/usa-monuments-depth.jpg",
+    heroImage: "/images/universities/canada/university-of-windsor.webp",
     accentColor: "#1E2530",
     pillColors: [
       { label: "12-MONTH OPT", bg: "#D7F77D", text: "#063B72" },
@@ -357,67 +327,65 @@ const GUIDE_DETAILS_DATABASE = {
       {
         icon: Clock,
         title: "How Long Can You Work in the USA After Graduation?",
-        desc: "Overview of standard OPT and the STEM extension.",
         points: [
           "12 Months Under OPT: Eligible F-1 students can apply for up to 12 months of post-completion OPT after completing an academic program. The employment must be directly related to the student's major field of study. You cannot begin working simply because you have graduated or submitted your application. USCIS must approve your employment authorisation, and you can start only on the authorised date shown on your Employment Authorization Document (EAD). OPT eligibility and the permitted period depend on your circumstances and previous practical training. For example, full-time OPT used before graduation can reduce the amount available afterwards.",
           "Up to 36 Months for Eligible STEM Graduates: Graduates whose degrees qualify under the US Department of Homeland Security's STEM Designated Degree Program List may be eligible to apply for a further 24-month STEM OPT extension. When approved, this can provide up to 36 months of post-completion work authorisation in total.",
-          "STEM Extension Conditions: The extension has additional conditions. These generally include: A qualifying degree that meets the applicable STEM eligibility requirements (a course sounding technical or scientific does not automatically qualify); An eligible employer participating in E-Verify; A formal Form I-983 training plan outlining practical training, learning objectives, supervision, and evaluation; and Continued compliance with applicable reporting and employment requirements throughout the extension. A STEM OPT extension is not automatic.",
+          "The extension has additional conditions. These generally include:",
+          "A qualifying degree: Your degree must meet the applicable STEM eligibility requirements. A course sounding technical or scientific does not automatically qualify.",
+          "An eligible employer: The employer must participate in E-Verify and meet the relevant requirements.",
+          "A formal training plan: You and your employer must complete Form I-983, outlining the practical training, learning objectives, supervision, and evaluation process.",
+          "Continued compliance: You must meet the applicable reporting and employment requirements throughout the extension.",
+          "A STEM OPT extension is not automatic. Your degree, employer, application, and training arrangement must satisfy the relevant rules.",
         ],
       },
       {
         icon: ShieldCheck,
         title: "Who Is Eligible for OPT in the USA?",
-        desc: "Core immigration and academic requirements for post-completion OPT.",
+        desc: "OPT is intended for eligible F-1 students who meet the applicable immigration and academic requirements. Eligibility depends on your individual circumstances, but the standard post-completion route generally involves the following:",
         points: [
-          "Maintain valid F-1 status: You must comply with all conditions of your student status.",
-          "Complete required academic study: Generally, students must have completed at least one full academic year of qualifying study in the United States.",
-          "Obtain DSO recommendation: Your Designated School Official (DSO) must recommend OPT and update your record in the Student and Exchange Visitor Information System (SEVIS).",
+          "Maintain valid F-1 status: You must comply with the conditions of your student status.",
+          "Complete the required academic study: Generally, students must have completed at least one full academic year of qualifying study in the United States.",
+          "Obtain a recommendation from your university: Your Designated School Official (DSO) must recommend OPT and update your record in the Student and Exchange Visitor Information System (SEVIS).",
           "Apply to USCIS: You must submit Form I-765, Application for Employment Authorization, with the required supporting documents and applicable fee.",
-          "Work in a directly related field: Employment during OPT must relate directly to your major field of study.",
-          "Confirmation: Meeting the general conditions does not guarantee approval. Students should confirm their eligibility and application requirements with their university's international student office.",
+          "Work in a related field: Employment during OPT must relate directly to your major field of study.",
+          "Meeting the general conditions does not guarantee approval. Students should confirm their eligibility and application requirements with their university's international student office.",
         ],
       },
       {
         icon: Calendar,
         title: "When Should You Apply for OPT?",
-        desc: "Application timing rules and deadlines.",
+        desc: "Application timing matters because graduating, submitting an application, and receiving permission to work are separate steps.",
         points: [
-          "Standard Post-Completion OPT Application Window: Apply up to 90 days before your program end date, and apply no later than 60 days after your program end date.",
-          "30-Day Rule for SEVIS: Ensure USCIS receives your application within 30 days of the DSO entering the OPT recommendation in SEVIS. You must wait for approval and the authorised start date before beginning employment.",
-          "STEM OPT Extension Deadlines: Eligible students generally need to apply before their existing OPT authorisation expires and within the required period after their DSO's recommendation. Check the latest USCIS instructions before submitting either application, as missing a deadline can affect eligibility.",
+          "For standard post-completion OPT, the application window generally allows you to:",
+          "Apply up to 90 days before your program end date.",
+          "Apply no later than 60 days after your program end date.",
+          "Ensure USCIS receives your application within 30 days of the DSO entering the OPT recommendation in SEVIS.",
+          "You must wait for approval and the authorised start date before beginning employment.",
+          "For the STEM OPT extension, separate deadlines apply. Eligible students generally need to apply before their existing OPT authorisation expires and within the required period after their DSO's recommendation. Check the latest USCIS instructions before submitting either application, as missing a deadline can affect eligibility.",
         ],
       },
       {
         icon: Briefcase,
         title: "What Happens After OPT?",
-        desc: "Transitioning to employer sponsorship or continuing education.",
+        desc: "OPT is temporary work authorisation. It does not automatically lead to a longer-term work visa or permanent residency, so it is important to consider your next steps before your authorised period ends.",
         points: [
           "Employer-Sponsored H-1B Status: Some graduates seek H-1B status, which allows eligible US employers to employ foreign workers in qualifying specialty occupations. This requires a separate employer-led process, and many cap-subject petitions are subject to a selection process. Finding a job does not guarantee H-1B sponsorship or selection. Your employer must be willing and eligible to proceed, and the petition must satisfy the applicable requirements.",
           "Other Possible Next Steps: Depending on your circumstances, you may qualify for another immigration category, continue studying under the appropriate student status, or need to leave the United States when your authorised stay ends. Each option has separate eligibility requirements and procedures.",
-          "Plan Ahead: Plan ahead rather than assuming that an employer or another visa will be available before your OPT period finishes.",
+          "Plan ahead rather than assuming that an employer or another visa will be available before your OPT period finishes.",
         ],
       },
       {
         icon: Award,
         title: "How Should OPT Affect Your Course Choice?",
-        desc: "Aligning career ambitions with immigration and degree guidelines.",
+        desc: "If working in the USA after graduation is part of your plan, consider employment authorisation alongside tuition fees, curriculum, and career prospects.",
         points: [
-          "Verify STEM Eligibility: Before accepting an offer, check whether the exact degree qualifies for the STEM OPT extension, what opportunities the university offers for internships and practical learning, and how graduates in your field typically pursue employment. The degree title alone is not enough to establish STEM eligibility.",
-          "Realistic Outlook: Also remember that OPT does not guarantee a job, employer sponsorship, or permanent residency. Your career outcome will depend on your qualifications, employment opportunities, immigration eligibility, and the rules in force at the time.",
-          "Academic-First Approach: The best approach is to choose a program that fits your academic and career goals first, then understand the work authorisation options available to eligible graduates.",
+          "Before accepting an offer, check whether the exact degree qualifies for the STEM OPT extension, what opportunities the university offers for internships and practical learning, and how graduates in your field typically pursue employment. The degree title alone is not enough to establish STEM eligibility.",
+          "Also remember that OPT does not guarantee a job, employer sponsorship, or permanent residency. Your career outcome will depend on your qualifications, employment opportunities, immigration eligibility, and the rules in force at the time.",
+          "The best approach is to choose a program that fits your academic and career goals first, then understand the work authorisation options available to eligible graduates.",
         ],
       },
     ],
-    faqs: [
-      {
-        q: "How long can international students work in the USA after graduation?",
-        a: "Eligible F-1 graduates can apply for up to 12 months of Optional Practical Training (OPT). Qualifying STEM degree holders can apply for an additional 24-month extension, enabling up to 36 months of full-time work authorization.",
-      },
-      {
-        q: "Does getting a job on OPT guarantee H-1B sponsorship?",
-        a: "No. OPT is temporary employment authorization. H-1B status requires an employer-sponsored petition subject to the annual USCIS lottery process and regulatory criteria.",
-      },
-    ],
+    faqs: [],
   },
 
   "jobs-in-usa": {
@@ -677,18 +645,35 @@ export default async function GuideDetailPage({ params }) {
                         <h2 className="text-[19px] font-extrabold tracking-tight text-[#0C337B] sm:text-[22px]">
                           {chap.title}
                         </h2>
-                        <p className="mt-1 text-[13px] text-[#64748B] sm:text-[14px]">
-                          {chap.desc}
-                        </p>
+                        {chap.desc && (
+                          <p className="mt-1 text-[13px] text-[#64748B] sm:text-[14px]">
+                            {chap.desc}
+                          </p>
+                        )}
                       </div>
                     </div>
 
+                    {/* Optional chapter image: add image: { src, alt } to a chapter */}
+                    {chap.image && (
+                      <div className="relative mt-5 aspect-[16/9] w-full overflow-hidden rounded-2xl">
+                        <Image
+                          src={chap.image.src}
+                          alt={chap.image.alt || chap.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 66vw"
+                          unoptimized
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+
                     <ul className="mt-5 space-y-3.5 border-t border-slate-100 pt-5">
                       {chap.points.map((pt, pIdx) => {
-                        const colonIdx = pt.indexOf(":");
-                        const hasPrefix = colonIdx > 0 && colonIdx < 50;
-                        const prefix = hasPrefix ? pt.substring(0, colonIdx) : null;
-                        const content = hasPrefix ? pt.substring(colonIdx + 1) : pt;
+                        const isObj = typeof pt === "object";
+                        const colonIdx = isObj ? -1 : pt.indexOf(":");
+                        const hasPrefix = isObj || (colonIdx > 0 && colonIdx < 50);
+                        const prefix = isObj ? pt.title : hasPrefix ? pt.substring(0, colonIdx) : null;
+                        const content = isObj ? " " + pt.text : hasPrefix ? pt.substring(colonIdx + 1) : pt;
 
                         return (
                           <li key={pIdx} className="flex items-start gap-3">

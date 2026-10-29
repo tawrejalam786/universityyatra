@@ -27,7 +27,7 @@ export default function StudyInUsaHero() {
       ===================================== */}
       <div className="absolute inset-0 -z-30 overflow-hidden">
         <Image
-          src="/images/hero/study-in-uks.webp"
+          src="/images/hero/study-in-uk.webp"
           alt="USA landmarks including the Statue of Liberty and New York skyline"
           fill
           priority

@@ -1,128 +1,47 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const audiences = [
-  {
-    title: "Students Planning Study Abroad",
-    description: "High school and undergraduate students exploring international education opportunities.",
-    icon: "/images/about/icons/student-3d.webp",
-  },
-  {
-    title: "Parents Seeking Honest Guidance",
-    description: "Families looking for transparent, fraud-free education counselling and support.",
-    icon: "/images/about/icons/parents-3d.webp",
-  },
-  {
-    title: "Working Professionals",
-    description: "Professionals returning to education for career advancement and skill development.",
-    icon: "/images/about/icons/professional-3d.webp",
-  },
-  {
-    title: "Students with Study Gaps",
-    description: "Applicants with career changes or academic gaps seeking honest pathway guidance.",
-    icon: "/images/about/icons/gap-student-3d.webp",
-  },
-  {
-    title: "Confused by Conflicting Advice",
-    description: "Students overwhelmed by misinformation and looking for clear, reliable direction.",
-    icon: "/images/about/icons/confused-3d.webp",
-  },
+  { slug: "students-planning-to-study-abroad", title: "Students Planning to Study Abroad", description: "Exploring international universities, courses, and the right academic pathway." },
+  { slug: "parents-seeking-clarity", title: "Parents Seeking Clarity", description: "Looking for transparent advice on costs, eligibility, and educational choices." },
+  { slug: "working-professionals", title: "Working Professionals", description: "Considering international education for career progression or a change in direction." },
+  { slug: "students-navigating-conflicting-advice", title: "Students Navigating Conflicting Advice", description: "Seeking reliable information to make sense of different options and requirements." },
+  { slug: "students-with-academic-gaps", title: "Students with Academic Gaps", description: "Exploring suitable pathways after study breaks, backlogs, or a change in career plans." },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
+const cardStyles = [
+  "md:col-span-7 bg-[#E8F0FE]",
+  "md:col-span-5 bg-[#F7FAFF]",
+  "md:col-span-4 bg-white",
+  "md:col-span-4 bg-[#F3F7FE]",
+  "md:col-span-4 bg-white",
+];
 
-function AudienceCard({ audience, index }) {
+export default function WhoWeWorkWith() {
   return (
-    <motion.article
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.08,
-        ease: "easeOut",
-      }}
-      className="group flex items-start gap-4 rounded-[20px] border border-[#DFEAFB] bg-white p-5 shadow-[0_6px_24px_rgba(12,51,123,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#B6D0FF] hover:shadow-[0_10px_30px_rgba(23,101,245,0.08)] sm:p-6"
-    >
-      {/* 3D CLAY ICON */}
-      <div className="relative h-[70px] w-[70px] shrink-0">
-        <div className="absolute inset-0 rounded-2xl bg-[#EDF5FF] opacity-60" />
-        <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-110">
-          <Image
-            src={audience.icon}
-            alt={`${audience.title} illustration`}
-            fill
-            sizes="70px"
-            className="object-contain p-2"
-          />
-        </div>
-      </div>
-
-      {/* TEXT CONTENT */}
-      <div className="min-w-0 flex-1 pt-1">
-        <h3 className="text-[15px] font-bold leading-[1.35] text-[#0C337B] sm:text-[16px]">
-          {audience.title}
-        </h3>
-        <p className="mt-2 text-[13px] leading-[1.7] text-[#66758B] sm:text-[14px]">
-          {audience.description}
-        </p>
-      </div>
-    </motion.article>
-  );
-}
-
-export default function WhoWeWorkWithSection() {
-  return (
-    <section
-      aria-labelledby="who-we-work-with-title"
-      className="relative w-full overflow-hidden bg-white py-12 sm:py-14 lg:py-16"
-    >
-      <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
-        {/* SECTION HEADING */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 text-center"
-        >
-          <div className="mb-3 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#1765F5]">
-            <span className="h-[7px] w-[7px] rounded-full bg-[#1765F5]" />
-            Who We Work With
-          </div>
-
-          <h2
-            id="who-we-work-with-title"
-            className="text-[29px] font-extrabold leading-tight tracking-[-0.035em] text-[#0C337B] sm:text-[36px] lg:text-[42px]"
-          >
-            We're Here For{" "}
-            <span className="text-[#1765F5]">Every Student</span>
+    <section aria-labelledby="who-we-work-with-title" className="w-full bg-[#FBFCFF] px-4 py-12 text-[#0C337B] sm:px-6 sm:py-14 lg:px-8">
+      <div className="mx-auto max-w-[1180px]">
+        <div className="mb-7 flex items-end justify-between gap-5 border-b border-[#A2C1FB]/45 pb-5 sm:mb-8">
+          <h2 id="who-we-work-with-title" className="m-0 max-w-[620px] text-[26px] font-extrabold leading-[1.13] tracking-[-0.04em] sm:text-[34px]">
+            Who We <span className="text-[#1765F5]">Work With</span>
           </h2>
-
-          <p className="mx-auto mt-4 max-w-[680px] text-[13px] leading-[1.8] text-[#66758B] sm:text-[15px]">
-            From traditional students to professionals and those with unique circumstances — we provide honest guidance tailored to your profile.
-          </p>
-        </motion.div>
-
-        {/* AUDIENCE CARDS */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {audiences.slice(0, 3).map((audience, index) => (
-            <AudienceCard key={audience.title} audience={audience} index={index} />
-          ))}
+          <span aria-hidden="true" className="mb-1 hidden h-1.5 w-12 shrink-0 rounded-full bg-[#1765F5] sm:block" />
         </div>
 
-        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2 lg:px-[16.666%]">
-          {audiences.slice(3).map((audience, index) => (
-            <AudienceCard key={audience.title} audience={audience} index={index + 3} />
+        <ul className="grid list-none grid-cols-1 gap-3.5 p-0 md:grid-cols-12 md:gap-4">
+          {audiences.map((audience, index) => (
+            <li key={audience.slug} className={`group relative isolate flex min-h-[198px] min-w-0 overflow-hidden rounded-[22px] border border-[#DAE7FA] p-5 transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-[#A2C1FB] hover:shadow-[0_14px_32px_-20px_#1047AC55] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[215px] sm:p-6 ${cardStyles[index]} ${index < 2 ? "md:min-h-[238px]" : ""}`}>
+              <span aria-hidden="true" className="absolute right-[-34px] bottom-[-54px] -z-10 h-[190px] w-[190px] rounded-full bg-[#D9E7FF]/60 blur-[2px] transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none" />
+              <div className="relative z-10 flex h-full max-w-[68%] flex-col items-start sm:max-w-[66%]">
+                <span aria-hidden="true" className="mb-auto text-[11px] font-bold tracking-[0.16em] text-[#1765F5]">{String(index + 1).padStart(2, "0")}</span>
+                <div className="pt-7">
+                  <h3 className="m-0 mb-2 text-[16px] font-bold leading-[1.3] tracking-[-0.02em] text-[#0C337B] sm:text-[18px]">{audience.title}</h3>
+                  <p className="m-0 max-w-[36ch] text-[12px] leading-[1.55] text-[#526B8C] sm:text-[13px]">{audience.description}</p>
+                </div>
+              </div>
+              <Image src={`/images/who-we-work-with/${audience.slug}.png`} alt="" width={240} height={240} sizes="(max-width: 768px) 150px, 190px" className={`pointer-events-none absolute bottom-[-12px] right-[-10px] z-0 h-[155px] w-[155px] object-contain object-bottom drop-shadow-[0_12px_12px_#1047AC22] transition-transform duration-300 group-hover:scale-[1.04] motion-reduce:transition-none sm:h-[185px] sm:w-[185px] ${index === 0 ? "sm:bottom-[-15px] sm:right-[1%] md:h-[210px] md:w-[210px]" : ""}`} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

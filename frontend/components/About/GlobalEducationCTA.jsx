@@ -17,37 +17,57 @@ export default function GlobalEducationCTA() {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
+    <section className="relative w-full overflow-visible bg-white px-0 pb-7 pt-12 sm:pb-9 sm:pt-14 lg:pb-9 lg:pt-16">
       <div className="mx-auto w-full max-w-[1240px] px-3.5 sm:px-5 lg:px-6">
 
         {/* MAIN CTA CONTAINER */}
-        <div className="relative isolate overflow-hidden rounded-[22px] border border-[#5D93F8]/25 bg-[#0C337B] shadow-[0_18px_50px_rgba(12,51,123,0.22)] sm:rounded-[26px]">
+        <div className="group relative isolate w-full rounded-[22px] shadow-[0_16px_42px_rgba(12,51,123,0.18)] sm:rounded-[26px]">
 
-          {/* BACKGROUND DECORATION */}
-          <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 z-0 h-[300px] w-[300px] rounded-full border border-white/10" />
+          {/* BACKGROUND LAYER - CLIPPED SEPARATELY */}
+          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[22px] border border-[#5D93F8]/25 bg-[#0C337B] sm:rounded-[26px]">
 
-          <div aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 z-0 h-[210px] w-[210px] rounded-full border border-[#5D93F8]/20" />
+            {/* SUBTLE BLUE CIRCLES */}
+            <div
+              aria-hidden="true"
+              className="absolute -right-20 -top-24 h-[300px] w-[300px] rounded-full border border-white/10"
+            />
 
-          <div aria-hidden="true" className="pointer-events-none absolute right-[8%] top-1/2 z-0 h-[260px] w-[260px] -translate-y-1/2 rounded-full bg-[#1765F5]/20 blur-[70px]" />
+            <div
+              aria-hidden="true"
+              className="absolute -right-6 -top-10 h-[210px] w-[210px] rounded-full border border-[#5D93F8]/20"
+            />
 
-          <div aria-hidden="true" className="pointer-events-none absolute -left-16 bottom-[-120px] z-0 h-[250px] w-[250px] rounded-full bg-[#5D93F8]/15 blur-[70px]" />
+            <div
+              aria-hidden="true"
+              className="absolute bottom-[-90px] right-[5%] h-[240px] w-[240px] rounded-full bg-[#1765F5]/20 blur-[65px]"
+            />
 
-          {/* GRID BACKGROUND */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 opacity-[0.05] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:38px_38px]" />
+            {/* GRID PATTERN */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:38px_38px]"
+            />
 
-          {/* CONTENT GRID */}
-          <div className="relative z-10 grid grid-cols-1 items-center lg:min-h-[340px] lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.8fr)] lg:gap-4">
+            {/* BOTTOM LEFT ACCENT */}
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-24 -left-16 h-[210px] w-[210px] rounded-full bg-[#5D93F8]/10 blur-[60px]"
+            />
+          </div>
+
+          {/* MAIN CONTENT GRID */}
+          <div className="relative z-10 grid w-full grid-cols-1 items-center lg:min-h-[315px] lg:grid-cols-[minmax(0,1.45fr)_minmax(0,0.75fr)]">
 
             {/* LEFT CONTENT */}
-            <div className="relative z-20 px-5 pb-2 pt-7 sm:px-8 sm:pb-4 sm:pt-9 lg:py-11 lg:pl-11 lg:pr-0">
+            <div className="relative z-20 min-w-0 px-5 pb-5 pt-7 sm:px-8 sm:pb-7 sm:pt-8 lg:py-8 lg:pl-10 lg:pr-0">
 
               {/* TOP ICON */}
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[12px] border border-white/15 bg-white/10 text-[#A2C1FB] backdrop-blur-md">
-                <Globe2 size={20} strokeWidth={1.9} />
-              </div>
+              {/* <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[11px] border border-white/15 bg-white/10 text-[#A2C1FB] backdrop-blur-sm">
+                <Globe2 size={19} strokeWidth={1.9} />
+              </div> */}
 
               {/* HEADING */}
-              <h2 className="max-w-[650px] text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-white sm:text-[32px] md:text-[36px] lg:text-[38px]">
+              <h2 className="max-w-[650px] text-[25px] font-extrabold leading-[1.12] tracking-[-0.035em] text-white sm:text-[30px] md:text-[34px] lg:text-[35px]">
                 Taking Your Education{" "}
                 <span className="text-[#78ACFF]">
                   Global
@@ -59,11 +79,11 @@ export default function GlobalEducationCTA() {
                 <span className="h-[4px] w-[4px] rounded-full bg-[#5D93F8]" />
                 <span className="h-[4px] w-[4px] rounded-full bg-[#5D93F8]/70" />
                 <span className="h-[4px] w-[4px] rounded-full bg-[#5D93F8]/40" />
-                <span className="h-[4px] w-14 rounded-full bg-[#5D93F8]" />
+                <span className="h-[4px] w-12 rounded-full bg-[#5D93F8]" />
               </div>
 
               {/* DESCRIPTION */}
-              <p className="mt-4 max-w-[610px] text-[13px] leading-[1.75] text-white/85 sm:text-[14px] md:text-[15px]">
+              <p className="mt-3.5 max-w-[630px] text-[12px] leading-[1.7] text-white/85 sm:text-[13px] lg:text-[13px]">
                 Whether you&apos;re exploring a university, degree, or new
                 study destination, having the right information makes the
                 decision easier. Get clarity on your options, understand
@@ -74,54 +94,65 @@ export default function GlobalEducationCTA() {
               </p>
 
               {/* HIGHLIGHTS */}
-              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2.5">
+              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
                 <span className="inline-flex items-center gap-2 text-[11px] font-medium text-white/90 sm:text-[12px]">
-                  <CheckCircle2 size={15} className="text-[#78ACFF]" />
+                  <CheckCircle2
+                    size={15}
+                    className="shrink-0 text-[#78ACFF]"
+                  />
                   Expert Guidance
                 </span>
 
                 <span className="inline-flex items-center gap-2 text-[11px] font-medium text-white/90 sm:text-[12px]">
-                  <CheckCircle2 size={15} className="text-[#78ACFF]" />
+                  <CheckCircle2
+                    size={15}
+                    className="shrink-0 text-[#78ACFF]"
+                  />
                   Personalised Support
                 </span>
               </div>
 
               {/* CTA BUTTON */}
-              <div className="mt-6">
+              <div className="mt-5">
                 <button
                   type="button"
                   onClick={handleCounsellingClick}
-                  className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#1765F5] px-6 py-3.5 text-[13px] font-bold text-white shadow-[0_8px_24px_rgba(23,101,245,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1047AC] hover:shadow-[0_12px_32px_rgba(23,101,245,0.4)] sm:w-auto sm:px-7 sm:text-[14px]"
+                  className="group/btn inline-flex min-h-[43px] w-full items-center justify-center gap-2.5 rounded-full bg-[#1765F5] px-5 py-2.5 text-[12px] font-bold text-white shadow-[0_6px_20px_rgba(23,101,245,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1047AC] hover:shadow-[0_10px_24px_rgba(23,101,245,0.35)] sm:w-auto sm:px-6 sm:text-[13px]"
                 >
                   <span>Book Free Counselling</span>
 
                   <ArrowRight
-                    size={17}
+                    size={16}
                     strokeWidth={2.2}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    className="transition-transform duration-300 group-hover/btn:translate-x-1"
                   />
                 </button>
               </div>
             </div>
 
+            
             {/* RIGHT STUDENT IMAGE */}
-            <div className="relative flex min-h-[260px] items-end justify-center overflow-hidden sm:min-h-[340px] lg:h-full lg:min-h-[340px] lg:items-end lg:justify-end">
+            <div className="pointer-events-none relative z-30 flex h-[235px] w-full items-end justify-center sm:h-[285px] lg:h-full lg:min-h-[315px]">
 
-              {/* IMAGE BACKGROUND GLOW */}
-              <div aria-hidden="true" className="pointer-events-none absolute bottom-[-90px] left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#1765F5]/25 blur-[65px] lg:h-[360px] lg:w-[360px]" />
+              {/* BACKGROUND GLOW */}
+              <div
+                aria-hidden="true"
+                className="absolute bottom-0 left-1/2 h-[220px] w-[220px] -translate-x-1/2 rounded-full bg-[#1765F5]/15 blur-[55px] sm:h-[270px] sm:w-[270px] lg:left-[55%] lg:h-[300px] lg:w-[300px]"
+              />
 
-              {/* STUDENT IMAGE */}
-              <div className="relative z-10 h-[285px] w-[285px] sm:h-[360px] sm:w-[360px] lg:absolute lg:bottom-0 lg:right-[-10px] lg:h-[390px] lg:w-[390px] xl:right-0 xl:h-[420px] xl:w-[420px]">
+              {/* STUDENT IMAGE - 200PX TALLER, NO HOVER SCALE */}
+              <div className="relative z-30 h-[460px] w-[350px] shrink-0 sm:h-[520px] sm:w-[340px] lg:absolute lg:bottom-0 lg:right-[-8px] lg:h-[585px] lg:w-[385px] xl:right-[-8px] xl:h-[610px] xl:w-[610px]">
                 <Image
-                  src="/images/global-education-student.webp"
+                  src="/images/global-education-students.webp"
                   alt="Confident university student holding notebooks and showing a thumbs-up"
                   fill
-                  sizes="(max-width: 640px) 285px, (max-width: 1023px) 360px, 420px"
-                  className="object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)]"
+                  sizes="(max-width: 639px) 280px, (max-width: 1023px) 340px, 410px"
+                  className="select-none object-contain object-bottom drop-shadow-[0_16px_18px_rgba(0,0,0,0.18)]"
+                  draggable={false}
                 />
               </div>
-
             </div>
+
 
           </div>
         </div>

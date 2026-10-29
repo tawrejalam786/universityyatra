@@ -89,11 +89,6 @@ const guides = [
         label: "Living costs",
         value: "RUB 15,000–30,000/month",
       },
-      {
-        icon: Wallet,
-        label: "Other costs",
-        value: "Insurance, visa fees, books, travel",
-      },
     ],
 
     note:
