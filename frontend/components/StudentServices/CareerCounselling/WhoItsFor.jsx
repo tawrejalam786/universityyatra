@@ -12,7 +12,7 @@ export default function WhoItsFor() {
       icon: Users,
       title: "Parents & families",
       desc: "Want clarity before a major investment.",
-      gradient: "from-[#2DD4BF] to-[#14B8A6]",
+      gradient: "from-[#1765F5] to-[#14B8A6]",
     },
     {
       icon: CalendarX,

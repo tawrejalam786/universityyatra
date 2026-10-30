@@ -9,10 +9,10 @@ export default function CounsellingHero() {
       {/* Background decorative elements */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-[10%] top-[10%] h-[400px] w-[400px] rounded-full bg-[#1765F5]/5 blur-3xl" />
-        <div className="absolute -left-[5%] bottom-[20%] h-[300px] w-[300px] rounded-full bg-[#2DD4BF]/5 blur-3xl" />
+        <div className="absolute -left-[5%] bottom-[20%] h-[300px] w-[300px] rounded-full bg-[#1765F5]/5 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8">
@@ -76,19 +76,19 @@ export default function CounsellingHero() {
             {/* Trust badges */}
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={20} className="text-[#2DD4BF]" strokeWidth={2.5} />
+                <CheckCircle2 size={20} className="text-[#1765F5]" strokeWidth={2.5} />
                 <span className="text-[13px] font-semibold text-[#0C337B]">
                   No cost, no obligation
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={20} className="text-[#2DD4BF]" strokeWidth={2.5} />
+                <CheckCircle2 size={20} className="text-[#1765F5]" strokeWidth={2.5} />
                 <span className="text-[13px] font-semibold text-[#0C337B]">
                   Profile-first advice
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={20} className="text-[#2DD4BF]" strokeWidth={2.5} />
+                <CheckCircle2 size={20} className="text-[#1765F5]" strokeWidth={2.5} />
                 <span className="text-[13px] font-semibold text-[#0C337B]">
                   Parents welcome
                 </span>

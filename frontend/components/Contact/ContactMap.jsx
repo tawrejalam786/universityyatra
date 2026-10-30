@@ -26,7 +26,7 @@ const perks = [
 export default function ContactMap() {
   const address = {
     building: "Supertech Astralis",
-    street: "Sector 94, Noida",
+    street: "Unit 917, 9th Floor, SuperNova Astralis Sec 94, Noida – 201301",
     city: "Uttar Pradesh",
     country: "India",
     mapUrl:
@@ -44,7 +44,7 @@ export default function ContactMap() {
       aria-labelledby="contact-map-title"
       className="relative w-full overflow-hidden bg-white py-8 sm:py-10"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         {/* SECTION HEADING */}
         <motion.div
           variants={fadeUp}

@@ -113,7 +113,7 @@ export default function Testimonials() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#F8FAFC] py-12 sm:py-14 lg:py-16">
-      <div className="mx-auto w-full max-w-[1250px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
 
         {/* HEADER */}
         <div className="mb-8 flex items-center justify-between gap-4 sm:mb-9">

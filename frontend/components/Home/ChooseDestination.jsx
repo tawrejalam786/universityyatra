@@ -223,7 +223,7 @@ export default function ChooseDestination({ countries = COUNTRIES }) {
         className="absolute -right-32 -top-32 -z-10 size-[30rem] rounded-full bg-brand-teal/15 blur-3xl"
       />
 
-     <div className="relative mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
+     <div className="relative mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         {/* Dashed flight path (desktop only) */}
         <div
           aria-hidden="true"

@@ -34,7 +34,7 @@ export default function WhatYouGet() {
       
       {/* Background decoration */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-[#2DD4BF]/5 blur-3xl" />
+        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-[#1765F5]/5 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-[#1765F5]/5 blur-3xl" />
       </div>
 

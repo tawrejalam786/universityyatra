@@ -26,9 +26,8 @@ import {
 } from "lucide-react";
 
 /* ==========================================
-   STUDY IN AUSTRALIA - 5 GUIDES
+   STUDY IN AUSTRALIA - ORIGINAL 5 GUIDES
 ========================================== */
-
 
 const guides = [
   {
@@ -39,10 +38,8 @@ const guides = [
     shortTitle: "Education Pathways",
     icon: GraduationCap,
     image: "/images/study-usa/3d/study-usa.png",
-
     description:
       "Australia offers university degrees and practical college programs for international students. Choose a bachelor's degree, master's program, or specialized postgraduate qualification based on your academic background and career goals.",
-
     points: [
       {
         icon: GraduationCap,
@@ -61,7 +58,6 @@ const guides = [
       },
     ],
   },
-
   {
     id: "02",
     slug: "cost-of-studying",
@@ -70,10 +66,8 @@ const guides = [
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
     image: "/images/study-usa/3d/cost-studying.png",
-
     description:
       "Your budget depends on your qualification, program, and institution. International tuition typically ranges from AUD 20,000 to AUD 45,000 per year for undergraduate programs and AUD 22,000 to AUD 50,000 for postgraduate programs.",
-
     points: [
       {
         icon: Calculator,
@@ -90,13 +84,10 @@ const guides = [
         label: "Living costs",
         value: "AUD 1,800-2,500/month",
       },
-      
     ],
-
     note:
       "Tuition and living funds are separate. Plan for both before applying.",
   },
-
   {
     id: "03",
     slug: "living-and-culture",
@@ -105,10 +96,8 @@ const guides = [
     shortTitle: "Living & Culture",
     icon: Home,
     image: "/images/study-usa/3d/living-cost.png",
-
     description:
       "Your living costs depend on your city, accommodation, commute, and daily routine. Australia offers a welcoming English-speaking environment with vibrant student communities in Sydney, Melbourne, Brisbane, and Perth.",
-
     points: [
       {
         icon: Home,
@@ -127,7 +116,6 @@ const guides = [
       },
     ],
   },
-
   {
     id: "04",
     slug: "scholarships",
@@ -136,10 +124,8 @@ const guides = [
     shortTitle: "Scholarships & Funding",
     icon: Award,
     image: "/images/study-usa/3d/scholarship.png",
-
     description:
       "Australian scholarships reward academic excellence, leadership, and research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.",
-
     points: [
       {
         icon: Award,
@@ -158,7 +144,6 @@ const guides = [
       },
     ],
   },
-
   {
     id: "05",
     slug: "post-study-work-visa",
@@ -167,10 +152,8 @@ const guides = [
     shortTitle: "Work Pathways",
     icon: Plane,
     image: "/images/study-usa/3d/post-study.png",
-
     description:
       "Australia's Temporary Graduate visa (subclass 485) allows eligible international graduates to remain and work in Australia after completing their studies. The duration depends on your qualification level.",
-
     points: [
       {
         icon: Clock,
@@ -191,12 +174,18 @@ const guides = [
   },
 ];
 
-
 /* ==========================================
-   LEFT GUIDE TAB
+   LEFT GUIDE TABS
+   SAME HEIGHT FOR EACH TAB
 ========================================== */
 
-function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
+function GuideTab({
+  guide,
+  index,
+  active,
+  onActivate,
+  onKeyDown,
+}) {
   const Icon = guide.icon;
 
   return (
@@ -215,43 +204,32 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
         }
       }}
       onKeyDown={onKeyDown}
-      className={`relative flex w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl border px-2.5 py-2 text-left transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 lg:flex-1 lg:gap-3 lg:px-3.5 lg:py-2.5 ${
-        active
-          ? "border-[#B4CFFA] bg-[#EDF5FF] shadow-[0_5px_20px_rgba(23,101,245,0.07)]"
-          : "border-[#E5EDF9] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"
-      }`}
+      className={`group relative flex h-full min-h-[64px] w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-[background-color,border-color,box-shadow] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1765F5]/50 lg:min-h-0 lg:gap-3 lg:px-3.5 ${active ? "border-[#B4CFFA] bg-[#EDF5FF] shadow-[0_5px_20px_rgba(23,101,245,0.07)]" : "border-[#E5EDF9] bg-white hover:border-[#C5D9F9] hover:bg-[#F8FAFF]"}`}
     >
       {/* ACTIVE LEFT INDICATOR */}
       {active && (
-        <span
-          aria-hidden="true"
-          className="absolute inset-y-0 left-0 hidden w-1 bg-[#1765F5] lg:block"
-        />
+        <span aria-hidden="true" className="absolute inset-y-0 left-0 hidden w-1 bg-[#1765F5] lg:block" />
       )}
 
+      {/* GUIDE ICON + TEXT */}
       <div className="flex min-w-0 items-center gap-2 lg:gap-3">
-        {/* GUIDE ICON */}
-        <span
-          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 lg:h-9 lg:w-9 ${
-            active ? "bg-[#1765F5] text-white" : "bg-[#EAF2FF] text-[#1765F5]"
-          }`}
-        >
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 lg:h-9 lg:w-9 ${active ? "bg-[#1765F5] text-white" : "bg-[#EAF2FF] text-[#1765F5]"}`}>
           <Icon size={17} strokeWidth={2} />
         </span>
 
-        {/* NUMBER AND TITLE */}
         <div className="min-w-0">
           <span className="block text-[9px] font-extrabold uppercase tracking-[0.08em] text-[#7390B4]">
             Guide {guide.id}
           </span>
 
-          <span
-            className={`block text-[12px] font-bold leading-[1.25] lg:truncate lg:text-[13px] lg:leading-[1.35] ${
-              active ? "text-[#1765F5]" : "text-[#0C337B]"
-            }`}
-          >
-            <span className="lg:hidden">{guide.shortTitle}</span>
-            <span className="hidden lg:inline">{guide.title}</span>
+          <span className={`block text-[11px] font-bold leading-[1.3] sm:text-[12px] lg:text-[13px] ${active ? "text-[#1765F5]" : "text-[#0C337B]"}`}>
+            <span className="lg:hidden">
+              {guide.shortTitle}
+            </span>
+
+            <span className="hidden lg:block">
+              {guide.title}
+            </span>
           </span>
         </div>
       </div>
@@ -260,19 +238,87 @@ function GuideTab({ guide, index, active, onActivate, onKeyDown }) {
       <ChevronRight
         size={16}
         aria-hidden="true"
-        className={`hidden shrink-0 transition-transform duration-300 lg:block ${
-          active ? "translate-x-0.5 text-[#1765F5]" : "text-[#9AAEC6]"
-        }`}
+        className={`hidden shrink-0 transition-transform duration-300 lg:block ${active ? "translate-x-0.5 text-[#1765F5]" : "text-[#9AAEC6]"}`}
       />
     </button>
   );
 }
 
 /* ==========================================
-   ACTIVE GUIDE CARD
+   FIXED IMAGE CONTAINER
+   NO VERTICAL FLOATING
 ========================================== */
 
-function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
+function GuideVisual({ activeIndex, reduceMotion }) {
+  return (
+    <div className="relative z-10 mx-auto mt-2 h-[115px] w-full max-w-[320px] shrink-0 sm:h-[125px] lg:h-[120px]">
+      {guides.map((item, index) => {
+        const isActive = index === activeIndex;
+
+        return (
+          <Image
+            key={item.id}
+            src={item.image}
+            alt={isActive ? item.title : ""}
+            aria-hidden={!isActive}
+            fill
+            priority={index === 0}
+            sizes="(max-width: 1023px) 80vw, 320px"
+            className={`object-contain object-center ${reduceMotion ? "" : "transition-opacity duration-300"} ${isActive ? "opacity-100" : "pointer-events-none opacity-0"}`}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+/* ==========================================
+   FIXED HEIGHT HIGHLIGHT CARDS
+   ALWAYS THREE CARDS IN SAME ROW
+========================================== */
+
+function GuidePoints({ guide }) {
+  return (
+    <div className="grid h-[145px] w-full shrink-0 grid-cols-3 gap-1.5 min-[380px]:h-[135px] sm:h-[115px] sm:gap-2 lg:h-[118px]">
+      {guide.points.map((point, index) => {
+        const PointIcon = point.icon;
+
+        return (
+          <div
+            key={`${guide.id}-${index}`}
+            className="flex h-full min-h-0 min-w-0 flex-col items-center gap-1.5 overflow-x-hidden overflow-y-auto overscroll-contain rounded-[11px] border border-[#DAE7FA] bg-white/85 px-1.5 py-2.5 text-center [scrollbar-width:thin] sm:px-2.5"
+          >
+            {/* ICON */}
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#EAF2FF] text-[#1765F5]">
+              <PointIcon size={15} strokeWidth={2} />
+            </span>
+
+            {/* LABEL */}
+            <span className="block w-full text-[10px] font-bold leading-[1.35] text-[#0C337B] [overflow-wrap:anywhere]">
+              {point.label}
+            </span>
+
+            {/* VALUE */}
+            <span className="block w-full text-[10px] leading-[1.4] text-[#526B8C] [overflow-wrap:anywhere] sm:text-[11px]">
+              {point.value}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ==========================================
+   ACTIVE GUIDE CARD
+   FIXED HEIGHT - NO OUTER LAYOUT SHIFT
+========================================== */
+
+function ActiveGuideCard({
+  activeIndex,
+  onSelect,
+  reduceMotion,
+}) {
   const guide = guides[activeIndex];
   const TagIcon = guide.icon;
 
@@ -281,149 +327,82 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
       id="australia-guide-panel"
       role="tabpanel"
       aria-labelledby={`australia-guide-tab-${activeIndex}`}
-      className="order-2 relative flex h-full min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-4 shadow-[0_12px_35px_rgba(12,51,123,0.07)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:p-5"
+      className="relative order-2 flex h-[620px] min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-3.5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] min-[380px]:h-[595px] sm:h-[565px] sm:p-4 lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-[550px] lg:p-5"
     >
-      {/* BACKGROUND DECORATIONS */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 -top-20 h-[250px] w-[250px] rounded-full border border-[#1765F5]/10"
-      />
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 -left-16 h-[240px] w-[240px] rounded-full bg-[#A2C1FB]/20 blur-[55px]"
-      />
+      {/* BACKGROUND DECORATION */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-[250px] w-[250px] rounded-full border border-[#1765F5]/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-16 h-[240px] w-[240px] rounded-full bg-[#A2C1FB]/20 blur-[55px]" />
 
       {/* BACKGROUND GUIDE NUMBER */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute right-4 top-10 select-none text-[78px] font-black leading-none text-[#1765F5]/[0.06]"
-      >
+      <span aria-hidden="true" className="pointer-events-none absolute right-4 top-10 select-none text-[78px] font-black leading-none text-[#1765F5]/[0.06]">
         {guide.id}
       </span>
 
-      {/* TOP BADGE */}
-      <div className="relative z-10 flex items-center justify-between gap-3">
+      {/* BADGE */}
+      <div className="relative z-10 flex shrink-0 items-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-[#C9DCFA] bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.06em] text-[#1765F5]">
           <GraduationCap size={14} />
           Australia Study Guides
         </span>
       </div>
 
-      {/* FLOATING GUIDE IMAGES (all stay mounted) */}
-      <motion.div
-        animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="relative z-10 mx-auto mt-1 h-[125px] w-full max-w-[320px] sm:h-[140px] lg:h-[150px]"
-      >
-        {guides.map((item, index) => {
-          const isActive = index === activeIndex;
+      {/* FIXED IMAGE HEIGHT */}
+      <GuideVisual
+        activeIndex={activeIndex}
+        reduceMotion={reduceMotion}
+      />
 
-          return (
-            <Image
-              key={item.id}
-              src={item.image}
-              alt={isActive ? item.title : ""}
-              aria-hidden={!isActive}
-              fill
-              priority={index === 0}
-              sizes="(max-width: 1023px) 80vw, 320px"
-              className={`object-contain object-center transition-all duration-300 ${
-                isActive ? "scale-100 opacity-100" : "scale-95 opacity-0"
-              }`}
-            />
-          );
-        })}
-      </motion.div>
+      {/* MAIN CONTENT AREA */}
+      <div className="relative z-10 mt-2 flex min-h-0 flex-1 flex-col">
 
-      {/* ACTIVE GUIDE CONTENT */}
-      <motion.div
-        key={guide.id}
-        initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: reduceMotion ? 0 : 0.25,
-          ease: "easeOut",
-        }}
-        className="relative z-10 mt-1.5 flex min-w-0 flex-1 flex-col"
-      >
-        {/* TAG / HEADING / DESCRIPTION */}
-        <div className="text-center">
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#1765F5]">
-            <TagIcon size={13} />
-            {guide.tag}
-          </span>
+        {/* DESCRIPTION AND OPTIONAL NOTE */}
+        <div key={guide.id} className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain [scrollbar-width:thin]">
+          <div className="text-center">
 
-          <h3 className="mt-1 text-[21px] font-extrabold leading-[1.2] tracking-[-0.03em] text-[#0C337B] sm:text-[23px]">
-            {guide.title}
-          </h3>
+            {/* TAG */}
+            <span className="inline-flex items-center justify-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#1765F5]">
+              <TagIcon size={13} className="shrink-0" />
+              {guide.tag}
+            </span>
 
-          <p className="mx-auto mt-1.5 max-w-[560px] text-[12px] leading-[1.6] text-[#526B8C]">
-            {guide.description}
-          </p>
+            {/* HEADING */}
+            <h3 className="mt-1 text-[20px] font-extrabold leading-[1.2] tracking-[-0.03em] text-[#0C337B] sm:text-[23px]">
+              {guide.title}
+            </h3>
+
+            {/* DESCRIPTION */}
+            <p className="mx-auto mt-2 max-w-[560px] text-[12px] leading-[1.65] text-[#526B8C]">
+              {guide.description}
+            </p>
+
+            {/* OPTIONAL COST NOTE */}
+            {guide.note && (
+              <p className="mt-2.5 rounded-lg border border-[#DAE7FA] bg-white/75 px-3 py-1.5 text-[11px] leading-[1.5] text-[#526B8C]">
+                {guide.note}
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* HIGHLIGHT POINTS */}
-        <div
-          className={`mt-2.5 grid grid-cols-1 gap-2 ${
-            guide.points.length === 4 ? "sm:grid-cols-2" : "sm:grid-cols-3"
-          }`}
-        >
-          {guide.points.map((point) => {
-            const PointIcon = point.icon;
+        {/* FIXED BOTTOM AREA */}
+        <div className="mt-3 shrink-0">
 
-            return (
-              <div
-                key={point.label}
-                className="flex min-w-0 items-center gap-2 rounded-[11px] border border-[#DAE7FA] bg-white/85 p-2 sm:flex-col sm:items-start sm:gap-1.5 sm:p-2.5"
-              >
-                {/* POINT ICON */}
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#EAF2FF] text-[#1765F5]">
-                  <PointIcon size={15} strokeWidth={2} />
-                </span>
+          {/* HIGHLIGHT POINTS */}
+          <GuidePoints guide={guide} />
 
-                <div className="min-w-0">
-                  <span className="block text-[10px] font-bold text-[#0C337B]">
-                    {point.label}
-                  </span>
-
-                  <span className="mt-0.5 block text-[10px] leading-[1.4] text-[#526B8C]">
-                    {point.value}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+          {/* READ MORE BUTTON */}
+          <Link
+            href={`/study-in-australia/${guide.slug}`}
+            className="group mt-3 inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] bg-[#1765F5] px-5 py-2 text-[12px] font-bold text-white shadow-[0_6px_18px_rgba(23,101,245,0.2)] transition-all duration-300 hover:bg-[#0C337B] hover:shadow-[0_10px_25px_rgba(12,51,123,0.2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1765F5]"
+          >
+            Read More
+            <ArrowUpRight size={16} strokeWidth={2.2} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </Link>
         </div>
+      </div>
 
-        {/* NOTE */}
-        {guide.note && (
-          <p className="mt-2.5 rounded-lg border border-[#DAE7FA] bg-white/75 px-3 py-1.5 text-center text-[11px] leading-[1.5] text-[#526B8C]">
-            {guide.note}
-          </p>
-        )}
-
-        {/* READ MORE BUTTON */}
-        <Link
-          href={`/study-in-australia/${guide.slug}`}
-          className="group mt-3 inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] bg-[#1765F5] px-5 py-2 text-[12px] font-bold text-white shadow-[0_6px_18px_rgba(23,101,245,0.2)] transition-all duration-300 hover:bg-[#0C337B] hover:shadow-[0_10px_25px_rgba(12,51,123,0.2)]"
-        >
-          Read More
-
-          <ArrowUpRight
-            size={16}
-            strokeWidth={2.2}
-            className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-          />
-        </Link>
-      </motion.div>
-
-      {/* CLICKABLE PROGRESS BARS */}
-      <div className="relative z-10 mt-2 flex items-center gap-1.5">
+      {/* PROGRESS BARS */}
+      <div className="relative z-10 mt-3 flex shrink-0 items-center gap-1.5">
         {guides.map((item, index) => (
           <button
             key={item.id}
@@ -433,13 +412,7 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
             aria-current={index === activeIndex ? "step" : undefined}
             className="group flex-1 py-1"
           >
-            <span
-              className={`block h-[3px] rounded-full transition-colors duration-300 ${
-                index === activeIndex
-                  ? "bg-[#1765F5]"
-                  : "bg-[#B8CEEE] group-hover:bg-[#8FB2EC]"
-              }`}
-            />
+            <span className={`block h-[3px] rounded-full transition-colors duration-300 ${index === activeIndex ? "bg-[#1765F5]" : "bg-[#B8CEEE] group-hover:bg-[#8FB2EC]"}`} />
           </button>
         ))}
       </div>
@@ -470,11 +443,15 @@ export default function OnlineDegreeSection() {
 
     event.preventDefault();
 
-    const next = (activeIndex + step + guides.length) % guides.length;
+    const next =
+      (activeIndex + step + guides.length) %
+      guides.length;
 
     setActiveIndex(next);
 
-    document.getElementById(`australia-guide-tab-${next}`)?.focus();
+    document
+      .getElementById(`australia-guide-tab-${next}`)
+      ?.focus();
   };
 
   return (
@@ -482,8 +459,8 @@ export default function OnlineDegreeSection() {
       aria-labelledby="australia-guide-section-title"
       className="relative w-full overflow-hidden bg-white py-5 sm:py-7"
     >
-      {/* FULL 1250px CONTAINER, MINIMAL SIDE PADDING */}
       <div className="mx-auto w-full max-w-[1250px] px-3 sm:px-5 lg:px-6">
+
         {/* SECTION HEADING */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
@@ -501,31 +478,38 @@ export default function OnlineDegreeSection() {
             className="text-balance text-[22px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] sm:text-[27px] lg:text-[31px]"
           >
             Your Next Academic Chapter:{" "}
-            <span className="text-[#1765F5]">Australia</span>
+            <span className="text-[#1765F5]">
+              Australia
+            </span>
           </h2>
         </motion.div>
 
-        {/* TABS + ACTIVE CARD + CTA */}
-        <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-rows-[1fr_auto] lg:gap-x-5 lg:gap-y-3">
-          {/* LEFT GUIDE TABS */}
+        {/* TABS + CARD + CTA */}
+        <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-rows-[minmax(0,1fr)_auto] lg:gap-x-5 lg:gap-y-3">
+
+          {/* LEFT TABS */}
           <div
             role="tablist"
             aria-label="Australia study guides"
-            className="order-1 grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-3 lg:order-none lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col"
+            className="order-1 grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-3 lg:order-none lg:col-start-1 lg:row-start-1 lg:min-h-0 lg:grid-cols-1 lg:grid-rows-5"
           >
             {guides.map((guide, index) => (
-              <GuideTab
+              <div
                 key={guide.id}
-                guide={guide}
-                index={index}
-                active={activeIndex === index}
-                onActivate={setActiveIndex}
-                onKeyDown={handleKeyDown}
-              />
+                className={index === guides.length - 1 ? "col-span-2 min-h-0 min-w-0 sm:col-span-1" : "min-h-0 min-w-0"}
+              >
+                <GuideTab
+                  guide={guide}
+                  index={index}
+                  active={activeIndex === index}
+                  onActivate={setActiveIndex}
+                  onKeyDown={handleKeyDown}
+                />
+              </div>
             ))}
           </div>
 
-          {/* RIGHT ACTIVE GUIDE CARD */}
+          {/* ACTIVE CARD */}
           <ActiveGuideCard
             activeIndex={activeIndex}
             onSelect={setActiveIndex}
@@ -533,14 +517,10 @@ export default function OnlineDegreeSection() {
           />
 
           {/* COUNSELLING CTA */}
-          <div className="order-3 relative flex min-w-0 flex-col items-start justify-between gap-2.5 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-3.5 text-white sm:flex-row sm:items-center lg:order-none lg:col-start-1 lg:row-start-2">
-            {/* DECORATIVE SHAPE */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"
-            />
+          <div className="relative order-3 flex min-w-0 flex-col items-start justify-between gap-2.5 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-3.5 text-white sm:flex-row sm:items-center lg:order-none lg:col-start-1 lg:row-start-2">
 
-            {/* CTA TEXT */}
+            <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
+
             <div className="relative min-w-0">
               <h3 className="text-[14px] font-bold">
                 Your Australia Dream Starts Here!
@@ -551,17 +531,12 @@ export default function OnlineDegreeSection() {
               </p>
             </div>
 
-            {/* CTA BUTTON */}
             <Link
               href="/counselling"
               className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EDF5FF]"
             >
               Book Free Counselling
-
-              <ArrowRight
-                size={15}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
+              <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>

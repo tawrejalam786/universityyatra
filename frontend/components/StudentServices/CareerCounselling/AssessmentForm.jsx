@@ -57,17 +57,17 @@ export default function AssessmentForm() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(45,212,191,0.3),transparent_50%)]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           {/* LEFT */}
           <div className="text-white">
-            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#2DD4BF]">
+            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#1765F5]">
               Your future, your way
             </p>
 
             <h2 className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-[30px] lg:text-[34px]">
               Make your next move with{" "}
-              <span className="text-[#2DD4BF]">clarity and confidence.</span>
+              <span className="text-[#1765F5]">clarity and confidence.</span>
             </h2>
 
             <p className="mt-3 max-w-[520px] text-[13px] leading-[1.7] text-white/80 sm:text-[14px]">
@@ -83,7 +83,7 @@ export default function AssessmentForm() {
                   key={badge}
                   className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[12px] font-semibold backdrop-blur"
                 >
-                  <CheckCircle2 size={14} className="text-[#2DD4BF]" />
+                  <CheckCircle2 size={14} className="text-[#1765F5]" />
                   {badge}
                 </span>
               ))}
@@ -99,11 +99,11 @@ export default function AssessmentForm() {
                 {/* connecting line */}
                 <span
                   aria-hidden="true"
-                  className="absolute bottom-2 left-[13px] top-2 w-px bg-gradient-to-b from-[#2DD4BF]/60 to-[#2DD4BF]/10"
+                  className="absolute bottom-2 left-[13px] top-2 w-px bg-gradient-to-b from-[#1765F5]/60 to-[#1765F5]/10"
                 />
                 {steps.map((step, index) => (
                   <li key={step.title} className="relative flex items-start gap-3">
-                    <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2DD4BF] text-[12px] font-extrabold text-[#0C337B]">
+                    <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1765F5] text-[12px] font-extrabold text-[#0C337B]">
                       {index + 1}
                     </span>
                     <div>

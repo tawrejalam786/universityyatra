@@ -145,33 +145,33 @@ const countries = [
    COUNTRY CARD — CINEMATIC IMAGE TREATMENT
 ========================================== */
 
-function CountryCard({ country, active, index }) {
-  return (
-   <article
-  className={`group relative isolate h-[390px] w-full min-w-0 overflow-hidden rounded-[22px] bg-[#0C337B] transition-[opacity,box-shadow] duration-700 sm:h-[420px] sm:rounded-[25px] lg:h-[445px] ${active ? "opacity-100 shadow-[0_25px_60px_rgba(12,51,123,0.25)]" : "opacity-[0.94] shadow-[0_8px_24px_rgba(12,51,123,0.1)]"}`}
-  style={{
-    backfaceVisibility: "hidden",
-    WebkitBackfaceVisibility: "hidden",
-    WebkitMaskImage: "-webkit-radial-gradient(white, black)",
-  }}
->
+    function CountryCard({ country, active, index }) {
+      return (
+      <article
+      className={`group relative isolate h-[390px] w-full min-w-0 overflow-hidden rounded-[22px] bg-[#0C337B] transition-[opacity,box-shadow] duration-700 sm:h-[420px] sm:rounded-[25px] lg:h-[445px] ${active ? "opacity-100 shadow-[0_25px_60px_rgba(12,51,123,0.25)]" : "opacity-[0.94] shadow-[0_8px_24px_rgba(12,51,123,0.1)]"}`}
+      style={{
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
+        WebkitMaskImage: "-webkit-radial-gradient(white, black)",
+      }}
+    >
 
-      {/* FULL BACKGROUND IMAGE */}
-      <div className="absolute -inset-[1px] overflow-hidden rounded-[inherit] bg-[#0C337B]">
-        <Image
-          src={country.image}
-          alt={`${country.fullName} - ${country.featuredCity}`}
-          fill
-          priority={index === 0}
-          sizes="(max-width: 479px) 85vw, (max-width: 767px) 60vw, (max-width: 1023px) 45vw, 30vw"
-          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-          style={{
-            backfaceVisibility: "hidden",
-            WebkitBackfaceVisibility: "hidden",
-            transform: "translateZ(0) scale(1.01)",
-          }}
-        />
-      </div>
+    {/* FULL BACKGROUND IMAGE */}
+    <div className="absolute -inset-[1px] overflow-hidden rounded-[inherit] bg-[#0C337B]">
+      <Image
+        src={country.image}
+        alt={`${country.fullName} - ${country.featuredCity}`}
+        fill
+        priority={index === 0}
+        sizes="(max-width: 479px) 85vw, (max-width: 767px) 60vw, (max-width: 1023px) 45vw, 30vw"
+        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+        style={{
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0) scale(1.01)",
+        }}
+      />
+    </div>
 
       {/* PREMIUM NAVY OVERLAY — LANDMARK VISIBLE ABOVE, TEXT READABLE BELOW */}
       <div
@@ -256,7 +256,7 @@ export default function CountriesCarousel() {
 
      
 {/* HEADER */}
-<div className="mx-auto w-full max-w-[1280px] px-4 sm:px-5 lg:px-8">
+<div className="mx-auto w-full max-w-[1340px] px-4 sm:px-5 lg:px-8">
   <div className="relative mb-6 flex flex-col items-center gap-5 lg:mb-8">
 
     {/* CENTERED TITLE & DESCRIPTION */}

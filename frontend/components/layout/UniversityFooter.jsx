@@ -290,7 +290,7 @@ export function UniversityClocks({
         <div className="absolute inset-0 bg-gradient-to-b from-[#FCFDFF]/95 via-[#F8FAFE]/85 to-[#F1F6FD]/80" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
 
         {/* HEADING */}
         <div className="mb-7 text-center sm:mb-8">
@@ -451,7 +451,7 @@ export default function UniversityFooter({
         { label: "FAQs", href: hrefFor("/faqs/") },
         {
           label: "Contact Us",
-          href: contactHref || hrefFor("/contact-us/"),
+          href: contactHref || hrefFor("/contact/"),
         },
         { label: "Blog", href: hrefFor("/blog") },
       ],

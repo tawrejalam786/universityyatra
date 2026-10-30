@@ -41,7 +41,7 @@ export default function ContactInfo() {
       aria-labelledby="contact-info-title"
       className="relative w-full overflow-hidden bg-gradient-to-b from-[#FAFCFF] to-[#F5F9FF] py-8 sm:py-10"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-stretch gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
           {/* LEFT - FEATURE PANEL */}
           <motion.div

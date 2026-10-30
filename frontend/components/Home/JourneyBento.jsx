@@ -182,7 +182,7 @@ export default function NextChapter() {
       aria-labelledby="next-chapter-title"
       className="w-full overflow-hidden bg-[#E3F0FC] py-8 sm:py-9 lg:py-10"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-5 lg:px-6">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-5 lg:px-6">
 
         {/* SECTION HEADER */}
         <div className="mb-5 text-center sm:mb-6 lg:mb-7">

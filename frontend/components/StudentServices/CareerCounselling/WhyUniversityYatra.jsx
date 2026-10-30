@@ -37,12 +37,12 @@ export default function WhyUniversityYatra() {
         
         {/* Section header */}
         <div className="mb-12 text-center">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#2DD4BF]">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#1765F5]">
             WHY UNIVERSITY YATRA
           </p>
           <h2 className="text-[28px] font-extrabold leading-[1.15] tracking-[-0.03em] text-white sm:text-[36px] lg:text-[42px]">
             Better decisions start with{" "}
-            <span className="text-[#2DD4BF]">better guidance.</span>
+            <span className="text-[#1765F5]">better guidance.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-[700px] text-[15px] leading-[1.7] text-white/80 sm:text-[16px]">
             We help you understand what is realistic for your profile, so you can plan your education with confidence.
@@ -56,14 +56,14 @@ export default function WhyUniversityYatra() {
             return (
               <div
                 key={idx}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-[#2DD4BF]/40 hover:bg-white/10"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-[#1765F5]/40 hover:bg-white/10"
               >
                 {/* Glow effect */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100"
                 >
-                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#2DD4BF]/20 blur-3xl" />
+                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#1765F5]/20 blur-3xl" />
                 </div>
 
                 <div className="relative">

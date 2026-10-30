@@ -110,7 +110,7 @@ export default function CounsellingFAQ() {
       aria-labelledby="counselling-faq-title"
       className="relative overflow-hidden bg-gradient-to-b from-white to-[#F8FAFF] py-8 sm:py-10"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-stretch gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-6">
           {/* LEFT - HEADING PANEL */}
           <div className="relative flex flex-col justify-between gap-6 overflow-hidden rounded-[24px] bg-gradient-to-br from-[#0C337B] to-[#1765F5] p-6 text-white sm:p-8">

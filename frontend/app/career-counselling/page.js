@@ -10,6 +10,7 @@ import WhoItsFor from "@/components/StudentServices/CareerCounselling/WhoItsFor"
 import PopularDestinations from "@/components/StudentServices/CareerCounselling/PopularDestinations";
 import CounsellingFAQ from "@/components/StudentServices/CareerCounselling/CounsellingFAQ";
 import AssessmentForm from "@/components/StudentServices/CareerCounselling/AssessmentForm";
+import CareerCounsellingBenefits from "@/components/StudentServices/CareerCounselling/CareerCounsellingBenefits";
 
 export const metadata = {
   title: "Free Career Counselling & Profile Assessment | University Yatra",
@@ -29,16 +30,19 @@ export default function CareerCounsellingPage() {
   return (
     <main className="w-full">
       <Navbar />
-      {/* Hero Section */}
+      {/*1 Hero Section */}
       <CounsellingHero />
 
-      {/* Guidance Trust Section */}
+      {/*2 Guidance Trust Section */}
       <GuidanceTrust />
 
-      {/* Why University Yatra */}
+      {/*2 Career Counselling Benefits Section */}
+      <CareerCounsellingBenefits />
+
+      {/*3 Why University Yatra */}
       <WhyUniversityYatra />
 
-      {/* Profile Review */}
+      {/*4 Profile Review */}
       <ProfileReview />
 
       {/* How It Works */}
@@ -58,6 +62,7 @@ export default function CareerCounsellingPage() {
 
       {/* Assessment Form CTA */}
       <AssessmentForm />
+      
       <UniversityFooter />
     </main>
   );

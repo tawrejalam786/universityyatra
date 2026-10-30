@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, User, Mail, Phone, BookOpen, MessageSquare, CheckCircle2, ShieldCheck } from "lucide-react";
@@ -63,7 +63,7 @@ export default function ContactForm() {
       aria-labelledby="contact-form-title"
       className="relative w-full overflow-hidden bg-white py-6 sm:py-8"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-stretch gap-6 lg:grid-cols-[1fr_0.8fr] lg:gap-10">
           {/* LEFT - FORM */}
           <motion.div
@@ -260,12 +260,16 @@ export default function ContactForm() {
               </ul>
             </div>
 
-            {/* IMAGE PLACEHOLDER - fills the remaining space; replace with <Image /> later */}
-            <div className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-dashed border-[#1765F5]/30 bg-[#F0F6FF]">
-              <span className="text-[13px] font-semibold text-[#1765F5]/60">
-                Image will be added here
-              </span>
-            </div>
+                      {/* CONTACT COUNSELLING IMAGE */}
+          <div className="relative min-h-[200px] w-full flex-1 overflow-hidden rounded-2xl bg-[#F0F6FF]">
+            <Image
+              src="/images/contact/contact-counselling.webp"
+              alt="University Yatra Education Counselling"
+              fill
+              sizes="(max-width: 768px) 100vw, 550px"
+              className="object-cover object-center"
+            />
+          </div>
           </motion.div>
         </div>
       </div>

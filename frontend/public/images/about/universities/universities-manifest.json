@@ -1,0 +1,135 @@
+{
+  "description": "25 screenshot entries, 24 unique universities; same university of Illinois at Chicago appears twice. All images are illustrative campus-style images, not verified photographs of actual buildings.",
+  "destination": "public/images/universities/",
+  "size": [
+    1039,
+    1513
+  ],
+  "items": [
+    {
+      "name": "University of Ottawa",
+      "filename": "university-of-ottawa.webp",
+      "image": "/images/universities/university-of-ottawa.webp"
+    },
+    {
+      "name": "University of Edinburgh",
+      "filename": "university-of-edinburgh.webp",
+      "image": "/images/universities/university-of-edinburgh.webp"
+    },
+    {
+      "name": "ETH Zurich",
+      "filename": "eth-zurich.webp",
+      "image": "/images/universities/eth-zurich.webp"
+    },
+    {
+      "name": "Charles Sturt University",
+      "filename": "charles-sturt-university.webp",
+      "image": "/images/universities/charles-sturt-university.webp"
+    },
+    {
+      "name": "Arizona State University",
+      "filename": "arizona-state-university.webp",
+      "image": "/images/universities/arizona-state-university.webp"
+    },
+    {
+      "name": "Auckland University of Technology",
+      "filename": "auckland-university-of-technology.webp",
+      "image": "/images/universities/auckland-university-of-technology.webp"
+    },
+    {
+      "name": "Khalifa University",
+      "filename": "khalifa-university.webp",
+      "image": "/images/universities/khalifa-university.webp"
+    },
+    {
+      "name": "York University",
+      "filename": "york-university.webp",
+      "image": "/images/universities/york-university.webp"
+    },
+    {
+      "name": "National University of Singapore",
+      "filename": "national-university-of-singapore.webp",
+      "image": "/images/universities/national-university-of-singapore.webp"
+    },
+    {
+      "name": "University of Manchester",
+      "filename": "university-of-manchester.webp",
+      "image": "/images/universities/university-of-manchester.webp"
+    },
+    {
+      "name": "University of Illinois at Chicago",
+      "filename": "university-of-illinois-at-chicago.webp",
+      "image": "/images/universities/university-of-illinois-at-chicago.webp"
+    },
+    {
+      "name": "La Trobe University",
+      "filename": "la-trobe-university.webp",
+      "image": "/images/universities/la-trobe-university.webp"
+    },
+    {
+      "name": "EPFL",
+      "filename": "epfl.webp",
+      "image": "/images/universities/epfl.webp"
+    },
+    {
+      "name": "University of Illinois at Chicago",
+      "filename": "university-of-illinois-at-chicago.webp",
+      "image": "/images/universities/university-of-illinois-at-chicago.webp"
+    },
+    {
+      "name": "Technical University of Munich",
+      "filename": "technical-university-of-munich.webp",
+      "image": "/images/universities/technical-university-of-munich.webp"
+    },
+    {
+      "name": "Northeastern University",
+      "filename": "northeastern-university.webp",
+      "image": "/images/universities/northeastern-university.webp"
+    },
+    {
+      "name": "Massey University",
+      "filename": "massey-university.webp",
+      "image": "/images/universities/massey-university.webp"
+    },
+    {
+      "name": "Lincoln University",
+      "filename": "lincoln-university.webp",
+      "image": "/images/universities/lincoln-university.webp"
+    },
+    {
+      "name": "Griffith University",
+      "filename": "griffith-university.webp",
+      "image": "/images/universities/griffith-university.webp"
+    },
+    {
+      "name": "University of Birmingham",
+      "filename": "university-of-birmingham.webp",
+      "image": "/images/universities/university-of-birmingham.webp"
+    },
+    {
+      "name": "University of South Florida",
+      "filename": "university-of-south-florida.webp",
+      "image": "/images/universities/university-of-south-florida.webp"
+    },
+    {
+      "name": "University of Sharjah",
+      "filename": "university-of-sharjah.webp",
+      "image": "/images/universities/university-of-sharjah.webp"
+    },
+    {
+      "name": "Wilfrid Laurier University",
+      "filename": "wilfrid-laurier-university.webp",
+      "image": "/images/universities/wilfrid-laurier-university.webp"
+    },
+    {
+      "name": "Deakin University",
+      "filename": "deakin-university.webp",
+      "image": "/images/universities/deakin-university.webp"
+    },
+    {
+      "name": "Curtin Singapore",
+      "filename": "curtin-singapore.webp",
+      "image": "/images/universities/curtin-singapore.webp"
+    }
+  ]
+}

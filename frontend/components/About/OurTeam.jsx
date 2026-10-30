@@ -9,7 +9,7 @@ import { UserRound } from "lucide-react";
    image: "/images/team/member-1.webp"  (null = silhouette dikhega)
 ------------------------------------------------------------------- */
 const team = [
-  { name: "Team Member 01", role: "Role / Designation", image: null },
+  { name: "Tawrej Alam", role: "Full Stack Developer", image: "/images/tabrez.png" },
   { name: "Team Member 02", role: "Role / Designation", image: null },
   { name: "Team Member 03", role: "Role / Designation", image: null },
   { name: "Team Member 04", role: "Role / Designation", image: null },
@@ -61,7 +61,7 @@ function TeamCapsule({ member, theme, index, reduce }) {
       >
         {/* 3) card + hover */}
         <div
-          className={`group relative aspect-[10/15.5] w-full overflow-hidden rounded-full ${theme.card} shadow-[0_20px_44px_rgba(2,12,40,0.45)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_26px_54px_rgba(23,101,245,0.45)]`}
+          className={`group relative aspect-[9/15] w-full overflow-hidden rounded-full ${theme.card} shadow-[0_20px_44px_rgba(2,12,40,0.45)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_26px_54px_rgba(23,101,245,0.45)]`}
         >
           {/* Name + role */}
           <div className="relative z-10 px-3 pt-[20%] text-center">
@@ -76,7 +76,7 @@ function TeamCapsule({ member, theme, index, reduce }) {
           </div>
 
           {/* Portrait (clipped by the capsule's bottom curve) */}
-          <div className="absolute inset-x-0 bottom-0 h-[62%] overflow-hidden">
+          <div className="absolute inset-x-0 bottom-0 h-[72%] overflow-hidden">
             {member.image ? (
               <Image
                 src={member.image}

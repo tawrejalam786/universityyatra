@@ -113,7 +113,7 @@ export default function ContactFAQ() {
       aria-labelledby="contact-faq-title"
       className="relative w-full overflow-hidden bg-gradient-to-b from-white to-[#F8FAFF] py-8 sm:py-10"
     >
-      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-stretch gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-6">
           {/* LEFT - HEADING PANEL */}
           <motion.div
