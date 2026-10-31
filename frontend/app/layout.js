@@ -19,6 +19,12 @@ export const metadata = {
   title: "University Yatra – Making Global Education Easy",
   description:
     "Explore top universities, discover the best courses, and get expert advice — all in one place.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.ico', sizes: 'any' }
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -119,7 +119,7 @@ export default function Navbar({ active = "Home" }) {
             width={1600}
             height={384}
             priority
-            className="h-[25px] w-auto max-w-[165px] object-contain min-[360px]:h-[27px] min-[390px]:h-[30px] sm:h-[36px] sm:max-w-none"
+            className="h-[25px] w-auto max-w-[165px] object-contain min-[360px]:h-[27px] min-[390px]:h-[30px] sm:h-[40px] sm:max-w-none"
           />
         </Link>
 
@@ -193,7 +193,7 @@ export default function Navbar({ active = "Home" }) {
 
           {/* GET FREE COUNSELLING */}
           <Link
-            href="/counselling"
+            href="/career-counselling"
             className="hidden h-11 items-center rounded-full bg-[#1765F5] px-6 text-sm font-bold text-white shadow-[0_4px_16px_rgba(23,101,245,0.25)] transition-all duration-300 hover:bg-[#1047AC] hover:shadow-[0_6px_20px_rgba(23,101,245,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1765F5] sm:inline-flex"
           >
             Get Free Counselling

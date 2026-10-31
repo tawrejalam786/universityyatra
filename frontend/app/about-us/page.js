@@ -30,7 +30,7 @@ export default function AboutUsPage() {
         <AboutIntroSection />
         <VisionMissionSection />
         <CoreValuesSection />
-        <OurTeam />
+        {/* <OurTeam /> */}
         <WhatWeDoSection />
         <WhoWeWorkWithSection />
         <UniversityNetworkSection />

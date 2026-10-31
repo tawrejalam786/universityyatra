@@ -54,10 +54,10 @@ export default function CareerCounsellingPage() {
       {/* Who It's For */}
       <WhoItsFor />
 
-      {/* Popular Destinations */}
+      {/*8 Popular Destinations */}
       <PopularDestinations />
 
-      {/* FAQ Section */}
+      {/*9 FAQ Section */}
       <CounsellingFAQ />
 
       {/* Assessment Form CTA */}
