@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { readingMinutes } from "@/lib/blog";
+
+// Helper function to calculate reading time
+const readingMinutes = (post) => {
+  if (!post || !post.sections) return 1;
+  return Math.max(1, Math.ceil(
+    post.sections
+      .map((section) => `${section.title} ${section.text} ${(section.bullets || []).join(" ")}`)
+      .join(" ")
+      .split(/\s+/).length / 200
+  ));
+};
 
 export default function BlogCard({ post }) {
   return (

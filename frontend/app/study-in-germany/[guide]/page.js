@@ -2462,7 +2462,7 @@ export default async function GermanyGuidePage({ params }) {
     (item) => item.slug !== slug
   );
 
-  const whatsappUrl = `https://wa.me/919286844550?text=${encodeURIComponent("Hi University Yatra, I would like guidance on studying in Germany.")}`;
+  const whatsappUrl = `https://wa.me/919217368750?text=${encodeURIComponent("Hi University Yatra, I would like guidance on studying in Germany.")}`;
 
   return (
     <>
@@ -2698,12 +2698,12 @@ export default async function GermanyGuidePage({ params }) {
                     Chat on WhatsApp
                   </a>
 
-                  <Link
-                    href="/counselling"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#0C337B]"
+                  <button
+                    disabled
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60"
                   >
                     Book Free Consultation
-                  </Link>
+                  </button>
 
                 </div>
               </div>

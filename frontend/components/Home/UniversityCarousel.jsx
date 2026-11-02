@@ -29,7 +29,7 @@ const countries = [
     flag: "us",
     featuredCity: "New York",
     cities: ["New York", "Boston", "Los Angeles", "San Francisco"],
-    href: "/study-abroad/usa",
+    href: "#",
   },
   {
     name: "Canada",
@@ -38,7 +38,7 @@ const countries = [
     flag: "ca",
     featuredCity: "Toronto",
     cities: ["Toronto", "Vancouver", "Montreal", "Ottawa"],
-    href: "/study-abroad/canada",
+    href: "#",
   },
   {
     name: "Europe",
@@ -47,7 +47,7 @@ const countries = [
     flag: "eu",
     featuredCity: "Amsterdam",
     cities: ["Amsterdam", "Barcelona", "Milan", "Prague"],
-    href: "/study-abroad/europe",
+    href: "#",
   },
   {
     name: "UK",
@@ -56,7 +56,7 @@ const countries = [
     flag: "gb",
     featuredCity: "London",
     cities: ["London", "Manchester", "Edinburgh", "Birmingham"],
-    href: "/study-abroad/uk",
+    href: "#",
   },
   {
     name: "Ireland",
@@ -65,7 +65,7 @@ const countries = [
     flag: "ie",
     featuredCity: "Dublin",
     cities: ["Dublin", "Cork", "Galway", "Limerick"],
-    href: "/study-abroad/ireland",
+    href: "#",
   },
   {
     name: "UAE",
@@ -74,7 +74,7 @@ const countries = [
     flag: "ae",
     featuredCity: "Dubai",
     cities: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
-    href: "/study-abroad/uae",
+    href: "#",
   },
   {
     name: "Germany",
@@ -83,7 +83,7 @@ const countries = [
     flag: "de",
     featuredCity: "Berlin",
     cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
-    href: "/study-abroad/germany",
+    href: "#",
   },
   {
     name: "France",
@@ -92,7 +92,7 @@ const countries = [
     flag: "fr",
     featuredCity: "Paris",
     cities: ["Paris", "Lyon", "Toulouse", "Bordeaux"],
-    href: "/study-abroad/france",
+    href: "#",
   },
   {
     name: "Russia",
@@ -101,7 +101,7 @@ const countries = [
     flag: "ru",
     featuredCity: "Moscow",
     cities: ["Moscow", "Saint Petersburg", "Kazan", "Novosibirsk"],
-    href: "/study-abroad/russia",
+    href: "#",
   },
   {
     name: "Australia",
@@ -110,7 +110,7 @@ const countries = [
     flag: "au",
     featuredCity: "Sydney",
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth"],
-    href: "/study-abroad/australia",
+    href: "#",
   },
   {
     name: "New Zealand",
@@ -119,7 +119,7 @@ const countries = [
     flag: "nz",
     featuredCity: "Auckland",
     cities: ["Auckland", "Wellington", "Christchurch", "Dunedin"],
-    href: "/study-abroad/new-zealand",
+    href: "#",
   },
   {
     name: "Singapore",
@@ -128,7 +128,7 @@ const countries = [
     flag: "sg",
     featuredCity: "Singapore",
     cities: ["Clementi", "Queenstown", "Jurong", "Bras Basah"],
-    href: "/study-abroad/singapore",
+    href: "#",
   },
   {
     name: "Japan",
@@ -137,7 +137,7 @@ const countries = [
     flag: "jp",
     featuredCity: "Tokyo",
     cities: ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
-    href: "/study-abroad/japan",
+    href: "#",
   },
 ];
 

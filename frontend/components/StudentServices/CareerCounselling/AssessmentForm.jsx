@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Shield, ArrowRight, CheckCircle2 } from "lucide-react";
+import { submitToGoogleSheets } from "@/lib/googleSheets";
 
 const badges = ["100% free", "Personalised advice", "No pressure"];
 
@@ -29,21 +30,60 @@ export default function AssessmentForm() {
     fullName: "",
     phone: "",
     email: "",
-    destination: "",
+    service: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic here
-    console.log("Form submitted:", formData);
-    alert("This is a prototype. Connect to your backend for live submissions.");
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      // Submit to Google Sheets
+      const result = await submitToGoogleSheets({
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.service,
+        message: formData.message,
+      }, 'career-counselling');
+
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({ fullName: "", phone: "", email: "", service: "", message: "" });
+        }, 5000);
+      } else {
+        setError(result.message);
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    
+    // Phone number validation - only allow digits, max 10
+    if (name === 'phone') {
+      const digitsOnly = value.replace(/\D/g, '');
+      setFormData({
+        ...formData,
+        [name]: digitsOnly.slice(0, 10),
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   return (
@@ -158,19 +198,26 @@ export default function AssessmentForm() {
                     We don't spam
                   </span>
                 </div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className={inputClass}
-                  placeholder="+91 98765 43210"
-                />
+                <div className="flex items-center rounded-lg border border-[#E0EFFE] bg-white transition-all focus-within:border-[#1765F5] focus-within:ring-2 focus-within:ring-[#1765F5]/20">
+                  <span className="border-r border-[#E0EFFE] px-3 py-2.5 text-[13px] font-semibold text-[#0C337B]">
+                    +91
+                  </span>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    className="w-full bg-transparent px-3 py-2.5 text-[13px] text-[#0C337B] placeholder:text-[#A0B3C8] outline-none"
+                    placeholder="10-digit number"
+                  />
+                </div>
               </div>
 
-              {/* Email + Destination side by side */}
+              {/* Email + Service side by side */}
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
                   <label htmlFor="email" className={labelClass}>
@@ -189,46 +236,85 @@ export default function AssessmentForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="destination" className={labelClass}>
-                    Interested destination
+                  <label htmlFor="service" className={labelClass}>
+                    Interested in
                   </label>
                   <select
-                    id="destination"
-                    name="destination"
-                    value={formData.destination}
+                    id="service"
+                    name="service"
+                    value={formData.service}
                     onChange={handleChange}
                     required
                     className={inputClass}
                   >
-                    <option value="">Select a destination</option>
-                    <option value="canada">Canada</option>
-                    <option value="uk-ireland">United Kingdom / Ireland</option>
-                    <option value="usa">USA</option>
-                    <option value="australia-nz">Australia / New Zealand</option>
-                    <option value="europe">Europe</option>
-                    <option value="not-sure">Not sure yet</option>
+                    <option value="">Select service</option>
+                    <option value="Career Counselling">Career Counselling</option>
+                    <option value="Study Abroad">Study Abroad</option>
+                    <option value="University Selection">University Selection</option>
+                    <option value="Visa Guidance">Visa Guidance</option>
+                    <option value="Test Preparation">Test Preparation</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
+              </div>
+
+              {/* Message */}
+              <div>
+                <label htmlFor="message" className={labelClass}>
+                  Your message (optional)
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={3}
+                  className={inputClass}
+                  placeholder="Tell us about your goals..."
+                />
               </div>
 
               {/* Submit */}
               <button
                 type="submit"
-                className="group flex w-full items-center justify-center gap-2 rounded-lg bg-[#1765F5] px-5 py-3 text-[14px] font-bold text-white shadow-lg shadow-[#1765F5]/30 transition-all hover:bg-[#0C337B] hover:shadow-xl"
+                disabled={isSubmitting || submitted}
+                className="group flex w-full items-center justify-center gap-2 rounded-lg bg-[#1765F5] px-5 py-3 text-[14px] font-bold text-white shadow-lg shadow-[#1765F5]/30 transition-all hover:bg-[#0C337B] hover:shadow-xl disabled:opacity-70"
               >
-                <span>Request My Free Consultation</span>
-                <ArrowRight
-                  size={18}
-                  strokeWidth={2.5}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
+                {submitted ? (
+                  <>
+                    <CheckCircle2 size={18} />
+                    <span>Request Submitted Successfully!</span>
+                  </>
+                ) : isSubmitting ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    <span>Submitting...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Request My Free Consultation</span>
+                    <ArrowRight
+                      size={18}
+                      strokeWidth={2.5}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </>
+                )}
               </button>
 
-              {/* Disclaimer */}
-              <p className="text-center text-[10px] leading-[1.5] text-[#94A3B8]">
-                This is a design prototype. Your details were not sent. Connect
-                this form to your website or CRM before launch.
-              </p>
+              {/* Error Message */}
+              {error && (
+                <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-2 text-[12px] text-red-600">
+                  {error}
+                </div>
+              )}
+
+              {/* Success Message */}
+              {submitted && (
+                <p className="text-center text-[11px] leading-[1.5] text-green-600">
+                  Thank you! Our counsellor will contact you within 24 hours.
+                </p>
+              )}
             </form>
           </div>
         </div>

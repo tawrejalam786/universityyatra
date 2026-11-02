@@ -2,19 +2,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Globe2, CheckCircle2 } from "lucide-react";
 
 export default function GlobalEducationCTA() {
-  const handleCounsellingClick = () => {
-    const el =
-      document.getElementById("faq-section") ||
-      document.querySelector("footer");
-
-    el?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
 
   return (
     <section className="relative w-full overflow-visible bg-white px-0 pb-7 pt-12 sm:pb-9 sm:pt-14 lg:pb-9 lg:pt-16">
@@ -114,9 +105,8 @@ export default function GlobalEducationCTA() {
 
               {/* CTA BUTTON */}
               <div className="mt-5">
-                <button
-                  type="button"
-                  onClick={handleCounsellingClick}
+                <Link
+                  href="/contact"
                   className="group/btn inline-flex min-h-[43px] w-full items-center justify-center gap-2.5 rounded-full bg-[#1765F5] px-5 py-2.5 text-[12px] font-bold text-white shadow-[0_6px_20px_rgba(23,101,245,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1047AC] hover:shadow-[0_10px_24px_rgba(23,101,245,0.35)] sm:w-auto sm:px-6 sm:text-[13px]"
                 >
                   <span>Book Free Counselling</span>
@@ -126,7 +116,7 @@ export default function GlobalEducationCTA() {
                     strokeWidth={2.2}
                     className="transition-transform duration-300 group-hover/btn:translate-x-1"
                   />
-                </button>
+                </Link>
               </div>
             </div>
 

@@ -37,7 +37,7 @@ export default function ContactMap() {
 
   // NOTE: placeholder WhatsApp number - replace with the real one.
   const bookVisitUrl =
-    "https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20counselling%20visit.";
+    "https://wa.me/919217368750?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20counselling%20visit.";
 
   return (
     <section

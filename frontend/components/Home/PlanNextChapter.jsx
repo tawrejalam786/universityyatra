@@ -10,7 +10,9 @@ import {
   GraduationCap,
   Loader2,
   ShieldCheck,
+  CheckCircle2,
 } from "lucide-react";
+import { submitToGoogleSheets } from "@/lib/googleSheets";
 
 const TRUST_POINTS = [
   { icon: GraduationCap, label: "Courses & Universities" },
@@ -22,24 +24,35 @@ const FIELD = "h-10 w-full rounded-[10px] border border-[#DCE5F1] bg-white px-3 
 
 const LABEL = "block text-[12px] font-semibold text-[#0C337B]";
 
-export default function PlanNextChapter({ image = null, onSubmit }) {
+export default function PlanNextChapter({ image = null }) {
   const [values, setValues] = useState({
     name: "",
-    age: "",
     email: "",
     phone: "",
-    question: "",
+    service: "",
+    message: "",
   });
 
   const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
   const update = (key) => (e) => {
+    let value = e.target.value;
+    
+    // Phone number validation - only allow digits, max 10
+    if (key === 'phone') {
+      value = value.replace(/\D/g, '').slice(0, 10);
+    }
+    
     setValues((prev) => ({
       ...prev,
-      [key]: e.target.value,
+      [key]: value,
     }));
 
-    if (status === "error") setStatus("idle");
+    if (status === "error") {
+      setStatus("idle");
+      setError("");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -47,18 +60,31 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
 
     if (!e.currentTarget.reportValidity()) return;
 
-    if (!onSubmit) {
-      setStatus("error");
-      return;
-    }
-
     setStatus("submitting");
+    setError("");
 
     try {
-      await onSubmit(values);
-      setStatus("done");
-    } catch {
+      const result = await submitToGoogleSheets({
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        subject: values.service,
+        message: values.message,
+      }, 'homepage');
+
+      if (result.success) {
+        setStatus("done");
+        setTimeout(() => {
+          setStatus("idle");
+          setValues({ name: "", email: "", phone: "", service: "", message: "" });
+        }, 5000);
+      } else {
+        setStatus("error");
+        setError(result.message);
+      }
+    } catch (err) {
       setStatus("error");
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -151,27 +177,28 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
                     />
                   </div>
 
-                  {/* AGE */}
+                  {/* SERVICE */}
                   <div>
-                    <label htmlFor="cb-age" className={LABEL}>
-                      Age{" "}
-                      <span className="font-normal text-[#8796A9]">
-                        (Optional)
-                      </span>
+                    <label htmlFor="cb-service" className={LABEL}>
+                      Interested In
                     </label>
 
-                    <input
-                      id="cb-age"
-                      name="age"
-                      type="number"
-                      inputMode="numeric"
-                      min="10"
-                      max="100"
-                      placeholder="Your age"
-                      value={values.age}
-                      onChange={update("age")}
+                    <select
+                      id="cb-service"
+                      name="service"
+                      required
+                      value={values.service}
+                      onChange={update("service")}
                       className={`${FIELD} mt-1.5`}
-                    />
+                    >
+                      <option value="">Select service</option>
+                      <option value="Career Counselling">Career Counselling</option>
+                      <option value="Study Abroad">Study Abroad</option>
+                      <option value="University Selection">University Selection</option>
+                      <option value="Visa Guidance">Visa Guidance</option>
+                      <option value="Test Preparation">Test Preparation</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
 
                   {/* EMAIL */}
@@ -225,30 +252,27 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
 
                 </div>
 
+                {/* MESSAGE */}
+                <div>
+                  <label htmlFor="cb-message" className={LABEL}>
+                    Your Message (Optional)
+                  </label>
+
+                  <textarea
+                    id="cb-message"
+                    name="message"
+                    rows={3}
+                    placeholder="Tell us about your goals..."
+                    value={values.message}
+                    onChange={update("message")}
+                    className={`${FIELD} mt-1.5 resize-none`}
+                  />
+                </div>
+
                 {/* PRIVACY INDICATOR */}
                 <div className="flex items-center gap-1.5 text-[10px] font-medium text-[#0C9253]">
                   <ShieldCheck size={13} />
                   We respect your privacy
-                </div>
-
-                {/* MESSAGE */}
-                <div>
-                  <label htmlFor="cb-question" className={LABEL}>
-                    Your Question{" "}
-                    <span className="font-normal text-[#8796A9]">
-                      (Optional)
-                    </span>
-                  </label>
-
-                  <textarea
-                    id="cb-question"
-                    name="question"
-                    rows={2}
-                    placeholder="What would you like to discuss?"
-                    value={values.question}
-                    onChange={update("question")}
-                    className="mt-1.5 block min-h-[70px] w-full resize-y rounded-[10px] border border-[#DCE5F1] bg-white px-3 py-2.5 text-[13px] leading-[1.5] text-[#0C337B] outline-none transition-colors placeholder:text-[#8B9BB0] focus:border-[#1765F5] focus:ring-2 focus:ring-[#1765F5]/10"
-                  />
                 </div>
 
                 {/* SUBMIT */}
@@ -262,6 +286,11 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
                       <Loader2 size={15} className="animate-spin" />
                       Sending...
                     </>
+                  ) : status === "done" ? (
+                    <>
+                      <CheckCircle2 size={15} />
+                      Request Sent!
+                    </>
                   ) : (
                     <>
                       Request a Callback
@@ -274,11 +303,9 @@ export default function PlanNextChapter({ image = null, onSubmit }) {
                   Our team will contact you regarding your enquiry.
                 </p>
 
-                {status === "error" && (
-                  <p role="alert" className="text-[12px] font-medium text-red-600">
-                    {onSubmit
-                      ? "Something went wrong. Please try again."
-                      : "The callback form is not connected yet. Please configure the submission handler."}
+                {error && (
+                  <p role="alert" className="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-[12px] font-medium text-red-600">
+                    {error}
                   </p>
                 )}
 

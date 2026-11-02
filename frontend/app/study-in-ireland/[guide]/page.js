@@ -1110,7 +1110,7 @@ export default async function IrelandGuidePage({ params }) {
   const { introductionHtml, chapters } = parseIrelandChapters(guide.markdown);
   const otherGuides = Object.values(IRELAND_GUIDES).filter((item) => item.slug !== slug);
   const chapterIcons = GUIDE_SECTION_ICONS[slug] || [];
-  const whatsappHref = "https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20studying%20in%20Ireland.";
+  const whatsappHref = "https://wa.me/919217368750?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20studying%20in%20Ireland.";
 
   return (
     <>
@@ -1210,7 +1210,7 @@ export default async function IrelandGuidePage({ params }) {
                   <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#1eb956]">
                     <MessageCircle size={15} /> Chat on WhatsApp
                   </a>
-                  <Link href="/counselling" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#0C337B]">Book Free Counselling</Link>
+                  <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Counselling</button>
                 </div>
               </div>
 

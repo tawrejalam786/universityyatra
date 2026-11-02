@@ -51,7 +51,7 @@ export default function AboutIntroSection() {
           {/* CTA */}
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <Link
-              href="/career-counselling"
+              href="/contact"
               className="group inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-[#063B72] px-7 py-3 text-[13px] font-semibold text-white shadow-[0_8px_24px_rgba(6,59,114,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1765f5] hover:shadow-[0_10px_24px_rgba(104,24,184,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1765f5] sm:text-[14px]"
             >
               Book A Free Session

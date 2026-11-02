@@ -11,91 +11,112 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 export default function Hero({
   videoSrc = "/videos/university-yatra-hero-f.mp4",
   posterImage = "",
-  whatsappNumber = "917838195948",
+  whatsappNumber = "919217368750",
 }) {
   const videoRef = useRef(null);
+  const retryTimerRef = useRef(null);
+  const retryCountRef = useRef(0);
+
   const reduceMotion = useReducedMotion();
+  const [mediaError, setMediaError] = useState(false);
 
-  const [videoPlaying, setVideoPlaying] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-
-  // Safely start or resume playback.
-  const playVideo = useCallback(() => {
+  const startVideo = useCallback(() => {
     const video = videoRef.current;
 
-    if (!video || !videoSrc || video.error) return;
-    if (document.visibilityState === "hidden") return;
+    if (!video || video.error || document.hidden) return;
 
-    // Muted video is required for reliable autoplay.
     video.muted = true;
-    video.defaultMuted = true;
-    video.setAttribute("muted", "");
 
-    const playPromise = video.play();
+    const promise = video.play();
 
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch((error) => {
-        // AbortError may occur during a normal video load change.
+    if (promise && typeof promise.catch === "function") {
+      promise.catch((error) => {
         if (error?.name !== "AbortError") {
-          console.warn("Hero video autoplay was blocked:", error);
+          console.warn("Hero video playback:", error);
         }
       });
     }
-  }, [videoSrc]);
+  }, []);
 
-  // Resume playback when the user returns to the page.
   useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        playVideo();
+    retryCountRef.current = 0;
+
+    const resume = () => {
+      if (!document.hidden) {
+        startVideo();
       }
     };
 
-    const handlePageShow = () => {
-      playVideo();
-    };
+    document.addEventListener("visibilitychange", resume);
+    window.addEventListener("pageshow", resume);
 
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("pageshow", handlePageShow);
-
-    playVideo();
+    startVideo();
 
     return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      window.removeEventListener("pageshow", handlePageShow);
+      document.removeEventListener("visibilitychange", resume);
+      window.removeEventListener("pageshow", resume);
+
+      if (retryTimerRef.current) {
+        clearTimeout(retryTimerRef.current);
+      }
     };
-  }, [playVideo]);
+  }, [videoSrc, startVideo]);
 
   const handleVideoError = () => {
-    const error = videoRef.current?.error;
+    const video = videoRef.current;
 
-    console.error("University Yatra hero video error:", {
-      code: error?.code,
-      message: error?.message,
-      source: videoSrc,
+    console.error("Hero video loading error:", {
+      code: video?.error?.code,
+      message: video?.error?.message,
+      src: videoSrc,
+      networkState: video?.networkState,
+      readyState: video?.readyState,
     });
 
-    // Keep the fallback visible instead of leaving a broken frame.
-    setVideoError(true);
-    setVideoPlaying(false);
+    setMediaError(true);
+
+    if (retryCountRef.current >= 2) {
+      console.error("Hero video failed after retries.");
+      return;
+    }
+
+    retryCountRef.current += 1;
+
+    if (retryTimerRef.current) {
+      clearTimeout(retryTimerRef.current);
+    }
+
+    retryTimerRef.current = setTimeout(() => {
+      const currentVideo = videoRef.current;
+
+      if (!currentVideo) return;
+
+      currentVideo.load();
+    }, retryCountRef.current * 1500);
+  };
+
+  const handleVideoLoaded = () => {
+    setMediaError(false);
+    startVideo();
   };
 
   return (
     <section className="relative isolate w-full min-h-[560px] overflow-hidden rounded-b-[24px] bg-[#F8FAFC] sm:min-h-[590px] md:min-h-[620px]">
 
-      {/* BACKGROUND VIDEO AND OPTIONAL POSTER */}
+      {/* VIDEO BACKGROUND */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#F8FAFC]"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#E8F0FE]"
         style={{
-          backgroundImage: posterImage ? `url("${posterImage}")` : "linear-gradient(135deg, #E8F0FE, #F8FAFC)",
-          backgroundSize: "cover",
+          backgroundImage: posterImage ? `url("${posterImage}")` : "linear-gradient(135deg, #E8F0FE 0%, #F8FAFC 100%)",
           backgroundPosition: "center top",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
         {videoSrc && (
           <video
+            key={videoSrc}
             ref={videoRef}
             src={videoSrc}
             autoPlay
@@ -103,15 +124,12 @@ export default function Hero({
             loop
             playsInline
             preload="auto"
-            disablePictureInPicture
             poster={posterImage || undefined}
-            onCanPlay={playVideo}
-            onPlaying={() => {
-              setVideoPlaying(true);
-              setVideoError(false);
-            }}
+            disablePictureInPicture
+            onLoadedData={handleVideoLoaded}
+            onCanPlay={startVideo}
             onError={handleVideoError}
-            className={`absolute inset-0 block h-full w-full object-cover object-top transition-opacity duration-300 ${videoPlaying && !videoError ? "opacity-100" : "opacity-0"}`}
+            className={mediaError ? "absolute inset-0 block h-full w-full object-cover object-top opacity-0" : "absolute inset-0 block h-full w-full object-cover object-top"}
             aria-hidden="true"
             tabIndex={-1}
           />
@@ -121,7 +139,27 @@ export default function Hero({
       {/* HERO CONTENT */}
       <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-[1440px] flex-col items-center justify-center px-3 pb-10 pt-[110px] text-center min-[390px]:px-4 sm:min-h-[590px] sm:px-6 sm:pb-14 sm:pt-36 md:h-full md:min-h-[560px] lg:px-8 lg:pt-40">
 
-        {/* CTA BUTTONS - ORIGINAL POSITIONS PRESERVED */}
+        {/* HERO HEADING */}
+        <motion.h1
+          initial={reduceMotion ? false : { opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.1 }}
+          className="mx-auto max-w-[900px] text-balance text-[28px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0C337B] min-[390px]:text-[32px] sm:text-[38px] md:text-[46px] lg:text-[54px]"
+        >
+          Making Global Education{" "}
+          <span className="text-[#1765F5]">Easy & Accessible</span>
+        </motion.h1>
+
+        <motion.p
+          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mx-auto mt-4 max-w-[700px] text-balance text-[14px] leading-[1.6] text-[#526B8C] sm:text-[15px] md:text-[16px]"
+        >
+          Explore top universities, discover the best courses, and get expert advice — all in one place.
+        </motion.p>
+
+        {/* CTA BUTTONS */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,9 +167,8 @@ export default function Hero({
           className="absolute inset-x-0 bottom-5 z-10 flex w-full flex-nowrap items-center justify-between gap-2 px-3 min-[390px]:px-4 sm:bottom-8 sm:px-6 lg:bottom-0 lg:px-8"
         >
 
-          {/* LEFT BUTTON */}
           <Link
-            href="/counselling"
+            href="/contact"
             className="group inline-flex h-[43px] flex-none items-center justify-center gap-1 rounded-full bg-[#1765F5] px-3 text-[9px] font-bold text-white shadow-[0_8px_22px_rgba(6,59,114,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#075094] min-[360px]:text-[10px] min-[390px]:h-[46px] min-[390px]:gap-1.5 min-[390px]:px-4 sm:h-12 sm:gap-2 sm:px-6 sm:text-[12px]"
           >
             <span className="whitespace-nowrap">
@@ -144,7 +181,6 @@ export default function Hero({
             />
           </Link>
 
-          {/* RIGHT BUTTON */}
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello University Yatra, I would like guidance for studying abroad.")}`}
             target="_blank"
@@ -166,3 +202,4 @@ export default function Hero({
     </section>
   );
 }
+

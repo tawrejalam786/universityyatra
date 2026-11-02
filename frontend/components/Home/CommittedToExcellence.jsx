@@ -92,7 +92,7 @@ export default function CommittedToExcellence() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
               <Link
-                href="/counselling"
+                href="/contact"
                 className="group inline-flex h-14 items-center justify-center gap-3 rounded-full bg-brand-navy pl-7 pr-2.5 text-base font-semibold text-white shadow-[0_14px_30px_-10px_rgba(0,56,112,0.6)] transition-colors hover:bg-brand-navy-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal"
               >
                 Start Your Journey

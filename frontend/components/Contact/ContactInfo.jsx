@@ -19,7 +19,7 @@ const contactMethods = [
     title: "WhatsApp",
     info: "+91 98765 43210",
     subInfo: "Chat with us instantly",
-    href: "https://wa.me/919876543210",
+    href: "https://wa.me/919217368750",
     external: true,
     iconBg: "bg-[#E6F9F0] text-[#25D366]",
     accent: "from-[#25D366] to-[#7CE8A8]",

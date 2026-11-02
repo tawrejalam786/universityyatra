@@ -34,7 +34,7 @@ const courseCards = [
     id: 1,
     course: "BBA",
     category: "bachelors",
-    image: "/images/courses/bba.png",
+    image: "/images/courses/course-bba.webp",
     color: "#2563EB",
     description:
       "Build a strong foundation in business management, marketing, finance, and organisational operations while developing leadership and decision-making skills.",
@@ -43,7 +43,7 @@ const courseCards = [
     id: 2,
     course: "BCA",
     category: "bachelors",
-    image: "/images/courses/bca.png",
+    image: "/images/courses/course-bca.webp",
     color: "#0DAA9A",
     description:
       "Develop essential skills in computer applications, programming, software development, databases, and information technology for a career in the digital world.",
@@ -52,7 +52,7 @@ const courseCards = [
     id: 3,
     course: "MBA",
     category: "masters",
-    image: "/images/courses/mba.png",
+    image: "/images/courses/course-mba.webp",
     color: "#F59E0B",
     description:
       "Strengthen your understanding of business strategy, leadership, operations, finance, and management to prepare for professional and managerial responsibilities.",
@@ -61,7 +61,7 @@ const courseCards = [
     id: 4,
     course: "MCA",
     category: "masters",
-    image: "/images/courses/mca.png",
+    image: "/images/courses/course-mca.webp",
     color: "#7C3AED",
     description:
       "Advance your knowledge of computer science, application development, programming, software systems, and modern computing technologies.",
@@ -70,7 +70,7 @@ const courseCards = [
     id: 5,
     course: "B.Com",
     category: "bachelors",
-    image: "/images/courses/bcom.png",
+    image: "/images/courses/course-bcom.webp",
     color: "#EC1682",
     description:
       "Gain foundational knowledge of accounting, commerce, taxation, financial management, and business principles for opportunities in finance and related fields.",
@@ -79,7 +79,7 @@ const courseCards = [
     id: 6,
     course: "M.Com",
     category: "masters",
-    image: "/images/courses/mcom.png",
+    image: "/images/courses/course-mcom.webp",
     color: "#4F46E5",
     description:
       "Develop advanced understanding of commerce, accounting, financial analysis, economics, and business practices to strengthen your professional knowledge.",
@@ -88,7 +88,7 @@ const courseCards = [
     id: 7,
     course: "M.Sc.",
     category: "masters",
-    image: "/images/courses/msc.png",
+    image: "/images/courses/course-msc.webp",
     color: "#16A34A",
     description:
       "Deepen your subject knowledge through advanced scientific concepts, analytical methods, research approaches, and practical problem-solving skills.",
@@ -97,7 +97,7 @@ const courseCards = [
     id: 8,
     course: "MA",
     category: "masters",
-    image: "/images/courses/ma.png",
+    image: "/images/courses/course-ma.webp",
     color: "#EF4444",
     description:
       "Explore advanced concepts in humanities and social sciences while developing critical thinking, research, communication, and analytical abilities.",
@@ -106,7 +106,7 @@ const courseCards = [
     id: 9,
     course: "BA",
     category: "bachelors",
-    image: "/images/courses/ba.png",
+    image: "/images/courses/course-ba.webp",
     color: "#06B6D4",
     description:
       "Build a broad understanding of humanities and social sciences while strengthening communication, critical thinking, and analytical skills.",

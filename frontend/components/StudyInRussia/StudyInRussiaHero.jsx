@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -100,9 +101,8 @@ export default function StudyInRussiaHero() {
             }}
             className="w-full sm:w-auto"
           >
-            <button
-              type="button"
-              onClick={handleConsultationClick}
+            <Link
+              href="/contact"
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[12px] font-bold text-white shadow-[0_8px_24px_rgba(23,101,245,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0C337B] hover:bg-[#0C337B] sm:w-auto sm:px-6 sm:py-3.5 sm:text-[13px] md:text-[14px]"
             >
               <span>Book a Free Consultation</span>
@@ -112,7 +112,7 @@ export default function StudyInRussiaHero() {
                 strokeWidth={2.4}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-            </button>
+            </Link>
           </motion.div>
 
           {/* =================================
@@ -135,7 +135,7 @@ export default function StudyInRussiaHero() {
             className="w-full sm:w-auto"
           >
             <a
-              href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20my%20study%20options%20in%20Russia."
+              href="https://wa.me/919217368750?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20my%20study%20options%20in%20Russia."
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-[#25D366] bg-white/95 px-5 py-3 text-[12px] font-bold text-[#0C337B] shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white sm:w-auto sm:px-6 sm:py-3.5 sm:text-[13px] md:text-[14px]"

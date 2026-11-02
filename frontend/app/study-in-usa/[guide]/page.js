@@ -583,7 +583,7 @@ export default async function GuideDetailPage({ params }) {
 
       {/* WHATSAPP BUTTON */}
       <a
-        href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20studying%20in%20USA."
+        href="https://wa.me/919217368750?text=Hi%20University%20Yatra%2C%20I%20would%20like%20guidance%20on%20studying%20in%20USA."
         target="_blank"
         rel="noopener noreferrer"
         className="group inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#25D366] bg-white px-1.5 py-3 text-[9px] font-bold text-[#0C337B] shadow-[0_8px_20px_rgba(37,211,102,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white min-[360px]:px-2 min-[360px]:text-[10px] min-[390px]:gap-2 min-[390px]:px-3 min-[390px]:text-[11px] sm:flex-none sm:gap-3 sm:px-8 sm:py-4 sm:text-[15px]"
@@ -740,7 +740,7 @@ export default async function GuideDetailPage({ params }) {
                 </p>
                 <div className="mt-5 flex flex-col gap-2.5">
                   <a
-                    href="https://wa.me/919286844550?text=Hi%20University%20Yatra%2C%20I%20need%20guidance%20on%20studying%20in%20USA."
+                    href="https://wa.me/919217368750?text=Hi%20University%20Yatra%2C%20I%20need%20guidance%20on%20studying%20in%20USA."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#1eb956]"

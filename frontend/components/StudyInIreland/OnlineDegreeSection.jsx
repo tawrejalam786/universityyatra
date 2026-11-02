@@ -339,7 +339,7 @@ export default function OnlineDegreeSection() {
               <h3 className="text-[14px] font-bold">Your Ireland Dream Starts Here!</h3>
               <p className="mt-0.5 text-[11px] leading-[1.5] text-white/75">Get Expert Guidance.</p>
             </div>
-            <Link href="/counselling" className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-colors duration-200 hover:bg-[#EDF5FF]">
+            <Link href="/career-counselling" className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-colors duration-200 hover:bg-[#EDF5FF]">
               Book Free Counselling <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>

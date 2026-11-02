@@ -403,12 +403,12 @@ function SocialMediaLinks({ socialLinks, whatsappHref }) {
 ========================================== */
 
 export default function UniversityFooter({
-  siteUrl = "http://localhost:3000/",
+  siteUrl = "https://universityyatra.com",
   logoSrc = "/images/logo/university-yatra-logo-f.png",
   skylineSrc = "/images/footer/global-skyline.png",
   phone = "+91 92868 44550",
   email = "info@universityyatra.com",
-  whatsappNumber = "919286844550",
+  whatsappNumber = "919217368750",
   contactHref,
 
   socialLinks = {
@@ -448,12 +448,12 @@ export default function UniversityFooter({
       links: [
         { label: "Home", href: hrefFor("/") },
         { label: "About Us", href: hrefFor("/about-us/") },
-        { label: "FAQs", href: hrefFor("/faqs/") },
+        // { label: "FAQs", href: hrefFor("/faqs/") },
         {
           label: "Contact Us",
           href: contactHref || hrefFor("/contact/"),
         },
-        { label: "Blog", href: hrefFor("/blog") },
+        // { label: "Blog", href: hrefFor("/blog") },
       ],
     },
 
@@ -466,20 +466,20 @@ export default function UniversityFooter({
         },
         {
           label: "Study Abroad",
-          href: hrefFor("/study-abroad/"),
+          // href: hrefFor("/study-abroad/"),
         },
         {
           label: "Student Services",
-          href: hrefFor("/contact-us/"),
+          href: hrefFor("/contact/"),
         },
-        {
-          label: "Loan & Scholarship",
-          href: hrefFor("/loan-and-scholarship-assistance/"),
-        },
-        {
-          label: "MBBS Abroad",
-          href: hrefFor("/mbbs-abroad/"),
-        },
+        // {
+        //   label: "Loan & Scholarship",
+        //   href: hrefFor("/loan-and-scholarship-assistance/"),
+        // },
+        // {
+        //   label: "MBBS Abroad",
+        //   href: hrefFor("/mbbs-abroad/"),
+        // },
       ],
     },
 
@@ -488,16 +488,16 @@ export default function UniversityFooter({
       links: [
         { label: "USA", href: hrefFor("/study-in-usa/") },
         {
-          label: "UK & Ireland",
-          href: hrefFor("/study-in-uk-ireland/"),
+          label: "UK",
+          href: hrefFor("/study-in-uk/"),
         },
         {
           label: "Canada",
           href: hrefFor("/study-in-canada/"),
         },
         {
-          label: "Europe",
-          href: hrefFor("/study-in-europe/"),
+          label: "Germany",
+          href: hrefFor("/study-in-germany/"),
         },
         {
           label: "Australia",
@@ -607,7 +607,7 @@ export default function UniversityFooter({
 
         {/* CONTACT BUTTON */}
         <a
-          href={contactHref || hrefFor("/contact-us/")}
+          href={contactHref || hrefFor("/contact/")}
           className="inline-flex items-center gap-2 rounded-xl bg-[#1765F5] px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#5D93F8] hover:shadow-md"
         >
           <span>Speak with our team</span>

@@ -1,6 +1,9 @@
 import Navbar from '@/components/layout/Navbar';
 import UniversityFooter from '@/components/layout/UniversityFooter';
 import EducationLoanHero from "@/components/EducationLoan/EducationLoanHero";
+import EducationLoanLenders from "@/components/EducationLoan/EducationLoanLenders";
+import EducationLoanProcess from "@/components/EducationLoan/EducationLoanProcess";
+import LoanBenefitsFeatures from "@/components/EducationLoan/LoanBenefitsFeatures";
 
 
 export const metadata = {
@@ -23,7 +26,17 @@ export default function EducationLoansPage() {
     <>
       <Navbar active="EducationLoans" />
       <main>
+
          <EducationLoanHero />
+
+        {/* // Education Loan : */}
+        <EducationLoanLenders />
+
+        <EducationLoanProcess />
+
+        {/* Existing Education Loans page ke andar: */}
+       <LoanBenefitsFeatures />
+
       </main>
       <UniversityFooter />
     </>

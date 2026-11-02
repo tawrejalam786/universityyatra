@@ -6,6 +6,12 @@ import Image from "next/image";
 export default function ContactHero() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-white pt-[95px] sm:pt-[105px] md:pt-0">
+      
+      {/* SEO H1 - Visually hidden but accessible to screen readers and search engines */}
+      <h1 className="sr-only">
+        Contact University Yatra – Get Study Abroad Guidance
+      </h1>
+      
       <div className="relative w-full overflow-hidden">
         <Image
           src="/images/contact/contact-banner.webp"

@@ -170,8 +170,8 @@ export default function JourneySteps({
                 stays connected with you throughout the journey.
               </p>
               <Link
-                href="/counselling"
-                className="group mt-3 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-brand-navy focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal"
+                href="/career-counselling"
+                className="group inline-flex items-center gap-2 rounded-md text-sm font-semibold text-brand-navy focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal"
               >
                 Start Learning
                 <ArrowRight

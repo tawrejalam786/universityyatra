@@ -230,7 +230,7 @@ const countries = [
         </div>
 
         {/* EXPLORE LINK */}
-        <Link href={country.href} aria-label={`Explore studying in ${country.fullName}`} className="mt-5 flex items-center justify-between gap-3 border-t border-white/25 pt-4 text-white">
+        <Link href="/contact" aria-label={`Explore studying in ${country.fullName}`} className="mt-5 flex items-center justify-between gap-3 border border-[#1765F5] border-t border-white/25 pt-4 text-white">
           <span className="text-[12px] font-bold">
             Explore {country.name}
           </span>

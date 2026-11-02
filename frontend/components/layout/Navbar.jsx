@@ -18,7 +18,7 @@ const NAV_ITEMS = [
     href: "#",
     children: [
       { label: "Online Degree Programs", href: "/study-in-india" },
-      { label: "Regular Degree Programs", href: "/regular-degree",},
+      // { label: "Regular Degree Programs", href: "/regular-degree",},
     ],
   },
 
@@ -51,26 +51,26 @@ const NAV_ITEMS = [
         label: "Free Career Counselling & Profile Assessment",
         href: "/career-counselling",
       },
-      {
-        label: "Admission & Application Support",
-        href: "/test-preparation",
-      },
-      {
-        label: "Test Prep & Language Training",
-        href: "/test-prep-language-training",
-      },
-      {
-        label: "SOP, LOR and Documentation Support",
-        href: "/sop-lor-and-documentation-support",
-      },
-      {
-        label: "Travel & Forex Assistance",
-        href: "/travel-forex-assistance",
-      },
-      {
-        label: "Refer a Friend",
-        href: "/refer-a-friend",
-      },
+      // {
+      //   label: "Admission & Application Support",
+      //   href: "/test-preparation",
+      // },
+      // {
+      //   label: "Test Prep & Language Training",
+      //   href: "/test-prep-language-training",
+      // },
+      // {
+      //   label: "SOP, LOR and Documentation Support",
+      //   href: "/sop-lor-and-documentation-support",
+      // },
+      // {
+      //   label: "Travel & Forex Assistance",
+      //   href: "/travel-forex-assistance",
+      // },
+      // {
+      //   label: "Refer a Friend",
+      //   href: "/refer-a-friend",
+      // },
     ],
   },
 
@@ -280,13 +280,12 @@ export default function Navbar({ active = "Home" }) {
 
           {/* MOBILE GET FREE COUNSELLING BUTTON */}
           <div className="mt-3 grid gap-2">
-            <Link
-              href="/counselling"
-              onClick={() => setOpen(false)}
-              className="flex h-12 items-center justify-center rounded-full bg-[#1765F5] font-bold text-white shadow-[0_4px_16px_rgba(23,101,245,0.25)] sm:hidden"
+            <button
+              disabled
+              className="flex h-12 items-center justify-center rounded-full bg-gray-300 font-bold text-gray-500 cursor-not-allowed opacity-60 sm:hidden"
             >
               Get Free Counselling
-            </Link>
+            </button>
           </div>
 
         </div>
