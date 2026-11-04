@@ -248,6 +248,11 @@ export default function PlanNextChapter({ image = null }) {
                       />
 
                     </div>
+                    {/* PRIVACY INDICATOR */}
+                      <div className="flex items-center gap-1.5 text-[10px] font-medium text-[#0C9253]">
+                        <ShieldCheck size={13} />
+                         We don't spam
+                      </div>
                   </div>
 
                 </div>
@@ -270,10 +275,10 @@ export default function PlanNextChapter({ image = null }) {
                 </div>
 
                 {/* PRIVACY INDICATOR */}
-                <div className="flex items-center gap-1.5 text-[10px] font-medium text-[#0C9253]">
+                {/* <div className="flex items-center gap-1.5 text-[10px] font-medium text-[#0C9253]">
                   <ShieldCheck size={13} />
                   We respect your privacy
-                </div>
+                </div> */}
 
                 {/* SUBMIT */}
                 <button

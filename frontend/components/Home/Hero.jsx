@@ -140,7 +140,7 @@ export default function Hero({
       <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-[1440px] flex-col items-center justify-center px-3 pb-10 pt-[110px] text-center min-[390px]:px-4 sm:min-h-[590px] sm:px-6 sm:pb-14 sm:pt-36 md:h-full md:min-h-[560px] lg:px-8 lg:pt-40">
 
         {/* HERO HEADING */}
-        <motion.h1
+        {/* <motion.h1
           initial={reduceMotion ? false : { opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1 }}
@@ -148,16 +148,16 @@ export default function Hero({
         >
           Making Global Education{" "}
           <span className="text-[#1765F5]">Easy & Accessible</span>
-        </motion.h1>
+        </motion.h1> */}
 
-        <motion.p
+        {/* <motion.p
           initial={reduceMotion ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mx-auto mt-4 max-w-[700px] text-balance text-[14px] leading-[1.6] text-[#526B8C] sm:text-[15px] md:text-[16px]"
         >
           Explore top universities, discover the best courses, and get expert advice — all in one place.
-        </motion.p>
+        </motion.p> */}
 
         {/* CTA BUTTONS */}
         <motion.div

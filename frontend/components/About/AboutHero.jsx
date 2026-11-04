@@ -42,7 +42,7 @@ export default function AboutHero() {
         </div>
 
         {/* CTA Button - Bottom Center for All Devices */}
-        <div className="absolute inset-x-0 top-50 z-20 flex justify-center px-4 sm:bottom-8">
+        <div className="absolute inset-x-0 top-50 z-20 flex justify-center px-4 sm:bottom-8 lg:top-110">
           <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
             <Link href="/contact" className="group inline-flex min-h-[44px] items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-[#1765F5] px-6 py-2.5 text-[13px] font-bold text-white shadow-lg shadow-[#1765F5]/25 transition-all duration-300 hover:bg-[#0C337B] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1765F5] active:scale-95 sm:px-7 lg:text-[14px]">
               Book A Free Session

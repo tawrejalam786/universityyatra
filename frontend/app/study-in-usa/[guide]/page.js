@@ -35,14 +35,14 @@ import { BOOK_GUIDES } from "@/components/StudyInUsa/bookGuidesData";
    COMPREHENSIVE RICH DATA FOR EACH OF THE GUIDES (FULL CLIENT CONTENT)
 ===================================================================== */
 const GUIDE_DETAILS_DATABASE = {
-  "academic-pathways": {
+  "study-in-usa": {
     id: "01",
     vol: "VOL. I",
     title: "Study in USA",
     shortTitle: "Academic Pathways",
     badge: "Degrees, Programs & Intakes",
     tagline: "Undergraduate Pathways, Specialized Master's Degrees & US Intake Calendars",
-    heroImage: "/images/universities/canada/university-of-ottawas.webp",
+    heroImage: "/images/universities/usa/northeastern-university.webp",
     accentColor: "#0A1E3F",
     pillColors: [
       { label: "4-YEAR BACHELOR'S", bg: "#D7F77D", text: "#063B72" },
@@ -100,7 +100,7 @@ const GUIDE_DETAILS_DATABASE = {
     shortTitle: "Cost of Studying",
     badge: "Tuition, Fees & Budget Guide",
     tagline: "Indicative Tuition Fees, Living Costs, Health Insurance & Financial Planning",
-    heroImage: "/images/universities/canada/toronto-metropolitan-university.webp",
+    heroImage: "/images/universities/usa/university-of-illinois-at-chicago.webp",
     accentColor: "#4A101D",
     pillColors: [
       { label: "MASTER'S TUITION", bg: "#D7F77D", text: "#063B72" },
@@ -161,7 +161,7 @@ const GUIDE_DETAILS_DATABASE = {
     shortTitle: "Living & Culture",
     badge: "Student Life & Monthly Expenses",
     tagline: "Monthly Expenses, Accommodation, Transit & Finding Your Place in America",
-    heroImage: "/images/universities/canada/university-of-saskatchewan.webp",
+    heroImage: "/images/universities/usa/university-of-arizona.webp",
     accentColor: "#165548",
     pillColors: [
       { label: "MONTHLY BUDGET", bg: "#D7F77D", text: "#063B72" },
@@ -220,7 +220,7 @@ const GUIDE_DETAILS_DATABASE = {
     shortTitle: "Scholarships & Aid",
     badge: "Funding, Grants & Financial Aid",
     tagline: "Merit Awards, Need-Based Aid, Fellowships & Complete Step-by-Step Application Guide",
-    heroImage: "/images/universities/canada/trent-university.webp",
+    heroImage: "/images/universities/usa/university-of-south-florida.webp",
     accentColor: "#1A2645",
     pillColors: [
       { label: "MERIT SCHOLARSHIPS", bg: "#D7F77D", text: "#063B72" },
@@ -307,7 +307,7 @@ const GUIDE_DETAILS_DATABASE = {
     shortTitle: "Post-Study Visa",
     badge: "OPT, STEM Extensions & Careers",
     tagline: "12-Month Optional Practical Training (OPT), 24-Month STEM Extension & Career Planning",
-    heroImage: "/images/universities/canada/university-of-windsor.webp",
+    heroImage: "/images/universities/usa/george-mason-university.webp",
     accentColor: "#1E2530",
     pillColors: [
       { label: "12-MONTH OPT", bg: "#D7F77D", text: "#063B72" },
