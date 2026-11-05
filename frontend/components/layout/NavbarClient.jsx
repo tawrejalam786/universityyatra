@@ -61,10 +61,10 @@ const NAV_ITEMS = [
         label: "Free Career Counselling & Profile Assessment",
         href: "/career-counselling",
       },
-      // {
-      //   label: "Admission & Application Support",
-      //   href: "/test-preparation",
-      // },
+      {
+        label: "Admission & Application Support",
+        href: "/admission-application-support",
+      },
       // {
       //   label: "Test Prep & Language Training",
       //   href: "/test-prep-language-training",
@@ -141,7 +141,9 @@ function StudyAbroadMegaMenu({ countries }) {
   const columns = active.columns;
 
   return (
-    <div className="invisible absolute inset-x-0 top-full z-50 pt-3 opacity-0 transition duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+    <div className="invisible absolute inset-x-0 top-full z-50 opacity-0 transition-all duration-200 ease-in-out group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+      {/* Invisible bridge to prevent hover break */}
+      <div className="h-3" />
       <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_45px_rgba(0,25,55,0.2)] ring-1 ring-[#0C337B]/10">
         <div className="grid grid-cols-[210px_1fr_290px]">
 
@@ -308,7 +310,7 @@ export default function NavbarClient({ active = "Home", countries = [] }) {
             width={1600}
             height={384}
             priority
-            className="h-[25px] w-auto max-w-[165px] object-contain min-[360px]:h-[27px] min-[390px]:h-[30px] sm:h-[40px] sm:max-w-none"
+            className="h-[25px] w-auto max-w-[175px] object-contain min-[360px]:h-[27px] min-[390px]:h-[30px] sm:h-[40px] sm:max-w-none"
           />
         </Link>
 
@@ -355,7 +357,10 @@ export default function NavbarClient({ active = "Home", countries = [] }) {
                   <StudyAbroadMegaMenu countries={countries} />
                 ) : (
                   item.children && (
-                    <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 opacity-0 transition-all duration-200 ease-in-out group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+
+                      {/* Invisible bridge to prevent hover break */}
+                      <div className="h-3" />
 
                       <ul className="max-h-[min(70vh,480px)] overflow-y-auto rounded-2xl bg-white p-2 shadow-[0_18px_45px_rgba(0,25,55,0.2)] ring-1 ring-brand-navy/10">
 
@@ -475,12 +480,12 @@ export default function NavbarClient({ active = "Home", countries = [] }) {
 
           {/* MOBILE GET FREE COUNSELLING BUTTON */}
           <div className="mt-3 grid gap-2">
-            <button
-              disabled
-              className="flex h-12 items-center justify-center rounded-full bg-gray-300 font-bold text-gray-500 cursor-not-allowed opacity-60 sm:hidden"
+            <Link
+              href="/career-counselling"
+              className="flex h-12 items-center justify-center rounded-full bg-[#1765f5] font-bold text-white transition hover:bg-[#173B78] active:scale-95 sm:hidden"
             >
               Get Free Counselling
-            </button>
+            </Link>
           </div>
 
         </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function AdmissionHero() {
@@ -49,36 +49,47 @@ export default function AdmissionHero() {
             {/* Badge */}
             <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-[#1765F5]/20 bg-white px-4 py-2 shadow-sm">
               <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#1765F5]">
-                Admission & Application Support
+                ADMISSION APPLICATION DOCUMENTATION
               </span>
             </div>
 
             {/* Heading */}
             <h1 className="text-[28px] font-extrabold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[34px] lg:text-[40px]">
-              Your Next Chapter Starts With the{" "}
-              <span className="text-[#1765F5]">
-                Right Application.
+              University {" "}
+              <span className="text-[#1765F5] mr-2">
+                Admissions, Visa & Immigration 
               </span>
+               Assistance
             </h1>
 
             {/* Description */}
             <p className="mt-4 max-w-[600px] text-[14px] leading-[1.8] text-[#526B8C] sm:text-[15px]">
-              Choosing the right university and course is just the beginning.
-              From shortlisting suitable institutions to understanding
-              admission requirements and preparing your application,
-              University Yatra helps you navigate each step with clarity
-              and confidence.
+              University Yatra provides end-to-end assistance with university applications, admission documentation, offer letters,SOP/LOR, student visa applications and pre-departure formalities. We also guide individuals through international relocation, migration options, permanent residency (PR) pathways and the documentation and processes involved in settling abroad.
             </p>
 
-            {/* CTA Button */}
-            <div className="mt-7 flex flex-wrap items-center gap-4">
+              {/* CTA Buttons */}
+              <div className="mt-7 flex w-full flex-nowrap items-center gap-2.5 sm:w-auto sm:gap-4">
+                {/* Primary */}
+                <Link
+                  href="/contact"
+                  className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#1765F5] px-3 py-3 text-[12.5px] font-bold text-white shadow-lg shadow-[#1765F5]/25 transition-all hover:bg-[#0C337B] hover:shadow-xl sm:flex-none sm:px-6 sm:py-3.5 sm:text-[14px]"
+                >
+                  <span className="sm:hidden">Free Consultation</span>
+                  <span className="hidden sm:inline">Book a Free Consultation</span>
+                  <ArrowRight size={18} strokeWidth={2.5} className="hidden sm:block" />
+                </Link>
 
-              <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl bg-[#1765F5] px-6 py-3.5 text-[14px] font-bold text-white shadow-lg shadow-[#1765F5]/25 transition-all hover:bg-[#0C337B] hover:shadow-xl">
-                <span>Book a Free Consultation</span>
-                <ArrowRight size={18} strokeWidth={2.5} />
-              </Link>
-
-            </div>
+                {/* Secondary */}
+                <a
+                  href="https://wa.me/919217368750?text=Hi%20University%20Yatra%2C%20I%20would%20like%20to%20know%20more."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-[#1765F5]/25 bg-white px-3 py-[10px] text-[12.5px] font-bold text-[#0C337B] transition-all hover:border-[#25D366] hover:bg-[#F0FFF6] sm:flex-none sm:px-6 sm:py-[12px] sm:text-[14px]"
+                >
+                  <MessageCircle size={18} strokeWidth={2.4} className="shrink-0 text-[#25D366]" />
+                  <span>Chat On WhatsApp</span>
+                </a>
+              </div>
 
             {/* Bottom 3 Points - Original Layout */}
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -114,7 +125,7 @@ export default function AdmissionHero() {
             <div className="w-full overflow-hidden rounded-3xl">
 
               <Image
-                src="/images/text-prepration.jpg"
+                src="/images/admission-application.webp"
                 alt="University Yatra Admission and Application Support"
                 width={600}
                 height={450}

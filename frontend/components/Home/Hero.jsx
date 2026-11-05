@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Hero({
-  videoSrc = "/videos/university-yatra-hero-f.mp4",
+  videoSrc = "/videos/university-yatra-heross.mp4",
   posterImage = "",
   whatsappNumber = "919217368750",
 }) {

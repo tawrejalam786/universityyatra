@@ -4,10 +4,6 @@ import CounsellingHero from "@/components/StudentServices/CareerCounselling/Coun
 import GuidanceTrust from "@/components/StudentServices/CareerCounselling/GuidanceTrust";
 import WhyUniversityYatra from "@/components/StudentServices/CareerCounselling/WhyUniversityYatra";
 import ProfileReview from "@/components/StudentServices/CareerCounselling/ProfileReview";
-import HowItWorks from "@/components/StudentServices/CareerCounselling/HowItWorks";
-import WhatYouGet from "@/components/StudentServices/CareerCounselling/WhatYouGet";
-import WhoItsFor from "@/components/StudentServices/CareerCounselling/WhoItsFor";
-import PopularDestinations from "@/components/StudentServices/CareerCounselling/PopularDestinations";
 import CounsellingFAQ from "@/components/StudentServices/CareerCounselling/CounsellingFAQ";
 import AssessmentForm from "@/components/StudentServices/CareerCounselling/AssessmentForm";
 import CareerCounsellingBenefits from "@/components/StudentServices/CareerCounselling/CareerCounsellingBenefits";
@@ -44,18 +40,6 @@ export default function CareerCounsellingPage() {
 
       {/*4 Profile Review */}
       <ProfileReview />
-
-      {/* How It Works */}
-      <HowItWorks />
-
-      {/* What You Get */}
-      <WhatYouGet />
-
-      {/* Who It's For */}
-      <WhoItsFor />
-
-      {/*8 Popular Destinations */}
-      <PopularDestinations />
 
       {/*9 FAQ Section */}
       <CounsellingFAQ />

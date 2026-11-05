@@ -1,6 +1,12 @@
 import Navbar from "@/components/layout/Navbar";
 import UniversityFooter from "@/components/layout/UniversityFooter";
-import TextPreHero from "@/components/StudentServices/AddmissionApplication/TextPreHero";
+import AdmissionHero from "@/components/StudentServices/AddmissionApplication/AdmissionHero";
+import AbroadChecklist from "@/components/StudentServices/AddmissionApplication/AbroadChecklist";
+import AdmissionSupport from "@/components/StudentServices/AddmissionApplication/AdmissionSupport";
+import WhyUniversityYatra from "@/components/StudentServices/AddmissionApplication/WhyUniversityYatra";
+import VideoLed from "@/components/StudentServices/AddmissionApplication/VideoLed";
+import AdmissionFAQ from "@/components/StudentServices/AddmissionApplication/AdmissionFAQ";
+import AssessmentForm from "@/components/StudentServices/AddmissionApplication/AssessmentForm";
 
 
 export const metadata = {
@@ -22,13 +28,25 @@ export const metadata = {
   ],
 };
 
-export default function CareerCounsellingPage() {
+export default function AdmissionApplicationPage() {
   return (
     <main className="w-full">
       <Navbar />
 
       {/*1 Hero Section */}
-      <TextPreHero />
+      <AdmissionHero />
+      
+      <AbroadChecklist />
+
+      <AdmissionSupport />
+
+      <WhyUniversityYatra />
+
+      <VideoLed />
+
+      <AdmissionFAQ />
+
+      <AssessmentForm />
       
       <UniversityFooter />
     </main>
