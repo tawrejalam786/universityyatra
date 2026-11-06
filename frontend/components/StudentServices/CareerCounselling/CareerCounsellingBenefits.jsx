@@ -1,246 +1,152 @@
-
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import { BadgeCheck, UserRoundCheck, Target, Globe2, FileCheck2, ShieldCheck, GraduationCap, Sparkles } from "lucide-react";
-
-const benefits = [
+const steps = [
   {
-    number: "01",
-    title: "100% Free & No Obligation",
-    description: "Counselling & profile assessment is completely free, no pressure to enroll.",
-    icon: BadgeCheck,
-    bg: "#EAF3FF",
-    iconBg: "#D4E6FF",
-    iconColor: "#1765F5",
-    border: "#C2DAFC",
+    title: "Personalised Profile Assessment",
+    description:
+      "We evaluate your academic qualifications, interests, strengths and career aspirations to understand your profile and identify suitable educational pathways.",
   },
   {
-    number: "02",
-    title: "Profile-Based Guidance",
-    description: "Advice is given after analysing academics, experience, gaps, and goals.",
-    icon: UserRoundCheck,
-    bg: "#F1EAFE",
-    iconBg: "#E4D5FF",
-    iconColor: "#6550C8",
-    border: "#E0D0F8",
+    title: "Course & University Selection",
+    description:
+      "We help you identify suitable courses, universities and study destinations based on your academic background, eligibility, career goals, job market and preferences.",
   },
   {
-    number: "03",
-    title: "Career-First Approach",
-    description: "We focus on long-term career outcomes, not just short-term admissions.",
-    icon: Target,
-    bg: "#E9F8F2",
-    iconBg: "#CEF0DF",
-    iconColor: "#168365",
-    border: "#C8EADB",
+    title: "Financial Planning",
+    description:
+      "We help you understand education costs, identify relevant scholarship opportunities and explore suitable education loan options to plan your studies within your budget.",
   },
   {
-    number: "04",
-    title: "Country & Course Clarity",
-    description: "Understand which countries and courses realistically suit your profile.",
-    icon: Globe2,
-    bg: "#FFF1E8",
-    iconBg: "#FFDFC9",
-    iconColor: "#BE6739",
-    border: "#F5D9C7",
-  },
-  {
-    number: "05",
-    title: "PR-Oriented Planning",
-    description: "Where relevant, we explain how study choices may align with long-term pathways.",
-    icon: FileCheck2,
-    bg: "#E6F6FC",
-    iconBg: "#CCEAF7",
-    iconColor: "#1679A1",
-    border: "#C4E4F0",
-  },
-  {
-    number: "06",
-    title: "Honest & Transparent Advice",
-    description: "No false promises, no guaranteed claims, no misleading guidance.",
-    icon: ShieldCheck,
-    bg: "#FFF7DD",
-    iconBg: "#F9E9B6",
-    iconColor: "#A67B14",
-    border: "#F1E3B6",
+    title: "Admission Planning & Guidance",
+    description:
+      "We guide you through eligibility requirements, admission & visa procedures and application-related requirements to help you prepare for the entire journey.",
   },
 ];
 
-const desktopPositions = [
-  "left-[2%] top-[10px]",
-  "right-[2%] top-[10px]",
-  "left-[2%] top-[166px]",
-  "right-[2%] top-[166px]",
-  "left-[2%] top-[322px]",
-  "right-[2%] top-[322px]",
+// Counting-box colours taken from the reference image:
+// orange, red, light blue, green  (label = slightly deeper shade for readable small text)
+const accents = [
+  { bg: "bg-[#F5A623]", text: "text-white", fill: "#F5A623", label: "#E8920F" },
+  { bg: "bg-[#EE5A5A]", text: "text-white", fill: "#EE5A5A", label: "#E04848" },
+  { bg: "bg-[#6A9BD1]", text: "text-white", fill: "#6A9BD1", label: "#3F7FC4" },
+  { bg: "bg-[#6BCB9B]", text: "text-white", fill: "#6BCB9B", label: "#2FAE75" },
 ];
 
-function DesktopCard({ item, index, reducedMotion }) {
-  const Icon = item.icon;
-
+export default function AcademicMoveSteps() {
   return (
-    <motion.article
-      initial={reducedMotion ? false : { opacity: 0, y: 18, scale: 0.97 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.45, delay: index * 0.07 }}
-      whileHover={reducedMotion ? undefined : { y: -5 }}
-      className={`absolute z-20 flex h-[132px] w-[32%] max-w-[380px] min-w-0 items-center rounded-[20px] border p-5 shadow-[0_8px_22px_rgba(12,51,123,0.055)] transition-shadow duration-300 hover:shadow-[0_14px_30px_rgba(12,51,123,0.11)] ${desktopPositions[index]}`}
-      style={{ backgroundColor: item.bg, borderColor: item.border }}
+    <section
+      aria-labelledby="academic-move-heading"
+      className="box-border w-full overflow-x-clip bg-[#E8F0FE] px-4 py-7 text-[#0C337B] sm:px-6 sm:py-9 lg:px-8"
     >
-      <div className="flex w-full min-w-0 items-start gap-3">
-        <div className="flex h-[49px] w-[49px] shrink-0 items-center justify-center rounded-[15px]" style={{ backgroundColor: item.iconBg }}>
-          <Icon size={25} strokeWidth={1.9} color={item.iconColor} />
+      <div className="mx-auto w-full max-w-[1280px]">
+        {/* Heading */}
+        <div className="mx-auto mb-7 max-w-[760px] text-center sm:mb-9">
+          <h1
+            id="academic-move-heading"
+            className="text-[22px] font-extrabold leading-[1.12] tracking-[-0.035em] sm:text-[28px] lg:text-[32px]"
+          >
+            Everything You Need to Make{" "}
+            <span className="text-[#1765F5]">Your Next Academic Move.</span>
+          </h1>
+
+          <p className="mx-auto mt-3 max-w-[680px] text-[12px] leading-[1.65] text-[#0C337B]/80 sm:text-[13px] lg:text-[14px]">
+            From understanding your academic profile to exploring courses and
+            universities, we bring the guidance you need to make informed
+            decisions about your education.
+          </p>
         </div>
 
-        <div className="min-w-0 flex-1">
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="text-[15px] font-bold leading-[1.3] text-[#0C337B]">{item.title}</h3>
-            <span className="shrink-0 text-[11px] font-bold text-[#0C337B]/40">{item.number}</span>
-          </div>
+        {/* Steps */}
+        <ol className="m-0 grid list-none gap-6 p-0 sm:gap-7">
+          {steps.map((step, index) => {
+            const reverse = index % 2 === 1;
+            const accent = accents[index % accents.length];
 
-          <p className="mt-1 text-[12px] leading-[1.55] text-[#405A83]">{item.description}</p>
-        </div>
-      </div>
-    </motion.article>
-  );
-}
+            return (
+              <li
+                key={step.title}
+                className={`relative mx-auto flex min-h-[112px] w-full max-w-[1160px] min-w-0 items-stretch drop-shadow-[0_4px_4px_#0C337B22] sm:min-h-[92px] lg:min-h-[104px] ${
+                  reverse ? "flex-row-reverse" : ""
+                }`}
+              >
+                {/* COLOURED PORTION: heading + "What You Get" */}
+                <div
+                  className={`relative z-10 flex w-[120px] shrink-0 flex-col items-center justify-center rounded-[17px] px-2.5 text-center sm:w-[180px] sm:rounded-[22px] sm:px-4 lg:w-[220px] ${accent.bg} ${accent.text}`}
+                >
+                  {/* <span className="text-[9px] font-black leading-none tracking-[0.08em] opacity-70 sm:text-[10px]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span> */}
 
-function MobileTimelineCard({ item, index, reducedMotion }) {
-  const Icon = item.icon;
+                  <h3 className="m-0 mt-1 text-[11px] font-extrabold leading-[1.25] sm:text-[13px] lg:text-[15px]">
+                    {step.title}
+                  </h3>
 
-  return (
-    <motion.article
-      initial={reducedMotion ? false : { opacity: 0, x: 16 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.4, delay: 0.04 }}
-      className="relative min-w-0 pl-[51px] sm:pl-[64px]"
-    >
-      {/* Timeline node */}
-      <div className="absolute left-[5px] top-[21px] z-10 flex h-[30px] w-[30px] items-center justify-center rounded-full border-[3px] border-white bg-[#1765F5] text-[10px] font-bold text-white shadow-[0_2px_10px_rgba(23,101,245,0.22)] sm:left-[11px]">
-        {item.number}
-      </div>
+                  <span className="mt-1.5 text-[8px] font-bold uppercase leading-none tracking-[0.12em] opacity-80 sm:text-[9px] lg:text-[10px]">
+                    What You Get
+                  </span>
 
-      {/* Horizontal connection */}
-      <div className="absolute left-[35px] top-[36px] h-px w-[16px] bg-[#B5CDF8] sm:left-[41px] sm:w-[23px]" />
+                  <svg
+                    aria-hidden="true"
+                    className={`absolute bottom-[-15px] h-[22px] w-[29px] ${
+                      reverse ? "right-0 -scale-x-100" : "left-0"
+                    }`}
+                    viewBox="0 0 29 22"
+                  >
+                    <path d="M0 0h29L0 22Z" fill={accent.fill} />
+                  </svg>
+                </div>
 
-      {/* Benefit card */}
-      <div className="relative min-h-[116px] overflow-hidden rounded-[18px] border p-[14px] shadow-[0_5px_18px_rgba(12,51,123,0.045)] sm:p-5" style={{ backgroundColor: item.bg, borderColor: item.border }}>
-        <div className="absolute right-[-10px] top-[-21px] h-[82px] w-[82px] rounded-full opacity-35" style={{ backgroundColor: item.iconBg }} />
+                {/* WHITE PORTION: main text + "How We Do It" (lower left) */}
+                <div
+                  className={`relative flex min-w-0 flex-1 flex-col justify-center rounded-[24px] bg-white py-3 text-left sm:rounded-[36px] sm:py-4 lg:py-5 ${
+                    reverse
+                      ? "pl-4 pr-7 sm:pl-8 sm:pr-[62px] lg:pl-12 lg:pr-[84px]"
+                      : "pl-7 pr-4 sm:pl-[62px] sm:pr-8 lg:pl-[84px] lg:pr-12"
+                  }`}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`absolute top-[7px] h-px w-[42%] bg-[#E8F0FE] ${
+                      reverse ? "right-7" : "left-7"
+                    }`}
+                  />
 
-        <div className="relative flex items-start gap-3">
-          <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[13px] sm:h-[48px] sm:w-[48px]" style={{ backgroundColor: item.iconBg }}>
-            <Icon size={22} strokeWidth={1.9} color={item.iconColor} />
-          </div>
+                  <p className="m-0 text-[10.5px] leading-[1.45] text-[#0C337B] [overflow-wrap:anywhere] sm:text-[12px] sm:leading-[1.5] lg:text-[14px] lg:leading-[1.55]">
+                    {step.description}
+                  </p>
 
-          <div className="min-w-0 flex-1">
-            <h3 className="text-[14px] font-bold leading-[1.35] text-[#0C337B] sm:text-[16px]">{item.title}</h3>
-            <p className="mt-[5px] text-[12px] leading-[1.55] text-[#405A83] sm:text-[13px]">{item.description}</p>
-          </div>
-        </div>
-      </div>
-    </motion.article>
-  );
-}
+                  <span
+                    style={{ color: accent.label }}
+                    className="mt-1.5 self-start text-[8px] font-extrabold uppercase leading-none tracking-[0.12em] sm:text-[9px] lg:text-[10px]"
+                  >
+                    How We Do It
+                  </span>
+                </div>
 
-function CenterHub({ reducedMotion, mobile = false }) {
-  return (
-    <motion.div
-      initial={reducedMotion ? false : { opacity: 0, scale: 0.85 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.55 }}
-      className={mobile ? "relative mx-auto flex h-[150px] w-[150px] items-center justify-center" : "absolute left-1/2 top-1/2 z-10 flex h-[225px] w-[225px] -translate-x-1/2 -translate-y-1/2 items-center justify-center"}
-    >
-      <div className="absolute inset-0 rounded-full bg-[#E1ECFF]" />
+                {/* Chain link */}
+                <svg
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute left-[98px] top-1/2 z-20 h-[47px] w-[57px] -translate-y-1/2 overflow-visible sm:left-[152px] sm:h-[54px] sm:w-[66px] lg:left-[188px] ${
+                    reverse
+                      ? "!left-auto right-[98px] scale-x-[-1] sm:!right-[152px] lg:!right-[188px]"
+                      : ""
+                  }`}
+                  viewBox="0 0 66 54"
+                  fill="none"
+                >
+                  <circle cx="24" cy="27" r="17" stroke="#1047AC" strokeWidth="10" />
+                  <circle cx="43" cy="27" r="17" stroke="#FFFFFF" strokeWidth="10" />
+                </svg>
+              </li>
+            );
+          })}
+        </ol>
 
-      <motion.div
-        animate={reducedMotion ? undefined : { rotate: 360 }}
-        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-[8px] rounded-full border-2 border-dashed border-[#1765F5]/30"
-      />
-
-      <div className={mobile ? "relative flex h-[124px] w-[124px] flex-col items-center justify-center rounded-full border-[5px] border-white bg-[#1765F5] text-white shadow-[0_15px_35px_rgba(23,101,245,0.2)]" : "relative flex h-[175px] w-[175px] flex-col items-center justify-center rounded-full border-[6px] border-white bg-[#1765F5] text-white shadow-[0_20px_45px_rgba(23,101,245,0.24)]"}>
-        <GraduationCap size={mobile ? 27 : 35} strokeWidth={1.8} />
-
-        <span className={mobile ? "mt-1.5 text-center text-[15px] font-extrabold leading-[1.1]" : "mt-2 text-center text-[18px] font-extrabold leading-[1.1]"}>
-          University
-          <br />
-          Yatra
-        </span>
-
-        {!mobile && <span className="mt-2 text-[9px] font-medium tracking-[0.12em] text-white/80">YOUR FUTURE</span>}
-      </div>
-
-      <div className={mobile ? "absolute right-[1px] top-[16px] flex h-[29px] w-[29px] items-center justify-center rounded-[10px] bg-white shadow-md" : "absolute right-[5px] top-[25px] flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-md"}>
-        <Sparkles size={mobile ? 16 : 19} color="#1765F5" />
-      </div>
-    </motion.div>
-  );
-}
-
-function DesktopConnectors() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 1340 470" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 z-0 h-full w-full">
-      <g fill="none" stroke="#93B7F5" strokeWidth="2" strokeDasharray="5 7" opacity="0.8">
-        <path d="M670 235 C530 235 590 76 400 76" />
-        <path d="M670 235 C810 235 750 76 940 76" />
-        <path d="M670 235 C550 235 540 232 400 232" />
-        <path d="M670 235 C790 235 800 232 940 232" />
-        <path d="M670 235 C530 235 590 388 400 388" />
-        <path d="M670 235 C810 235 750 388 940 388" />
-      </g>
-      {[[400,76],[940,76],[400,232],[940,232],[400,388],[940,388]].map(([x,y],i) => (
-        <circle key={i} cx={x} cy={y} r="4" fill="#1765F5" opacity="0.75" />
-      ))}
-    </svg>
-  );
-}
-
-export default function CareerCounsellingBenefits() {
-  const reducedMotion = useReducedMotion();
-
-  return (
-    <section aria-labelledby="career-benefits-heading" className="relative w-full overflow-hidden bg-white py-10 sm:py-12 lg:py-14">
-      <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8 xl:px-5">
-        <motion.div initial={reducedMotion ? false : { opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }} className="mb-7 text-center lg:mb-9">
-          <span className="mb-2 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.17em] text-[#1765F5]">
-            <span className="h-[6px] w-[6px] rounded-full bg-[#1765F5]" />
-            Our Counselling Advantages
+        {/* Closing line */}
+        <p className="mx-auto mt-7 max-w-[760px] text-center text-[13px] font-extrabold leading-[1.5] tracking-[-0.01em] text-[#0C337B] sm:mt-9 sm:text-[15px] lg:text-[17px]">
+          Less guesswork. Better-informed decisions.{" "}
+          <span className="text-[#1765F5]">
+            A clearer direction for your future.
           </span>
-
-          <h2 id="career-benefits-heading" className="text-[26px] font-extrabold leading-[1.18] tracking-[-0.035em] text-[#0C337B] sm:text-[34px] lg:text-[39px]">
-            How Career <span className="text-[#1765F5]">Counselling Helps</span>
-          </h2>
-        </motion.div>
-
-        {/* Desktop */}
-        <div className="relative hidden h-[470px] w-full lg:block">
-          <DesktopConnectors />
-          <CenterHub reducedMotion={reducedMotion} />
-
-          {benefits.map((item, index) => (
-            <DesktopCard key={item.number} item={item} index={index} reducedMotion={reducedMotion} />
-          ))}
-        </div>
-
-        {/* Mobile + Tablet Timeline */}
-        <div className="relative mx-auto w-full max-w-[670px] lg:hidden">
-          <div className="mb-5 flex flex-col items-center">
-            <CenterHub reducedMotion={reducedMotion} mobile />
-            <div className="mt-[-2px] h-7 w-px bg-[#B5CDF8]" />
-          </div>
-
-          <div className="relative flex flex-col gap-3.5 pb-1">
-            <div className="absolute bottom-[45px] left-[19px] top-0 w-[2px] bg-gradient-to-b from-[#1765F5] via-[#A2C1FB] to-[#DBE7FF] sm:left-[25px]" />
-
-            {benefits.map((item, index) => (
-              <MobileTimelineCard key={item.number} item={item} index={index} reducedMotion={reducedMotion} />
-            ))}
-          </div>
-        </div>
+        </p>
       </div>
     </section>
   );

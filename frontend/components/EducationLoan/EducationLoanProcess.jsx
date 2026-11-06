@@ -1,292 +1,293 @@
-
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import {
-  ArrowUpRight,
-  ClipboardCheck,
-  Landmark,
-  FileCheck2,
-  GraduationCap,
-  CheckCircle2,
-  ShieldCheck,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-// Animation variants
+/* ==========================================
+   CONTENT (6 services)
+   Put the images in /public/images/admission-support/
+========================================== */
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+const SERVICES = [
+  {
+    id: "01",
+    title: "Understand Your Loan Eligibility",
+    description:
+      "Assess your academic plans, estimated education expenses and financial background to understand potential loan eligibility and funding requirements.",
+    image: "/images/abroad-checklist/05-funding.webp",
+    alt: "Student reviewing education expenses and loan eligibility",
   },
-};
-
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
+  {
+    id: "02",
+    title: "Find Suitable Lenders & Loan Options",
+    description:
+      "Explore loan options from relevant banks and financial institutions based on interest rates, loan amounts, collateral requirements and repayment terms.",
+    image: "/images/abroad-checklist/05-funding.webp",
+    alt: "Education loan options and financial planning",
   },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: [0.22, 1, 0.36, 1],
-    },
+  {
+    id: "03",
+    title: "Loan Application & Documentation Support",
+    description:
+      "Get assistance with completing loan applications, preparing academic and financial documents, organising co-applicant details and submitting the required paperwork.",
+    image: "/images/abroad-checklist/03-documents.webp",
+    alt: "Education loan application and organised documents",
   },
-};
+  {
+    id: "04",
+    title: "Understand Approval & Repayment Terms",
+    description:
+      "Understand the loan approval process, interest rates, moratorium period, repayment schedule and other terms before proceeding with the loan.",
+    image: "/images/abroad-checklist/05-funding.webp",
+    alt: "Education loan repayment and financial planning",
+  },
+];
 
-export default function EducationLoanProcess() {
+const TOTAL = SERVICES.length;
+const AUTOPLAY_MS = 3800;
+const CTA_HREF = "#assessment"; // where the arrow button goes
+
+/* ==========================================
+   ONE CARD
+   mobile : vertical accordion (bars that grow taller)
+   desktop: horizontal accordion (strips that grow wider)
+========================================== */
+
+function ServiceCard({ service, index, active, onOpen, autoplay, paused }) {
+  const isActive = index === active;
+
+  return (
+    <li
+      onPointerEnter={(e) => {
+        // hover opens the card (mouse only, touch uses tap)
+        if (e.pointerType === "mouse") onOpen(index);
+      }}
+      className={`relative min-w-0 overflow-hidden rounded-[22px] transition-[flex,height,background-color,box-shadow] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:h-auto ${
+        isActive
+          ? "h-[290px] bg-[#0C337B] shadow-[0_18px_40px_-14px_rgba(12,51,123,0.55)] lg:[flex:1_1_0px]"
+          : "h-[62px] bg-[#EAF2FF] hover:bg-[#DCE9FF] lg:[flex:0_0_82px]"
+      }`}
+    >
+      {/* click / focus target (sits above the collapsed card) */}
+      <button
+        type="button"
+        onClick={() => onOpen(index)}
+        onFocus={() => onOpen(index)}
+        aria-expanded={isActive}
+        aria-label={`${service.id}. ${service.title}`}
+        className={`absolute inset-0 z-10 h-full w-full rounded-[22px] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#1765F5] ${
+          isActive ? "pointer-events-none" : ""
+        }`}
+      />
+
+      {/* =====================================
+          COLLAPSED LAYER
+          mobile : number + title in a row
+          desktop: vertical title on top, number at the bottom
+      ===================================== */}
+      <div
+        aria-hidden={isActive}
+        className={`absolute inset-0 flex items-center gap-3 px-3.5 transition-opacity duration-300 lg:flex-col lg:justify-between lg:px-0 lg:py-5 ${
+          isActive ? "opacity-0" : "opacity-100 delay-300"
+        }`}
+      >
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[13px] font-extrabold text-[#0C337B] lg:order-last lg:h-11 lg:w-11">
+          {service.id}
+        </span>
+
+        <span className="line-clamp-2 min-w-0 text-[13px] font-bold leading-[1.3] text-[#0C337B] sm:text-[14px] lg:line-clamp-none lg:max-h-[240px] lg:rotate-180 lg:text-center lg:[writing-mode:vertical-rl]">
+          {service.title}
+        </span>
+      </div>
+
+      {/* =====================================
+          EXPANDED LAYER
+      ===================================== */}
+      <div
+        aria-hidden={!isActive}
+        className={`absolute inset-0 overflow-hidden transition-opacity duration-500 ${
+          isActive ? "opacity-100 delay-200" : "pointer-events-none opacity-0"
+        }`}
+      >
+        {/* background image */}
+        <Image
+          src={service.image}
+          alt={isActive ? service.alt : ""}
+          fill
+          priority={index === 0}
+          sizes="(max-width: 1023px) 92vw, 780px"
+          className={`object-cover transition-transform duration-[1200ms] ease-out motion-reduce:transition-none ${
+            isActive ? "scale-100" : "scale-110"
+          }`}
+        />
+
+        {/* dark blue shade so the text is always readable */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0C337B]/95 via-[#0C337B]/55 to-[#0C337B]/10"
+        />
+
+        {/* content (fixed width, so the text does not reflow while the card grows) */}
+        <div className="relative flex h-full flex-col justify-end p-4 sm:p-5 lg:w-[clamp(400px,44vw,640px)] lg:p-7">
+          <h3 className="text-[22px] font-extrabold leading-[1.15] tracking-[-0.03em] text-white sm:text-[26px] lg:text-[32px]">
+            {service.title}
+          </h3>
+
+          <p className="mt-2 max-w-[520px] text-[12px] leading-[1.6] text-white/85 sm:text-[13px]">
+            {service.description}
+          </p>
+
+          <div className="mt-4 flex items-center justify-between lg:mr-0">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[14px] font-extrabold text-[#0C337B]">
+              {service.id}
+            </span>
+
+            <Link
+              href={CTA_HREF}
+              tabIndex={isActive ? 0 : -1}
+              aria-label={`Get free guidance: ${service.title}`}
+              className="relative z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#1765F5] text-white shadow-[0_10px_22px_rgba(23,101,245,0.45)] transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#1765F5]"
+            >
+              <ArrowUpRight size={20} strokeWidth={2.4} />
+            </Link>
+          </div>
+        </div>
+
+        {/* auto-open progress line */}
+        {autoplay && (
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 h-[3px] bg-white/20"
+          >
+            <motion.span
+              key={`${active}-${paused}`}
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: paused ? 0 : 1 }}
+              transition={{
+                duration: paused ? 0 : AUTOPLAY_MS / 1000,
+                ease: "linear",
+              }}
+              className="block h-full origin-left bg-white"
+            />
+          </div>
+        )}
+      </div>
+    </li>
+  );
+}
+
+/* ==========================================
+   MAIN SECTION
+========================================== */
+
+export default function AdmissionSupport() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { amount: 0.3 });
   const reduceMotion = useReducedMotion();
+
+  const autoplay = !reduceMotion && inView;
+
+  // auto-open the next card: only while visible, not hovered / touched
+  useEffect(() => {
+    if (paused || !autoplay) return;
+
+    const timer = setInterval(() => {
+      setActive((i) => (i + 1) % TOTAL);
+    }, AUTOPLAY_MS);
+
+    return () => clearInterval(timer);
+  }, [paused, autoplay, active]);
+
+  const resumeLater = () => setTimeout(() => setPaused(false), 4000);
 
   return (
     <section
-      id="education-loan-process"
-      aria-labelledby="education-loan-process-title"
-      className="relative isolate w-full overflow-hidden bg-[#F6F9FF] py-12 sm:py-14 lg:py-10"
+      ref={sectionRef}
+      id="admission-support"
+      aria-labelledby="admission-support-heading"
+      className="relative isolate w-full overflow-hidden bg-white py-10 lg:py-12"
     >
-      {/* BACKGROUND DECORATION */}
+      {/* soft background shapes */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 top-8 -z-10 h-64 w-64 rounded-full bg-[#EAF2FF]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 bottom-0 -z-10 h-64 w-64 rounded-full bg-[#EAF2FF]"
+      />
 
-      <div aria-hidden="true" className="pointer-events-none absolute -left-32 top-0 h-[280px] w-[280px] rounded-full border-[45px] border-[#1765F5]/[0.025]" />
-
-      <div aria-hidden="true" className="pointer-events-none absolute -right-28 bottom-0 h-[260px] w-[260px] rounded-full border-[45px] border-[#1765F5]/[0.025]" />
-
-      {/* MAIN CONTAINER */}
-
-      <div className="relative z-10 mx-auto w-full max-w-[1340px] px-4 sm:px-6 lg:px-8">
-        {/* SECTION HEADING */}
-
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        {/* =====================================
+        {/* HEADER */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: reduceMotion ? 0 : 0.55 }}
-          className="mb-7 flex flex-col gap-4 sm:mb-9 md:flex-row md:items-end md:justify-between md:gap-8"
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{
+            duration: reduceMotion ? 0 : 0.5,
+            ease: "easeOut",
+          }}
+          className="mb-5 grid items-end gap-3 lg:mb-6 lg:grid-cols-[1fr_1fr] lg:gap-10"
         >
-          <div className="min-w-0">
-            <div className="mb-3 inline-flex items-center gap-2">
-              <span className="h-[2px] w-6 rounded-full bg-[#1765F5]" />
+          <div>
+            {/* Eyebrow */}
+            <p className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
+              HOW WE CAN HELP
+            </p>
 
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[11px]">
-                The Process, Simplified
-              </span>
-            </div>
-
+            {/* Heading */}
             <h2
-              id="education-loan-process-title"
-              className="max-w-[750px] text-[27px] font-extrabold leading-[1.18] tracking-[-0.035em] text-[#0C337B] sm:text-[34px] lg:text-[40px]"
+              id="admission-support-heading"
+              className="text-balance text-[26px] font-extrabold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] lg:text-[38px]"
             >
-              How Our Education{" "}
+              How Our{" "}
               <span className="text-[#1765F5]">
-                Loans Work
-              </span>
+                Education Loan Assistance
+              </span>{" "}
+              Works
             </h2>
           </div>
 
-          <p className="max-w-[310px] text-[13px] leading-[1.75] text-[#667995] sm:text-[14px]">
-            From your first application to understanding repayment,
-            every step made clearer.
+          {/* Description */}
+          <p className="max-w-[600px] text-[13px] leading-[1.7] text-[#526B8C] sm:text-[14px] lg:justify-self-end">
+            Getting an education loan involves understanding your
+            eligibility, comparing lenders, preparing documents and
+            completing the application. We assist you at each stage,
+            helping you make informed financing decisions for your
+            education.
           </p>
         </motion.div>
 
-        {/* BENTO GRID */}
-
-        <motion.div
-          variants={containerVariants}
-          initial={reduceMotion ? false : "hidden"}
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid w-full min-w-0 grid-cols-1 gap-3 lg:grid-cols-[1fr_1.15fr] lg:items-stretch lg:gap-4"
+        {/* =====================================
+            ACCORDION
+        ===================================== */}
+        <ul
+          className="m-0 flex list-none flex-col gap-2 p-0 lg:h-[360px] lg:flex-row lg:gap-3"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={resumeLater}
+          onTouchCancel={resumeLater}
         >
-          {/* ======================================== */}
-          {/* STEP 01 — LARGE FEATURED CARD */}
-          {/* ======================================== */}
-
-          <motion.article
-            variants={cardVariants}
-            whileHover={reduceMotion ? undefined : { y: -5 }}
-            className="group relative isolate flex min-h-[235px] min-w-0 flex-col justify-between overflow-hidden rounded-[20px] bg-[#0C337B] p-6 shadow-[0_15px_35px_rgba(12,51,123,0.12)] transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(12,51,123,0.20)] sm:p-7 lg:min-h-[310px] lg:rounded-[22px] lg:p-8"
-          >
-            {/* DECORATIVE CIRCLES */}
-
-            <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-[230px] w-[230px] rounded-full border-[40px] border-white/[0.045]" />
-
-            <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-24 h-[220px] w-[220px] rounded-full border-[35px] border-white/[0.025]" />
-
-            {/* TOP */}
-
-            <div className="relative z-10 flex items-start justify-between gap-4">
-              <span className="text-[65px] font-extrabold leading-none tracking-[-0.08em] text-white/20 sm:text-[75px] lg:text-[85px]">
-                01.
-              </span>
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white transition-transform duration-300 group-hover:rotate-[-8deg] sm:h-12 sm:w-12">
-                <ClipboardCheck size={24} strokeWidth={1.8} />
-              </div>
-            </div>
-
-            {/* BOTTOM CONTENT */}
-
-            <div className="relative z-10 mt-5">
-              <span className="mb-3 inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.15em] text-[#A2C1FB]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#5D93F8]" />
-                Start Your Journey
-              </span>
-
-              <h3 className="mb-3 text-[23px] font-extrabold leading-[1.2] tracking-[-0.03em] text-white sm:text-[27px] lg:text-[30px]">
-                Apply with Confidence
-              </h3>
-
-              <p className="max-w-[385px] text-[13px] leading-[1.75] text-[#D2E2FA] sm:text-[14px]">
-                Begin your education loan journey with clarity,
-                preparation and expert guidance throughout the
-                application process.
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[10px] font-semibold text-white/90">
-                  <CheckCircle2 size={13} />
-                  Application Guidance
-                </span>
-
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[10px] font-semibold text-white/90">
-                  <ShieldCheck size={13} />
-                  Expert Support
-                </span>
-              </div>
-            </div>
-          </motion.article>
-
-          {/* ======================================== */}
-          {/* RIGHT SIDE CARDS */}
-          {/* ======================================== */}
-
-          <div className="grid min-w-0 grid-cols-1 gap-3 lg:grid-rows-[1fr_1fr] lg:gap-4">
-            {/* STEP 02 — WIDE CARD */}
-
-            <motion.article
-              variants={cardVariants}
-              whileHover={reduceMotion ? undefined : { y: -5 }}
-              className="group relative isolate flex min-h-[155px] min-w-0 flex-col justify-between overflow-hidden rounded-[18px] border border-[#C8DBFC] bg-[#DCE9FF] p-5 transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(23,101,245,0.10)] sm:p-6 lg:min-h-0 lg:rounded-[20px]"
-            >
-              {/* BACKGROUND DECORATION */}
-
-              <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-14 h-40 w-40 rounded-full border-[27px] border-[#1765F5]/[0.055]" />
-
-              {/* TOP */}
-
-              <div className="relative z-10 mb-4 flex items-start justify-between gap-3">
-                <span className="text-[10px] font-extrabold uppercase tracking-[0.13em] text-[#1765F5]">
-                  Step 02 / Lender Options
-                </span>
-
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#1765F5] text-white shadow-[0_5px_14px_rgba(23,101,245,0.15)] transition-transform duration-300 group-hover:rotate-[-8deg]">
-                  <Landmark size={19} strokeWidth={1.8} />
-                </div>
-              </div>
-
-              {/* CONTENT */}
-
-              <div className="relative z-10">
-                <h3 className="mb-2 text-[18px] font-extrabold leading-[1.25] tracking-[-0.025em] text-[#0C337B] sm:text-[20px]">
-                  Smart Lender Matching
-                </h3>
-
-                <p className="max-w-[480px] text-[12px] leading-[1.65] text-[#5D7398] sm:text-[13px]">
-                  Explore suitable education loan options from banks
-                  and lenders based on your requirements.
-                </p>
-              </div>
-            </motion.article>
-
-            {/* BOTTOM TWO CARDS */}
-
-            <div className="grid min-w-0 grid-cols-1 gap-3 min-[390px]:grid-cols-2 lg:gap-4">
-              {/* STEP 03 */}
-
-              <motion.article
-                variants={cardVariants}
-                whileHover={reduceMotion ? undefined : { y: -5 }}
-                className="group relative isolate flex min-h-[170px] min-w-0 flex-col justify-between overflow-hidden rounded-[18px] border border-[#D5E4FC] bg-[#EAF2FF] p-5 transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(23,101,245,0.10)] sm:p-6 lg:min-h-0 lg:rounded-[20px]"
-              >
-                {/* TOP */}
-
-                <div className="relative z-10 mb-4 flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#1765F5]">
-                    Step 03
-                  </span>
-
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-[#1765F5] transition-transform duration-300 group-hover:rotate-[-8deg]">
-                    <FileCheck2 size={19} strokeWidth={1.8} />
-                  </div>
-                </div>
-
-                {/* CONTENT */}
-
-                <div className="relative z-10">
-                  <h3 className="mb-2 text-[16px] font-extrabold leading-[1.3] tracking-[-0.025em] text-[#0C337B] sm:text-[17px]">
-                    Approval &amp; Documentation
-                  </h3>
-
-                  <p className="text-[11px] leading-[1.65] text-[#647A9C] sm:text-[12px]">
-                    Guidance with required documents, applications
-                    and the lender approval process.
-                  </p>
-                </div>
-              </motion.article>
-
-              {/* STEP 04 */}
-
-              <motion.article
-                variants={cardVariants}
-                whileHover={reduceMotion ? undefined : { y: -5 }}
-                className="group relative isolate flex min-h-[170px] min-w-0 flex-col justify-between overflow-hidden rounded-[18px] bg-[#1765F5] p-5 shadow-[0_8px_22px_rgba(23,101,245,0.10)] transition-shadow duration-300 hover:shadow-[0_14px_30px_rgba(23,101,245,0.20)] sm:p-6 lg:min-h-0 lg:rounded-[20px]"
-              >
-                {/* BACKGROUND CIRCLE */}
-
-                <div aria-hidden="true" className="pointer-events-none absolute -right-14 -top-16 h-40 w-40 rounded-full border-[27px] border-white/[0.07]" />
-
-                {/* TOP */}
-
-                <div className="relative z-10 mb-4 flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#DCE9FF]">
-                    Step 04
-                  </span>
-
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white transition-transform duration-300 group-hover:rotate-[-8deg]">
-                    <GraduationCap size={20} strokeWidth={1.8} />
-                  </div>
-                </div>
-
-                {/* CONTENT */}
-
-                <div className="relative z-10">
-                  <h3 className="mb-2 text-[16px] font-extrabold leading-[1.3] tracking-[-0.025em] text-white sm:text-[17px]">
-                    Repay After You Graduate
-                  </h3>
-
-                  <p className="text-[11px] leading-[1.65] text-[#E1EBFF] sm:text-[12px]">
-                    Understand repayment schedules, applicable
-                    moratoriums and lender-specific terms.
-                  </p>
-                </div>
-              </motion.article>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* OPTIONAL FOOTNOTE */}
-
-        <div className="mt-5 flex items-start gap-2 text-[11px] leading-[1.6] text-[#7889A4] sm:text-[12px]">
-          <ShieldCheck size={15} className="mt-0.5 shrink-0 text-[#1765F5]" />
-
-          <p>
-            Loan approval, eligibility and repayment conditions
-            depend on the respective bank or lender.
-          </p>
-        </div>
+          {SERVICES.map((service, index) => (
+            <ServiceCard
+              key={service.id}
+              service={service}
+              index={index}
+              active={active}
+              onOpen={setActive}
+              autoplay={autoplay}
+              paused={paused}
+            />
+          ))}
+        </ul>
       </div>
     </section>
   );

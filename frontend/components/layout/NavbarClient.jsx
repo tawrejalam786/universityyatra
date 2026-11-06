@@ -92,6 +92,10 @@ const NAV_ITEMS = [
         label: "Education Loan Assistance",
         href: "/education-loan",
       },
+      {
+        label: "Scholarship Guidance",
+        href: "/scholarship-finalcial",
+      },
     ],
   },
 

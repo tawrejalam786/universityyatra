@@ -4,6 +4,10 @@ import EducationLoanHero from "@/components/EducationLoan/EducationLoanHero";
 import EducationLoanLenders from "@/components/EducationLoan/EducationLoanLenders";
 import EducationLoanProcess from "@/components/EducationLoan/EducationLoanProcess";
 import LoanBenefitsFeatures from "@/components/EducationLoan/LoanBenefitsFeatures";
+import LoanDocumentationVideo from "@/components/EducationLoan/LoanDocumentationVideo";
+import WhyUniversityYatra from "@/components/EducationLoan/WhyUniversityYatra";
+import AdmissionFAQ from "@/components/EducationLoan/AdmissionFAQ";
+import AssessmentForm from "@/components/EducationLoan/AssessmentForm";
 
 
 export const metadata = {
@@ -35,7 +39,19 @@ export default function EducationLoansPage() {
         <EducationLoanProcess />
 
         {/* Existing Education Loans page ke andar: */}
-       <LoanBenefitsFeatures />
+        <LoanBenefitsFeatures />
+
+        {/* Education Loans Video: */}
+        <LoanDocumentationVideo />
+
+        {/* Why University Yatra */}
+        <WhyUniversityYatra />
+
+        {/* FAQ */}
+        <AdmissionFAQ />
+
+        {/* Form */}
+        <AssessmentForm />
 
       </main>
       <UniversityFooter />
