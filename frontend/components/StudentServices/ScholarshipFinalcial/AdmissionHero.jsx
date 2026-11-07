@@ -26,7 +26,7 @@ export default function AdmissionHero() {
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
-          className="mb-2 mt-3 sm:mb-2"
+          className="mb-6 mt-10 sm:mb-2"
         >
           <ol className="flex flex-wrap items-center gap-2 text-[12px] sm:text-[13px]">
 

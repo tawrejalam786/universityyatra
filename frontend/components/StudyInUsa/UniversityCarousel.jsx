@@ -875,25 +875,6 @@ export default function UniversityCarousel() {
                   {/* DARK OVERLAY */}
                   <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/10" />
 
-                  {/* STATE BADGE */}
-                  <div className="pointer-events-none absolute left-2.5 top-2.5 z-20 max-w-[calc(100%-20px)]">
-
-                    <span className="inline-flex max-w-full items-center gap-1 rounded-full border border-white/40 bg-white/95 px-2 py-1 text-[9px] font-extrabold text-[#0C337B] shadow-md">
-
-                      <MapPin
-                        size={12}
-                        strokeWidth={2.3}
-                        className="shrink-0 text-[#1765F5]"
-                      />
-
-                      <span className="truncate">
-                        {university.grade}
-                      </span>
-
-                    </span>
-
-                  </div>
-
                   {/* UNIVERSITY DETAILS */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 p-3 pt-7">
 

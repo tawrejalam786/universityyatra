@@ -314,7 +314,7 @@ export default function NavbarClient({ active = "Home", countries = [] }) {
             width={1600}
             height={384}
             priority
-            className="h-[25px] w-auto max-w-[175px] object-contain min-[360px]:h-[27px] min-[390px]:h-[30px] sm:h-[40px] sm:max-w-none"
+            className="h-[35px] w-auto max-w-[190px] object-contain min-[360px]:h-[35px] min-[390px]:h-[35px] sm:h-[45px] sm:max-w-none"
           />
         </Link>
 
