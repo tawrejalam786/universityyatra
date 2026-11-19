@@ -489,7 +489,6 @@ export default async function GuideDetailPage({ params }) {
       fill
       priority
       sizes="100vw"
-      unoptimized
       className="object-cover object-center"
     />
   </div>
@@ -661,7 +660,6 @@ export default async function GuideDetailPage({ params }) {
                           alt={chap.image.alt || chap.title}
                           fill
                           sizes="(max-width: 1024px) 100vw, 66vw"
-                          unoptimized
                           className="object-cover"
                         />
                       </div>
