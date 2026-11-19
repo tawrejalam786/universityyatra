@@ -355,7 +355,7 @@ function ActiveGuideCard({
       <div className="relative z-10 mt-2 flex min-h-0 flex-1 flex-col">
 
         {/* SCROLLABLE DESCRIPTION AREA */}
-        <div className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain [scrollbar-width:thin]">
+        <div className="min-h-0 flex-1">
           <div className="text-center">
 
             {/* TAG */}

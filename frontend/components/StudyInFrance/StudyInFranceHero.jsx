@@ -74,6 +74,19 @@ export default function StudyInFranceHero() {
           </span>
         </motion.h1>
 
+        {/* <motion.p
+          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.16 }}
+          className="mx-auto mt-4 max-w-[820px] text-[13px] font-medium leading-relaxed text-white [text-shadow:0_1px_5px_rgba(0,0,0,0.9)] sm:text-[15px]"
+        >
+          Explore France’s prestigious universities, diverse academic programmes, and rich culture of innovation and creativity. Discover an education that broadens your perspective, builds your potential, and opens doors to opportunities around the world.
+        </motion.p> */}
+
+        {/* <p className="mx-auto mt-3 max-w-[800px] text-[10px] font-bold uppercase tracking-[0.12em] text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.9)] sm:text-[12px]">
+          Globally Ranked Universities <span aria-hidden="true">|</span> Flexible Academic Pathways <span aria-hidden="true">|</span> Career &amp; Research Exposure
+        </p> */}
+
       </div>
 
       {/* =====================================

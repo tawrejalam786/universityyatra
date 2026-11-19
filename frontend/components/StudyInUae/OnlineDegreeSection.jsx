@@ -366,7 +366,7 @@ function ActiveGuideCard({
         {/* DESCRIPTION + OPTIONAL NOTE */}
         <div
           key={guide.id}
-          className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain [scrollbar-width:thin]"
+          className="min-h-0 flex-1"
         >
           <div className="text-center">
 

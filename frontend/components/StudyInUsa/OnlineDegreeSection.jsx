@@ -38,7 +38,7 @@ const guides = [
     shortTitle: "Education Pathways",
     icon: GraduationCap,
     description:
-      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees. From choosing a major to pursuing an MS or MBA, your options depend on your academic background and goals.",
+      "US universities offer flexible undergraduate pathways and specialised postgraduate degrees.",
     image: "/images/study-usa/3d/study-usa.png",
     points: [
       { icon: GraduationCap, label: "Bachelor's", value: "Typically 4 years" },
@@ -54,7 +54,7 @@ const guides = [
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
     description:
-      "Tuition depends on your university, degree, and field of study. Use these annual ranges to start planning your budget before comparing specific programs.",
+      "Tuition depends on your university, degree, and field of study.",
     image: "/images/study-usa/3d/cost-studying.png",
     points: [
       { icon: DollarSign, label: "Bachelor's", value: "US$19,000–40,000 / yr" },
@@ -70,7 +70,7 @@ const guides = [
     shortTitle: "Living & Student Life",
     icon: Home,
     description:
-      "Living costs depend on where you study and how you choose to live. A useful starting budget is US$1,000–2,500 per month, excluding tuition.",
+      "Living costs depend on where you study and how you choose to live.",
     image: "/images/study-usa/3d/living-cost.png",
     points: [
       { icon: Building2, label: "Housing", value: "Major living expense" },
@@ -86,7 +86,7 @@ const guides = [
     shortTitle: "Scholarships & Funding",
     icon: Award,
     description:
-      "Indian students may qualify for merit-based scholarships, need-based financial aid, university awards, or graduate research funding. Opportunities depend on your profile.",
+      "Indian students may qualify for merit-based scholarships, need-based financial aid, or research funding.",
     image: "/images/study-usa/3d/scholarship.png",
     points: [
       { icon: Award, label: "Merit-based", value: "Academic achievement" },
@@ -102,7 +102,7 @@ const guides = [
     shortTitle: "OPT & Work Pathways",
     icon: Plane,
     description:
-      "Planning to work in the USA after graduation? Eligible F-1 students can apply for Optional Practical Training (OPT) to gain work experience related to their degree.",
+      "Eligible F-1 students can apply for Optional Practical Training (OPT) to gain work experience.",
     image: "/images/study-usa/3d/post-study.png",
     points: [
       { icon: Clock, label: "OPT", value: "Up to 12 months" },

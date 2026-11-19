@@ -258,7 +258,7 @@ function ActiveGuideCard({ activeIndex, onSelect, reduceMotion }) {
       </div>
 
       {/* Scroll only the text region when needed; never resize the card. */}
-      <div className="relative z-10 mt-2 min-h-0 flex-1 overflow-y-auto overscroll-contain text-center [scrollbar-width:thin]">
+      <div className="relative z-10 mt-2 min-h-0 flex-1 text-center">
         <motion.div key={guide.id} initial={reduceMotion ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduceMotion ? 0 : 0.2 }}>
           <span className="inline-flex items-center justify-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#1765F5]">
             <TagIcon size={13} />{guide.tag}

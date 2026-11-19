@@ -262,7 +262,7 @@ function ActiveGuideCard({
       <div className="relative z-10 flex min-h-0 flex-1 flex-col">
 
         {/* DYNAMIC CONTENT - FIXED AVAILABLE SPACE */}
-        <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:thin]">
+        <div className="min-h-0 flex-1">
           <motion.div
             key={`content-${guide.id}`}
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}

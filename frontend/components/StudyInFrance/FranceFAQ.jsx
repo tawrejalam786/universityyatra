@@ -13,32 +13,32 @@ const faqs = [
   {
     question: "What are the admission requirements for studying in France?",
     answer:
-      "Requirements vary by institution and programme but generally include academic qualifications, proof of language proficiency (French or English depending on the program), and supporting documents such as motivation letters and references.",
+      "Requirements vary by institution and course. Applicants generally need academic transcripts, certificates, a passport, a statement of purpose, language scores and, for some programmes, an interview.",
   },
   {
     question: "Can Indian students study in France in English?",
     answer:
-      "Yes. Many French universities and Grandes Écoles offer programmes taught entirely in English, particularly at the Master's level. However, learning basic French can enhance daily life and cultural integration.",
+      "Yes. France offers many English-taught programmes, particularly at postgraduate level. Learning basic French can also support everyday life, internships and professional networking.",
   },
   {
     question: "How much does it cost to study in France?",
     answer:
-      "Public universities charge around €2,902/year for Bachelor's and €3,950/year for Master's programmes for international students. Private institutions and Grandes Écoles may have higher fees. Living costs depend on the city and lifestyle.",
+      "For 2026–27, public university fees are €2,902 yearly for Bachelor's and €3,950 for Master's programmes, with exemptions for some eligible students. Private and specialised institutions set their own fees; living costs are separate.",
   },
   {
     question: "Are scholarships available for Indian students in France?",
     answer:
-      "Yes. Scholarships include the Eiffel Excellence Scholarship, Campus France grants, Erasmus+ programmes, and institution-specific awards. Eligibility and funding amounts vary by programme and academic level.",
+      "Indian students can explore Charpak, Eiffel, Erasmus Mundus and university scholarships. Eligibility, award amounts and deadlines differ across programmes each year.",
   },
   {
     question: "Can international students work while studying in France?",
     answer:
-      "Yes. International students can work up to 964 hours per year (approximately 60% of full-time hours) during their studies. Work opportunities are subject to visa conditions and local regulations.",
+      "Students with valid residence permits can work up to 964 hours yearly, provided employment does not interfere with their studies and they follow the conditions of their status.",
   },
   {
     question: "Can I stay in France after completing my degree?",
     answer:
-      "Eligible Master's graduates can apply for a temporary residence permit (APS) allowing 12 months to search for work or start a business. France also offers the Talent Passport for highly skilled professionals.",
+      "Eligible Master's graduates may receive twelve months to find work or develop a business related to their studies. Qualifying Indian graduates may be eligible for an additional year under the India–France arrangement; conditions apply.",
   },
 ];
 

@@ -38,7 +38,7 @@ const guides = [
     icon: GraduationCap,
     image: "/images/study-usa/3d/study-usa.png",
     description:
-      "Canada offers university degrees and career-focused college programs for international students. Choose a bachelor's degree, master's program, or specialised postgraduate qualification based on your previous education and goals.",
+      "Canada offers university degrees and career-focused college programs for international students.",
     points: [
       {
         icon: GraduationCap,
@@ -66,7 +66,7 @@ const guides = [
     icon: DollarSign,
     image: "/images/study-canada/gold-coins.png",
     description:
-      "Your budget depends on your qualification, program, and institution. The latest national averages put international tuition at CAD 24,028/year for graduate students and CAD 41,746/year for undergraduates.",
+      "Your budget depends on your qualification, program, and institution.",
     points: [
       {
         icon: Home,
@@ -91,7 +91,7 @@ const guides = [
     icon: Home,
     image: "/images/3d/living-cost.webp",
     description:
-      "Your living costs depend on your city, accommodation, commute, and daily routine. Beyond budgeting, prepare for Canada's diverse communities, independent student life, and regional weather differences.",
+      "Your living costs depend on your city, accommodation, commute, and daily routine.",
     points: [
       {
         icon: Home,
@@ -120,7 +120,7 @@ const guides = [
     icon: Award,
     image: "/images/study-canada/education-graduation.png",
     description:
-      "Canadian scholarships can reward academic performance, leadership, financial need, or research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.",
+      "Canadian scholarships can reward academic performance, leadership, financial need, or research potential.",
     points: [
       {
         icon: Award,
@@ -148,7 +148,7 @@ const guides = [
     icon: Plane,
     image: "/images/study-canada/documentation-approval.png",
     description:
-      "Canada's Post-Graduation Work Permit (PGWP) lets eligible international graduates gain Canadian work experience after completing their studies. Eligibility depends on your institution, program, and applicable rules.",
+      "Canada's Post-Graduation Work Permit (PGWP) lets eligible international graduates gain Canadian work experience.",
     points: [
       {
         icon: Clock,
@@ -348,7 +348,7 @@ function ActiveGuideCard({
       <div className="relative z-10 mt-2 flex min-h-0 flex-1 flex-col">
 
         {/* HEADING + DESCRIPTION AREA */}
-        <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:thin]">
+        <div className="min-h-0 flex-1">
 
           <motion.div
             key={`content-${guide.id}`}

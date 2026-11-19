@@ -36,9 +36,9 @@ const guides = [
     title: "Study in France",
     shortTitle: "Education Pathways",
     icon: GraduationCap,
-    image: "/images/study-france/study-france.png",
+    image: "/images/study-usa/3d/study-usa.png",
     description:
-      "Explore France's prestigious universities, diverse academic programmes, and rich culture of innovation and creativity. Discover an education that broadens your perspective, builds your potential, and opens doors to opportunities around the world.",
+      "Discover France’s prestigious universities, diverse programmes, and innovative culture while unlocking global opportunities.",
     points: [
       {
         icon: GraduationCap,
@@ -64,9 +64,9 @@ const guides = [
     title: "Cost of Studying in France",
     shortTitle: "Tuition & Study Budget",
     icon: DollarSign,
-    image: "/images/study-france/gold-coins.png",
+    image: "/images/study-usa/3d/cost-studying.png",
     description:
-      "Your budget depends on your qualification, program, and institution. Public universities in France offer relatively affordable tuition for international students compared to other European destinations.",
+      "Your budget depends on your qualification, program, and institution. Public universities in France offer relatively affordable tuition for international students compared to other European.",
     points: [
       {
         icon: Home,
@@ -89,7 +89,7 @@ const guides = [
     title: "Cost of Living & French Culture",
     shortTitle: "Living & Culture",
     icon: Home,
-    image: "/images/3d/living-cost.webp",
+    image: "/images/study-usa/3d/living-cost.png",
     description:
       "Your living costs depend on your city, accommodation, commute, and daily routine. Beyond budgeting, prepare for France's rich culture, student-friendly cities, and diverse regional traditions.",
     points: [
@@ -118,7 +118,7 @@ const guides = [
     title: "Scholarships in France for Indian Students",
     shortTitle: "Scholarships & Funding",
     icon: Award,
-    image: "/images/study-france/education-graduation.png",
+    image: "/images/study-usa/3d/scholarship.png",
     description:
       "French scholarships can reward academic performance, research potential, or specific fields of study. Opportunities differ by degree level, so check eligibility and funding terms before applying.",
     points: [
@@ -146,7 +146,7 @@ const guides = [
     title: "Post-Study Work Visa in France",
     shortTitle: "Work Pathways",
     icon: Plane,
-    image: "/images/study-france/documentation-approval.png",
+    image: "/images/study-usa/3d/post-study.png",
     description:
       "France offers a temporary residence permit for eligible international graduates to search for work or start a business after completing their studies. Duration and eligibility depend on your qualification.",
     points: [
@@ -348,7 +348,7 @@ function ActiveGuideCard({
       <div className="relative z-10 mt-2 flex min-h-0 flex-1 flex-col">
 
         {/* HEADING + DESCRIPTION AREA */}
-        <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:thin]">
+        <div className="min-h-0 flex-1">
 
           <motion.div
             key={`content-${guide.id}`}
@@ -370,7 +370,7 @@ function ActiveGuideCard({
             </h3>
 
             {/* DESCRIPTION */}
-            <p className="mx-auto mt-2 max-w-[560px] text-[12px] leading-[1.65] text-[#526B8C]">
+            <p className="mx-auto mt-2 max-w-[560px] text-[12px] text-[#526B8C]">
               {guide.description}
             </p>
 

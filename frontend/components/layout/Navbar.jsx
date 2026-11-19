@@ -14,6 +14,7 @@ const COUNTRIES = [
   { folder: "study-in-germany", name: "Germany", code: "de" },
   { folder: "study-in-australia", name: "Australia", code: "au" },
   { folder: "study-in-ireland", name: "Ireland", code: "ie" },
+  { folder: "study-in-france", name: "France", code: "fr" },
   { folder: "study-in-uae", name: "UAE", code: "ae" },
   { folder: "study-in-russia", name: "Russia", code: "ru" },
 ];

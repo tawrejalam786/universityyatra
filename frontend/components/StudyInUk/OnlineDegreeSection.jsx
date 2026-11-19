@@ -387,7 +387,7 @@ function ActiveContentCard({ activeIndex, onSelect }) {
                 </h3>
 
                 {/* ONLY THIS REGION CAN SCROLL WHEN CONTENT IS LONG */}
-                <div className="min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-contain rounded-[13px] border border-[#DAE7FA] bg-white/90 p-3 [scrollbar-width:thin] sm:p-3.5" tabIndex={isActive ? 0 : -1}>
+                <div className="min-h-0 min-w-0 flex-1 rounded-[13px] border border-[#DAE7FA] bg-white/90 p-3 sm:p-3.5" tabIndex={isActive ? 0 : -1}>
                   <UKSectionContent index={index} />
                 </div>
               </div>
