@@ -40,12 +40,12 @@ import GlobalEducationCTA from "@/components/StudyInUk/GlobalEducationCTA";
 const GUIDE_DETAILS_DATABASE = {
   "study-in-the-uk": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     title: "Study in the UK for Indian Students",
     shortTitle: "Education Pathways",
     badge: "Degrees, Programs & University Selection",
     tagline: "Bachelor's Degrees, Master's Programs & Course Structures",
-    heroImage: "/images/universities/uk/imperial-college-london.webp",
+    heroImage: "/images/hero/study-in-uk.webp",
     accentColor: "#0A1E3F",
     pillColors: [
       { label: "3-4 YEAR BACHELOR'S", bg: "#D7F77D", text: "#063B72" },
@@ -157,7 +157,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     title: "Cost of Studying in the UK",
     shortTitle: "Cost of Studying",
     badge: "Tuition, Fees & Budget Guide",
@@ -357,7 +357,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     title: "Cost of Living & Culture in the UK",
     shortTitle: "Living & Culture",
     badge: "Student Life & Monthly Expenses",
@@ -508,7 +508,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "scholarships-and-funding": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     title: "Scholarships in the UK for Indian Students",
     shortTitle: "Scholarships & Funding",
     badge: "Funding, Grants & Financial Aid",
@@ -707,7 +707,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     title: "Post-Study Work Visa in the UK",
     shortTitle: "Graduate Visa & Work",
     badge: "Working After Graduation",
@@ -1045,7 +1045,12 @@ export default async function GuideDetailPage({ params }) {
 
             {/* SIDEBAR */}
             <aside className="min-w-0 space-y-6">
-              <div id="contact-advisory" className="scroll-mt-24 rounded-3xl border border-[#1765F5]/30 bg-[#E8F0FE] p-6 shadow-sm sm:p-7"><span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1765F5]">1-on-1 Student Guidance</span><h3 className="mt-1.5 text-[18px] font-extrabold text-[#0C337B]">Plan Your UK Journey With an Expert</h3><div className="mt-5 flex flex-col gap-2.5"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white transition hover:bg-[#1EB956]"><MessageCircle size={16} /> Chat on WhatsApp</a><button disabled className="inline-flex items-center justify-center gap-2 rounded-full bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Consultation <ArrowRight size={15} /></button></div></div>
+              <div id="contact-advisory" className="scroll-mt-24 rounded-3xl border border-[#1765F5]/30 bg-[#E8F0FE] p-6 shadow-sm sm:p-7">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1765F5]">1-on-1 Student Guidance</span>
+              <h3 className="mt-1.5 text-[18px] font-extrabold text-[#0C337B]">Plan Your UK Journey With an Expert</h3>
+              <div className="mt-5 flex flex-col gap-2.5"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white transition hover:bg-[#1EB956]"><MessageCircle size={16} /> Chat on WhatsApp</a>
+              {/* <button disabled className="inline-flex items-center justify-center gap-2 rounded-full bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Consultation <ArrowRight size={15} /></button> */}
+              </div></div>
               <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-7"><div className="flex items-center justify-between gap-2"><h3 className="text-[14px] font-extrabold uppercase tracking-wider text-[#0C337B]">Other UK Guides</h3><span className="font-mono text-[10px] text-[#1765F5]">Series</span></div><div className="mt-4 space-y-2.5">{UK_BOOK_GUIDES.filter((item) => item.slug !== guide).map((item) => <Link key={item.id} href={`/study-in-uk/${item.slug}`} className="group flex items-center justify-between gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 text-[13px] font-bold text-[#0C337B] transition hover:border-[#1765F5] hover:bg-[#E8F0FE]"><span className="min-w-0"><span className="block">{item.title}</span><span className="mt-1 block text-[11px] font-medium text-[#64748B]">{item.badge}</span></span><span className="shrink-0 font-mono text-[11px] font-bold text-[#1765F5] transition-transform group-hover:translate-x-1">{item.vol} →</span></Link>)}</div></div>
             </aside>
           </div>

@@ -9,13 +9,13 @@ import UniversityFooter from "@/components/layout/UniversityFooter";
 const AUSTRALIA_GUIDES = {
   "study-in-australia": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     slug: "study-in-australia",
     title: "Study in Australia",
     shortTitle: "Education Pathways",
     badge: "Understanding the Australian Education System",
     tagline: "Australia is a popular destination for international students seeking English-medium education, practical learning, research opportunities, and exposure to an international job market.",
-    heroImage: "/images/universities/charles-sturt-university.webp",
+    heroImage: "/images/hero/study-in-australia.webp",
     pillColors: [{"label": "UNDERGRADUATE STUDY", "bg": "#D7F77D", "text": "#0C337B"}, {"label": "POSTGRADUATE STUDY", "bg": "#B5E9F2", "text": "#0C337B"}, {"label": "FOUNDATION STUDIES", "bg": "#FFD4E6", "text": "#0C337B"}],
     introHtml: "<p>Australia is a popular destination for international students seeking English-medium education, practical learning, research opportunities, and exposure to an international job market. Its institutions offer programmes across business, engineering, information technology, healthcare, science, creative industries, and more.</p><p>For Indian students, choosing Australia involves more than selecting a university. You need to understand which qualification suits your current education, whether you qualify for direct entry, how much the complete study journey will cost, and what opportunities your chosen programme may support.</p><p>Whether you are completing Class 12, pursuing a bachelor&#x27;s degree, planning a master&#x27;s, or considering doctoral research, Australia offers several academic pathways. The right option depends on your previous qualifications, subject background, academic performance, English proficiency, budget, and long-term goals.</p>",
     chapters: [
@@ -31,7 +31,7 @@ const AUSTRALIA_GUIDES = {
   },
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     slug: "cost-of-studying",
     title: "Cost of Studying in Australia",
     shortTitle: "Cost of Studying",
@@ -55,7 +55,7 @@ const AUSTRALIA_GUIDES = {
   },
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     slug: "living-and-culture",
     title: "Cost of Living & Culture in Australia",
     shortTitle: "Living & Culture",
@@ -77,7 +77,7 @@ const AUSTRALIA_GUIDES = {
   },
   "scholarships": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     slug: "scholarships",
     title: "Scholarships in Australia",
     shortTitle: "Scholarships & Funding",
@@ -101,7 +101,7 @@ const AUSTRALIA_GUIDES = {
   },
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     slug: "post-study-work-visa",
     title: "Post-Study Work Visa in Australia",
     shortTitle: "Work Pathways",
@@ -385,9 +385,9 @@ export default async function AustraliaGuidePage({ params }) {
                     Chat on WhatsApp
                   </a>
 
-                  <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">
+                  {/* <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">
                     Book Free Consultation
-                  </button>
+                  </button> */}
 
                 </div>
               </div>

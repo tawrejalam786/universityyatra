@@ -20,13 +20,13 @@ export const dynamicParams = false;
 const IRELAND_GUIDES = {
   "study-in-ireland": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     slug: "study-in-ireland",
     title: "Study in Ireland",
     shortTitle: "Study in Ireland",
     badge: "Why Study in Ireland?",
     tagline: "Ireland offers Indian students a distinctive combination of English-medium higher education, membership of the European Union and connections to internationally established industries.",
-    heroImage: "/images/universities/ireland/trinity-college-dublin.webp",
+    heroImage: "/images/hero/study-in-irelands.webp",
     pillColors: [
       { label: "ENGLISH-MEDIUM EDUCATION", bg: "#D7F77D", text: "#0C337B" },
       { label: "UNIVERSITIES", bg: "#B5E9F2", text: "#0C337B" },
@@ -164,7 +164,7 @@ University Yatra can help you evaluate suitable courses and institutions, unders
 
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     slug: "cost-of-studying",
     title: "Cost of Studying in Ireland",
     shortTitle: "Cost of Studying",
@@ -328,7 +328,7 @@ University Yatra can help you compare suitable universities, understand their fe
 
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     slug: "living-and-culture",
     title: "Cost of Living and Culture in Ireland",
     shortTitle: "Living and Culture",
@@ -516,7 +516,7 @@ Compare accommodation availability, the realistic cost of living, the location o
 
   "scholarships": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     slug: "scholarships",
     title: "Scholarships in Ireland for International Students",
     shortTitle: "Scholarships in Ireland",
@@ -727,7 +727,7 @@ University Yatra can help you compare Irish universities, understand programme r
 
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     slug: "post-study-work-visa",
     title: "Post-Study Work Visa in Ireland",
     shortTitle: "Post-Study Work Visa",
@@ -1210,7 +1210,7 @@ export default async function IrelandGuidePage({ params }) {
                   <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#1eb956]">
                     <MessageCircle size={15} /> Chat on WhatsApp
                   </a>
-                  <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Counselling</button>
+                  {/* <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Counselling</button> */}
                 </div>
               </div>
 

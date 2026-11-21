@@ -13,62 +13,62 @@ const UNIVERSITIES = [
   {
     name: "Lomonosov Moscow State University",
     grade: "Moscow",
-    image: "/images/universities/lomonosov-moscow-state-university.webp",
+    image: "/images/universities/russia/lomonosov-moscow-state-university.webp",
   },
   {
     name: "Saint Petersburg State University",
     grade: "Saint Petersburg",
-    image: "/images/universities/saint-petersburg-state-university.webp",
+    image: "/images/universities/russia/saint-petersburg-state-university.webp",
   },
   {
     name: "Kazan Federal University",
     grade: "Kazan",
-    image: "/images/universities/kazan-federal-university.webp",
+    image: "/images/universities/russia/kazan-federal-university.webp",
   },
   {
     name: "Novosibirsk State University",
     grade: "Novosibirsk",
-    image: "/images/universities/novosibirsk-state-university.webp",
+    image: "/images/universities/russia/novosibirsk-state-university.webp",
   },
   {
     name: "Tomsk State University",
     grade: "Tomsk",
-    image: "/images/universities/tomsk-state-university.webp",
+    image: "/images/universities/russia/tomsk-state-university.webp",
   },
   {
     name: "Bauman Moscow State Technical University",
     grade: "Moscow",
-    image: "/images/universities/bauman-moscow-state-technical-university.webp",
+    image: "/images/universities/russia/bauman-moscow-state-technical-university.webp",
   },
   {
     name: "Moscow Institute of Physics and Technology",
     grade: "Dolgoprudny",
-    image: "/images/universities/moscow-institute-of-physics-and-technology.webp",
+    image: "/images/universities/russia/moscow-institute-of-physics-and-technology.webp",
   },
   {
     name: "National Research Nuclear University MEPhI",
     grade: "Moscow",
-    image: "/images/universities/national-research-nuclear-university-mephi.webp",
+    image: "/images/universities/russia/national-research-nuclear-university-mephi.webp",
   },
   {
     name: "RUDN University",
     grade: "Moscow",
-    image: "/images/universities/rudn-university.webp",
+    image: "/images/universities/russia/rudn-university.webp",
   },
   {
     name: "Ural Federal University",
     grade: "Yekaterinburg",
-    image: "/images/universities/ural-federal-university.webp",
+    image: "/images/universities/russia/ural-federal-university.webp",
   },
   {
     name: "ITMO University",
     grade: "Saint Petersburg",
-    image: "/images/universities/itmo-university.webp",
+    image: "/images/universities/russia/itmo-university.webp",
   },
   {
     name: "Sechenov University",
     grade: "Moscow",
-    image: "/images/universities/sechenov-university.webp",
+    image: "/images/universities/russia/sechenov-university.webp",
   },
 ];
 

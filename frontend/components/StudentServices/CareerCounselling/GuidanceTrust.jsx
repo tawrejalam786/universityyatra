@@ -212,7 +212,7 @@ export default function NotSureSection() {
             />
 
             <Link
-              href="/career-counselling"
+              href="#assessment"
               className="group/cta relative inline-flex min-h-[52px] items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#1765F5] to-[#0C337B] py-2 pl-7 pr-2 text-[14px] font-semibold text-white transition-all duration-300 hover:from-[#2B74FF] hover:to-[#1765F5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1765F5] sm:text-[15px]"
             >
               Book a Free Counselling Session

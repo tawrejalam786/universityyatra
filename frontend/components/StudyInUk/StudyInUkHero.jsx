@@ -66,7 +66,7 @@ export default function StudyInUsaHero() {
             delay: 0.08,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mx-auto max-w-[1100px] text-balance text-[22px] font-extrabold leading-[1.25] tracking-[-0.03em] text-[#0C337B] min-[390px]:text-[24px] sm:text-[26px] md:text-[30px] lg:text-[30px]"
+          className="mx-auto max-w-[1100px] text-balance text-[22px] font-extrabold leading-[1] tracking-[-0.03em] text-[#0C337B] min-[390px]:text-[24px] sm:text-[26px] md:text-[30px] lg:text-[26px]"
         >
             Build Your Future in a {" "}<br />
           <span className="text-[#1765F5]">

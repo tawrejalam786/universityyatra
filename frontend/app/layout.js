@@ -1,7 +1,9 @@
 import { Plus_Jakarta_Sans, Caveat } from "next/font/google";
 import "./globals.css";
 import AnimationProvider from "@/components/providers/AnimationProvider";
+import ContentCopyProtection from "@/components/providers/ContentCopyProtection";
 import FloatingButtons from "@/components/layout/FloatingButtons";
+import Preloader from "@/components/layout/Preloader";
 import Script from "next/script";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -33,6 +35,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${caveat.variable}`}>
       <body className="bg-white text-slate-900">
+        <Preloader />
+        <ContentCopyProtection />
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"

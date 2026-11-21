@@ -66,7 +66,7 @@ const guides = [
     icon: DollarSign,
     image: "/images/study-usa/3d/cost-studying.png",
     description:
-      "Your total study budget depends on tuition, course duration, accommodation, and location. Plan for living expenses and immigration costs alongside your university fees.",
+      "Your total study budget depends on tuition, course duration, accommodation, and location. Plan for living expenses and immigration costs.",
     points: [
       {
         icon: DollarSign,
@@ -127,7 +127,7 @@ const guides = [
     icon: Award,
     image: "/images/study-usa/3d/scholarship.png",
     description:
-      "Explore funding options that can help reduce the cost of a UK degree. Eligibility depends on your course, academic profile, and the scholarship provider.",
+      "Explore funding options that can help reduce the cost of a UK degree. Eligibility depends on your course, academic profile, and the scholarship.",
     points: [
       {
         icon: Award,
@@ -300,7 +300,7 @@ function GuideVisual({
 
 function GuidePoints({ guide }) {
   return (
-    <div className="grid h-[155px] w-full shrink-0 grid-cols-3 gap-1.5 min-[380px]:h-[145px] sm:h-[135px] sm:gap-2 lg:h-[140px]">
+    <div className="grid h-[155px] w-full shrink-0 grid-cols-3 gap-1.5 min-[380px]:h-[145px] sm:h-[135px] sm:gap-2">
       {guide.points.map((point, index) => {
         const PointIcon = point.icon;
 

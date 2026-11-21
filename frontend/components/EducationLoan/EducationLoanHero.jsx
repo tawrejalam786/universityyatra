@@ -100,7 +100,7 @@ export default function AdmissionHero() {
 
               {/* Secondary CTA */}
               <Link
-                href="#loan-options"
+                href="#evaluation"
                 className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-[#1765F5]/25 bg-white px-3 py-[10px] text-[12.5px] font-bold text-[#0C337B] transition-all hover:border-[#1765F5] hover:bg-[#F0F6FF] sm:flex-none sm:px-6 sm:py-[12px] sm:text-[14px]"
               >
                 <MessageCircle

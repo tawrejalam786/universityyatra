@@ -24,7 +24,7 @@ import franceGuidesContent from "@/data/france-guides.json";
 const GUIDE_DETAILS_DATABASE = {
   "study-in-france": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     title: "Study in France",
     shortTitle: "Education Pathways",
     badge: "Degrees, Programs & Intakes",
@@ -72,7 +72,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     title: "Cost of Studying in France",
     shortTitle: "Cost of Studying",
     badge: "Tuition, Fees & Budget Guide",
@@ -119,7 +119,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     title: "Cost of Living in France & Culture",
     shortTitle: "Living & Culture",
     badge: "Student Life & Monthly Expenses",
@@ -166,7 +166,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "scholarships": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     title: "Scholarships in France for Indian Students",
     shortTitle: "Scholarships & Aid",
     badge: "Funding, Grants & Financial Aid",
@@ -214,7 +214,7 @@ const GUIDE_DETAILS_DATABASE = {
 
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     title: "Post-Study Work Visa in France",
     shortTitle: "Post-Study Visa",
     badge: "APS Permit & Work Opportunities",

@@ -29,7 +29,7 @@ const countries = [
     flag: "us",
     featuredCity: "New York",
     cities: ["New York", "Boston", "Los Angeles", "San Francisco"],
-    href: "/contact",
+    href: "/study-in-usa",
   },
   {
     name: "Canada",
@@ -38,17 +38,17 @@ const countries = [
     flag: "ca",
     featuredCity: "Toronto",
     cities: ["Toronto", "Vancouver", "Montreal", "Ottawa"],
-    href: "#",
+    href: "/study-in-canada",
   },
-  {
-    name: "Europe",
-    fullName: "Study in Europe",
-    image: "/images/countries/amsterdam-europe.webp",
-    flag: "eu",
-    featuredCity: "Amsterdam",
-    cities: ["Amsterdam", "Barcelona", "Milan", "Prague"],
-    href: "#",
-  },
+  // {
+  //   name: "Europe",
+  //   fullName: "Study in Europe",
+  //   image: "/images/countries/amsterdam-europe.webp",
+  //   flag: "eu",
+  //   featuredCity: "Amsterdam",
+  //   cities: ["Amsterdam", "Barcelona", "Milan", "Prague"],
+  //   href: "/study-in-france",
+  // },
   {
     name: "UK",
     fullName: "United Kingdom",
@@ -56,7 +56,7 @@ const countries = [
     flag: "gb",
     featuredCity: "London",
     cities: ["London", "Manchester", "Edinburgh", "Birmingham"],
-    href: "#",
+    href: "/study-in-uk",
   },
   {
     name: "Ireland",
@@ -65,7 +65,7 @@ const countries = [
     flag: "ie",
     featuredCity: "Dublin",
     cities: ["Dublin", "Cork", "Galway", "Limerick"],
-    href: "#",
+    href: "/study-in-ireland",
   },
   {
     name: "UAE",
@@ -74,7 +74,7 @@ const countries = [
     flag: "ae",
     featuredCity: "Dubai",
     cities: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
-    href: "#",
+    href: "/study-in-uae",
   },
   {
     name: "Germany",
@@ -83,7 +83,7 @@ const countries = [
     flag: "de",
     featuredCity: "Berlin",
     cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
-    href: "#",
+    href: "/study-in-germany",
   },
   {
     name: "France",
@@ -92,7 +92,7 @@ const countries = [
     flag: "fr",
     featuredCity: "Paris",
     cities: ["Paris", "Lyon", "Toulouse", "Bordeaux"],
-    href: "#",
+    href: "/study-in-france",
   },
   {
     name: "Russia",
@@ -101,7 +101,7 @@ const countries = [
     flag: "ru",
     featuredCity: "Moscow",
     cities: ["Moscow", "Saint Petersburg", "Kazan", "Novosibirsk"],
-    href: "#",
+    href: "/study-in-russia",
   },
   {
     name: "Australia",
@@ -110,7 +110,7 @@ const countries = [
     flag: "au",
     featuredCity: "Sydney",
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth"],
-    href: "#",
+    href: "/study-in-australia",
   },
   {
     name: "New Zealand",
@@ -119,7 +119,7 @@ const countries = [
     flag: "nz",
     featuredCity: "Auckland",
     cities: ["Auckland", "Wellington", "Christchurch", "Dunedin"],
-    href: "#",
+    href: "/contact",
   },
   {
     name: "Singapore",
@@ -128,7 +128,7 @@ const countries = [
     flag: "sg",
     featuredCity: "Singapore",
     cities: ["Clementi", "Queenstown", "Jurong", "Bras Basah"],
-    href: "#",
+    href: "/contact",
   },
   {
     name: "Japan",
@@ -137,7 +137,7 @@ const countries = [
     flag: "jp",
     featuredCity: "Tokyo",
     cities: ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
-    href: "#",
+    href: "/contact",
   },
 ];
 
@@ -165,6 +165,7 @@ const countries = [
       src={country.image}
       alt={`${country.fullName} - ${country.featuredCity}`}
       fill
+      draggable={false}
       priority={index === 0}
       sizes="(max-width: 479px) 85vw, (max-width: 767px) 60vw, (max-width: 1023px) 45vw, 30vw"
       className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -182,6 +183,7 @@ const countries = [
         alt={`${country.name} flag`}
         width={60}
         height={36}
+        draggable={false}
         className="h-full w-full object-contain"
       />
     </div>
@@ -255,7 +257,7 @@ export default function CountriesCarousel() {
   const swiperRef = useRef(null);
 
   return (
-    <section aria-labelledby="countries-carousel-title" className="relative w-full overflow-hidden bg-[#F8FAFF] py-10 sm:py-12 lg:py-14">
+    <section aria-labelledby="countries-carousel-title" className="relative w-full select-none overflow-hidden bg-[#F8FAFF] py-10 sm:py-12 lg:py-14">
       {/* HEADER */}
       <div className="mx-auto w-full max-w-[1340px] px-4 sm:px-5 lg:px-8">
         <div className="relative mb-6 flex flex-col items-center gap-5 lg:mb-8">
@@ -300,7 +302,7 @@ export default function CountriesCarousel() {
       </div>
 
       {/* FULL WIDTH 3D SWIPER */}
-      <div className="relative w-full overflow-hidden py-1">
+      <div className="relative w-full overflow-hidden py-1 [touch-action:pan-y]">
         <Swiper
           modules={[EffectCoverflow]}
           onSwiper={(swiper) => {
@@ -311,6 +313,9 @@ export default function CountriesCarousel() {
           loop={true}
           grabCursor={true}
           speed={700}
+          preventClicks={true}
+          preventClicksPropagation={true}
+          threshold={8}
           slidesPerView={1.35}
           slidesPerGroup={1}
           spaceBetween={0}
@@ -331,15 +336,15 @@ export default function CountriesCarousel() {
             },
             480: {
               slidesPerView: 1.6,
-              spaceBetween: 100,
+              spaceBetween: 16,
             },
             640: {
               slidesPerView: 2.2,
-              spaceBetween: 0,
+              spaceBetween: 16,
             },
             768: {
               slidesPerView: 2.8,
-              spaceBetween: 12,
+              spaceBetween: 16,
             },
             1024: {
               slidesPerView: 3.5,

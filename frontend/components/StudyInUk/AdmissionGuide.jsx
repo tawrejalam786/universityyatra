@@ -36,7 +36,7 @@ const MILESTONES = [
   {
     step: "02",
     title: "SOP, LOR & Test Prep",
-    desc: "Craft compelling Statements of Purpose, secure faculty recommendations, and finalize test scores (GRE/GMAT/IELTS/TOEFL).",
+    desc: "Craft compelling Statements of Purpose, secure faculty recommendations, and finalize test scores (IELTS/PTE).",
     icon: FileCheck2,
     time: "Month 3–4",
     accent: "#E72987",
@@ -47,8 +47,8 @@ const MILESTONES = [
   },
   {
     step: "03",
-    title: "Application Filing & I-20 Form",
-    desc: "Submit applications before university deadlines, track admission offers, and receive your official Form I-20.",
+    title: "Application Filing & CAS",
+    desc: "Submit applications before UCAS or university deadlines, track admission offers, and receive your official CAS (Confirmation of Acceptance for Studies).",
     icon: CheckCircle2,
     time: "Month 5–6",
     accent: "#FFC72C",
@@ -59,8 +59,8 @@ const MILESTONES = [
   },
   {
     step: "04",
-    title: "F-1 Visa Interview & Pre-Departure",
-    desc: "Pay SEVIS fee, submit DS-160, attend 1-on-1 mock visa interviews, and organize foreign exchange and flight booking.",
+    title: "Student Visa & Pre-Departure",
+    desc: "Pay the Immigration Health Surcharge (IHS), submit your UK Student Visa application, gather financial maintenance funds, and book your flight.",
     icon: Plane,
     time: "Month 7–8",
     accent: "#13B8AD",
@@ -162,7 +162,7 @@ export default function AdmissionGuide() {
             transition={{ duration: 0.4 }}
             className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#A2C1FB] sm:text-[12px]"
           >
-            STEP-BY-STEP ROADMAP
+            STEP-BY-STEP ROADMAP CARDS
           </motion.span>
 
           {/* MAIN HEADING */}
@@ -206,9 +206,7 @@ export default function AdmissionGuide() {
             }}
             className="mx-auto mt-3 max-w-xl text-[13px] leading-relaxed text-[#B8C9DF] sm:text-[14px]"
           >
-            From university shortlisting to your final F-1 visa stamp,
-            watch our video walkthrough and explore the complete
-            application roadmap.
+            From university shortlisting to your final UK Student Visa approval, watch our video walkthrough and explore the complete application roadmap.
           </motion.p>
 
         </div>
@@ -273,7 +271,7 @@ export default function AdmissionGuide() {
                       className="shrink-0 text-[#1765F5]"
                     />
 
-                    Verified US Admission Guide
+                    Verified UK Admission Guide
                   </span>
 
                   {/* VIDEO DURATION */}
@@ -327,13 +325,11 @@ export default function AdmissionGuide() {
                   </p>
 
                   <h3 className="text-[14px] font-extrabold tracking-tight text-white drop-shadow-sm sm:text-[17px]">
-                    How Indian Students Secure US University Admissions
-                    & Visas
+                    How Indian Students Secure UK University Admissions & Visas
                   </h3>
 
                   <p className="mt-1 line-clamp-1 text-[11px] text-white/75 sm:text-[12px]">
-                    Step-by-step guidance on timelines, documents,
-                    and interview preparation.
+                    Step-by-step guidance on timelines, CAS issuance, and visa requirements.
                   </p>
 
                 </div>

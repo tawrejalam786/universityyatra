@@ -32,7 +32,7 @@ import {
 const guides = [
   {
     id: "01",
-    slug: "academic-pathways",
+    slug: "study-in-usa",
     tag: "STUDY IN USA",
     title: "Study in USA",
     shortTitle: "Education Pathways",

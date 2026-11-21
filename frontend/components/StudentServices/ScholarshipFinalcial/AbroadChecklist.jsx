@@ -18,17 +18,17 @@ const QUESTIONS = [
   },
   {
     text: "Confused About Scholarship Eligibility?",
-    image: "/images/abroad-checklist/02-requirements-f.jpg",
+    image: "/images/abroad-checklist/02.webp",
     alt: "Student reviewing scholarship eligibility requirements",
   },
   {
     text: "Finding Scholarships That Cover All Your Expenses?",
-    image: "/images/abroad-checklist/03-sop.jpg",
+    image: "/images/abroad-checklist/03.webp",
     alt: "Student researching scholarship funding and financial aid",
   },
   {
     text: "Unsure How to Write Scholarship Essays?",
-    image: "/images/abroad-checklist/04-documents.jpg",
+    image: "/images/abroad-checklist/04.webp",
     alt: "Student preparing a scholarship essay",
   },
   {
@@ -43,7 +43,7 @@ const QUESTIONS = [
   },
   {
     text: "Don't Know How to Apply for Scholarships?",
-    image: "/images/abroad-checklist/07-pr.jpg",
+    image: "/images/abroad-checklist/07.webp",
     alt: "Student applying for scholarships online",
   },
 ];

@@ -7,10 +7,8 @@ import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/pagination";
 
 /* =========================================
    CATEGORY FILTERS
@@ -24,9 +22,6 @@ const tabs = [
 
 /* =========================================
    STUDY IN INDIA DEGREE PROGRAMS
-
-   Original 9 courses, images and colors kept.
-   Specializations replaced with descriptions.
 ========================================= */
 
 const courseCards = [
@@ -183,10 +178,10 @@ export default function CoursesSlider() {
   /* CATEGORY TITLE */
   const categoryTitle =
     activeTab === "masters"
-      ? "Master's Degree Programs"
+      ? "Master's Degree Programs in India"
       : activeTab === "bachelors"
-      ? "Bachelor's Degree Programs"
-      : "All Degree Programs";
+        ? "Bachelor's Degree Programs in India"
+        : "All Degree Programs in India";
 
   return (
     <section className="relative w-full overflow-hidden bg-white py-6 sm:py-8 md:py-9">
@@ -216,8 +211,9 @@ export default function CoursesSlider() {
           transition={{ duration: 0.45 }}
           className="mb-5"
         >
-          <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#063B72] sm:text-[32px] md:text-[36px]">
-            Courses
+          <h2 className="text-[26px] font-bold leading-[1.15] tracking-[-0.035em] text-[#0C337B] sm:text-[32px] md:text-[36px]">
+            Explore Courses{" "}
+            <span className="text-[#1765F5]">in India</span>
           </h2>
 
           {/* ACCENT DECORATION */}
@@ -312,7 +308,6 @@ export default function CoursesSlider() {
         >
           <Swiper
             key={activeTab}
-            modules={[Pagination]}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
               updateNavigation(swiper);
@@ -325,9 +320,6 @@ export default function CoursesSlider() {
             speed={550}
             grabCursor={true}
             watchOverflow={true}
-            pagination={{
-              clickable: true,
-            }}
             breakpoints={{
               480: {
                 slidesPerView: 1.4,
@@ -346,7 +338,7 @@ export default function CoursesSlider() {
                 spaceBetween: 18,
               },
             }}
-            className="!overflow-hidden !bg-transparent !pb-12 !pt-4 [&_.swiper-pagination-bullet]:!bg-[#1765F5] [&_.swiper-pagination-bullet-active]:!opacity-100"
+            className="!overflow-hidden !bg-transparent !pb-4 !pt-4"
           >
             {filteredCourses.map((item) => (
               <SwiperSlide
@@ -373,7 +365,7 @@ export default function CoursesSlider() {
 function CourseCard({ item }) {
   return (
     <article
-      className="group relative flex h-full min-h-[385px] flex-col overflow-hidden rounded-[20px] border border-[#DCE5EC] bg-white shadow-[0_8px_24px_rgba(6,59,114,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--card-color)] hover:shadow-[0_15px_32px_rgba(6,59,114,0.13)]"
+      className="group relative flex h-full min-h-[355px] flex-col overflow-hidden rounded-[20px] border border-[#DCE5EC] bg-white shadow-[0_8px_24px_rgba(6,59,114,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--card-color)] hover:shadow-[0_15px_32px_rgba(6,59,114,0.13)]"
       style={{
         "--card-color": item.color,
       }}
@@ -383,7 +375,7 @@ function CourseCard({ item }) {
       <div className="absolute inset-x-0 top-0 z-20 h-[5px] bg-[var(--card-color)]" />
 
       {/* COURSE IMAGE */}
-      <div className="relative mx-3.5 mt-3.5 h-[165px] shrink-0 overflow-hidden rounded-[14px] sm:h-[175px]">
+      <div className="relative mx-3.5 mt-3.5 h-[140px] shrink-0 overflow-hidden rounded-[14px] sm:h-[150px]">
 
         <Image
           src={item.image}
@@ -405,7 +397,7 @@ function CourseCard({ item }) {
       <div className="relative flex flex-1 flex-col px-4 pb-4 pt-4">
 
         {/* COURSE HEADING */}
-        <h3 className="min-h-[48px] text-[18px] font-bold leading-[1.25] tracking-[-0.025em] text-[#063B72] sm:text-[19px]">
+        <h3 className="line-clamp-2 min-h-[44px] text-[18px] font-bold leading-[1.25] tracking-[-0.025em] text-[#0C337B] sm:text-[19px]">
           {item.course}
         </h3>
 
@@ -413,7 +405,7 @@ function CourseCard({ item }) {
         <div className="mt-3 h-[3px] w-10 rounded-full bg-[var(--card-color)]" />
 
         {/* COURSE DESCRIPTION - REPLACES SPECIALIZATIONS */}
-        <p className="relative z-10 mt-3 flex-1 text-[12px] leading-[1.6] text-[#40556A] sm:text-[13px]">
+        <p className="relative z-10 mt-3 text-[12px] leading-[1.6] text-[#40556A] sm:text-[13px]">
           {item.description}
         </p>
 
@@ -421,7 +413,7 @@ function CourseCard({ item }) {
         <Link
           href="/contact"
           aria-label={`Enquire about ${item.course}`}
-          className="relative z-10 mt-4 flex min-h-[42px] w-full items-center justify-between gap-3 rounded-[10px] border border-[#E8EDF4] bg-[#F4F7FA] px-3.5 py-2.5 text-left text-[12px] font-bold text-[#063B72] transition-all duration-300 hover:border-[var(--card-color)] hover:bg-[var(--card-color)] hover:text-white group-hover:border-[var(--card-color)] group-hover:bg-[var(--card-color)] group-hover:text-white"
+          className="relative z-10 mt-3 flex min-h-[40px] w-full items-center justify-between gap-3 rounded-[10px] border border-[#E8EDF4] bg-[#F4F7FA] px-3.5 py-2.5 text-left text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:border-[var(--card-color)] hover:bg-[var(--card-color)] hover:text-white group-hover:border-[var(--card-color)] group-hover:bg-[var(--card-color)] group-hover:text-white"
         >
           <span>Explore Course</span>
 

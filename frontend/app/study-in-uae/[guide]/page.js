@@ -9,13 +9,13 @@ import UniversityFooter from "@/components/layout/UniversityFooter";
 const UAE_GUIDES = {
   "study-in-uae": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     slug: "study-in-uae",
     title: "Study in the UAE",
     shortTitle: "Education Pathways",
     badge: "Degrees, Programs & Intakes",
     tagline: "Bachelor's, master's, and UAE admission intakes",
-    heroImage: "/images/universities/uae/university-of-dubai.webp",
+    heroImage: "/images/hero/study-in-uaes.webp",
     pillColors: [{"label": "BACHELOR'S","bg": "#D7F77D","text": "#0C337B"},{"label": "MASTER'S","bg": "#B5E9F2","text": "#0C337B"},{"label": "MAIN INTAKES","bg": "#FFD4E6","text": "#0C337B"}],
     markdown: String.raw`# Study in the UAE
 
@@ -43,7 +43,7 @@ Match your current qualification and career goals with the right program. Check 
   },
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     slug: "cost-of-studying",
     title: "Cost of Studying in the UAE",
     shortTitle: "Cost of Studying",
@@ -84,7 +84,7 @@ Plan your finances so you can meet your study and living costs before departure.
   },
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     slug: "living-and-culture",
     title: "Cost of Living & Culture in the UAE",
     shortTitle: "Living & Culture",
@@ -121,7 +121,7 @@ Plan for both monthly spending and arrival costs when budgeting.`,
   },
   "scholarships": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     slug: "scholarships",
     title: "Scholarships in the UAE for Indian Students",
     shortTitle: "Scholarships & Funding",
@@ -157,7 +157,7 @@ Scholarships can significantly reduce your education costs, so explore all avail
   },
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     slug: "post-study-work-visa",
     title: "Post-Study Work Visa in the UAE",
     shortTitle: "Work Pathways",
@@ -559,9 +559,9 @@ export default async function UaeGuidePage({ params }) {
                     Chat on WhatsApp
                   </a>
 
-                  <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">
+                  {/* <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">
                     Book Free Consultation
-                  </button>
+                  </button> */}
                 </div>
               </div>
 

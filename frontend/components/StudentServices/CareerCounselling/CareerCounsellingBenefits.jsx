@@ -35,6 +35,7 @@ export default function AcademicMoveSteps() {
     <section
       aria-labelledby="academic-move-heading"
       className="box-border w-full overflow-x-clip bg-[#E8F0FE] px-4 py-7 text-[#0C337B] sm:px-6 sm:py-9 lg:px-8"
+      id="how-it-works"
     >
       <div className="mx-auto w-full max-w-[1280px]">
         {/* Heading */}

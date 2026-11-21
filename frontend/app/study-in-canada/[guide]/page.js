@@ -9,13 +9,13 @@ import UniversityFooter from "@/components/layout/UniversityFooter";
 const CANADA_GUIDES = {
   "study-in-canada": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     slug: "study-in-canada",
     title: "Study in Canada",
     shortTitle: "Education Pathways",
     badge: "Degrees, Programs & Intakes",
     tagline: "Bachelor's, master's, college credentials and Canadian admission intakes",
-    heroImage: "/images/universities/canada/university-of-ottawas.webp",
+    heroImage: "/images/hero/study-in-canada.webp",
     pillColors: [{"label": "BACHELOR'S","bg": "#D7F77D","text": "#0C337B"},{"label": "MASTER'S","bg": "#B5E9F2","text": "#0C337B"},{"label": "MAIN INTAKES","bg": "#FFD4E6","text": "#0C337B"}],
     markdown: String.raw`# Study in Canada
 
@@ -82,7 +82,7 @@ For Indian students planning to study in Canada, the best starting point is to m
   },
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     slug: "cost-of-studying",
     summary: "Your budget depends on your qualification, program, and institution. The latest national averages put international tuition at CAD 24,028/year for graduate students and CAD 41,746/year for undergraduates.\n\n- Living-funds threshold: CAD 23,448 for a single applicant outside Quebec applying from September 1, 2026.\n- Other costs: Insurance, books, deposits, travel, and study-permit fees.\n\nTuition and living funds are separate. Plan for both before applying.",
     title: "Cost of Studying in Canada",
@@ -217,7 +217,7 @@ The aim is not simply to find a university you can afford for the first year. It
   },
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     slug: "living-and-culture",
     summary: "Your living costs depend on your city, accommodation, commute, and daily routine. Beyond budgeting, prepare for Canada's diverse communities, independent student life, and regional weather differences.\n\n- Biggest variable: Accommodation\n- Plan for: Food, transport, utilities, and winter clothing\n- Culture: Campus life, multicultural communities, and regional differences",
     title: "Cost of Living in Canada & Culture",
@@ -478,7 +478,7 @@ Canada offers very different student experiences across its cities and regions. 
  
   "scholarships": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     slug: "scholarships",
     summary: "Canadian scholarships can reward academic performance, leadership, financial need, or research potential. Opportunities differ by degree level, so check eligibility and funding terms before applying.\n\n- Undergraduate: Entrance and leadership awards\n- Master's: University and program-specific funding\n- PhD: Research scholarships and fellowships",
     title: "Scholarships in Canada for Indian Students",
@@ -815,7 +815,7 @@ The strongest approach is to combine realistic university choices, suitable scho
 
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     slug: "post-study-work-visa",
     summary: "Canada's Post-Graduation Work Permit (PGWP) lets eligible international graduates gain Canadian work experience after completing their studies. Eligibility depends on your institution, program, and applicable rules.\n\n- Master's: Potentially up to 3 years\n- Application window: Up to 180 days after completion\n- PR pathway: Possible, not guaranteed",
     title: "Post-Study Work Visa in Canada",
@@ -1227,7 +1227,10 @@ export default async function GuideDetailPage({ params }) {
               {chapters.map((chapter, index) => <article key={`${guideData.id}-${index}`} className="min-w-0 rounded-3xl border border-[#E2E8F0] bg-white p-5 shadow-sm transition-all hover:border-[#A2C1FB] hover:shadow-md sm:p-8"><div className="flex items-start gap-3 sm:gap-4"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#E8F0FE] text-[#1765F5] sm:h-11 sm:w-11"><BookOpen size={21} /></span><h2 className="min-w-0 text-[19px] font-extrabold leading-[1.3] tracking-tight text-[#0C337B] sm:text-[22px]">{chapter.heading}</h2></div><div className="mt-5 border-t border-slate-100 pt-5"><MarkdownContent lines={chapter.lines} /></div></article>)}
             </div>
             <aside className="min-w-0 space-y-6">
-              <div id="contact-advisory" className="scroll-mt-24 rounded-3xl border border-[#1765F5]/30 bg-[#E8F0FE] p-6 shadow-sm sm:p-7"><span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1765F5]">1-on-1 Student Guidance</span><h3 className="mt-1.5 text-[18px] font-extrabold text-[#0C337B]">Plan Your Canada Journey With an Expert</h3><div className="mt-5 flex flex-col gap-2.5"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white transition hover:bg-[#1EB956]"><MessageCircle size={16} /> Chat on WhatsApp</a><button disabled className="inline-flex items-center justify-center gap-2 rounded-full bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Consultation <ArrowRight size={15} /></button></div></div>
+              <div id="contact-advisory" className="scroll-mt-24 rounded-3xl border border-[#1765F5]/30 bg-[#E8F0FE] p-6 shadow-sm sm:p-7"><span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1765F5]">1-on-1 Student Guidance</span><h3 className="mt-1.5 text-[18px] font-extrabold text-[#0C337B]">Plan Your Canada Journey With an Expert</h3>
+              <div className="mt-5 flex flex-col gap-2.5"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-bold text-white transition hover:bg-[#1EB956]"><MessageCircle size={16} /> Chat on WhatsApp</a>
+              {/* <button disabled className="inline-flex items-center justify-center gap-2 rounded-full bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">Book Free Consultation <ArrowRight size={15} /></button> */}
+              </div></div>
               <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-7"><div className="flex items-center justify-between gap-2"><h3 className="text-[14px] font-extrabold uppercase tracking-wider text-[#0C337B]">Other Canada Guides</h3><span className="font-mono text-[10px] text-[#1765F5]">Series</span></div><div className="mt-4 space-y-2.5">{CANADA_BOOK_GUIDES.filter((item) => item.slug !== guide).map((item) => <Link key={item.id} href={`/study-in-canada/${item.slug}`} className="group flex items-center justify-between gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 text-[13px] font-bold text-[#0C337B] transition hover:border-[#1765F5] hover:bg-[#E8F0FE]"><div className="min-w-0"><span className="block">{item.title}</span>{item.summary ? <div className="mt-3 font-normal"><MarkdownContent lines={item.summary.split(/\r?\n/)} /><span className="mt-3 block font-bold text-[#1765F5]">Read More →</span></div> : <span className="mt-1 block text-[11px] font-medium text-[#64748B]">{item.badge}</span>}</div><span className="shrink-0 font-mono text-[11px] font-bold text-[#1765F5] transition-transform group-hover:translate-x-1">{item.vol} →</span></Link>)}</div></div>
             </aside>
           </div>

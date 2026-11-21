@@ -20,6 +20,7 @@ import {
    MULTICOLOR CARD BACKGROUNDS
 ========================================== */
 
+
 const MILESTONES = [
   {
     step: "01",
@@ -35,8 +36,8 @@ const MILESTONES = [
   },
   {
     step: "02",
-    title: "SOP, LOR & Test Prep",
-    desc: "Craft compelling Statements of Purpose, secure faculty recommendations, and finalize test scores (GRE/GMAT/IELTS/TOEFL).",
+    title: "SOP, LOR & Language Prep",
+    desc: "Craft compelling Statements of Purpose, secure faculty recommendations, and finalize English/German test scores (IELTS/TOEFL/TestDaF).",
     icon: FileCheck2,
     time: "Month 3–4",
     accent: "#E72987",
@@ -47,8 +48,8 @@ const MILESTONES = [
   },
   {
     step: "03",
-    title: "Application Filing & I-20 Form",
-    desc: "Submit applications before university deadlines, track admission offers, and receive your official Form I-20.",
+    title: "Application Filing & Admission Letter",
+    desc: "Submit applications via uni-assist or direct university portals, track deadlines, and receive your official University Admission Letter.",
     icon: CheckCircle2,
     time: "Month 5–6",
     accent: "#FFC72C",
@@ -59,8 +60,8 @@ const MILESTONES = [
   },
   {
     step: "04",
-    title: "F-1 Visa Interview & Pre-Departure",
-    desc: "Pay SEVIS fee, submit DS-160, attend 1-on-1 mock visa interviews, and organize foreign exchange and flight booking.",
+    title: "Blocked Account & Visa Process",
+    desc: "Set up your Sperrkonto (Blocked Account) for financial proof, book your German embassy visa appointment, and plan your pre-departure.",
     icon: Plane,
     time: "Month 7–8",
     accent: "#13B8AD",
@@ -70,6 +71,7 @@ const MILESTONES = [
     iconBg: "rgba(255,255,255,0.19)",
   },
 ];
+
 
 /* ==========================================
    MAIN ADMISSION GUIDE COMPONENT
@@ -206,9 +208,7 @@ export default function AdmissionGuide() {
             }}
             className="mx-auto mt-3 max-w-xl text-[13px] leading-relaxed text-[#B8C9DF] sm:text-[14px]"
           >
-            From university shortlisting to your final F-1 visa stamp,
-            watch our video walkthrough and explore the complete
-            application roadmap.
+           From university shortlisting to your final German student visa approval, watch our video walkthrough and explore the complete application roadmap. 
           </motion.p>
 
         </div>
@@ -273,7 +273,7 @@ export default function AdmissionGuide() {
                       className="shrink-0 text-[#1765F5]"
                     />
 
-                    Verified US Admission Guide
+                    Verified Germany Admission Guide
                   </span>
 
                   {/* VIDEO DURATION */}
@@ -323,17 +323,15 @@ export default function AdmissionGuide() {
                 <div className="absolute inset-x-0 bottom-0 z-20 p-3.5 text-white sm:p-5">
 
                   <p className="text-[10px] font-bold uppercase tracking-wider text-[#93C5FD] sm:text-[11px]">
-                    Official Video Briefing
+                    OFFICIAL VIDEO BRIEFING
                   </p>
 
                   <h3 className="text-[14px] font-extrabold tracking-tight text-white drop-shadow-sm sm:text-[17px]">
-                    How Indian Students Secure US University Admissions
-                    & Visas
+                    How Indian Students Secure German University Admissions & Visas
                   </h3>
 
                   <p className="mt-1 line-clamp-1 text-[11px] text-white/75 sm:text-[12px]">
-                    Step-by-step guidance on timelines, documents,
-                    and interview preparation.
+                    Step-by-step guidance on timelines, uni-assist applications, blocked accounts, and visa interviews.
                   </p>
 
                 </div>

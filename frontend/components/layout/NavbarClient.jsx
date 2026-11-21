@@ -45,6 +45,7 @@ const NAV_ITEMS = [
       { label: "Study in UAE", href: "/study-in-uae" },
       { label: "Study in Russia", href: "/study-in-russia" },
       { label: "Study in Australia", href: "/study-in-australia" },
+      { label: "Study in France", href: "/study-in-france" },
       // { label: "Study in New Zealand", href: "/study-in-new-zealand" },
       // { label: "Study in New Singapore", href: "/study-in-new-singapore",},
       // { label: "Study in New Japan", href: "/study-in-new-japan",},

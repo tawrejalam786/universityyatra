@@ -85,8 +85,6 @@ const guides = [
         value: "AUD 1,800-2,500/month",
       },
     ],
-    note:
-      "Tuition and living funds are separate. Plan for both before applying.",
   },
   {
     id: "03",

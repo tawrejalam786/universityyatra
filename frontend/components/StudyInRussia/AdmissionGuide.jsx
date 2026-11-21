@@ -20,11 +20,12 @@ import {
    MULTICOLOR CARD BACKGROUNDS
 ========================================== */
 
+
 const MILESTONES = [
   {
     step: "01",
     title: "Profile Assessment & Shortlisting",
-    desc: "Evaluate your GPA, budget, and academic goals to curate an ambitious, target, and safe university list.",
+    desc: "Evaluate your academic eligibility (such as NEET/PCM/PCB scores), budget, and goals to curate your Russian university list.",
     icon: GraduationCap,
     time: "Month 1–2",
     accent: "#7051D8",
@@ -35,8 +36,8 @@ const MILESTONES = [
   },
   {
     step: "02",
-    title: "SOP, LOR & Test Prep",
-    desc: "Craft compelling Statements of Purpose, secure faculty recommendations, and finalize test scores (GRE/GMAT/IELTS/TOEFL).",
+    title: "Document Translation & Verification",
+    desc: "Prepare academic transcripts, passport copies, notarized translations, and required admission applications.",
     icon: FileCheck2,
     time: "Month 3–4",
     accent: "#E72987",
@@ -47,8 +48,8 @@ const MILESTONES = [
   },
   {
     step: "03",
-    title: "Application Filing & I-20 Form",
-    desc: "Submit applications before university deadlines, track admission offers, and receive your official Form I-20.",
+    title: "Application Filing & Official Invitation",
+    desc: "Submit your application, secure admission confirmation, and receive your official Ministry (MVD) / University Invitation Letter.",
     icon: CheckCircle2,
     time: "Month 5–6",
     accent: "#FFC72C",
@@ -59,8 +60,8 @@ const MILESTONES = [
   },
   {
     step: "04",
-    title: "F-1 Visa Interview & Pre-Departure",
-    desc: "Pay SEVIS fee, submit DS-160, attend 1-on-1 mock visa interviews, and organize foreign exchange and flight booking.",
+    title: "Student Visa & Pre-Departure",
+    desc: "Complete medical clearances (including HIV test), submit your Russian student visa application through VFS, and book your travel.",
     icon: Plane,
     time: "Month 7–8",
     accent: "#13B8AD",
@@ -70,6 +71,7 @@ const MILESTONES = [
     iconBg: "rgba(255,255,255,0.19)",
   },
 ];
+
 
 /* ==========================================
    MAIN ADMISSION GUIDE COMPONENT
@@ -206,9 +208,7 @@ export default function AdmissionGuide() {
             }}
             className="mx-auto mt-3 max-w-xl text-[13px] leading-relaxed text-[#B8C9DF] sm:text-[14px]"
           >
-            From university shortlisting to your final F-1 visa stamp,
-            watch our video walkthrough and explore the complete
-            application roadmap.
+            From university shortlisting to your final Russian Student Visa approval, watch our video walkthrough and explore the complete application roadmap.
           </motion.p>
 
         </div>
@@ -273,7 +273,7 @@ export default function AdmissionGuide() {
                       className="shrink-0 text-[#1765F5]"
                     />
 
-                    Verified US Admission Guide
+                    Verified Russia Admission Guide
                   </span>
 
                   {/* VIDEO DURATION */}
@@ -323,17 +323,15 @@ export default function AdmissionGuide() {
                 <div className="absolute inset-x-0 bottom-0 z-20 p-3.5 text-white sm:p-5">
 
                   <p className="text-[10px] font-bold uppercase tracking-wider text-[#93C5FD] sm:text-[11px]">
-                    Official Video Briefing
+                    OFFICIAL VIDEO BRIEFING
                   </p>
 
                   <h3 className="text-[14px] font-extrabold tracking-tight text-white drop-shadow-sm sm:text-[17px]">
-                    How Indian Students Secure US University Admissions
-                    & Visas
+                    How Indian Students Secure Russian University Admissions & Visas
                   </h3>
 
                   <p className="mt-1 line-clamp-1 text-[11px] text-white/75 sm:text-[12px]">
-                    Step-by-step guidance on timelines, documents,
-                    and interview preparation.
+                    Step-by-step guidance on timelines, invitation letter processing, medical tests, and visa applications.
                   </p>
 
                 </div>

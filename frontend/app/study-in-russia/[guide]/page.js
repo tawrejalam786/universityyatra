@@ -9,13 +9,13 @@ import UniversityFooter from "@/components/layout/UniversityFooter";
 const RUSSIA_GUIDES = {
   "study-in-russia": {
     id: "01",
-    vol: "VOL. I",
+    // vol: "VOL. I",
     slug: "study-in-russia",
     title: "Study in Russia",
     shortTitle: "Education Pathways",
     badge: "Degrees, Programs & Intakes",
     tagline: "Bachelor's, master's, and admission intakes",
-    heroImage: "/images/universities/lomonosov-moscow-state-university.webp",
+    heroImage: "/images/hero/study-in-russias.webp",
     pillColors: [{"label": "BACHELOR'S","bg": "#D7F77D","text": "#0C337B"},{"label": "MASTER'S","bg": "#B5E9F2","text": "#0C337B"},{"label": "MAIN INTAKES","bg": "#FFD4E6","text": "#0C337B"}],
     markdown: String.raw`# Study in Russia
 
@@ -43,7 +43,7 @@ Match your academic background and career goals with the right program. Check el
   },
   "cost-of-studying": {
     id: "02",
-    vol: "VOL. II",
+    // vol: "VOL. II",
     slug: "cost-of-studying",
     title: "Cost of Studying in Russia",
     shortTitle: "Cost of Studying",
@@ -84,7 +84,7 @@ Plan your finances so you can cover your study and living costs throughout your 
   },
   "living-and-culture": {
     id: "03",
-    vol: "VOL. III",
+    // vol: "VOL. III",
     slug: "living-and-culture",
     title: "Cost of Living & Culture in Russia",
     shortTitle: "Living & Culture",
@@ -121,7 +121,7 @@ Plan for both monthly expenses and one-time arrival costs when budgeting.`,
   },
   "scholarships": {
     id: "04",
-    vol: "VOL. IV",
+    // vol: "VOL. IV",
     slug: "scholarships",
     title: "Scholarships in Russia for Indian Students",
     shortTitle: "Scholarships & Funding",
@@ -157,7 +157,7 @@ Scholarships can significantly reduce your education costs, so explore all avail
   },
   "post-study-work-visa": {
     id: "05",
-    vol: "VOL. V",
+    // vol: "VOL. V",
     slug: "post-study-work-visa",
     title: "Post-Study Work Options in Russia",
     shortTitle: "Work Pathways",
@@ -588,9 +588,9 @@ export default async function RussiaGuidePage({ params }) {
                     Chat on WhatsApp
                   </a>
 
-                  <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">
+                  {/* <button disabled className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60">
                     Book Free Consultation
-                  </button>
+                  </button> */}
 
                 </div>
 

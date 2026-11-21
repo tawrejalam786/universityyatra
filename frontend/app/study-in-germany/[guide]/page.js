@@ -9,13 +9,13 @@ import UniversityFooter from "@/components/layout/UniversityFooter";
 const GERMANY_GUIDES = {
   "study-in-germany": {
     "id": "01",
-    "vol": "VOL. I",
+    // "vol": "VOL. I",
     "slug": "study-in-germany",
     "title": "Study in Germany",
     "shortTitle": "Education Pathways",
     "badge": "Beyond Low Tuition: Understanding Germany’s Education System",
     "tagline": "Germany is an established destination for international students, particularly those interested in engineering, technology, scientific research, business, and specialised postgraduate education. ",
-    "heroImage": "/images/universities/germany/tu-munich.webp",
+    "heroImage": "/images/hero/study-in-germanys.webp",
     "pillColors": [
       {
         "label": "Research Universities",
@@ -339,7 +339,7 @@ const GERMANY_GUIDES = {
   },
   "cost-of-studying": {
     "id": "02",
-    "vol": "VOL. II",
+    // "vol": "VOL. II",
     "slug": "cost-of-studying",
     "title": "Cost of Studying in Germany",
     "shortTitle": "Cost of Studying",
@@ -1085,7 +1085,7 @@ const GERMANY_GUIDES = {
   },
   "living-and-culture": {
     "id": "03",
-    "vol": "VOL. III",
+    // "vol": "VOL. III",
     "slug": "living-and-culture",
     "title": "Cost of Living & Culture in Germany",
     "shortTitle": "Living & Culture",
@@ -1457,7 +1457,7 @@ const GERMANY_GUIDES = {
   },
   "scholarships": {
     "id": "04",
-    "vol": "VOL. IV",
+    // "vol": "VOL. IV",
     "slug": "scholarships",
     "title": "Scholarships in Germany for Indian Students",
     "shortTitle": "Scholarships & Funding",
@@ -1754,7 +1754,7 @@ const GERMANY_GUIDES = {
   },
   "post-study-work-visa": {
     "id": "05",
-    "vol": "VOL. V",
+    // "vol": "VOL. V",
     "slug": "post-study-work-visa",
     "title": "Post-Study Work Visa in Germany",
     "shortTitle": "Work Permit & PR",
@@ -2698,12 +2698,12 @@ export default async function GermanyGuidePage({ params }) {
                     Chat on WhatsApp
                   </a>
 
-                  <button
+                  {/* <button
                     disabled
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-300 px-5 py-3 text-[13px] font-bold text-gray-500 cursor-not-allowed opacity-60"
                   >
                     Book Free Consultation
-                  </button>
+                  </button> */}
 
                 </div>
               </div>

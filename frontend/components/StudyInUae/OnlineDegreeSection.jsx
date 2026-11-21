@@ -40,7 +40,7 @@ const guides = [
     icon: GraduationCap,
     image: "/images/study-usa/3d/study-usa.png",
     description:
-      "The UAE offers undergraduate and postgraduate programs through international branch campuses and local universities. Choose a bachelor's degree, master's program, or specialized qualification based on your academic background and career goals.",
+      "The UAE offers undergraduate and postgraduate programs through international branch campuses and local universities. Choose a bachelor's degree, master's program, or specialized.",
     points: [
       {
         icon: GraduationCap,
@@ -68,7 +68,7 @@ const guides = [
     icon: DollarSign,
     image: "/images/study-usa/3d/cost-studying.png",
     description:
-      "Your budget depends on the university, program type, and emirate. Tuition fees vary between local institutions and international branch campuses, with living costs influenced by your choice of accommodation and lifestyle.",
+      "Your budget depends on the university, program type, and emirate. Tuition fees vary between local institutions and international branch campuses.",
     points: [
       {
         icon: Calculator,
@@ -86,8 +86,6 @@ const guides = [
         value: "AED 3,000–5,000/month depending on emirate and housing",
       },
     ],
-    note:
-      "Tuition and living costs are separate. Plan for both before applying.",
   },
   {
     id: "03",
@@ -98,7 +96,7 @@ const guides = [
     icon: Home,
     image: "/images/study-usa/3d/living-cost.png",
     description:
-      "Your living costs depend on the emirate, accommodation type, transport, and daily routine. Dubai and Abu Dhabi tend to be more expensive, while Sharjah offers more affordable options. The UAE offers a multicultural environment with modern amenities.",
+      "Your living costs depend on the emirate, accommodation type, transport, and daily routine. Dubai and Abu Dhabi tend to be more expensive, while Sharjah offers more affordable options.",
     points: [
       {
         icon: Home,
@@ -126,7 +124,7 @@ const guides = [
     icon: Award,
     image: "/images/study-usa/3d/scholarship.png",
     description:
-      "UAE scholarships may be offered by universities based on academic merit, leadership, or specific program criteria. Availability varies by institution and nationality, so check eligibility requirements before applying.",
+      "UAE scholarships may be offered by universities based on academic merit, leadership, or specific program criteria. Availability varies by institution and nationality.",
     points: [
       {
         icon: Award,
@@ -154,7 +152,7 @@ const guides = [
     icon: Plane,
     image: "/images/study-usa/3d/post-study.png",
     description:
-      "The UAE offers various visa options for graduates seeking employment. Employment visas are typically sponsored by employers, and graduates should explore opportunities during or after completing their studies.",
+      "The UAE offers various visa options for graduates seeking employment. Employment visas are typically sponsored by employers, and graduates should explore opportunities.",
     points: [
       {
         icon: Clock,

@@ -1,0 +1,134 @@
+[
+  {
+    "file": "lomonosov-moscow-state-university.webp",
+    "imageUrl": "https://philos.msu.ru/sites/default/files/%D0%9F%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA_%D0%9B%D0%BE%D0%BC%D0%BE%D0%BD%D0%BE%D1%81%D0%BE%D0%B2%D1%83_%D0%BD%D0%B0_%D1%84%D0%BE%D0%BD%D0%B5_%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F_%D0%9C%D0%93%D0%A3_-_panoramio.jpg",
+    "source": "https://philos.msu.ru/node/4334",
+    "status": "ok",
+    "originalPixels": [
+      1743,
+      1200
+    ],
+    "savedBytes": 64848
+  },
+  {
+    "file": "saint-petersburg-state-university.webp",
+    "imageUrl": "https://static.tildacdn.com/tild3461-6365-4132-a131-393863663261/spbgu_glavnoe_zdanie.jpg",
+    "source": "https://phil.spbu.ru/tpost/a1yh9jbfp1-programmisti-i-filologi-novaya-obrazovat",
+    "status": "ok",
+    "originalPixels": [
+      1200,
+      800
+    ],
+    "savedBytes": 82430
+  },
+  {
+    "file": "kazan-federal-university.webp",
+    "imageUrl": "https://media.kpfu.ru/sites/default/files/2020-10/12_0.jpg",
+    "source": "https://media.kpfu.ru/news/utrennee-soveschanie-22",
+    "status": "ok",
+    "originalPixels": [
+      1600,
+      1067
+    ],
+    "savedBytes": 28234
+  },
+  {
+    "file": "novosibirsk-state-university.webp",
+    "imageUrl": "https://saes.nsu.ru/upload/iblock/3b8/4ahbb76ez5v27eiycltsb0crht32ix5p.png",
+    "source": "https://saes.nsu.ru/academy-cultural-program/",
+    "status": "ok",
+    "originalPixels": [
+      790,
+      486
+    ],
+    "savedBytes": 76188
+  },
+  {
+    "file": "tomsk-state-university.webp",
+    "imageUrl": "https://news.tsu.ru/upload/medialibrary/5b0/post_2473_1200_2018.jpg",
+    "source": "https://news.tsu.ru/projects/free-format/47394/",
+    "status": "ok",
+    "originalPixels": [
+      1024,
+      678
+    ],
+    "savedBytes": 100712
+  },
+  {
+    "file": "bauman-moscow-state-technical-university.webp",
+    "imageUrl": "https://www.interfax.ru/ftproot/textphotos/2023/11/02/700ba.jpg",
+    "source": "https://www.interfax.ru/russia/928909",
+    "status": "ok",
+    "originalPixels": [
+      700,
+      450
+    ],
+    "savedBytes": 78158
+  },
+  {
+    "file": "moscow-institute-of-physics-and-technology.webp",
+    "imageUrl": "https://studyinrussia.ru/storage/images/university-gallery/110/photo/pQRpBB2hY2Xsl45cU2QvFq7XJQboti2rGu4fq9Fe.jpg",
+    "source": "https://studyinrussia.ru/en/university-show/110/about",
+    "status": "ok",
+    "originalPixels": [
+      8059,
+      5373
+    ],
+    "savedBytes": 45094
+  },
+  {
+    "file": "national-research-nuclear-university-mephi.webp",
+    "imageUrl": "https://www.1511.ru/storage/file/10479/mifi.jpg",
+    "source": "https://www.1511.ru/news/4758",
+    "status": "ok",
+    "originalPixels": [
+      1015,
+      500
+    ],
+    "savedBytes": 41948
+  },
+  {
+    "file": "rudn-university.webp",
+    "imageUrl": "https://eng.rudn.ru/u/www/images/student_and_disabilities/glavnoe-zdanie-rudn.jpg",
+    "source": "https://eng.rudn.ru/education/students-with-disabilities/",
+    "status": "ok",
+    "originalPixels": [
+      1280,
+      854
+    ],
+    "savedBytes": 35080
+  },
+  {
+    "file": "ural-federal-university.webp",
+    "imageUrl": "https://static.ucheba.ru/pix/uz_photo/1504.full.webp",
+    "source": "https://eburg.ucheba.ru/uz/6258",
+    "status": "ok",
+    "originalPixels": [
+      800,
+      534
+    ],
+    "savedBytes": 39912
+  },
+  {
+    "file": "itmo-university.webp",
+    "imageUrl": "https://news.itmo.ru/images/news/big/1329700.jpg",
+    "source": "https://news.itmo.ru/en/news/13297/",
+    "status": "ok",
+    "originalPixels": [
+      800,
+      533
+    ],
+    "savedBytes": 46966
+  },
+  {
+    "file": "sechenov-university.webp",
+    "imageUrl": "https://s0.rbk.ru/v6_top_pics/media/img/4/02/756799172038024.webp",
+    "source": "https://www.rbc.ru/rbcfreenews/64217b999a79476695e2052e",
+    "status": "ok",
+    "originalPixels": [
+      1180,
+      730
+    ],
+    "savedBytes": 89116
+  }
+]

@@ -183,7 +183,7 @@ export default function LoanDocumentationVideo() {
             {/* CTAs */}
             <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row sm:gap-3">
               <Link
-                href={PRIMARY_HREF}
+                href="#evaluation"
                 className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white shadow-[0_8px_24px_rgba(23,101,245,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0C337B] hover:bg-[#0C337B]"
               >
                 <span>Book a Free Consultation</span>

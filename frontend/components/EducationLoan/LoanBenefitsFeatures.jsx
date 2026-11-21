@@ -18,6 +18,7 @@ import {
   GraduationCap,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 /* ==========================================
    BRAND COLOR FAMILY  (main brand: #1765F5)
@@ -275,15 +276,15 @@ function CtaCard({ onBookCounselling, className = "" }) {
           </p>
         </div>
 
-        <button
-          type="button"
+        <Link
+          href="/contact"
           onClick={() => onBookCounselling?.()}
           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold transition-all hover:bg-[#EAF2FF] hover:text-[#1765F5] sm:text-[13px]"
           style={{ color: NAVY }}
         >
           Book Free Consultation
           <ArrowRight size={16} />
-        </button>
+        </Link>
       </div>
     </div>
   );

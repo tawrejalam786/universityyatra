@@ -30,6 +30,25 @@
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Keep form fields editable while preventing page text selection on taps. */
+input,
+textarea,
+select,
+[contenteditable="true"],
+[role="textbox"] {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 /* ---------- Swiper pagination dots (TopUniversities) ---------- */

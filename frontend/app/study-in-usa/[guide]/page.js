@@ -42,7 +42,7 @@ const GUIDE_DETAILS_DATABASE = {
     shortTitle: "Academic Pathways",
     badge: "Degrees, Programs & Intakes",
     tagline: "Undergraduate Pathways, Specialized Master's Degrees & US Intake Calendars",
-    heroImage: "/images/universities/usa/northeastern-university.webp",
+    heroImage: "/images/hero/study-in-usa-hero-latest.jpg",
     accentColor: "#0A1E3F",
     pillColors: [
       { label: "4-YEAR BACHELOR'S", bg: "#D7F77D", text: "#063B72" },
@@ -746,7 +746,7 @@ export default async function GuideDetailPage({ params }) {
                     <span>Chat on WhatsApp</span>
                   </a>
                   <Link
-                    href="/study-in-usa#faq-section"
+                    href="/contact"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1765F5] bg-[#1765F5] px-5 py-3 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#0C337B]"
                   >
                     <span>Book Free Consultation</span>

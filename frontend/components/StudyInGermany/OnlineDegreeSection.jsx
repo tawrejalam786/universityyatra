@@ -355,7 +355,7 @@ function ActiveGuideCard({
         {/* SCROLLABLE DESCRIPTION AREA */}
         <div
           key={guide.id}
-          className="min-h-0 flex-1"
+          className="min-h-25 flex-1"
         >
           {/* TAG */}
           <div className="text-center">
@@ -411,7 +411,7 @@ function ActiveGuideCard({
             onClick={() => onSelect(index)}
             aria-label={`Go to guide ${item.id}: ${item.title}`}
             aria-current={index === activeIndex ? "step" : undefined}
-            className="group flex-1 py-1"
+            className="group flex-1 py-0"
           >
             <span className={`block h-[3px] rounded-full transition-colors duration-300 ${index === activeIndex ? "bg-[#1765F5]" : "bg-[#B8CEEE] group-hover:bg-[#8FB2EC]"}`} />
           </button>
@@ -536,7 +536,7 @@ export default function OnlineDegreeSection() {
 
             {/* CTA BUTTON */}
             <Link
-              href="/counselling"
+              href="/career-counselling"
               className="group relative inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#0C337B] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EDF5FF]"
             >
               Book Free Counselling

@@ -24,12 +24,13 @@ import {
    ALL TITLES, DESCRIPTIONS & COLORS KEPT
 ========================================= */
 
+
 const benefits = [
   {
     number: "01",
-    title: "Four of the World’s Top 100 Universities",
+    title: "World-Class Education Hub",
     description:
-      "Study in a globally competitive education system with multiple Canadian institutions ranked among the world’s leading universities.",
+      "Study in a rapidly growing, globally competitive education hub featuring top-ranked local universities and world-renowned international branch campuses.",
     icon: GraduationCap,
     accent: "#1646A0",
     soft: "#EEF4FF",
@@ -38,25 +39,25 @@ const benefits = [
     number: "02",
     title: "Globally Recognized Degrees",
     description:
-      "Canadian qualifications can support academic and career plans beyond Canada, making them a strong option for students thinking internationally.",
+      "Qualifications earned in the UAE are globally recognized, supporting strong international career and academic progression.",
     icon: GitCompareArrows,
     accent: "#E83E8C",
     soft: "#FFF0F6",
   },
   {
     number: "03",
-    title: "Post-Study Work Opportunities",
+    title: "Safe & Diverse Environment",
     description:
-      "Eligible graduates can access post-study work opportunities, giving them a chance to gain professional experience after completing their program.",
+      "Experience one of the safest countries in the world, bringing together a vibrant multicultural community and international lifestyle.",
     icon: Globe2,
     accent: "#18B8B5",
     soft: "#EAF9F8",
   },
   {
     number: "04",
-    title: "Work While You Study",
+    title: "Post-Study Career Opportunities",
     description:
-      "Eligible international students can work alongside their studies, helping them gain practical experience while managing their student life.",
+      "Access thriving job markets in business, tech, and tourism, along with long-term residency options like the UAE Golden Visa for eligible graduates.",
     icon: BrainCircuit,
     accent: "#7C3AED",
     soft: "#F4EFFF",
@@ -65,12 +66,13 @@ const benefits = [
     number: "05",
     title: "Safe & Diverse Student Environment",
     description:
-      "Canadian institutions bring together students from different countries, backgrounds, and cultures, creating a genuinely international learning environment.",
+      "UAE universities and international campuses bring together students from diverse countries, backgrounds, and cultures, creating a vibrant and globally connected learning environment.",
     icon: ShieldCheck,
     accent: "#A93BBE",
     soft: "#FAEEFC",
   },
 ];
+
 
 /* =========================================
    MAIN COMPONENT

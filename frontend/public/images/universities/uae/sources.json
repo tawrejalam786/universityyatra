@@ -1,0 +1,90 @@
+[
+  {
+    "file": "american-university-of-sharjah.webp",
+    "imageUrl": "https://www.aus.edu/sites/default/files/banner_4.jpg",
+    "source": "https://www.aus.edu/apply",
+    "status": "ok",
+    "originalPixels": [
+      1500,
+      716
+    ],
+    "savedBytes": 47272
+  },
+  {
+    "file": "uae-university.webp",
+    "imageUrl": "https://cdn1-m.alittihad.ae/store/archive/image/2025/7/1/97117656-e93c-4e82-9acd-d61807ceecea.png",
+    "source": "https://en.aletihad.ae/news/uae/4586861/uaeu-makes-major-leap-in-times-higher-education-impact-ranki",
+    "status": "ok",
+    "originalPixels": [
+      992,
+      558
+    ],
+    "savedBytes": 40344
+  },
+  {
+    "file": "khalifa-university.webp",
+    "imageUrl": "https://www.iie.org/wp-content/uploads/2022/12/KU-Night.jpeg",
+    "source": "https://www.iie.org/programs/khalifa-university-international-graduate-student-program/about-khalifa-university/",
+    "status": "ok",
+    "originalPixels": [
+      754,
+      453
+    ],
+    "savedBytes": 29326
+  },
+  {
+    "file": "american-university-in-dubai.webp",
+    "imageUrl": "https://storage-prtl-co.imgix.net/endor/organisations/13012/images/1574845818_fj1_3427.jpg",
+    "source": "https://www.bachelorsportal.com/universities/13012/american-university-in-dubai.html",
+    "status": "ok",
+    "originalPixels": [
+      3425,
+      2283
+    ],
+    "savedBytes": 38012
+  },
+  {
+    "file": "university-of-sharjah.webp",
+    "imageUrl": "https://api.sharjah.ac.ae/-/jssmedia/project/uos/sites/uos/discover-uos/banner-uos-1-mob.jpg",
+    "source": "https://www.sharjah.ac.ae/en/Academics/Faculty-And-Staff",
+    "status": "ok",
+    "originalPixels": [
+      450,
+      550
+    ],
+    "savedBytes": 40544
+  },
+  {
+    "file": "abu-dhabi-university.webp",
+    "imageUrl": "https://www.mediaoffice.abudhabi/assets/resized/sm/upload/z0/ae/th/6v/ADU_Dakila-MOU--copy_web-0-690-0-0.jpg?k=152ae93113",
+    "source": "https://www.mediaoffice.abudhabi/en/education/abu-dhabi-university-partners-with-dakila-research-social-sciences-uae-to-enhance-student-knowledge-in-advanced-technologies/",
+    "status": "ok",
+    "originalPixels": [
+      690,
+      429
+    ],
+    "savedBytes": 47984
+  },
+  {
+    "file": "zayed-university.webp",
+    "imageUrl": "https://www.caoi.ir/images/igallery/resized/4201-4300/Zayed_University_by_BRT_Architekten__4_-4299-800-506-100.jpg",
+    "source": "https://www.caoi.ir/en/projects/item/311-zayed-university.html",
+    "status": "ok",
+    "originalPixels": [
+      759,
+      506
+    ],
+    "savedBytes": 38620
+  },
+  {
+    "file": "heriot-watt-dubai.webp",
+    "imageUrl": "https://www.hw.ac.uk/image-library/dubai-james-watt-building-front.xab52d5a2.jpg?f=webp&fit=crop&h=561&q=75&w=800",
+    "source": "https://www.hw.ac.uk/dubai/campus/the-dubai-campus/james-watt-building",
+    "status": "ok",
+    "originalPixels": [
+      800,
+      561
+    ],
+    "savedBytes": 41210
+  }
+]

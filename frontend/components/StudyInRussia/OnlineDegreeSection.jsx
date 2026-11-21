@@ -85,8 +85,7 @@ const guides = [
         value: "RUB 15,000–30,000/month",
       },
     ],
-    note:
-      "Tuition and living costs are estimates. Plan your budget carefully before applying.",
+    
   },
   {
     id: "03",

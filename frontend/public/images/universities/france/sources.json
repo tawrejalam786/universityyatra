@@ -1,0 +1,170 @@
+[
+  {
+    "file": "universite-psl.webp",
+    "source": "https://recrutement.psl.eu/en/dauphine-psl",
+    "imageUrl": "https://recrutement.psl.eu/sites/default/files/2021-02/visuel-galaxie_dauphine_0.png",
+    "status": "ok",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>",
+    "originalPixels": [
+      640,
+      460
+    ],
+    "savedBytes": 56352
+  },
+  {
+    "file": "institut-polytechnique-paris.webp",
+    "source": "https://programmes.polytechnique.edu/en/about",
+    "imageUrl": "https://programmes.polytechnique.edu/sites/default/files/styles/full_1400/public/2019-05/0341-campus-072008PL.jpg?itok=HtdALHTL",
+    "status": "ok",
+    "originalPixels": [
+      1400,
+      937
+    ],
+    "savedBytes": 113792
+  },
+  {
+    "file": "sorbonne-university.webp",
+    "source": "https://www.sorbonne-universite.fr/en/university/foundation/our-organization",
+    "imageUrl": "https://www.sorbonne-universite.fr/sites/default/files/styles/992xauto/public/media/2024-10/campuspierremariecurie_su_pkitmacher_7_low.jpeg?itok=VE4_jh7T",
+    "status": "ok",
+    "originalPixels": [
+      992,
+      661
+    ],
+    "savedBytes": 66968
+  },
+  {
+    "file": "universite-paris-saclay.webp",
+    "source": "https://www.universite-paris-saclay.fr/luniversite/les-campus/grands-projets-immobiliers/le-batiment-hbar",
+    "imageUrl": "https://www.universite-paris-saclay.fr/sites/default/files/2024-07/hbar-christophe-peus.jpg",
+    "status": "ok",
+    "originalPixels": [
+      1000,
+      667
+    ],
+    "savedBytes": 33506
+  },
+  {
+    "file": "ens-lyon.webp",
+    "source": "https://www.huffingtonpost.fr/life/article/l-ens-lyon-perd-les-copies-les-candidats-doivent-repasser-l-epreuve-de-francais_217452.html",
+    "imageUrl": "https://focus.huffingtonpost.fr/2023/05/04/46/5/973/547/1820/1023/75/0/900eed7_1683194668613-screenshot-2023-05-04-12-04-23.png",
+    "originalPixels": [
+      1820,
+      1023
+    ],
+    "savedBytes": 38328,
+    "status": "ok"
+  },
+  {
+    "file": "paris-1-pantheon-sorbonne.webp",
+    "source": "https://irjs.pantheonsorbonne.fr/evenements/seminaire-methodologique-techniques-lecture-rapide",
+    "imageUrl": "https://irjs.pantheonsorbonne.fr/sites/default/files/styles/homepage_carousel/public/2020-04/building-634035_1920.jpg.webp?itok=yTxzsUBM",
+    "status": "ok",
+    "originalPixels": [
+      919,
+      575
+    ],
+    "savedBytes": 53388
+  },
+  {
+    "file": "universite-paris-cite.webp",
+    "source": "https://etudes-doctorales.u-paris.fr/le-college-des-ecoles-doctorales",
+    "imageUrl": "https://etudes-doctorales.u-paris.fr/sites/default/files/styles/image_100_pcent/public/bri-campus-gm_0.jpg?itok=9LFQbQ7n",
+    "status": "ok",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "originalPixels": [
+      1660,
+      738
+    ],
+    "savedBytes": 60428
+  },
+  {
+    "file": "sciences-po.webp",
+    "source": "https://www.sciencespo.fr/aesop-congress-paris-2024/about-aesop-2024/sciences-po-campus/",
+    "imageUrl": "https://www.sciencespo.fr/aesop-congress-paris-2024/static/62b765aa2e2324410887cdefa883de07/e49ee/campus_st_thomas_arcades_f7bdeea07e.jpg",
+    "status": "ok",
+    "originalPixels": [
+      6000,
+      4000
+    ],
+    "savedBytes": 35284
+  },
+  {
+    "file": "universite-grenoble-alpes.webp",
+    "source": "https://newsroom.univ-grenoble-alpes.fr/campus/nouvelle-action-de-blocage-violent-pour-empecher-la-tenue-d-examens-a-l-universite-grenoble-alpes-345030.kjsp",
+    "imageUrl": "https://newsroom.univ-grenoble-alpes.fr/medias/photo/uga-pierre-jayet-015_1525854352873-jpg",
+    "status": "ok",
+    "originalPixels": [
+      1460,
+      677
+    ],
+    "savedBytes": 96800
+  },
+  {
+    "file": "aix-marseille-universite.webp",
+    "source": "https://fr.readkong.com/page/bienvenue-livret-d-accueil-2020-2021-aix-marseille-2880516",
+    "imageUrl": "https://fr.readkong.com/static/ca/6f/ca6fb03039cbe09772a5cd31d6df8537/bienvenue-livret-d-accueil-2020-2021-aix-marseille-2880516-7.jpg",
+    "status": "ok",
+    "originalPixels": [
+      850,
+      644
+    ],
+    "savedBytes": 58452
+  },
+  {
+    "file": "university-strasbourg.webp",
+    "source": "https://en.unistra.fr/fr/actualites/universite/2026/concours-itrf-2026",
+    "imageUrl": "https://en.unistra.fr/sites/default/files/2026-04/RS64638_Palais_universitaire_7182-scr_WEB.jpg",
+    "status": "ok",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "originalPixels": [
+      850,
+      567
+    ],
+    "savedBytes": 64362
+  },
+  {
+    "file": "university-montpellier.webp",
+    "source": "https://sciences.edu.umontpellier.fr/2020/02/02/nouveau-plan-du-campus-triolet-bat-36-village-des-sciences/",
+    "imageUrl": "https://sciences.edu.umontpellier.fr/files/2020/01/20200120_074512-scaled.jpg",
+    "originalPixels": [
+      1920,
+      2560
+    ],
+    "savedBytes": 69812,
+    "status": "ok"
+  },
+  {
+    "file": "university-bordeaux.webp",
+    "source": "https://www.u-bordeaux.fr/evenements/cycle-de-conferences-anthropologie-et-sante-publique-quel-avenir-commun-seance-4-acces-aux-soins-et-inegalites",
+    "imageUrl": "https://www.u-bordeaux.fr/application/files/4916/4881/9246/Campus_Victoire_universite_de_Bordeaux_c_Gautier_Dufau.jpg",
+    "originalPixels": [
+      1920,
+      1372
+    ],
+    "savedBytes": 91222,
+    "status": "ok"
+  },
+  {
+    "file": "cnam.webp",
+    "source": "https://formation.cnam.fr/actualites-de-la-formation/le-cnam-fete-ses-230-ans-plus-de-deux-siecles-d-histoire-1500316.kjsp",
+    "imageUrl": "https://www.cnam.fr/medias/photo/103482_1605275398063-jpg",
+    "status": "ok",
+    "originalPixels": [
+      533,
+      800
+    ],
+    "savedBytes": 69510
+  },
+  {
+    "file": "toulouse-paul-sabatier.webp",
+    "source": "https://www.universites-marines.fr/universite-marine/universite-toulouse-iii-paul-sabatier",
+    "imageUrl": "https://www.universites-marines.fr/sites/default/files/styles/actualite/public/2022-08/ut3.png?itok=AfCUcC6B",
+    "originalPixels": [
+      1600,
+      1200
+    ],
+    "savedBytes": 32814,
+    "status": "ok"
+  }
+]

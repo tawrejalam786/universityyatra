@@ -6,7 +6,7 @@ export const BOOK_GUIDES = [
     vol: "VOL. I",
     title: "Academic Pathways",
     subtitle: "Undergraduate & Graduate Degrees",
-    slug: "academic-pathways",
+    slug: "study-in-usa",
     icon: GraduationCap,
     theme: {
       coverBg: "from-[#0A1E3F] via-[#103066] to-[#081833]",

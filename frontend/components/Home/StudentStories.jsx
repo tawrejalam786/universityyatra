@@ -25,7 +25,7 @@ const TESTIMONIALS = [
     id: 1,
     name: "Tauheed Khan",
     university: "Algoma University",
-    image: "/images/testimonials/tauheed-khan.png",
+    image: "/images/testimonials/tauheed.webp",
     stories: [
       {
         number: "01",
