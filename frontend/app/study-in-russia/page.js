@@ -8,7 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInRussia/HowUniversityYat
 import UniversityCarousel from "@/components/StudyInRussia/UniversityCarousel";
 import CostOfStudyingRussia from "@/components/StudyInRussia/CostOfStudyingRussia";
 import Testimonials from "@/components/StudyInRussia/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInRussia/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 import AdmissionGuide from '@/components/StudyInRussia/AdmissionGuide';
 import USAFAQ from '@/components/StudyInRussia/USAFAQ';
 

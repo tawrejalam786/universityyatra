@@ -8,7 +8,7 @@ import WhatItGetsYou from "@/components/StudyInUsa/WhatItGetsYou";
 import HowUniversityYatraHelps from "@/components/StudyInUsa/HowUniversityYatraHelps";
 import AdmissionGuide from "@/components/StudyInUsa/AdmissionGuide";
 import USAFAQ from "@/components/StudyInUsa/USAFAQ";
-import GlobalEducationCTA from "@/components/StudyInUsa/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 export const metadata = {
   title: "Study in USA | Top Universities & Admission Guide - University Yatra",

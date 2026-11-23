@@ -11,7 +11,7 @@ import CostOfStudyingIndia from "@/components/StudyInCanada/CostOfStudyingIndia"
 import Testimonials from "@/components/StudyInCanada/Testimonials";
 import AdmissionGuide from "@/components/StudyInCanada/AdmissionGuide";
 import CanadaFAQ from "@/components/StudyInCanada/CanadaFAQ";
-import GlobalEducationCTA from "@/components/StudyInCanada/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 export const metadata = {

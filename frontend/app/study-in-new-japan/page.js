@@ -8,7 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInNewJapan/HowUniversityY
 import UniversityCarousel from "@/components/StudyInNewJapan/UniversityCarousel";
 import CostOfStudyingNewJapan from "@/components/StudyInNewJapan/CostOfStudyingNewJapan";
 import Testimonials from "@/components/StudyInNewJapan/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInNewJapan/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 export const metadata = {

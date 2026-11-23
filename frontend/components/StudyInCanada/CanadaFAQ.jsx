@@ -35,31 +35,6 @@ const faqs = [
     answer:
       "Yes. Canadian institutions offer scholarships based on academic merit, leadership, financial need, or research potential. Eligibility and funding amounts vary.",
   },
-  {
-    question: "Can international students work while studying in Canada?",
-    answer:
-      "Eligible international students may work off campus if they meet current immigration requirements. Applicable work-hour limits and conditions should be checked before starting a job.",
-  },
-  {
-    question: "What is a co-op program in Canada?",
-    answer:
-      "A co-op program combines academic study with relevant work experience. Availability, placement requirements, and eligibility depend on the institution and program.",
-  },
-  {
-    question: "Can I work in Canada after completing my studies?",
-    answer:
-      "Eligible graduates of qualifying programs may apply for a Post-Graduation Work Permit (PGWP). The permit's duration depends on the qualification and applicable eligibility rules.",
-  },
-  {
-    question: "Can studying in Canada help me obtain permanent residency?",
-    answer:
-      "It may open pathways to certain immigration programs, depending on your qualifications and eligibility. However, studying or working in Canada does not guarantee permanent residency.",
-  },
-  {
-    question: "How can University Yatra help me study in Canada?",
-    answer:
-      "University Yatra assists with course selection, university applications, documentation, scholarship guidance, and pre-departure planning to help students navigate their study abroad journey.",
-  },
 ];
 
 /* =========================================

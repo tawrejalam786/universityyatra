@@ -8,7 +8,7 @@ import OurTeam from '@/components/About/OurTeam';
 import WhatWeDoSection from '@/components/About/WhatWeDoSection';
 import WhoWeWorkWithSection from '@/components/About/WhoWeWorkWithSection';
 import UniversityNetworkSection from '@/components/About/UniversityNetworkSection';
-import GlobalEducationCTA from '@/components/About/GlobalEducationCTA';
+import GlobalEducationCTA from '@/components/common/GlobalEducationCTA';
 
 export const metadata = {
   title: "About Us | University Yatra",

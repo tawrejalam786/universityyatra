@@ -9,7 +9,7 @@ import UniversityCarousel from "@/components/StudyInAustralia/UniversityCarousel
 import CostOfStudyingAustralia from "@/components/StudyInAustralia/CostOfStudyingAustralia";
 import Testimonials from "@/components/StudyInAustralia/Testimonials";
 import  USAFAQ  from "@/components/StudyInAustralia/USAFAQ";
-import GlobalEducationCTA from "@/components/StudyInAustralia/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 import AdmissionGuide from '@/components/StudyInAustralia/AdmissionGuide';
 
 

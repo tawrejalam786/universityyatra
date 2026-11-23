@@ -9,7 +9,7 @@ import UniversityCarousel from "@/components/StudyInIndia/UniversityCarousel";
 import DegreeComparison from "@/components/StudyInIndia/DegreeComparison";
 import CostOfStudyingIndia from "@/components/StudyInIndia/CostOfStudyingIndia";
 import Testimonials from "@/components/StudyInCanada/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInIndia/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 export const metadata = {

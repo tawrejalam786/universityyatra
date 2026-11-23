@@ -10,7 +10,7 @@ import CostOfStudyingUk from "@/components/StudyInUk/CostOfStudyingUk";
 import Testimonials from "@/components/StudyInUk/Testimonials";
 import AdmissionGuide from "@/components/StudyInUk/AdmissionGuide";
 import FaqUK from "@/components/StudyInUk/USAFAQ";
-import GlobalEducationCTA from "@/components/StudyInUk/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 

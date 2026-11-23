@@ -8,7 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInUae/HowUniversityYatraH
 import UniversityCarousel from "@/components/StudyInUae/UniversityCarousel";
 import CostOfStudyingUae from "@/components/StudyInUae/CostOfStudyingUae";
 import Testimonials from "@/components/StudyInUae/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInUae/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 import AdmissionGuide from "@/components/StudyInUae/AdmissionGuide";
 import UaeFaq from "@/components/StudyInUae/USAFAQ"
 

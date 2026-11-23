@@ -35,31 +35,31 @@ const faqs = [
     answer:
       "Yes. Options include government-funded awards, university scholarships, research funding, and programme-specific grants, each with separate eligibility criteria and application deadlines.",
   },
-  {
-    question: "Can I stay in Ireland after completing my degree?",
-    answer:
-      "Eligible graduates may qualify for the Third Level Graduate Programme, receiving Stamp 1G permission for up to 12 or 24 months.",
-  },
-  {
-    question: "Do I need IELTS to study in Ireland?",
-    answer:
-      "Many institutions require proof of English proficiency through IELTS, TOEFL, PTE, or other accepted tests, depending on programme-specific admission policies.",
-  },
-  {
-    question: "Which courses are popular among international students in Ireland?",
-    answer:
-      "Popular choices include computer science, data analytics, business, engineering, biotechnology, pharmaceuticals, finance, and supply chain management, depending on career goals.",
-  },
-  {
-    question: "Is accommodation affordable for students in Ireland?",
-    answer:
-      "Accommodation costs vary considerably by city and housing type. Dublin is often expensive, so students should research options and secure housing early.",
-  },
-  {
-    question: "When should I apply to Irish universities?",
-    answer:
-      "Start researching 9–12 months before your intended intake to compare programmes, prepare documents, meet deadlines, and arrange funding and immigration requirements.",
-  },
+  // {
+  //   question: "Can I stay in Ireland after completing my degree?",
+  //   answer:
+  //     "Eligible graduates may qualify for the Third Level Graduate Programme, receiving Stamp 1G permission for up to 12 or 24 months.",
+  // },
+  // {
+  //   question: "Do I need IELTS to study in Ireland?",
+  //   answer:
+  //     "Many institutions require proof of English proficiency through IELTS, TOEFL, PTE, or other accepted tests, depending on programme-specific admission policies.",
+  // },
+  // {
+  //   question: "Which courses are popular among international students in Ireland?",
+  //   answer:
+  //     "Popular choices include computer science, data analytics, business, engineering, biotechnology, pharmaceuticals, finance, and supply chain management, depending on career goals.",
+  // },
+  // {
+  //   question: "Is accommodation affordable for students in Ireland?",
+  //   answer:
+  //     "Accommodation costs vary considerably by city and housing type. Dublin is often expensive, so students should research options and secure housing early.",
+  // },
+  // {
+  //   question: "When should I apply to Irish universities?",
+  //   answer:
+  //     "Start researching 9–12 months before your intended intake to compare programmes, prepare documents, meet deadlines, and arrange funding and immigration requirements.",
+  // },
 ];
 
 /* =========================================

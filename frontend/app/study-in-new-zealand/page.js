@@ -8,7 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInNewZealand/HowUniversit
 import UniversityCarousel from "@/components/StudyInNewZealand/UniversityCarousel";
 import CostOfStudyingNewZealand from "@/components/StudyInNewZealand/CostOfStudyingNewZealand";
 import Testimonials from "@/components/StudyInNewZealand/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInNewZealand/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 

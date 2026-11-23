@@ -35,31 +35,31 @@ const faqs = [
     answer:
       "Yes, universities offer various merit-based and country-specific scholarships. Eligibility, award amounts, application deadlines and covered expenses vary across programmes and institutions.",
   },
-  {
-    question: "What visa do Indian students need to study in Australia?",
-    answer:
-      "Indian students generally require a Student visa (subclass 500), with admission, financial evidence, health insurance and other eligibility requirements.",
-  },
-  {
-    question: "Can international students work while studying in Australia?",
-    answer:
-      "Eligible student visa holders can generally work up to 48 hours per fortnight during study periods, subject to applicable visa conditions.",
-  },
-  {
-    question: "Is health insurance compulsory for Indian students in Australia?",
-    answer:
-      "Yes, most international students must maintain Overseas Student Health Cover (OSHC) for their required visa period, subject to applicable exemptions.",
-  },
-  {
-    question: "Can students stay in Australia after graduation?",
-    answer:
-      "Eligible graduates may qualify for the Temporary Graduate visa (subclass 485), depending on their qualification, age, stream and other requirements.",
-  },
-  {
-    question: "Can studying in Australia lead to permanent residency?",
-    answer:
-      "It may support certain migration pathways, but permanent residency is not guaranteed and depends on eligibility, occupation, points and current immigration rules.",
-  },
+  // {
+  //   question: "What visa do Indian students need to study in Australia?",
+  //   answer:
+  //     "Indian students generally require a Student visa (subclass 500), with admission, financial evidence, health insurance and other eligibility requirements.",
+  // },
+  // {
+  //   question: "Can international students work while studying in Australia?",
+  //   answer:
+  //     "Eligible student visa holders can generally work up to 48 hours per fortnight during study periods, subject to applicable visa conditions.",
+  // },
+  // {
+  //   question: "Is health insurance compulsory for Indian students in Australia?",
+  //   answer:
+  //     "Yes, most international students must maintain Overseas Student Health Cover (OSHC) for their required visa period, subject to applicable exemptions.",
+  // },
+  // {
+  //   question: "Can students stay in Australia after graduation?",
+  //   answer:
+  //     "Eligible graduates may qualify for the Temporary Graduate visa (subclass 485), depending on their qualification, age, stream and other requirements.",
+  // },
+  // {
+  //   question: "Can studying in Australia lead to permanent residency?",
+  //   answer:
+  //     "It may support certain migration pathways, but permanent residency is not guaranteed and depends on eligibility, occupation, points and current immigration rules.",
+  // },
 ];
 
 /* =========================================

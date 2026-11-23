@@ -8,7 +8,7 @@ import HowUniversityYatraHelps from "@/components/StudyInNewSingapore/HowUnivers
 import UniversityCarousel from "@/components/StudyInNewSingapore/UniversityCarousel";
 import CostOfStudyingNewSingapore from "@/components/StudyInNewSingapore/CostOfStudyingNewSingapore";
 import Testimonials from "@/components/StudyInNewSingapore/Testimonials";
-import GlobalEducationCTA from "@/components/StudyInNewSingapore/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 

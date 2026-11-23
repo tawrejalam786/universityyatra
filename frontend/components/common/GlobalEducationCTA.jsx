@@ -131,9 +131,9 @@ export default function GlobalEducationCTA() {
               />
 
               {/* STUDENT IMAGE - 200PX TALLER, NO HOVER SCALE */}
-              <div className="relative z-30 h-[460px] w-[350px] shrink-0 sm:h-[520px] sm:w-[340px] lg:absolute lg:bottom-0 lg:right-[-8px] lg:h-[585px] lg:w-[385px] xl:right-[-8px] xl:h-[610px] xl:w-[610px]">
+              <div className="relative z-30 h-[460px] w-[200px] shrink-0 sm:h-[520px] sm:w-[280px] lg:absolute lg:bottom-0 lg:right-[-8px] lg:h-[585px] lg:w-[385px] xl:right-[-8px] xl:h-[510px] xl:w-[350px]">
                 <Image
-                  src="/images/global-education-students.webp"
+                  src="/images/global-gen-z-students.webp"
                   alt="Confident university student holding notebooks and showing a thumbs-up"
                   fill
                   sizes="(max-width: 639px) 280px, (max-width: 1023px) 340px, 410px"

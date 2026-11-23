@@ -35,41 +35,41 @@ const faqs = [
     answer:
       "Many students budget around €900–€1,200 monthly for living expenses, excluding certain initial costs and any applicable tuition fees.",
   },
-  {
-    question: "What is a blocked account for Germany?",
-    answer:
-      "A blocked account demonstrates financial resources for your stay. The standard student visa benchmark for 2026 is €11,904 annually.",
-  },
-  {
-    question: "Can international students work while studying in Germany?",
-    answer:
-      "Eligible non-EU/EEA students can generally work 140 full days or 280 half-days annually under applicable student-work rules.",
-  },
-  {
-    question: "Are scholarships available in Germany for Indian students?",
-    answer:
-      "Yes. Opportunities include DAAD, Erasmus Mundus and university-specific scholarships, with eligibility, funding coverage and deadlines varying by programme.",
-  },
-  {
-    question: "Can I stay in Germany after completing my degree?",
-    answer:
-      "Eligible graduates can apply for an 18-month residence permit to seek qualified employment, subject to applicable requirements.",
-  },
-  {
-    question: "Is learning German necessary if my course is taught in English?",
-    answer:
-      "Not always for admission, but German can improve everyday communication, social integration and access to employment opportunities.",
-  },
-  {
-    question: "When should I apply to German universities?",
-    answer:
-      "Start several months ahead to accommodate university deadlines, qualification checks, language tests, document preparation and visa processing.",
-  },
-  {
-    question: "How can University Yatra help me study in Germany?",
-    answer:
-      "University Yatra assists with course selection, university shortlisting, eligibility checks, applications, documentation, funding guidance and pre-departure preparation.",
-  },
+  // {
+  //   question: "What is a blocked account for Germany?",
+  //   answer:
+  //     "A blocked account demonstrates financial resources for your stay. The standard student visa benchmark for 2026 is €11,904 annually.",
+  // },
+  // {
+  //   question: "Can international students work while studying in Germany?",
+  //   answer:
+  //     "Eligible non-EU/EEA students can generally work 140 full days or 280 half-days annually under applicable student-work rules.",
+  // },
+  // {
+  //   question: "Are scholarships available in Germany for Indian students?",
+  //   answer:
+  //     "Yes. Opportunities include DAAD, Erasmus Mundus and university-specific scholarships, with eligibility, funding coverage and deadlines varying by programme.",
+  // },
+  // {
+  //   question: "Can I stay in Germany after completing my degree?",
+  //   answer:
+  //     "Eligible graduates can apply for an 18-month residence permit to seek qualified employment, subject to applicable requirements.",
+  // },
+  // {
+  //   question: "Is learning German necessary if my course is taught in English?",
+  //   answer:
+  //     "Not always for admission, but German can improve everyday communication, social integration and access to employment opportunities.",
+  // },
+  // {
+  //   question: "When should I apply to German universities?",
+  //   answer:
+  //     "Start several months ahead to accommodate university deadlines, qualification checks, language tests, document preparation and visa processing.",
+  // },
+  // {
+  //   question: "How can University Yatra help me study in Germany?",
+  //   answer:
+  //     "University Yatra assists with course selection, university shortlisting, eligibility checks, applications, documentation, funding guidance and pre-departure preparation.",
+  // },
 ];
 
 /* =========================================

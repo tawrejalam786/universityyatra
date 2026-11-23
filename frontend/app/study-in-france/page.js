@@ -11,7 +11,7 @@ import CostOfStudyingIndia from "@/components/StudyInFrance/CostOfStudyingIndia"
 import Testimonials from "@/components/StudyInFrance/Testimonials";
 import AdmissionGuide from "@/components/StudyInFrance/AdmissionGuide";
 import FranceFAQ from "@/components/StudyInFrance/FranceFAQ";
-import GlobalEducationCTA from "@/components/StudyInFrance/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 export const metadata = {

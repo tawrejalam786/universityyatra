@@ -35,41 +35,41 @@ const faqs = [
     answer:
       "September is the main intake, while some courses offer January or other entry points. Application deadlines vary by university and programme.",
   },
-  {
-    question: "Are scholarships available for Indian students?",
-    answer:
-      "Yes. Students can explore university scholarships, merit-based awards, Chevening, and GREAT Scholarships, subject to eligibility and availability.",
-  },
-  {
-    question: "Can international students work while studying?",
-    answer:
-      "Eligible Student visa holders can work within their visa conditions. Permitted hours and restrictions depend on the course and immigration rules.",
-  },
-  {
-    question: "What is the UK Graduate visa?",
-    answer:
-      "It allows eligible graduates to stay and work or look for work after completing an eligible course. Bachelor's and master's graduates applying from 1 January 2027 generally receive 18 months.",
-  },
-  {
-    question: "Can I get permanent residency after studying in the UK?",
-    answer:
-      "Not automatically. Graduates must qualify under a separate immigration route and meet its settlement requirements.",
-  },
-  {
-    question: "How much money must I show for a UK Student visa?",
-    answer:
-      "Students generally need to show funds for outstanding tuition fees and living expenses. The required amount depends on whether they will study in London or elsewhere.",
-  },
-  {
-    question: "How do I choose the right UK university?",
-    answer:
-      "Compare course content, entry requirements, tuition fees, location, facilities, and career relevance rather than relying on rankings alone.",
-  },
-  {
-    question: "How can University Yatra help?",
-    answer:
-      "University Yatra provides guidance on university selection, admissions, application documents, and scholarship options to help students plan their UK education.",
-  },
+  // {
+  //   question: "Are scholarships available for Indian students?",
+  //   answer:
+  //     "Yes. Students can explore university scholarships, merit-based awards, Chevening, and GREAT Scholarships, subject to eligibility and availability.",
+  // },
+  // {
+  //   question: "Can international students work while studying?",
+  //   answer:
+  //     "Eligible Student visa holders can work within their visa conditions. Permitted hours and restrictions depend on the course and immigration rules.",
+  // },
+  // {
+  //   question: "What is the UK Graduate visa?",
+  //   answer:
+  //     "It allows eligible graduates to stay and work or look for work after completing an eligible course. Bachelor's and master's graduates applying from 1 January 2027 generally receive 18 months.",
+  // },
+  // {
+  //   question: "Can I get permanent residency after studying in the UK?",
+  //   answer:
+  //     "Not automatically. Graduates must qualify under a separate immigration route and meet its settlement requirements.",
+  // },
+  // {
+  //   question: "How much money must I show for a UK Student visa?",
+  //   answer:
+  //     "Students generally need to show funds for outstanding tuition fees and living expenses. The required amount depends on whether they will study in London or elsewhere.",
+  // },
+  // {
+  //   question: "How do I choose the right UK university?",
+  //   answer:
+  //     "Compare course content, entry requirements, tuition fees, location, facilities, and career relevance rather than relying on rankings alone.",
+  // },
+  // {
+  //   question: "How can University Yatra help?",
+  //   answer:
+  //     "University Yatra provides guidance on university selection, admissions, application documents, and scholarship options to help students plan their UK education.",
+  // },
 ];
 
 /* =========================================

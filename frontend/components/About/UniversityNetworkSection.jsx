@@ -218,7 +218,7 @@ export default function UniversitiesCarousel() {
           roundLengths={true}
           coverflowEffect={{ rotate: 0, stretch: 0, depth: 180, modifier: 1, scale: 0.88, slideShadows: false }}
           breakpoints={{
-                        320: {
+            320: {
               slidesPerView: 1.2,
               spaceBetween: 15,
             },
@@ -226,10 +226,10 @@ export default function UniversitiesCarousel() {
               slidesPerView: 1.6,
               spaceBetween: 100,
             },
-            640: { slidesPerView: 2.2, spaceBetween: 0 },
-            768: { slidesPerView: 2.8, spaceBetween: 0 },
-            1024: { slidesPerView: 3.5, spaceBetween: 0 },
-            1280: { slidesPerView: 4.2, spaceBetween: 0 },
+            640: { slidesPerView: 2.2, spaceBetween: 8 },
+            768: { slidesPerView: 2.8, spaceBetween: 8 },
+            1024: { slidesPerView: 3.5, spaceBetween: 8 },
+            1280: { slidesPerView: 4.2, spaceBetween: 15 },
             1536: { slidesPerView: 4.5, spaceBetween: 10 },
           }}
           className="w-full !overflow-visible"

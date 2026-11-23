@@ -10,7 +10,7 @@ import CostOfStudyingGermany from "@/components/StudyInGermany/CostOfStudyingGer
 import AdmissionGuide from "@/components/StudyInGermany/AdmissionGuide";
 import Testimonials from "@/components/StudyInGermany/Testimonials";
 import FaqGermany from "@/components/StudyInGermany/USAFAQ";
-import GlobalEducationCTA from "@/components/StudyInGermany/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 export const metadata = {

@@ -10,7 +10,7 @@ import CostOfStudyingIreland from "@/components/StudyInIreland/CostOfStudyingIre
 import Testimonials from "@/components/StudyInIreland/Testimonials";
 import AdmissionGuide from "@/components/StudyInIreland/AdmissionGuide";
 import FaqIreland from "@/components/StudyInIreland/USAFAQ";
-import GlobalEducationCTA from "@/components/StudyInIreland/GlobalEducationCTA";
+import GlobalEducationCTA from "@/components/common/GlobalEducationCTA";
 
 
 export const metadata = {
