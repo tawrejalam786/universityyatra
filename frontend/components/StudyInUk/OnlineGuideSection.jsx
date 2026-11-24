@@ -77,7 +77,7 @@ const guides = [
         icon: Calculator,
         label: "Visa maintenance funds",
         value:
-          "£13,761 in London or £10,539 outside London for the standard nine-month calculation.",
+          "£13,761 in London or £10,539 outside London.",
       },
       {
         icon: Home,
@@ -108,13 +108,13 @@ const guides = [
         icon: Building2,
         label: "Accommodation",
         value:
-          "Halls, shared housing, and private studios offer different cost and privacy trade-offs.",
+          "Halls, shared housing, and private studios offer different cost.",
       },
       {
         icon: Users,
         label: "Student life",
         value:
-          "Discover international food, cultural events, music, sport, and university societies.",
+          "Discover international food, cultural events, music, sport.",
       },
     ],
   },
@@ -127,7 +127,7 @@ const guides = [
     icon: Award,
     image: "/images/study-usa/3d/scholarship.png",
     description:
-      "Explore funding options that can help reduce the cost of a UK degree. Eligibility depends on your course, academic profile, and the scholarship.",
+      "Explore funding options that can help reduce the cost of a UK degree. Eligibility depends on your course.",
     points: [
       {
         icon: Award,
@@ -145,7 +145,7 @@ const guides = [
         icon: BookOpen,
         label: "Application essentials",
         value:
-          "Check eligibility, documents, coverage, and deadlines.",
+          "Check eligibility, documents, coverage.",
       },
     ],
   },
@@ -164,7 +164,7 @@ const guides = [
         icon: Clock,
         label: "Graduate visa",
         value:
-          "2 years for applications by 31 December 2026; 18 months from 1 January 2027.",
+          "2 years for applications by 31 December 2026-2027.",
       },
       {
         icon: GraduationCap,
@@ -176,7 +176,7 @@ const guides = [
         icon: Briefcase,
         label: "Long-term work",
         value:
-          "A qualifying job and sponsorship may enable a Skilled Worker visa application.",
+          "A qualifying job and sponsorship may enable a Skilled Worker visa.",
       },
     ],
   },
@@ -349,7 +349,7 @@ function ActiveGuideCard({
       id="uk-guide-panel"
       role="tabpanel"
       aria-labelledby={`uk-guide-tab-${activeIndex}`}
-      className="relative order-2 flex h-[630px] min-w-0 flex-col overflow-hidden rounded-[22px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-3.5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] min-[380px]:h-[605px] sm:h-[550px] sm:p-4 lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-[560px] lg:p-5"
+      className="relative order-2 flex h-[430px] min-w-0 flex-col overflow-hidden rounded-[22px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-3.5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] min-[380px]:h-[560px] sm:h-[550px] sm:p-4 lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-[560px] lg:p-5"
     >
 
       {/* BACKGROUND DECORATIONS */}

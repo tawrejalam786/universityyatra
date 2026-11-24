@@ -325,7 +325,7 @@ function ActiveGuideCard({
       id="australia-guide-panel"
       role="tabpanel"
       aria-labelledby={`australia-guide-tab-${activeIndex}`}
-      className="relative order-2 flex h-[620px] min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-3.5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] min-[380px]:h-[595px] sm:h-[565px] sm:p-4 lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-[550px] lg:p-5"
+      className="relative order-2 flex h-[620px] min-w-0 flex-col overflow-hidden rounded-[20px] border border-[#CDDEFA] bg-gradient-to-br from-[#EDF5FF] via-white to-[#DDEAFF] p-3.5 shadow-[0_12px_35px_rgba(12,51,123,0.07)] min-[380px]:h-[575px] sm:h-[565px] sm:p-4 lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-[550px] lg:p-5"
     >
       {/* BACKGROUND DECORATION */}
       <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-[250px] w-[250px] rounded-full border border-[#1765F5]/10" />

@@ -1192,9 +1192,9 @@ export default function CoursesSlider() {
             speed={550}
             grabCursor={true}
             watchOverflow={true}
-            pagination={{
-              clickable: true,
-            }}
+            // pagination={{
+            //   clickable: true,
+            // }}
             breakpoints={{
               480: {
                 slidesPerView: 1.4,
