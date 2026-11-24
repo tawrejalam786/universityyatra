@@ -9,130 +9,88 @@ import {
   useState,
 } from "react";
 import Image from "next/image";
-import { BadgeCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  BadgeCheck,
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  MapPin,
+} from "lucide-react";
 
-/* ==========================================
-   STUDY IN INDIA - ORIGINAL UNIVERSITY DATA
-   NAMES, IMAGES AND GRADES UNCHANGED
-========================================== */
 
-const UNIVERSITIES = [
-  {
-    name: "Chandigarh University",
-    grade: "A+",
-    image: "/images/universities/chandigarh-university.webp",
+/* ---------- INDIA (NAAC badge, own colours) ---------- */
+const indiaCarousel = {
+  eyebrow: "Explore Universities",
+  ariaLabel: "Explore Universities",
+  theme: {
+    accent: "#085AF9",
+    dark: "#063B72",
+    bg: "#F4F7FA",
+    hover: "#18B8B5",
+    glow: "#18B8B5",
   },
-  {
-    name: "Amrita Vishwa Vidyapeetham",
-    grade: "A++",
-    image: "/images/universities/amrita-university.webp",
-  },
-  {
-    name: "Vivekananda Global University",
-    grade: "A+",
-    image: "/images/universities/vgu.webp",
-  },
-  {
-    name: "Shoolini University",
-    grade: "A+",
-    image: "/images/universities/shoolini-university.webp",
-  },
-  {
-    name: "Amity University",
-    grade: "A+",
-    image: "/images/universities/amity-university.webp",
-  },
-  {
-    name: "Manipal University Jaipur",
-    grade: "A+",
-    image: "/images/universities/manipal-university-jaipur.webp",
-  },
-  {
-    name: "University of Petroleum and Energy Studies (UPES)",
-    grade: "A",
-    image: "/images/universities/upes.webp",
-  },
-  {
-    name: "Dr. D. Y. Patil University, Navi Mumbai",
-    grade: "A++",
-    image: "/images/universities/dy-patil-university.webp",
-  },
-  {
-    name: "Galgotias University",
-    grade: "A+",
-    image: "/images/universities/galgotias-university.webp",
-  },
-  {
-    name: "GLA University",
-    grade: "A+",
-    image: "/images/universities/gla-university.webp",
-  },
-  {
-    name: "Lovely Professional University",
-    grade: "A++",
-    image: "/images/universities/lpu.webp",
-  },
-  {
-    name: "Parul University",
-    grade: "A++",
-    image: "/images/universities/parul-university.webp",
-  },
-  {
-    name: "Sharda University",
-    grade: "A+",
-    image: "/images/universities/sharda-university.webp",
-  },
-  {
-    name: "Uttaranchal University",
-    grade: "A+",
-    image: "/images/universities/uttaranchal-university.webp",
-  },
-];
+  items: [
+    { name: "Chandigarh University", image: "/images/universities/chandigarh-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "Amrita Vishwa Vidyapeetham", image: "/images/universities/amrita-university.webp", badge: "NAAC A++", subtitle: "NAAC A++ Accredited" },
+    { name: "Vivekananda Global University", image: "/images/universities/vgu.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "Shoolini University", image: "/images/universities/shoolini-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "Amity University", image: "/images/universities/amity-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "Manipal University Jaipur", image: "/images/universities/manipal-university-jaipur.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "University of Petroleum and Energy Studies (UPES)", image: "/images/universities/upes.webp", badge: "NAAC A", subtitle: "NAAC A Accredited" },
+    { name: "Dr. D. Y. Patil University, Navi Mumbai", image: "/images/universities/dy-patil-university.webp", badge: "NAAC A++", subtitle: "NAAC A++ Accredited" },
+    { name: "Galgotias University", image: "/images/universities/galgotias-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "GLA University", image: "/images/universities/gla-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "Lovely Professional University", image: "/images/universities/lpu.webp", badge: "NAAC A++", subtitle: "NAAC A++ Accredited" },
+    { name: "Parul University", image: "/images/universities/parul-university.webp", badge: "NAAC A++", subtitle: "NAAC A++ Accredited" },
+    { name: "Sharda University", image: "/images/universities/sharda-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+    { name: "Uttaranchal University", image: "/images/universities/uttaranchal-university.webp", badge: "NAAC A+", subtitle: "NAAC A+ Accredited" },
+  ],
+};
 
-const TOTAL = UNIVERSITIES.length;
-const START_INDEX = 3;
+/* TEMPLATE FOR ANY OTHER COUNTRY
+const ukCarousel = {
+  eyebrow: "Universities in UK",
+  ariaLabel: "UK Universities Showcase",
+  items: [
+    { name: "University of Example", image: "/images/universities/uk/example.webp", subtitle: "London, UK", pin: true },
+    // ... at least 8 items
+  ],
+};
+*/
+
+const PRESETS = {
+  usa: indiaCarousel,
+};
 
 const AUTOPLAY_DELAY = 4500;
 const SCROLL_PAUSE = 2500;
 
-/* cards further than this from the centre are fully faded out */
-const VISIBLE_RANGE = 3.8;
+const DEFAULT_THEME = {
+  accent: "#1765F5",
+  dark: "#0C337B",
+  bg: "#F4F7FA",
+  hover: "#1765F5",
+};
 
 /* ==========================================
-   3D ARC HELPERS
-
-   Rendering-safe rules (keep them, they prevent white lines / tiles):
-   - NO mask-image on the stage (the edge fades are plain overlays)
-   - NO transform-style: preserve-3d and NO backface-visibility
-     (cards never turn more than 38deg, so they never show their back)
-   - NO transform on the <Image>, NO hover shadow animation
-   - cards are never unmounted, only hidden, so an image can never
-     appear late as an empty white card
-   - cards are moved straight in the DOM, not through React state,
-     so there is no re-render of every card on every frame
+   ARC MATH (plain functions, no library)
 ========================================== */
 
-function getWrappedDelta(index, position) {
+function wrapDelta(index, position, total) {
   let delta = index - position;
 
-  delta = ((delta % TOTAL) + TOTAL) % TOTAL;
+  delta = ((delta % total) + total) % total;
 
-  if (delta > TOTAL / 2) {
-    delta -= TOTAL;
+  if (delta > total / 2) {
+    delta -= total;
   }
 
   return delta;
 }
 
+/* cards grow the further they are from the centre (same as before) */
 function getScale(absDelta) {
   return 1 + Math.pow(absDelta, 1.35) * 0.16;
-}
-
-function getRotY(delta) {
-  return (
-    -Math.sign(delta) *
-    Math.min(38, Math.pow(Math.abs(delta), 1.05) * 10.5)
-  );
 }
 
 function getOpacity(absDelta) {
@@ -140,13 +98,13 @@ function getOpacity(absDelta) {
   return Math.max(0, 1 - Math.pow(absDelta - 2.8, 1.6));
 }
 
-/* card size, spacing and x positions for a given container width */
-function getGeometry(containerWidth) {
-  const isMobile = containerWidth < 640;
+/* sizes and x positions for one container size */
+function getGeometry(width, height) {
+  const isMobile = width < 640;
 
   const factor = isMobile
     ? 1
-    : Math.max(0.72, Math.min(1, containerWidth / 1400));
+    : Math.max(0.72, Math.min(1, width / 1400));
 
   const cardW = Math.round((isMobile ? 130 : 142) * factor);
   const cardH = Math.round((isMobile ? 210 : 230) * factor);
@@ -163,9 +121,12 @@ function getGeometry(containerWidth) {
   }
 
   return {
+    width,
+    height,
     cardW,
     cardH,
     xTable,
+    isMobile,
     distancePerCard: isMobile ? 125 : 185,
   };
 }
@@ -196,11 +157,86 @@ function getXPos(xTable, delta) {
 const useIsoLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+/* size helper: every number inside a card scales with --k, exactly
+   like the old transform: scale() did, but without a transform */
+const k = (px) => `calc(var(--k) * ${px}px)`;
+
 /* ==========================================
-   MAIN UNIVERSITY CAROUSEL
+   CARD IMAGE (fallback if the file is missing)
 ========================================== */
 
-export default function UniversityCarousel() {
+function CardImage({ item, dark }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div
+      className="absolute inset-0 overflow-hidden"
+      style={{ backgroundColor: dark }}
+    >
+      {!failed ? (
+        <Image
+          src={item.image}
+          alt={item.name}
+          fill
+          loading="eager"
+          draggable={false}
+          sizes="(max-width: 640px) 160px, 260px"
+          className="pointer-events-none select-none object-cover object-center"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div
+          className="flex h-full w-full flex-col items-center justify-center text-center"
+          style={{ gap: k(12), padding: `0 ${k(16)}` }}
+        >
+          <GraduationCap
+            size={42}
+            strokeWidth={1.5}
+            className="text-white/75"
+            style={{ width: k(42), height: k(42) }}
+          />
+
+          <span
+            className="font-bold uppercase text-white/80"
+            style={{ fontSize: k(10), letterSpacing: "0.12em" }}
+          >
+            {item.subtitle || item.name}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ==========================================
+   MAIN COMPONENT
+========================================== */
+
+export default function UniversityCarousel({
+  country = "usa",
+  items: itemsProp,
+  eyebrow: eyebrowProp,
+  heading = "Where Could You Go",
+  highlight = "Next !!",
+  ariaLabel: ariaLabelProp,
+  theme: themeProp,
+}) {
+  const preset = PRESETS[country] || PRESETS.usa;
+
+  const items =
+    Array.isArray(itemsProp) && itemsProp.length > 0
+      ? itemsProp
+      : preset.items;
+  const eyebrow = eyebrowProp ?? preset.eyebrow;
+  const ariaLabel =
+    ariaLabelProp ?? preset.ariaLabel ?? "Universities showcase";
+  const theme = { ...DEFAULT_THEME, ...preset.theme, ...themeProp };
+  const total = items.length;
+  const startIndex = Math.min(3, total - 1);
+
+  /* never show the same card on both sides of the circle */
+  const visibleRange = Math.min(3.8, total / 2);
+
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
@@ -209,19 +245,21 @@ export default function UniversityCarousel() {
   const animationRef = useRef(null);
   const autoplayRef = useRef(null);
   const scrollResumeRef = useRef(null);
+  const suppressTimerRef = useRef(null);
 
-  const [containerWidth, setContainerWidth] = useState(1300);
+  const [size, setSize] = useState({ width: 1300, height: 460 });
   const [measured, setMeasured] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
-  const currentRef = useRef(START_INDEX);
-  const targetRef = useRef(START_INDEX);
+  const currentRef = useRef(startIndex);
+  const targetRef = useRef(startIndex);
 
   const visibleRef = useRef(false);
   const hoveringRef = useRef(false);
   const scrollingRef = useRef(false);
   const interactingRef = useRef(false);
   const suppressClickRef = useRef(false);
+  const reduceMotionRef = useRef(false);
 
   const dragRef = useRef({
     active: false,
@@ -229,19 +267,20 @@ export default function UniversityCarousel() {
     pointerId: null,
     startX: 0,
     startY: 0,
-    startIndex: START_INDEX,
+    startIndex,
     lastX: 0,
     lastTime: 0,
     velocity: 0,
   });
 
   const geometry = useMemo(
-    () => getGeometry(containerWidth),
-    [containerWidth]
+    () => getGeometry(size.width, size.height),
+    [size.width, size.height]
   );
 
   /* ==========================================
      PLACE EVERY CARD FOR THE CURRENT POSITION
+     (plain layout values, whole pixels, no transform)
   ========================================== */
 
   const paint = useCallback(() => {
@@ -251,37 +290,74 @@ export default function UniversityCarousel() {
 
     const position = currentRef.current;
 
-    for (let i = 0; i < TOTAL; i++) {
+    for (let i = 0; i < total; i++) {
       const element = cardRefs.current[i];
 
       if (!element) continue;
 
-      const delta = getWrappedDelta(i, position);
+      const delta = wrapDelta(i, position, total);
       const absDelta = Math.abs(delta);
 
+      if (absDelta > visibleRange) {
+        element.style.visibility = "hidden";
+        continue;
+      }
+
       const scale = getScale(absDelta);
-      const rotY = getRotY(delta);
-      const xPos = getXPos(geo.xTable, delta);
+      const width = Math.round(geo.cardW * scale);
+      const height = Math.round(geo.cardH * scale);
+      const x = getXPos(geo.xTable, delta);
+
+      const style = element.style;
+
+      style.width = `${width}px`;
+      style.height = `${height}px`;
+      style.left = `${Math.round(geo.width / 2 + x - width / 2)}px`;
+      style.top = `${Math.round((geo.height - height) / 2)}px`;
+      style.zIndex = String(Math.round(10 + absDelta));
+      style.setProperty("--k", scale.toFixed(3));
+
       const opacity = getOpacity(absDelta);
 
-      element.style.transform = `translate(-50%, -50%) translateX(${xPos.toFixed(
-        1
-      )}px) scale(${scale.toFixed(3)}) rotateY(${rotY.toFixed(1)}deg)`;
-
-      element.style.zIndex = String(Math.round(50 + absDelta * 10));
-
-      /* opacity: 1 is removed completely so a fully visible card never
-         becomes its own offscreen group */
-      element.style.opacity =
-        opacity >= 1 ? "" : opacity.toFixed(3);
-
-      element.style.visibility =
-        absDelta > VISIBLE_RANGE ? "hidden" : "visible";
+      /* opacity 1 is removed completely, so a fully visible card is
+         never an offscreen group */
+      style.opacity = opacity >= 1 ? "" : opacity.toFixed(3);
+      style.visibility = "visible";
     }
+  }, [total, visibleRange]);
+
+  /* ==========================================
+     REDUCED MOTION
+  ========================================== */
+
+  useEffect(() => {
+    const media = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    const update = () => {
+      reduceMotionRef.current = media.matches;
+    };
+
+    update();
+
+    if (media.addEventListener) {
+      media.addEventListener("change", update);
+    } else {
+      media.addListener(update);
+    }
+
+    return () => {
+      if (media.removeEventListener) {
+        media.removeEventListener("change", update);
+      } else {
+        media.removeListener(update);
+      }
+    };
   }, []);
 
   /* ==========================================
-     CHANGE CAROUSEL POSITION
+     NAVIGATION
   ========================================== */
 
   const moveTo = useCallback((value) => {
@@ -307,9 +383,14 @@ export default function UniversityCarousel() {
 
     const update = () => {
       const width = element.clientWidth;
+      const height = element.clientHeight;
 
-      if (width) {
-        setContainerWidth(width);
+      if (width && height) {
+        setSize((previous) =>
+          previous.width === width && previous.height === height
+            ? previous
+            : { width, height }
+        );
         setMeasured(true);
       }
     };
@@ -325,22 +406,19 @@ export default function UniversityCarousel() {
     }
 
     const observer = new ResizeObserver(update);
-
     observer.observe(element);
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
-  /* geometry changed (resize): re-place all cards right away */
+  /* size changed: place all cards again before the browser paints */
   useIsoLayoutEffect(() => {
     geometryRef.current = geometry;
     paint();
   }, [geometry, paint]);
 
   /* ==========================================
-     RUN AUTOPLAY ONLY WHEN VISIBLE
+     AUTOPLAY ONLY WHILE THE SECTION IS VISIBLE
   ========================================== */
 
   useEffect(() => {
@@ -362,20 +440,16 @@ export default function UniversityCarousel() {
           interactingRef.current = false;
         }
       },
-      {
-        threshold: 0.35,
-      }
+      { threshold: 0.3 }
     );
 
     observer.observe(element);
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   /* ==========================================
-     PAUSE AUTOPLAY DURING PAGE SCROLL
+     PAUSE AUTOPLAY WHILE THE PAGE SCROLLS
   ========================================== */
 
   useEffect(() => {
@@ -410,7 +484,7 @@ export default function UniversityCarousel() {
   }, []);
 
   /* ==========================================
-     STABLE AUTO SLIDER
+     AUTOPLAY
   ========================================== */
 
   useEffect(() => {
@@ -421,12 +495,13 @@ export default function UniversityCarousel() {
         scrollingRef.current ||
         interactingRef.current ||
         dragRef.current.active ||
+        reduceMotionRef.current ||
         document.hidden
       ) {
         return;
       }
 
-      // Do not move while an animation is running.
+      /* wait until the current move has finished */
       if (
         Math.abs(targetRef.current - currentRef.current) > 0.025
       ) {
@@ -437,14 +512,12 @@ export default function UniversityCarousel() {
     }, AUTOPLAY_DELAY);
 
     return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
+      clearInterval(autoplayRef.current);
     };
   }, [moveTo]);
 
   /* ==========================================
-     SMOOTH 3D CAROUSEL ANIMATION
+     ANIMATION LOOP
   ========================================== */
 
   useEffect(() => {
@@ -458,9 +531,14 @@ export default function UniversityCarousel() {
       const difference = target - current;
 
       if (Math.abs(difference) > 0.002) {
-        const easing = dragRef.current.horizontal ? 0.42 : 0.15;
+        if (reduceMotionRef.current) {
+          currentRef.current = target;
+        } else {
+          const easing = dragRef.current.horizontal ? 0.42 : 0.15;
 
-        currentRef.current = current + difference * easing;
+          currentRef.current = current + difference * easing;
+        }
+
         paint();
       } else if (current !== target) {
         currentRef.current = target;
@@ -475,14 +553,14 @@ export default function UniversityCarousel() {
     return () => {
       running = false;
 
-      if (animationRef.current) {
+      if (animationRef.current !== null) {
         cancelAnimationFrame(animationRef.current);
       }
     };
   }, [paint]);
 
   /* ==========================================
-     POINTER / TOUCH DRAG
+     POINTER DRAG
   ========================================== */
 
   const handlePointerDown = (event) => {
@@ -490,9 +568,7 @@ export default function UniversityCarousel() {
       return;
     }
 
-    if (
-      event.target.closest("button, a, input, textarea, select")
-    ) {
+    if (event.target.closest("button, a, input, textarea, select")) {
       return;
     }
 
@@ -526,7 +602,7 @@ export default function UniversityCarousel() {
         return;
       }
 
-      // Keep normal vertical scrolling functional.
+      /* let vertical page scrolling work normally */
       if (Math.abs(dy) > Math.abs(dx)) {
         drag.active = false;
         interactingRef.current = false;
@@ -540,7 +616,7 @@ export default function UniversityCarousel() {
       try {
         event.currentTarget.setPointerCapture(event.pointerId);
       } catch {
-        // Continue without pointer capture.
+        /* continue without pointer capture */
       }
     }
 
@@ -548,7 +624,6 @@ export default function UniversityCarousel() {
     const elapsed = Math.max(1, now - drag.lastTime);
 
     drag.velocity = (event.clientX - drag.lastX) / elapsed;
-
     drag.lastX = event.clientX;
     drag.lastTime = now;
 
@@ -559,17 +634,15 @@ export default function UniversityCarousel() {
     const drag = dragRef.current;
 
     if (!drag.active || drag.pointerId !== event.pointerId) {
+      setIsDragging(false);
+      interactingRef.current = false;
       return;
     }
 
     if (drag.horizontal) {
       const movement = event.clientX - drag.startX;
-
-      const swipeDirection =
-        movement === 0 ? 0 : -Math.sign(movement);
-
-      const travelled =
-        Math.abs(movement) / geometry.distancePerCard;
+      const swipeDirection = movement === 0 ? 0 : -Math.sign(movement);
+      const travelled = Math.abs(movement) / geometry.distancePerCard;
 
       let snapped = Math.round(targetRef.current);
 
@@ -583,7 +656,11 @@ export default function UniversityCarousel() {
 
       moveTo(snapped);
 
-      setTimeout(() => {
+      if (suppressTimerRef.current) {
+        clearTimeout(suppressTimerRef.current);
+      }
+
+      suppressTimerRef.current = setTimeout(() => {
         suppressClickRef.current = false;
       }, 120);
     }
@@ -600,28 +677,20 @@ export default function UniversityCarousel() {
         event.currentTarget.releasePointerCapture(event.pointerId);
       }
     } catch {
-      // Safe fallback.
+      /* nothing to release */
     }
   };
 
-  /* ==========================================
-     CLICK ANY CARD TO BRING IT TO CENTER
-  ========================================== */
-
+  /* click a card to bring it to the centre */
   const handleCardClick = (index) => {
     if (suppressClickRef.current || dragRef.current.active) {
       return;
     }
 
     const target = Math.round(targetRef.current);
-    const delta = getWrappedDelta(index, target);
 
-    moveTo(target + delta);
+    moveTo(target + wrapDelta(index, target, total));
   };
-
-  /* ==========================================
-     KEYBOARD ARROW NAVIGATION
-  ========================================== */
 
   const handleKeyDown = (event) => {
     if (event.key === "ArrowLeft") {
@@ -635,15 +704,42 @@ export default function UniversityCarousel() {
     }
   };
 
+  useEffect(() => {
+    return () => {
+      if (suppressTimerRef.current) {
+        clearTimeout(suppressTimerRef.current);
+      }
+    };
+  }, []);
+
   /* ==========================================
-     MAIN RENDER
+     RENDER
   ========================================== */
+
+  const fade = (direction) =>
+    `linear-gradient(${direction}, ${theme.bg}, ${theme.bg}00)`;
+
+  const arrowClass =
+    "absolute top-1/2 z-[100] flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white shadow-md transition-colors duration-200 sm:h-11 sm:w-11";
+
+  /* arrow hover colour without a library: swap colours with CSS vars */
+  const arrowStyle = { color: theme.dark };
+  const arrowHover = {
+    onMouseEnter: (event) => {
+      event.currentTarget.style.backgroundColor = theme.hover;
+      event.currentTarget.style.color = "#ffffff";
+    },
+    onMouseLeave: (event) => {
+      event.currentTarget.style.backgroundColor = "";
+      event.currentTarget.style.color = theme.dark;
+    },
+  };
 
   return (
     <section
       ref={sectionRef}
       role="region"
-      aria-label="Explore Universities"
+      aria-label={ariaLabel}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onMouseEnter={() => {
@@ -652,40 +748,50 @@ export default function UniversityCarousel() {
       onMouseLeave={() => {
         hoveringRef.current = false;
       }}
-      className="relative isolate z-0 w-full select-none overflow-hidden bg-[#F4F7FA] py-7 outline-none sm:py-9 md:py-11"
+      className="relative isolate z-0 w-full select-none overflow-hidden py-7 outline-none sm:py-9 md:py-11"
+      style={{ backgroundColor: theme.bg }}
     >
       {/* BACKGROUND DECORATIONS */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[320px] w-[320px] rounded-full bg-[#18B8B5]/[0.06] blur-[90px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-16 h-[320px] w-[320px] rounded-full blur-[90px]"
+        style={{ backgroundColor: `${theme.accent}0F` }}
+      />
 
-      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[340px] w-[340px] rounded-full bg-[#063B72]/[0.05] blur-[100px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 bottom-0 h-[340px] w-[340px] rounded-full blur-[100px]"
+        style={{ backgroundColor: `${theme.dark}0D` }}
+      />
 
-      {/* =====================================
-          HEADER - ORIGINAL INDIA CONTENT
-          USA STYLE CENTERED PLACEMENT
-      ===================================== */}
-
+      {/* HEADING */}
       <div className="relative z-10 mx-auto max-w-[850px] px-3.5 text-center sm:px-5">
-        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#085af9] sm:text-[12px]">
-          Explore Universities
-        </p>
+        {eyebrow ? (
+          <p
+            className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] sm:text-[12px]"
+            style={{ color: theme.accent }}
+          >
+            {eyebrow}
+          </p>
+        ) : null}
 
-        <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] text-[#063B72] sm:text-[36px] md:text-[42px] lg:text-[46px]">
-          Where Could You Go{" "}
-          <span className="text-[#085af9]">Next !!</span>
+        <h2
+          className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[36px] md:text-[42px] lg:text-[46px]"
+          style={{ color: theme.dark }}
+        >
+          {heading}{" "}
+          <span style={{ color: theme.accent }}>{highlight}</span>
         </h2>
       </div>
 
-      {/* =====================================
-          USA STYLE 3D ARC SHOWCASE
-      ===================================== */}
-
+      {/* STAGE */}
       <div
         ref={containerRef}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerEnd}
         onPointerCancel={handlePointerEnd}
-        className={`relative mt-4 flex h-[320px] w-full items-center justify-center overflow-hidden sm:mt-6 sm:h-[380px] md:h-[430px] lg:h-[460px] ${
+        className={`relative mt-4 h-[320px] w-full overflow-hidden sm:mt-6 sm:h-[380px] md:h-[430px] lg:h-[460px] ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
         style={{
@@ -695,113 +801,143 @@ export default function UniversityCarousel() {
           visibility: measured ? "visible" : "hidden",
         }}
       >
-        {/* LEFT EDGE FADE */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-[90] w-12 bg-gradient-to-r from-[#F4F7FA] to-[#F4F7FA]/0 sm:w-20" />
+        {/* EDGE FADES (plain overlays, no mask) */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 z-[90] w-12 sm:w-20"
+          style={{ background: fade("90deg") }}
+        />
 
-        {/* RIGHT EDGE FADE */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-[90] w-12 bg-gradient-to-l from-[#F4F7FA] to-[#F4F7FA]/0 sm:w-20" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 z-[90] w-12 sm:w-20"
+          style={{ background: fade("270deg") }}
+        />
 
-        {/* LEFT ARROW */}
+        {/* ARROWS */}
         <button
           type="button"
           onClick={handlePrev}
           aria-label="Previous university"
-          className="absolute left-2 top-1/2 z-[100] flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white text-[#063B72] shadow-md transition-colors duration-200 hover:bg-[#18B8B5] hover:text-white sm:left-4 sm:h-11 sm:w-11"
+          className={`${arrowClass} left-2 sm:left-4`}
+          style={arrowStyle}
+          {...arrowHover}
         >
           <ChevronLeft size={20} strokeWidth={2.4} />
         </button>
 
-        {/* RIGHT ARROW */}
         <button
           type="button"
           onClick={handleNext}
           aria-label="Next university"
-          className="absolute right-2 top-1/2 z-[100] flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white text-[#063B72] shadow-md transition-colors duration-200 hover:bg-[#18B8B5] hover:text-white sm:right-4 sm:h-11 sm:w-11"
+          className={`${arrowClass} right-2 sm:right-4`}
+          style={arrowStyle}
+          {...arrowHover}
         >
           <ChevronRight size={20} strokeWidth={2.4} />
         </button>
 
-        {/* =====================================
-            3D CARDS TRACK
-            perspective sits directly on the parent of the cards,
-            so rotateY gets real depth without preserve-3d
-        ===================================== */}
+        {/* CARDS */}
+        {items.map((item, index) => (
+          <div
+            key={item.name}
+            ref={(element) => {
+              cardRefs.current[index] = element;
+            }}
+            onClick={() => handleCardClick(index)}
+            className="absolute cursor-grab overflow-hidden bg-slate-950 active:cursor-grabbing"
+            style={{
+              "--k": 1,
+              visibility: "hidden",
+              width: `${geometry.cardW}px`,
+              height: `${geometry.cardH}px`,
+              borderRadius: k(24),
+              boxShadow: "0 16px 36px rgba(0,0,0,0.18)",
+              userSelect: "none",
+              touchAction: "pan-y",
+            }}
+          >
+            <CardImage item={item} dark={theme.dark} />
 
-        <div
-          className="relative h-full w-full"
-          style={{
-            perspective: "1200px",
-            perspectiveOrigin: "50% 50%",
-          }}
-        >
-          {UNIVERSITIES.map((university, index) => (
+            {/* DARK OVERLAY */}
             <div
-              key={university.name}
-              ref={(element) => {
-                cardRefs.current[index] = element;
-              }}
-              onClick={() => handleCardClick(index)}
-              className="absolute left-1/2 top-1/2 cursor-grab active:cursor-grabbing"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/10"
+            />
+
+            {/* TOP-LEFT BADGE (optional) */}
+            {item.badge ? (
+              <div
+                className="pointer-events-none absolute z-20"
+                style={{ left: k(10), top: k(10) }}
+              >
+                <span
+                  className="inline-flex items-center rounded-full border border-white/40 bg-white font-extrabold shadow-md"
+                  style={{
+                    gap: k(4),
+                    padding: `${k(4)} ${k(8)}`,
+                    fontSize: k(9),
+                    color: theme.dark,
+                  }}
+                >
+                  <BadgeCheck
+                    size={12}
+                    strokeWidth={2.3}
+                    style={{
+                      width: k(12),
+                      height: k(12),
+                      color: theme.accent,
+                    }}
+                  />
+                  {item.badge}
+                </span>
+              </div>
+            ) : null}
+
+            {/* NAME + SUBTITLE */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-20"
               style={{
-                width: `${geometry.cardW}px`,
-                height: `${geometry.cardH}px`,
-                transformOrigin: "center center",
-                userSelect: "none",
-                touchAction: "pan-y",
+                padding: `${k(28)} ${k(12)} ${k(12)}`,
               }}
             >
-              {/* =====================================
-                  UNIVERSITY IMAGE CARD
-              ===================================== */}
+              <h3
+                className="line-clamp-3 font-extrabold text-white"
+                style={{
+                  fontSize: geometry.isMobile ? "12px" : "13px",
+                  lineHeight: 1.3,
+                  textWrap: "balance",
+                  textShadow: "0 2px 6px rgba(0,0,0,0.9)",
+                }}
+              >
+                {item.name}
+              </h3>
 
-              <div className="relative h-full w-full overflow-hidden rounded-[24px] bg-slate-950 shadow-[0_16px_36px_rgba(0,0,0,0.18)]">
-                {/* ORIGINAL UNIVERSITY IMAGE */}
-                <Image
-                  src={university.image}
-                  alt={university.name}
-                  fill
-                  draggable={false}
-                  loading="eager"
-                  sizes="(max-width: 640px) 160px, 220px"
-                  className="pointer-events-none select-none object-cover object-center"
-                />
-
-                {/* IMAGE DEPTH OVERLAY */}
-                <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/10" />
-
-                {/* =====================================
-                    ORIGINAL NAAC GRADE
-                ===================================== */}
-
-                <div className="pointer-events-none absolute left-2.5 top-2.5 z-20">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-white/40 bg-white px-2 py-1 text-[9px] font-extrabold text-[#063B72] shadow-md">
-                    <BadgeCheck
-                      size={12}
-                      strokeWidth={2.3}
-                      className="text-[#085af9]"
+              {item.subtitle ? (
+                <p
+                  className="flex items-center font-medium text-white/80"
+                  style={{
+                    marginTop: k(4),
+                    gap: k(4),
+                    fontSize: k(9),
+                    lineHeight: 1.35,
+                  }}
+                >
+                  {item.pin ? (
+                    <MapPin
+                      size={10}
+                      strokeWidth={2}
+                      className="shrink-0"
+                      style={{ width: k(10), height: k(10) }}
                     />
-                    NAAC {university.grade}
-                  </span>
-                </div>
+                  ) : null}
 
-                {/* =====================================
-                    ORIGINAL UNIVERSITY NAME
-                    + ACCREDITATION
-                ===================================== */}
-
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 p-3 pt-7">
-                  <h3 className="line-clamp-3 text-[12px] font-extrabold leading-[1.3] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-[13px]">
-                    {university.name}
-                  </h3>
-
-                  <p className="mt-1 text-[9px] font-medium leading-snug text-white/80">
-                    NAAC {university.grade} Accredited
-                  </p>
-                </div>
-              </div>
+                  <span className="truncate">{item.subtitle}</span>
+                </p>
+              ) : null}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,179 +1,305 @@
-
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, MapPin, GraduationCap } from "lucide-react";
+import {
+  BadgeCheck,
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  MapPin,
+} from "lucide-react";
+
+/* ==========================================================
+   UNIVERSITY CAROUSEL  (one component for every country)
+
+   Usage (one file, nothing else to import)
+   -----
+   <UniversityCarousel />                    // USA (default)
+   <UniversityCarousel country="usa" />
+   <UniversityCarousel country="india" />
+
+   Or with your own data (overrides the country data):
+   <UniversityCarousel
+     eyebrow="Universities in UK"
+     items={[
+       { name: "University of Example",
+         image: "/images/universities/uk/example.webp",
+         subtitle: "London, UK",   // bottom line
+         pin: true,                 // optional: map-pin icon
+         badge: "NAAC A+" },        // optional: pill at the top-left
+     ]}
+   />
+
+   Props (all optional)
+   - country     "usa" | "india"           (default "usa")
+   - items       array of { name, image, subtitle, pin, badge }
+   - eyebrow     small text above the heading
+   - heading     heading text              (default "Where Could You Go")
+   - highlight   coloured end of heading   (default "Next !!")
+   - ariaLabel   label for screen readers
+   - theme       { accent, dark, bg, hover }   6-digit hex colours
+
+   Why it never shows white lines
+   ------------------------------
+   Cards are NOT moved with transform / scale / rotateY. Their size and
+   position are plain layout values (left, top, width, height), rounded
+   to whole pixels, so the browser never has to rasterise a scaled or
+   rotated GPU layer. That is where the white hairlines, tiles and
+   hover glitches in Bing / Firefox / Android Chromium came from.
+
+   Keep these rules when editing:
+   - no transform, scale, rotate, perspective or preserve-3d on cards
+   - no mask-image, backdrop-blur or filter (drop-shadow) on cards;
+     text shadow uses the plain `text-shadow` property
+   - no hover shadow / opacity animation on cards
+   - cards are never unmounted, only hidden (images stay loaded)
+   - cards are moved directly in the DOM, not through React state
+   - the section is `isolate`d so z-indexes cannot rise above the navbar
+========================================================== */
 
 /* ==========================================
-   USA UNIVERSITIES DATA
+   COUNTRY DATA (edit here, or pass your own `items` prop)
+   To add a country: copy one block, change the text, images and list,
+   then add it to PRESETS below. Use at least 8 universities so the
+   arc never repeats a card.
 ========================================== */
 
-const UNIVERSITIES = [
-  {
-    name: "Arizona State University",
-    grade: "Arizona",
-    image: "/images/universities/usa/arizona-state-university.webp",
-  },
-  {
-    name: "University of Arizona",
-    grade: "Arizona",
-    image: "/images/universities/usa/university-of-arizona.webp",
-  },
-  // {
-  //   name: "University of Illinois at Chicago",
-  //   grade: "Illinois",
-  //   image: "/images/universities/usa/university-of-illinois-chicago.webp",
-  // },
-  {
-    name: "George Mason University",
-    grade: "Virginia",
-    image: "/images/universities/usa/george-mason-university.webp",
-  },
-  {
-    name: "Northeastern University",
-    grade: "Massachusetts",
-    image: "/images/universities/usa/northeastern-university.webp",
-  },
-  {
-    name: "Illinois State University",
-    grade: "Illinois",
-    image: "/images/universities/usa/illinois-state-university.webp",
-  },
-  {
-    name: "University of South Florida",
-    grade: "Florida",
-    image: "/images/universities/usa/university-of-south-florida.webp",
-  },
-  {
-    name: "University of Dayton",
-    grade: "Ohio",
-    image: "/images/universities/usa/university-of-dayton.webp",
-  },
-  {
-    name: "Pace University",
-    grade: "New York",
-    image: "/images/universities/usa/pace-university.webp",
-  },
-  {
-    name: "Saint Louis University",
-    grade: "Missouri",
-    image: "/images/universities/usa/saint-louis-university.webp",
-  },
-  {
-    name: "University of New Haven",
-    grade: "Connecticut",
-    image: "/images/universities/usa/university-of-new-haven.webp",
-  },
-  {
-    name: "Drexel University",
-    grade: "Pennsylvania",
-    image: "/images/universities/usa/drexel-university.webp",
-  },
-  {
-    name: "New York Institute of Technology",
-    grade: "New York",
-    image: "/images/universities/usa/new-york-institute-of-technology.webp",
-  },
-  {
-    name: "Florida International University",
-    grade: "Florida",
-    image: "/images/universities/usa/florida-international-university.webp",
-  },
-];
+/* ---------- USA ---------- */
+const usaCarousel = {
+  eyebrow: "Universities in USA",
+  ariaLabel: "USA Universities Showcase",
+  items: [
+    { name: "Arizona State University", image: "/images/universities/usa/arizona-state-university.webp", subtitle: "Arizona, USA", pin: true },
+    { name: "University of Arizona", image: "/images/universities/usa/university-of-arizona.webp", subtitle: "Arizona, USA", pin: true },
+    // { name: "University of Illinois at Chicago", image: "/images/universities/usa/university-of-illinois-chicago.webp", subtitle: "Illinois, USA", pin: true },
+    { name: "George Mason University", image: "/images/universities/usa/george-mason-university.webp", subtitle: "Virginia, USA", pin: true },
+    { name: "Northeastern University", image: "/images/universities/usa/northeastern-university.webp", subtitle: "Massachusetts, USA", pin: true },
+    { name: "Illinois State University", image: "/images/universities/usa/illinois-state-university.webp", subtitle: "Illinois, USA", pin: true },
+    { name: "University of South Florida", image: "/images/universities/usa/university-of-south-florida.webp", subtitle: "Florida, USA", pin: true },
+    { name: "University of Dayton", image: "/images/universities/usa/university-of-dayton.webp", subtitle: "Ohio, USA", pin: true },
+    { name: "Pace University", image: "/images/universities/usa/pace-university.webp", subtitle: "New York, USA", pin: true },
+    { name: "Saint Louis University", image: "/images/universities/usa/saint-louis-university.webp", subtitle: "Missouri, USA", pin: true },
+    { name: "University of New Haven", image: "/images/universities/usa/university-of-new-haven.webp", subtitle: "Connecticut, USA", pin: true },
+    { name: "Drexel University", image: "/images/universities/usa/drexel-university.webp", subtitle: "Pennsylvania, USA", pin: true },
+    { name: "New York Institute of Technology", image: "/images/universities/usa/new-york-institute-of-technology.webp", subtitle: "New York, USA", pin: true },
+    { name: "Florida International University", image: "/images/universities/usa/florida-international-university.webp", subtitle: "Florida, USA", pin: true },
+  ],
+};
 
-const TOTAL = UNIVERSITIES.length;
+/* TEMPLATE FOR ANY OTHER COUNTRY
+const ukCarousel = {
+  eyebrow: "Universities in UK",
+  ariaLabel: "UK Universities Showcase",
+  items: [
+    { name: "University of Example", image: "/images/universities/uk/example.webp", subtitle: "London, UK", pin: true },
+    // ... at least 8 items
+  ],
+};
+*/
+
+const PRESETS = {
+  usa: usaCarousel,
+};
+
 const AUTOPLAY_DELAY = 4500;
 const SCROLL_PAUSE = 2500;
-const START_INDEX = 3;
+
+const DEFAULT_THEME = {
+  accent: "#1765F5",
+  dark: "#0C337B",
+  bg: "#F4F7FA",
+  hover: "#1765F5",
+};
 
 /* ==========================================
-   3D CAROUSEL HELPERS
+   ARC MATH (plain functions, no library)
 ========================================== */
 
-function getWrappedDelta(index, position) {
+function wrapDelta(index, position, total) {
   let delta = index - position;
 
-  delta = ((delta % TOTAL) + TOTAL) % TOTAL;
+  delta = ((delta % total) + total) % total;
 
-  if (delta > TOTAL / 2) {
-    delta -= TOTAL;
+  if (delta > total / 2) {
+    delta -= total;
   }
 
   return delta;
 }
 
+/* cards grow the further they are from the centre (same as before) */
 function getScale(absDelta) {
   return 1 + Math.pow(absDelta, 1.35) * 0.16;
 }
 
-function getRotY(delta) {
+function getOpacity(absDelta) {
+  if (absDelta <= 2.8) return 1;
+  return Math.max(0, 1 - Math.pow(absDelta - 2.8, 1.6));
+}
+
+/* sizes and x positions for one container size */
+function getGeometry(width, height) {
+  const isMobile = width < 640;
+
+  const factor = isMobile
+    ? 1
+    : Math.max(0.72, Math.min(1, width / 1400));
+
+  const cardW = Math.round((isMobile ? 130 : 142) * factor);
+  const cardH = Math.round((isMobile ? 210 : 230) * factor);
+  const gap = Math.round((isMobile ? 20 : 30) * factor);
+
+  const xTable = [0];
+
+  for (let i = 1; i <= 6; i++) {
+    xTable.push(
+      xTable[i - 1] +
+        (cardW * (getScale(i - 1) + getScale(i))) / 2 +
+        gap
+    );
+  }
+
+  return {
+    width,
+    height,
+    cardW,
+    cardH,
+    xTable,
+    isMobile,
+    distancePerCard: isMobile ? 125 : 185,
+  };
+}
+
+function getXPos(xTable, delta) {
+  const sign = Math.sign(delta);
+  const abs = Math.abs(delta);
+
+  const index = Math.floor(abs);
+  const fraction = abs - index;
+
+  if (index >= xTable.length - 1) {
+    return (
+      sign *
+      (xTable[xTable.length - 1] +
+        (abs - (xTable.length - 1)) * 300)
+    );
+  }
+
   return (
-    -Math.sign(delta) *
-    Math.min(38, Math.pow(Math.abs(delta), 1.05) * 10.5)
+    sign *
+    (xTable[index] +
+      fraction * (xTable[index + 1] - xTable[index]))
   );
 }
 
+/* useLayoutEffect on the client, useEffect on the server (no warning) */
+const useIsoLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+/* size helper: every number inside a card scales with --k, exactly
+   like the old transform: scale() did, but without a transform */
+const k = (px) => `calc(var(--k) * ${px}px)`;
+
 /* ==========================================
-   UNIVERSITY IMAGE
-   SHOWS FALLBACK IF IMAGE IS MISSING
+   CARD IMAGE (fallback if the file is missing)
 ========================================== */
 
-function UniversityImage({ university, priority = false }) {
-  const [imageError, setImageError] = useState(false);
+function CardImage({ item, dark }) {
+  const [failed, setFailed] = useState(false);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0C337B]">
-
-      {!imageError ? (
+    <div
+      className="absolute inset-0 overflow-hidden"
+      style={{ backgroundColor: dark }}
+    >
+      {!failed ? (
         <Image
-          src={university.image}
-          alt={university.name}
+          src={item.image}
+          alt={item.name}
           fill
-          priority={priority}
+          loading="eager"
           draggable={false}
-          sizes="(max-width: 640px) 160px, 220px"
+          sizes="(max-width: 640px) 160px, 260px"
           className="pointer-events-none select-none object-cover object-center"
-          onError={() => setImageError(true)}
+          onError={() => setFailed(true)}
         />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#1765F5] via-[#0C337B] to-[#061D42] px-4 text-center">
-
+        <div
+          className="flex h-full w-full flex-col items-center justify-center text-center"
+          style={{ gap: k(12), padding: `0 ${k(16)}` }}
+        >
           <GraduationCap
             size={42}
             strokeWidth={1.5}
             className="text-white/75"
+            style={{ width: k(42), height: k(42) }}
           />
 
-          <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/80">
-            {university.grade}
+          <span
+            className="font-bold uppercase text-white/80"
+            style={{ fontSize: k(10), letterSpacing: "0.12em" }}
+          >
+            {item.subtitle || item.name}
           </span>
-
         </div>
       )}
-
     </div>
   );
 }
 
 /* ==========================================
-   MAIN UNIVERSITY CAROUSEL
+   MAIN COMPONENT
 ========================================== */
 
-export default function UniversityCarousel() {
+export default function UniversityCarousel({
+  country = "usa",
+  items: itemsProp,
+  eyebrow: eyebrowProp,
+  heading = "Where Could You Go",
+  highlight = "Next !!",
+  ariaLabel: ariaLabelProp,
+  theme: themeProp,
+}) {
+  const preset = PRESETS[country] || PRESETS.usa;
+
+  const items =
+    Array.isArray(itemsProp) && itemsProp.length > 0
+      ? itemsProp
+      : preset.items;
+  const eyebrow = eyebrowProp ?? preset.eyebrow;
+  const ariaLabel =
+    ariaLabelProp ?? preset.ariaLabel ?? "Universities showcase";
+  const theme = { ...DEFAULT_THEME, ...preset.theme, ...themeProp };
+  const total = items.length;
+  const startIndex = Math.min(3, total - 1);
+
+  /* never show the same card on both sides of the circle */
+  const visibleRange = Math.min(3.8, total / 2);
+
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
+  const cardRefs = useRef([]);
+  const geometryRef = useRef(null);
+
   const animationRef = useRef(null);
   const autoplayRef = useRef(null);
   const scrollResumeRef = useRef(null);
   const suppressTimerRef = useRef(null);
 
-  const [currentIndex, setCurrentIndex] = useState(START_INDEX);
-  const [containerWidth, setContainerWidth] = useState(1300);
+  const [size, setSize] = useState({ width: 1300, height: 460 });
+  const [measured, setMeasured] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
-  const currentRef = useRef(START_INDEX);
-  const targetRef = useRef(START_INDEX);
+  const currentRef = useRef(startIndex);
+  const targetRef = useRef(startIndex);
 
   const visibleRef = useRef(false);
   const hoveringRef = useRef(false);
@@ -188,14 +314,67 @@ export default function UniversityCarousel() {
     pointerId: null,
     startX: 0,
     startY: 0,
-    startIndex: START_INDEX,
+    startIndex,
     lastX: 0,
     lastTime: 0,
     velocity: 0,
   });
 
+  const geometry = useMemo(
+    () => getGeometry(size.width, size.height),
+    [size.width, size.height]
+  );
+
   /* ==========================================
-     REDUCED MOTION SUPPORT
+     PLACE EVERY CARD FOR THE CURRENT POSITION
+     (plain layout values, whole pixels, no transform)
+  ========================================== */
+
+  const paint = useCallback(() => {
+    const geo = geometryRef.current;
+
+    if (!geo) return;
+
+    const position = currentRef.current;
+
+    for (let i = 0; i < total; i++) {
+      const element = cardRefs.current[i];
+
+      if (!element) continue;
+
+      const delta = wrapDelta(i, position, total);
+      const absDelta = Math.abs(delta);
+
+      if (absDelta > visibleRange) {
+        element.style.visibility = "hidden";
+        continue;
+      }
+
+      const scale = getScale(absDelta);
+      const width = Math.round(geo.cardW * scale);
+      const height = Math.round(geo.cardH * scale);
+      const x = getXPos(geo.xTable, delta);
+
+      const style = element.style;
+
+      style.width = `${width}px`;
+      style.height = `${height}px`;
+      style.left = `${Math.round(geo.width / 2 + x - width / 2)}px`;
+      style.top = `${Math.round((geo.height - height) / 2)}px`;
+      style.zIndex = String(Math.round(10 + absDelta));
+      style.setProperty("--k", scale.toFixed(3));
+
+      const opacity = getOpacity(absDelta);
+
+      /* opacity 1 is removed completely, so a fully visible card is
+         never an offscreen group */
+      style.opacity = opacity >= 1 ? "" : opacity.toFixed(3);
+      style.visibility = "visible";
+    }
+  }, [total, visibleRange]);
+
+  /* ==========================================
+     REDUCED MOTION
   ========================================== */
 
   useEffect(() => {
@@ -225,7 +404,7 @@ export default function UniversityCarousel() {
   }, []);
 
   /* ==========================================
-     CAROUSEL NAVIGATION
+     NAVIGATION
   ========================================== */
 
   const moveTo = useCallback((value) => {
@@ -241,36 +420,52 @@ export default function UniversityCarousel() {
   }, [moveTo]);
 
   /* ==========================================
-     RESPONSIVE RESIZE OBSERVER
+     MEASURE CONTAINER (BEFORE FIRST PAINT)
   ========================================== */
 
-  useEffect(() => {
+  useIsoLayoutEffect(() => {
     const element = containerRef.current;
 
     if (!element) return;
 
-    const updateWidth = () => {
-      setContainerWidth(element.clientWidth);
+    const update = () => {
+      const width = element.clientWidth;
+      const height = element.clientHeight;
+
+      if (width && height) {
+        setSize((previous) =>
+          previous.width === width && previous.height === height
+            ? previous
+            : { width, height }
+        );
+        setMeasured(true);
+      }
     };
 
-    updateWidth();
+    update();
 
     if (typeof ResizeObserver === "undefined") {
-      window.addEventListener("resize", updateWidth);
+      window.addEventListener("resize", update);
 
       return () => {
-        window.removeEventListener("resize", updateWidth);
+        window.removeEventListener("resize", update);
       };
     }
 
-    const observer = new ResizeObserver(updateWidth);
+    const observer = new ResizeObserver(update);
     observer.observe(element);
 
     return () => observer.disconnect();
   }, []);
 
+  /* size changed: place all cards again before the browser paints */
+  useIsoLayoutEffect(() => {
+    geometryRef.current = geometry;
+    paint();
+  }, [geometry, paint]);
+
   /* ==========================================
-     SECTION VISIBILITY
+     AUTOPLAY ONLY WHILE THE SECTION IS VISIBLE
   ========================================== */
 
   useEffect(() => {
@@ -289,11 +484,10 @@ export default function UniversityCarousel() {
 
         if (!entry.isIntersecting) {
           scrollingRef.current = false;
+          interactingRef.current = false;
         }
       },
-      {
-        threshold: 0.25,
-      }
+      { threshold: 0.3 }
     );
 
     observer.observe(element);
@@ -302,7 +496,7 @@ export default function UniversityCarousel() {
   }, []);
 
   /* ==========================================
-     PAUSE AUTOPLAY DURING PAGE SCROLL
+     PAUSE AUTOPLAY WHILE THE PAGE SCROLLS
   ========================================== */
 
   useEffect(() => {
@@ -354,11 +548,10 @@ export default function UniversityCarousel() {
         return;
       }
 
-      const difference = Math.abs(
-        targetRef.current - currentRef.current
-      );
-
-      if (difference > 0.025) {
+      /* wait until the current move has finished */
+      if (
+        Math.abs(targetRef.current - currentRef.current) > 0.025
+      ) {
         return;
       }
 
@@ -371,7 +564,7 @@ export default function UniversityCarousel() {
   }, [moveTo]);
 
   /* ==========================================
-     SMOOTH ANIMATION
+     ANIMATION LOOP
   ========================================== */
 
   useEffect(() => {
@@ -387,20 +580,16 @@ export default function UniversityCarousel() {
       if (Math.abs(difference) > 0.002) {
         if (reduceMotionRef.current) {
           currentRef.current = target;
-          setCurrentIndex(target);
         } else {
-          const easing = dragRef.current.horizontal
-            ? 0.42
-            : 0.15;
+          const easing = dragRef.current.horizontal ? 0.42 : 0.15;
 
-          const next = current + difference * easing;
-
-          currentRef.current = next;
-          setCurrentIndex(next);
+          currentRef.current = current + difference * easing;
         }
+
+        paint();
       } else if (current !== target) {
         currentRef.current = target;
-        setCurrentIndex(target);
+        paint();
       }
 
       animationRef.current = requestAnimationFrame(animate);
@@ -415,96 +604,20 @@ export default function UniversityCarousel() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [paint]);
 
   /* ==========================================
-     RESPONSIVE CARD DIMENSIONS
-  ========================================== */
-
-  const isMobile = containerWidth < 640;
-
-  const factor = isMobile
-    ? 1
-    : Math.max(
-        0.72,
-        Math.min(1, containerWidth / 1400)
-      );
-
-  const cardW = Math.round(
-    (isMobile ? 130 : 142) * factor
-  );
-
-  const cardH = Math.round(
-    (isMobile ? 210 : 230) * factor
-  );
-
-  const gap = Math.round(
-    (isMobile ? 20 : 30) * factor
-  );
-
-  /* ==========================================
-     3D ARC SPACING
-  ========================================== */
-
-  const xTable = [0];
-
-  for (let i = 1; i <= 6; i++) {
-    const previousScale = getScale(i - 1);
-    const nextScale = getScale(i);
-
-    xTable.push(
-      xTable[i - 1] +
-        (cardW * (previousScale + nextScale)) / 2 +
-        gap
-    );
-  }
-
-  const getXPos = (delta) => {
-    const sign = Math.sign(delta);
-    const abs = Math.abs(delta);
-    const index = Math.floor(abs);
-    const fraction = abs - index;
-
-    if (index >= xTable.length - 1) {
-      return (
-        sign *
-        (
-          xTable[xTable.length - 1] +
-          (abs - (xTable.length - 1)) * 300
-        )
-      );
-    }
-
-    return (
-      sign *
-      (
-        xTable[index] +
-        fraction * (xTable[index + 1] - xTable[index])
-      )
-    );
-  };
-
-  /* ==========================================
-     POINTER DRAG START
+     POINTER DRAG
   ========================================== */
 
   const handlePointerDown = (event) => {
-    if (
-      event.pointerType === "mouse" &&
-      event.button !== 0
-    ) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
       return;
     }
 
-    if (
-      event.target.closest(
-        "button, a, input, textarea, select"
-      )
-    ) {
+    if (event.target.closest("button, a, input, textarea, select")) {
       return;
     }
-
-    const now = performance.now();
 
     dragRef.current = {
       active: true,
@@ -514,24 +627,17 @@ export default function UniversityCarousel() {
       startY: event.clientY,
       startIndex: targetRef.current,
       lastX: event.clientX,
-      lastTime: now,
+      lastTime: performance.now(),
       velocity: 0,
     };
 
     interactingRef.current = true;
   };
 
-  /* ==========================================
-     POINTER DRAG MOVE
-  ========================================== */
-
   const handlePointerMove = (event) => {
     const drag = dragRef.current;
 
-    if (
-      !drag.active ||
-      drag.pointerId !== event.pointerId
-    ) {
+    if (!drag.active || drag.pointerId !== event.pointerId) {
       return;
     }
 
@@ -539,14 +645,11 @@ export default function UniversityCarousel() {
     const dy = event.clientY - drag.startY;
 
     if (!drag.horizontal) {
-      if (
-        Math.abs(dx) < 8 &&
-        Math.abs(dy) < 8
-      ) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) {
         return;
       }
 
-      // Let vertical page scrolling work normally.
+      /* let vertical page scrolling work normally */
       if (Math.abs(dy) > Math.abs(dx)) {
         drag.active = false;
         interactingRef.current = false;
@@ -558,73 +661,40 @@ export default function UniversityCarousel() {
       suppressClickRef.current = true;
 
       try {
-        event.currentTarget.setPointerCapture(
-          event.pointerId
-        );
+        event.currentTarget.setPointerCapture(event.pointerId);
       } catch {
-        // Pointer capture fallback.
+        /* continue without pointer capture */
       }
     }
 
     const now = performance.now();
-    const elapsed = Math.max(
-      1,
-      now - drag.lastTime
-    );
+    const elapsed = Math.max(1, now - drag.lastTime);
 
-    drag.velocity =
-      (event.clientX - drag.lastX) / elapsed;
-
+    drag.velocity = (event.clientX - drag.lastX) / elapsed;
     drag.lastX = event.clientX;
     drag.lastTime = now;
 
-    const distancePerCard = isMobile ? 125 : 185;
-
-    moveTo(
-      drag.startIndex - dx / distancePerCard
-    );
+    moveTo(drag.startIndex - dx / geometry.distancePerCard);
   };
-
-  /* ==========================================
-     POINTER DRAG END
-  ========================================== */
 
   const handlePointerEnd = (event) => {
     const drag = dragRef.current;
 
-    if (
-      !drag.active ||
-      drag.pointerId !== event.pointerId
-    ) {
+    if (!drag.active || drag.pointerId !== event.pointerId) {
       setIsDragging(false);
       interactingRef.current = false;
       return;
     }
 
     if (drag.horizontal) {
-      const movement =
-        event.clientX - drag.startX;
+      const movement = event.clientX - drag.startX;
+      const swipeDirection = movement === 0 ? 0 : -Math.sign(movement);
+      const travelled = Math.abs(movement) / geometry.distancePerCard;
 
-      const swipeDirection =
-        movement === 0
-          ? 0
-          : -Math.sign(movement);
+      let snapped = Math.round(targetRef.current);
 
-      const distancePerCard = isMobile ? 125 : 185;
-      const travelled =
-        Math.abs(movement) / distancePerCard;
-
-      let snapped = Math.round(
-        targetRef.current
-      );
-
-      if (
-        travelled > 0.18 &&
-        travelled < 0.5
-      ) {
-        snapped =
-          Math.round(drag.startIndex) +
-          swipeDirection;
+      if (travelled > 0.18 && travelled < 0.5) {
+        snapped = Math.round(drag.startIndex) + swipeDirection;
       }
 
       if (Math.abs(drag.velocity) > 0.8) {
@@ -650,47 +720,24 @@ export default function UniversityCarousel() {
     interactingRef.current = false;
 
     try {
-      if (
-        event.currentTarget.hasPointerCapture(
-          event.pointerId
-        )
-      ) {
-        event.currentTarget.releasePointerCapture(
-          event.pointerId
-        );
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+        event.currentTarget.releasePointerCapture(event.pointerId);
       }
     } catch {
-      // Pointer capture fallback.
+      /* nothing to release */
     }
   };
 
-  /* ==========================================
-     CLICK TO CENTER UNIVERSITY
-  ========================================== */
-
+  /* click a card to bring it to the centre */
   const handleCardClick = (index) => {
-    if (
-      suppressClickRef.current ||
-      dragRef.current.active
-    ) {
+    if (suppressClickRef.current || dragRef.current.active) {
       return;
     }
 
-    const target = Math.round(
-      targetRef.current
-    );
+    const target = Math.round(targetRef.current);
 
-    const delta = getWrappedDelta(
-      index,
-      target
-    );
-
-    moveTo(target + delta);
+    moveTo(target + wrapDelta(index, target, total));
   };
-
-  /* ==========================================
-     KEYBOARD NAVIGATION
-  ========================================== */
 
   const handleKeyDown = (event) => {
     if (event.key === "ArrowLeft") {
@@ -704,10 +751,6 @@ export default function UniversityCarousel() {
     }
   };
 
-  /* ==========================================
-     CLEANUP
-  ========================================== */
-
   useEffect(() => {
     return () => {
       if (suppressTimerRef.current) {
@@ -717,14 +760,33 @@ export default function UniversityCarousel() {
   }, []);
 
   /* ==========================================
-     MAIN RENDER
+     RENDER
   ========================================== */
+
+  const fade = (direction) =>
+    `linear-gradient(${direction}, ${theme.bg}, ${theme.bg}00)`;
+
+  const arrowClass =
+    "absolute top-1/2 z-[100] flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white shadow-md transition-colors duration-200 sm:h-11 sm:w-11";
+
+  /* arrow hover colour without a library: swap colours with CSS vars */
+  const arrowStyle = { color: theme.dark };
+  const arrowHover = {
+    onMouseEnter: (event) => {
+      event.currentTarget.style.backgroundColor = theme.hover;
+      event.currentTarget.style.color = "#ffffff";
+    },
+    onMouseLeave: (event) => {
+      event.currentTarget.style.backgroundColor = "";
+      event.currentTarget.style.color = theme.dark;
+    },
+  };
 
   return (
     <section
       ref={sectionRef}
       role="region"
-      aria-label="USA Universities Showcase"
+      aria-label={ariaLabel}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onMouseEnter={() => {
@@ -733,179 +795,196 @@ export default function UniversityCarousel() {
       onMouseLeave={() => {
         hoveringRef.current = false;
       }}
-      className="relative w-full select-none overflow-hidden bg-[#F4F7FA] py-7 outline-none sm:py-9 md:py-11"
+      className="relative isolate z-0 w-full select-none overflow-hidden py-7 outline-none sm:py-9 md:py-11"
+      style={{ backgroundColor: theme.bg }}
     >
-
       {/* BACKGROUND DECORATIONS */}
-      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-[320px] w-[320px] rounded-full bg-[#1765F5]/[0.06] blur-[90px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-16 h-[320px] w-[320px] rounded-full blur-[90px]"
+        style={{ backgroundColor: `${theme.accent}0F` }}
+      />
 
-      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[340px] w-[340px] rounded-full bg-[#0C337B]/[0.05] blur-[100px]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 bottom-0 h-[340px] w-[340px] rounded-full blur-[100px]"
+        style={{ backgroundColor: `${theme.dark}0D` }}
+      />
 
-      {/* =====================================
-          SECTION HEADING
-      ===================================== */}
-
+      {/* HEADING */}
       <div className="relative z-10 mx-auto max-w-[850px] px-3.5 text-center sm:px-5">
+        {eyebrow ? (
+          <p
+            className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] sm:text-[12px]"
+            style={{ color: theme.accent }}
+          >
+            {eyebrow}
+          </p>
+        ) : null}
 
-        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1765F5] sm:text-[12px]">
-          Universities in USA
-        </p>
-
-        <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] text-[#0C337B] sm:text-[36px] md:text-[42px] lg:text-[46px]">
-          Where Could You Go{" "}
-          <span className="text-[#1765F5]">
-            Next !!
-          </span>
+        <h2
+          className="text-[28px] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[36px] md:text-[42px] lg:text-[46px]"
+          style={{ color: theme.dark }}
+        >
+          {heading}{" "}
+          <span style={{ color: theme.accent }}>{highlight}</span>
         </h2>
-
       </div>
 
-      {/* =====================================
-          3D ARC CAROUSEL
-      ===================================== */}
-
+      {/* STAGE */}
       <div
         ref={containerRef}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerEnd}
         onPointerCancel={handlePointerEnd}
-        className={`relative mt-4 flex h-[320px] w-full items-center justify-center overflow-hidden sm:mt-6 sm:h-[380px] md:h-[430px] lg:h-[460px] ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+        className={`relative mt-4 h-[320px] w-full overflow-hidden sm:mt-6 sm:h-[380px] md:h-[430px] lg:h-[460px] ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
         style={{
-          perspective: "1200px",
-          perspectiveOrigin: "50% 50%",
           touchAction: "pan-y",
           WebkitUserSelect: "none",
           userSelect: "none",
-          maskImage:
-            "linear-gradient(90deg,transparent 0%,black 4%,black 96%,transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(90deg,transparent 0%,black 4%,black 96%,transparent 100%)",
+          visibility: measured ? "visible" : "hidden",
         }}
       >
+        {/* EDGE FADES (plain overlays, no mask) */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 z-[90] w-12 sm:w-20"
+          style={{ background: fade("90deg") }}
+        />
 
-        {/* LEFT FADE */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-40 w-12 bg-gradient-to-r from-[#F4F7FA] to-transparent sm:w-20" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 z-[90] w-12 sm:w-20"
+          style={{ background: fade("270deg") }}
+        />
 
-        {/* RIGHT FADE */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-40 w-12 bg-gradient-to-l from-[#F4F7FA] to-transparent sm:w-20" />
-
-        {/* PREVIOUS BUTTON */}
+        {/* ARROWS */}
         <button
           type="button"
           onClick={handlePrev}
           aria-label="Previous university"
-          className="absolute left-2 top-1/2 z-50 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white/95 text-[#0C337B] shadow-md transition-all duration-200 hover:scale-110 hover:bg-[#1765F5] hover:text-white sm:left-4 sm:h-11 sm:w-11"
+          className={`${arrowClass} left-2 sm:left-4`}
+          style={arrowStyle}
+          {...arrowHover}
         >
           <ChevronLeft size={20} strokeWidth={2.4} />
         </button>
 
-        {/* NEXT BUTTON */}
         <button
           type="button"
           onClick={handleNext}
           aria-label="Next university"
-          className="absolute right-2 top-1/2 z-50 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white/95 text-[#0C337B] shadow-md transition-all duration-200 hover:scale-110 hover:bg-[#1765F5] hover:text-white sm:right-4 sm:h-11 sm:w-11"
+          className={`${arrowClass} right-2 sm:right-4`}
+          style={arrowStyle}
+          {...arrowHover}
         >
           <ChevronRight size={20} strokeWidth={2.4} />
         </button>
 
-        {/* =====================================
-            3D UNIVERSITY TRACK
-        ===================================== */}
+        {/* CARDS */}
+        {items.map((item, index) => (
+          <div
+            key={item.name}
+            ref={(element) => {
+              cardRefs.current[index] = element;
+            }}
+            onClick={() => handleCardClick(index)}
+            className="absolute cursor-grab overflow-hidden bg-slate-950 active:cursor-grabbing"
+            style={{
+              "--k": 1,
+              visibility: "hidden",
+              width: `${geometry.cardW}px`,
+              height: `${geometry.cardH}px`,
+              borderRadius: k(24),
+              boxShadow: "0 16px 36px rgba(0,0,0,0.18)",
+              userSelect: "none",
+              touchAction: "pan-y",
+            }}
+          >
+            <CardImage item={item} dark={theme.dark} />
 
-        <div className="relative flex h-full w-full items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
+            {/* DARK OVERLAY */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/10"
+            />
 
-          {UNIVERSITIES.map((university, index) => {
-            const delta = getWrappedDelta(
-              index,
-              currentIndex
-            );
-
-            if (Math.abs(delta) > 3.8) {
-              return null;
-            }
-
-            const absDelta = Math.abs(delta);
-            const scale = getScale(absDelta);
-            const rotY = getRotY(delta);
-            const xPos = getXPos(delta);
-
-            const zIndex = Math.round(
-              50 + absDelta * 10
-            );
-
-            const opacity =
-              absDelta <= 2.8
-                ? 1
-                : Math.max(
-                    0,
-                    1 - Math.pow(absDelta - 2.8, 1.6)
-                  );
-
-            return (
+            {/* TOP-LEFT BADGE (optional) */}
+            {item.badge ? (
               <div
-                key={university.name}
-                onClick={() => handleCardClick(index)}
-                className="absolute left-1/2 top-1/2 cursor-grab active:cursor-grabbing"
+                className="pointer-events-none absolute z-20"
+                style={{ left: k(10), top: k(10) }}
+              >
+                <span
+                  className="inline-flex items-center rounded-full border border-white/40 bg-white font-extrabold shadow-md"
+                  style={{
+                    gap: k(4),
+                    padding: `${k(4)} ${k(8)}`,
+                    fontSize: k(9),
+                    color: theme.dark,
+                  }}
+                >
+                  <BadgeCheck
+                    size={12}
+                    strokeWidth={2.3}
+                    style={{
+                      width: k(12),
+                      height: k(12),
+                      color: theme.accent,
+                    }}
+                  />
+                  {item.badge}
+                </span>
+              </div>
+            ) : null}
+
+            {/* NAME + SUBTITLE */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-20"
+              style={{
+                padding: `${k(28)} ${k(12)} ${k(12)}`,
+              }}
+            >
+              <h3
+                className="line-clamp-3 font-extrabold text-white"
                 style={{
-                  width: `${cardW}px`,
-                  height: `${cardH}px`,
-                  transform: `translate(-50%, -50%) translateX(${xPos.toFixed(1)}px) scale(${scale.toFixed(3)}) rotateY(${rotY.toFixed(1)}deg)`,
-                  transformOrigin: "center center",
-                  transformStyle: "preserve-3d",
-                  backfaceVisibility: "hidden",
-                  WebkitBackfaceVisibility: "hidden",
-                  zIndex,
-                  opacity,
-                  userSelect: "none",
-                  touchAction: "pan-y",
+                  fontSize: k(geometry.isMobile ? 12 : 13),
+                  lineHeight: 1.3,
+                  textShadow: "0 2px 6px rgba(0,0,0,0.9)",
                 }}
               >
+                {item.name}
+              </h3>
 
-                {/* UNIVERSITY CARD */}
-                <div className="group relative h-full w-full overflow-hidden rounded-[24px] bg-slate-950 shadow-[0_16px_36px_rgba(0,0,0,0.18)] transition-shadow duration-300 hover:shadow-[0_24px_48px_rgba(12,51,123,0.28)]">
+              {item.subtitle ? (
+                <p
+                  className="flex items-center font-medium text-white/80"
+                  style={{
+                    marginTop: k(4),
+                    gap: k(4),
+                    fontSize: k(9),
+                    lineHeight: 1.35,
+                  }}
+                >
+                  {item.pin ? (
+                    <MapPin
+                      size={10}
+                      strokeWidth={2}
+                      className="shrink-0"
+                      style={{ width: k(10), height: k(10) }}
+                    />
+                  ) : null}
 
-                  {/* UNIVERSITY IMAGE */}
-                  <UniversityImage
-                    university={university}
-                    priority={absDelta < 2}
-                  />
-
-                  {/* DARK OVERLAY */}
-                  <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/10" />
-
-                  {/* UNIVERSITY DETAILS */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 p-3 pt-7">
-
-                    <h3 className="line-clamp-3 text-[12px] font-extrabold leading-[1.3] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-[13px]">
-                      {university.name}
-                    </h3>
-
-                    <p className="mt-1 flex items-center gap-1 text-[9px] font-medium leading-snug text-white/80">
-                      <MapPin
-                        size={10}
-                        strokeWidth={2}
-                        className="shrink-0"
-                      />
-
-                      <span className="truncate">
-                        {university.grade}, USA
-                      </span>
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-            );
-          })}
-
-        </div>
-
+                  <span className="truncate">{item.subtitle}</span>
+                </p>
+              ) : null}
+            </div>
+          </div>
+        ))}
       </div>
-
     </section>
   );
 }

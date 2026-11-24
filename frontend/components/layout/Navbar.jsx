@@ -1,6 +1,36 @@
-import fs from "node:fs";
-import path from "node:path";
+import { GUIDE_DETAILS_DATABASE as FRANCE_NAV_GUIDES } from "@/data/france-guides";
+import { RUSSIA_GUIDES as RUSSIA_NAV_GUIDES } from "@/data/russia-guides";
+import { UAE_GUIDES as UAE_NAV_GUIDES } from "@/data/uae-guides";
+import { IRELAND_GUIDES as IRELAND_NAV_GUIDES } from "@/data/ireland-guides";
+import { GERMANY_GUIDES as GERMANY_NAV_GUIDES } from "@/data/germany-guides";
+import { GUIDE_DETAILS_DATABASE as UK_NAV_GUIDES } from "@/data/uk-guides";
+import { AUSTRALIA_GUIDES as AUSTRALIA_NAV_GUIDES } from "@/data/australia-guides";
 import NavbarClient from "./NavbarClient";
+import { GUIDE_DETAILS_DATABASE } from "@/data/usa-guides";
+import { CANADA_GUIDES } from "@/data/canada-guides";
+
+// Navigation uses the same imported guide data as each country route.
+const GUIDE_DATABASES = {
+  "study-in-france": FRANCE_NAV_GUIDES,
+  "study-in-russia": RUSSIA_NAV_GUIDES,
+  "study-in-uae": UAE_NAV_GUIDES,
+  "study-in-ireland": IRELAND_NAV_GUIDES,
+  "study-in-germany": GERMANY_NAV_GUIDES,
+  "study-in-uk": UK_NAV_GUIDES,
+  "study-in-australia": AUSTRALIA_NAV_GUIDES,
+  "study-in-usa": GUIDE_DETAILS_DATABASE,
+  "study-in-canada": CANADA_GUIDES,
+};
+
+function guidesFromData(database) {
+  const seen = new Set();
+  return Object.entries(database).flatMap(([slug, guide]) => {
+    // Aliases share the same guide; show each destination only once.
+    if (seen.has(guide)) return [];
+    seen.add(guide);
+    return [{ slug, label: guide.shortTitle ?? guide.title ?? slug, heroImage: guide.heroImage }];
+  });
+}
 
 /* ==========================================
    Countries (order yahin se). Folder = app/<folder>/[guide]/page.js
@@ -36,60 +66,9 @@ function classify(slug, folder) {
   return "guide";
 }
 
-function findAppDir() {
-  for (const dir of ["src/app", "app"]) {
-    const p = path.join(/*turbopackIgnore: true*/ process.cwd(), dir);
-    if (fs.existsSync(/*turbopackIgnore: true*/ p)) return p;
-  }
-  return null;
-}
-
-/* app/<folder>/[guide]/page.js (ya [guides], .jsx/.tsx) ki file dhundo */
-function findGuidePage(appDir, folder) {
-  for (const dyn of ["[guide]", "[guides]"]) {
-    for (const file of ["page.js", "page.jsx", "page.tsx", "page.ts"]) {
-      const p = path.join(/*turbopackIgnore: true*/ appDir, folder, dyn, file);
-      if (fs.existsSync(/*turbopackIgnore: true*/ p)) return p;
-    }
-  }
-  return null;
-}
-
-/* page.js ke andar ke guide objects padho:
-     "slug": {
-       id: "01", ... shortTitle: "...", heroImage: "..."
-   (alias assignments jaise GUIDE_DETAILS_DATABASE["x"] = ... ignore hote hain) */
-function parseGuides(file) {
-  const src = fs.readFileSync(file, "utf8");
-  // More flexible regex: allows both quoted and unquoted keys, and quoted id values
-  const re = /^[ \t]{2}"?([a-z0-9-]+)"?:\s*\{\s*\n\s*"?id"?:\s*"[^"]*"/gm;
-
-  const starts = [];
-  let m;
-  while ((m = re.exec(src))) starts.push({ slug: m[1], index: m.index });
-
-  return starts.map((s, i) => {
-    const block = src.slice(s.index, starts[i + 1]?.index ?? src.length);
-    const pick = (key) => block.match(new RegExp(`"?${key}"?:\\s*"([^"]+)"`))?.[1];
-    return {
-      slug: s.slug,
-      label: pick("shortTitle") ?? pick("title") ?? s.slug,
-      heroImage: pick("heroImage"),
-    };
-  });
-}
-
 function buildCountries() {
-  const appDir = findAppDir();
-
   return COUNTRIES.map((c) => {
-    let guides = [];
-    try {
-      const file = appDir && findGuidePage(appDir, c.folder);
-      if (file) guides = parseGuides(file);
-    } catch {
-      guides = [];
-    }
+    const guides = guidesFromData(GUIDE_DATABASES[c.folder]);
 
     const columns = GROUPS.map((g) => ({
       id: g.id,
